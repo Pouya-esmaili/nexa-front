@@ -10,27 +10,36 @@ export default function Choose() {
 
   return (
     <section className="bg-[#9A3BFF] py-14 px-4 md:px-14 mt-18">
-      <div className="mx-auto bg-white rounded-2xl p-8 md:p-22">
-        <h2 className="text-3xl font-bold text-center mb-12">Why Choose Us</h2>
+      <div className="mx-auto bg-white rounded-2xl p-8 md:p-16">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-20">
+          Why Choose Us?
+        </h2>
 
+        {/* Desktop */}
         <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {items.map((item, index) => (
-            <div key={index} className="flex items-center text-center gap-4">
+            <div key={index} className="flex items-start text-start gap-4">
               <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-[#E9E9E9] flex items-center justify-center shadow-lg font-bold text-[#8F27FF]">
                 {String(index + 1).padStart(2, "0")}
               </div>
-              <p className="text-gray-600">{item}</p>
+              <p className="text-black text-medium font-semibold">{item}</p>
             </div>
           ))}
         </div>
 
-        <div className="md:hidden flex flex-col gap-6">
+        {/* Mobile */}
+        <div className="md:hidden flex flex-col gap-8 items-center text-center">
           {items.map((item, index) => (
-            <div key={index} className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#E9E9E9] flex items-center justify-center shadow-md font-bold text-[#8F27FF] mt-1">
+            <div
+              key={index}
+              className="flex flex-col items-center gap-3"
+            >
+              <div className="w-10 h-10 rounded-lg bg-[#E9E9E9] flex items-center justify-center shadow-md font-bold text-[#8F27FF]">
                 {String(index + 1).padStart(2, "0")}
               </div>
-              <p className="text-gray-600 text-left">{item}</p>
+              <p className="text-black text-center text-medium font-semibold">
+                {item}
+              </p>
             </div>
           ))}
         </div>

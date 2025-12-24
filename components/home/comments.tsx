@@ -23,7 +23,7 @@ export default function CommentsSection() {
 
   return (
     <div className="w-full flex flex-col items-center py-10">
-      <h2 className="text-2xl font-bold text-center mb-10">
+      <h2 className="text-3xl font-bold text-center mb-10">
         Our Community’s Experience
       </h2>
 
@@ -49,7 +49,7 @@ export default function CommentsSection() {
               </div>
 
               <Rating rate={item.rating} />
-              <p className="text-gray-600 text-sm mb-3">{item.text}</p>
+              <p className="text-black text-sm mb-3">{item.text}</p>
               <button className="text-sm text-gray-500">Read more</button>
             </div>
           ))}
@@ -73,7 +73,7 @@ export default function CommentsSection() {
               </div>
 
               <Rating rate={item.rating} />
-              <p className="text-gray-600 text-sm mb-3">{item.text}</p>
+              <p className="text-black text-sm mb-3">{item.text}</p>
               <button className="text-sm text-gray-500">Read more</button>
             </div>
           ))}

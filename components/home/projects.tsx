@@ -70,7 +70,7 @@ export default function ProjectsSection() {
 
   return (
     <section className="w-full py-14">
-      <h2 className="text-center text-2xl font-bold mb-8">
+      <h2 className="text-center text-3xl font-bold mb-8">
         Our Successful Projects
       </h2>
 

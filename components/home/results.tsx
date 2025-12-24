@@ -19,7 +19,7 @@ export default function Results() {
 
             <div className="absolute inset-0 flex flex-col justify-start items-center text-center z-10 px-4 sm:px-0 pt-4 sm:pt-0">
 
-                <h2 className="text-xl sm:text-3xl font-bold mb-2 sm:mb-34  sm:mt-6">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-34  sm:mt-6">
                     Our Results Tell the Story
                 </h2>
 

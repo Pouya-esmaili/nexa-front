@@ -35,7 +35,7 @@ export default function Bio() {
                             Who <span className="bg-yellow-300 px-1">We</span> Are !
                         </h2>
 
-                        <p className="leading-relaxed text-gray-700 text-sm md:text-base">
+                        <p className="leading-relaxed text-black text-sm md:text-base">
                             NEXA is a global hub where bold founders and bright ideas come to grow. We unite industry expertise with the creativity of young, global-minded team — fusing the fearless creativity of next-generation talent with the strategic precision of industry leaders to turn early concepts into world-ready companies. With strong roots in emerging markets and powerful networks across, we give entrepreneurs the capital, mentorship, and global access they need to thrive. We don’t just invest — we ignite ecosystems, accelerate growth, and help visionaries build meaningful impact. This is where ambition becomes reality, and where the next generation of global leaders begins.
                         </p>
                     </div>
@@ -59,18 +59,18 @@ export default function Bio() {
                         Who <span className="bg-yellow-300 px-1">We</span> Are !
                     </h2>
 
-                    <p className="leading-relaxed text-gray-700 text-sm">
+                    <p className="leading-relaxed text-black text-sm">
                         NEXA is a global hub where bold founders and bright ideas come to grow. We unite industry expertise with the creativity of young, global-minded team — fusing the fearless creativity of next-generation talent with the strategic precision of industry leaders to turn early concepts into world-ready companies. With strong roots in emerging markets and powerful networks across, we give entrepreneurs the capital, mentorship, and global access they need to thrive. We don’t just invest — we ignite ecosystems, accelerate growth, and help visionaries build meaningful impact. This is where ambition becomes reality, and where the next generation of global leaders begins.
                     </p>
                 </div>
 
             </div>
             <div
-                className="text-white md:hidden p-4 mb-18 w-full"
+                className="text-white md:hidden p-6 mb-18 w-full"
                 style={{ backgroundColor: "#8F27FF" }}
             >
                 <ul className="space-y-2 text-sm">
-                    <p className="mb-2">
+                    <p className="mb-2 text-lg">
                         Through exclusive networks in Europe, Canada, and the Middle East, we deliver:
                     </p>
                     <li>• Direct Access to Top Accelerators and Research Ecosystems</li>

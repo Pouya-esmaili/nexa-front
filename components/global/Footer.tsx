@@ -16,7 +16,7 @@ export default function Footer() {
                         height={40}
                         className="mb-4"
                     />
-                    <p className="text-sm text-gray-700 leading-relaxed">
+                    <p className="text-sm text-black leading-relaxed">
                         At NEXA, Global Launchpad for Entrepreneurship, Startup Acceleration,
                         and Strategic Investment, Backed by Over 7 Years of Proven Expertise
                         in Business Development, Strategic Planning, and International Market
@@ -27,7 +27,7 @@ export default function Footer() {
                 <div className="grid grid-cols-2 gap-4">
                     <div>
                         <h4 className="font-semibold text-black mb-2">Services</h4>
-                        <ul className="space-y-1 text-sm text-gray-700">
+                        <ul className="space-y-1 text-sm text-black">
                             <li><Link href="#">Startup</Link></li>
                             <li><Link href="#">Investment</Link></li>
                             <li><Link href="#">Advisory</Link></li>
@@ -37,7 +37,7 @@ export default function Footer() {
 
                     <div>
                         <h4 className="font-semibold text-black mb-2">About Nexa</h4>
-                        <ul className="space-y-1 text-sm text-gray-700">
+                        <ul className="space-y-1 text-sm text-black">
                             <li><Link href="#">About Us</Link></li>
                             <li><Link href="#">Our Team</Link></li>
                             <li><Link href="#">Contact Us</Link></li>
@@ -51,26 +51,26 @@ export default function Footer() {
                     <h4 className="font-semibold text-black mb-2">Our Offices</h4>
 
                     <p className="font-medium text-sm mb-1">Canada</p>
-                    <div className="flex items-start gap-2 text-sm text-gray-700">
+                    <div className="flex items-start gap-2 text-sm text-black">
                         <Image src="/images/location-tick.svg" alt="Location" width={16} height={16} className="mt-1" />
                         <p className="whitespace-normal break-words">
                             906-935 Marine Dr, West Vancouver, British Columbia, Canada
                         </p>
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-700 mt-1">
+                    <div className="flex items-center gap-2 text-sm text-black mt-1">
                         <Image src="/images/call-calling.svg" alt="Phone" width={16} height={16} />
                         <p className="whitespace-normal break-words">+1 (604) 351 - 5951</p>
                     </div>
 
                     {/* Iran */}
                     <p className="font-medium text-sm mt-4 mb-1">Iran</p>
-                    <div className="flex items-start gap-2 text-sm text-gray-700">
+                    <div className="flex items-start gap-2 text-sm text-black">
                         <Image src="/images/location-tick.svg" alt="Location" width={16} height={16} className="mt-1" />
                         <p className="whitespace-normal break-words">
                             No. 27, Neom Building (Next to the Tandis Complex), Tajrish Square, Tehran, Iran
                         </p>
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-700 mt-1">
+                    <div className="flex items-center gap-2 text-sm text-black mt-1">
                         <Image src="/images/call-calling.svg" alt="Phone" width={16} height={16} />
                         <p className="whitespace-normal break-words">+98 (21) 2691 - 7416</p>
                     </div>
@@ -84,7 +84,7 @@ export default function Footer() {
 
                 <div className="border-t border-gray-400 mt-6" />
 
-                <p className="text-sm text-gray-700 py-4 text-center">
+                <p className="text-sm text-black py-4 text-center">
                     Copyright © 2025 Nexa. All rights reserved.
                 </p>
             </div>
@@ -102,7 +102,7 @@ export default function Footer() {
                                 height={40}
                                 className="mb-4"
                             />
-                            <p className="text-sm text-gray-700 leading-relaxed max-w-sm">
+                            <p className="text-sm text-black leading-relaxed max-w-sm">
                                 At NEXA, Global Launchpad for Entrepreneurship, Startup Acceleration,
                                 and Strategic Investment, Backed by Over 7 Years of Proven Expertise
                                 in Business Development, Strategic Planning, and International Market
@@ -112,7 +112,7 @@ export default function Footer() {
 
                         <div>
                             <h4 className="font-semibold text-black text-center mb-4">Services</h4>
-                            <ul className="space-y-2 text-sm text-center text-gray-700">
+                            <ul className="space-y-2 text-sm text-center text-black">
                                 <li><Link href="#">Startup</Link></li>
                                 <li><Link href="#">Investment</Link></li>
                                 <li><Link href="#">Advisory</Link></li>
@@ -122,7 +122,7 @@ export default function Footer() {
 
                         <div>
                             <h4 className="font-semibold text-black text-end mb-4">About Nexa</h4>
-                            <ul className="space-y-2 text-sm text-end text-gray-700">
+                            <ul className="space-y-2 text-sm text-end text-black">
                                 <li><Link href="#">About Us</Link></li>
                                 <li><Link href="#">Testimonials</Link></li>
                                 <li><Link href="#">Contact Us</Link></li>
@@ -138,13 +138,13 @@ export default function Footer() {
                         <div>
                             <h4 className="font-semibold text-black mb-4">Our Offices</h4>
                             <p className="font-medium text-sm mb-1">Canada</p>
-                            <div className="flex items-center gap-2 text-sm text-gray-700">
+                            <div className="flex items-center gap-2 text-sm text-black">
                                 <Image src="/images/location-tick.svg" alt="Location" width={16} height={16} />
                                 <p className="whitespace-nowrap">
                                     906-935 Marine Dr, West Vancouver, British Columbia, Canada
                                 </p>
                             </div>
-                            <div className="flex items-center gap-2 text-sm text-gray-700 mt-1">
+                            <div className="flex items-center gap-2 text-sm text-black mt-1">
                                 <Image src="/images/call-calling.svg" alt="Phone" width={16} height={16} />
                                 <p className="whitespace-nowrap">+1 (604) 351 - 5951</p>
                             </div>
@@ -152,14 +152,14 @@ export default function Footer() {
 
                         <div className="mt-8 md:mt-10">
                             <p className="font-medium text-sm mb-1">Iran</p>
-                            <div className="flex items-center gap-2 text-sm text-gray-700">
+                            <div className="flex items-center gap-2 text-sm text-black">
                                 <Image src="/images/location-tick.svg" alt="Location" width={16} height={16} />
                                 <p className="whitespace-nowrap">
                                     No. 27, Neom Building (Next to the Tandis Complex),
                                     Tajrish Square, Tehran, Iran
                                 </p>
                             </div>
-                            <div className="flex items-center gap-2 text-sm text-gray-700 mt-1">
+                            <div className="flex items-center gap-2 text-sm text-black mt-1">
                                 <Image src="/images/call-calling.svg" alt="Phone" width={16} height={16} />
                                 <p className="whitespace-nowrap">+98 (21) 2691 - 7416</p>
                             </div>
@@ -176,7 +176,7 @@ export default function Footer() {
                     <div className="border-t border-gray-400" />
 
                     <div className="py-4">
-                        <p className="text-sm text-gray-700">
+                        <p className="text-sm text-black">
                             Copyright © 2025 Nexa. All rights reserved.
                         </p>
                     </div>

@@ -94,7 +94,7 @@ export default function Header() {
                 </div>
             </div>
 
-            <div className="hidden md:block">
+            <div className="hidden md:block mt-8">
                 <Row className="relative flex items-center">
                     <div className="flex-shrink-0">
                         <Image

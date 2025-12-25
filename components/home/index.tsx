@@ -20,7 +20,7 @@ const Hero = () => {
                 <Image
                     width={1200}
                     height={1200}
-                    src="/images/landing/Team.svg"
+                    src="/images/landing/team1.svg"
                     alt="hero"
                     className="w-full h-auto object-contain"
                 />
@@ -43,7 +43,7 @@ const Hero = () => {
                             <Image
                                 width={1500}
                                 height={1500}
-                                src="/images/landing/Team.svg"
+                                src="/images/landing/team1.svg"
                                 alt="hero"
                                 className="w-full h-auto object-cover"
                             />

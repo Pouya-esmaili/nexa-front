@@ -8,7 +8,7 @@ export default function Bio() {
                 <Row className="flex flex-col md:flex-row gap-10 py-16 justify-between">
                     <div className="relative w-full md:w-1/2">
                         <Image
-                            src="/images/landing/modern-equipped-computer-lab 2.svg"
+                            src="/images/landing/teammate.svg"
                             alt="team"
                             width={600}
                             height={400}
@@ -46,7 +46,7 @@ export default function Bio() {
 
                 <div className="w-full mb-4">
                     <Image
-                        src="/images/landing/modern-equipped-computer-lab 2.svg"
+                        src="/images/landing/teammate.svg"
                         alt="team"
                         width={600}
                         height={400}

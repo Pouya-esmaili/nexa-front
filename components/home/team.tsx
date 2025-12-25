@@ -11,7 +11,7 @@ const Team = () => {
                     <Image
                         width={1500}
                         height={1500}
-                        src="/images/landing/Group.svg"
+                        src="/images/landing/Group(1).svg"
                         alt="team"
                         className="w-full h-auto object-cover"
                     />
@@ -68,7 +68,7 @@ const Team = () => {
                             <Image
                                 width={1500}
                                 height={1500}
-                                src="/images/landing/Group.svg"
+                                src="/images/landing/Group(1).svg"
                                 alt="team"
                                 className="w-full h-auto object-cover"
                             />

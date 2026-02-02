@@ -7,9 +7,9 @@ export default function OurTeam() {
   return (
     <>
       <div className="w-full bg-white sm:items-star">
-     <Our />
-     <Academy />
-     <Cart />
+        <Our />
+        <Academy />
+        <Cart />
       </div>
     </>
   );

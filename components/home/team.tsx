@@ -31,7 +31,7 @@ const Team = () => {
                     </p>
 
                     <Link
-                        href="#"
+                        href="/our-team"
                         className="mt-7 h-12 w-46 border border-[#8F27FF] text-medium font-medium text-[#8F27FF] hover:bg-[#8F27FF] hover:text-white flex items-start justify-start rounded-3xl px-6 py-3 text-base transition-colors duration-300"
                     >
                         Meet Our Team →

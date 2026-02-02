@@ -17,7 +17,7 @@ export default function Bio() {
 
                         <div
                             className="absolute bottom-6 left-1/2 translate-x-1/4 text-white p-8 rounded-xl w-[120%] max-w-none"
-                            style={{ backgroundColor: "#8F27FF" }}
+                            style={{ backgroundColor: "#C997FF" }}
                         >
                             <ul className="space-y-2 text-sm">
                                 <p className="mb-12">
@@ -67,7 +67,7 @@ export default function Bio() {
             </div>
             <div
                 className="text-white md:hidden p-6 mb-18 w-full"
-                style={{ backgroundColor: "#8F27FF" }}
+                style={{ backgroundColor: "#C997FF" }}
             >
                 <ul className="space-y-2 text-sm">
                     <p className="mb-2 text-lg">

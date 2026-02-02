@@ -4,7 +4,7 @@ import TimelineItem from "./TimelineItem";
 
 export default function TimelineSection() {
     return (
-        <section className="w-full py-24">
+        <section className="w-full py-24gi">
             <Row>
                 {/* TITLE */}
                 <h2 className="text-center text-3xl font-bold mb-24">

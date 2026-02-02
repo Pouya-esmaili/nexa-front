@@ -66,7 +66,7 @@ export default function Header() {
                                 </div>
                             </details>
 
-                            <Link href="/about" onClick={() => setMenuOpen(false)}>
+                            <Link href="/about-us" onClick={() => setMenuOpen(false)}>
                                 About Us
                             </Link>
 
@@ -130,11 +130,11 @@ export default function Header() {
                             </div>
                         </div>
 
-                        <Link href="/about" className="hover:text-purple-600 transition-colors">
+                        <Link href="/about-us" className="hover:text-purple-600 transition-colors">
                             About Us
                         </Link>
 
-                        <Link href="/forms" className="hover:text-purple-600 transition-colors">
+                        <Link href="/forms/personal-info" className="hover:text-purple-600 transition-colors">
                             Forms
                         </Link>
                     </nav>

@@ -38,7 +38,7 @@ export default function Footer() {
                     <div>
                         <h4 className="font-semibold text-black mb-2">About Nexa</h4>
                         <ul className="space-y-1 text-sm text-black">
-                            <li><Link href="#">About Us</Link></li>
+                            <li><Link href="/about-us">About Us</Link></li>
                             <li><Link href="#">Our Team</Link></li>
                             <li><Link href="#">Contact Us</Link></li>
                         </ul>
@@ -123,7 +123,7 @@ export default function Footer() {
                         <div>
                             <h4 className="font-semibold text-black text-end mb-4">About Nexa</h4>
                             <ul className="space-y-2 text-sm text-end text-black">
-                                <li><Link href="#">About Us</Link></li>
+                                <li><Link href="/about-us">About Us</Link></li>
                                 <li><Link href="#">Testimonials</Link></li>
                                 <li><Link href="#">Contact Us</Link></li>
                             </ul>

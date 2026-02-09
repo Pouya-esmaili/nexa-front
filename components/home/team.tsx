@@ -11,7 +11,7 @@ const Team = () => {
                     <Image
                         width={1500}
                         height={1500}
-                        src="/images/landing/Group(1).svg"
+                        src="/images/landing/behind.svg"
                         alt="team"
                         className="w-full h-auto object-cover"
                     />
@@ -39,7 +39,7 @@ const Team = () => {
                 </div>
             </div>
 
-            <div className="hidden md:block">
+            <div className="hidden md:block mt-10">
                 <Row>
                     <div className="flex flex-row items-center gap-18">
                         {/* Text */}
@@ -68,7 +68,7 @@ const Team = () => {
                             <Image
                                 width={1500}
                                 height={1500}
-                                src="/images/landing/Group(1).svg"
+                                src="/images/landing/behind.svg"
                                 alt="team"
                                 className="w-full h-auto object-cover"
                             />

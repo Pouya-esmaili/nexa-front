@@ -21,6 +21,8 @@ export default function CommentsSection() {
   const next = () => setIndex((prev) => (prev + 1) % comments.length);
   const prev = () => setIndex((prev) => (prev - 1 + comments.length) % comments.length);
 
+  const cardShadowStyle = { boxShadow: "0px 10px 15px 0px #00000040" };
+
   return (
     <div className="w-full flex flex-col items-center py-10">
       <h2 className="text-3xl font-bold text-center mb-10">
@@ -28,6 +30,7 @@ export default function CommentsSection() {
       </h2>
 
       <div className="relative w-full overflow-hidden px-4 md:px-20">
+        {/* Desktop */}
         <div
           className="hidden md:flex gap-6 transition-all duration-300"
           style={{ transform: `translateX(-${index * 360}px)` }}
@@ -35,7 +38,8 @@ export default function CommentsSection() {
           {comments.map((item) => (
             <div
               key={item.id}
-              className="w-[340px] min-w-[340px] bg-white rounded-xl border border-[#8F27FF] shadow-lg p-5"
+              className="w-[340px] min-w-[340px] rounded-xl p-5 "
+              style={cardShadowStyle}
             >
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-3">
@@ -55,11 +59,13 @@ export default function CommentsSection() {
           ))}
         </div>
 
+        {/* Mobile */}
         <div className="flex md:hidden transition-all duration-300">
           {comments.slice(index, index + 1).map((item) => (
             <div
               key={item.id}
-              className="w-full bg-white rounded-xl border border-[#8F27FF] shadow-lg p-5"
+              className="w-full rounded-xl p-5 bg-white"
+              style={cardShadowStyle}
             >
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-3">
@@ -81,8 +87,8 @@ export default function CommentsSection() {
       </div>
 
       <div className="flex gap-3 mt-6">
-        <button onClick={prev} className="border border-[#8F27FF] rounded-lg !shadow-lg px-3 py-1">←</button>
-        <button onClick={next} className="border border-[#8F27FF] rounded-lg !shadow-lg px-3 py-1">→</button>
+        <button onClick={prev} className="border border-[#8F27FF] rounded-lg px-3 py-1" style={cardShadowStyle}>←</button>
+        <button onClick={next} className="border border-[#8F27FF] rounded-lg px-3 py-1" style={cardShadowStyle}>→</button>
       </div>
     </div>
   );

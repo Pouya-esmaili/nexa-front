@@ -5,13 +5,13 @@ export default function Results() {
         <section className="relative w-full h-[330px] md:h-[550px]">
 
             <Image
-                src="/images/landing/map.svg"
+                src="/images/landing/plan.svg"
                 alt="map"
                 fill
                 className="object-cover hidden sm:block"
             />
             <Image
-                src="/images/landing/mapmobile.svg"
+                src="/images/landing/plan1.svg"
                 alt="map mobile"
                 fill
                 className="object-cover block sm:hidden w-full"

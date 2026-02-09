@@ -14,7 +14,7 @@ const team = [
   { name: 'Parastoo Sanaifar', role: 'Business Advisor', image: '/images/ourteam/parastoo.svg' },
   { name: 'Mehdi Esmaeili', role: 'Business Advisor', image: '/images/ourteam/parastoo.svg' },
   { name: 'Narjes Orouji', role: 'UI/UX Designer', image: '/images/ourteam/narges.svg' },
-  { name: 'Amir Mohammad Esfahanizade', role: 'UI/UX Designer', image: '/images/ourteam/ali.svg' },
+  { name: 'Amir Mohammad Esfahanizade', role: 'UI/UX Designer', image: '/images/ourteam/amirmohammad.svg' },
 ];
 
 export default function TeamSection() {

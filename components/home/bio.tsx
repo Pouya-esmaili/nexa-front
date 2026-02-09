@@ -16,16 +16,16 @@ export default function Bio() {
                         />
 
                         <div
-                            className="absolute bottom-6 left-1/2 translate-x-1/4 text-white p-8 rounded-xl w-[120%] max-w-none"
-                            style={{ backgroundColor: "#C997FF" }}
+                            className="absolute bottom-6 left-1/2 translate-x-1/4 text-white p-8 rounded-2xl shadow-2xl w-[120%]"
+                            style={{ backgroundColor: "#F3F5F680", boxShadow:"#00000040" }}
                         >
-                            <ul className="space-y-2 text-sm">
-                                <p className="mb-12">
+                            <ul className="space-y-2 text-black">
+                                <p className="mb-12 text-md font-bold">
                                     Through exclusive networks in Europe, Canada, and the Middle East, we deliver:
                                 </p>
-                                <li>• Direct Access to Top Accelerators and Research Ecosystems</li>
-                                <li>• Cross-border Co-founder and Elite Talent Pools</li>
-                                <li>• Global Investor Circles and Strategic Growth Capital</li>
+                                <li className="text-sm font-semibold">• Direct Access to Top Accelerators and Research Ecosystems</li>
+                                <li className="text-sm font-semibold">• Cross-border Co-founder and Elite Talent Pools</li>
+                                <li className="text-sm font-semibold">• Global Investor Circles and Strategic Growth Capital</li>
                             </ul>
                         </div>
                     </div>
@@ -67,15 +67,15 @@ export default function Bio() {
             </div>
             <div
                 className="text-white md:hidden p-6 mb-18 w-full"
-                style={{ backgroundColor: "#C997FF" }}
+                style={{ backgroundColor: "#F3F5F680" }}
             >
                 <ul className="space-y-2 text-sm">
-                    <p className="mb-2 text-lg">
+                    <p className="mb-2 text-md font-bold">
                         Through exclusive networks in Europe, Canada, and the Middle East, we deliver:
                     </p>
-                    <li>• Direct Access to Top Accelerators and Research Ecosystems</li>
-                    <li>• Cross-border Co-founder and Elite Talent Pools</li>
-                    <li>• Global Investor Circles and Strategic Growth Capital</li>
+                    <li className="text-sm font-semibold">• Direct Access to Top Accelerators and Research Ecosystems</li>
+                    <li className="text-sm font-semibold">• Cross-border Co-founder and Elite Talent Pools</li>
+                    <li className="text-sm font-semibold">• Global Investor Circles and Strategic Growth Capital</li>
                 </ul>
             </div>
         </section>

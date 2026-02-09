@@ -8,7 +8,8 @@ import ProjectsSection from "@/components/home/projects";
 import Comments from "@/components/home/comments";
 import Choose from "@/components/home/choose";
 import Team from "@/components/home/team";
-import Touch from "@/components/home/touch";
+// import Touch from "@/components/home/touch";
+import Form from "@/components/home/form";
 
 export default function HomePage() {
   return (
@@ -24,7 +25,8 @@ export default function HomePage() {
       <Comments />
       <Choose />
       <Team />
-      <Touch />
+      {/* <Touch /> */}
+      <Form />
     </main>
 
   );

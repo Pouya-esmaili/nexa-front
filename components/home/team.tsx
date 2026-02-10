@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Row from "../global/Row";
+import Highlight from "../ui/Highlight";
 
 const Team = () => {
     return (
@@ -19,7 +20,7 @@ const Team = () => {
 
                 <div className="w-full flex flex-col justify-between text-left">
                     <h2 className="my-8 text-2xl font-bold text-black">
-                        Behind the <mark className='bg-[#FFE600]'>Nexa</mark>
+                        Behind the <Highlight>Nexa</Highlight>
                     </h2>
 
                     <p className="text-justify text-[18px] text-black">
@@ -45,7 +46,7 @@ const Team = () => {
                         {/* Text */}
                         <div className="w-1/2 flex flex-col justify-between text-left">
                             <h2 className="my-8 text-3xl font-bold text-black">
-                                Behind the <mark className='bg-[#FFE600]'>Nexa</mark>
+                                Behind the <Highlight>Nexa</Highlight>
                             </h2>
 
                             <p className="text-[20px] text-black">

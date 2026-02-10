@@ -10,7 +10,7 @@ export default function Choose() {
 
   return (
     <section style={{ backgroundColor: '#EFEFEF' }}
- className="bg-[#C997FF] py-14 px-4 md:px-14 mt-16">
+      className="bg-[#C997FF] py-14 px-4 md:px-14 mt-16">
       <div className="mx-auto bg-white rounded-2xl p-8 md:p-16">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-20">
           Why Choose Us?

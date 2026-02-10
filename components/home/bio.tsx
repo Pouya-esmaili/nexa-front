@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Row from "../global/Row";
+import Highlight from "../ui/Highlight";
 
 export default function Bio() {
     return (
@@ -32,7 +33,7 @@ export default function Bio() {
 
                     <div className="md:w-1/2 space-y-4">
                         <h2 className="text-4xl font-bold">
-                            Who <span className="bg-yellow-300 px-1">We</span> Are !
+                            Who <Highlight>We</Highlight> Are !
                         </h2>
 
                         <p className="leading-relaxed text-black text-sm md:text-base">
@@ -56,7 +57,7 @@ export default function Bio() {
 
                 <div className="space-y-4 mb-4">
                     <h2 className="text-2xl font-bold">
-                        Who <span className="bg-yellow-300 px-1">We</span> Are !
+                        Who <Highlight>We</Highlight> Are !
                     </h2>
 
                     <p className="leading-relaxed text-black text-sm">

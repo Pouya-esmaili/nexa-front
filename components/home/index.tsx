@@ -1,58 +1,70 @@
 import Image from "next/image";
 import Row from "../global/Row";
+import Highlight from "../ui/Highlight";
 
 const Hero = () => {
-    return (
-        <div className="w-full">
+  return (
+    <section className="w-full mt-10">
+      {/* Mobile */}
+      <div className="flex flex-col gap-6 px-6 md:hidden">
+        <h1 className="text-3xl font-bold leading-tight text-black">
+          Your <Highlight>Global Launchpad</Highlight> for Investment, Startups,
+          Entrepreneurship, and Career Opportunities
+        </h1>
 
-            <div className="flex flex-col gap-6 px-6 mt-10 md:hidden">
-                <h2 className="text-3xl font-bold text-black">
-                    Your{" "}
-                    <mark className="bg-[#FFE52C]">Global Launchpad</mark>{" "} for Investment, Startups, Entrepreneurship, and Career Opportunities
-                </h2>
+        <p className="text-lg text-justify">
+          We fuel the global expansion of startups into new markets — for
+          entrepreneurs ready to scale and investors seeking high-growth
+          opportunities.
+        </p>
 
-                <p className="text-[20px] text-justify">
-                    We fuel the global expansion of startups into new markets — for
-                    entrepreneurs ready to scale and investors seeking high-growth
-                    opportunities.
-                </p>
+        <Image
+          width={1200}
+          height={1200}
+          src="/images/landing/TEAM 1 (1).svg"
+          alt="Hero team"
+          className="w-full h-auto object-contain"
+          priority
+        />
+      </div>
 
-                <Image
-                    width={1200}
-                    height={1200}
-                    src="/images/landing/TEAM 1 (1).svg"
-                    alt="hero"
-                    className="w-full h-auto object-contain"
-                />
+      {/* Desktop */}
+      <div className="hidden md:block">
+        <Row>
+          <div className="flex items-center gap-16">
+            {/* Text */}
+            <div className="w-1/2 flex flex-col gap-6">
+              <h1 className="text-[32px] font-bold leading-snug text-black">
+                Your <Highlight>Global Launchpad</Highlight> for
+                <br />
+                Investment, Startups,
+                <br />
+                Entrepreneurship, and Career Opportunities
+              </h1>
+
+              <p className="text-[22px] text-gray-800">
+                We fuel the global expansion of startups into new markets — for
+                entrepreneurs ready to scale and investors seeking high-growth
+                opportunities.
+              </p>
             </div>
 
-            <div className="hidden md:block">
-                <Row>
-                    <div className="flex items-center gap-18">
-                        {/* Text */}
-                        <div className="w-1/2 text-left flex flex-col justify-between">
-                            <h2 className="my-8 text-[32px] font-bold text-black">Your{" "}<mark className="bg-[#FFE52C]">Global Launchpad</mark>{" "}for<br></br> Investment, Startups,<br></br> Entrepreneurship, and Career Opportunities</h2>
-                            <p className="text-[24px]">
-                                We fuel the global expansion of startups into new markets — for
-                                entrepreneurs ready to scale and investors seeking high-growth
-                                opportunities.
-                            </p>
-                        </div>
-
-                        <div className="w-1/2">
-                            <Image
-                                width={1500}
-                                height={1500}
-                                src="/images/landing/TEAM 2 (1).svg"
-                                alt="hero"
-                                className="w-full h-auto object-cover"
-                            />
-                        </div>
-                    </div>
-                </Row>
+            {/* Image */}
+            <div className="w-1/2">
+              <Image
+                width={1500}
+                height={1500}
+                src="/images/landing/TEAM 2 (1).svg"
+                alt="Hero team"
+                className="w-full h-auto object-contain"
+                priority
+              />
             </div>
-        </div>
-    );
+          </div>
+        </Row>
+      </div>
+    </section>
+  );
 };
 
 export default Hero;

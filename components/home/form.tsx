@@ -45,7 +45,7 @@ export default function ContactForm() {
 
                 <div className="flex flex-col gap-3">
                   <label className="text-lg">
-                    What service are you interested in? <span style={{ color: "#EF1212" }}>*</span>
+                    What service are you interested in?<span style={{ color: "#EF1212" }}>*</span>
                   </label>
                   <select
                     className="h-12 rounded-2xl px-4 bg-white outline-none"

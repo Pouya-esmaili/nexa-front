@@ -34,7 +34,7 @@ const Hero = () => {
           <div className="flex items-center gap-16">
             {/* Text */}
             <div className="w-1/2 flex flex-col gap-6">
-              <h1 className="text-[32px] font-bold leading-snug text-black">
+              <h1 className="text-[42px] font-bold leading-snug text-black">
                 Your <Highlight>Global Launchpad</Highlight> for
                 <br />
                 Investment, Startups,
@@ -42,7 +42,7 @@ const Hero = () => {
                 Entrepreneurship, and Career Opportunities
               </h1>
 
-              <p className="text-[22px] text-gray-800">
+              <p className="text-[22px] text-black text-justify">
                 We fuel the global expansion of startups into new markets — for
                 entrepreneurs ready to scale and investors seeking high-growth
                 opportunities.

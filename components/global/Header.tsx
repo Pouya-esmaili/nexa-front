@@ -70,7 +70,7 @@ export default function Header() {
                                 About Us
                             </Link>
 
-                            <Link href="/forms" onClick={() => setMenuOpen(false)}>
+                            <Link href="/form/step-1" onClick={() => setMenuOpen(false)}>
                                 Forms
                             </Link>
 
@@ -134,7 +134,7 @@ export default function Header() {
                             About Us
                         </Link>
 
-                        <Link href="/forms/personal-info" className="hover:text-purple-600 transition-colors">
+                        <Link href="/form/step-1" className="hover:text-purple-600 transition-colors">
                             Forms
                         </Link>
                     </nav>

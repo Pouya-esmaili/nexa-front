@@ -29,7 +29,7 @@ export default function CommentsSection() {
         Our Community’s Experience
       </h2>
 
-      <div className="relative w-full overflow-hidden px-4 md:px-20">
+      <div className="relative w-full overflow-hidden py-8 px-4 md:px-20">
         {/* Desktop */}
         <div
           className="hidden md:flex gap-6 transition-all duration-300"
@@ -38,7 +38,7 @@ export default function CommentsSection() {
           {comments.map((item) => (
             <div
               key={item.id}
-              className="w-[340px] min-w-[340px] rounded-xl p-5 "
+              className="w-[340px] min-w-[340px] rounded-xl p-5"
               style={cardShadowStyle}
             >
               <div className="flex items-center justify-between mb-3">

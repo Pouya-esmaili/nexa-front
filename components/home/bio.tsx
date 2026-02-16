@@ -96,14 +96,13 @@ export default function Bio() {
                 {/* Text */}
                 <div className="space-y-4 mb-6">
 
-                    <h2 className="text-2xl font-bold text-center">
+                    <h2 className="text-3xl font-bold text-start">
                         Who <Highlight>We</Highlight> Are !
                     </h2>
 
-                    <p className="leading-relaxed text-black text-sm text-center">
-                        NEXA is a global hub where bold founders and bright ideas come to grow.
-                        We unite industry expertise with the creativity of young, global-minded team —
-                        fusing next-generation talent with strategic industry leadership to build global companies.
+                    <p className="leading-relaxed text-black text-md text-start">
+                        NEXA is a global hub where bold founders and bright ideas come to grow. We unite industry expertise with the creativity of young, global-minded team — fusing the fearless creativity of next-generation talent with the strategic precision of industry leaders to turn early concepts into world-ready companies. With strong roots in emerging markets and powerful networks across, we give entrepreneurs the capital, mentorship, and global access they need to thrive. We don’t just invest — we ignite ecosystems, accelerate growth, and help visionaries build meaningful impact. This is where ambition becomes reality, and where the next generation of global leaders begins.
+                        nies.
                     </p>
 
                 </div>
@@ -123,7 +122,7 @@ export default function Bio() {
                         <div className="border border-[#8F27FF] rounded-xl p-4 mb-4 text-center bg-white">
 
                             <p className="text-md font-semibold text-black">
-                               . Direct Access to Top Accelerators and Research Ecosystems
+                                . Direct Access to Top Accelerators and Research Ecosystems
                             </p>
 
                         </div>
@@ -132,7 +131,7 @@ export default function Bio() {
                         <div className="border border-[#8F27FF] rounded-xl p-4 mb-4 text-center bg-white">
 
                             <p className="text-md font-semibold text-black">
-                               . Cross-border Co-founder and Elite Talent Pools
+                                . Cross-border Co-founder and Elite Talent Pools
                             </p>
 
                         </div>
@@ -141,7 +140,7 @@ export default function Bio() {
                         <div className="border border-[#8F27FF] rounded-xl p-4 text-center bg-white">
 
                             <p className="text-md font-semibold text-black">
-                               . Global Investor Circles and Strategic Growth Capital
+                                . Global Investor Circles and Strategic Growth Capital
                             </p>
 
                         </div>

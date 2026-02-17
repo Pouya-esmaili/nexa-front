@@ -94,7 +94,7 @@ export default function Header() {
                 </div>
             </div>
 
-            <div className="hidden md:block mt-8">
+            <div className="hidden md:block p-4" style={{boxShadow: "0px 4px 30px 0px #00000040"}}>
                 <Row className="relative flex items-center">
                     <div className="flex-shrink-0">
                         <Image

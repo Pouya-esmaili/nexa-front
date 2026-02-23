@@ -9,7 +9,7 @@ const cardData = [
   {
     id: 1,
     title: 'Investment',
-    desc: 'With exclusive access to international investors and emerging opportunities, we focus on early-stage startups at the intersection of innovation and scalable growth',
+    desc: 'With Exclusive Access to International Investors and Emerging Opportunities, We Focus on Growth-Stage Startups Driving Scalable Innovation.',
     icon: '/images/landing/Investment.svg',
   },
   {

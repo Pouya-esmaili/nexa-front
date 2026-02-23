@@ -5,7 +5,7 @@ import DiacoTimeline from "@/components/About/diacoTimeline";
 import VisionTimeline from "@/components/About/visionTimeline";
 import TripTimeline from "@/components/About/tripTimeline";
 import InnovationTimeline from "@/components/About/innovationTimeline";
-import PreventigeneTimeline from "@/components/About/diacoTimeline";
+import PreventigeneTimeline from "@/components/About/preventigeneTimeline";
 import AutilabTimeline from "@/components/About/autilabTimeline";
 import LandacraftTimeline from "@/components/About/landacraftTimeline";
 import Certificat from "@/components/About/certificate";

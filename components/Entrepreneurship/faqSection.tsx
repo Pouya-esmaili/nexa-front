@@ -12,6 +12,14 @@ const faqData = [
     { title: "How do I get started with Nexa?", content: "To get started, simply reach out to us through our contact form or schedule a consultation. We'll guide you through the next steps." },
     { title: "What kind of support does Nexa provide?", content: "Nexa provides comprehensive support including strategic planning, financial management, mentorship, and access to a network of industry experts." },
     { title: "Can I participate in multiple programs?", content: "Yes, you can participate in multiple programs based on your interests and availability." },
+        { title: "What is the difference between active and passive involvement?", content: "Active involvement involves direct participation in business operations, while passive involvement focuses on strategic oversight and capital allocation." },
+    { title: "How do I get started with Nexa?", content: "To get started, simply reach out to us through our contact form or schedule a consultation. We'll guide you through the next steps." },
+    { title: "What kind of support does Nexa provide?", content: "Nexa provides comprehensive support including strategic planning, financial management, mentorship, and access to a network of industry experts." },
+    { title: "Can I participate in multiple programs?", content: "Yes, you can participate in multiple programs based on your interests and availability." },
+        { title: "What is the difference between active and passive involvement?", content: "Active involvement involves direct participation in business operations, while passive involvement focuses on strategic oversight and capital allocation." },
+    { title: "How do I get started with Nexa?", content: "To get started, simply reach out to us through our contact form or schedule a consultation. We'll guide you through the next steps." },
+    { title: "What kind of support does Nexa provide?", content: "Nexa provides comprehensive support including strategic planning, financial management, mentorship, and access to a network of industry experts." },
+    { title: "Can I participate in multiple programs?", content: "Yes, you can participate in multiple programs based on your interests and availability." },
 ];
 
 const FAQSection = () => {

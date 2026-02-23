@@ -27,7 +27,7 @@ const branch = () => {
                     ].map((text, index) => (
                         <div key={index} className="flex items-start gap-3">
                             <Image
-                                src="/images/Entrepreneurship/done.svg"
+                                src="/images/Entrepreneurship/donee.svg"
                                 alt="done"
                                 width={20}
                                 height={20}
@@ -41,7 +41,7 @@ const branch = () => {
                 <Image
                     width={1200}
                     height={1200}
-                    src="/images/Entrepreneurship/heroo.svg"
+                    src="/images/Entrepreneurship/herooo.svg"
                     alt="hero"
                     className="w-full h-auto object-contain"
                 />
@@ -60,7 +60,7 @@ const branch = () => {
                             <p className="text-[24px]">
                                 launch your next business branch in a new market
                             </p>
-                            <div className="w-68 h-[3px] bg-[#8F27FF] mb-4 mt-4" />
+                            <div className="w-70 h-[3px] bg-[#929292] mb-4 mt-4" />
 
 
                             {/* Bullet items */}
@@ -72,7 +72,7 @@ const branch = () => {
                                 ].map((text, index) => (
                                     <div key={index} className="flex items-start gap-3">
                                         <Image
-                                            src="/images/Entrepreneurship/done.svg"
+                                            src="/images/Entrepreneurship/donee.svg"
                                             alt="done"
                                             width={22}
                                             height={22}
@@ -89,9 +89,9 @@ const branch = () => {
                             <Image
                                 width={1500}
                                 height={1500}
-                                src="/images/Entrepreneurship/heroo.svg"
+                                src="/images/Entrepreneurship/herooo.svg"
                                 alt="hero"
-                                className="w-full h-80 object-cover"
+                                className="w-full h-98 object-cover"
                             />
                         </div>
                     </div>

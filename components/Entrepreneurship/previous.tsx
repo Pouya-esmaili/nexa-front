@@ -30,7 +30,7 @@ export default function PreviousProjectsSection() {
           Our Previous Projects
         </h2>
 
-        {/* Cards */}
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-18">
           {projects.map((project, index) => (
             <div

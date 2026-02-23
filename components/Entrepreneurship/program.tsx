@@ -18,26 +18,6 @@ const program = () => {
                 {/* Purple line */}
                 <div className="w-24 h-1 bg-[#8F27FF]" />
 
-                {/* Bullet items */}
-                {/* <div className="flex flex-col gap-4 mt-4">
-                    {[
-                        "Market entry strategy and localization",
-                        "Business development and partnerships",
-                        "Investor-ready structure and scaling",
-                    ].map((text, index) => (
-                        <div key={index} className="flex items-start gap-3">
-                            <Image
-                                src="/images/Entrepreneurship/done.svg"
-                                alt="done"
-                                width={20}
-                                height={20}
-                                className="mt-1"
-                            />
-                            <p className="text-[18px] text-justify">{text}</p>
-                        </div>
-                    ))}
-                </div> */}
-
                 <Image
                     width={1200}
                     height={1200}

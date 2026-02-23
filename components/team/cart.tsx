@@ -10,11 +10,10 @@ const team = [
   { name: 'Gelareh Bahrami', role: 'Sales Officer', image: '/images/ourteam/gelareh.svg' },
   { name: 'Parastoo Sanaifar', role: 'Business Advisor', image: '/images/ourteam/parastoo.svg' },
   { name: 'Milad Fatemi', role: 'Business Advisor', image: '/images/ourteam/milad.svg' },
-  { name: 'Narjes Orouji', role: 'UI/UX Designer', image: '/images/ourteam/ali.svg' },
-  { name: 'Parastoo Sanaifar', role: 'Business Advisor', image: '/images/ourteam/parastoo.svg' },
-  { name: 'Mehdi Esmaeili', role: 'Business Advisor', image: '/images/ourteam/parastoo.svg' },
+  { name: 'Mehdi Esmaeili', role: 'Front-End Developer', image: '/images/ourteam/pouya.svg' },
+  { name: 'Ali Soleimani', role: 'Accountant', image: '/images/ourteam/ali.svg' },
   { name: 'Narjes Orouji', role: 'UI/UX Designer', image: '/images/ourteam/narges.svg' },
-  { name: 'Amir Mohammad Esfahanizade', role: 'UI/UX Designer', image: '/images/ourteam/amirmohammad.svg' },
+  { name: 'Amir Esfahanizade', role: 'Back-End Developer', image: '/images/ourteam/amirmohammad.svg' },
 ];
 
 export default function TeamSection() {
@@ -49,7 +48,7 @@ export default function TeamSection() {
 
                 <a
                   href="#"
-                  className="bg-white/20 hover:bg-white hover:text-blue-600
+                  className=" hover:bg-white hover:text-blue-600
                    p-2 rounded-lg backdrop-blur transition"
                 >
                   <FaLinkedin size={20} />

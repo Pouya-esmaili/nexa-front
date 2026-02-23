@@ -1,52 +1,60 @@
-'use client';
-import React from 'react';
 import Row from "../global/Row";
 
-// فرض می‌کنیم داده‌های پروژه‌ها به این صورت باشد
-const projects = [
-    { id: 1, title: 'Arshia Gallery', imageUrl: '/images/Entrepreneurship/gallery.svg' },
-    { id: 2, title: 'Arshia Gallery', imageUrl: '/images/Entrepreneurship/nature.svg' },
-    { id: 3, title: 'Arshia Gallery', imageUrl: '/images/Entrepreneurship/laptop.svg' },
-    { id: 4, title: 'Arshia Gallery', imageUrl: '/images/Entrepreneurship/vigen.svg' },
-];
 
-const Previous = () => {
-    return (
-        <section className="py-12 bg-white">
-            <div className="container mx-auto px-4">
-                {/* تیتر سکشن */}
-                <h2 className="text-3xl font-bold text-center mb-10 text-black">
-                    Our Previous Projects
-                </h2>
+export default function PreviousProjectsSection() {
+  const projects = [
+    {
+      title: "Arshia Gallery",
+      image: "/images/Entrepreneurship/galleryy.svg",
+    },
+    {
+      title: "Afra Cafe",
+      image: "/images/Entrepreneurship/afra.svg",
+    },
+    {
+      title: "Green Frame",
+      image: "/images/Entrepreneurship/green.svg",
+    },
+    {
+      title: "Aurora Clinic",
+      image: "/images/Entrepreneurship/clinic.svg",
+    },
+  ];
 
-                {/* استفاده از کامپوننت Row شما */}
-                <Row className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 justify-items-center">
-                    {projects.map((project) => (
-                        <div
-                            key={project.id}
-                            className="flex flex-col w-full bg-white rounded-2xl overflow-hidden shadow-lg  transition-all hover:shadow-lg"
-                        >
-                            {/* بخش تصویر با حفظ تناسب مربعی */}
-                            <div className="aspect-square w-full">
-                                <img
-                                    src={project.imageUrl}
-                                    alt={project.title}
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
+  return (
+    <section className="w-full py-20">
+        <Row className="w-full">
+      <div className="mx-auto">
+        {/* Title */}
+        <h2 className="text-center text-3xl md:text-4xl font-semibold mb-14">
+          Our Previous Projects
+        </h2>
 
-                            {/* بخش متن پایین کارت مطابق عکس */}
-                            <div className="p-4 text-center">
-                                <span className="text-lg font-semibold">
-                                    {project.title}
-                                </span>
-                            </div>
-                        </div>
-                    ))}
-                </Row>
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-18">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="relative rounded-2xl overflow-hidden group cursor-pointer transition duration-300"
+            >
+              {/* Image */}
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full object-cover group-hover:scale-105 transition duration-500"
+              />
+
+              {/* Label */}
+              <div className="absolute bottom-4 left-4 px-4 py-2 rounded-lg bg-[#0000004D] backdrop-blur-sm">
+                <span className="text-white text-sm font-medium">
+                  {project.title}
+                </span>
+              </div>
             </div>
-        </section>
-    );
-};
-
-export default Previous;
+          ))}
+        </div>
+      </div>
+      </Row>
+    </section>
+  );
+}

@@ -8,15 +8,11 @@ const program = () => {
             {/* Mobile */}
             <div className="flex flex-col gap-6 px-6 mt-10 md:hidden">
                 <h2 className="text-3xl font-bold text-black">
-                    What is the Entrepreneurship?
+                    What is an Entrepreneurship program?
                 </h2>
 
                 <p className="text-[20px] text-justify">
-                    Entrepreneurship programs offered by different countries are designed to attract innovative founders, investors,
-                    and business owners who can contribute to economic growth, job creation, and innovation. These programs provide
-                    structured pathways for entrepreneurs to launch, expand, or relocate their businesses by offering access to new
-                    markets, resources, and supportive regulatory frameworks. Governments implement these programs to strengthen
-                    their economies, encourage foreign investment, and remain competitive in an increasingly globalized world.
+                    Entrepreneurship programs help founders and business owners access the Global markets, scale their ideas, and build sustainable businesses through clear, supportive pathways.
                 </p>
 
                 {/* Purple line */}
@@ -45,7 +41,7 @@ const program = () => {
                 <Image
                     width={1200}
                     height={1200}
-                    src="/images/Entrepreneurship/program.svg"
+                    src="/images/Entrepreneurship/programs.svg"
                     alt="hero"
                     className="w-full h-auto object-contain"
                 />
@@ -54,30 +50,26 @@ const program = () => {
             {/* Desktop */}
             <div className="hidden md:block">
                 <Row>
-                    <div className="flex items-center gap-18 mt-20">
+                    <div className="flex items-center gap-18 my-20">
                         {/* Image */}
                         <div className="w-1/2">
                             <Image
                                 width={1500}
                                 height={1500}
-                                src="/images/Entrepreneurship/program.svg"
+                                src="/images/Entrepreneurship/programs.svg"
                                 alt="hero"
-                                className="w-full h-80 object-cover"
+                                className="w-full h-96 object-cover"
                             />
                         </div>
 
                         {/* Text */}
                         <div className="w-1/2 text-left flex flex-col justify-between">
                             <h2 className="text-3xl font-bold text-black">
-                                What is the Entrepreneurship?
+                                What is an Entrepreneurship program?
                             </h2>
                             <div className="w-68 h-[3px] bg-[#8F27FF] mb-4 mt-8" />
                             <p className="text-lg">
-                                Entrepreneurship programs offered by different countries are designed to attract innovative founders, investors,
-                                and business owners who can contribute to economic growth, job creation, and innovation. These programs provide
-                                structured pathways for entrepreneurs to launch, expand, or relocate their businesses by offering access to new
-                                markets, resources, and supportive regulatory frameworks. Governments implement these programs to strengthen
-                                their economies, encourage foreign investment, and remain competitive in an increasingly globalized world.
+                                Entrepreneurship programs help founders and business owners access the Global markets, scale their ideas, and build sustainable businesses through clear, supportive pathways.
                             </p>
                         </div>
                     </div>

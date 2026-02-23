@@ -14,8 +14,7 @@ const diacoTimeline: React.FC = () => {
                                 First Venture – Diaco
                             </h3>
                             <p className="text-gray-900 text-lg">
-                                Diaco was launched to address factory automation challenges by
-                                translating technical expertise into operational solutions.
+                         Diaco was launched to address factory automation challenges by translating technical expertise into operational solutions.
                             </p>
                         </div>
 
@@ -36,7 +35,7 @@ const diacoTimeline: React.FC = () => {
                         <div className="flex justify-center md:justify-end">
                             <div className="rounded-xl">
                                 <img
-                                    src="/images/about/preventigene.svg"
+                                    src="/images/about/diacoo.svg"
                                     alt="Diaco team"
                                     className="w-full object-cover"
                                 />

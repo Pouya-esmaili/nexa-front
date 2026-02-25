@@ -13,7 +13,7 @@ export default function ProjectsSection() {
     {
       title: "Landa Trip",
       image: "/images/landing/projects(1).svg",
-      logo: "/images/landing/Autilab.svg",
+      logo: "/images/landing/trip.svg",
       link: "/projects/landa-trip",
     },
     {
@@ -31,11 +31,11 @@ export default function ProjectsSection() {
     {
       title: "Vision raft",
       image: "/images/landing/projects(7).svg",
-      logo: "/images/landing/craft.svg",
+      logo: "/images/landing/raft.svg",
       link: "/projects/landa-craft",
     },
     {
-      title: "diaco",
+      title: "Diaco",
       image: "/images/landing/projects(8).svg",
       logo: "/images/landing/diaco.svg",
       link: "/projects/landa-craft",
@@ -102,7 +102,7 @@ export default function ProjectsSection() {
                 height={34}
                 className="opacity-80"
               />
-              <span className="text-sm text-white font-medium">
+              <span className="text-sm text-white font-extrabold">
                 {project.title}
               </span>
             </div>

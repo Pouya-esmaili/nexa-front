@@ -23,17 +23,17 @@ const Team = () => {
                         Behind the <Highlight>Nexa</Highlight>
                     </h2>
 
-                    <p className="text-justify text-[18px] text-black">
+                    <p className="text-justify text-[18px] font-normal text-black">
                         NEXA is an international team with 10+ years of hands-on experience in launching and scaling businesses globally. Our expertise spans Global Marketing Strategy, Product Development, Advanced R&D, Branding & Graphic Design, UI/UX Design, Content Strategy, and Go-to-Market Execution, with a strong focus on execution.
                     </p>
                     <br />
-                    <p className='text-justify text-[18px] text-black'>
+                    <p className='text-justify text-[18px] font-normal text-black'>
                         We deliver investment-ready strategies through close collaboration with international consultants and legal experts, helping founders turn early-stage ideas into scalable, market-ready companies.
                     </p>
 
                     <Link
                         href="/our-team"
-                        className="mt-7 h-12 w-46 border border-[#8F27FF] text-medium font-medium text-[#8F27FF] hover:bg-[#8F27FF] hover:text-white flex items-start justify-start rounded-3xl px-6 py-3 text-base transition-colors duration-300"
+                        className="mt-7 h-12 w-46 border border-[#8F27FF] text-medium font-semibold text-[#8F27FF] hover:bg-[#8F27FF] hover:text-white flex items-start justify-start rounded-3xl px-6 py-3 text-base transition-colors duration-300"
                     >
                         Meet Our Team →
                     </Link>
@@ -49,17 +49,17 @@ const Team = () => {
                                 Behind the <Highlight>Nexa</Highlight>
                             </h2>
 
-                            <p className="text-[20px] text-black">
+                            <p className="text-[20px] font-normal text-black">
                                 NEXA is an international team with 10+ years of hands-on experience in launching and scaling businesses globally. Our expertise spans Global Marketing Strategy, Product Development, Advanced R&D, Branding & Graphic Design, UI/UX Design, Content Strategy, and Go-to-Market Execution, with a strong focus on execution.
                             </p>
                             <br />
-                            <p className='text-[20px] text-black'>
+                            <p className='text-[20px] font-normal text-black'>
                                 We deliver investment-ready strategies through close collaboration with international consultants and legal experts, helping founders turn early-stage ideas into scalable, market-ready companies.
                             </p>
 
                             <Link
                                 href="/our-team"
-                                className="mt-7 h-12 w-max border border-[#8F27FF] font-medium text-[#8F27FF] hover:bg-[#8F27FF] hover:text-white flex items-center justify-center rounded-3xl px-6 py-3 text-base transition-colors duration-300"
+                                className="mt-7 h-12 w-max border border-[#8F27FF] font-medium font-semibold text-[#8F27FF] hover:bg-[#8F27FF] hover:text-white flex items-center justify-center rounded-3xl px-6 py-3 text-base transition-colors duration-300"
                             >
                                 Meet Our Team →
                             </Link>

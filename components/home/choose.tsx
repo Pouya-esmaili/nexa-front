@@ -20,10 +20,10 @@ export default function Choose() {
         <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {items.map((item, index) => (
             <div key={index} className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-[#E9E9E9] flex items-center justify-center shadow-lg font-bold text-[#8F27FF]">
+              <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-[#E9E9E9] text-2xl flex items-center justify-center shadow-lg font-bold text-[#8F27FF]">
                 {String(index + 1).padStart(2, "0")}
               </div>
-              <p className="text-black font-semibold">{item}</p>
+              <p className="text-black font-normal">{item}</p>
             </div>
           ))}
         </div>

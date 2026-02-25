@@ -1,19 +1,22 @@
 'use client';
 
+import React, { useState } from "react";
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
 
 export default function StepSevenPage() {
 
   const router = useRouter();
   const [selected, setSelected] = useState('TRIAL');
 
-  const handleNext = (e) => {
+  // تایپ فرم
+  const handleNext = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     router.push('/form/step-8');
   };
 
-  const handlePrev = () => {
+  // دکمه قبلی
+  const handlePrev = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     router.push('/form/step-6');
   };
 
@@ -38,7 +41,7 @@ export default function StepSevenPage() {
               key={item}
               className={`
                 flex items-center gap-4
-                 rounded-xl px-5 h-12 shadow-lg
+                rounded-xl px-5 h-12 shadow-lg
                 bg-white cursor-pointer transition
                 ${selected === item ? 'border-[#8F27FF]' : 'border-gray-300'}
               `}

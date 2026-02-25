@@ -29,13 +29,13 @@ export default function Bio() {
                             }}
                         >
 
-                            <p className="mb-6 text-lg font-semibold text-black">
+                            <p className="mb-6 text-lg font-bold text-black">
                                 Through exclusive networks in Europe, Canada, and the Middle East, we deliver:
                             </p>
 
                             <ul className="space-y-3 text-black">
 
-                                <li className="text-md font-semibold">
+                                <li className="text-md font-medium">
                                     • Direct Access to Top Accelerators and Research Ecosystems
                                 </li>
 
@@ -58,7 +58,7 @@ export default function Bio() {
                             Who <Highlight>We</Highlight> Are !
                         </h2>
 
-                        <p className="leading-relaxed text-black text-lg">
+                        <p className="leading-relaxed font-normal text-black text-lg">
                             NEXA is a global hub where bold founders and bright ideas come to grow.
                             We unite industry expertise with the creativity of young, global-minded team —
                             fusing the fearless creativity of next-generation talent with the strategic precision
@@ -100,7 +100,7 @@ export default function Bio() {
                         Who <Highlight>We</Highlight> Are !
                     </h2>
 
-                    <p className="leading-relaxed text-black text-md text-start">
+                    <p className="leading-relaxed text-black text-md font-normal text-start">
                         NEXA is a global hub where bold founders and bright ideas come to grow. We unite industry expertise with the creativity of young, global-minded team — fusing the fearless creativity of next-generation talent with the strategic precision of industry leaders to turn early concepts into world-ready companies. With strong roots in emerging markets and powerful networks across, we give entrepreneurs the capital, mentorship, and global access they need to thrive. We don’t just invest — we ignite ecosystems, accelerate growth, and help visionaries build meaningful impact. This is where ambition becomes reality, and where the next generation of global leaders begins.
                         nies.
                     </p>
@@ -113,7 +113,7 @@ export default function Bio() {
                     className="rounded-2xl"
                 >
 
-                    <p className="mb-4 text-[18px] font-semibold text-center text-black">
+                    <p className="mb-4 text-[18px] font-bold text-center text-black">
                         Through exclusive networks in Europe, Canada, and the Middle East, we deliver:
                     </p>
 
@@ -121,7 +121,7 @@ export default function Bio() {
 
                         <div className="border border-[#8F27FF] rounded-xl p-4 mb-4 text-center bg-white">
 
-                            <p className="text-md font-semibold text-black">
+                            <p className="text-md font-medium text-black">
                                 . Direct Access to Top Accelerators and Research Ecosystems
                             </p>
 

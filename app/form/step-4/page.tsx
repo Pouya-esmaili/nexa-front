@@ -1,23 +1,21 @@
 'use client';
 
+import React from "react";
 import { useRouter } from 'next/navigation';
 
 export default function StepFourPage() {
 
   const router = useRouter();
 
-  const handleNext = (e) => {
+  const handleNext = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    console.log('Form submitted');
-
-    // انتقال به step-5
     router.push('/form/step-5');
   };
-
-  const handlePrev = (e) => {
+  console.log('Form submitted');
+  
+  const handlePrev = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    router.push('/form/step-3');
+    router.push('/form/step-2');
   };
 
   return (

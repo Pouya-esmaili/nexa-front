@@ -47,16 +47,16 @@ export default function Header() {
           `}
                 >
                     <div className="flex flex-col justify-between h-full px-6 py-8">
-                        <nav className="flex flex-col gap-6 text-black">
+                        <nav className="flex flex-col gap-6 font-normal text-black">
                             <Link href="/" onClick={() => setMenuOpen(false)}>
                                 Home
                             </Link>
 
                             <details>
-                                <summary className="cursor-pointer list-none">
+                                <summary className="cursor-pointer font-normal list-none">
                                     Services
                                 </summary>
-                                <div className="flex flex-col gap-3 pl-4 mt-2">
+                                <div className="flex flex-col gap-3 font-normal pl-4 mt-2">
                                     <Link href="/services/service1" onClick={() => setMenuOpen(false)}>
                                         Service 1
                                     </Link>
@@ -94,7 +94,7 @@ export default function Header() {
                 </div>
             </div>
 
-            <div className="hidden md:block p-4" style={{boxShadow: "0px 4px 30px 0px #00000040"}}>
+            <div className="hidden md:block p-4" style={{ boxShadow: "0px 4px 30px 0px #00000040" }}>
                 <Row className="relative flex items-center">
                     <div className="flex-shrink-0">
                         <Image

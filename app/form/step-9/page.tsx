@@ -1,13 +1,14 @@
 'use client';
 
+import React, { useState } from "react";
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
 
 export default function StepNinePage() {
   const router = useRouter();
   const [agreed, setAgreed] = useState(false);
 
-  const handleSubmit = (e) => {
+  // تایپ فرم
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!agreed) {
       alert("Please agree to the terms first.");
@@ -16,7 +17,8 @@ export default function StepNinePage() {
     console.log('Final Submit');
   };
 
-  const handlePrev = (e) => {
+  // تایپ دکمه Prev
+  const handlePrev = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     router.push('/form/step-8');
   };

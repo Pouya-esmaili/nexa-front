@@ -1,7 +1,7 @@
 'use client';
 
+import React, { useState } from "react";
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
 import Image from 'next/image';
 
 export default function StepEightPage() {
@@ -10,17 +10,21 @@ export default function StepEightPage() {
   const [fileName, setFileName] = useState('');
   const [basedInCanada, setBasedInCanada] = useState('yes');
 
-  const handleNext = (e) => {
+  // تایپ فرم
+  const handleNext = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     router.push('/form/step-9'); // اگر مرحله بعد داری
   };
 
-  const handlePrev = () => {
+  // دکمه قبلی
+  const handlePrev = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     router.push('/form/step-7');
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
+  // آپلود فایل
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
     if (file && file.type === 'application/pdf') {
       setFileName(file.name);
     }
@@ -46,7 +50,7 @@ export default function StepEightPage() {
               We will review ALL applications and get back to you.
             </p>
 
-            <label className="shadow-lg rounded-xl bg-white  p-8     flex flex-col items-center justify-center cursor-pointer hover:border-[#8F27FF] transition">
+            <label className="shadow-lg rounded-xl bg-white p-8 flex flex-col items-center justify-center cursor-pointer hover:border-[#8F27FF] transition">
 
               <Image
                 src="/images/form/upload.svg"
@@ -69,7 +73,6 @@ export default function StepEightPage() {
             </label>
 
           </div>
-
 
           {/* Canada Question */}
           <div className="flex flex-col gap-3">
@@ -127,7 +130,6 @@ export default function StepEightPage() {
           </div>
 
         </div>
-
 
         {/* دکمه ها پایین */}
         <div className="flex justify-between ">

@@ -1,12 +1,14 @@
 'use client';
 
+import React from "react";
 import { useRouter } from 'next/navigation';
 
 export default function StepSixPage() {
 
   const router = useRouter();
 
-  const handleNext = (e) => {
+  // تایپ فرم
+  const handleNext = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     console.log('Step 6 submitted');
@@ -15,15 +17,13 @@ export default function StepSixPage() {
     router.push('/form/step-7');
   };
 
-
-  const handlePrev = (e) => {
+  // تایپ کلیک دکمه
+  const handlePrev = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     router.push('/form/step-5');
   };
 
-
   return (
-
     <div className="w-full">
 
       <form
@@ -54,7 +54,6 @@ export default function StepSixPage() {
 
         </div>
 
-
         {/* buttons */}
         <div className="flex justify-between mt-12">
 
@@ -65,7 +64,6 @@ export default function StepSixPage() {
           >
             ← Prev
           </button>
-
 
           <button
             type="submit"
@@ -79,7 +77,5 @@ export default function StepSixPage() {
       </form>
 
     </div>
-
   );
-
 }

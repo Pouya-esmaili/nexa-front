@@ -12,7 +12,7 @@ const Hero = () => {
           Entrepreneurship, and Career Opportunities
         </h1>
 
-        <p className="text-lg text-justify">
+        <p className="text-lg font-normal text-justify">
           We fuel the global expansion of startups into new markets — for
           entrepreneurs ready to scale and investors seeking high-growth
           opportunities.
@@ -42,7 +42,7 @@ const Hero = () => {
                 Entrepreneurship, and Career Opportunities
               </h1>
 
-              <p className="text-[22px] text-black text-justify">
+              <p className="text-[22px] text-black font-normal text-justify">
                 We fuel the global expansion of startups into new markets — for
                 entrepreneurs ready to scale and investors seeking high-growth
                 opportunities.

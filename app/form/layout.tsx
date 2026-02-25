@@ -1,5 +1,6 @@
 'use client';
 
+import type { CSSProperties } from "react";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -43,7 +44,11 @@ const steps = [
   },
 ];
 
-export default function FormLayout({ children }) {
+export default function FormLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const pathname = usePathname();
 
   // گرفتن شماره استپ فعلی از URL
@@ -153,7 +158,7 @@ export default function FormLayout({ children }) {
   );
 }
 
-const styles = {
+const styles: Record<string, CSSProperties> = {
   container: {
     display: 'flex',
     gap: '32px',

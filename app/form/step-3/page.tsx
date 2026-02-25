@@ -1,17 +1,20 @@
 'use client';
 
+import React from "react";
 import { useRouter } from 'next/navigation';
 
 export default function StepThreePage() {
 
   const router = useRouter();
 
-  const handleNext = (e) => {
+  // تایپ فرم
+  const handleNext = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     router.push('/form/step-4');
   };
 
-  const handlePrev = (e) => {
+  // تایپ کلیک دکمه
+  const handlePrev = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     router.push('/form/step-2');
   };

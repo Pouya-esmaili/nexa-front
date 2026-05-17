@@ -6,30 +6,33 @@ import Image from 'next/image';
 
 // Card data
 const cardData = [
-    {
+  {
     id: 1,
     title: 'Entrepreneurship',
     desc: 'From business development to investor engagement, we guide ambitious founders to scale globally — turning bold ideas into borderless, investment-ready ventures.',
     icon: '/images/landing/Entrepeneurship.svg',
+    link: '/Entrepreneurship',
   },
   {
     id: 2,
-    title: 'Investment',
-    desc: 'With Exclusive Access to International Investors and Emerging Opportunities, We Focus on Growth-Stage Startups Driving Scalable Innovation.',
-    icon: '/images/landing/Investment.svg',
-  },
-
-  {
-    id: 3,
     title: 'Startup',
     desc: 'We deliver precise startup advisory, crafting professional business plans, financial models, and investor pitch decks tailored for global success.',
-    icon: '/images/landing/Advisory.svg',
+    icon: '/images/landing/Investment.svg',
+    link: '/startup',
   },
   {
-    id: 4,
+    id: 3,
     title: 'Advisory',
     desc: 'Our expertise spans business development, financial planning and modeling, compelling pitch deck creation, IP guidance, go-to-market strategy, and strategic investor engagement.',
     icon: '/images/landing/Advisory.svg',
+    link: '/advisory',
+  },
+  {
+    id: 4,
+    title: 'Investment',
+    desc: 'With Exclusive Access to International Investors and Emerging Opportunities, We Focus on Growth-Stage Startups Driving Scalable Innovation.',
+    icon: '/images/landing/Advisory.svg',
+    link: '/advisory',
   },
 ];
 
@@ -45,12 +48,13 @@ export default function CardsPage() {
         "
       >
         {cardData.map((card) => (
-          <Card
-            key={card.id}
-            title={card.title}
-            desc={card.desc}
-            icon={card.icon}
-          />
+          <Link key={card.id} href={card.link} className="w-full">
+            <Card
+              title={card.title}
+              desc={card.desc}
+              icon={card.icon}
+            />
+          </Link>
         ))}
       </div>
     </div>
@@ -80,7 +84,7 @@ function Card({
 
           {/* Description */}
           <div className="flex-1 flex items-start overflow-hidden transition-all duration-500 max-h-[200px] opacity-100 group-hover:max-h-0 group-hover:opacity-0 mt-6">
-            <p className="text-black text-مل font-normal leading-relaxed mb-12">
+            <p className="text-black text-lg font-normal leading-relaxed mb-12">
               {desc}
             </p>
           </div>

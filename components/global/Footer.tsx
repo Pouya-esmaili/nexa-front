@@ -113,10 +113,10 @@ export default function Footer() {
                         <div>
                             <h4 className="font-bold text-black text-center mb-4">Services</h4>
                             <ul className="space-y-2 text-sm text-center text-black">
-                                <li><Link href="#">Startup</Link></li>
-                                <li><Link href="#">Investment</Link></li>
-                                <li><Link href="#">Advisory</Link></li>
-                                <li><Link href="#">Entrepreneurship</Link></li>
+                                <li><Link href="./startup">Startup</Link></li>
+                                <li><Link href="./investment">Investment</Link></li>
+                                <li><Link href="./advisory">Advisory</Link></li>
+                                <li><Link href="./Entrepreneurship">Entrepreneurship</Link></li>
                             </ul>
                         </div>
 

@@ -11,6 +11,7 @@ const team = [
   { name: 'Parastoo Sanaifar', role: 'Business Advisor', image: '/images/ourteam/parastoo.svg' },
   { name: 'Milad Fatemi', role: 'Business Advisor', image: '/images/ourteam/milad.svg' },
   { name: 'Mehdi Esmaeili', role: 'Front-End Developer', image: '/images/ourteam/pouya.svg' },
+  { name: 'Sajjad  Esmaeili', role: 'Front-End Developer', image: '/images/ourteam/pouya.svg' },
   { name: 'Ali Soleimani', role: 'Accountant', image: '/images/ourteam/ali.svg' },
   { name: 'Narjes Orouji', role: 'UI/UX Designer', image: '/images/ourteam/narges.svg' },
   { name: 'Amir Esfahanizade', role: 'Back-End Developer', image: '/images/ourteam/amirmohammad.svg' },
@@ -38,10 +39,10 @@ export default function TeamSection() {
             <div className="relative mt-20 p-4 pt-20 text-white ">
               <div className="flex justify-between items-end">
                 <div className='mt-20'>
-                  <h3 className="font-bold text-md mt-20">
+                  <h3 className="text-2xl mt-20">
                     {member.name}
                   </h3>
-                  <p className="text-xs text-gray-300 mt-2 ">
+                  <p className="text-lg mt-2 ">
                     {member.role}
                   </p>
                 </div>

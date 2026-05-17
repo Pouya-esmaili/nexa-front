@@ -13,11 +13,11 @@ const Academy = () => {
                     alt="hero"
                     className="w-full h-auto object-contain"
                 />
-                <h2 className="text-3xl font-bold text-[#8F27FF]">
+                <h2 className="text-2xl text-center font-bold text-[#8F27FF]">
                     Zero Point | Before the Academy
                 </h2>
 
-                <p className="text-[20px] text-justify">
+                <p className="text-[17px] text-center">
                     Nexa is guided by a team shaped around Hadi Hasanpour, whose multidisciplinary engineering background and analytical expertise established a structured approach to building ventures. With formal training across electrical, civil, and mechanical engineering, combined with experience in structured consulting, systems analysis, and entrepreneurship, this foundation defined Nexa’s direction long before its first venture was launched.
                 </p>
 

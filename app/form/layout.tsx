@@ -1,6 +1,5 @@
 'use client';
 
-import type { CSSProperties } from "react";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -44,6 +43,9 @@ const steps = [
   },
 ];
 
+const allStepItems = steps.flatMap(group => group.items);
+const totalSteps = allStepItems.length;
+
 export default function FormLayout({
   children,
 }: {
@@ -51,87 +53,84 @@ export default function FormLayout({
 }) {
   const pathname = usePathname();
 
-  // گرفتن شماره استپ فعلی از URL
   const currentStep = Number(pathname.split('step-')[1] || 1);
+  const currentStepLabel = allStepItems.find(s => s.step === currentStep)?.label ?? '';
+  const progressPercent = (currentStep / totalSteps) * 100;
 
   return (
-    <div style={{ padding: '40px' }}>
-      <h1 style={styles.heading}>Apply For Funding</h1>
+    <div className="px-4 py-8 md:px-10 lg:px-16">
+      <h1 className="text-center text-2xl font-semibold mb-6">Apply For Funding</h1>
 
-      <div style={styles.container}>
+      {/* Mobile progress indicator — hidden on desktop */}
+      <div className="lg:hidden mb-6 px-1">
+        <div className="flex justify-between text-sm text-gray-500 mb-2">
+          <span>Step {currentStep} of {totalSteps}</span>
+          <span>{currentStepLabel}</span>
+        </div>
+        <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+          <div
+            className="h-full bg-[#8F27FF] rounded-full transition-all duration-300"
+            style={{ width: `${progressPercent}%` }}
+          />
+        </div>
+      </div>
 
-        {/* Sidebar */}
-        <aside style={styles.sidebar}>
+      <div className="flex flex-col lg:flex-row gap-6">
+
+        {/* Sidebar — hidden on mobile */}
+        <aside className="hidden lg:block w-[300px] p-5 rounded-2xl border border-[#929292] bg-[#F4F4F4] shrink-0">
 
           {steps.map((step) => {
-
             const stepNumbers = step.items.map(i => i.step);
             const maxStepInGroup = Math.max(...stepNumbers);
             const minStepInGroup = Math.min(...stepNumbers);
 
-            const isStepActive =
-              currentStep >= minStepInGroup &&
-              currentStep <= maxStepInGroup;
-
-            const isStepCompleted =
-              currentStep > maxStepInGroup;
+            const isStepActive = currentStep >= minStepInGroup && currentStep <= maxStepInGroup;
+            const isStepCompleted = currentStep > maxStepInGroup;
 
             return (
-              <div key={step.id} style={styles.stepWrapper}>
+              <div key={step.id} className="flex gap-3 mb-5">
 
-                {/* Circle + Line */}
-                <div style={styles.circleColumn}>
-
+                <div className="flex flex-col items-center">
                   <div
+                    className="w-[26px] h-[26px] rounded-full border-2 flex items-center justify-center text-[13px] font-semibold shrink-0"
                     style={{
-                      ...styles.circle,
-                      backgroundColor:
-                        isStepActive || isStepCompleted ? '#22c55e' : '#fff',
-                      color:
-                        isStepActive || isStepCompleted ? '#fff' : '#000',
-                      borderColor:
-                        isStepActive || isStepCompleted ? '#22c55e' : '#ccc',
+                      backgroundColor: isStepActive || isStepCompleted ? '#22c55e' : '#fff',
+                      color: isStepActive || isStepCompleted ? '#fff' : '#000',
+                      borderColor: isStepActive || isStepCompleted ? '#22c55e' : '#ccc',
                     }}
                   >
                     {isStepCompleted ? '✓' : step.id}
                   </div>
 
                   {step.id !== steps.length && (
-                    <div style={styles.line} />
+                    <div className="w-0.5 h-10 bg-[#ddd] mt-1" />
                   )}
                 </div>
 
-                {/* Text */}
                 <div>
                   <Link
                     href={step.href}
+                    className="text-sm no-underline"
                     style={{
-                      ...styles.title,
-                      color:
-                        isStepActive || isStepCompleted
-                          ? '#22c55e'
-                          : '#000',
+                      color: isStepActive || isStepCompleted ? '#22c55e' : '#000',
                       fontWeight: isStepActive ? '600' : '400',
                     }}
                   >
                     {step.title}
                   </Link>
 
-                  <ul style={styles.subList}>
+                  <ul className="pl-3.5 mt-1">
                     {step.items.map((item, i) => {
-
                       const isItemActive = currentStep === item.step;
                       const isItemCompleted = currentStep > item.step;
 
                       return (
                         <li
                           key={i}
+                          className="text-xs mb-1"
                           style={{
-                            ...styles.subItem,
-                            color:
-                              isItemActive || isItemCompleted
-                                ? '#22c55e'
-                                : '#777',
+                            color: isItemActive || isItemCompleted ? '#22c55e' : '#777',
                             fontWeight: isItemActive ? '600' : '400',
                           }}
                         >
@@ -149,7 +148,7 @@ export default function FormLayout({
         </aside>
 
         {/* Main Content */}
-        <main style={styles.main}>
+        <main className="flex-1 min-h-[440px] p-6 md:p-8 rounded-2xl border border-[#929292] bg-[#F4F4F4]">
           {children}
         </main>
 
@@ -157,81 +156,3 @@ export default function FormLayout({
     </div>
   );
 }
-
-const styles: Record<string, CSSProperties> = {
-  container: {
-    display: 'flex',
-    gap: '32px',
-    padding: '30px 130px',
-  },
-
-  sidebar: {
-    width: '300px',
-    padding: '20px',
-    borderRadius: '20px',
-    border: '1px solid #929292',
-    background: '#F4F4F4',
-  },
-
-  main: {
-    flex: 1,
-    height: "440px",
-    padding: '30px',
-    borderRadius: '20px',
-    border: '1px solid #929292',
-    background: '#F4F4F4',
-  },
-
-  heading: {
-    textAlign: 'center',
-    fontSize: '28px',
-    fontWeight: '600',
-    marginBottom: '30px',
-  },
-
-  stepWrapper: {
-    display: 'flex',
-    gap: '12px',
-    marginBottom: '20px',
-  },
-
-  circleColumn: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-
-  circle: {
-    width: '26px',
-    height: '26px',
-    borderRadius: '50%',
-    border: '2px solid #ccc',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: '13px',
-    fontWeight: '600',
-  },
-
-  line: {
-    width: '2px',
-    height: '40px',
-    background: '#ddd',
-    marginTop: '4px',
-  },
-
-  title: {
-    textDecoration: 'none',
-    fontSize: '14px',
-  },
-
-  subList: {
-    paddingLeft: '14px',
-    marginTop: '4px',
-  },
-
-  subItem: {
-    fontSize: '12px',
-    marginBottom: '4px',
-  },
-};

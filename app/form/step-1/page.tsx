@@ -29,7 +29,7 @@ export default function StepOnePage() {
         <div className=''>
 
           {/* row 1 */}
-          <div className="grid grid-cols-2 gap-x-12 gap-y-8 mb-10 ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8 mb-10">
 
             <div className="flex flex-col gap-2">
               <label className="text-sm font-medium">
@@ -38,7 +38,7 @@ export default function StepOnePage() {
 
               <input
                 type="text"
-                className="w-full max-w-[320px] h-11 rounded-xl px-4 bg-white outline-none shadow-sm"
+                className="w-full h-11 rounded-xl px-4 bg-white outline-none shadow-sm"
               />
             </div>
 
@@ -49,14 +49,14 @@ export default function StepOnePage() {
 
               <input
                 type="text"
-                className="w-full max-w-[320px] h-11 rounded-xl px-4 bg-white outline-none shadow-sm"
+                className="w-full h-11 rounded-xl px-4 bg-white outline-none shadow-sm"
               />
             </div>
 
           </div>
 
           {/* row 2 */}
-          <div className="grid grid-cols-2 gap-x-12 gap-y-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
 
             <div className="flex flex-col gap-2">
               <label className="text-sm font-medium">
@@ -66,7 +66,7 @@ export default function StepOnePage() {
               <input
                 type="text"
                 placeholder="+91"
-                className="w-full max-w-[320px] h-11 rounded-xl px-4 bg-white outline-none shadow-sm"
+                className="w-full h-11 rounded-xl px-4 bg-white outline-none shadow-sm"
               />
             </div>
 
@@ -77,7 +77,7 @@ export default function StepOnePage() {
 
               <input
                 type="email"
-                className="w-full max-w-[320px] h-11 rounded-xl px-4 bg-white outline-none shadow-sm"
+                className="w-full h-11 rounded-xl px-4 bg-white outline-none shadow-sm"
               />
             </div>
 
@@ -91,16 +91,22 @@ export default function StepOnePage() {
           <button
             type="button"
             onClick={handlePrev}
-            className="border border-[#8F27FF] text-[#8F27FF] px-8 h-11 rounded-xl hover:bg-[#8F27FF] hover:text-white transition"
+            className="w-12 h-12 flex items-center justify-center rounded-xl border border-[#8F27FF] text-[#8F27FF] hover:bg-[#8F27FF] hover:text-white transition"
+            aria-label="Previous"
           >
-            ← Prev
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </button>
 
           <button
             type="submit"
-            className="border border-[#8F27FF] text-[#8F27FF] px-8 h-11 rounded-xl hover:bg-[#8F27FF] hover:text-white transition"
+            className="w-12 h-12 flex items-center justify-center rounded-xl border border-[#8F27FF] text-[#8F27FF] hover:bg-[#8F27FF] hover:text-white transition"
+            aria-label="Next"
           >
-            Next →
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </button>
 
         </div>

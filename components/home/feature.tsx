@@ -75,7 +75,7 @@ function Card({
       {/* Card Shadow Wrapper */}
       <div className="relative w-full filter drop-shadow-[0_-1px_0_#8F27FF] group-hover:drop-shadow-none transition-all duration-300 h-full">
         {/* Card Body */}
-        <div className="relative w-full bg-white border border-[#8F27FF] rounded-2xl p-5 pt-20 pb-10 flex flex-col items-center text-center h-full transition-all duration-500 group-hover:bg-[#8F27FF] group-hover:translate-y-4 [mask-image:radial-gradient(circle_at_top_center,transparent_2.8rem,black_2.9rem)] [-webkit-mask-image:radial-gradient(circle_at_top_center,transparent_2.8rem,black_2.9rem)]">
+        <div className="relative w-full bg-white border border-[#8F27FF] rounded-2xl p-5 pt-16 pb-20 flex flex-col items-center text-center h-full transition-all duration-500 group-hover:bg-[#8F27FF] group-hover:translate-y-4 [mask-image:radial-gradient(circle_at_top_center,transparent_2.8rem,black_2.9rem)] [-webkit-mask-image:radial-gradient(circle_at_top_center,transparent_2.8rem,black_2.9rem)]">
 
           {/* Title */}
           <h3 className="absolute top-10 left-1/2 -translate-x-1/2 text-3xl font-semibold text-black mb-4 transition-all duration-800 ease-in-out group-hover:top-1/2 group-hover:-translate-y-1/2 group-hover:text-white">

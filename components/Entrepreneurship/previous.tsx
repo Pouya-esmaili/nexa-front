@@ -1,5 +1,7 @@
-import Row from "../global/Row";
+"use client";
 
+import { useState } from "react";
+import Row from "../global/Row";
 
 export default function PreviousProjectsSection() {
   const projects = [
@@ -21,40 +23,102 @@ export default function PreviousProjectsSection() {
     },
   ];
 
+  const [current, setCurrent] = useState(0);
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % projects.length);
+  };
+
+  const prevSlide = () => {
+    setCurrent((prev) =>
+      prev === 0 ? projects.length - 1 : prev - 1
+    );
+  };
+
   return (
     <section className="w-full py-20">
-        <Row className="w-full">
-      <div className="mx-auto">
+
+      {/* Mobile Slider */}
+      <div className="md:hidden px-4">
         {/* Title */}
-        <h2 className="text-center text-3xl md:text-4xl font-semibold mb-14">
+        <h2 className="text-center text-3xl font-semibold mb-10">
           Our Previous Projects
         </h2>
 
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-18">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="relative rounded-2xl overflow-hidden group cursor-pointer transition duration-300"
-            >
-              {/* Image */}
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full object-cover group-hover:scale-105 transition duration-500"
-              />
+        <div className="relative">
 
-              {/* Label */}
-              <div className="absolute bottom-4 left-4 px-4 py-2 rounded-lg bg-[#0000004D] backdrop-blur-sm">
-                <span className="text-white text-sm font-medium">
-                  {project.title}
-                </span>
-              </div>
+          {/* Card */}
+          <div className="relative rounded-2xl overflow-hidden">
+            <img
+              src={projects[current].image}
+              alt={projects[current].title}
+              className="w-full object-cover"
+            />
+
+            {/* Label */}
+            <div className="absolute bottom-4 left-4 px-4 py-2 rounded-lg bg-[#0000004D] backdrop-blur-sm">
+              <span className="text-white text-sm font-medium">
+                {projects[current].title}
+              </span>
             </div>
-          ))}
+          </div>
+
+          {/* Buttons */}
+          <div className="flex items-center justify-center gap-4 mt-6">
+            <button
+              onClick={prevSlide}
+              className="w-10 h-10 rounded-full bg-black text-white text-xl"
+            >
+              ←
+            </button>
+
+            <button
+              onClick={nextSlide}
+              className="w-10 h-10 rounded-full bg-black text-white text-xl"
+            >
+              →
+            </button>
+          </div>
         </div>
       </div>
-      </Row>
+
+      {/* Desktop Grid */}
+      <div className="hidden md:block">
+        <Row className="w-full">
+          <div className="mx-auto w-full">
+
+            {/* Title */}
+            <h2 className="text-center text-4xl font-semibold mb-14">
+              Our Previous Projects
+            </h2>
+
+            {/* Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-18">
+              {projects.map((project, index) => (
+                <div
+                  key={index}
+                  className="relative rounded-2xl overflow-hidden group cursor-pointer transition duration-300"
+                >
+                  {/* Image */}
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full object-cover group-hover:scale-105 transition duration-500"
+                  />
+
+                  {/* Label */}
+                  <div className="absolute bottom-4 left-4 px-4 py-2 rounded-lg bg-[#0000004D] backdrop-blur-sm">
+                    <span className="text-white text-sm font-medium">
+                      {project.title}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </Row>
+      </div>
     </section>
   );
 }

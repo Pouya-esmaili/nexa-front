@@ -16,7 +16,7 @@ const business = () => {
                 </p>
 
                 {/* Purple line */}
-                <div className="w-24 h-1 bg-[#8F27FF]" />
+                <div className="hidden md:block absolute left-0 top-10 h-14 w-[4px] bg-[#8F27FF] rounded-2xl" />
 
                 {/* Bullet items */}
                 <div className="flex flex-col gap-4 mt-4">
@@ -33,7 +33,7 @@ const business = () => {
                                 height={20}
                                 className="mt-1"
                             />
-                            <p className="text-[18px] text-justify">{text}</p>
+                            <p className="text-[18px]">{text}</p>
                         </div>
                     ))}
                 </div>

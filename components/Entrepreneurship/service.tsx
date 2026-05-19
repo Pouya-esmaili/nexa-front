@@ -23,52 +23,56 @@ const services = [
 
 const ServicesSection: React.FC = () => {
   return (
-    <section className="w-full py-20">
+    <section className="w-full py-14 md:py-20">
       <Row>
         <div className="w-full">
 
           {/* Title */}
-          <h2 className="text-center text-3xl md:text-4xl font-bold mb-16">
+          <h2 className="text-center text-2xl md:text-4xl font-bold mb-10 md:mb-16">
             Our Services
           </h2>
 
           {/* Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
             {services.map((service, index) => (
               <div
                 key={index}
                 className="
-                  relative
-                  bg-[#F7F6F9]
-                  rounded-2xl
-                  p-6
-                  shadow-[0px_4px_4px_0px_#00000040]
-                "
+    relative
+    bg-[#F7F6F9]
+    rounded-2xl
+    p-6
+    shadow-[0px_4px_4px_0px_#00000040]
+
+    flex flex-col
+    items-center text-center
+    md:items-start md:text-start
+  "
               >
                 {/* Purple Side Line */}
-                <div className="absolute left-0 top-10 h-14 w-[4px] bg-[#8F27FF] rounded-2xl" />
+                <div className="md:block absolute left-0 top-10 h-14 w-[4px] bg-[#8F27FF] rounded-2xl" />
 
                 {/* Icon Box */}
                 <div
                   className="
-                    w-14 h-14
-                    bg-white
-                    rounded-xl
-                    flex items-center justify-center
-                    shadow-[0px_4px_4px_0px_#00000040]
-                    mb-6
-                  "
+      w-16 h-16
+      bg-white
+      rounded-xl
+      flex items-center justify-center
+      shadow-[0px_4px_4px_0px_#00000040]
+      mb-5
+    "
                 >
                   <Image
                     src={service.icon}
                     alt={service.title}
-                    width={28}
-                    height={28}
+                    width={30}
+                    height={30}
                   />
                 </div>
 
                 {/* Text */}
-                <p className="text-sm font-medium text-black leading-relaxed">
+                <p className="text-sm md:text-base font-medium text-black leading-relaxed">
                   {service.title}
                 </p>
               </div>

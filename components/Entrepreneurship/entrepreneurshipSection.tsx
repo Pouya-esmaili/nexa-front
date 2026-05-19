@@ -12,9 +12,9 @@ const EntrepreneurshipSection = () => {
 
   return (
     <section className="py-16 mb-10">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 md:px-10 lg:px-18">
 
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-12">
+        <h2 className="text-xl md:text-3xl font-bold text-center text-gray-900 mb-8 md:mb-12">
           How Entrepreneurship Programs Strengthen Countries?
         </h2>
 
@@ -23,7 +23,7 @@ const EntrepreneurshipSection = () => {
           {features.map((item) => (
             <div
               key={item.id}
-              className="flex items-center p-8 gap-6 bg-white rounded-2xl shadow-2xl hover:shadow-lg transition-shadow duration-300"
+              className="flex items-center p-5 md:p-8 gap-4 md:gap-6 bg-white rounded-2xl shadow-2xl hover:shadow-lg transition-shadow duration-300"
             >
 
               <div className="flex-shrink-0 w-12 h-12">

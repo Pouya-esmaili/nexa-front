@@ -11,11 +11,11 @@ const invest = () => {
                     Investment
                 </h2>
 
-                <p className="text-[18px] font-medium text-justify">
+                <p className="text-[18px] font-medium ">
                     Invest With Confidence, Grow with Vision.
                 </p>
 
-                <hr className="h-px w-full border-0 bg-[#D9D9D9]" />
+                <hr className="hidden h-px w-full border-0 bg-[#D9D9D9]" />
 
                 {/* Image */}
                 <Image
@@ -42,7 +42,7 @@ const invest = () => {
                                 height={20}
                                 className="mt-1"
                             />
-                            <p className="text-[18px] text-justify">{text}</p>
+                            <p className="text-[18px]">{text}</p>
                         </div>
                     ))}
                 </div>
@@ -93,7 +93,7 @@ const invest = () => {
                                 height={1500}
                                 src="/images/investment/IMG_1328 1.png"
                                 alt="hero"
-                                className="w-full h-90 object-cover"
+                                className="w-full object-cover"
                             />
                         </div>
                     </div>

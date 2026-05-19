@@ -12,7 +12,7 @@ const branch = () => {
                 </h2>
 
                 <p className="text-[20px] text-justify">
-                    launch your next business branch in a new market
+                    Launch Your Next Business Branch in the Global Market
                 </p>
 
                 {/* Purple line */}
@@ -21,9 +21,9 @@ const branch = () => {
                 {/* Bullet items */}
                 <div className="flex flex-col gap-4 mt-4">
                     {[
-                        "Market entry strategy and localization",
-                        "Business development and partnerships",
-                        "Investor-ready structure and scaling",
+                        "Expand your business across global markets",
+                        "Multiply your investment potential in the Future",
+                        "Unlock long-term growth and financial stability",
                     ].map((text, index) => (
                         <div key={index} className="flex items-start gap-3">
                             <Image
@@ -33,7 +33,7 @@ const branch = () => {
                                 height={20}
                                 className="mt-1"
                             />
-                            <p className="text-[18px] text-justify">{text}</p>
+                            <p className="text-[18px]">{text}</p>
                         </div>
                     ))}
                 </div>
@@ -53,12 +53,12 @@ const branch = () => {
                     <div className="flex items-center gap-18 mt-10">
                         {/* Text */}
                         <div className="w-1/2 text-left flex flex-col justify-between">
-                            <h2 className="my-4  text-[32px] font-bold text-black">
+                            <h2 className="my-4 text-[32px] font-bold text-black">
                                 Entrepreneurship
                             </h2>
 
                             <p className="text-[24px]">
-                                launch your next business branch in a new market
+                                Launch Your Next Business Branch in the Global Market
                             </p>
                             <div className="w-70 h-[3px] bg-[#929292] mb-4 mt-4" />
 
@@ -66,9 +66,9 @@ const branch = () => {
                             {/* Bullet items */}
                             <div className="flex flex-col gap-5">
                                 {[
-                                    "Market entry strategy and localization",
-                                    "Business development and partnerships",
-                                    "Investor-ready structure and scaling",
+                                    "Expand your business across global markets",
+                                    "Multiply your investment potential in the Future",
+                                    "Unlock long-term growth and financial stability",
                                 ].map((text, index) => (
                                     <div key={index} className="flex items-start gap-3">
                                         <Image
@@ -91,7 +91,7 @@ const branch = () => {
                                 height={1500}
                                 src="/images/Entrepreneurship/herooo.svg"
                                 alt="hero"
-                                className="w-full h-98 object-cover"
+                                className="w-full object-cover"
                             />
                         </div>
                     </div>

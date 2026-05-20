@@ -4,9 +4,9 @@ type HeroProps = {
     className?: string;
 };
 
-const Row = ({ children, className = 'ّ' }: HeroProps) => {
+const Row = ({ children, className = '' }: HeroProps) => {
     return (
-        <div className={`px-18 mx-auto ${className}`}>
+        <div className={`px-4 md:px-10 lg:px-10 mx-auto ${className}`}>
             {children}
         </div>
     );

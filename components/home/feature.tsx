@@ -17,7 +17,7 @@ const cardData = [
     id: 2,
     title: 'Startup',
     desc: 'We deliver precise startup advisory, crafting professional business plans, financial models, and investor pitch decks tailored for global success.',
-    icon: '/images/landing/Investment.svg',
+    icon: '/images/landing/Startup.svg',
     link: '/startup',
   },
   {
@@ -31,8 +31,8 @@ const cardData = [
     id: 4,
     title: 'Investment',
     desc: 'With Exclusive Access to International Investors and Emerging Opportunities, We Focus on Growth-Stage Startups Driving Scalable Innovation.',
-    icon: '/images/landing/Advisory.svg',
-    link: '/advisory',
+    icon: '/images/landing/Investment.svg',
+    link: '/investment',
   },
 ];
 

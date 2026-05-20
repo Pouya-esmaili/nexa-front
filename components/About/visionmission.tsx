@@ -6,7 +6,7 @@ export default function VisionMission() {
     <section className="w-full py-16 ">
         <Row>
       <div className="mx-auto">
-        <div className="grid md:grid-cols-2 gap-34 items-start">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start">
           
           {/* Vision */}
           <div>
@@ -16,9 +16,9 @@ export default function VisionMission() {
                 alt="Vision icon"
                 width={40}
                 height={40}
-                className="w-20 h-20"
+                className="w-12 h-12 md:w-20 md:h-20"
               />
-              <h2 className="text-4xl font-bold text-black">
+              <h2 className="text-2xl md:text-4xl font-bold text-black">
                 Vision
               </h2>
             </div>
@@ -40,9 +40,9 @@ export default function VisionMission() {
                 alt="Mission icon"
                 width={40}
                 height={40}
-                className="w-20 h-20"
+                className="w-12 h-12 md:w-20 md:h-20"
               />
-              <h2 className="text-4xl font-bold text-black">
+              <h2 className="text-2xl md:text-4xl font-bold text-black">
                 Mission
               </h2>
             </div>

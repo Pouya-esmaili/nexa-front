@@ -4,33 +4,25 @@ import Row from "../global/Row";
 
 const CertificateSection: React.FC = () => {
     return (
-        <section className="w-full py-20 relative">
+        <section className="w-full py-10 md:py-16">
             <Row>
-                {/* Full width shadow background */}
                 <div
                     className="
-    absolute 
-    left-14
-    right-14
-    bottom-0 
-    h-[100px]
-    bg-[#F3F5F680]
-    shadow-[0px_8px_10px_0px_#00000040]
-    rounded-2xl
+    w-full rounded-[24px] 
+    bg-transparent md:bg-white
+    shadow-none md:shadow-[0_8px_20px_rgba(0,0,0,0.08)]
+    px-5 py-8 md:px-8 md:py-10
   "
-                />
-
-                <div className="relative mx-auto w-full">
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                >
+                    <div className="flex flex-col md:flex-row items-center gap-8 md:gap-10">
 
                         {/* Left Content */}
-                        <div className="text-center  md:text-left">
-                            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+                        <div className="w-full text-center md:text-left">
+                            <h2 className="text-[28px] md:text-[40px] font-bold text-black leading-tight">
                                 NEXA Certificate
                             </h2>
 
-                            <p className="text-gray-700 text-lg leading-relaxed max-w-md">
+                            <p className="mt-4 text-[14px] md:text-[16px] leading-7 text-[#4B5563]">
                                 Our certifications and professional affiliations reflect our
                                 commitment to transparency, ethical conduct, and operational
                                 credibility.
@@ -38,34 +30,38 @@ const CertificateSection: React.FC = () => {
                         </div>
 
                         {/* Certificates */}
-                        <div className="md:col-span-2 flex flex-col sm:flex-row gap-6 justify-center md:justify-center relative z-10">
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full">
 
-                            {/* Certificate 1 */}
-                            <div className="bg-[#F3F5F680] rounded-2xl shadow-[0px_8px_10px_0px_#00000040] p-4">
-                                <Image
-                                    src="/images/about/Small Certificate2.svg"
-                                    alt="Certificate 1"
-                                    width={260}
-                                    height={180}
-                                    className="object-contain"
-                                />
+                            <div className="relative w-full">
+                                <div className="absolute inset-0 rounded-[20px] bg-purple-200 blur-2xl opacity-40"></div>
+
+                                <div className="relative rounded-[20px] p-4">
+                                    <Image
+                                        src="/images/about/Small Certificate.svg"
+                                        alt="Certificate 1"
+                                        width={320}
+                                        height={220}
+                                        className="w-full h-auto object-contain"
+                                    />
+                                </div>
                             </div>
 
-                            {/* Certificate 2 */}
-                            <div className="bg-[#F3F5F680] rounded-2xl shadow-[0px_8px_10px_0px_#00000040] p-4">
-                                <Image
-                                    src="/images/about/Small Certificate.svg"
-                                    alt="Certificate 2"
-                                    width={260}
-                                    height={180}
-                                    className="object-contain"
-                                />
+                            <div className="relative w-full">
+                                <div className="absolute inset-0 rounded-[20px] bg-purple-200 blur-2xl opacity-40"></div>
+
+                                <div className="relative rounded-[20px] p-4">
+                                    <Image
+                                        src="/images/about/Small Certificate2.svg"
+                                        alt="Certificate 2"
+                                        width={320}
+                                        height={220}
+                                        className="w-full h-auto object-contain"
+                                    />
+                                </div>
                             </div>
 
                         </div>
-
                     </div>
-
                 </div>
             </Row>
         </section>

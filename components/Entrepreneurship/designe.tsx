@@ -15,7 +15,7 @@ const cards = [
 export default function EntrepreneurshipDesignedSection() {
   return (
     <section
-      className="relative w-full flex items-center justify-center bg-cover bg-center py-14 md:py-20 overflow-hidden mt-8"
+      className="relative w-full md:h-[500px] flex items-center justify-center bg-cover bg-center py-14 md:py-20 overflow-hidden mt-8"
       style={{
         backgroundImage:
           "url('/images/Entrepreneurship/Designed.svg')",

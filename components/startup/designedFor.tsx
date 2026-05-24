@@ -1,86 +1,71 @@
+"use client";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+
+import Row from "../global/Row";
+
 const cards = [
-  "Experienced Business Owners Looking To Expand Internationally",
-  "Highly Skilled Professionals Ready To Compete Internationally",
-  "Investors Actively Looking to Access High-Potential Opportunities",
-  "Educated and Ambitious Young Entrepreneurs Seeking Growth",
+  "Experienced business owners looking to expand internationally",
+  "Highly skilled professionals ready to compete internationally",
+  "Investors actively looking to access high-potential opportunities",
+  "Educated and ambitious young entrepreneurs seeking growth",
 ];
 
-export default function StartupDesignedFor() {
+export default function EntrepreneurshipDesignedSection() {
   return (
     <section
+      className="relative w-full md:h-[500px] flex items-center justify-center bg-cover bg-center py-14 md:py-20 overflow-hidden mt-8"
       style={{
-        position: "relative",
-        width: "100%",
-        backgroundImage: "url('/images/Entrepreneurship/Designed.svg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundImage:
+          "url('/images/startup/Designed For (1).svg')",
       }}
     >
-      {/* Mobile — 2×2 grid */}
-      <div
-        className="md:hidden"
-        style={{ padding: "56px 20px" }}
-      >
-        <h2 style={{ color: "white", fontSize: "20px", fontWeight: 600, textAlign: "center", marginBottom: "32px" }}>
-          Who Startup Program is Designed For?
-        </h2>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-            gap: "12px",
-          }}
-        >
-          {cards.map((text, i) => (
-            <div
-              key={i}
-              style={{
-                borderRadius: "16px",
-                padding: "24px 16px",
-                textAlign: "center",
-                backgroundColor: "rgba(255,255,255,0.5)",
-                backdropFilter: "blur(30px)",
-                boxShadow: "0px 10px 15px 0px #00000040",
-              }}
-            >
-              <p style={{ fontSize: "12px", fontWeight: 500, lineHeight: "1.5" }}>{text}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+      <Row className="w-full">
 
-      {/* Desktop — 4-column row */}
-      <div
-        className="hidden md:block"
-        style={{ padding: "80px 72px" }}
-      >
-        <h2 style={{ color: "white", fontSize: "36px", fontWeight: 600, textAlign: "center", marginBottom: "56px" }}>
-          Who Startup Program is Designed For?
-        </h2>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
-            gap: "24px",
-          }}
-        >
-          {cards.map((text, i) => (
-            <div
-              key={i}
-              style={{
-                borderRadius: "16px",
-                padding: "32px 24px",
-                textAlign: "center",
-                backgroundColor: "rgba(255,255,255,0.5)",
-                backdropFilter: "blur(30px)",
-                boxShadow: "0px 10px 15px 0px #00000040",
-              }}
+        <div className="relative z-10 w-full text-center">
+
+          {/* Title */}
+          <h2 className="text-white text-3xl md:text-4xl font-semibold mb-8 md:mb-14">
+            Who Startup Program is Designed For?
+          </h2>
+
+          {/* Mobile Slider */}
+          <div className="block lg:hidden">
+            <Swiper
+              slidesPerView={1.2}
+              centeredSlides={true}
+              spaceBetween={16}
+              className="!overflow-visible"
             >
-              <p style={{ fontWeight: 500, lineHeight: "1.6" }}>{text}</p>
-            </div>
-          ))}
+              {cards.map((text, i) => (
+                <SwiperSlide key={i}>
+                  <div className="rounded-2xl px-5 py-6 text-center bg-white/50 backdrop-blur-[30px] shadow-[0px_10px_15px_0px_#00000040] min-h-[140px] flex items-center justify-center">
+                    <p className="text-sm font-medium">
+                      {text}
+                    </p>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+
+          {/* Desktop Grid */}
+          <div className="hidden lg:grid grid-cols-4 gap-6">
+            {cards.map((text, i) => (
+              <div
+                key={i}
+                className="rounded-2xl px-6 py-8 text-center bg-white/50 backdrop-blur-[30px] shadow-[0px_10px_15px_0px_#00000040]"
+              >
+                <p className="text-base font-medium">
+                  {text}
+                </p>
+              </div>
+            ))}
+          </div>
+
         </div>
-      </div>
+      </Row>
     </section>
   );
 }

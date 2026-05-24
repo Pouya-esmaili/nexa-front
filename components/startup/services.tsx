@@ -5,82 +5,84 @@ import Row from "../global/Row";
 const services = [
   {
     icon: "/images/Entrepreneurship/analysis.svg",
-    title: "Business Model & Financial Feasibility Analysis",
+    title: "Business model & financial feasibility analysis",
   },
   {
     icon: "/images/Entrepreneurship/Legal.svg",
-    title: "Legal Guidance For Immigration Applications",
+    title: "Legal guidance for immigration applications",
   },
   {
     icon: "/images/Entrepreneurship/Company.svg",
-    title: "Company Registration and Post-Launch Support",
+    title: "Company registration and post-launch support",
   },
   {
     icon: "/images/Entrepreneurship/performance.svg",
-    title: "Ongoing Advisory and Performance Monitoring",
+    title: "Ongoing advisory and performance monitoring",
   },
 ];
 
-const StartupServices: React.FC = () => {
+const ServicesSection: React.FC = () => {
   return (
-    <section className="w-full py-12 md:py-20">
+    <section className="w-full py-14 md:py-20">
+      <Row>
+        <div className="w-full">
 
-      {/* Mobile — 2-column grid */}
-      <div className="md:hidden" style={{ padding: "0 20px" }}>
-        <h2 style={{ textAlign: "center", fontSize: "20px", fontWeight: 700, marginBottom: "32px" }}>
-          Our Services
-        </h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: "12px" }}>
-          {services.map((service, i) => (
-            <div
-              key={i}
-              style={{
-                position: "relative",
-                backgroundColor: "#F7F6F9",
-                borderRadius: "16px",
-                padding: "16px",
-                boxShadow: "0px 4px 4px 0px #00000040",
-              }}
-            >
-              <div style={{ position: "absolute", left: 0, top: "32px", height: "40px", width: "4px", backgroundColor: "#8F27FF", borderRadius: "0 4px 4px 0" }} />
-              <div style={{ width: "40px", height: "40px", backgroundColor: "white", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0px 4px 4px 0px #00000040", marginBottom: "16px" }}>
-                <Image src={service.icon} alt={service.title} width={22} height={22} />
-              </div>
-              <p style={{ fontSize: "11px", fontWeight: 500, lineHeight: "1.5" }}>{service.title}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+          {/* Title */}
+          <h2 className="text-center text-2xl md:text-4xl font-bold mb-10 md:mb-16">
+            Our Services
+          </h2>
 
-      {/* Desktop — 4-column grid */}
-      <div className="hidden md:block">
-        <Row>
-          <h2 className="text-center text-4xl font-bold mb-16">Our Services</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: "40px" }}>
-            {services.map((service, i) => (
+          {/* Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
+            {services.map((service, index) => (
               <div
-                key={i}
-                style={{
-                  position: "relative",
-                  backgroundColor: "#F7F6F9",
-                  borderRadius: "16px",
-                  padding: "24px",
-                  boxShadow: "0px 4px 4px 0px #00000040",
-                }}
+                key={index}
+                className="
+    relative
+    bg-[#F7F6F9]
+    rounded-2xl
+    p-6
+    shadow-[0px_4px_4px_0px_#00000040]
+
+    flex flex-col
+    items-center text-center
+    md:items-start md:text-start
+  "
               >
-                <div style={{ position: "absolute", left: 0, top: "40px", height: "56px", width: "4px", backgroundColor: "#8F27FF", borderRadius: "0 8px 8px 0" }} />
-                <div style={{ width: "56px", height: "56px", backgroundColor: "white", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0px 4px 4px 0px #00000040", marginBottom: "24px" }}>
-                  <Image src={service.icon} alt={service.title} width={28} height={28} />
+                {/* Purple Side Line */}
+                <div className="md:block absolute left-0 top-10 h-14 w-[4px] bg-[#8F27FF] rounded-2xl" />
+
+                {/* Icon Box */}
+                <div
+                  className="
+      w-16 h-16
+      bg-white
+      rounded-xl
+      flex items-center justify-center
+      shadow-[0px_4px_4px_0px_#00000040]
+      mb-5
+    "
+                >
+                  <Image
+                    src={service.icon}
+                    alt={service.title}
+                    width={30}
+                    height={30}
+                  />
                 </div>
-                <p style={{ fontSize: "14px", fontWeight: 500, lineHeight: "1.6" }}>{service.title}</p>
+
+                {/* Text */}
+                <p className="text-sm md:text-base font-medium text-black leading-relaxed">
+                  {service.title}
+                </p>
               </div>
             ))}
           </div>
-        </Row>
-      </div>
 
+        </div>
+      </Row>
     </section>
   );
 };
 
-export default StartupServices;
+export default ServicesSection;

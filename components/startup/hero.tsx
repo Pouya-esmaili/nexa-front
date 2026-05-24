@@ -31,7 +31,7 @@ const Hero = () => {
         <Image
           width={800}
           height={500}
-          src="/images/landing/Startup.svg"
+          src="/images/advisory/IMG_1328 1 (1).svg"
           alt="Startup hero"
           className="w-full h-auto object-contain rounded-2xl mt-2"
         />
@@ -63,9 +63,9 @@ const Hero = () => {
               <Image
                 width={1500}
                 height={1500}
-                src="/images/landing/Startup.svg"
+                src="/images/advisory/IMG_1328 1 (1).svg"
                 alt="Startup hero"
-                className="w-full h-98 object-cover rounded-2xl"
+                className="w-full object-cover rounded-2xl"
               />
             </div>
           </div>

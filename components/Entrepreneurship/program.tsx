@@ -1,64 +1,107 @@
 import Image from "next/image";
+import { CheckCircle2 } from "lucide-react";
 import Row from "../global/Row";
 
-const program = () => {
-    return (
-        <div className="w-full">
+const Program = () => {
+    const items = [
+        "Access to global markets",
+        "Designed for innovative founders",
+        "Growth & expansion opportunities",
+        "Business-friendly frameworks",
+    ];
 
-            {/* Mobile */}
-            <div className="flex flex-col gap-6 px-6 mt-10 md:hidden">
-                <h2 className="text-3xl font-bold text-black">
+    return (
+        <section className="w-full py-14 md:py-20">
+            <Row>
+                {/* Title */}
+                <h2 className="text-3xl md:text-5xl font-bold text-center text-black mb-12">
                     What is an Entrepreneurship program?
                 </h2>
 
-                <p className="text-[20px] text-justify">
-                    Entrepreneurship programs help founders and business owners access the Global markets, scale their ideas, and build sustainable businesses through clear, supportive pathways.
-                </p>
+                {/* Desktop */}
+                <div className="hidden md:flex items-center gap-14">
 
-                {/* Purple line */}
-                <div className="w-24 h-1 bg-[#8F27FF]" />
+                    {/* Image */}
+                    <div className="w-1/2">
+                        <Image
+                            width={1400}
+                            height={1000}
+                            src="/images/Entrepreneurship/programs.svg"
+                            alt="startup"
+                            className="w-full h-[420px] object-cover rounded-[32px]"
+                        />
+                    </div>
 
-                <Image
-                    width={1200}
-                    height={1200}
-                    src="/images/Entrepreneurship/programs.svg"
-                    alt="hero"
-                    className="w-full h-auto object-contain"
-                />
-            </div>
+                    {/* Content */}
+                    <div className="w-1/2">
 
-            {/* Desktop */}
-            <div className="hidden md:block">
-                <Row>
-                    <div className="flex items-center gap-18 my-20">
-                        {/* Image */}
-                        <div className="w-1/2">
-                            <Image
-                                width={1500}
-                                height={1500}
-                                src="/images/Entrepreneurship/programs.svg"
-                                alt="hero"
-                                className="w-full h-96 object-cover"
-                            />
-                        </div>
+                        <p className="text-[17px] leading-8 text-[#333] mb-8">
+                            Entrepreneurship programs help founders and business owners access the Global markets, scale their ideas, and build sustainable businesses through clear, supportive pathways.
+                        </p>
 
-                        {/* Text */}
-                        <div className="w-1/2 text-left flex flex-col justify-between">
-                            <h2 className="text-3xl font-bold text-black">
-                                What is an Entrepreneurship program?
-                            </h2>
-                            <div className="w-68 h-[3px] bg-[#8F27FF] mb-4 mt-8" />
-                            <p className="text-lg">
-                                Entrepreneurship programs help founders and business owners access the Global markets, scale their ideas, and build sustainable businesses through clear, supportive pathways.
-                            </p>
+                        {/* Items */}
+                        <div className="flex flex-col gap-4">
+                            {items.map((item, index) => (
+                                <div
+                                    key={index}
+                                    className="flex items-start gap-3"
+                                >
+                                    <CheckCircle2
+                                        size={22}
+                                        className="text-white fill-[#FFE600] mt-1"
+                                    />
+
+                                    <p className="text-[16px] text-[#222]">
+                                        {item}
+                                    </p>
+                                </div>
+                            ))}
                         </div>
                     </div>
-                </Row>
-            </div>
+                </div>
+
+                {/* Mobile */}
+                <div className="flex flex-col md:hidden">
+
+                    {/* Image */}
+                    <div className="mb-6">
+                        <Image
+                            width={1200}
+                            height={1000}
+                            src="/images/Entrepreneurship/programs.svg"
+                            alt="startup"
+                            className="w-full h-[250px] object-cover rounded-[24px]"
+                        />
+                    </div>
 
 
-        </div>
+
+                    <p className="text-[16px] leading-7 text-[#333] mb-6">
+                        Entrepreneurship programs help founders and business owners access the Global markets, scale their ideas, and build sustainable businesses through clear, supportive pathways. ّ
+                    </p>
+
+                    {/* Items */}
+                    <div className="flex flex-col gap-4">
+                        {items.map((item, index) => (
+                            <div
+                                key={index}
+                                className="flex items-start gap-3"
+                            >
+                                <CheckCircle2
+                                    size={20}
+                                    className="text-white fill-[#FFE600] mt-1"
+                                />
+
+                                <p className="text-[15px] text-[#222] leading-6">
+                                    {item}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </Row>
+        </section>
     );
 };
 
-export default program;
+export default Program;

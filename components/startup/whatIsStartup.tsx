@@ -28,7 +28,7 @@ const Program = () => {
                             height={1000}
                             src="/images/Entrepreneurship/programs.svg"
                             alt="startup"
-                            className="w-full h-[420px] object-cover rounded-[32px]"
+                            className="w-full object-cover rounded-[32px]"
                         />
                     </div>
 
@@ -76,7 +76,7 @@ const Program = () => {
                             height={1000}
                             src="/images/Entrepreneurship/programs.svg"
                             alt="startup"
-                            className="w-full h-[250px] object-cover rounded-[24px]"
+                            className="w-full object-cover rounded-[24px]"
                         />
                     </div>
 

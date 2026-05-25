@@ -91,7 +91,7 @@ const business = () => {
                                 height={1500}
                                 src="/images/advisory/IMG_1328 1 (1).svg"
                                 alt="hero"
-                                className="w-full h-98 object-cover"
+                                className="w-full object-cover"
                             />
                         </div>
                     </div>

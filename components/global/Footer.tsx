@@ -40,7 +40,7 @@ export default function Footer() {
                         <ul className="space-y-1 font-normal text-sm text-black">
                             <li><Link href="/about-us">About Us</Link></li>
                             <li><Link href="#">Our Team</Link></li>
-                            <li><Link href="#">Contact Us</Link></li>
+                            <li><Link href="/contact">Contact Us</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -125,7 +125,7 @@ export default function Footer() {
                             <ul className="space-y-2 text-sm font-normal text-end text-black">
                                 <li><Link href="/about-us">About Us</Link></li>
                                 <li><Link href="#">Testimonials</Link></li>
-                                <li><Link href="#">Contact Us</Link></li>
+                                <li><Link href="/contact">Contact Us</Link></li>
                             </ul>
                         </div>
 

@@ -172,13 +172,8 @@ const Faq = () => {
             </h2>
 
             <div
-              className="mx-auto mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 items-start"
-              style={{
-                background: "#F6F6F6",
-                borderRadius: "20px",
-                padding: "80px",
-                width: "100%",
-              }}
+              className="mx-auto mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 items-start w-full rounded-[20px] p-6 md:p-12 lg:p-20"
+              style={{ background: "#F6F6F6" }}
             >
               {faqData.map((item, index) => {
                 const isActive = activeIndex === index;

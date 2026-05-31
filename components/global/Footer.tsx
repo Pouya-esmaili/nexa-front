@@ -140,13 +140,13 @@ export default function Footer() {
                             <p className="font-semibold text-sm mb-1">Canada</p>
                             <div className="flex items-center gap-2 text-sm text-black">
                                 <Image src="/images/location-tick.svg" alt="Location" width={16} height={16} />
-                                <p className="whitespace-nowrap font-medium">
+                                <p className="font-medium leading-relaxed">
                                     906-935 Marine Dr, West Vancouver, British Columbia, Canada
                                 </p>
                             </div>
                             <div className="flex items-center gap-2 text-sm text-black mt-1">
                                 <Image src="/images/call-calling.svg" alt="Phone" width={16} height={16} />
-                                <p className="whitespace-nowrap font-medium">+1 (604) 351 - 5951</p>
+                                <p className="font-medium leading-relaxed">+1 (604) 351 - 5951</p>
                             </div>
                         </div>
 
@@ -154,14 +154,14 @@ export default function Footer() {
                             <p className="font-semibold text-sm mb-1">Iran</p>
                             <div className="flex items-center gap-2 text-sm text-black">
                                 <Image src="/images/location-tick.svg" alt="Location" width={16} height={16} />
-                                <p className="whitespace-nowrap font-medium">
+                                <p className="font-medium leading-relaxed">
                                     No. 27, Neom Building (Next to the Tandis Complex),
                                     Tajrish Square, Tehran, Iran
                                 </p>
                             </div>
                             <div className="flex items-center gap-2 text-sm text-black mt-1">
                                 <Image src="/images/call-calling.svg" alt="Phone" width={16} height={16} />
-                                <p className="whitespace-nowrap font-medium">+98 (21) 2691 - 7416</p>
+                                <p className="font-medium leading-relaxed">+98 (21) 2691 - 7416</p>
                             </div>
                         </div>
 

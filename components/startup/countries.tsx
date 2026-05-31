@@ -45,7 +45,7 @@ export default function GlobalTargets() {
                     {countries.map((country, index) => (
                         <div
                             key={index}
-                            className="relative h-[360px] overflow-hidden group cursor-pointer rounded-2xl"
+                            className="relative h-[240px] sm:h-[300px] overflow-hidden group cursor-pointer rounded-2xl"
                         >
                             {/* Background Image */}
                             <Image
@@ -96,7 +96,7 @@ export default function GlobalTargets() {
                             {countries.map((country, index) => (
                                 <div
                                     key={index}
-                                    className="relative h-[360px] rounded-2xl overflow-hidden group cursor-pointer"
+                                    className="relative h-[280px] md:h-[360px] rounded-2xl overflow-hidden group cursor-pointer"
                                 >
                                     {/* Background Image */}
                                     <Image

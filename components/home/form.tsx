@@ -27,7 +27,7 @@ export default function ContactForm() {
                 style={{ backgroundColor: "#EFEFEF" }}
               >
                 <form className="p-4 flex flex-col">
-                  <div className="grid grid-cols-3 font-normal gap-20 p-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3 font-normal gap-6 lg:gap-10 p-6">
                     <Input label="First Name" required />
                     <Input label="Last Name" required />
                     <Select
@@ -42,7 +42,7 @@ export default function ContactForm() {
                     />
                   </div>
 
-                  <div className="grid grid-cols-3 gap-20 px-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 px-6">
                     <div className="flex flex-col gap-3">
                       <label className="text-lg">
                         Phone Number <span className="text-red-500">*</span>
@@ -98,16 +98,8 @@ export default function ContactForm() {
       </div>
 
       {/* ================= MOBILE ================= */}
-      <div className="md:hidden w-full flex justify-center py-10">
-        <div
-          style={{
-            maxWidth: "320px",
-            width: "100%",
-            backgroundColor: "#EFEFEF",
-            borderRadius: "12px",
-            padding: "16px",
-          }}
-        >
+      <div className="md:hidden w-full px-4 py-10">
+        <div className="w-full max-w-lg mx-auto bg-[#EFEFEF] rounded-xl p-4 sm:p-6">
           <form className="flex flex-col gap-12">
             <Input label="First Name" required small />
             <Input label="Last Name" required small />

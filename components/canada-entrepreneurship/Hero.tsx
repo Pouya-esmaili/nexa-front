@@ -56,7 +56,7 @@ export default function Hero() {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#8F27FF]" />
                 Canada Entrepreneurship
               </div>
-              <h1 className="text-[48px] font-bold leading-[1.08] tracking-tight mb-6">
+              <h1 className="text-3xl lg:text-[48px] font-bold leading-[1.08] tracking-tight mb-6">
                 Build a <span className="text-[#8F27FF]">scalable</span> company on a high-stability economic platform.
               </h1>
               <p className="text-[17px] text-[#474747] leading-[1.65] mb-8 max-w-[520px]">
@@ -80,7 +80,7 @@ export default function Hero() {
             </div>
 
             {/* Visual */}
-            <div className="flex-[0.9] relative h-[540px]">
+            <div className="flex-[0.9] relative h-[380px] lg:h-[540px]">
               <div
                 className="absolute inset-0"
                 style={{

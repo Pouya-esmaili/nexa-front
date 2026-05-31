@@ -33,7 +33,7 @@ export default function CommentsSection() {
         {/* Desktop */}
         <div
           className="hidden md:flex gap-6 transition-all duration-300"
-          style={{ transform: `translateX(-${index * 360}px)` }}
+          style={{ transform: `translateX(-${index * 364}px)` }}
         >
           {comments.map((item) => (
             <div

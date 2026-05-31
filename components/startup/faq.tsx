@@ -68,30 +68,6 @@ const faqData = [
 
 const MOBILE_INITIAL = 6;
 
-const cardBase: React.CSSProperties = {
-  backgroundColor: "white",
-  borderRadius: "12px",
-  padding: "20px",
-  cursor: "pointer",
-  transition: "box-shadow 0.2s",
-};
-
-const activeCard: React.CSSProperties = {
-  ...cardBase,
-  boxShadow: "0px 4px 8px 0px #8F27FF40",
-  borderStyle: "solid",
-  borderWidth: "1px 1px 1px 6px",
-  borderColor: "#8F27FF",
-};
-
-const inactiveCard: React.CSSProperties = {
-  ...cardBase,
-  boxShadow: "0px 4px 4px 0px #0000001A",
-  borderStyle: "solid",
-  borderWidth: "1px 1px 1px 6px",
-  borderColor: "#D2D2D2",
-};
-
 export default function StartupFAQ() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
   const [showAll, setShowAll] = useState(false);
@@ -102,31 +78,34 @@ export default function StartupFAQ() {
 
   const visibleMobile = showAll ? faqData : faqData.slice(0, MOBILE_INITIAL);
 
+  const cardClass = (isActive: boolean) =>
+    `bg-white rounded-xl p-4 md:p-5 cursor-pointer transition-all duration-200 ${
+      isActive
+        ? "shadow-[0px_4px_8px_0px_#8F27FF40] border border-l-[6px] border-[#8F27FF]"
+        : "shadow-[0px_4px_4px_0px_#0000001A] border border-l-[6px] border-[#D2D2D2]"
+    }`;
+
   return (
     <div>
 
       {/* Mobile */}
-      <div className="md:hidden" style={{ padding: "48px 20px" }}>
-        <h2 style={{ textAlign: "center", fontSize: "24px", fontWeight: 700, marginBottom: "32px" }}>
-          FAQs
-        </h2>
-        <div style={{ backgroundColor: "#F6F6F6", borderRadius: "20px", padding: "24px", display: "flex", flexDirection: "column", gap: "12px" }}>
+      <div className="md:hidden px-5 py-12">
+        <h2 className="text-2xl font-bold text-center mb-8">FAQs</h2>
+        <div className="bg-[#F6F6F6] rounded-[20px] p-6 flex flex-col gap-3">
           {visibleMobile.map((item, index) => {
             const isActive = activeIndex === index;
             return (
-              <div key={index} onClick={() => toggle(index)} style={isActive ? activeCard : inactiveCard}>
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px" }}>
-                  <h3 style={{ fontSize: "12px", fontWeight: 500, lineHeight: "1.5", margin: 0 }}>{item.title}</h3>
+              <div key={index} onClick={() => toggle(index)} className={cardClass(isActive)}>
+                <div className="flex items-center justify-between gap-3">
+                  <h3 className="text-xs font-medium text-black leading-snug">{item.title}</h3>
                   <img
                     src={isActive ? "/images/Entrepreneurship/close.svg" : "/images/Entrepreneurship/open.svg"}
                     alt={isActive ? "Close" : "Open"}
-                    style={{ width: "20px", height: "20px", flexShrink: 0 }}
+                    className="w-5 h-5 flex-shrink-0"
                   />
                 </div>
                 {isActive && (
-                  <p style={{ marginTop: "12px", fontSize: "12px", color: "#666", lineHeight: "1.6" }}>
-                    {item.content}
-                  </p>
+                  <p className="mt-3 text-xs text-gray-600 leading-relaxed">{item.content}</p>
                 )}
               </div>
             );
@@ -135,7 +114,7 @@ export default function StartupFAQ() {
           {!showAll && (
             <button
               onClick={() => setShowAll(true)}
-              style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", marginTop: "8px", fontSize: "14px", fontWeight: 600, color: "#8F27FF", background: "none", border: "none", cursor: "pointer" }}
+              className="mt-2 flex items-center justify-center gap-2 text-sm font-semibold text-[#8F27FF]"
             >
               Show More
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8F27FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -146,7 +125,7 @@ export default function StartupFAQ() {
           {showAll && (
             <button
               onClick={() => setShowAll(false)}
-              style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", marginTop: "8px", fontSize: "14px", fontWeight: 600, color: "#8F27FF", background: "none", border: "none", cursor: "pointer" }}
+              className="mt-2 flex items-center justify-center gap-2 text-sm font-semibold text-[#8F27FF]"
             >
               Show Less
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8F27FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -158,35 +137,24 @@ export default function StartupFAQ() {
       </div>
 
       {/* Desktop */}
-      <div className="hidden md:block" style={{ padding: "80px 0" }}>
+      <div className="hidden md:block py-16 lg:py-20">
         <Row>
-          <h2 style={{ textAlign: "center", fontSize: "36px", fontWeight: 700, marginBottom: "48px" }}>FAQs</h2>
-          <div
-            style={{
-              backgroundColor: "#F6F6F6",
-              borderRadius: "20px",
-              padding: "48px",
-              display: "grid",
-              gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-              gap: "24px",
-            }}
-          >
+          <h2 className="text-center text-3xl lg:text-4xl font-bold mb-12">FAQs</h2>
+          <div className="bg-[#F6F6F6] rounded-[20px] p-6 md:p-10 lg:p-12 grid grid-cols-1 md:grid-cols-2 gap-6">
             {faqData.map((item, index) => {
               const isActive = activeIndex === index;
               return (
-                <div key={index} onClick={() => toggle(index)} style={isActive ? activeCard : inactiveCard}>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px" }}>
-                    <h3 style={{ fontSize: "14px", fontWeight: 500, lineHeight: "1.5", margin: 0 }}>{item.title}</h3>
+                <div key={index} onClick={() => toggle(index)} className={cardClass(isActive)}>
+                  <div className="flex items-center justify-between gap-4">
+                    <h3 className="text-sm font-medium text-black leading-snug">{item.title}</h3>
                     <img
                       src={isActive ? "/images/Entrepreneurship/close.svg" : "/images/Entrepreneurship/open.svg"}
                       alt={isActive ? "Close" : "Open"}
-                      style={{ width: "24px", height: "24px", flexShrink: 0 }}
+                      className="w-6 h-6 flex-shrink-0"
                     />
                   </div>
                   {isActive && (
-                    <p style={{ marginTop: "12px", fontSize: "14px", color: "#666", lineHeight: "1.6" }}>
-                      {item.content}
-                    </p>
+                    <p className="mt-3 text-sm text-gray-600 leading-relaxed">{item.content}</p>
                   )}
                 </div>
               );

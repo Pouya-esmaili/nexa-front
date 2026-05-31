@@ -22,7 +22,7 @@ export default function Bio() {
                         />
 
                         <div
-                            className="absolute bottom-6 left-1/2 translate-x-1/4 p-8 rounded-2xl shadow-2xl w-[120%]"
+                            className="absolute bottom-6 left-0 right-0 mx-4 p-5 md:p-8 rounded-2xl shadow-2xl"
                             style={{
                                 backgroundColor: "#F3F5F680",
                                 boxShadow: "0 10px 30px rgba(0,0,0,0.25)"

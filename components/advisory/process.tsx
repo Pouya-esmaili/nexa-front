@@ -111,10 +111,9 @@ export default function OurProcess() {
                   className="
                     flex flex-col
                     w-full
-                    min-h-[620px]
-                    md:h-[603.41px]
-                    p-6
-                    gap-8
+                    min-h-[520px] md:min-h-[580px]
+                    p-5 md:p-6
+                    gap-6 md:gap-8
                     rounded-[24px]
                     border-[0.5px] border-[#929292]
                     bg-white
@@ -130,7 +129,7 @@ export default function OurProcess() {
                   <div className="flex flex-col flex-1">
 
                     {/* Title + Desc */}
-                    <div className="min-h-[230px] md:h-[220px]">
+                    <div className="min-h-[160px] md:min-h-[200px]">
                       <h3 className="text-2xl md:text-3xl font-semibold mb-3">
                         {step.title}
                       </h3>

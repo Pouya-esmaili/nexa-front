@@ -5,7 +5,7 @@ export default function GetInTouch() {
     <Row>
       <section className="w-full flex justify-center py-24 bg-white">
         <div
-          className="w-[60rem] bg-white rounded-3xl px-10 py-12 text-center shadow-2xl">
+          className="w-full max-w-3xl bg-white rounded-3xl px-6 md:px-10 py-12 text-center shadow-2xl">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Get in Touch
           </h2>
@@ -16,7 +16,7 @@ export default function GetInTouch() {
           </p>
 
           <button
-            className="items-center justify-center gap-2 w-60 bg-[#8F27FF] hover:bg-[#7b1fe0] text-white font-medium px-8 py-3 rounded-3xl">
+            className="inline-flex items-center justify-center gap-2 w-full sm:w-60 bg-[#8F27FF] hover:bg-[#7b1fe0] text-white font-medium px-8 py-3 rounded-3xl">
             Contact Us →
           </button>
         </div>

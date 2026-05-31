@@ -46,10 +46,10 @@ const Country = () => {
         <div className="space-y-8 w-full">
 
           {/* Row 1 */}
-          <div className="flex justify-between w-full gap-6">
+          <div className="flex flex-col md:flex-row justify-between w-full gap-6">
             {/* Title */}
-            <div className="w-[300px]">
-              <h2 className="text-[32px] font-bold leading-snug">
+            <div className="w-full md:w-[300px] flex-shrink-0">
+              <h2 className="text-2xl md:text-[32px] font-bold leading-snug">
                 Which Countries <br />
                 Offer Entrepreneurship <br />
                 Programs?
@@ -57,7 +57,7 @@ const Country = () => {
             </div>
 
             {/* Spain + Finland */}
-            <div className="flex gap-6 flex-1 justify-end">
+            <div className="grid grid-cols-2 md:flex gap-6 flex-1 md:justify-end">
               {countriesTop.map((c, i) => (
                 <CountryCard key={i} title={c.title} image={c.image} />
               ))}
@@ -65,7 +65,7 @@ const Country = () => {
           </div>
 
           {/* Row 2 */}
-          <div className="flex justify-between w-full gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
             {countriesBottom.map((c, i) => (
               <CountryCard key={i} title={c.title} image={c.image} />
             ))}

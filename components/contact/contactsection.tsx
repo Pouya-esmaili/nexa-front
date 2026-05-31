@@ -26,10 +26,10 @@ const contactItems = [
 export default function ContactSection() {
   return (
     <section className="w-full py-20">
-      <div className="mx-auto md:px-10 px-6">
+      <div className="mx-auto max-w-[1440px] px-6 md:px-10">
         <div className="grid grid-cols-1 gap-10 md:gap-20 lg:grid-cols-2">
           {/* Left Side */}
-          <div className="space-y-5 md:w-[74%]">
+          <div className="space-y-5 w-full">
             {contactItems.map((item) => (
               <div
                 key={item.title}

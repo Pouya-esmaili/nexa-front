@@ -48,7 +48,11 @@ export default function CardsPage() {
         "
       >
         {cardData.map((card) => (
-          <Link key={card.id} href={card.link} className="w-full">
+          <Link
+            key={card.id}
+            href={card.link}
+            className="group block w-full"
+          >
             <Card
               title={card.title}
               desc={card.desc}

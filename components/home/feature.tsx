@@ -38,12 +38,12 @@ const cardData = [
 
 export default function CardsPage() {
   return (
-    <div className="flex items-center justify-center md:p-18 p-4">
+    <div className="flex items-center justify-center px-4 py-8 md:px-10 md:py-18">
       <div
         className="
           grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4
           gap-x-6 gap-y-12 md:gap-y-6
-          w-full
+          w-full max-w-[1440px]
           items-stretch
         "
       >

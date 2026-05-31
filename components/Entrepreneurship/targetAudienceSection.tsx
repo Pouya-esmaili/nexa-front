@@ -28,11 +28,11 @@ const TargetAudienceSection = () => {
   return (
     <section className="w-full p-4 mt-16">
       <Row>
-        <div className="flex items-start">
+        <div className="flex flex-col md:flex-row items-start gap-6">
 
-          {/* متن سمت چپ (دقیقاً مثل branch) */}
-          <div className="w-1/2 flex flex-col">
-            <h2 className="my-8 text-[32px] font-bold text-black leading-snug">
+          {/* عنوان */}
+          <div className="w-full md:w-1/2 flex flex-col">
+            <h2 className="my-4 md:my-8 text-2xl md:text-[32px] font-bold text-black leading-snug">
               Who <br />
               Entrepreneurship <br />
               Program is Designed <br />
@@ -40,9 +40,9 @@ const TargetAudienceSection = () => {
             </h2>
           </div>
 
-          {/* کارت‌ها سمت راست */}
-          <div className="w-2/3">
-            <div className="grid grid-cols-2 gap-6">
+          {/* کارت‌ها */}
+          <div className="w-full md:w-2/3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
               {audience.map((item) => (
                 <div
                   key={item.id}

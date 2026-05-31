@@ -23,7 +23,7 @@ export default function Results() {
                     Our Results Tell the Story
                 </h2>
 
-                <div className="flex flex-row flex-wrap sm:flex-row justify-between gap-4 sm:gap-60 w-full sm:w-auto mt-46 sm:mt-20">
+                <div className="flex flex-row flex-wrap sm:flex-row justify-between gap-4 sm:gap-16 md:gap-28 lg:gap-40 xl:gap-60 w-full sm:w-auto mt-46 sm:mt-20">
 
                     <div className="flex flex-col items-center flex-1">
                         <p className="text-2xl sm:text-4xl font-bold text-[#8F27FF]">89%</p>

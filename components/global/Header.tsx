@@ -114,7 +114,13 @@ export default function Header() {
                     />
                     Services
                   </div>
-                  ▼
+
+                  <Image
+                    src="/images/arrow.svg"
+                    alt="Arrow"
+                    width={16}
+                    height={16}
+                  />
                 </summary>
 
                 <div className="pl-6 flex flex-col gap-2 mt-2">
@@ -144,7 +150,13 @@ export default function Header() {
                     />
                     About Us
                   </div>
-                  ▼
+
+                  <Image
+                    src="/images/arrow.svg"
+                    alt="Arrow"
+                    width={16}
+                    height={16}
+                  />
                 </summary>
 
                 <div className="pl-6 flex flex-col gap-2 mt-2">
@@ -168,7 +180,13 @@ export default function Header() {
                     />
                     Forms
                   </div>
-                  ▼
+
+                  <Image
+                    src="/images/arrow.svg"
+                    alt="Arrow"
+                    width={16}
+                    height={16}
+                  />
                 </summary>
 
                 <div className="pl-6 flex flex-col gap-2 mt-2">
@@ -195,10 +213,10 @@ export default function Header() {
       </div>
 
       {/* Desktop Header */}
-<div
-  className="hidden md:block fixed top-0 left-0 w-full z-50 bg-white p-4"
-  style={{ boxShadow: "0px 4px 30px 0px #00000040" }}
->
+      <div
+        className="hidden md:block fixed top-0 left-0 w-full z-50 bg-white p-4"
+        style={{ boxShadow: "0px 4px 30px 0px #00000040" }}
+      >
         <Row className="relative flex items-center">
           <Image
             src="/images/logo.svg"
@@ -228,7 +246,14 @@ export default function Header() {
                 }}
                 className="flex items-center gap-1 px-3 py-2"
               >
-                Services ▼
+                Services
+
+                <Image
+                  src="/images/arrow.svg"
+                  alt="Arrow"
+                  width={16}
+                  height={16}
+                />
               </button>
 
               {servicesOpen && (
@@ -268,9 +293,18 @@ export default function Header() {
                   setServicesOpen(false);
                   setFormsOpen(false);
                 }}
-                className="flex items-center gap-1 px-3 py-2"
+                className="flex items-center gap-2 px-3 py-2"
               >
-                About Us ▼
+                About Us
+
+                <Image
+                  src="/images/arrow.svg"
+                  alt="Arrow"
+                  width={14}
+                  height={14}
+                  className={`transition-transform duration-300 ${aboutOpen ? "rotate-180" : ""
+                    }`}
+                />
               </button>
 
               {aboutOpen && (
@@ -294,13 +328,22 @@ export default function Header() {
             <div className="relative">
               <button
                 onClick={() => {
-                  setFormsOpen(!formsOpen);
+                  setAboutOpen(!aboutOpen);
                   setServicesOpen(false);
-                  setAboutOpen(false);
+                  setFormsOpen(false);
                 }}
-                className="flex items-center gap-1 px-3 py-2"
+                className="flex items-center gap-2 px-3 py-2"
               >
-                Forms ▼
+                About Us
+
+                <Image
+                  src="/images/arrow.svg"
+                  alt="Arrow"
+                  width={14}
+                  height={14}
+                  className={`transition-transform duration-300 ${aboutOpen ? "rotate-180" : ""
+                    }`}
+                />
               </button>
 
               {formsOpen && (

@@ -9,7 +9,7 @@ export default function Bio() {
             {/* DESKTOP */}
             <div className="hidden sm:block">
                 <Row className="py-16">
-                    {/* wrapper نسبی برای position باکس */}
+
                     <div className="relative flex flex-col md:flex-row gap-10 items-start pb-10">
 
                         {/* چپ: عکس */}
@@ -23,7 +23,6 @@ export default function Bio() {
                             />
                         </div>
 
-                        {/* راست: عنوان + متن */}
                         <div className="flex-1 flex flex-col gap-6">
 
                             <h2 className="text-3xl lg:text-4xl font-bold">
@@ -42,16 +41,14 @@ export default function Bio() {
                                 generation of global leaders begins.
                             </p>
 
-                            {/* spacer — جای باکس را در ستون راست نگه می‌داره */}
                             <div className="h-[120px]" />
                         </div>
 
-                        {/* باکس absolute — از روی عکس شروع، تا انتهای ستون راست */}
                         <div
                             className="absolute bottom-0 right-0 rounded-2xl p-5 lg:p-6"
                             style={{
-                                left: "20%",
-                                marginBottom: "5%",
+                                left: "20%",    
+                                marginBottom: "5%",    
                                 backgroundColor: "#F3F5F6",
                                 boxShadow: "0 8px 30px rgba(0,0,0,0.12)"
                             }}
@@ -74,7 +71,7 @@ export default function Bio() {
 
                     </div>
                 </Row>
-             </div>
+            </div>
 
             {/* MOBILE */}
             <div className="block sm:hidden py-8 px-4">

@@ -65,7 +65,7 @@ export default function Header() {
   }, [pathname]);
 
   return (
-    <header className="w-full relative">
+    <header className="w-full relative md:pb-[88px]">
       {/* Mobile Header */}
       <div className="md:hidden flex items-center justify-between px-6 py-4">
         <Image
@@ -148,7 +148,7 @@ export default function Header() {
                 </summary>
 
                 <div className="pl-6 flex flex-col gap-2 mt-2">
-                  <Link href="/about-us">
+                  <Link href="/our-story">
                     Our Story
                   </Link>
                   <Link href="/our-team">
@@ -195,10 +195,10 @@ export default function Header() {
       </div>
 
       {/* Desktop Header */}
-      <div
-        className="hidden md:block p-4"
-        style={{ boxShadow: "0px 4px 30px 0px #00000040" }}
-      >
+<div
+  className="hidden md:block fixed top-0 left-0 w-full z-50 bg-white p-4"
+  style={{ boxShadow: "0px 4px 30px 0px #00000040" }}
+>
         <Row className="relative flex items-center">
           <Image
             src="/images/logo.svg"
@@ -276,7 +276,7 @@ export default function Header() {
               {aboutOpen && (
                 <div className="absolute top-full mt-2 bg-white rounded-xl shadow-lg min-w-[200px]">
                   <Link
-                    href="/about-us"
+                    href="/our-story"
                     className="block p-3 hover:bg-[#FAF6FF] rounded-xl"
                   >
                     Our Story

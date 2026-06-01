@@ -50,8 +50,8 @@ export default function Bio() {
                         <div
                             className="absolute bottom-0 right-0 rounded-2xl p-5 lg:p-6"
                             style={{
-                                left: "20%",    
-                                marginBottom: "5%",    
+                                left: "20%",
+                                marginBottom: "5%",
                                 backgroundColor: "#F3F5F6",
                                 boxShadow: "0 8px 30px rgba(0,0,0,0.12)"
                             }}
@@ -74,7 +74,7 @@ export default function Bio() {
 
                     </div>
                 </Row>
-            </div>
+             </div>
 
             {/* MOBILE */}
             <div className="block sm:hidden py-8 px-4">

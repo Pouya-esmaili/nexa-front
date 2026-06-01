@@ -1,154 +1,224 @@
-"use client";
+ "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Row from "@/components/global/Row";
 
 export default function Header() {
-    const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
-    return (
-        <header className="w-full relative">
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [formsOpen, setFormsOpen] = useState(false);
 
-            <div className="md:hidden flex items-center justify-between px-6 py-4">
-                <Image
-                    src="/images/logo.svg"
-                    alt="Nexa Logo"
-                    width={120}
-                    height={40}
-                />
+  const navRef = useRef<HTMLDivElement>(null);
 
-                <button
-                    onClick={() => setMenuOpen(!menuOpen)}
-                    aria-label="Toggle Menu"
-                >
-                    <svg
-                        width="28"
-                        height="28"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                    >
-                        <line x1="3" y1="12" x2="21" y2="12" />
-                        <line x1="3" y1="6" x2="21" y2="6" />
-                        <line x1="3" y1="18" x2="21" y2="18" />
-                    </svg>
-                </button>
+  const activeClass =
+    "text-[#8F27FF] rounded-lg";
 
-                <div
-                    className={`
-            fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-lg
-            transform transition-transform duration-300
-            ${menuOpen ? "translate-x-0" : "translate-x-full"}
-          `}
-                >
-                    <div className="flex flex-col justify-between h-full px-6 py-8">
-                        <nav className="flex flex-col gap-6 font-normal text-black">
-                            <Link href="/" onClick={() => setMenuOpen(false)}>
-                                Home
-                            </Link>
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        navRef.current &&
+        !navRef.current.contains(event.target as Node)
+      ) {
+        setServicesOpen(false);
+        setAboutOpen(false);
+        setFormsOpen(false);
+      }
+    };
 
-                            <details>
-                                <summary className="cursor-pointer font-normal list-none">
-                                    Services
-                                </summary>
-                                <div className="flex flex-col gap-3 font-normal pl-4 mt-2">
-                                    <Link href="/services/service1" onClick={() => setMenuOpen(false)}>
-                                        Service 1
-                                    </Link>
-                                    <Link href="/services/service2" onClick={() => setMenuOpen(false)}>
-                                        Service 2
-                                    </Link>
-                                </div>
-                            </details>
+    document.addEventListener("mousedown", handleClickOutside);
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+useEffect(() => {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      navRef.current &&
+      !navRef.current.contains(event.target as Node)
+    ) {
+      setServicesOpen(false);
+      setAboutOpen(false);
+      setFormsOpen(false);
+    }
+  };
 
-                            <Link href="/about-us" onClick={() => setMenuOpen(false)}>
-                                About Us
-                            </Link>
+  document.addEventListener("mousedown", handleClickOutside);
+  return () =>
+    document.removeEventListener("mousedown", handleClickOutside);
+}, []);
 
-                            <Link href="/form/step-1" onClick={() => setMenuOpen(false)}>
-                                Forms
-                            </Link>
+useEffect(() => {
+  setServicesOpen(false);
+  setAboutOpen(false);
+  setFormsOpen(false);
+  setMenuOpen(false);
+}, [pathname]);
+  const IconPlaceholder = () => (
+    <div className="w-5 h-5 flex items-center justify-center border rounded text-[10px]">
+      I
+    </div>
+  );
 
-                            <Link
-                                href="/contact"
-                                className="mt-4 inline-flex justify-center px-5 py-2 border border-[#8F27FF] text-[#8F27FF] rounded-full"
-                                onClick={() => setMenuOpen(false)}
-                            >
-                                Contact Us
-                            </Link>
-                        </nav>
+  return (
+    <header className="w-full relative">
+      <div className="md:hidden flex items-center justify-between px-6 py-4">
+        <Image src="/images/logo.svg" alt="Nexa Logo" width={120} height={40} />
 
-                        <button
-                            className="absolute top-4 right-4"
-                            onClick={() => setMenuOpen(false)}
-                            aria-label="Close Menu"
-                        >
-                            ✕
-                        </button>
-                    </div>
+        <button onClick={() => setMenuOpen(!menuOpen)}>
+          ☰
+        </button>
+
+        <div
+          className={`fixed top-0 right-0 h-full w-72 bg-white z-50 shadow-lg transition-transform duration-300 ${
+            menuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <div className="p-6 flex flex-col gap-4">
+            <Link
+              href="/"
+              className={`flex items-center gap-3 px-3 py-2 ${pathname === "/" ? activeClass : ""}`}
+            >
+              <IconPlaceholder />
+              Home
+            </Link>
+
+            <details>
+              <summary className="flex items-center justify-between cursor-pointer px-3 py-2">
+                <div className="flex items-center gap-3">
+                  <IconPlaceholder />
+                  Services
                 </div>
+                ▼
+              </summary>
+              <div className="pl-6 flex flex-col gap-2 mt-2">
+                <Link href="/Entrepreneurship">Entrepreneurship</Link>
+                <Link href="/startup">Startup</Link>
+                <Link href="/advisory">Advisory</Link>
+                <Link href="/investment">Investment</Link>
+              </div>
+            </details>
+
+            <details>
+              <summary className="flex items-center justify-between cursor-pointer px-3 py-2">
+                <div className="flex items-center gap-3">
+                  <IconPlaceholder />
+                  About Us
+                </div>
+                ▼
+              </summary>
+              <div className="pl-6 flex flex-col gap-2 mt-2">
+                <Link href="/about-us">Our Story</Link>
+                <Link href="/our-team">Our Team</Link>
+              </div>
+            </details>
+
+            <details>
+              <summary className="flex items-center justify-between cursor-pointer px-3 py-2">
+                <div className="flex items-center gap-3">
+                  <IconPlaceholder />
+                  Forms
+                </div>
+                ▼
+              </summary>
+              <div className="pl-6 flex flex-col gap-2 mt-2">
+                <Link href="/form/step-1">Apply for funding</Link>
+                <Link href="/form-2">Form 2</Link>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div className="hidden md:block p-4" style={{ boxShadow: "0px 4px 30px 0px #00000040" }}>
+        <Row className="relative flex items-center">
+          <Image src="/images/logo.svg" alt="Nexa Logo" width={120} height={40} />
+
+          <nav
+            ref={navRef}
+            className="absolute left-1/2 -translate-x-1/2 flex items-center gap-8"
+          >
+            <Link href="/" className={`px-3 py-2 ${pathname === "/" ? activeClass : ""}`}>
+              Home
+            </Link>
+
+            <div className="relative">
+              <button
+                onClick={() => {
+                  setServicesOpen(!servicesOpen);
+                  setAboutOpen(false);
+                  setFormsOpen(false);
+                }}
+                className="flex items-center gap-1 px-3 py-2"
+              >
+                Services ▼
+              </button>
+
+              {servicesOpen && (
+                <div className="absolute top-full mt-2 bg-white rounded-xl shadow-lg ">
+                  <Link href="/Entrepreneurship" className="block p-3 hover:bg-[#FAF6FF] rounded-xl">Entrepreneurship</Link>
+                  <Link href="/startup" className="block p-3 hover:bg-[#FAF6FF] rounded-xl">Startup</Link>
+                  <Link href="/advisory" className="block p-3 hover:bg-[#FAF6FF] rounded-xl">Advisory</Link>
+                  <Link href="/investment" className="block p-3 hover:bg-[#FAF6FF] rounded-xl">Investment</Link>
+                </div>
+              )}
             </div>
 
-            <div className="hidden md:block p-4" style={{ boxShadow: "0px 4px 30px 0px #00000040" }}>
-                <Row className="relative flex items-center">
-                    <div className="flex-shrink-0">
-                        <Image
-                            src="/images/logo.svg"
-                            alt="Nexa Logo"
-                            width={120}
-                            height={40}
-                        />
-                    </div>
+            <div className="relative">
+              <button
+                onClick={() => {
+                  setAboutOpen(!aboutOpen);
+                  setServicesOpen(false);
+                  setFormsOpen(false);
+                }}
+                className="flex items-center gap-1 px-3 py-2"
+              >
+                About Us ▼
+              </button>
 
-                    <nav className="absolute left-1/2 -translate-x-1/2 flex items-center gap-10 text-black">
-                        <Link href="/" className="hover:text-purple-600 transition-colors">
-                            Home
-                        </Link>
-
-                        <div className="relative group">
-                            <button className="hover:text-purple-600 transition-colors">
-                                Services
-                            </button>
-                            <div className="absolute top-full left-0 hidden group-hover:block bg-white shadow-md rounded-md mt-2 min-w-[160px] z-50">
-                                <Link
-                                    href="/services/service1"
-                                    className="block px-4 py-2 hover:bg-gray-100"
-                                >
-                                    Service 1
-                                </Link>
-                                <Link
-                                    href="/services/service2"
-                                    className="block px-4 py-2 hover:bg-gray-100"
-                                >
-                                    Service 2
-                                </Link>
-                            </div>
-                        </div>
-
-                        <Link href="/about-us" className="hover:text-purple-600 transition-colors">
-                            About Us
-                        </Link>
-
-                        <Link href="/form/step-1" className="hover:text-purple-600 transition-colors">
-                            Forms
-                        </Link>
-                    </nav>
-
-                    <div className="ml-auto">
-                        <Link
-                            href="/contact"
-                            className="px-5 py-2 border border-[#8F27FF] text-[#8F27FF] rounded-full hover:bg-[#8F27FF] hover:text-white transition-colors font-medium"
-                        >
-                            Contact Us
-                        </Link>
-                    </div>
-                </Row>
+              {aboutOpen && (
+                <div className="absolute top-full mt-2 bg-white  rounded-xl shadow-lg min-w-[200px]">
+                  <Link href="/about-us" className="block p-3 hover:bg-[#FAF6FF] rounded-xl">Our Story</Link>
+                  <Link href="/our-team" className="block p-3 hover:bg-[#FAF6FF] rounded-xl">Our Team</Link>
+                </div>
+              )}
             </div>
-        </header>
-    );
+
+            <div className="relative">
+              <button
+                onClick={() => {
+                  setFormsOpen(!formsOpen);
+                  setServicesOpen(false);
+                  setAboutOpen(false);
+                }}
+                className="flex items-center gap-1 px-3 py-2"
+              >
+                Forms ▼
+              </button>
+
+              {formsOpen && (
+                <div className="absolute top-full mt-2 bg-white rounded-xl shadow-lg min-w-[200px]">
+                  <Link href="/form/step-1" className="block p-3 hover:bg-[#FAF6FF] rounded-xl">Apply for funding</Link>
+                  <Link href="/form-2" className="block p-3 hover:bg-[#FAF6FF] rounded-xl">Form 2</Link>
+                </div>
+              )}
+            </div>
+          </nav>
+
+          <div className="ml-auto">
+            <Link
+              href="/contact"
+              className="px-5 py-2 border border-[#8F27FF] text-[#8F27FF] rounded-full"
+            >
+              Contact Us
+            </Link>
+          </div>
+        </Row>
+      </div>
+    </header>
+  );
 }

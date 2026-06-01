@@ -1,4 +1,4 @@
- "use client";
+"use client";
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
@@ -35,29 +35,29 @@ export default function Header() {
     return () =>
       document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-useEffect(() => {
-  const handleClickOutside = (event: MouseEvent) => {
-    if (
-      navRef.current &&
-      !navRef.current.contains(event.target as Node)
-    ) {
-      setServicesOpen(false);
-      setAboutOpen(false);
-      setFormsOpen(false);
-    }
-  };
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        navRef.current &&
+        !navRef.current.contains(event.target as Node)
+      ) {
+        setServicesOpen(false);
+        setAboutOpen(false);
+        setFormsOpen(false);
+      }
+    };
 
-  document.addEventListener("mousedown", handleClickOutside);
-  return () =>
-    document.removeEventListener("mousedown", handleClickOutside);
-}, []);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
-useEffect(() => {
-  setServicesOpen(false);
-  setAboutOpen(false);
-  setFormsOpen(false);
-  setMenuOpen(false);
-}, [pathname]);
+  useEffect(() => {
+    setServicesOpen(false);
+    setAboutOpen(false);
+    setFormsOpen(false);
+    setMenuOpen(false);
+  }, [pathname]);
   const IconPlaceholder = () => (
     <div className="w-5 h-5 flex items-center justify-center border rounded text-[10px]">
       I
@@ -74,9 +74,8 @@ useEffect(() => {
         </button>
 
         <div
-          className={`fixed top-0 right-0 h-full w-72 bg-white z-50 shadow-lg transition-transform duration-300 ${
-            menuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+          className={`fixed top-0 right-0 h-full w-72 bg-white z-50 shadow-lg transition-transform duration-300 ${menuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
         >
           <div className="p-6 flex flex-col gap-4">
             <Link

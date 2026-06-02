@@ -11,7 +11,7 @@ export default function Section() {
   ];
 
   return (
-    <section className="w-full px-4">
+    <section className="w-full px-4 md:mb-4">
 
       <div className="hidden sm:block">
         <Row className="flex gap-20 justify-between items-center">

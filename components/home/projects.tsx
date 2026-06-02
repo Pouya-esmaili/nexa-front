@@ -73,12 +73,12 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section className="w-full py-12 md:py-16 2xl:py-24">
+    <section className="w-full py-12 md:py-16 2xl:py-24 md:mt-4">
       {/* Container */}
       <div className="w-full mx-auto">
 
         {/* Title */}
-        <h2 className="text-center text-2xl md:text-4xl 2xl:text-5xl font-bold mb-8 md:mb-12">
+        <h2 className="text-center text-2xl md:text-3xl 2xl:text-5xl font-bold mb-8 md:mb-12">
           Our Successful Projects
         </h2>
 

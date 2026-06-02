@@ -30,15 +30,9 @@ export default function Bio() {
                             </h2>
 
                             <p className="leading-relaxed font-normal text-black text-base lg:text-lg">
-                                NEXA is a global hub where bold founders and bright ideas come to grow.
-                                We unite industry expertise with the creativity of young, global-minded team —
-                                fusing the fearless creativity of next-generation talent with the strategic precision
-                                of industry leaders to turn early concepts into world-ready companies.
-                                With strong roots in emerging markets and powerful networks across, we give entrepreneurs
-                                the capital, mentorship, and global access they need to thrive.
-                                We don't just invest — we ignite ecosystems, accelerate growth, and help visionaries
-                                build meaningful impact. This is where ambition becomes reality, and where the next
-                                generation of global leaders begins.
+                                NEXA is a global hub where bold founders and breakthrough ideas come to grow. We bring together industry expertise and the creativity of a young, globally minded team—blending the fearless innovation of next-generation talent with the strategic insight of experienced leaders to transform early-stage concepts into world-ready companies.<br></br><br></br>
+
+                                With strong roots in emerging markets and an extensive international network, we provide entrepreneurs with the capital, mentorship, and global opportunities they need to succeed. We don't just invest—we help build ecosystems, accelerate growth, and empower visionaries to create meaningful impact. This is where ambition becomes reality and where the next generation of global leaders begins its journey.
                             </p>
 
                             <div className="h-[120px]" />
@@ -47,8 +41,8 @@ export default function Bio() {
                         <div
                             className="absolute bottom-0 right-0 rounded-2xl p-5 lg:p-6"
                             style={{
-                                left: "20%",    
-                                marginBottom: "5%",    
+                                left: "20%",
+                                marginBottom: "5%",
                                 backgroundColor: "#F3F5F6",
                                 boxShadow: "0 8px 30px rgba(0,0,0,0.12)"
                             }}
@@ -91,15 +85,9 @@ export default function Bio() {
                         Who <Highlight>We</Highlight> Are !
                     </h2>
                     <p className="leading-relaxed text-black text-base font-normal">
-                        NEXA is a global hub where bold founders and bright ideas come to grow.
-                        We unite industry expertise with the creativity of young, global-minded team —
-                        fusing the fearless creativity of next-generation talent with the strategic precision
-                        of industry leaders to turn early concepts into world-ready companies.
-                        With strong roots in emerging markets and powerful networks across, we give entrepreneurs
-                        the capital, mentorship, and global access they need to thrive.
-                        We don't just invest — we ignite ecosystems, accelerate growth, and help visionaries
-                        build meaningful impact. This is where ambition becomes reality, and where the next
-                        generation of global leaders begins.
+                        NEXA is a global hub where bold founders and breakthrough ideas come to grow. We bring together industry expertise and the creativity of a young, globally minded team—blending the fearless innovation of next-generation talent with the strategic insight of experienced leaders to transform early-stage concepts into world-ready companies.
+
+                        With strong roots in emerging markets and an extensive international network, we provide entrepreneurs with the capital, mentorship, and global opportunities they need to succeed. We don't just invest—we help build ecosystems, accelerate growth, and empower visionaries to create meaningful impact. This is where ambition becomes reality and where the next generation of global leaders begins its journey.
                     </p>
                 </div>
 

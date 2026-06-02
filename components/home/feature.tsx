@@ -38,7 +38,7 @@ const cardData = [
 
 export default function CardsPage() {
   return (
-    <div className="flex items-center justify-center px-4 py-8 md:px-10 md:py-18">
+    <div className="flex items-center justify-center px-4 py-8 md:px-10 md:py-18 md:mb-4 md:mt-4">
       <div
         className="
           grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4

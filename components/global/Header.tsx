@@ -328,20 +328,20 @@ export default function Header() {
             <div className="relative">
               <button
                 onClick={() => {
-                  setAboutOpen(!aboutOpen);
+                  setFormsOpen(!formsOpen);
                   setServicesOpen(false);
-                  setFormsOpen(false);
+                  setAboutOpen(false);
                 }}
                 className="flex items-center gap-2 px-3 py-2"
               >
-                About Us
+                Forms
 
                 <Image
                   src="/images/arrow.svg"
                   alt="Arrow"
                   width={14}
                   height={14}
-                  className={`transition-transform duration-300 ${aboutOpen ? "rotate-180" : ""
+                  className={`transition-transform duration-300 ${formsOpen ? "rotate-180" : ""
                     }`}
                 />
               </button>

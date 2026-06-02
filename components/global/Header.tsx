@@ -296,7 +296,6 @@ export default function Header() {
                 className="flex items-center gap-2 px-3 py-2"
               >
                 About Us
-
                 <Image
                   src="/images/arrow.svg"
                   alt="Arrow"

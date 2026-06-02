@@ -194,7 +194,7 @@ export default function Header() {
                     Apply for funding
                   </Link>
                   <Link href="/form-2">
-                    Form 2
+                    Evaluate
                   </Link>
                 </div>
               </details>
@@ -358,7 +358,7 @@ export default function Header() {
                     href="/form-2"
                     className="block p-3 hover:bg-[#FAF6FF] rounded-xl"
                   >
-                    Form 2
+                    Evaluate
                   </Link>
                 </div>
               )}

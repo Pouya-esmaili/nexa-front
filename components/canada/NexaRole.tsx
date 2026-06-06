@@ -1,3 +1,5 @@
+"use client";
+
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
 

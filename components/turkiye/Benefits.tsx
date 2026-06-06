@@ -1,4 +1,5 @@
 import Row from "@/components/global/Row";
+import Reveal from "@/components/global/Reveal";
 
 const benefits = [
   {
@@ -74,37 +75,48 @@ export default function Benefits() {
   return (
     <section className="py-16 md:py-20 bg-white">
       <Row>
-        <h2 className="text-[28px] md:text-[38px] font-bold tracking-tight mb-10 md:mb-14">
-          Key Benefits of Turkish Citizenship
-        </h2>
+        <Reveal variant="up" className="mb-10 md:mb-14">
+          <h2 className="text-[28px] md:text-[38px] font-bold tracking-tight">
+            Key Benefits of Turkish Citizenship
+          </h2>
+        </Reveal>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {benefits.map((b) => (
-            <article
-              key={b.num}
-              className="relative p-6 rounded-2xl flex flex-col gap-4 overflow-hidden"
-              style={
-                b.purple
-                  ? { background: "#1a1a22", color: "#fff" }
-                  : { background: "#faf9f5", color: "#1a1a22", border: "1px solid #f0f0f0" }
-              }
-            >
-              <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center"
-                style={b.purple ? { background: "rgba(143,39,255,0.25)", color: "#c084fc" } : { background: "#FAF6FF", color: "#8F27FF" }}
+          {benefits.map((b, i) => (
+            <Reveal key={b.num} variant="up" delay={i * 70}>
+              <article
+                className="relative p-6 rounded-2xl flex flex-col gap-4 overflow-hidden h-full transition-all duration-300 hover:-translate-y-1"
+                style={
+                  b.purple
+                    ? { background: "#1a1a22", color: "#fff", boxShadow: "0 4px 24px rgba(0,0,0,0.15)" }
+                    : { background: "#faf9f5", color: "#1a1a22", border: "1px solid #f0f0f0", boxShadow: "0 2px 12px rgba(0,0,0,0.03)" }
+                }
               >
-                {b.icon}
-              </div>
-              <span
-                className="text-[11px] font-bold uppercase tracking-widest"
-                style={b.purple ? { color: "rgba(255,255,255,0.3)" } : { color: "#ccc" }}
-              >
-                {b.num}
-              </span>
-              <h3 className="font-bold text-[17px]">{b.title}</h3>
-              <p className="text-[13px] leading-relaxed" style={b.purple ? { color: "rgba(255,255,255,0.55)" } : { color: "#666" }}>
-                {b.desc}
-              </p>
-            </article>
+                {/* Glow for purple cards */}
+                {b.purple && (
+                  <div
+                    className="absolute top-0 right-0 w-32 h-32 rounded-full pointer-events-none"
+                    style={{ background: "radial-gradient(circle, rgba(143,39,255,0.2), transparent 70%)" }}
+                  />
+                )}
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center"
+                  style={b.purple ? { background: "rgba(143,39,255,0.25)", color: "#c084fc" } : { background: "#FAF6FF", color: "#8F27FF" }}
+                >
+                  {b.icon}
+                </div>
+                <span
+                  className="text-[11px] font-bold uppercase tracking-widest"
+                  style={b.purple ? { color: "rgba(255,255,255,0.3)" } : { color: "#ccc" }}
+                >
+                  {b.num}
+                </span>
+                <h3 className="font-bold text-[17px]">{b.title}</h3>
+                <p className="text-[13px] leading-relaxed" style={b.purple ? { color: "rgba(255,255,255,0.55)" } : { color: "#666" }}>
+                  {b.desc}
+                </p>
+              </article>
+            </Reveal>
           ))}
         </div>
       </Row>

@@ -1,4 +1,5 @@
 import Row from "@/components/global/Row";
+import Reveal from "@/components/global/Reveal";
 
 const cards = [
   {
@@ -44,22 +45,26 @@ export default function WhyTurkiye() {
   return (
     <section className="py-16 md:py-20 bg-white" id="why">
       <Row>
-        <h2 className="text-[28px] md:text-[38px] font-bold tracking-tight text-center mb-10 md:mb-14">
-          Why Türkiye?
-        </h2>
+        <Reveal variant="up" className="text-center mb-10 md:mb-14">
+          <h2 className="text-[28px] md:text-[38px] font-bold tracking-tight">
+            Why Türkiye?
+          </h2>
+        </Reveal>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {cards.map((c) => (
-            <article
-              key={c.title}
-              className="flex flex-col gap-4 p-6 rounded-2xl border border-gray-100 bg-white"
-              style={{ boxShadow: "0 2px 16px rgba(0,0,0,0.04)" }}
-            >
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: "#FAF6FF" }}>
-                {c.icon}
-              </div>
-              <h3 className="font-semibold text-[16px] text-black">{c.title}</h3>
-              <p className="text-[14px] text-gray-500 leading-relaxed">{c.desc}</p>
-            </article>
+          {cards.map((c, i) => (
+            <Reveal key={c.title} variant="up" delay={i * 80}>
+              <article
+                className="flex flex-col gap-4 p-6 rounded-2xl border border-gray-100 bg-white h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                style={{ boxShadow: "0 2px 16px rgba(0,0,0,0.04)" }}
+              >
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300 group-hover:bg-[#8F27FF]" style={{ background: "#FAF6FF" }}>
+                  {c.icon}
+                </div>
+                <h3 className="font-semibold text-[16px] text-black">{c.title}</h3>
+                <p className="text-[14px] text-gray-500 leading-relaxed">{c.desc}</p>
+              </article>
+            </Reveal>
           ))}
         </div>
       </Row>

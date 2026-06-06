@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Row from "@/components/global/Row";
+import Reveal from "@/components/global/Reveal";
 
 const faqs = [
   { q: "What is the minimum investment required for Turkish citizenship?", a: "Foreign investors may qualify for Turkish citizenship through qualifying real estate with a minimum value of USD 600,000 — established by the Turkish government. The property must be held for at least 3 years." },
@@ -20,13 +21,15 @@ export default function FAQs() {
   return (
     <section className="py-16 md:py-20 bg-white">
       <Row>
-        <h2 className="text-[28px] md:text-[38px] font-bold tracking-tight mb-10 md:mb-14">
-          FAQs
-        </h2>
+        <Reveal variant="up" className="mb-10 md:mb-14">
+          <h2 className="text-[28px] md:text-[38px] font-bold tracking-tight">
+            FAQs
+          </h2>
+        </Reveal>
         <div className="flex flex-col gap-3 max-w-3xl">
           {faqs.map((f, i) => (
+            <Reveal key={i} variant="up" delay={i * 50}>
             <div
-              key={i}
               className="rounded-2xl overflow-hidden"
               style={{ border: open === i ? "1.5px solid #8F27FF" : "1px solid #EFEFEF", background: open === i ? "#FAF6FF" : "#fff" }}
             >
@@ -51,6 +54,7 @@ export default function FAQs() {
                 </div>
               )}
             </div>
+            </Reveal>
           ))}
         </div>
       </Row>

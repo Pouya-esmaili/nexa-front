@@ -1,4 +1,5 @@
 import Row from "@/components/global/Row";
+import Reveal from "@/components/global/Reveal";
 
 const profiles = [
   {
@@ -64,24 +65,28 @@ export default function Eligibility() {
   return (
     <section className="py-16 md:py-20 bg-[#faf9f5]">
       <Row>
-        <h2 className="text-[28px] md:text-[38px] font-bold tracking-tight mb-10 md:mb-14 text-center">
-          Who Is This Program Designed For?
-        </h2>
+        <Reveal variant="up" className="text-center mb-10 md:mb-14">
+          <h2 className="text-[28px] md:text-[38px] font-bold tracking-tight">
+            Who Is This Program Designed For?
+          </h2>
+        </Reveal>
+
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {profiles.map((p) => (
-            <div
-              key={p.label}
-              className="flex flex-col items-center text-center gap-4 p-6 rounded-2xl bg-white"
-              style={{ boxShadow: "0 2px 16px rgba(0,0,0,0.04)", border: "1px solid #f0f0f0" }}
-            >
+          {profiles.map((p, i) => (
+            <Reveal key={p.label} variant="scale" delay={i * 60}>
               <div
-                className="w-14 h-14 rounded-xl flex items-center justify-center text-[#8F27FF]"
-                style={{ background: "#FAF6FF" }}
+                className="flex flex-col items-center text-center gap-4 p-6 rounded-2xl bg-white h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-[#e0d0ff]"
+                style={{ boxShadow: "0 2px 16px rgba(0,0,0,0.04)", border: "1px solid #f0f0f0" }}
               >
-                {p.icon}
+                <div
+                  className="w-14 h-14 rounded-xl flex items-center justify-center text-[#8F27FF] transition-colors duration-300 group-hover:bg-[#8F27FF]"
+                  style={{ background: "#FAF6FF" }}
+                >
+                  {p.icon}
+                </div>
+                <span className="text-[14px] font-medium text-[#333] leading-snug">{p.label}</span>
               </div>
-              <span className="text-[14px] font-medium text-[#333] leading-snug">{p.label}</span>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Row>

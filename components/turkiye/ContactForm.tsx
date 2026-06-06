@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import Row from "@/components/global/Row";
+import Reveal from "@/components/global/Reveal";
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
@@ -14,12 +15,14 @@ export default function ContactForm() {
   return (
     <section id="contact" className="py-16 md:py-20 bg-[#faf9f5]">
       <Row>
-        <h2 className="text-[28px] md:text-[38px] font-bold tracking-tight mb-3">
-          Start Your Türkiye Investment Pathway
-        </h2>
-        <p className="text-[15px] text-gray-500 mb-10">
-          Your information is reviewed confidentially by Nexa's advisory team.
-        </p>
+        <Reveal variant="up" className="mb-10">
+          <h2 className="text-[28px] md:text-[38px] font-bold tracking-tight mb-3">
+            Start Your Türkiye Investment Pathway
+          </h2>
+          <p className="text-[15px] text-gray-500">
+            Your information is reviewed confidentially by Nexa&apos;s advisory team.
+          </p>
+        </Reveal>
 
         {sent ? (
           <div

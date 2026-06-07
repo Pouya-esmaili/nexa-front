@@ -1,199 +1,64 @@
 "use client";
 
-import { useRef, useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import Reveal from "@/components/global/Reveal";
+
+const projects = [
+  { name: "Landa Trip",      tag: "Tourism · Travel",                 img: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=700&q=80" },
+  { name: "Landa Craft",     tag: "Handcraft · Artisan Market",       img: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=700&q=80" },
+  { name: "AutiLab",         tag: "Autism Support · Child EdTech",    img: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=700&q=80" },
+  { name: "Vision Raft",     tag: "Virtual Reality · Immersive Tech", img: "https://images.unsplash.com/photo-1617802690992-15d93263d3a9?w=700&q=80" },
+  { name: "Diaco",           tag: "Business Solutions · Corporate",   img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&q=80" },
+  { name: "Arshia Gallery",  tag: "Fine Jewelry · Luxury Retail",     img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=700&q=80" },
+  { name: "Preventie Gene",  tag: "Genetics · Health Prevention",     img: "https://images.unsplash.com/photo-1532187643603-ba119ca4109e?w=700&q=80" },
+  { name: "SteadySkull",     tag: "Surgical Device · MedTech",        img: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=700&q=80" },
+];
 
 export default function ProjectsSection() {
-  const sliderRef = useRef<HTMLDivElement | null>(null);
-
-  const [isDown, setIsDown] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-
-  const projects = [
-    {
-      title: "Landa Trip",
-      image: "/images/landing/projects(1).svg",
-      logo: "/images/landing/trip.svg",
-      link: "/projects/landa-trip",
-    },
-    {
-      title: "Landa Craft",
-      image: "/images/landing/projects(2).svg",
-      logo: "/images/landing/craft.svg",
-      link: "/projects/landa-craft",
-    },
-    {
-      title: "AutiLab",
-      image: "/images/landing/projects(10).svg",
-      logo: "/images/landing/Autilab.svg",
-      link: "/projects/autilab",
-    },
-    {
-      title: "Vision raft",
-      image: "/images/landing/projects(7).svg",
-      logo: "/images/landing/raft.svg",
-      link: "/projects/vision-raft",
-    },
-    {
-      title: "Diaco",
-      image: "/images/landing/projects(8).svg",
-      logo: "/images/landing/diaco.svg",
-      link: "/projects/diaco",
-    },
-    {
-      title: "Arshia Gallery",
-      image: "/images/landing/projects(9).svg",
-      logo: "/images/landing/Autilab.svg",
-      link: "/projects/arshia-gallery",
-    },
-  ];
-
-  const mouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!sliderRef.current) return;
-
-    setIsDown(true);
-    setStartX(e.pageX - sliderRef.current.offsetLeft);
-    setScrollLeft(sliderRef.current.scrollLeft);
-  };
-
-  const mouseLeave = () => setIsDown(false);
-  const mouseUp = () => setIsDown(false);
-
-  const mouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isDown || !sliderRef.current) return;
-
-    e.preventDefault();
-
-    const x = e.pageX - sliderRef.current.offsetLeft;
-    const walk = (x - startX) * 1.5;
-
-    sliderRef.current.scrollLeft = scrollLeft - walk;
-  };
-
   return (
-    <section className="w-full py-12 md:py-16 2xl:py-24 md:mt-4">
-      {/* Container */}
-      <div className="w-full mx-auto">
+    <section className="py-20 md:py-24 bg-white">
+      <div className="max-w-[1240px] mx-auto px-6">
 
-        {/* Title */}
-        <h2 className="text-center text-2xl md:text-3xl 2xl:text-5xl font-bold mb-8 md:mb-12">
-          Our Successful Projects
-        </h2>
+        <Reveal variant="up">
+          <div className="text-center mb-14">
+            <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em]">
+              Our Successful Projects
+            </h2>
+          </div>
+        </Reveal>
 
-        {/* Slider */}
-        <div
-          ref={sliderRef}
-          className="
-            flex gap-4 md:gap-6 2xl:gap-8
-            px-4 md:px-8 
-            pb-6 overflow-x-auto
-            cursor-grab active:cursor-grabbing
-            select-none
-            scrollbar-hide
-            scroll-smooth
-          "
-          onMouseDown={mouseDown}
-          onMouseLeave={mouseLeave}
-          onMouseUp={mouseUp}
-          onMouseMove={mouseMove}
-        >
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="
-                relative
-                min-w-[240px]
-                sm:min-w-[280px]
-                md:min-w-[340px]
-                xl:min-w-[280px]
-                2xl:min-w-[430px]
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[22px]">
+          {projects.map((p, i) => (
+            <Reveal key={p.name} variant="up" delay={i * 50}>
+              <div className="group relative rounded-[20px] overflow-hidden md:h-[260px] h-[200px] cursor-pointer">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={p.img}
+                  alt={p.name}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
 
-                h-[240px]
-                sm:h-[280px]
-                md:h-[340px]
-                xl:h-[400px]
-                2xl:h-[480px]
+                {/* base overlay */}
+                <div className="absolute inset-0 transition-all duration-300"
+                  style={{ background: "linear-gradient(180deg,transparent 40%,rgba(0,0,0,0.75) 100%)" }} />
+                {/* hover overlay */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{ background: "linear-gradient(180deg,rgba(143,39,255,0.08) 0%,rgba(0,0,0,0.85) 100%)" }} />
 
-                rounded-2xl
-                overflow-hidden
-                shrink-0
-                group
-              "
-            >
-              {/* Background Image */}
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-all duration-300" />
-
-              {/* Bottom Content */}
-              <div
-                className="
-                  absolute bottom-3 left-3 right-3
-                  flex items-center justify-between
-                  bg-white/10 backdrop-blur-xl
-                  px-3 md:px-4
-                  py-2 md:py-3
-                  rounded-2xl
-                "
-              >
-                <div className="flex items-center gap-3">
-                  <Image
-                    src={project.logo}
-                    alt="logo"
-                    width={44}
-                    height={34}
-                    className="
-                      opacity-90
-                      w-8 md:w-10 2xl:w-12
-                      h-auto
-                    "
-                  />
-
-                  <span
-                    className="
-                      text-sm md:text-base 2xl:text-lg
-                      text-white
-                      font-extrabold
-                    "
-                  >
-                    {project.title}
-                  </span>
+                {/* body */}
+                <div className="absolute bottom-0 left-0 right-0 p-[22px] flex items-end justify-between">
+                  <div>
+                    <div className="text-white font-bold text-[16px] tracking-[-0.01em]">{p.name}</div>
+                    <div className="text-[rgba(255,255,255,0.65)] text-[12px] font-medium mt-1">{p.tag}</div>
+                  </div>
+                  <div className="w-9 h-9 rounded-full bg-white/20 border border-white/30 grid place-items-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                    <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </div>
                 </div>
-
-                {/* Arrow */}
-                <Link
-                  href={project.link}
-                  className="
-                    w-10 h-10 md:w-12 md:h-12
-                    flex items-center justify-center
-                    rounded-full
-                    bg-white
-                    shadow-lg
-                    transition-all duration-300
-                    hover:scale-110
-                    shrink-0
-                  "
-                >
-                  <Image
-                    src="/images/landing/arrow.svg"
-                    alt="arrow"
-                    width={22}
-                    height={22}
-                    className="w-4 md:w-5 2xl:w-6 h-auto"
-                  />
-                </Link>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
+
       </div>
     </section>
   );

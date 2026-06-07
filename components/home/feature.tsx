@@ -38,7 +38,15 @@ const cardData = [
 
 export default function CardsPage() {
   return (
-    <div className="flex items-center justify-center px-4 py-8 md:px-10 md:py-18 md:mb-4 md:mt-4">
+    <div id="services" className="flex flex-col items-center justify-center px-4 py-8 md:px-10 md:py-18 md:mb-4 md:mt-4">
+
+      {/* ── Section Title ── */}
+      <div className="text-center mb-10">
+        <h2 className="text-[32px] md:text-[40px] font-bold tracking-[-0.03em] text-black">
+          Our Services
+        </h2>
+      </div>
+      
       <div
         className="
           grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4
@@ -75,9 +83,11 @@ function Card({
   icon: string;
 }) {
   return (
+    
     <div className="group relative w-full flex flex-col items-center transition-all duration-500 mt-10 md:mt-6">
       {/* Card Shadow Wrapper */}
       <div className="relative w-full filter drop-shadow-[0_-1px_0_#8F27FF] group-hover:drop-shadow-none transition-all duration-300 h-full">
+       
         {/* Card Body */}
         <div className="relative w-full bg-white border border-[#8F27FF] rounded-2xl p-5 pt-16 pb-20 flex flex-col items-center text-center h-full transition-all duration-500 group-hover:bg-[#8F27FF] group-hover:translate-y-4 [mask-image:radial-gradient(circle_at_top_center,transparent_2.8rem,black_2.9rem)] [-webkit-mask-image:radial-gradient(circle_at_top_center,transparent_2.8rem,black_2.9rem)]">
 

@@ -1,112 +1,77 @@
 import Image from "next/image";
-import Row from "../global/Row";
-import Highlight from "../ui/Highlight";
+import Link from "next/link";
+import Reveal from "@/components/global/Reveal";
+
+const bullets = [
+  "Direct Access to Top Accelerators and Research Ecosystems",
+  "Cross-border Co-founder and Elite Talent Pools",
+  "Global Investor Circles and Strategic Growth Capital",
+];
 
 export default function Bio() {
-    return (
-        <section className="w-full">
+  return (
+    <section className="py-20 md:py-24 bg-[#F7F6F9]">
+      <div className="max-w-[1240px] mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[70px] items-center">
 
-            {/* DESKTOP */}
-            <div className="hidden sm:block">
-                <Row className="py-16">
-
-                    <div className="relative flex flex-col md:flex-row gap-10 items-start pb-10">
-
-                        {/* چپ: عکس */}
-                        <div className="w-full md:w-[45%] shrink-0">
-                            <Image
-                                src="/images/landing/teammate.svg"
-                                alt="team"
-                                width={600}
-                                height={500}
-                                className="rounded-2xl w-full h-auto object-cover"
-                            />
-                        </div>
-
-                        <div className="flex-1 flex flex-col gap-6">
-
-                            <h2 className="text-3xl lg:text-4xl font-bold">
-                                Who <Highlight>We</Highlight> Are !
-                            </h2>
-
-                            <p className="leading-relaxed font-normal text-black text-base lg:text-lg">
-                                NEXA is a global hub where bold founders and breakthrough ideas come to grow. We bring together industry expertise and the creativity of a young, globally minded team—blending the fearless innovation of next-generation talent with the strategic insight of experienced leaders to transform early-stage concepts into world-ready companies.<br></br><br></br>
-
-                                With strong roots in emerging markets and an extensive international network, we provide entrepreneurs with the capital, mentorship, and global opportunities they need to succeed. We don't just invest—we help build ecosystems, accelerate growth, and empower visionaries to create meaningful impact. This is where ambition becomes reality and where the next generation of global leaders begins its journey.
-                            </p>
-
-                            <div className="h-[120px]" />
-                        </div>
-
-                        <div
-                            className="absolute bottom-0 right-0 rounded-2xl p-5 lg:p-6"
-                            style={{
-                                left: "20%",
-                                marginBottom: "5%",
-                                backgroundColor: "#F3F5F6",
-                                boxShadow: "0 8px 30px rgba(0,0,0,0.12)"
-                            }}
-                        >
-                            <p className="text-sm lg:text-base font-bold text-black mb-3">
-                                Through exclusive networks in Europe, Canada, and the Middle East, we deliver:
-                            </p>
-                            <ul className="space-y-2 text-black">
-                                <li className="text-sm lg:text-base font-medium">
-                                    • Direct Access to Top Accelerators and Research Ecosystems
-                                </li>
-                                <li className="text-sm lg:text-base font-medium">
-                                    • Cross-border Co-founder and Elite Talent Pools
-                                </li>
-                                <li className="text-sm lg:text-base font-medium">
-                                    • Global Investor Circles and Strategic Growth Capital
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </Row>
+          {/* Left — image */}
+          <Reveal variant="left">
+            <div className="relative rounded-[24px] overflow-hidden">
+              <Image
+                src="/images/landing/teammate.svg"
+                alt="Who We Are"
+                width={600}
+                height={520}
+                className="w-full h-auto object-cover"
+              />
+              
             </div>
+          </Reveal>
 
-            {/* MOBILE */}
-            <div className="block sm:hidden py-8 px-4">
+          {/* Right — content */}
+          <Reveal variant="right">
+            <div className="flex flex-col gap-5">
 
-                <div className="w-full mb-6">
-                    <Image
-                        src="/images/landing/teammate.svg"
-                        alt="team"
-                        width={600}
-                        height={400}
-                        className="rounded-2xl w-full h-auto object-cover"
-                    />
-                </div>
+              <h2 className="text-[32px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1]">
+                NEXA is where{" "}
+                <span className="inline bg-[#FFE600] rounded-[3px] px-[5px] pb-[3px]">bold founders</span>{" "}
+                come to grow.
+              </h2>
 
-                <div className="space-y-4 mb-6">
-                    <h2 className="text-3xl font-bold">
-                        Who <Highlight>We</Highlight> Are !
-                    </h2>
-                    <p className="leading-relaxed text-black text-base font-normal">
-                        NEXA is a global hub where bold founders and breakthrough ideas come to grow. We bring together industry expertise and the creativity of a young, globally minded team—blending the fearless innovation of next-generation talent with the strategic insight of experienced leaders to transform early-stage concepts into world-ready companies.
+              <p className="text-[16px] text-[#929292] leading-[1.72]">
+                NEXA is a global hub where bold founders and breakthrough ideas come to grow.
+                We bring together industry expertise and the creativity of a young, globally
+                minded team — blending fearless innovation with strategic insight to transform
+                early-stage concepts into world-ready companies.
+              </p>
 
-                        With strong roots in emerging markets and an extensive international network, we provide entrepreneurs with the capital, mentorship, and global opportunities they need to succeed. We don't just invest—we help build ecosystems, accelerate growth, and empower visionaries to create meaningful impact. This is where ambition becomes reality and where the next generation of global leaders begins its journey.
-                    </p>
-                </div>
+              <p className="text-[16px] text-[#929292] leading-[1.72]">
+                With strong roots in emerging markets and an extensive international network,
+                we provide entrepreneurs with the capital, mentorship, and global opportunities
+                they need to succeed.
+              </p>
 
-                <div
-                    className="rounded-2xl p-5"
-                    style={{ backgroundColor: "#F3F5F6", boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}
-                >
-                    <p className="text-base font-bold text-black mb-4">
-                        Through exclusive networks in Europe, Canada, and the Middle East, we deliver:
-                    </p>
-                    <ul className="space-y-3 text-black">
-                        <li className="text-sm font-medium">• Direct Access to Top Accelerators and Research Ecosystems</li>
-                        <li className="text-sm font-medium">• Cross-border Co-founder and Elite Talent Pools</li>
-                        <li className="text-sm font-medium">• Global Investor Circles and Strategic Growth Capital</li>
-                    </ul>
-                </div>
-
+              {/* Bullets */}
+              <ul className="flex flex-col gap-3.5 mt-2">
+                {bullets.map((b) => (
+                  <li key={b} className="flex items-center gap-3.5 text-[15px] text-[#474747] leading-[1.5]">
+                    <span className="flex-shrink-0 w-[26px] h-[26px] bg-[rgba(143,39,255,0.12)] rounded-full grid place-items-center">
+                      <svg className="w-3 h-3 text-[#8F27FF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}><polyline points="20 6 9 17 4 12" /></svg>
+                    </span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/our-team"
+                className="self-start mt-2 inline-flex items-center gap-2 px-7 py-3.5 border-[1.5px] border-[#8F27FF] text-[#8F27FF] font-semibold rounded-full text-[14px] hover:bg-[#8F27FF] hover:text-white hover:-translate-y-px transition-all">
+                Meet Our Team →
+              </Link>
             </div>
+          </Reveal>
 
-        </section>
-    );
+        </div>
+      </div>
+    </section>
+  );
 }

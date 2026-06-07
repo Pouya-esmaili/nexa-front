@@ -1,70 +1,95 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import Row from "../global/Row";
-import Highlight from "../ui/Highlight";
+import Link from "next/link";
 
-const Hero = () => {
+export default function Hero() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { const t = setTimeout(() => setMounted(true), 80); return () => clearTimeout(t); }, []);
+
+  const base = "transition-all duration-700";
+  const hidden = "opacity-0 translate-y-8";
+  const shown = "opacity-100 translate-y-0";
+
   return (
-    <section className="w-full mt-10">
-      {/* Mobile */}
-      <div className="flex flex-col gap-6 px-6 md:hidden">
-        <h1 className="text-3xl font-bold leading-tight text-black">
-          Your <Highlight>Global Launchpad</Highlight> for Investment, Startups,
-          Entrepreneurship, and Career Opportunities
-        </h1>
+    <section className="pt-1 pb-14 md:pb-20 bg-white overflow-hidden">
+      <div className="max-w-[1240px] mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
 
-        <p className="text-lg font-normal text-justify">
-          We fuel the global expansion of startups into new markets — for
-          entrepreneurs ready to scale and investors seeking high-growth
-          opportunities.
-        </p>
+          {/* ── LEFT: Text ── */}
+          <div className="order-2 md:order-1">
 
-        <Image
-          width={1200}
-          height={1200}
-          src="/images/landing/TEAM 1 (1).svg"
-          alt="Hero team"
-          className="w-full h-auto object-contain"
-          priority
-        />
-      </div>
-
-      {/* Desktop */}
-      <div className="hidden md:block">
-        <Row>
-          <div className="flex items-center gap-16">
-            {/* Text */}
-            <div className="w-1/2 flex flex-col gap-6">
-              <h1 className="text-3xl lg:text-4xl xl:text-[42px] font-bold leading-snug text-black">
-                Your <Highlight>Global Launchpad</Highlight> for
-                <br />
-                Investment, Startups,
-                <br />
-                Entrepreneurship, and Career Opportunities
-              </h1>
-
-              <p className="text-base lg:text-lg xl:text-[22px] text-black font-normal text-justify">
-                We fuel the global expansion of startups into new markets — for
-                entrepreneurs ready to scale and investors seeking high-growth
-                opportunities.
-              </p>
+            {/* Tag */}
+            <div className={`${base} ${mounted ? shown : hidden} inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#FAF6FF] text-[#8F27FF] text-[14px] font-semibold rounded-full mb-5`}
+              style={{ transitionDelay: "0ms" }}>
             </div>
 
-            {/* Image */}
-            <div className="w-1/2">
+            {/* H1 */}
+            <h1
+              className={`${base} ${mounted ? shown : hidden} text-[32px] md:text-[46px] font-extrabold leading-[1.06] tracking-[-0.035em] text-black mb-5`}
+              style={{ transitionDelay: "80ms" }}
+            >
+              Your Global Launchpad for Investment,{" "}
+              <span className="inline bg-[#FFE600] rounded-[3px] px-[5px] pb-[3px]">
+                Startups &amp; Growth.
+              </span>
+            </h1>
+
+            {/* Lead */}
+            <p
+              className={`${base} ${mounted ? shown : hidden} text-[16px] text-[#929292] leading-[1.68] max-w-[520px] mb-9`}
+              style={{ transitionDelay: "160ms" }}
+            >
+              We fuel the global expansion of startups into new markets — for entrepreneurs
+              ready to scale and investors seeking high-growth opportunities.
+            </p>
+
+            {/* CTA */}
+            <div
+              className={`${base} ${mounted ? shown : hidden} flex flex-wrap gap-3.5`}
+              style={{ transitionDelay: "240ms" }}
+            >
+              <button
+                onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:bg-[#7A1FE0] hover:-translate-y-px hover:shadow-[0_8px_22px_rgba(143,39,255,0.28)]">
+                Explore Services →
+              </button>
+              <Link href="#contact"
+                className="inline-flex items-center gap-2 px-[22px] py-[10px] border-[1.5px] border-[#1a1a1a] text-[#1a1a1a] font-semibold rounded-full text-[13px] transition-all hover:border-[#8F27FF] hover:text-[#8F27FF]">
+                Book a Call
+              </Link>
+            </div>
+
+          </div>
+
+          {/* ── RIGHT: Visual ── */}
+          <div
+            className={`${base} ${mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"} order-1 md:order-2 relative`}
+            style={{ transitionDelay: "100ms", transitionDuration: "800ms" }}
+          >
+            <div className="relative rounded-[20px] overflow-hidden">
               <Image
-                width={1500}
-                height={1500}
                 src="/images/landing/TEAM 2 (1).svg"
-                alt="Hero team"
-                className="w-full h-auto object-contain"
+                alt="Nexa Team"
+                width={700}
+                height={520}
+                className="w-full h-full object-cover"
                 priority
               />
+              
             </div>
           </div>
-        </Row>
+
+        </div>
       </div>
+
+      <style>{`
+        @keyframes floatY {
+          0%,100% { transform: translateY(0); }
+          50%      { transform: translateY(-10px); }
+        }
+      `}</style>
     </section>
   );
-};
-
-export default Hero;
+}

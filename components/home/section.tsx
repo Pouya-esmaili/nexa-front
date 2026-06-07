@@ -1,45 +1,59 @@
-// components/Section.tsx
+"use client";
+
 import Image from "next/image";
-import Row from "../global/Row";
 
-export default function Section() {
-  const images = [
-    "/images/landing/taavon.svg",
-    "/images/landing/british.svg",
-    "/images/landing/anjoman.svg",
-    "/images/landing/pardis.svg",
-  ];
+const logos = [
+  { src: "/images/landing/craft.svg",            name: "Landa Craft",    size: "w-10 h-10"  },
+  { src: "/images/landing/Autilab.svg",           name: "Autilab",        size: "w-16 h-16"  },
+  { src: "/images/landing/preventigene.svg",      name: "Preventigene",   size: "w-10 h-10"  },
+  { src: "/images/landing/diaco.svg",             name: "Diaco Center",   size: "w-10 h-10"  },
+  { src: "/images/landing/raft.svg",              name: "Vision Raft",    size: "w-10 h-10"  },
+  { src: "/images/landing/trip.svg",              name: "Landa Trip",     size: "w-10 h-10"  },
+  { src: "/images/landing/SteadySkull.svg",       name: "Steady Skull",   size: "w-10 h-10"  },
+  { src: "/images/landing/Arshia Gallery.svg",    name: "Arshia Gallery", size: "w-16 h-16"  },
+];
 
+/* triplicate for seamless infinite loop */
+const track = [...logos, ...logos, ...logos];
+
+export default function Ticker() {
   return (
-    <section className="w-full px-4 md:mb-4">
-
-      <div className="hidden sm:block">
-        <Row className="flex gap-20 justify-between items-center">
-          {images.map((src, idx) => (
+    <div className="py-1 bg-[#F7F6F9] border-t border-b border-[#E2E2E2] overflow-hidden">
+      <div
+        className="flex items-center gap-16 w-max"
+        style={{ animation: "ticker 20s linear infinite" }}
+        onMouseEnter={(e) =>
+          ((e.currentTarget as HTMLDivElement).style.animationPlayState = "paused")
+        }
+        onMouseLeave={(e) =>
+          ((e.currentTarget as HTMLDivElement).style.animationPlayState = "running")
+        }
+      >
+        {track.map((logo, i) => (
+          <div
+            key={i}
+            className="flex-shrink-0 flex items-center gap-3 opacity-55 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-200 group"
+          >
             <Image
-              key={idx}
-              src={src}
-              alt={`image-${idx}`}
-              width={200}
-              height={200}
-              className="rounded-md"
+              src={logo.src}
+              alt={logo.name}
+              width={64}
+              height={64}
+              className={`${logo.size} object-contain flex-shrink-0`}
             />
-          ))}
-        </Row>
-      </div>
-
-      <div className="grid grid-cols-2 gap-4 sm:hidden">
-        {images.map((src, idx) => (
-          <Image
-            key={idx}
-            src={src}
-            alt={`image-${idx}`}
-            width={200}
-            height={200}
-            className="rounded-md w-full object-contain"
-          />
+            <span className="text-[13px] font-semibold text-[#474747] group-hover:text-[#8F27FF] tracking-wide transition-colors duration-200 whitespace-nowrap">
+              {logo.name}
+            </span>
+          </div>
         ))}
       </div>
-    </section>
+
+      <style>{`
+        @keyframes ticker {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-33.33%); }
+        }
+      `}</style>
+    </div>
   );
 }

@@ -1,254 +1,341 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import "react-phone-input-2/lib/style.css";
-import { useState } from "react";
-import Row from "../global/Row";
+import { useState, useRef, useEffect, type FormEvent, type ReactNode } from "react";
+import Reveal from "@/components/global/Reveal";
 
-const PhoneInput = dynamic(() => import("react-phone-input-2"), {
-  ssr: false,
-});
+/* ── Country codes ── */
+const COUNTRIES = [
+  { code: "+1",    flag: "🇨🇦", name: "Canada"              },
+  { code: "+1",    flag: "🇺🇸", name: "United States"        },
+  { code: "+44",   flag: "🇬🇧", name: "United Kingdom"       },
+  { code: "+61",   flag: "🇦🇺", name: "Australia"            },
+  { code: "+49",   flag: "🇩🇪", name: "Germany"              },
+  { code: "+33",   flag: "🇫🇷", name: "France"               },
+  { code: "+34",   flag: "🇪🇸", name: "Spain"                },
+  { code: "+351",  flag: "🇵🇹", name: "Portugal"             },
+  { code: "+31",   flag: "🇳🇱", name: "Netherlands"          },
+  { code: "+46",   flag: "🇸🇪", name: "Sweden"               },
+  { code: "+47",   flag: "🇳🇴", name: "Norway"               },
+  { code: "+358",  flag: "🇫🇮", name: "Finland"              },
+  { code: "+45",   flag: "🇩🇰", name: "Denmark"              },
+  { code: "+41",   flag: "🇨🇭", name: "Switzerland"          },
+  { code: "+43",   flag: "🇦🇹", name: "Austria"              },
+  { code: "+32",   flag: "🇧🇪", name: "Belgium"              },
+  { code: "+39",   flag: "🇮🇹", name: "Italy"                },
+  { code: "+90",   flag: "🇹🇷", name: "Turkey"               },
+  { code: "+98",   flag: "🇮🇷", name: "Iran"                 },
+  { code: "+971",  flag: "🇦🇪", name: "UAE"                  },
+  { code: "+966",  flag: "🇸🇦", name: "Saudi Arabia"         },
+  { code: "+974",  flag: "🇶🇦", name: "Qatar"                },
+  { code: "+965",  flag: "🇰🇼", name: "Kuwait"               },
+  { code: "+973",  flag: "🇧🇭", name: "Bahrain"              },
+  { code: "+968",  flag: "🇴🇲", name: "Oman"                 },
+  { code: "+20",   flag: "🇪🇬", name: "Egypt"                },
+  { code: "+212",  flag: "🇲🇦", name: "Morocco"              },
+  { code: "+213",  flag: "🇩🇿", name: "Algeria"              },
+  { code: "+216",  flag: "🇹🇳", name: "Tunisia"              },
+  { code: "+27",   flag: "🇿🇦", name: "South Africa"         },
+  { code: "+234",  flag: "🇳🇬", name: "Nigeria"              },
+  { code: "+254",  flag: "🇰🇪", name: "Kenya"                },
+  { code: "+91",   flag: "🇮🇳", name: "India"                },
+  { code: "+92",   flag: "🇵🇰", name: "Pakistan"             },
+  { code: "+880",  flag: "🇧🇩", name: "Bangladesh"           },
+  { code: "+94",   flag: "🇱🇰", name: "Sri Lanka"            },
+  { code: "+977",  flag: "🇳🇵", name: "Nepal"                },
+  { code: "+86",   flag: "🇨🇳", name: "China"                },
+  { code: "+81",   flag: "🇯🇵", name: "Japan"                },
+  { code: "+82",   flag: "🇰🇷", name: "South Korea"          },
+  { code: "+65",   flag: "🇸🇬", name: "Singapore"            },
+  { code: "+60",   flag: "🇲🇾", name: "Malaysia"             },
+  { code: "+62",   flag: "🇮🇩", name: "Indonesia"            },
+  { code: "+63",   flag: "🇵🇭", name: "Philippines"          },
+  { code: "+66",   flag: "🇹🇭", name: "Thailand"             },
+  { code: "+84",   flag: "🇻🇳", name: "Vietnam"              },
+  { code: "+55",   flag: "🇧🇷", name: "Brazil"               },
+  { code: "+52",   flag: "🇲🇽", name: "Mexico"               },
+  { code: "+54",   flag: "🇦🇷", name: "Argentina"            },
+  { code: "+56",   flag: "🇨🇱", name: "Chile"                },
+  { code: "+57",   flag: "🇨🇴", name: "Colombia"             },
+  { code: "+51",   flag: "🇵🇪", name: "Peru"                 },
+  { code: "+58",   flag: "🇻🇪", name: "Venezuela"            },
+  { code: "+7",    flag: "🇷🇺", name: "Russia"               },
+  { code: "+380",  flag: "🇺🇦", name: "Ukraine"              },
+  { code: "+48",   flag: "🇵🇱", name: "Poland"               },
+  { code: "+420",  flag: "🇨🇿", name: "Czech Republic"       },
+  { code: "+36",   flag: "🇭🇺", name: "Hungary"              },
+  { code: "+40",   flag: "🇷🇴", name: "Romania"              },
+  { code: "+30",   flag: "🇬🇷", name: "Greece"               },
+  { code: "+353",  flag: "🇮🇪", name: "Ireland"              },
+  { code: "+64",   flag: "🇳🇿", name: "New Zealand"          },
+  { code: "+972",  flag: "🇮🇱", name: "Israel"               },
+  { code: "+961",  flag: "🇱🇧", name: "Lebanon"              },
+  { code: "+962",  flag: "🇯🇴", name: "Jordan"               },
+  { code: "+964",  flag: "🇮🇶", name: "Iraq"                 },
+  { code: "+963",  flag: "🇸🇾", name: "Syria"                },
+  { code: "+967",  flag: "🇾🇪", name: "Yemen"                },
+  { code: "+93",   flag: "🇦🇫", name: "Afghanistan"          },
+  { code: "+995",  flag: "🇬🇪", name: "Georgia"              },
+  { code: "+994",  flag: "🇦🇿", name: "Azerbaijan"           },
+  { code: "+374",  flag: "🇦🇲", name: "Armenia"              },
+  { code: "+7",    flag: "🇰🇿", name: "Kazakhstan"           },
+  { code: "+998",  flag: "🇺🇿", name: "Uzbekistan"           },
+];
 
-export default function ContactForm() {
-  const [phone, setPhone] = useState("");
+/* ── Chevron SVG ── */
+const ChevronDown = ({ open = false }: { open?: boolean }) => (
+  <svg
+    className={`w-4 h-4 text-[#8F27FF] flex-shrink-0 pointer-events-none transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+    viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}
+  >
+    <polyline points="6 9 12 15 18 9" />
+  </svg>
+);
+
+/* ── Custom country-code picker ── */
+function CountryPicker({
+  selected,
+  onChange,
+}: {
+  selected: (typeof COUNTRIES)[0];
+  onChange: (c: (typeof COUNTRIES)[0]) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const [search, setSearch] = useState("");
+  const ref = useRef<HTMLDivElement>(null);
+
+  /* close on outside click */
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+        setSearch("");
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [open]);
+
+  const filtered = search
+    ? COUNTRIES.filter(
+        (c) =>
+          c.name.toLowerCase().includes(search.toLowerCase()) ||
+          c.code.includes(search)
+      )
+    : COUNTRIES;
 
   return (
-    <>
-      {/* ================= DESKTOP ================= */}
-      <div className="hidden md:block w-full">
-        <Row className="w-full">
-          <div className="w-full flex justify-center py-24">
-            <div
-              className="w-full p-8 rounded-3xl bg-white"
-              style={{ boxShadow: "15px 15px 50px 0px #00000040" }}
-            >
-              <div
-                className="m-8 rounded-xl"
-                style={{ backgroundColor: "#EFEFEF" }}
-              >
-                <form className="p-4 flex flex-col">
-                  <div className="grid grid-cols-1 md:grid-cols-3 font-normal gap-6 lg:gap-10 p-6">
-                    <Input label="First Name" required />
-                    <Input label="Last Name" required />
-                    <Select
-                      label="What service are you interested in?"
-                      required
-                      options={[
-                        "Entrepreneurship",
-                        "Acceleration",
-                        "Investment",
-                        "Business Advisory",
-                      ]}
-                    />
-                  </div>
+    <div ref={ref} className="relative flex-shrink-0">
+      {/* Trigger */}
+      <button
+        type="button"
+        onClick={() => { setOpen((v) => !v); setSearch(""); }}
+        className="flex items-center gap-1.5 h-[52px] pl-3 pr-2.5 bg-[#F7F6F9] border-[1.5px] border-[#E2E2E2] border-r-0 rounded-l-[12px] text-[13px] font-semibold text-[#474747] outline-none hover:border-[#8F27FF] transition-all whitespace-nowrap"
+      >
+        <span className="text-[20px] leading-none">{selected.flag}</span>
+        <span>{selected.code}</span>
+        <ChevronDown open={open} />
+      </button>
 
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 px-6">
-                    <div className="flex flex-col gap-3">
-                      <label className="text-lg">
-                        Phone Number <span className="text-red-500">*</span>
-                      </label>
-                      <PhoneInput
-                        country="ca"
-                        value={phone}
-                        onChange={(value) => setPhone(value)}
-                        inputStyle={phoneInputStyle}
-                        buttonStyle={phoneButtonStyle}
-                        containerStyle={{ width: "100%" }}
-                      />
-                    </div>
-
-                    <Input label="Email" required type="email" />
-
-                    <Select
-                      label="How did you find out about us?"
-                      options={[
-                        "Attorney",
-                        "Friend",
-                        "Google",
-                        "Webinar",
-                        "Tradeshow/Conference",
-                        "Social Media",
-                        "Other",
-                      ]}
-                    />
-                  </div>
-
-                  <div className="flex flex-col gap-3 p-8">
-                    <label className="text-lg">Details</label>
-                    <textarea
-                      rows={5}
-                      className="rounded-2xl px-4 py-3 bg-white outline-none resize-none"
-                      style={inputShadow}
-                    />
-                  </div>
-
-                  <div className="flex justify-end px-6 mb-8">
-                    <button
-                      type="submit"
-                      className="bg-[#8F27FF] text-white h-12 px-10 rounded-full text-md font-semibold"
-                    >
-                      Submit
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
+      {/* Dropdown */}
+      {open && (
+        <div className="absolute top-[56px] left-0 z-50 w-[260px] bg-white border border-[#E2E2E2] rounded-[14px] shadow-[0_12px_40px_rgba(0,0,0,0.12)] overflow-hidden">
+          {/* Search */}
+          <div className="p-2 border-b border-[#F0F0F0]">
+            <input
+              autoFocus
+              type="text"
+              placeholder="Search country..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full h-9 px-3 text-[13px] bg-[#F7F6F9] border border-[#E2E2E2] rounded-[8px] outline-none focus:border-[#8F27FF] transition-all"
+            />
           </div>
-        </Row>
-      </div>
-
-      {/* ================= MOBILE ================= */}
-      <div className="md:hidden w-full px-4 py-10">
-        <div className="w-full max-w-lg mx-auto bg-[#EFEFEF] rounded-xl p-4 sm:p-6">
-          <form className="flex flex-col gap-12">
-            <Input label="First Name" required small />
-            <Input label="Last Name" required small />
-
-            <Select
-              label="What service are you interested in?"
-              required
-              options={[
-                "Entrepreneurship",
-                "Acceleration",
-                "Investment",
-                "Business Advisory",
-              ]}
-              small
-            />
-
-            <div className="flex flex-col gap-2">
-              <label className="text-sm">
-                Phone Number <span className="text-red-500">*</span>
-              </label>
-              <PhoneInput
-                country="ca"
-                value={phone}
-                onChange={(value) => setPhone(value)}
-                inputStyle={phoneInputStyle}
-                buttonStyle={phoneButtonStyle}
-                containerStyle={{ width: "100%" }}
-              />
-            </div>
-
-            <Input label="Email" required type="email" small />
-
-            <Select
-              label="How did you find out about us?"
-              options={[
-                "Attorney",
-                "Friend",
-                "Google",
-                "Webinar",
-                "Tradeshow/Conference",
-                "Social Media",
-                "Other",
-              ]}
-              small
-            />
-
-            <div className="flex flex-col gap-2">
-              <label className="text-sm">Details</label>
-              <textarea
-                rows={4}
-                className="rounded-2xl px-4 py-3 bg-white outline-none resize-none"
-                style={inputShadow}
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="w-full h-12 rounded-full text-white font-medium"
-              style={{
-                background: "#8F27FF",
-              }}
-            >
-              Submit
-            </button>
-          </form>
+          {/* List */}
+          <ul className="max-h-[220px] overflow-y-auto py-1">
+            {filtered.length === 0 && (
+              <li className="px-4 py-3 text-[13px] text-[#929292]">No results</li>
+            )}
+            {filtered.map((c, i) => (
+              <li key={i}>
+                <button
+                  type="button"
+                  onClick={() => { onChange(c); setOpen(false); setSearch(""); }}
+                  className={`w-full flex items-center gap-3 px-4 py-2.5 text-[13px] hover:bg-[#FAF6FF] hover:text-[#8F27FF] transition-colors text-left ${
+                    c.code === selected.code && c.name === selected.name
+                      ? "bg-[#FAF6FF] text-[#8F27FF] font-semibold"
+                      : "text-[#474747]"
+                  }`}
+                >
+                  <span className="text-[20px] leading-none">{c.flag}</span>
+                  <span className="flex-1 truncate">{c.name}</span>
+                  <span className="text-[#929292] font-medium">{c.code}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
-      </div>
-    </>
-  );
-}
-
-/* ================= Styles ================= */
-
-const inputShadow = {
-  boxShadow: "0px 4px 4px 0px #00000026",
-};
-
-const phoneInputStyle = {
-  width: "100%",
-  height: "48px",
-  borderRadius: "16px",
-  border: "none",
-  boxShadow: "0px 4px 4px 0px #00000026",
-  paddingLeft: "60px",
-};
-
-const phoneButtonStyle = {
-  border: "none",
-  borderTopLeftRadius: "16px",
-  borderBottomLeftRadius: "16px",
-};
-
-/* ================= Types ================= */
-
-interface InputProps {
-  label: string;
-  required?: boolean;
-  type?: string;
-  small?: boolean;
-}
-
-interface SelectProps {
-  label: string;
-  options: string[];
-  required?: boolean;
-  small?: boolean;
-}
-
-/* ================= Reusable Components ================= */
-
-function Input({
-  label,
-  required = false,
-  type = "text",
-  small = false,
-}: InputProps) {
-  return (
-    <div className="flex flex-col gap-2">
-      <label className={small ? "text-sm" : "text-lg"}>
-        {label} {required && <span className="text-red-500">*</span>}
-      </label>
-      <input
-        type={type}
-        className="h-12 rounded-2xl px-4 bg-white outline-none"
-        style={inputShadow}
-      />
+      )}
     </div>
   );
 }
 
-function Select({
-  label,
-  options,
-  required = false,
-  small = false,
-}: SelectProps) {
+export default function ContactForm() {
+  const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState(COUNTRIES[0]);
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setSending(true);
+    setTimeout(() => { setSending(false); setSent(true); }, 1200);
+  }
+
   return (
-    <div className="flex flex-col gap-2">
-      <label className={small ? "text-sm" : "text-lg"}>
-        {label} {required && <span className="text-red-500">*</span>}
+    <section id="contact" className="py-20 md:py-24 bg-white relative overflow-hidden">
+      {/* bg glow */}
+      <div className="pointer-events-none absolute -top-[300px] -right-[200px] w-[600px] h-[600px] rounded-full"
+        style={{ background: "radial-gradient(circle,rgba(143,39,255,.06) 0%,transparent 65%)" }} />
+
+      <div className="max-w-[1240px] mx-auto px-6 relative z-10">
+
+        <Reveal variant="up">
+          <div className="text-center max-w-[600px] mx-auto mb-12">
+            <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1]">
+              Start Your Journey
+            </h2>
+          </div>
+        </Reveal>
+
+        <Reveal variant="up" delay={80}>
+          <div
+            className="max-w-[860px] mx-auto rounded-[28px] p-10 md:p-14 relative overflow-hidden"
+            style={{
+              background: "#fff",
+              border: "1px solid rgba(143,39,255,0.15)",
+              boxShadow: "0 24px 80px rgba(143,39,255,.05), 0 4px 24px rgba(0,0,0,.05)",
+            }}
+          >
+            {sent ? (
+              <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
+                <div className="w-16 h-16 rounded-full bg-[#8F27FF] grid place-items-center">
+                  <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round"><path d="M5 12l4 4 10-10" /></svg>
+                </div>
+                <h3 className="text-[22px] font-bold">Message Sent!</h3>
+                <p className="text-[15px] text-[#929292]">A Nexa advisor will reach out within 24 hours.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-7">
+
+                  {/* First Name */}
+                  <FormGroup label="First Name" required>
+                    <input type="text" required placeholder="e.g., John" className={inputCls} />
+                  </FormGroup>
+
+                  {/* Last Name */}
+                  <FormGroup label="Last Name" required>
+                    <input type="text" required placeholder="e.g., Doe" className={inputCls} />
+                  </FormGroup>
+
+                  {/* Email */}
+                  <FormGroup label="Email Address" required>
+                    <input type="email" required placeholder="you@example.com" className={inputCls} />
+                  </FormGroup>
+
+                  {/* Phone */}
+                  <FormGroup label="Phone Number" required>
+                    <div className="flex gap-0">
+                      <CountryPicker
+                        selected={selectedCountry}
+                        onChange={setSelectedCountry}
+                      />
+                      <input type="tel" required placeholder="(000) 000-0000"
+                        className="flex-1 h-[52px] px-4 bg-[#F7F6F9] border-[1.5px] border-[#E2E2E2] border-l-0 rounded-r-[12px] text-[15px] text-black outline-none focus:border-[#8F27FF] focus:bg-[#FAF6FF] focus:shadow-[0_0_0_3px_rgba(143,39,255,0.1)] transition-all" />
+                    </div>
+                  </FormGroup>
+
+                  {/* Service interest */}
+                  <FormGroup label="Service of Interest">
+                    <div className="relative">
+                      <select className={selectCls}>
+                        <option value="">Select a service...</option>
+                        <option>Entrepreneurship</option>
+                        <option>Startup Acceleration</option>
+                        <option>Investment</option>
+                        <option>Business Advisory</option>
+                      </select>
+                      <span className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                        <ChevronDown />
+                      </span>
+                    </div>
+                  </FormGroup>
+
+                  {/* How did you hear */}
+                  <FormGroup label="How Did You Hear About Us?">
+                    <div className="relative">
+                      <select className={selectCls}>
+                        <option value="">Select...</option>
+                        <option>Google</option>
+                        <option>Social Media</option>
+                        <option>Friend / Referral</option>
+                        <option>Attorney</option>
+                        <option>Webinar</option>
+                        <option>Tradeshow / Conference</option>
+                        <option>Other</option>
+                      </select>
+                      <span className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                        <ChevronDown />
+                      </span>
+                    </div>
+                  </FormGroup>
+
+                  {/* Message — full width */}
+                  <div className="md:col-span-2">
+                    <FormGroup label="Tell Us About Your Project">
+                      <textarea
+                        rows={4}
+                        placeholder="Describe your business goals and what you're looking to achieve…"
+                        className={`${inputCls} min-h-[120px] resize-y`}
+                      />
+                    </FormGroup>
+                  </div>
+
+                  {/* Footer */}
+                  <div className="md:col-span-2 flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-[#F4F4F4]">
+                    <p className="text-[13px] text-[#929292] flex items-center gap-1.5">
+                      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+                      Your information is kept strictly confidential.
+                    </p>
+                    <button type="submit" disabled={sending}
+                      className="inline-flex items-center gap-2.5 px-10 py-3.5 bg-[#8F27FF] text-white font-bold text-[15px] rounded-full hover:bg-[#7A1FE0] hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(143,39,255,0.35)] disabled:opacity-70 transition-all flex-shrink-0">
+                      {sending ? "Sending…" : (
+                        <>Send Message <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M5 12h14M12 5l7 7-7 7" /></svg></>
+                      )}
+                    </button>
+                  </div>
+
+                </div>
+              </form>
+            )}
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ── helpers ── */
+const inputCls = "w-full h-[52px] px-4 bg-[#F7F6F9] border-[1.5px] border-[#E2E2E2] rounded-[12px] text-[15px] text-black outline-none focus:border-[#8F27FF] focus:bg-[#FAF6FF] focus:shadow-[0_0_0_3px_rgba(143,39,255,0.1)] transition-all placeholder:text-[#D9D9D9]";
+const selectCls = "w-full h-[52px] pl-4 pr-10 bg-[#F7F6F9] border-[1.5px] border-[#E2E2E2] rounded-[12px] text-[15px] text-black outline-none focus:border-[#8F27FF] focus:bg-[#FAF6FF] focus:shadow-[0_0_0_3px_rgba(143,39,255,0.1)] transition-all appearance-none cursor-pointer";
+
+function FormGroup({ label, required, children }: { label: string; required?: boolean; children: ReactNode }) {
+  return (
+    <div className="flex flex-col gap-1.5">
+      <label className="text-[12px] font-semibold uppercase tracking-[0.08em] text-[#929292]">
+        {label}{required && <span className="text-[#8F27FF] ml-0.5">*</span>}
       </label>
-      <select
-        className="h-12 rounded-2xl px-4 bg-white outline-none"
-        style={inputShadow}
-      >
-        {options.map((item, i) => (
-          <option key={i}>{item}</option>
-        ))}
-      </select>
+      {children}
     </div>
   );
 }

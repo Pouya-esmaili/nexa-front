@@ -3,6 +3,7 @@
 import { useState, FormEvent } from "react";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import PhoneField from "@/components/global/PhoneField";
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
@@ -37,11 +38,11 @@ export default function ContactForm() {
         ) : (
           <Reveal variant="up" delay={100}>
             {/* Outer dashed wrapper */}
-            <div className="max-w-[1100px] mx-auto rounded-[28px] p-8 md:p-9"
+            <div className="max-w-[1100px] mx-auto rounded-[28px] p-5 sm:p-8 md:p-9"
               style={{ background: "#F4F4F4", border: "1.5px dashed #B8C5FF" }}>
               {/* Inner white card */}
-              <div className="bg-white rounded-[20px] p-7 md:p-8 border border-[#E2E2E2]">
-                <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              <div className="bg-white rounded-[20px] p-5 sm:p-7 md:p-8 border border-[#E2E2E2]">
+                <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                   {/* Row 1 */}
                   <label className="flex flex-col gap-1.5 text-[12.5px] font-medium text-[#474747]">
                     First Name <em className="text-[#8F27FF] not-italic">*</em>
@@ -65,12 +66,7 @@ export default function ContactForm() {
                   {/* Row 2 */}
                   <label className="flex flex-col gap-1.5 text-[12.5px] font-medium text-[#474747]">
                     Phone Number <em className="text-[#8F27FF] not-italic">*</em>
-                    <div className="h-10 flex items-center border border-[#E2E2E2] rounded-[10px] overflow-hidden bg-[#F4F4F4] focus-within:border-[#8F27FF] focus-within:bg-white transition-colors">
-                      <span className="px-3 text-[13px] font-semibold border-r border-[#E2E2E2] h-full flex items-center bg-[#EBEBEB] flex-shrink-0 whitespace-nowrap">🇨🇦 +1</span>
-                      <input type="tel" required placeholder="Phone number"
-                        className="flex-1 h-full px-3 text-[13.5px] outline-none bg-transparent font-medium"
-                      />
-                    </div>
+                    <PhoneField defaultCountryCode="+1" />
                   </label>
                   <label className="flex flex-col gap-1.5 text-[12.5px] font-medium text-[#474747]">
                     Which best describes you? <em className="text-[#8F27FF] not-italic">*</em>
@@ -127,7 +123,7 @@ export default function ContactForm() {
                   </label>
 
                   {/* Textarea full-width */}
-                  <label className="flex flex-col gap-1.5 text-[12.5px] font-medium text-[#474747] md:col-span-3">
+                  <label className="flex flex-col gap-1.5 text-[12.5px] font-medium text-[#474747] col-span-full">
                     Tell us about your startup &amp; goals
                     <textarea
                       rows={4}
@@ -137,10 +133,11 @@ export default function ContactForm() {
                   </label>
 
                   {/* Footer */}
-                  <div className="md:col-span-3 flex justify-end pt-1">
+                  <div className="col-span-full flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 pt-1">
+                    <small className="text-[12px] text-gray-400">Your information is reviewed confidentially by Nexa&apos;s advisory team.</small>
                     <button
                       type="submit"
-                      className="inline-flex items-center gap-2 px-10 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[15px] tracking-[-0.01em] transition-all hover:-translate-y-0.5"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-10 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[15px] tracking-[-0.01em] transition-all hover:-translate-y-0.5"
                       style={{ boxShadow: "0 10px 24px rgba(143,39,255,0.3)" }}
                     >
                       Submit Application →

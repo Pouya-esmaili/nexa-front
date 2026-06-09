@@ -59,7 +59,7 @@ export default function CardsPage() {
           <Link
             key={card.id}
             href={card.link}
-            className="group block w-full"
+            className="group block w-full h-full"
           >
             <Card
               title={card.title}
@@ -84,21 +84,21 @@ function Card({
 }) {
   return (
     
-    <div className="group relative w-full flex flex-col items-center transition-all duration-500 mt-10 md:mt-6">
+    <div className="group relative w-full h-full flex flex-col items-center transition-all duration-500 mt-10 md:mt-6">
       {/* Card Shadow Wrapper */}
-      <div className="relative w-full filter drop-shadow-[0_-1px_0_#8F27FF] group-hover:drop-shadow-none transition-all duration-300 h-full">
-       
+      <div className="relative w-full h-full filter drop-shadow-[0_-1px_0_#8F27FF] group-hover:drop-shadow-none transition-all duration-300">
+
         {/* Card Body */}
-        <div className="relative w-full bg-white border border-[#8F27FF] rounded-2xl p-5 pt-16 pb-20 flex flex-col items-center text-center h-full transition-all duration-500 group-hover:bg-[#8F27FF] group-hover:translate-y-4 [mask-image:radial-gradient(circle_at_top_center,transparent_2.8rem,black_2.9rem)] [-webkit-mask-image:radial-gradient(circle_at_top_center,transparent_2.8rem,black_2.9rem)]">
+        <div className="relative w-full h-[320px] bg-white border border-[#8F27FF] rounded-4xl p-5 pt-16 pb-20 flex flex-col items-center text-center transition-all duration-500 group-hover:bg-[#8F27FF] group-hover:translate-y-4 [mask-image:radial-gradient(circle_at_top_center,transparent_2.8rem,black_2.9rem)] [-webkit-mask-image:radial-gradient(circle_at_top_center,transparent_2.8rem,black_2.9rem)]">
 
           {/* Title */}
-          <h3 className="absolute top-10 left-1/2 -translate-x-1/2 text-3xl font-semibold text-black mb-4 transition-all duration-800 ease-in-out group-hover:top-1/2 group-hover:-translate-y-1/2 group-hover:text-white">
+          <h3 className="absolute top-10 left-1/2 pt-3 -translate-x-1/2 text-[24px] font-bold text-black mb-4 transition-all duration-500 ease-in-out group-hover:top-1/2 group-hover:-translate-y-1/2 group-hover:text-white">
             {title}
           </h3>
 
           {/* Description */}
-          <div className="flex-1 flex items-start overflow-hidden transition-all duration-500 max-h-[200px] opacity-100 group-hover:max-h-0 group-hover:opacity-0 mt-6">
-            <p className="text-black text-lg font-normal leading-relaxed mb-12">
+          <div className="flex-1 flex items-start overflow-hidden pt-3 transition-all duration-500 max-h-[200px] opacity-100 group-hover:max-h-0 group-hover:opacity-0 mt-6">
+            <p className="text-[16px] text-gray-400 font-normal leading-relaxed mb-12">
               {desc}
             </p>
           </div>

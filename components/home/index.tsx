@@ -30,9 +30,9 @@ export default function Hero() {
               className={`${base} ${mounted ? shown : hidden} text-[32px] md:text-[46px] font-extrabold leading-[1.06] tracking-[-0.035em] text-black mb-5`}
               style={{ transitionDelay: "80ms" }}
             >
-              Your Global Launchpad for Investment,{" "}
-              <span className="inline bg-[#FFE600] rounded-[3px] px-[5px] pb-[3px]">
-                Startups &amp; Growth.
+              Your Global Launchpad<br></br> for Investment,{" "}
+              <span className="inline bg-[#FFE600] rounded-[3px] pb-[3px]">
+                <br></br>Startups &amp; Growth.
               </span>
             </h1>
 

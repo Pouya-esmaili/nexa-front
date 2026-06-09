@@ -13,13 +13,7 @@ export default function Hero() {
 
       {/* ========== MOBILE ========== */}
       <div className="md:hidden px-5">
-        <div
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold mb-5"
-          style={{ background: "#FAF6FF", color: "#8F27FF", border: "1px solid rgba(143,39,255,0.18)" }}
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#8F27FF]" />
-          Canada Entrepreneurship
-        </div>
+
         <h1 className="text-3xl font-bold leading-tight tracking-tight mb-4">
           Build a <span className="text-[#8F27FF]">scalable</span> company on a high-stability economic platform.
         </h1>
@@ -49,13 +43,6 @@ export default function Hero() {
 
             {/* Content */}
             <div className="flex-[1.1]">
-              <div
-                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[13px] font-semibold mb-6"
-                style={{ background: "#FAF6FF", color: "#8F27FF", border: "1px solid rgba(143,39,255,0.18)" }}
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#8F27FF]" />
-                Canada Entrepreneurship
-              </div>
               <h1 className="text-3xl lg:text-[48px] font-bold leading-[1.08] tracking-tight mb-6">
                 Build a <span className="text-[#8F27FF]">scalable</span> company on a high-stability economic platform.
               </h1>
@@ -92,44 +79,6 @@ export default function Hero() {
                 }}
               />
 
-              {/* Canada flag */}
-              <div
-                className="absolute top-6 right-6 w-[68px] h-11 bg-white rounded-[10px] flex items-center justify-center z-10"
-                style={{ boxShadow: "0 6px 20px rgba(0,0,0,0.05)", border: "1.5px solid #E2E2E2" }}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 36" className="w-14 h-9" shapeRendering="crispEdges">
-                  <rect width="60" height="36" fill="#fff" />
-                  <rect width="15" height="36" fill="#D80621" />
-                  <rect x="45" width="15" height="36" fill="#D80621" />
-                  <g transform="translate(30,18)">
-                    <path d="M0,-12 L1.6,-5.8 L7.6,-7.2 L5,-2 L9.8,-0.4 L6.2,3.2 L7,7.8 L3,6 L0,10 L-3,6 L-7,7.8 L-6.2,3.2 L-9.8,-0.4 L-5,-2 L-7.6,-7.2 L-1.6,-5.8 Z" fill="#D80621" />
-                    <rect x="-1" y="10" width="2" height="5" fill="#D80621" />
-                  </g>
-                </svg>
-              </div>
-
-              {/* Floating status */}
-              <div
-                className="absolute top-[90px] -right-5 bg-white rounded-[14px] px-4 py-3 flex items-center gap-2.5 z-10"
-                style={{ boxShadow: "0 12px 36px rgba(0,0,0,0.07)", border: "1px solid #F4F4F4" }}
-              >
-                <span
-                  className="w-2 h-2 bg-emerald-500 rounded-full flex-shrink-0"
-                  style={{ boxShadow: "0 0 0 4px rgba(16,185,129,0.2)" }}
-                />
-                <span className="text-[14px] font-semibold text-black whitespace-nowrap">Active Programs Open</span>
-              </div>
-
-              {/* Yellow accent */}
-              <div
-                className="absolute -bottom-4 -left-4 flex items-center gap-3 px-[22px] py-[14px] rounded-[14px] z-10"
-                style={{ background: "#FFE600", boxShadow: "0 6px 20px rgba(0,0,0,0.05)" }}
-              >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-[22px] h-[22px] text-black">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                </svg>
-                <span className="font-bold text-[14px] text-black">G7 Economic Stability</span>
-              </div>
             </div>
 
           </div>

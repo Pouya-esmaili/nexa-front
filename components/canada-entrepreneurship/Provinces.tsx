@@ -2,7 +2,6 @@ import Row from "@/components/global/Row";
 
 interface Province {
   name: string;
-  flag: string;
   bg: string;
   stats: { label: string; value: string }[];
 }
@@ -10,7 +9,7 @@ interface Province {
 const keyProvinces: Province[] = [
   {
     name: "Ontario",
-    flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Ontario.svg/320px-Flag_of_Ontario.svg.png",
+
     bg: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=80",
     stats: [
       { label: "Min Net Worth", value: "CAD 800K" },
@@ -20,7 +19,7 @@ const keyProvinces: Province[] = [
   },
   {
     name: "British Columbia",
-    flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Flag_of_British_Columbia.svg/320px-Flag_of_British_Columbia.svg.png",
+   
     bg: "https://images.unsplash.com/photo-1559511260-66a654ae982a?w=600&q=80",
     stats: [
       { label: "Min Net Worth", value: "CAD 600K" },
@@ -30,7 +29,7 @@ const keyProvinces: Province[] = [
   },
   {
     name: "Alberta",
-    flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_Alberta.svg/320px-Flag_of_Alberta.svg.png",
+
     bg: "https://images.unsplash.com/photo-1609825488888-3a766db05542?w=600&q=80",
     stats: [
       { label: "Min Net Worth", value: "Flexible" },
@@ -40,7 +39,7 @@ const keyProvinces: Province[] = [
   },
   {
     name: "Quebec",
-    flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Flag_of_Quebec.svg/320px-Flag_of_Quebec.svg.png",
+ 
     bg: "https://images.unsplash.com/photo-1519178614-68673b201f36?w=600&q=80",
     stats: [
       { label: "Min Net Worth", value: "CAD 900K" },
@@ -50,7 +49,7 @@ const keyProvinces: Province[] = [
   },
   {
     name: "Manitoba",
-    flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Flag_of_Manitoba.svg/320px-Flag_of_Manitoba.svg.png",
+  
     bg: "https://images.unsplash.com/photo-1572206912757-5a78ff4d79be?w=600&q=80",
     stats: [
       { label: "Min Net Worth", value: "CAD 500K" },
@@ -60,7 +59,7 @@ const keyProvinces: Province[] = [
   },
   {
     name: "Saskatchewan",
-    flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Flag_of_Saskatchewan.svg/320px-Flag_of_Saskatchewan.svg.png",
+    
     bg: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80",
     stats: [
       { label: "Min Net Worth", value: "CAD 500K" },
@@ -70,7 +69,7 @@ const keyProvinces: Province[] = [
   },
   {
     name: "Yukon",
-    flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Flag_of_Yukon.svg/320px-Flag_of_Yukon.svg.png",
+   
     bg: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=600&q=80",
     stats: [
       { label: "Min Net Worth", value: "CAD 500K" },
@@ -80,7 +79,7 @@ const keyProvinces: Province[] = [
   },
   {
     name: "NW Territories",
-    flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Flag_of_the_Northwest_Territories.svg/320px-Flag_of_the_Northwest_Territories.svg.png",
+  
     bg: "https://images.unsplash.com/photo-1483347756197-71ef80e95f73?w=600&q=80",
     stats: [
       { label: "Min Net Worth", value: "CAD 250–500K" },
@@ -93,7 +92,7 @@ const keyProvinces: Province[] = [
 const atlanticProvinces: Province[] = [
   {
     name: "New Brunswick",
-    flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_New_Brunswick.svg/320px-Flag_of_New_Brunswick.svg.png",
+    
     bg: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=600&q=80",
     stats: [
       { label: "Min Net Worth", value: "CAD 500K" },
@@ -103,7 +102,7 @@ const atlanticProvinces: Province[] = [
   },
   {
     name: "Nova Scotia",
-    flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Flag_of_Nova_Scotia.svg/320px-Flag_of_Nova_Scotia.svg.png",
+  
     bg: "https://images.unsplash.com/photo-1565024144815-79bc8094a0d3?w=600&q=80",
     stats: [
       { label: "Min Net Worth", value: "CAD 600K" },
@@ -113,7 +112,7 @@ const atlanticProvinces: Province[] = [
   },
   {
     name: "Prince Edward Island",
-    flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Prince_Edward_Island.svg/320px-Flag_of_Prince_Edward_Island.svg.png",
+   
     bg: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&q=80",
     stats: [
       { label: "Min Net Worth", value: "CAD 600K" },
@@ -123,7 +122,7 @@ const atlanticProvinces: Province[] = [
   },
   {
     name: "Newfoundland & Labrador",
-    flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Newfoundland_and_Labrador.svg/320px-Flag_of_Newfoundland_and_Labrador.svg.png",
+   
     bg: "https://images.unsplash.com/photo-1504608524841-42584120d693?w=600&q=80",
     stats: [
       { label: "Min Net Worth", value: "CAD 500K" },
@@ -152,13 +151,6 @@ function ProvinceCard({ province }: { province: Province }) {
           className="absolute inset-0"
           style={{ background: "linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.72))" }}
         />
-        {/* Flag */}
-        <div
-          className="absolute top-3 left-3 w-[38px] h-[26px] rounded-[3px] overflow-hidden z-10"
-          style={{ boxShadow: "0 3px 8px rgba(0,0,0,0.4)", border: "1.5px solid white" }}
-        >
-          <img src={province.flag} alt={`${province.name} flag`} className="w-full h-full object-cover" />
-        </div>
         {/* Name */}
         <span className="absolute bottom-3 left-3.5 text-white font-semibold text-[15px] z-10">
           {province.name}
@@ -177,9 +169,6 @@ function ProvinceCard({ province }: { province: Province }) {
             <span className="font-bold text-black">{s.value}</span>
           </div>
         ))}
-        <div className="mt-3 flex items-center gap-1.5 text-[13px] font-semibold text-[#8F27FF] group-hover:gap-2.5 transition-all">
-          Read More →
-        </div>
       </div>
     </div>
   );

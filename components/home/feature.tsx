@@ -84,7 +84,7 @@ function Card({
 }) {
   return (
     
-    <div className="group relative w-full h-full flex flex-col items-center transition-all duration-500 mt-10 md:mt-6">
+    <div className="group relative w-full h-full flex flex-col items-center transition-all duration-500 mt-10 md:mt-6 origin-top hover:scale-y-90">
       {/* Card Shadow Wrapper */}
       <div className="relative w-full h-full filter drop-shadow-[0_-1px_0_#8F27FF] group-hover:drop-shadow-none transition-all duration-300">
 

@@ -8,56 +8,65 @@ export default function Footer() {
 
       {/* ── Top Row: Logo / Services / About ── */}
       <div className="max-w-[1240px] mx-auto px-6">
-        {/* Brand — full width */}
-        <div className="pb-7" style={{ borderBottom: "1px solid #C0C0C0" }}>
+        {/* ── Mobile: Brand full-width, then 2-col links ── */}
+        {/* ── Desktop: 3-col grid (brand + services + about) ── */}
+
+        {/* Desktop 3-col */}
+        <div className="hidden md:grid md:grid-cols-[1.8fr_1fr_1fr] gap-12 pb-9" style={{ borderBottom: "1px solid #C0C0C0" }}>
+          <div>
+            <Image src="/images/logo.svg" alt="Nexa" width={110} height={38} className="mb-4" />
+            <p className="text-[14px] text-[#555] leading-[1.7] max-w-[400px]">
+              At NEXA, Global Launchpad for Entrepreneurship, Startup Acceleration, and Strategic
+              Investment, Backed by Over 7 Years of Proven Expertise in Business Development,
+              Strategic Planning, and International Market Access.
+            </p>
+          </div>
+          <div className="md:text-center">
+            <h5 className="text-[16px] font-bold text-[#1a1a1a] mb-4">Services</h5>
+            <ul className="space-y-[5px]">
+              {[["Startup","/startup"],["Investment","/investment"],["Advisory","/advisory"],["Entrepreneurship","/Entrepreneurship"]].map(([l,h]) => (
+                <li key={l}><Link href={h} className="text-[14px] text-[#555] hover:text-[#8F27FF] transition-colors">{l}</Link></li>
+              ))}
+            </ul>
+          </div>
+          <div className="md:text-center">
+            <h5 className="text-[16px] font-bold text-[#1a1a1a] mb-4">About Nexa</h5>
+            <ul className="space-y-[5px]">
+              {[["About Us","/our-story"],["Our Team","/our-team"],["Contact Us","/contact"]].map(([l,h]) => (
+                <li key={l}><Link href={h} className="text-[14px] text-[#555] hover:text-[#8F27FF] transition-colors">{l}</Link></li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Mobile: brand full-width */}
+        <div className="md:hidden pb-6" style={{ borderBottom: "1px solid #C0C0C0" }}>
           <Image src="/images/logo.svg" alt="Nexa" width={110} height={38} className="mb-4" />
-          <p className="text-[14px] text-[#555] leading-[1.7] max-w-[400px]">
+          <p className="text-[14px] text-[#555] leading-[1.7]">
             At NEXA, Global Launchpad for Entrepreneurship, Startup Acceleration, and Strategic
             Investment, Backed by Over 7 Years of Proven Expertise in Business Development,
             Strategic Planning, and International Market Access.
           </p>
         </div>
 
-        {/* Services + About — 2 cols on mobile, same on desktop */}
-        <div className="grid grid-cols-2 md:grid-cols-2 gap-8 py-7" style={{ borderBottom: "1px solid #C0C0C0" }}>
-
-          {/* Services */}
+        {/* Mobile: 2-col links */}
+        <div className="md:hidden grid grid-cols-2 gap-8 py-6" style={{ borderBottom: "1px solid #C0C0C0" }}>
           <div>
             <h5 className="text-[16px] font-bold text-[#1a1a1a] mb-4">Services</h5>
             <ul className="space-y-[10px]">
-              {[
-                ["Startup", "/startup"],
-                ["Investment", "/investment"],
-                ["Advisory", "/advisory"],
-                ["Entrepreneurship", "/Entrepreneurship"],
-              ].map(([label, href]) => (
-                <li key={label}>
-                  <Link href={href} className="text-[14px] text-[#555] hover:text-[#8F27FF] transition-colors">
-                    {label}
-                  </Link>
-                </li>
+              {[["Startup","/startup"],["Investment","/investment"],["Advisory","/advisory"],["Entrepreneurship","/Entrepreneurship"]].map(([l,h]) => (
+                <li key={l}><Link href={h} className="text-[14px] text-[#555] hover:text-[#8F27FF] transition-colors">{l}</Link></li>
               ))}
             </ul>
           </div>
-
-          {/* About */}
           <div>
             <h5 className="text-[16px] font-bold text-[#1a1a1a] mb-4">About Nexa</h5>
             <ul className="space-y-[10px]">
-              {[
-                ["About Us", "/our-story"],
-                ["Our Team", "/our-team"],
-                ["Contact Us", "/contact"],
-              ].map(([label, href]) => (
-                <li key={label}>
-                  <Link href={href} className="text-[14px] text-[#555] hover:text-[#8F27FF] transition-colors">
-                    {label}
-                  </Link>
-                </li>
+              {[["About Us","/our-story"],["Our Team","/our-team"],["Contact Us","/contact"]].map(([l,h]) => (
+                <li key={l}><Link href={h} className="text-[14px] text-[#555] hover:text-[#8F27FF] transition-colors">{l}</Link></li>
               ))}
             </ul>
           </div>
-
         </div>
 
         {/* ── Offices Row ── */}

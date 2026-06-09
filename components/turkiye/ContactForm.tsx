@@ -3,6 +3,7 @@
 import { useState, FormEvent } from "react";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import PhoneField from "@/components/global/PhoneField";
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
@@ -43,11 +44,11 @@ export default function ContactForm() {
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-6 bg-white rounded-2xl p-7 md:p-10"
+            className="flex flex-col gap-6 bg-white rounded-2xl p-5 sm:p-7 md:p-10"
             style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.05)", border: "1px solid #f0f0f0" }}
           >
             {/* Row 1 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <label className="flex flex-col gap-1.5">
                 <span className="text-[13px] font-medium text-gray-700">First Name <em className="text-[#8F27FF] not-italic">*</em></span>
                 <input type="text" required className="h-11 px-4 rounded-xl border border-gray-200 text-[14px] outline-none focus:border-[#8F27FF] transition-colors" />
@@ -63,13 +64,10 @@ export default function ContactForm() {
             </div>
 
             {/* Row 2 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <label className="flex flex-col gap-1.5">
                 <span className="text-[13px] font-medium text-gray-700">Phone Number <em className="text-[#8F27FF] not-italic">*</em></span>
-                <div className="h-11 flex items-center border border-gray-200 rounded-xl overflow-hidden focus-within:border-[#8F27FF] transition-colors">
-                  <span className="px-3 text-[13px] text-gray-500 border-r border-gray-200 h-full flex items-center flex-shrink-0">🇹🇷 +90</span>
-                  <input type="tel" required className="flex-1 h-full px-3 text-[14px] outline-none" />
-                </div>
+                <PhoneField defaultCountryCode="+90" bg="white" />
               </label>
               <label className="flex flex-col gap-1.5">
                 <span className="text-[13px] font-medium text-gray-700">Which best describes you? <em className="text-[#8F27FF] not-italic">*</em></span>
@@ -92,7 +90,7 @@ export default function ContactForm() {
             </div>
 
             {/* Row 3 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <label className="flex flex-col gap-1.5">
                 <span className="text-[13px] font-medium text-gray-700">Property type</span>
                 <select className="h-11 px-4 rounded-xl border border-gray-200 text-[14px] outline-none focus:border-[#8F27FF] transition-colors bg-white">
@@ -137,7 +135,7 @@ export default function ContactForm() {
               <small className="text-[12px] text-gray-400">Your information is reviewed confidentially by Nexa's advisory team.</small>
               <button
                 type="submit"
-                className="px-8 py-3 rounded-full bg-[#8F27FF] text-white font-semibold text-[15px] transition-all hover:-translate-y-0.5 flex-shrink-0"
+                className="w-full sm:w-auto px-8 py-3 rounded-full bg-[#8F27FF] text-white font-semibold text-[15px] transition-all hover:-translate-y-0.5 flex-shrink-0 inline-flex items-center justify-center"
                 style={{ boxShadow: "0 10px 24px rgba(143,39,255,0.28)" }}
               >
                 Submit

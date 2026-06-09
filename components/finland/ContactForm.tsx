@@ -3,6 +3,7 @@
 import { useState, FormEvent } from "react";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import PhoneField from "@/components/global/PhoneField";
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
@@ -40,11 +41,11 @@ export default function ContactForm() {
           <Reveal variant="up" delay={100}>
           <form
             onSubmit={handleSubmit}
-            className="rounded-[20px] p-8 md:p-11 flex flex-col gap-5"
+            className="rounded-[20px] p-5 sm:p-8 md:p-11 flex flex-col gap-5"
             style={{ background: "#F7F6F9", border: "1px solid #E2E2E2" }}
           >
             {/* Row 1 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               <label className="flex flex-col gap-2 text-[13px] font-medium">
                 <span className="flex items-center gap-1 text-[#474747]">First Name <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
                 <input type="text" required placeholder="Your first name"
@@ -67,15 +68,10 @@ export default function ContactForm() {
             </div>
 
             {/* Row 2 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               <label className="flex flex-col gap-2 text-[13px] font-medium">
                 <span className="flex items-center gap-1 text-[#474747]">Phone Number <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
-                <div className="h-11 flex items-center border border-gray-200 rounded-[10px] overflow-hidden bg-white focus-within:border-[#8F27FF] transition-colors">
-                  <span className="px-3 text-[13px] font-semibold border-r border-gray-200 h-full flex items-center bg-[#F4F4F4] flex-shrink-0 whitespace-nowrap">🇫🇮 +358</span>
-                  <input type="tel" required placeholder="Phone number"
-                    className="flex-1 h-full px-3 text-[14px] outline-none bg-transparent font-medium"
-                  />
-                </div>
+                <PhoneField defaultCountryCode="+358" />
               </label>
               <label className="flex flex-col gap-2 text-[13px] font-medium">
                 <span className="flex items-center gap-1 text-[#474747]">Your Role <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
@@ -96,7 +92,7 @@ export default function ContactForm() {
             </div>
 
             {/* Row 3 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               <label className="flex flex-col gap-2 text-[13px] font-medium">
                 <span className="text-[#474747]">Startup Stage</span>
                 <select className="h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors">
@@ -145,7 +141,7 @@ export default function ContactForm() {
               </small>
               <button
                 type="submit"
-                className="flex-shrink-0 inline-flex items-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"
+                className="w-full sm:w-auto flex-shrink-0 inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"
                 style={{ boxShadow: "0 10px 24px rgba(143,39,255,0.28)" }}
               >
                 Submit Application →

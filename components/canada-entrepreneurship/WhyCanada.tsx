@@ -69,7 +69,7 @@ export default function WhyCanada() {
 
       {/* ========== MOBILE ========== */}
       <div className="md:hidden px-5">
-        <h2 className="text-3xl font-bold text-center tracking-tight mb-8">Why Canada</h2>
+        <h2 className="text-3xl font-bold text-center tracking-tight mb-8">Why Canada?</h2>
         <div className="flex flex-col gap-3">
           {reasons.map((r) => (
             <div key={r.title} className="flex gap-4 p-5 rounded-2xl" style={{ background: "#F7F6F9" }}>
@@ -91,7 +91,7 @@ export default function WhyCanada() {
       {/* ========== DESKTOP ========== */}
       <div className="hidden md:block">
         <Row>
-          <h2 className="text-4xl font-bold text-center tracking-tight mb-12">Why Canada</h2>
+          <h2 className="text-4xl font-bold text-center tracking-tight mb-12">Why Canada?</h2>
           <div className="grid grid-cols-3 border border-gray-200 rounded-2xl overflow-hidden bg-white">
             {reasons.map((r, i) => (
               <div

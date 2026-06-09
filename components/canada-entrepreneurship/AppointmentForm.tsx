@@ -1,232 +1,156 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import "react-phone-input-2/lib/style.css";
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import Row from "@/components/global/Row";
+import Reveal from "@/components/global/Reveal";
+import PhoneField from "@/components/global/PhoneField";
 
-const PhoneInput = dynamic(() => import("react-phone-input-2"), { ssr: false });
-
-const shadow = { boxShadow: "0px 4px 4px 0px #00000026" };
-const phoneInputStyle = {
-  width: "100%",
-  height: "48px",
-  borderRadius: "16px",
-  border: "none",
-  boxShadow: "0px 4px 4px 0px #00000026",
-  paddingLeft: "60px",
-};
-const phoneButtonStyle = {
-  border: "none",
-  borderTopLeftRadius: "16px",
-  borderBottomLeftRadius: "16px",
-};
-
-interface InputProps {
-  label: string;
-  required?: boolean;
-  type?: string;
-  small?: boolean;
-}
-
-interface SelectProps {
-  label: string;
-  options: string[];
-  required?: boolean;
-  small?: boolean;
-}
-
-function FormInput({ label, required = false, type = "text", small = false }: InputProps) {
-  return (
-    <div className="flex flex-col gap-2">
-      <label className={small ? "text-sm" : "text-lg"}>
-        {label} {required && <span className="text-red-500">*</span>}
-      </label>
-      <input type={type} className="h-12 rounded-2xl px-4 bg-white outline-none" style={shadow} />
-    </div>
-  );
-}
-
-function FormSelect({ label, options, required = false, small = false }: SelectProps) {
-  return (
-    <div className="flex flex-col gap-2">
-      <label className={small ? "text-sm" : "text-lg"}>
-        {label} {required && <span className="text-red-500">*</span>}
-      </label>
-      <select className="h-12 rounded-2xl px-4 bg-white outline-none" style={shadow}>
-        {options.map((o, i) => <option key={i}>{o}</option>)}
-      </select>
-    </div>
-  );
-}
+const inputCls = "h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors w-full";
+const selectCls = "h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors w-full";
 
 export default function AppointmentForm() {
-  const [phone, setPhone] = useState("");
+  const [sent, setSent] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    alert("Thank you! Our team will contact you within 48 hours.");
-  };
+    setSent(true);
+  }
 
   return (
-    <section className="py-16 md:py-24 bg-white" id="contact">
-      <h2 className="text-2xl md:text-4xl font-bold text-center tracking-tight mb-10 px-5 md:px-0">
-        Book an Appointment
-      </h2>
+    <section id="contact" className="py-16 md:py-20 bg-white">
+      <Row>
+        <Reveal variant="up">
+          <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10 md:mb-14">
+            Book an Appointment
+          </h2>
+        </Reveal>
 
-      {/* ========== MOBILE ========== */}
-      <div className="md:hidden flex justify-center px-5">
-        <div
-          style={{
-            maxWidth: "340px",
-            width: "100%",
-            backgroundColor: "#EFEFEF",
-            borderRadius: "12px",
-            padding: "16px",
-          }}
-        >
-          <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
-            <FormInput label="First Name" required small />
-            <FormInput label="Last Name" required small />
-            <FormInput label="Email" required type="email" small />
-            <div className="flex flex-col gap-2">
-              <label className="text-sm">Phone Number <span className="text-red-500">*</span></label>
-              <PhoneInput
-                country="ca"
-                value={phone}
-                onChange={setPhone}
-                inputStyle={phoneInputStyle}
-                buttonStyle={phoneButtonStyle}
-                containerStyle={{ width: "100%" }}
-              />
-            </div>
-            <FormSelect
-              label="Which best describes you?"
-              required
-              options={["Investor", "Entrepreneur", "Startup Founder"]}
-              small
-            />
-            <FormSelect
-              label="Primary objective"
-              options={["Start a business in Canada", "Obtain Permanent Residence", "Expand existing business", "Seeking Investment"]}
-              small
-            />
-            <FormSelect
-              label="Industry / Sector"
-              required
-              options={["Real Estate", "Technology & Innovation", "Healthcare", "Manufacturing", "Clean Energy", "Tourism & Hospitality", "Agriculture"]}
-              small
-            />
-            <FormSelect
-              label="Target country"
-              required
-              options={["Canada", "UAE", "Turkey", "Greece", "Spain"]}
-              small
-            />
-            <FormSelect
-              label="Estimated investment size"
-              required
-              options={["Under €100K", "CAD 100K–300K", "CAD 300K–600K", "CAD 600K–1M", "CAD 1M+"]}
-              small
-            />
-            <div className="flex flex-col gap-2">
-              <label className="text-sm">Details</label>
-              <textarea
-                rows={4}
-                className="rounded-2xl px-4 py-3 bg-white outline-none resize-none"
-                style={shadow}
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full h-12 rounded-full text-white font-medium"
-              style={{ background: "#8F27FF" }}
-            >
-              Submit
-            </button>
-          </form>
-        </div>
-      </div>
-
-      {/* ========== DESKTOP ========== */}
-      <div className="hidden md:block">
-        <Row>
+        {sent ? (
           <div
-            className="w-full p-8 rounded-3xl bg-white"
-            style={{ boxShadow: "15px 15px 50px 0px #00000040" }}
+            className="flex flex-col items-center justify-center gap-4 rounded-[20px] p-14 text-center max-w-xl mx-auto"
+            style={{ background: "#FAF6FF", border: "1.5px solid rgba(143,39,255,0.2)" }}
           >
-            <div className="m-8 rounded-xl" style={{ backgroundColor: "#EFEFEF" }}>
-              <form className="p-6 flex flex-col gap-6" onSubmit={handleSubmit}>
-                <div className="grid grid-cols-3 gap-8">
-                  <FormInput label="First Name" required />
-                  <FormInput label="Last Name" required />
-                  <FormInput label="Email" required type="email" />
-                </div>
-
-                <div className="grid grid-cols-3 gap-8">
-                  <div className="flex flex-col gap-2">
-                    <label className="text-lg">Phone Number <span className="text-red-500">*</span></label>
-                    <PhoneInput
-                      country="ca"
-                      value={phone}
-                      onChange={setPhone}
-                      inputStyle={phoneInputStyle}
-                      buttonStyle={phoneButtonStyle}
-                      containerStyle={{ width: "100%" }}
-                    />
-                  </div>
-                  <FormSelect
-                    label="Which best describes you?"
-                    required
-                    options={["Investor", "Entrepreneur", "Startup Founder"]}
-                  />
-                  <FormSelect
-                    label="Primary objective"
-                    options={["Start a business in Canada", "Obtain Permanent Residence", "Expand existing business", "Seeking Investment"]}
-                  />
-                </div>
-
-                <div className="grid grid-cols-3 gap-8">
-                  <FormSelect
-                    label="Industry / Sector"
-                    required
-                    options={["Real Estate", "Technology & Innovation", "Healthcare", "Manufacturing", "Clean Energy", "Tourism & Hospitality", "Agriculture"]}
-                  />
-                  <FormSelect
-                    label="Target country"
-                    required
-                    options={["Canada", "UAE", "Turkey", "Greece", "Spain"]}
-                  />
-                  <FormSelect
-                    label="Estimated investment size"
-                    required
-                    options={["Under €100K", "CAD 100K–300K", "CAD 300K–600K", "CAD 600K–1M", "CAD 1M+"]}
-                  />
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <label className="text-lg">Details</label>
-                  <textarea
-                    rows={5}
-                    className="rounded-2xl px-4 py-3 bg-white outline-none resize-none"
-                    style={shadow}
-                  />
-                </div>
-
-                <div className="flex justify-end">
-                  <button
-                    type="submit"
-                    className="bg-[#8F27FF] text-white h-12 px-10 rounded-full text-md font-semibold hover:-translate-y-0.5 transition-transform"
-                  >
-                    Submit
-                  </button>
-                </div>
-              </form>
+            <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#8F27FF]">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={2.5} strokeLinecap="round" className="w-7 h-7">
+                <path d="M5 12l4 4 10-10" />
+              </svg>
             </div>
+            <h3 className="text-[22px] font-bold">Thank you!</h3>
+            <p className="text-gray-500 text-[15px]">A Nexa advisor will reach out within 48 hours.</p>
           </div>
-        </Row>
-      </div>
+        ) : (
+          <Reveal variant="up" delay={100}>
+            <form
+              onSubmit={handleSubmit}
+              className="rounded-[20px] p-5 sm:p-8 md:p-11 flex flex-col gap-5"
+              style={{ background: "#F7F6F9", border: "1px solid #E2E2E2" }}
+            >
+              {/* Row 1 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <label className="flex flex-col gap-2 text-[13px] font-medium">
+                  <span className="flex items-center gap-1 text-[#474747]">First Name <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <input type="text" required placeholder="Your first name" className={inputCls} />
+                </label>
+                <label className="flex flex-col gap-2 text-[13px] font-medium">
+                  <span className="flex items-center gap-1 text-[#474747]">Last Name <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <input type="text" required placeholder="Your last name" className={inputCls} />
+                </label>
+                <label className="flex flex-col gap-2 text-[13px] font-medium">
+                  <span className="flex items-center gap-1 text-[#474747]">Email <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <input type="email" required placeholder="you@example.com" className={inputCls} />
+                </label>
+              </div>
 
+              {/* Row 2 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <label className="flex flex-col gap-2 text-[13px] font-medium">
+                  <span className="flex items-center gap-1 text-[#474747]">Phone Number <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <PhoneField defaultCountryCode="+1" />
+                </label>
+                <label className="flex flex-col gap-2 text-[13px] font-medium">
+                  <span className="flex items-center gap-1 text-[#474747]">Which best describes you? <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <select className={selectCls}>
+                    <option>Investor</option>
+                    <option>Entrepreneur</option>
+                    <option>Startup Founder</option>
+                  </select>
+                </label>
+                <label className="flex flex-col gap-2 text-[13px] font-medium">
+                  <span className="text-[#474747]">Primary Objective</span>
+                  <select className={selectCls}>
+                    <option>Start a business in Canada</option>
+                    <option>Obtain Permanent Residence</option>
+                    <option>Expand existing business</option>
+                    <option>Seeking Investment</option>
+                  </select>
+                </label>
+              </div>
+
+              {/* Row 3 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <label className="flex flex-col gap-2 text-[13px] font-medium">
+                  <span className="flex items-center gap-1 text-[#474747]">Industry / Sector <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <select className={selectCls}>
+                    <option>Real Estate</option>
+                    <option>Technology &amp; Innovation</option>
+                    <option>Healthcare</option>
+                    <option>Manufacturing</option>
+                    <option>Clean Energy</option>
+                    <option>Tourism &amp; Hospitality</option>
+                    <option>Agriculture</option>
+                  </select>
+                </label>
+                <label className="flex flex-col gap-2 text-[13px] font-medium">
+                  <span className="text-[#474747]">Target Province</span>
+                  <select className={selectCls}>
+                    <option>Ontario</option>
+                    <option>British Columbia</option>
+                    <option>Alberta</option>
+                    <option>Quebec</option>
+                    <option>Manitoba</option>
+                    <option>Atlantic Provinces</option>
+                    <option>Not decided yet</option>
+                  </select>
+                </label>
+                <label className="flex flex-col gap-2 text-[13px] font-medium">
+                  <span className="text-[#474747]">Estimated Investment Size</span>
+                  <select className={selectCls}>
+                    <option>Under CAD 150K</option>
+                    <option>CAD 150K – 300K</option>
+                    <option>CAD 300K – 600K</option>
+                    <option>CAD 600K – 1M</option>
+                    <option>CAD 1M+</option>
+                  </select>
+                </label>
+              </div>
+
+              {/* Textarea */}
+              <label className="flex flex-col gap-2 text-[13px] font-medium">
+                <span className="text-[#474747]">Tell us about your goals &amp; business</span>
+                <textarea
+                  rows={4}
+                  placeholder="Describe your business idea, target province, timeline, and what you're looking to achieve in Canada…"
+                  className="px-3.5 py-3 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors resize-y"
+                />
+              </label>
+
+              {/* Footer */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
+                <small className="text-[12px] text-gray-500 leading-relaxed max-w-[50ch]">
+                  Your information is reviewed confidentially by Nexa&apos;s advisory team. We typically respond within 48 hours.
+                </small>
+                <button
+                  type="submit"
+                  className="w-full sm:w-auto flex-shrink-0 inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"
+                  style={{ boxShadow: "0 10px 24px rgba(143,39,255,0.28)" }}
+                >
+                  Submit Application →
+                </button>
+              </div>
+            </form>
+          </Reveal>
+        )}
+      </Row>
     </section>
   );
 }

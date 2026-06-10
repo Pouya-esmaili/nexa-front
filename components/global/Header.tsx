@@ -104,11 +104,11 @@ export default function Header() {
                         Entrepreneurship
                       </Link>
                       {[
-                        ["Canada Entrepreneurship", "/canada"],
-                        ["Spain Entrepreneurship", "/spain"],
-                        ["Portugal Entrepreneurship", "/portugal"],
-                        ["Finland Entrepreneurship", "/Entrepreneurship/Subpage-Finland"],
-                        ["Netherland Entrepreneurship", "/Entrepreneurship/Subpage-Netherland"],
+                        ["Canada Entrepreneurship", "Entrepreneurship/canada"],
+                        ["Spain Entrepreneurship", "Entrepreneurship/spain"],
+                        ["Portugal Entrepreneurship", "Entrepreneurship/portugal"],
+                        ["Finland Entrepreneurship", "Entrepreneurship/finland"],
+                        ["Netherland Entrepreneurship", "Entrepreneurship/netherlands"],
                       ].map(([label, href]) => (
                         <Link key={label} href={href}
                           className="block text-[13.5px] text-[#555] py-[5px] hover:text-[#8F27FF] hover:text-[15.5px] transition-all whitespace-nowrap">
@@ -126,11 +126,11 @@ export default function Header() {
                         Startup
                       </Link>
                       {[
-                        ["Finland Startup", "/Startup/Subpage-Finland"],
-                        ["Netherland Startup", "/Startup/Subpage-Netherland"],
-                        ["Canada Startup", "/Startup/Subpage-Canada"],
-                        ["UK Startup", "/Startup/Subpage-UK"],
-                        ["France Startup", "/Startup/Subpage-France"],
+                        ["Finland Startup", "/startup/finland"],
+                        ["Netherland Startup", "/startup/netherlands"],
+                        ["Canada Startup", "/startup/canada"],
+                        ["UK Startup", "/startup/uk"],
+                        ["France Startup", "/startup/france"],
                       ].map(([label, href]) => (
                         <Link key={label} href={href}
                           className="block text-[13.5px] text-[#555] py-[5px] hover:text-[#8F27FF] hover:text-[15.5px] transition-all whitespace-nowrap">
@@ -148,11 +148,11 @@ export default function Header() {
                         Investment
                       </Link>
                       {[
-                        ["UAE Investment", "/Investment/Subpage-UAE"],
-                        ["Turkey Investment", "/Investment/Subpage-Turkey"],
-                        ["Greece Investment", "/Investment/Subpage-Greece"],
-                        ["Spain Investment", "/Investment/Subpage-Spain"],
-                        ["France Investment", "/Investment/Subpage-France"],
+                        ["UAE Investment", "/investment/uae"],
+                        ["Turkey Investment", "/investment/turkey"],
+                        ["Greece Investment", "/investment/greece"],
+                        ["Spain Investment", "/investment/spain"],
+                        ["France Investment", "/investment/france"],
                       ].map(([label, href]) => (
                         <Link key={label} href={href}
                           className="block text-[13.5px] text-[#555] py-[5px] hover:text-[#8F27FF] hover:text-[15.5px] transition-all whitespace-nowrap">
@@ -301,19 +301,19 @@ export default function Header() {
           {/* Services accordion */}
           <MobAccordion label="Services" open={mobileAcc === "services"} toggle={() => toggleAcc("services")}>
             <MobCatLink href="/Entrepreneurship" label="Entrepreneurship" />
-            <MobSubLink href="/canada" label="Canada Entrepreneurship" />
-            <MobSubLink href="/spain" label="Spain Entrepreneurship" />
-            <MobSubLink href="/portugal" label="Portugal Entrepreneurship" />
-            <MobSubLink href="/Entrepreneurship/Subpage-Finland" label="Finland Entrepreneurship" />
-            <MobSubLink href="/Entrepreneurship/Subpage-Netherland" label="Netherland Entrepreneurship" />
+            <MobSubLink href="entrepreneurship/canada" label="Canada Entrepreneurship" />
+            <MobSubLink href="entrepreneurship/spain" label="Spain Entrepreneurship" />
+            <MobSubLink href="entrepreneurship/portugal" label="Portugal Entrepreneurship" />
+            <MobSubLink href="entrepreneurship/finland" label="Finland Entrepreneurship" />
+            <MobSubLink href="entrepreneurship/netherlands" label="Netherland Entrepreneurship" />
             <MobCatLink href="/startup" label="Startup" />
-            <MobSubLink href="/Startup/Subpage-Finland" label="Finland Startup" />
-            <MobSubLink href="/Startup/Subpage-Canada" label="Canada Startup" />
-            <MobSubLink href="/Startup/Subpage-UK" label="UK Startup" />
+            <MobSubLink href="startup/finland" label="Finland Startup" />
+            <MobSubLink href="startup/canada" label="Canada Startup" />
+            <MobSubLink href="startup/uk" label="UK Startup" />
             <MobCatLink href="/investment" label="Investment" />
-            <MobSubLink href="/Investment/Subpage-UAE" label="UAE Investment" />
-            <MobSubLink href="/Investment/Subpage-Turkey" label="Turkey Investment" />
-            <MobSubLink href="/Investment/Subpage-Greece" label="Greece Investment" />
+            <MobSubLink href="/investment/uae" label="UAE Investment" />
+            <MobSubLink href="/investment/turkey" label="Turkey Investment" />
+            <MobSubLink href="/investment/greece" label="Greece Investment" />
             <MobCatLink href="/advisory" label="Advisory" />
             <MobSubLink href="/Advisory/Business-Model-Design" label="Business Model Design" />
             <MobSubLink href="/Advisory/Brand-Strategy" label="Brand Strategy" />

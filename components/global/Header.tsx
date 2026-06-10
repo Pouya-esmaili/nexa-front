@@ -104,11 +104,11 @@ export default function Header() {
                         Entrepreneurship
                       </Link>
                       {[
-                        ["Canada Entrepreneurship", "Entrepreneurship/canada"],
-                        ["Spain Entrepreneurship", "Entrepreneurship/spain"],
-                        ["Portugal Entrepreneurship", "Entrepreneurship/portugal"],
-                        ["Finland Entrepreneurship", "Entrepreneurship/finland"],
-                        ["Netherland Entrepreneurship", "Entrepreneurship/netherlands"],
+                        ["Canada Entrepreneurship", "/Entrepreneurship/canada"],
+                        ["Spain Entrepreneurship", "/Entrepreneurship/spain"],
+                        ["Portugal Entrepreneurship", "/Entrepreneurship/portugal"],
+                        ["Finland Entrepreneurship", "/Entrepreneurship/finland"],
+                        ["Netherland Entrepreneurship", "/Entrepreneurship/netherlands"],
                       ].map(([label, href]) => (
                         <Link key={label} href={href}
                           className="block text-[13.5px] text-[#555] py-[5px] hover:text-[#8F27FF] hover:text-[15.5px] transition-all whitespace-nowrap">
@@ -149,7 +149,7 @@ export default function Header() {
                       </Link>
                       {[
                         ["UAE Investment", "/investment/uae"],
-                        ["Turkey Investment", "/investment/turkey"],
+                        ["Turkey Investment", "/investment/turkiye"],
                         ["Greece Investment", "/investment/greece"],
                         ["Spain Investment", "/investment/spain"],
                         ["France Investment", "/investment/france"],
@@ -301,18 +301,18 @@ export default function Header() {
           {/* Services accordion */}
           <MobAccordion label="Services" open={mobileAcc === "services"} toggle={() => toggleAcc("services")}>
             <MobCatLink href="/Entrepreneurship" label="Entrepreneurship" />
-            <MobSubLink href="entrepreneurship/canada" label="Canada Entrepreneurship" />
-            <MobSubLink href="entrepreneurship/spain" label="Spain Entrepreneurship" />
-            <MobSubLink href="entrepreneurship/portugal" label="Portugal Entrepreneurship" />
-            <MobSubLink href="entrepreneurship/finland" label="Finland Entrepreneurship" />
-            <MobSubLink href="entrepreneurship/netherlands" label="Netherland Entrepreneurship" />
+            <MobSubLink href="/Entrepreneurship/canada" label="Canada Entrepreneurship" />
+            <MobSubLink href="/Entrepreneurship/spain" label="Spain Entrepreneurship" />
+            <MobSubLink href="/Entrepreneurship/portugal" label="Portugal Entrepreneurship" />
+            <MobSubLink href="/Entrepreneurship/finland" label="Finland Entrepreneurship" />
+            <MobSubLink href="/Entrepreneurship/netherlands" label="Netherland Entrepreneurship" />
             <MobCatLink href="/startup" label="Startup" />
-            <MobSubLink href="startup/finland" label="Finland Startup" />
-            <MobSubLink href="startup/canada" label="Canada Startup" />
-            <MobSubLink href="startup/uk" label="UK Startup" />
+            <MobSubLink href="/startup/finland" label="Finland Startup" />
+            <MobSubLink href="/startup/canada" label="Canada Startup" />
+            <MobSubLink href="/startup/uk" label="UK Startup" />
             <MobCatLink href="/investment" label="Investment" />
             <MobSubLink href="/investment/uae" label="UAE Investment" />
-            <MobSubLink href="/investment/turkey" label="Turkey Investment" />
+            <MobSubLink href="/investment/turkiye" label="Turkey Investment" />
             <MobSubLink href="/investment/greece" label="Greece Investment" />
             <MobCatLink href="/advisory" label="Advisory" />
             <MobSubLink href="/Advisory/Business-Model-Design" label="Business Model Design" />

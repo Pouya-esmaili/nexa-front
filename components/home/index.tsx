@@ -20,11 +20,6 @@ export default function Hero() {
           {/* ── LEFT: Text ── */}
           <div className="order-2 md:order-1">
 
-            {/* Tag */}
-            <div className={`${base} ${mounted ? shown : hidden} inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#FAF6FF] text-[#8F27FF] text-[14px] font-semibold rounded-full mb-5`}
-              style={{ transitionDelay: "0ms" }}>
-            </div>
-
             {/* H1 */}
             <h1
               className={`${base} ${mounted ? shown : hidden} text-[32px] md:text-[46px] font-extrabold leading-[1.06] tracking-[-0.035em] text-black mb-5`}

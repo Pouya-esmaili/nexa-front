@@ -108,6 +108,9 @@ export default function AppointmentForm() {
                     <option>Alberta</option>
                     <option>Quebec</option>
                     <option>Manitoba</option>
+                    <option>Saskatchewan</option>
+                    <option>Yukon</option>
+                    <option>NW Territories</option>
                     <option>Atlantic Provinces</option>
                     <option>Not decided yet</option>
                   </select>

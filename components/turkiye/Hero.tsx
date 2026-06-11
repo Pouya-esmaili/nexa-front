@@ -64,13 +64,6 @@ export default function Hero() {
 
             {/* Left content */}
             <div className="flex-[1.1]">
-              <div
-                className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[13px] font-semibold mb-6 ${base} duration-500 ${mounted ? show : hideLeft}`}
-                style={{ background: "#FAF6FF", color: "#8F27FF", border: "1px solid rgba(143,39,255,0.18)" }}
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#8F27FF]" />
-                Türkiye Residency &amp; Citizenship
-              </div>
               <h1 className={`text-3xl lg:text-[48px] font-bold leading-[1.08] tracking-tight mb-6 ${base} duration-700 delay-100 ${mounted ? show : hideLeft}`}>
                 Where <span className="text-[#8F27FF]">three continents</span> meet — your next passport begins here.
               </h1>

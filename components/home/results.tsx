@@ -127,7 +127,7 @@ export default function Results() {
                 <g transform="translate(1125,535)" filter="url(#cs2)">
                   <rect width="210" height="100" rx="16" fill="rgba(22,4,50,0.95)" stroke="rgba(143,39,255,0.5)" strokeWidth="1.5"/>
                   <rect width="6" height="100" rx="3" fill="#8F27FF"/>
-                  <text x="26" y="48"  fontSize="40" fontWeight="800" fill="white" fontFamily="Inter,sans-serif">7</text>
+                  <text x="26" y="48"  fontSize="40" fontWeight="800" fill="white" fontFamily="Inter,sans-serif">10</text>
                   <text x="68" y="48"  fontSize="26" fontWeight="700" fill="#8F27FF" fontFamily="Inter,sans-serif">+ Yrs</text>
                   <text x="26" y="76"  fontSize="13" fontWeight="500" fill="rgba(255,255,255,0.65)" fontFamily="Inter,sans-serif">Years of Expertise</text>
                 </g>

@@ -18,7 +18,7 @@ export default function Results() {
 
         {/* ── Header ── */}
         <Reveal variant="up">
-          <div className="text-center mb-9">
+          <div className="text-center">
             <h2 className="text-[28px] md:text-[40px] font-bold text-white tracking-[-0.03em]">
               Our Results Tell the Story
             </h2>
@@ -108,7 +108,7 @@ export default function Results() {
               {/* ── Stat cards (desktop) ── */}
               <g id="result-stat-cards">
                 {/* 89% */}
-                <g transform="translate(78,535)" filter="url(#cs2)">
+                <g transform="translate(130,535)" filter="url(#cs2)">
                   <rect width="210" height="100" rx="16" fill="rgba(22,4,50,0.95)" stroke="rgba(143,39,255,0.5)" strokeWidth="1.5"/>
                   <rect width="6" height="100" rx="3" fill="#8F27FF"/>
                   <text x="26" y="48"  fontSize="40" fontWeight="800" fill="white" fontFamily="Inter,sans-serif">89</text>
@@ -124,7 +124,7 @@ export default function Results() {
                   <text x="26" y="76"  fontSize="13" fontWeight="500" fill="rgba(255,255,255,0.65)" fontFamily="Inter,sans-serif">Clients Worldwide</text>
                 </g>
                 {/* 7+ Yrs */}
-                <g transform="translate(1125,535)" filter="url(#cs2)">
+                <g transform="translate(1110,535)" filter="url(#cs2)">
                   <rect width="210" height="100" rx="16" fill="rgba(22,4,50,0.95)" stroke="rgba(143,39,255,0.5)" strokeWidth="1.5"/>
                   <rect width="6" height="100" rx="3" fill="#8F27FF"/>
                   <text x="26" y="48"  fontSize="40" fontWeight="800" fill="white" fontFamily="Inter,sans-serif">10</text>

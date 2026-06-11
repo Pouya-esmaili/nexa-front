@@ -310,14 +310,23 @@ export default function Header() {
             <MobSubLink href="/startup/finland" label="Finland Startup" />
             <MobSubLink href="/startup/canada" label="Canada Startup" />
             <MobSubLink href="/startup/uk" label="UK Startup" />
+            <MobSubLink href="/startup/greece" label="greece Startup" />
+            <MobSubLink href="/startup/spain" label="spain Startup" />
             <MobCatLink href="/investment" label="Investment" />
             <MobSubLink href="/investment/uae" label="UAE Investment" />
             <MobSubLink href="/investment/turkiye" label="Turkey Investment" />
             <MobSubLink href="/investment/greece" label="Greece Investment" />
+            <MobSubLink href="/investment/spain" label="Spain Investment" />
+            <MobSubLink href="/investment/france" label="France Investment" />
             <MobCatLink href="/advisory" label="Advisory" />
             <MobSubLink href="/Advisory/Business-Model-Design" label="Business Model Design" />
             <MobSubLink href="/Advisory/Brand-Strategy" label="Brand Strategy" />
             <MobSubLink href="/Advisory/Go-To-Market-Strategy" label="Go-To-Market Strategy" />
+            <MobSubLink href="/Advisory/Marketing-Strategy" label="Marketing Strategy & Planning" />
+            <MobSubLink href="/Advisory/Market-Analysis" label="Market Analysis" />
+            <MobSubLink href="/Advisory/Visual-Identity" label="Visual Identity" />
+            <MobSubLink href="/Advisory/Web-Design" label="Web Design" />
+            <MobSubLink href="/Advisory/Content-Creation" label="Content Creation" />
           </MobAccordion>
 
           {/* About Us accordion */}

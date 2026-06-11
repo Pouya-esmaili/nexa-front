@@ -222,7 +222,7 @@ export default function ContactForm() {
                   <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round"><path d="M5 12l4 4 10-10" /></svg>
                 </div>
                 <h3 className="text-[22px] font-bold">Message Sent!</h3>
-                <p className="text-[15px] text-[#929292]">A Nexa advisor will reach out within 24 hours.</p>
+                <p className="text-[15px] text-[#929292]">A Nexa advisor will reach out within 48 hours.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit}>

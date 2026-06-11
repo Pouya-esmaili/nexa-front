@@ -28,11 +28,6 @@ export default function Hero() {
 
           {/* Left */}
           <div>
-            <div className={`${base} ${mounted ? show : hidden} inline-flex items-center gap-2 px-4 py-[7px] rounded-full text-[13px] font-semibold mb-6`}
-              style={{ background: "#FAF6FF", border: "1px solid rgba(143,39,255,0.18)", color: "#8F27FF", transitionDelay: "0ms" }}>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#8F27FF]" />
-              Portugal D2 Entrepreneur Visa
-            </div>
 
             <h1 className={`${base} ${mounted ? show : hidden} text-[38px] md:text-[48px] font-bold leading-[1.06] tracking-[-0.03em] mb-5`}
               style={{ transitionDelay: "80ms" }}>
@@ -79,36 +74,6 @@ export default function Hero() {
                 boxShadow: "0 20px 50px rgba(0,0,0,0.08)",
               }}>
               <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.12))" }} />
-            </div>
-
-            {/* Portugal flag badge */}
-            <div className="absolute top-6 right-6 w-[68px] h-[44px] rounded-[10px] overflow-hidden z-10 bg-white grid place-items-center"
-              style={{ boxShadow: "0 6px 20px rgba(0,0,0,0.06)", border: "1.5px solid #E2E2E2" }}>
-              <svg viewBox="0 0 60 36" width={60} height={36}>
-                {/* Portugal flag: green (2/5) + red (3/5) */}
-                <rect width={24} height={36} fill="#006600" />
-                <rect x={24} width={36} height={36} fill="#CC0000" />
-                {/* simplified coat of arms circle */}
-                <circle cx={24} cy={18} r={7} fill="#FFE600" opacity={0.9} />
-                <circle cx={24} cy={18} r={5} fill="#CC0000" />
-              </svg>
-            </div>
-
-            {/* Floating badge */}
-            <div className="float-badge absolute top-[88px] -right-5 bg-white rounded-[14px] px-4 py-3 flex items-center gap-2.5 z-10"
-              style={{ boxShadow: "0 12px 36px rgba(0,0,0,0.07)", border: "1px solid #F4F4F4" }}>
-              <span className="pulse-green w-2 h-2 rounded-full bg-[#10B981]" />
-              <span className="text-[13px] font-semibold text-black">Visa Active</span>
-            </div>
-
-            {/* Yellow accent badge */}
-            <div className="absolute -bottom-4 -left-4 bg-[#FFE600] rounded-[14px] px-5 py-3.5 flex items-center gap-3 z-10"
-              style={{ boxShadow: "0 6px 20px rgba(0,0,0,0.05)" }}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-black">
-                <path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z"/>
-                <path d="M9 12l2 2 4-4"/>
-              </svg>
-              <span className="text-[14px] font-bold text-black tracking-tight">Dual Citizenship Permitted</span>
             </div>
           </div>
         </div>

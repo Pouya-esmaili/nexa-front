@@ -68,27 +68,6 @@ export default function StartupHero() {
               <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.12))" }} />
             </div>
 
-            {/* Canada flag badge */}
-            <div className="absolute top-6 right-6 w-[68px] h-[44px] bg-white rounded-[10px] grid place-items-center z-10 overflow-hidden"
-              style={{ boxShadow: "0 6px 20px rgba(0,0,0,0.05)", border: "1.5px solid #E2E2E2" }}>
-              <span className="text-2xl">🇨🇦</span>
-            </div>
-
-            {/* Floating badge */}
-            <div className="absolute top-[90px] -right-5 bg-white rounded-[14px] px-4 py-3 flex items-center gap-2.5 z-10"
-              style={{ boxShadow: "0 12px 36px rgba(0,0,0,0.07)", border: "1px solid #F4F4F4", animation: "floatY 4s ease-in-out infinite" }}>
-              <span className="w-2 h-2 rounded-full bg-[#10B981]" style={{ animation: "pulseGreen 2s ease-in-out infinite" }} />
-              <span className="text-[13px] font-semibold text-black">Direct PR Status</span>
-            </div>
-
-            {/* Yellow bottom badge */}
-            <div className="absolute -bottom-4 -left-4 bg-[#FFE600] rounded-[14px] px-5 py-3.5 flex items-center gap-3 z-10"
-              style={{ boxShadow: "0 6px 20px rgba(0,0,0,0.05)" }}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" className="w-5 h-5 text-black">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-              </svg>
-              <span className="text-[14px] font-bold text-black tracking-tight">Citizenship in 3 Years</span>
-            </div>
           </div>
 
         </div>

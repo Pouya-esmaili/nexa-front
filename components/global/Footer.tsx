@@ -17,7 +17,7 @@ export default function Footer() {
             <Image src="/images/logo.svg" alt="Nexa" width={110} height={38} className="mb-4" />
             <p className="text-[14px] text-[#555] leading-[1.7] max-w-[400px]">
               At NEXA, Global Launchpad for Entrepreneurship, Startup Acceleration, and Strategic
-              Investment, Backed by Over 7 Years of Proven Expertise in Business Development,
+              Investment, Backed by Over 10 Years of Proven Expertise in Business Development,
               Strategic Planning, and International Market Access.
             </p>
           </div>
@@ -32,7 +32,7 @@ export default function Footer() {
           <div className="md:text-center">
             <h5 className="text-[16px] font-bold text-[#1a1a1a] mb-4">About Nexa</h5>
             <ul className="space-y-[5px]">
-              {[["About Us","/our-story"],["Our Team","/our-team"],["Contact Us","/contact"]].map(([l,h]) => (
+              {[["Our Story","/our-story"],["Our Team","/our-team"],["Contact Us","/contact"]].map(([l,h]) => (
                 <li key={l}><Link href={h} className="text-[14px] text-[#555] hover:text-[#8F27FF] transition-colors">{l}</Link></li>
               ))}
             </ul>
@@ -44,7 +44,7 @@ export default function Footer() {
           <Image src="/images/logo.svg" alt="Nexa" width={110} height={38} className="mb-4" />
           <p className="text-[14px] text-[#555] leading-[1.7]">
             At NEXA, Global Launchpad for Entrepreneurship, Startup Acceleration, and Strategic
-            Investment, Backed by Over 7 Years of Proven Expertise in Business Development,
+            Investment, Backed by Over 10 Years of Proven Expertise in Business Development,
             Strategic Planning, and International Market Access.
           </p>
         </div>
@@ -62,7 +62,7 @@ export default function Footer() {
           <div>
             <h5 className="text-[16px] font-bold text-[#1a1a1a] mb-4">About Nexa</h5>
             <ul className="space-y-[10px]">
-              {[["About Us","/our-story"],["Our Team","/our-team"],["Contact Us","/contact"]].map(([l,h]) => (
+              {[["Our Story","/our-story"],["Our Team","/our-team"],["Contact Us","/contact"]].map(([l,h]) => (
                 <li key={l}><Link href={h} className="text-[14px] text-[#555] hover:text-[#8F27FF] transition-colors">{l}</Link></li>
               ))}
             </ul>

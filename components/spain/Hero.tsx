@@ -29,12 +29,6 @@ export default function Hero() {
 
           {/* Left */}
           <div>
-            <div className={`${base} ${mounted ? show : hidden} inline-flex items-center gap-2 px-4 py-[7px] rounded-full text-[13px] font-semibold mb-6`}
-              style={{ background: "#FAF6FF", border: "1px solid rgba(143,39,255,0.18)", color: "#8F27FF", transitionDelay: "0ms" }}>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#8F27FF]" />
-              Spain Entrepreneur Visa
-            </div>
-
             <h1 className={`${base} ${mounted ? show : hidden} text-[38px] md:text-[48px] font-bold leading-[1.06] tracking-[-0.03em] mb-5`}
               style={{ transitionDelay: "80ms" }}>
               Launch your <span className="text-[#8F27FF]">innovative venture</span> in the Mediterranean hub of Europe.
@@ -42,7 +36,7 @@ export default function Hero() {
 
             <p className={`${base} ${mounted ? show : hidden} text-[16px] text-[#474747] leading-[1.65] mb-8 max-w-[520px]`}
               style={{ transitionDelay: "160ms" }}>
-              The Spain Entrepreneur Visa (Visado para Emprendedores) bypasses conventional immigration bottlenecks — with a 20-working-day approval rule, 3-year initial residency, and full family inclusion from day one.
+               (Visado para Emprendedores) bypasses conventional immigration bottlenecks — with a 20-working-day approval rule, 3-year initial residency, and full family inclusion from day one.
             </p>
 
             {/* Stats */}
@@ -81,31 +75,6 @@ export default function Hero() {
               <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.12))" }} />
             </div>
 
-            {/* Spain flag badge */}
-            <div className="absolute top-6 right-6 w-[68px] h-[44px] rounded-[10px] overflow-hidden z-10 bg-white grid place-items-center"
-              style={{ boxShadow: "0 6px 20px rgba(0,0,0,0.06)", border: "1.5px solid #E2E2E2" }}>
-              <svg viewBox="0 0 60 36" width={60} height={36}>
-                <rect width={60} height={9} fill="#AA151B" />
-                <rect y={9} width={60} height={18} fill="#F1BF00" />
-                <rect y={27} width={60} height={9} fill="#AA151B" />
-              </svg>
-            </div>
-
-            {/* Floating badge */}
-            <div className="float-badge absolute top-[88px] -right-5 bg-white rounded-[14px] px-4 py-3 flex items-center gap-2.5 z-10"
-              style={{ boxShadow: "0 12px 36px rgba(0,0,0,0.07)", border: "1px solid #F4F4F4" }}>
-              <span className="pulse-green w-2 h-2 rounded-full bg-[#10B981]" />
-              <span className="text-[13px] font-semibold text-black">Visa Active</span>
-            </div>
-
-            {/* Yellow accent badge */}
-            <div className="absolute -bottom-4 -left-4 bg-[#FFE600] rounded-[14px] px-5 py-3.5 flex items-center gap-3 z-10"
-              style={{ boxShadow: "0 6px 20px rgba(0,0,0,0.05)" }}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-black">
-                <path d="M13 3L4 14h7l-1 7 9-11h-7l1-7z" />
-              </svg>
-              <span className="text-[14px] font-bold text-black tracking-tight">3-yr TIE Card Direct</span>
-            </div>
           </div>
         </div>
       </Row>

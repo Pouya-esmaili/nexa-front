@@ -34,13 +34,6 @@ export default function Hero() {
       {/* MOBILE */}
       <div className="md:hidden px-5 relative z-10">
         <div
-          className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[12px] font-semibold mb-5 uppercase tracking-wider ${base} duration-500 ${mounted ? show : hideUp}`}
-          style={{ background: "#FAF6FF", color: "#8F27FF", border: "1px solid rgba(143,39,255,0.18)" }}
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#8F27FF]" />
-          Finland Startup Program
-        </div>
-        <div
           className={`h-56 rounded-[32px_80px_32px_32px] mb-6 overflow-hidden ${base} duration-700 delay-75 ${mounted ? show : hideUp}`}
           style={{ background: "#0d1f2d url('https://images.unsplash.com/photo-1578054320988-a2ac16f42591?w=900&q=80') center/cover" }}
         />
@@ -73,13 +66,6 @@ export default function Hero() {
 
             {/* Content */}
             <div>
-              <div
-                className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[12px] font-semibold mb-6 uppercase tracking-wider ${base} duration-500 ${mounted ? show : hideLeft}`}
-                style={{ background: "#FAF6FF", color: "#8F27FF", border: "1px solid rgba(143,39,255,0.18)" }}
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#8F27FF]" />
-                Finland Startup Program
-              </div>
               <h1 className={`text-[48px] font-bold leading-[1.06] tracking-[-0.03em] mb-6 ${base} duration-700 delay-100 ${mounted ? show : hideLeft}`}>
                 Build a <span className="text-[#8F27FF]">global company</span> from inside the European Union.
               </h1>
@@ -113,38 +99,7 @@ export default function Hero() {
                   boxShadow: "0 20px 50px rgba(0,0,0,0.08)",
                 }}
               />
-              {/* Flag badge */}
-              <div
-                className={`absolute top-6 right-6 w-[68px] h-11 bg-white rounded-[10px] flex items-center justify-center z-10 text-2xl ${base} duration-500 delay-500 ${mounted ? show : hideUp}`}
-                style={{ boxShadow: "0 6px 20px rgba(0,0,0,0.05)", border: "1.5px solid #E2E2E2" }}
-              >
-                🇫🇮
-              </div>
-              {/* Floating badge */}
-              <div
-                className={`absolute top-[80px] -right-[22px] bg-white rounded-[14px] px-4 py-3 flex items-center gap-2.5 z-10 ${base} duration-500 delay-[600ms] ${mounted ? show : hideRight}`}
-                style={{
-                  boxShadow: "0 12px 36px rgba(0,0,0,0.07)",
-                  border: "1px solid #F4F4F4",
-                  animation: "floatBadge 4s ease-in-out infinite",
-                }}
-              >
-                <span
-                  className="w-2 h-2 bg-emerald-500 rounded-full flex-shrink-0"
-                  style={{ boxShadow: "0 0 0 4px rgba(16,185,129,0.2)", animation: "pulseGreen 2s ease-in-out infinite" }}
-                />
-                <span className="text-[13px] font-semibold text-black whitespace-nowrap">Fast Track Active</span>
-              </div>
-              {/* Yellow accent */}
-              <div
-                className={`absolute -bottom-4 -left-4 flex items-center gap-3 px-[20px] py-[14px] rounded-[14px] z-10 ${base} duration-500 delay-[700ms] ${mounted ? show : hideLeft}`}
-                style={{ background: "#FFE600", boxShadow: "0 6px 20px rgba(0,0,0,0.05)" }}
-              >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-5 h-5 text-black">
-                  <path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z" />
-                </svg>
-                <span className="font-bold text-[13px] text-black">EU Top-Tier Passport</span>
-              </div>
+
             </div>
 
           </div>

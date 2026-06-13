@@ -40,7 +40,7 @@ export default function WhyFinland() {
       <Row>
         <Reveal variant="up" className="text-center mb-10 md:mb-14">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em]">
-            Why Finland
+            Why Finland?
           </h2>
         </Reveal>
 

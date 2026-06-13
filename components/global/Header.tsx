@@ -261,7 +261,7 @@ export default function Header() {
 
           {/* Right: CTA (desktop) + Hamburger (mobile) — always in same right slot */}
           <div className="ml-auto flex items-center gap-3 flex-shrink-0">
-            <Link href="#contact"
+            <Link href="/contact"
               className="hidden md:inline-flex items-center gap-2 px-[22px] py-[10px] bg-white border-[1.5px] border-[#8F27FF] text-[#8F27FF] font-semibold rounded-full text-[13px] transition-all hover:bg-[#8F27FF] hover:text-white hover:-translate-y-px hover:shadow-[0_8px_22px_rgba(143,39,255,0.28)]">
               Contact Us
             </Link>
@@ -343,7 +343,7 @@ export default function Header() {
 
           {/* Bottom CTA */}
           <div className="mt-auto p-6 border-t border-[#E2E2E2] flex flex-col gap-2.5">
-            <Link href="#contact"
+            <Link href="/contact"
               className="flex items-center justify-center px-6 py-3.5 border-[1.5px] border-[#8F27FF] text-[#8F27FF] font-semibold rounded-full text-[15px] hover:bg-[#8F27FF] hover:text-white transition-all">
               Contact Us
             </Link>

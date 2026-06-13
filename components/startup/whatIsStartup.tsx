@@ -1,119 +1,59 @@
-import Image from "next/image";
-import { CheckCircle2 } from "lucide-react";
-import Row from "../global/Row";
+import Row from "@/components/global/Row";
+import Reveal from "@/components/global/Reveal";
 
-const Program = () => {
-    const items = [
-        "Team-Driven Vision And Collaborative Execution",
-        "Innovative Solutions For Real Market Needs",
-        "Sustainable Revenue And Wealth Creation Models",
-        "Scalable Structure With Global Growth Potential",
-    ];
+const tags = [
+  "Team-Driven Vision & Collaborative Execution",
+  "Innovative Solutions for Real Market Needs",
+  "Sustainable Revenue & Wealth Creation Models",
+  "Scalable Structure with Global Growth Potential",
+];
 
-    return (
-        <section className="w-full py-14 md:py-20">
-            <Row>
-                {/* Title */}
-                <h2 className="text-3xl md:text-5xl font-bold text-center text-black mb-12">
-                    What is the Startup?
-                </h2>
-
-                {/* Desktop */}
-                <div className="hidden md:flex items-center gap-14">
-
-                    {/* Image */}
-                    <div className="w-1/2">
-                        <Image
-                            width={1400}
-                            height={1000}
-                            src="/images/Entrepreneurship/programs.svg"
-                            alt="startup"
-                            className="w-full object-cover rounded-[32px]"
-                        />
-                    </div>
-
-                    {/* Content */}
-                    <div className="w-1/2">
-                        <h3 className="text-3xl font-bold text-black leading-snug mb-6">
-                            Built To Innovate. Designed To Scale.
-                        </h3>
-
-                        <p className="text-[17px] leading-8 text-[#333] mb-8">
-                            A Startup Is A Team-Driven Venture Focused On Solving
-                            Real Market Needs Through Innovation and Technology,
-                            While Building Sustainable Revenue Models Designed For
-                            Scalable, Long-Term Growth.
-                        </p>
-
-                        {/* Items */}
-                        <div className="flex flex-col gap-4">
-                            {items.map((item, index) => (
-                                <div
-                                    key={index}
-                                    className="flex items-start gap-3"
-                                >
-                                    <CheckCircle2
-                                        size={32}
-                                        className="text-white fill-[#FFE600] mt-1"
-                                    />
-
-                                    <p className="text-[16px] text-[#222]">
-                                        {item}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+export default function WhatIsStartup() {
+  return (
+    <section className="py-16 md:py-24 bg-[#F7F6F9]">
+      <Row>
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.1fr] gap-12 md:gap-16 items-center">
+          <Reveal variant="left">
+            <div className="relative">
+              <div className="rounded-[24px] overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80"
+                  alt="Entrepreneur planning global expansion"
+                  className="w-full object-cover"
+                  style={{ height: 460, objectFit: "cover" }}
+                />
+              </div>
+              <div className="absolute bottom-6 left-6 bg-white rounded-[14px] px-5 py-4 flex items-center gap-4"
+                style={{ boxShadow: "0 16px 48px rgba(0,0,0,0.09)" }}>
+                <div className="w-[42px] h-[42px] rounded-[12px] bg-[#8F27FF] grid place-items-center text-[20px] flex-shrink-0">🌍</div>
+                <div>
+                  <strong className="block text-[14px] font-bold text-black">400+ Entrepreneurs Placed</strong>
+                  <span className="text-[12px] text-[#929292]">Across 5 countries</span>
                 </div>
+              </div>
+            </div>
+          </Reveal>
 
-                {/* Mobile */}
-                <div className="flex flex-col md:hidden">
-
-                    {/* Image */}
-                    <div className="mb-6">
-                        <Image
-                            width={1200}
-                            height={1000}
-                            src="/images/Entrepreneurship/programs.svg"
-                            alt="startup"
-                            className="w-full object-cover rounded-[24px]"
-                        />
-                    </div>
-
-                    {/* Paragraph */}
-                    <h3 className="text-2xl font-bold text-black leading-snug mb-4">
-                        Built To Innovate. Designed To Scale.
-                    </h3>
-
-                    <p className="text-[16px] leading-7 text-[#333] mb-6">
-                        A Startup Is A Team-Driven Venture Focused On Solving
-                        Real Market Needs Through Innovation and Technology,
-                        While Building Sustainable Revenue Models Designed For
-                        Scalable, Long-Term Growth.
-                    </p>
-
-                    {/* Items */}
-                    <div className="flex flex-col gap-4">
-                        {items.map((item, index) => (
-                            <div
-                                key={index}
-                                className="flex items-start gap-3"
-                            >
-                                <CheckCircle2
-                                    size={20}
-                                    className="text-white fill-[#FFE600] mt-1"
-                                />
-
-                                <p className="text-[15px] text-[#222] leading-6">
-                                    {item}
-                                </p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </Row>
-        </section>
-    );
-};
-
-export default Program;
+          <Reveal variant="right">
+            <h2 className="text-[32px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] mb-5">
+              Built To <span className="text-[#8F27FF]">Innovate.</span> Designed To Scale.
+            </h2>
+            <p className="text-[16px] text-[#929292] leading-[1.72] mb-4">
+              A Startup is a team-driven venture focused on solving real market needs through innovation and technology, while building sustainable revenue models designed for scalable, long-term growth.
+            </p>
+            <p className="text-[16px] text-[#929292] leading-[1.72] mb-6">
+              Nexa supports founders at every stage — from idea validation and visa application to fundraising and post-launch scaling across global markets.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {tags.map(t => (
+                <span key={t} className="px-3.5 py-1.5 rounded-full text-[13px] font-medium border border-[#E2E2E2] bg-white text-[#474747] hover:bg-[#FAF6FF] hover:border-[rgba(143,39,255,0.18)] hover:text-[#8F27FF] transition-colors cursor-default">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </Row>
+    </section>
+  );
+}

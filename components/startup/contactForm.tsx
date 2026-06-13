@@ -1,0 +1,170 @@
+"use client";
+import { useState, FormEvent } from "react";
+import Row from "@/components/global/Row";
+import Reveal from "@/components/global/Reveal";
+import PhoneField from "@/components/global/PhoneField";
+
+const inputCls = "h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors w-full";
+const selectCls = "h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors w-full";
+
+export default function StartupContactForm() {
+  const [sent, setSent] = useState(false);
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setSent(true);
+  }
+
+  return (
+    <section id="contact" className="py-16 md:py-20 bg-white">
+      <Row>
+        <Reveal variant="up">
+          <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10 md:mb-14">
+            Ready to Scale Your{" "}
+            <span className="text-[#8F27FF]">Startup Globally?</span>
+          </h2>
+        </Reveal>
+
+        {sent ? (
+          <div
+            className="flex flex-col items-center justify-center gap-4 rounded-[20px] p-14 text-center max-w-xl mx-auto"
+            style={{ background: "#FAF6FF", border: "1.5px solid rgba(143,39,255,0.2)" }}
+          >
+            <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#8F27FF]">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={2.5} strokeLinecap="round" className="w-7 h-7">
+                <path d="M5 12l4 4 10-10" />
+              </svg>
+            </div>
+            <h3 className="text-[22px] font-bold">Thank you!</h3>
+            <p className="text-gray-500 text-[15px]">A Nexa advisor will reach out within 48 hours.</p>
+          </div>
+        ) : (
+          <Reveal variant="up" delay={100}>
+            <form
+              onSubmit={handleSubmit}
+              className="rounded-[20px] p-5 sm:p-8 md:p-11 flex flex-col gap-5"
+              style={{ background: "#F7F6F9", border: "1px solid #E2E2E2" }}
+            >
+              {/* Row 1 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <label className="flex flex-col gap-2 text-[13px] font-medium">
+                  <span className="flex items-center gap-1 text-[#474747]">First Name <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <input type="text" required placeholder="Your first name" className={inputCls} />
+                </label>
+                <label className="flex flex-col gap-2 text-[13px] font-medium">
+                  <span className="flex items-center gap-1 text-[#474747]">Last Name <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <input type="text" required placeholder="Your last name" className={inputCls} />
+                </label>
+                <label className="flex flex-col gap-2 text-[13px] font-medium">
+                  <span className="flex items-center gap-1 text-[#474747]">Email Address <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <input type="email" required placeholder="you@example.com" className={inputCls} />
+                </label>
+              </div>
+
+              {/* Row 2 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <label className="flex flex-col gap-2 text-[13px] font-medium">
+                  <span className="flex items-center gap-1 text-[#474747]">Phone Number <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <PhoneField defaultCountryCode="+1" />
+                </label>
+                <label className="flex flex-col gap-2 text-[13px] font-medium">
+                  <span className="flex items-center gap-1 text-[#474747]">Country of Interest <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <select required className={selectCls}>
+                    <option value="">Select a country…</option>
+                    <option>Finland — Startup Permit</option>
+                    <option>Canada — Startup Visa</option>
+                    <option>United Kingdom — Innovator Founder Visa</option>
+                    <option>Netherlands — Startup Visa</option>
+                    <option>France — French Tech Visa</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </label>
+                <label className="flex flex-col gap-2 text-[13px] font-medium">
+                  <span className="flex items-center gap-1 text-[#474747]">Industry / Business Type <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <select required className={selectCls}>
+                    <option value="">Select your industry…</option>
+                    <option>Technology / SaaS</option>
+                    <option>E-commerce / Retail</option>
+                    <option>Healthcare / Medical</option>
+                    <option>Food &amp; Beverage</option>
+                    <option>Real Estate</option>
+                    <option>Education / EdTech</option>
+                    <option>Finance / FinTech</option>
+                    <option>Manufacturing</option>
+                    <option>Creative / Media</option>
+                    <option>Other</option>
+                  </select>
+                </label>
+              </div>
+
+              {/* Row 3 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <label className="flex flex-col gap-2 text-[13px] font-medium">
+                  <span className="text-[#474747]">Current Business Stage</span>
+                  <select className={selectCls}>
+                    <option value="">Select stage…</option>
+                    <option>Idea / Pre-revenue</option>
+                    <option>MVP / Early Traction</option>
+                    <option>Established (1–3 years)</option>
+                    <option>Scaling / Growth Stage</option>
+                  </select>
+                </label>
+                <label className="flex flex-col gap-2 text-[13px] font-medium">
+                  <span className="text-[#474747]">Estimated Available Capital</span>
+                  <select className={selectCls}>
+                    <option value="">Select range…</option>
+                    <option>Under $50,000</option>
+                    <option>$50,000 – $100,000</option>
+                    <option>$100,000 – $250,000</option>
+                    <option>$250,000 – $500,000</option>
+                    <option>$500,000+</option>
+                  </select>
+                </label>
+                <label className="flex flex-col gap-2 text-[13px] font-medium">
+                  <span className="text-[#474747]">How Did You Hear About Us?</span>
+                  <select className={selectCls}>
+                    <option value="">Select…</option>
+                    <option>Google</option>
+                    <option>Social Media</option>
+                    <option>Friend / Referral</option>
+                    <option>Attorney</option>
+                    <option>Webinar</option>
+                    <option>Tradeshow / Conference</option>
+                    <option>Other</option>
+                  </select>
+                </label>
+              </div>
+
+              {/* Textarea */}
+              <label className="flex flex-col gap-2 text-[13px] font-medium">
+                <span className="text-[#474747]">Tell Us About Your Project</span>
+                <textarea
+                  rows={4}
+                  placeholder="Tell us about your startup idea, target country, current stage, and what kind of support you're looking for…"
+                  className="px-3.5 py-3 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors resize-y w-full"
+                />
+              </label>
+
+              {/* Footer */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
+                <small className="flex items-center gap-2 text-[12px] text-gray-500 leading-relaxed max-w-[50ch]">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="flex-shrink-0">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                  Your information is kept strictly confidential. We respond within 48 hours.
+                </small>
+                <button
+                  type="submit"
+                  className="w-full sm:w-auto flex-shrink-0 inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"
+                  style={{ boxShadow: "0 10px 24px rgba(143,39,255,0.28)" }}
+                >
+                  Send Message →
+                </button>
+              </div>
+            </form>
+          </Reveal>
+        )}
+      </Row>
+    </section>
+  );
+}

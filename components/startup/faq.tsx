@@ -1,168 +1,64 @@
 "use client";
-
 import { useState } from "react";
-import Row from "../global/Row";
+import Row from "@/components/global/Row";
+import Reveal from "@/components/global/Reveal";
 
-const faqData = [
-  {
-    title: "What qualifies a business as a startup under international startup programs?",
-    content: "A startup must be an innovative, scalable business with a clear value proposition, growth potential, and the ability to compete in global markets.",
-  },
-  {
-    title: "Do I need a fully developed product to apply for a startup program?",
-    content: "No, many programs accept businesses at various stages, from early-stage ideas to growth-phase companies, as long as you can demonstrate market viability.",
-  },
-  {
-    title: "Which countries offer the most startup-friendly immigration programs?",
-    content: "Countries like Canada, Finland, the Netherlands, UK, and France are known for their robust startup visa programs with streamlined pathways for entrepreneurs.",
-  },
-  {
-    title: "Can your team help refine my business model before application?",
-    content: "Yes, our advisors work closely with you to strengthen your business plan, financials, and overall pitch to maximize your chances of approval.",
-  },
-  {
-    title: "Is funding mandatory to apply for a startup visa?",
-    content: "Requirements vary by country, but most programs require proof of sufficient funds or secured investment to support your business operations.",
-  },
-  {
-    title: "How do you support fundraising and capital access?",
-    content: "We connect startups with our global network of investors, assist with pitch preparation, and guide you through funding rounds and grant opportunities.",
-  },
-  {
-    title: "Can I relocate with my family under a startup program?",
-    content: "Most startup visa programs allow dependants — spouses and children — to accompany the primary applicant, often with work and study rights.",
-  },
-  {
-    title: "What industries are best suited for startup programs?",
-    content: "Technology, fintech, cleantech, health-tech, and AI-driven businesses tend to qualify most easily, though many countries accept a wide range of innovative sectors.",
-  },
-  {
-    title: "How long does the startup immigration process usually take?",
-    content: "Processing times vary from 2 to 12 months depending on the country and program. Our team helps expedite documentation to minimize delays.",
-  },
-  {
-    title: "Do you assist with company registration in the destination country?",
-    content: "Yes, we provide end-to-end support including company registration, legal setup, and compliance requirements in the target country.",
-  },
-  {
-    title: "What makes your startup advisory services different?",
-    content: "We combine immigration expertise with deep business development experience, offering integrated support from visa application through to market launch.",
-  },
-  {
-    title: "Can experienced business owners apply for startup programs?",
-    content: "Absolutely. Experienced entrepreneurs with a track record are often considered stronger candidates and may qualify for expedited pathways.",
-  },
-  {
-    title: "What happens after the startup is launched?",
-    content: "We provide ongoing advisory, performance monitoring, and access to our partner network to ensure your business grows successfully in its new market.",
-  },
-  {
-    title: "Is there a risk of rejection, and how do you minimize it?",
-    content: "Rejection risk exists in every application, but our thorough preparation process — business plan review, document verification, and mock evaluations — significantly reduces it.",
-  },
-  {
-    title: "How do I know if my startup idea is suitable for a global market?",
-    content: "Our team conducts a detailed market assessment to evaluate scalability, demand, and competitive positioning of your idea in the target market.",
-  },
+const faqs = [
+  { q: "What qualifies a business as a startup under international startup programs?",
+    a: "A startup must be an innovative, scalable business with a clear value proposition, strong growth potential, and the ability to compete in global markets. It should be technology-driven or solve a measurable market problem through a replicable model." },
+  { q: "Do I need a fully developed product to apply for a startup program?",
+    a: "No. Many programs accept founders at the MVP or even concept stage, as long as you can demonstrate innovation potential, a credible plan, and the ability to create value in the destination country. Nexa helps strengthen your application at any stage." },
+  { q: "Which countries offer the most startup-friendly immigration programs?",
+    a: "Finland, Canada, UK, Netherlands, and France are among the most structured and accessible pathways for international startup founders. Each country offers unique advantages in terms of ecosystem access, processing time, and capital networks." },
+  { q: "Can your team help refine my business model before application?",
+    a: "Yes. Business model refinement is a core part of our pre-application service. We assess your value proposition, revenue model, market fit, and scalability — then help you present the strongest possible case to immigration authorities." },
+  { q: "Is funding mandatory to apply for a startup visa?",
+    a: "Requirements vary. Some programs require proof of funding or a commitment from a designated accelerator or investor. Others focus more on the quality of the business idea. Nexa will map out the exact financial requirements for your target country." },
+  { q: "How do you support fundraising and capital access?",
+    a: "We connect founders to our global network of investors, VCs, and designated organizations. We also help prepare investor-ready materials including pitch decks, financial models, and executive summaries to maximize your fundraising success." },
+  { q: "Can I relocate with my family under a startup program?",
+    a: "Yes. Most startup visa programs include dependent family members — spouse and children — with full rights to study and, in many cases, work. Nexa advises on family inclusion as part of every application we manage." },
+  { q: "What industries are best suited for startup programs?",
+    a: "Tech, SaaS, FinTech, HealthTech, CleanTech, EdTech, and AI-driven businesses are generally the strongest fits. However, any innovative, scalable model with a clear market need can qualify — Nexa will assess your specific sector against each country's criteria." },
+  { q: "How long does the startup immigration process usually take?",
+    a: "Timelines vary by country. Finland typically takes 2–3 months, Canada 12–16 months, UK 3–8 weeks, Netherlands 3–6 months, and France 2–4 months. Nexa provides a full timeline roadmap at the beginning of every engagement." },
+  { q: "What happens after the startup is launched?",
+    a: "Our support continues post-launch. We offer ongoing advisory, KPI tracking, visa renewal support, investor relations management, and access to our global partner network to help your startup hit its growth milestones and scale sustainably." },
 ];
 
-const MOBILE_INITIAL = 6;
-
 export default function StartupFAQ() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
-  const [showAll, setShowAll] = useState(false);
-
-  const toggle = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-
-  const visibleMobile = showAll ? faqData : faqData.slice(0, MOBILE_INITIAL);
-
-  const cardClass = (isActive: boolean) =>
-    `bg-white rounded-xl p-4 md:p-5 cursor-pointer transition-all duration-200 ${
-      isActive
-        ? "shadow-[0px_4px_8px_0px_#8F27FF40] border border-l-[6px] border-[#8F27FF]"
-        : "shadow-[0px_4px_4px_0px_#0000001A] border border-l-[6px] border-[#D2D2D2]"
-    }`;
-
+  const [open, setOpen] = useState<number | null>(0);
   return (
-    <div>
-
-      {/* Mobile */}
-      <div className="md:hidden px-5 py-12">
-        <h2 className="text-2xl font-bold text-center mb-8">FAQs</h2>
-        <div className="bg-[#F6F6F6] rounded-[20px] p-6 flex flex-col gap-3">
-          {visibleMobile.map((item, index) => {
-            const isActive = activeIndex === index;
-            return (
-              <div key={index} onClick={() => toggle(index)} className={cardClass(isActive)}>
-                <div className="flex items-center justify-between gap-3">
-                  <h3 className="text-xs font-medium text-black leading-snug">{item.title}</h3>
-                  <img
-                    src={isActive ? "/images/Entrepreneurship/close.svg" : "/images/Entrepreneurship/open.svg"}
-                    alt={isActive ? "Close" : "Open"}
-                    className="w-5 h-5 flex-shrink-0"
-                  />
+    <section className="py-16 md:py-24 bg-[#F7F6F9]">
+      <Row>
+        <Reveal variant="up">
+          <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-12">FAQ</h2>
+        </Reveal>
+        <Reveal variant="up" delay={80}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+            {faqs.map((faq, i) => (
+              <div key={i} className="rounded-[16px] overflow-hidden border bg-white transition-all duration-200"
+                style={{ borderColor: open === i ? "rgba(143,39,255,0.25)" : "#E2E2E2",
+                  boxShadow: open === i ? "0 4px 20px rgba(143,39,255,0.08)" : undefined }}>
+                <button onClick={() => setOpen(open === i ? null : i)}
+                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
+                  <span className="text-[14px] font-semibold text-black leading-[1.35]">{faq.q}</span>
+                  <span className="w-7 h-7 rounded-full flex-shrink-0 flex items-center justify-center transition-all duration-300"
+                    style={{ background: open === i ? "#8F27FF" : "#FAF6FF",
+                      transform: open === i ? "rotate(45deg)" : "rotate(0deg)" }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke={open === i ? "#fff" : "#8F27FF"} strokeWidth={2.5} strokeLinecap="round" className="w-3.5 h-3.5">
+                      <path d="M12 5v14M5 12h14"/>
+                    </svg>
+                  </span>
+                </button>
+                <div className="overflow-hidden transition-all duration-300" style={{ maxHeight: open === i ? "300px" : "0px" }}>
+                  <p className="px-6 pb-5 text-[13.5px] text-[#474747] leading-[1.65]">{faq.a}</p>
                 </div>
-                {isActive && (
-                  <p className="mt-3 text-xs text-gray-600 leading-relaxed">{item.content}</p>
-                )}
               </div>
-            );
-          })}
-
-          {!showAll && (
-            <button
-              onClick={() => setShowAll(true)}
-              className="mt-2 flex items-center justify-center gap-2 text-sm font-semibold text-[#8F27FF]"
-            >
-              Show More
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8F27FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </button>
-          )}
-          {showAll && (
-            <button
-              onClick={() => setShowAll(false)}
-              className="mt-2 flex items-center justify-center gap-2 text-sm font-semibold text-[#8F27FF]"
-            >
-              Show Less
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8F27FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="18 15 12 9 6 15" />
-              </svg>
-            </button>
-          )}
-        </div>
-      </div>
-
-      {/* Desktop */}
-      <div className="hidden md:block py-16 lg:py-20">
-        <Row>
-          <h2 className="text-center text-3xl lg:text-4xl font-bold mb-12">FAQs</h2>
-          <div className="bg-[#F6F6F6] rounded-[20px] p-6 md:p-10 lg:p-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-            {faqData.map((item, index) => {
-              const isActive = activeIndex === index;
-              return (
-                <div key={index} onClick={() => toggle(index)} className={cardClass(isActive)}>
-                  <div className="flex items-center justify-between gap-4">
-                    <h3 className="text-sm font-medium text-black leading-snug">{item.title}</h3>
-                    <img
-                      src={isActive ? "/images/Entrepreneurship/close.svg" : "/images/Entrepreneurship/open.svg"}
-                      alt={isActive ? "Close" : "Open"}
-                      className="w-6 h-6 flex-shrink-0"
-                    />
-                  </div>
-                  {isActive && (
-                    <p className="mt-3 text-sm text-gray-600 leading-relaxed">{item.content}</p>
-                  )}
-                </div>
-              );
-            })}
+            ))}
           </div>
-        </Row>
-      </div>
-
-    </div>
+        </Reveal>
+      </Row>
+    </section>
   );
 }

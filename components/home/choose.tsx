@@ -7,14 +7,14 @@ const items: {  icon: ReactNode; title: string }[] = [
     icon: (
       <svg className="w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
     ),
-    title: "Partnered With Government-Certified Canadian Lawyers",
+    title: "Partnered With Government-Certified Global Lawyers",
   },
   {
 
     icon: (
       <svg className="w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path d="M9 11l3 3L22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
     ),
-    title: "Full Service From Contract To Settlement In Canada",
+    title: "Full Service From Contract To Settlement In Destination",
   },
   {
     
@@ -28,7 +28,7 @@ const items: {  icon: ReactNode; title: string }[] = [
     icon: (
       <svg className="w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /></svg>
     ),
-    title: "Registered Legal Entity In Canada, Compliant & Active",
+    title: "Registered Legal Entity In Canada&Iran, Compliant & Active",
   },
   {
    

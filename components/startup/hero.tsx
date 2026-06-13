@@ -1,78 +1,52 @@
-import Image from "next/image";
-import Row from "../global/Row";
+"use client";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Row from "@/components/global/Row";
 
-const bulletPoints = [
-  "Supporting Startups On Their Path To Global Growth",
-  "Support And Scale Your Startup From Idea To Growth",
-  "Capital Access And Fundraising Through Global Networks",
-  "Simplify The Immigration Pathway For Your Family",
-];
+export default function Hero() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { const t = setTimeout(() => setMounted(true), 80); return () => clearTimeout(t); }, []);
+  const base = "transition-[opacity,transform] duration-[650ms] ease-[ease]";
+  const left  = mounted ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-7";
+  const right = mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-7";
 
-const Hero = () => {
   return (
-    <div className="w-full">
+    <section className="pt-[64px] pb-[72px] relative overflow-hidden bg-white">
+      <Row>
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.15fr] gap-[48px] items-center">
 
-      {/* Mobile */}
-      <div className="flex flex-col gap-5 px-5 mt-8 md:hidden">
-        <h2 className="text-2xl font-bold text-black">Acceleration</h2>
-        <p className="text-base text-gray-700">
-          Independent Global Investor And Startup Partner
-        </p>
+          {/* LEFT */}
+          <div className={`${base} ${left}`}>
+            <h1 className="text-[38px] md:text-[52px] font-bold leading-[1.06] tracking-[-0.03em] text-black mb-[20px]">
+              Your Independent Global{" "}
+              <span className="highlight">Startup Partner</span>
+            </h1>
+            <p className="text-[15.5px] text-[#929292] leading-[1.7] max-w-[520px] mb-[36px]">
+              We support startups on their path to global growth — from idea to scale, capital access to immigration — with end-to-end advisory and investor network access.
+            </p>
+            <Link href="#contact"
+              className="inline-flex items-center gap-2 px-[28px] py-[14px] bg-[#8F27FF] text-white font-semibold text-[14px] rounded-full transition-all duration-[250ms] hover:bg-[#7A1FE0] hover:-translate-y-px"
+              style={{ boxShadow: "0 8px 22px rgba(143,39,255,.28)" }}>
+              Book a Free Consultation
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+            </Link>
+          </div>
 
-        <div className="flex flex-col gap-3">
-          {bulletPoints.map((text, i) => (
-            <div key={i} className="flex items-start gap-3">
-              <span className="mt-1.5 w-4 h-4 rounded-full bg-[#F5C518] flex-shrink-0" />
-              <p className="text-sm text-gray-800">{text}</p>
-            </div>
-          ))}
-        </div>
-
-        <Image
-          width={800}
-          height={500}
-          src="/images/advisory/IMG_1328 1 (1).svg"
-          alt="Startup hero"
-          className="w-full h-auto object-contain rounded-2xl mt-2"
-        />
-      </div>
-
-      {/* Desktop */}
-      <div className="hidden md:block">
-        <Row>
-          <div className="flex items-center gap-18 mt-10">
-            <div className="w-1/2 text-left flex flex-col justify-between">
-              <h2 className="my-4 text-[32px] font-bold text-black">
-                Acceleration
-              </h2>
-              <p className="text-[24px]">
-                Independent Global Investor And Startup Partner
-              </p>
-              <div className="w-70 h-[3px] bg-[#929292] mb-4 mt-4" />
-              <div className="flex flex-col gap-5">
-                {bulletPoints.map((text, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <span className="mt-1.5 w-5 h-5 rounded-full bg-[#F5C518] flex-shrink-0" />
-                    <p className="text-[20px]">{text}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="w-1/2">
-              <Image
-                width={1500}
-                height={1500}
-                src="/images/advisory/IMG_1328 1 (1).svg"
-                alt="Startup hero"
-                className="w-full object-cover rounded-2xl"
+          {/* RIGHT */}
+          <div className={`${base} ${right}`} style={{ transitionDelay: "80ms" }}>
+            <div className="relative w-full h-[380px] overflow-hidden"
+              style={{ borderRadius: "140px 20px 20px 20px" }}>
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=80"
+                alt="Startup team"
+                className="w-full h-full object-cover object-top"
               />
+              <div className="absolute inset-0"
+                style={{ background: "linear-gradient(180deg,rgba(143,39,255,.05) 0%,rgba(0,0,0,.08) 100%)" }} />
             </div>
           </div>
-        </Row>
-      </div>
-    </div>
+        </div>
+      </Row>
+    </section>
   );
-};
-
-export default Hero;
+}

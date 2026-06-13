@@ -1,124 +1,67 @@
-"use client";
+import Row from "@/components/global/Row";
+import Reveal from "@/components/global/Reveal";
 
-import { useState } from "react";
-import Row from "../global/Row";
+const projects = [
+  {
+    name: "Arshia Gallery",
+    tag: "Fine Jewelry · Luxury Retail",
+    img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=700&q=80",
+  },
+  {
+    name: "Afra Cafe",
+    tag: "F&B · International",
+    img: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=700&q=80",
+  },
+  {
+    name: "Green Frame",
+    tag: "Sustainability · Global",
+    img: "https://images.unsplash.com/photo-1542601906897-ecd40029e09e?w=700&q=80",
+  },
+  {
+    name: "Aurora Clinic",
+    tag: "Healthcare · Canada",
+    img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&q=80",
+  },
+];
 
-export default function PreviousProjectsSection() {
-  const projects = [
-    {
-      title: "Arshia Gallery",
-      image: "/images/Entrepreneurship/galleryy.svg",
-    },
-    {
-      title: "Afra Cafe",
-      image: "/images/Entrepreneurship/afra.svg",
-    },
-    {
-      title: "Green Frame",
-      image: "/images/Entrepreneurship/green.svg",
-    },
-    {
-      title: "Aurora Clinic",
-      image: "/images/Entrepreneurship/clinic.svg",
-    },
-  ];
-
-  const [current, setCurrent] = useState(0);
-
-  const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % projects.length);
-  };
-
-  const prevSlide = () => {
-    setCurrent((prev) =>
-      prev === 0 ? projects.length - 1 : prev - 1
-    );
-  };
-
+export default function StartupPreviousProjects() {
   return (
-    <section className="w-full py-20">
+    <section className="py-16 md:py-20 bg-white">
+      <Row>
+        <Reveal variant="up">
+          <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-12">
+            Our Previous <span className="text-[#8F27FF]">Projects</span>
+          </h2>
+        </Reveal>
 
-      {/* Mobile Slider */}
-      <div className="md:hidden px-4">
-        {/* Title */}
-        <h2 className="text-center text-3xl font-semibold mb-10">
-          Our Previous Projects
-        </h2>
-
-        <div className="relative">
-
-          {/* Card */}
-          <div className="relative rounded-2xl overflow-hidden">
-            <img
-              src={projects[current].image}
-              alt={projects[current].title}
-              className="w-full object-cover"
-            />
-
-            {/* Label */}
-            <div className="absolute bottom-4 left-4 px-4 py-2 rounded-lg bg-[#0000004D] backdrop-blur-sm">
-              <span className="text-white text-sm font-medium">
-                {projects[current].title}
-              </span>
-            </div>
-          </div>
-
-          {/* Buttons */}
-          <div className="flex items-center justify-center gap-4 mt-6">
-            <button
-              onClick={prevSlide}
-              className="w-10 h-10 rounded-full bg-black text-white text-xl"
-            >
-              ←
-            </button>
-
-            <button
-              onClick={nextSlide}
-              className="w-10 h-10 rounded-full bg-black text-white text-xl"
-            >
-              →
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Desktop Grid */}
-      <div className="hidden md:block">
-        <Row className="w-full">
-          <div className="mx-auto w-full">
-
-            {/* Title */}
-            <h2 className="text-center text-4xl font-semibold mb-14">
-              Our Previous Projects
-            </h2>
-
-            {/* Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-18">
-              {projects.map((project, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {projects.map((p, i) => (
+            <Reveal key={i} variant="up" delay={i * 80}>
+              <div
+                className="group relative rounded-[20px] overflow-hidden h-[300px] md:h-[380px]"
+                style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.07)" }}
+              >
+                {/* BG image */}
                 <div
-                  key={index}
-                  className="relative rounded-2xl overflow-hidden group cursor-pointer transition duration-300"
-                >
-                  {/* Image */}
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full object-cover group-hover:scale-105 transition duration-500"
-                  />
-
-                  {/* Label */}
-                  <div className="absolute bottom-4 left-4 px-4 py-2 rounded-lg bg-[#0000004D] backdrop-blur-sm">
-                    <span className="text-white text-sm font-medium">
-                      {project.title}
-                    </span>
-                  </div>
+                  className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
+                  style={{
+                    backgroundImage: `url('${p.img}')`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Text */}
+                <div className="absolute inset-x-0 bottom-0 p-5 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+                  <div className="text-white font-bold text-[17px] leading-tight">{p.name}</div>
+                  <div className="text-white/65 text-[12px] mt-1">{p.tag}</div>
                 </div>
-              ))}
-            </div>
-
-          </div>
-        </Row>
-      </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </Row>
     </section>
   );
 }

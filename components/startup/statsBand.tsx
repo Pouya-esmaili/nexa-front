@@ -5,7 +5,7 @@ import Row from "@/components/global/Row";
 const stats = [
   { pill: "Track Record", num: 89,  suf: "%", label: "Successful cases across all programs" },
   { pill: "Global Reach",  num: 400, suf: "+", label: "Entrepreneurs placed in 5 countries" },
-  { pill: "Experience",    num: 7,   suf: "+", label: "Years of proven market expertise" },
+  { pill: "Experience",    num: 10,   suf: "+", label: "Years of proven market expertise" },
 ];
 
 function useCountUp(target: number, inView: boolean, duration = 1200) {

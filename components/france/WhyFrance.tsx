@@ -69,7 +69,7 @@ export default function WhyFrance() {
       <Row>
         <Reveal variant="up" className="text-center mb-10 md:mb-14">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em]">
-            Why France
+            Why France?
           </h2>
         </Reveal>
 

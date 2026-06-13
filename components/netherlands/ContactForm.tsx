@@ -105,7 +105,7 @@ export default function ContactForm() {
               {/* Footer */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
                 <small className="text-[12px] text-gray-500 leading-relaxed max-w-[50ch]">
-                  Your information is reviewed confidentially by Nexa&apos;s advisory team. We typically respond within 24 hours.
+                  Your information is reviewed confidentially by Nexa&apos;s advisory team. We typically respond within 48 hours.
                 </small>
                 <button
                   type="submit"

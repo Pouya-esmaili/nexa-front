@@ -67,3 +67,13 @@ body {
 *, *::before, *::after {
   box-sizing: border-box;
 }
+
+/* ====== Highlight (yellow background like design) ====== */
+.highlight {
+  display: inline;
+  background: #FFE600;
+  border-radius: 3px;
+  padding: 0 5px 3px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}

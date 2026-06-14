@@ -49,7 +49,7 @@ const faqData = [
 const MOBILE_INITIAL_COUNT = 6;
 
 const Faq = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);
 
   const toggle = (index: number) => {

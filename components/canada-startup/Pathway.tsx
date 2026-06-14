@@ -104,12 +104,18 @@ export default function Pathway() {
                       <div className="text-[14px] font-semibold text-black mb-0.5">{item.label}</div>
                       <span className="text-[11px] font-semibold text-[#8F27FF] bg-[#FAF6FF] px-2 py-0.5 rounded-full">{item.year}</span>
                     </div>
-                    <img
-                      src="/images/arrow.svg"
-                      alt=""
-                      className="w-4 h-4 transition-transform duration-200 flex-shrink-0"
-                      style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
-                    />
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke={isOpen ? "#8F27FF" : "#929292"}
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="flex-shrink-0 transition-transform duration-200"
+                      style={{ width: 18, height: 18, transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+                    >
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
                   </button>
                   {isOpen && (
                     <div className="px-5 pb-[18px] pl-[70px] text-[13.5px] text-[#474747] leading-[1.6]">

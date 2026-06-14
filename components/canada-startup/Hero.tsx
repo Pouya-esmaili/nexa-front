@@ -30,7 +30,7 @@ export default function StartupHero() {
 
             <p className={`${base} ${mounted ? show : hidden} text-[16px] text-[#474747] leading-[1.65] mb-8 max-w-[520px]`}
               style={{ transitionDelay: "80ms" }}>
-              The Canada Start-Up Visa grants direct PR status — not a temporary visa. If your venture fails after landing, your permanent residency stands. Build in one of the world's most business-friendly economies from day one.
+              The Canada Start-Up Visa grants — not a temporary visa. If your venture fails after landing, your permanent residency stands. Build in one of the world's most business-friendly economies from day one.
             </p>
 
             <div className={`${base} ${mounted ? show : hidden} grid grid-cols-3 gap-6 py-6 mb-8`}

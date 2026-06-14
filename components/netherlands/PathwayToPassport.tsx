@@ -49,6 +49,7 @@ const stages = [
 
 export default function PathwayToPassport() {
   const [openMobile, setOpenMobile] = useState(0);
+  const [selectedDesktop, setSelectedDesktop] = useState(0);
 
   return (
     <section className="py-16 md:py-20 bg-white">
@@ -69,17 +70,20 @@ export default function PathwayToPassport() {
             />
             {stages.map((s, i) => (
               <Reveal key={s.num} variant="up" delay={i * 80}>
-                <div className="flex flex-col items-center text-center relative z-10 px-3 group">
+                <div className="flex flex-col items-center text-center relative z-10 px-3">
                   <div
-                    className={`w-14 h-14 rounded-full flex items-center justify-center text-[14px] font-bold mb-4 transition-all group-hover:scale-105 ${
-                      s.active
+                    className={`w-14 h-14 rounded-full flex items-center justify-center text-[14px] font-bold mb-4 transition-all duration-200 cursor-pointer hover:scale-105 ${
+                      selectedDesktop === i
                         ? "bg-[#8F27FF] text-white"
-                        : "bg-white text-[#8F27FF] group-hover:bg-[#8F27FF] group-hover:text-white"
+                        : "bg-white text-[#8F27FF] hover:bg-[#FAF6FF]"
                     }`}
                     style={{
                       border: "2.5px solid #8F27FF",
-                      boxShadow: "0 0 0 6px #FAF6FF",
+                      boxShadow: selectedDesktop === i
+                        ? "0 0 0 6px #FAF6FF, 0 8px 24px rgba(143,39,255,0.25)"
+                        : "0 0 0 6px #FAF6FF",
                     }}
+                    onClick={() => setSelectedDesktop(i)}
                   >
                     {s.num}
                   </div>
@@ -96,11 +100,11 @@ export default function PathwayToPassport() {
           </div>
 
           {/* detail cards */}
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-4 gap-4 items-stretch">
             {stages.map((s, i) => (
-              <Reveal key={`d-${s.num}`} variant="up" delay={i * 80 + 200}>
+              <Reveal key={`d-${s.num}`} variant="up" delay={i * 80 + 200} className="h-full">
                 <div
-                  className="rounded-[14px] p-5 transition-all hover:border-[rgba(143,39,255,0.3)] hover:bg-[#FAF6FF]"
+                  className="h-full rounded-[14px] p-5 transition-all hover:border-[rgba(143,39,255,0.3)] hover:bg-[#FAF6FF]"
                   style={{ background: "#F7F6F9", border: "1px solid #E2E2E2" }}
                 >
                   <h5 className="text-[14px] font-semibold mb-2">{s.detail.title}</h5>
@@ -112,12 +116,9 @@ export default function PathwayToPassport() {
         </div>
 
         {/* MOBILE accordion */}
-        <div
-          className="md:hidden rounded-[20px] overflow-hidden"
-          style={{ border: "1px solid #E2E2E2" }}
-        >
+        <div className="md:hidden flex flex-col gap-3">
           {stages.map((s, i) => (
-            <div key={s.num} className="border-b border-gray-200 last:border-b-0">
+            <div key={s.num} className="rounded-[16px] overflow-hidden border border-[#E2E2E2]">
               <button
                 className="w-full flex items-center gap-3.5 px-5 py-4 text-left transition-colors"
                 style={{ background: openMobile === i ? "#FAF6FF" : "white" }}
@@ -140,7 +141,7 @@ export default function PathwayToPassport() {
                     {s.year}
                   </span>
                 </div>
-                <span className="text-[18px] text-gray-400 transition-transform" style={{ transform: openMobile === i ? "rotate(180deg)" : undefined }}>▾</span>
+                <img src="/images/arrow.svg" alt="" className="w-4 h-4 transition-transform" style={{ transform: openMobile === i ? "rotate(180deg)" : undefined }} />
               </button>
               {openMobile === i && (
                 <div className="px-5 pb-4 pl-[70px] text-[13.5px] text-[#474747] leading-[1.6]">

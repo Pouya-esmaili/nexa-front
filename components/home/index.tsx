@@ -13,7 +13,7 @@ export default function Hero() {
   const shown = "opacity-100 translate-y-0";
 
   return (
-    <section className="pt-1 pb-14 md:pb-20 bg-white overflow-hidden">
+    <section className="pt-1 pb-14 md:pb-20 bg-white overflow-hidden mt-8">
       <div className="max-w-[1240px] mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
 

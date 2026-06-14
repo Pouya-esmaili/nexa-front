@@ -12,7 +12,7 @@ const contactItems = [
   {
     title: "Phone Number",
     icon: "/images/contact/call-calling.svg",
-    content: ["+98 (21) 2691 - 7416", "+1 (604) 351 - 5951"],
+    content: ["+98 (31) 3131-1914", "+1 (604) 351 - 5951"],
   },
   {
     title: "Office Location",
@@ -122,7 +122,7 @@ export default function ContactSection() {
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-black">Message Sent!</h2>
                 <p className="text-[15px] text-[#929292] max-w-[320px] leading-relaxed">
-                  Thank you for reaching out. We&apos;ll get back to you within 24 hours.
+                  Thank you for reaching out. We&apos;ll get back to you within 48 hours.
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); setForm({ fullName: "", email: "", service: "", message: "" }); }}
@@ -135,7 +135,7 @@ export default function ContactSection() {
               /* ── Form ── */
               <>
                 <h2 className="md:text-4xl text-2xl font-bold">Send a Message</h2>
-                <p className="mt-2 text-sm text-[#474747]">Most inquiries receive a response within 24 hours.</p>
+                <p className="mt-2 text-sm text-[#474747]">Most inquiries receive a response within 48 hours.</p>
 
                 <form className="mt-10" onSubmit={handleSubmit} noValidate>
                   <div className="grid gap-5 md:grid-cols-2">

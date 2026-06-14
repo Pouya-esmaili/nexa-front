@@ -45,6 +45,7 @@ const stages = [
 
 export default function PathwayToPassport() {
   const [openMobile, setOpenMobile] = useState<number | null>(0);
+  const [selectedDesktop, setSelectedDesktop] = useState(0);
 
   return (
     <section className="py-20 md:py-24 bg-white">
@@ -64,27 +65,20 @@ export default function PathwayToPassport() {
               <div className="absolute top-7 left-[10%] right-[10%] h-[2px] rounded-full"
                 style={{ background: "linear-gradient(90deg, #8F27FF, rgba(143,39,255,0.2))" }} />
               {stages.map((s, i) => (
-                <div key={s.num} className="flex flex-col items-center text-center px-3 relative z-10 group">
+                <div key={s.num} className="flex flex-col items-center text-center px-3 relative z-10">
                   <div
-                    className="w-14 h-14 rounded-full flex items-center justify-center text-[14px] font-bold mb-4 transition-all duration-300 group-hover:scale-[1.08]"
+                    className={`w-14 h-14 rounded-full flex items-center justify-center text-[14px] font-bold mb-4 transition-all duration-200 cursor-pointer hover:scale-[1.08] ${
+                      selectedDesktop === i
+                        ? "bg-[#8F27FF] text-white"
+                        : "bg-white text-[#8F27FF] hover:bg-[#FAF6FF]"
+                    }`}
                     style={{
-                      background: i === 0 ? "#8F27FF" : "white",
-                      color: i === 0 ? "white" : "#8F27FF",
                       border: "2.5px solid #8F27FF",
-                      boxShadow: "0 0 0 6px #FAF6FF",
+                      boxShadow: selectedDesktop === i
+                        ? "0 0 0 6px #FAF6FF, 0 8px 24px rgba(143,39,255,0.25)"
+                        : "0 0 0 6px #FAF6FF",
                     }}
-                    onMouseEnter={(e) => {
-                      const el = e.currentTarget as HTMLDivElement;
-                      el.style.background = "#8F27FF";
-                      el.style.color = "white";
-                      el.style.boxShadow = "0 0 0 6px #FAF6FF, 0 8px 24px rgba(143,39,255,0.3)";
-                    }}
-                    onMouseLeave={(e) => {
-                      const el = e.currentTarget as HTMLDivElement;
-                      el.style.background = i === 0 ? "#8F27FF" : "white";
-                      el.style.color = i === 0 ? "white" : "#8F27FF";
-                      el.style.boxShadow = "0 0 0 6px #FAF6FF";
-                    }}
+                    onClick={() => setSelectedDesktop(i)}
                   >
                     {s.num}
                   </div>
@@ -96,10 +90,10 @@ export default function PathwayToPassport() {
           </Reveal>
 
           {/* Detail cards */}
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-4 gap-4 items-stretch">
             {stages.map((s, i) => (
-              <Reveal key={s.num} variant="up" delay={i * 80 + 200}>
-                <div className="bg-[#F7F6F9] border border-[#E2E2E2] rounded-[14px] p-5 transition-all duration-200 hover:border-[rgba(143,39,255,0.18)] hover:bg-[#FAF6FF]">
+              <Reveal key={s.num} variant="up" delay={i * 80 + 200} className="h-full">
+                <div className="h-full bg-[#F7F6F9] border border-[#E2E2E2] rounded-[14px] p-5 transition-all duration-200 hover:border-[rgba(143,39,255,0.18)] hover:bg-[#FAF6FF]">
                   <h5 className="text-[14px] font-semibold mb-2">{s.detail.title}</h5>
                   <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{s.detail.body}</p>
                 </div>
@@ -110,9 +104,9 @@ export default function PathwayToPassport() {
 
         {/* Mobile accordion */}
         <Reveal variant="up" delay={80}>
-          <div className="md:hidden rounded-[20px] overflow-hidden border border-[#E2E2E2]">
+          <div className="md:hidden flex flex-col gap-3">
             {stages.map((s, i) => (
-              <div key={s.num} style={{ borderBottom: i < stages.length - 1 ? "1px solid #E2E2E2" : undefined }}>
+              <div key={s.num} className="rounded-[16px] overflow-hidden border border-[#E2E2E2]">
                 <button
                   className="w-full flex items-center gap-3.5 px-5 py-4 text-left transition-colors"
                   style={{ background: openMobile === i ? "#FAF6FF" : "white" }}
@@ -131,7 +125,7 @@ export default function PathwayToPassport() {
                     <div className="text-[14px] font-semibold">{s.label}</div>
                     <div className="text-[11px] font-semibold text-[#8F27FF]">{s.year}</div>
                   </div>
-                  <span className="text-[#929292] text-[18px] transition-transform" style={{ transform: openMobile === i ? "rotate(180deg)" : undefined }}>▾</span>
+                  <img src="/images/arrow.svg" alt="" className="w-4 h-4 transition-transform" style={{ transform: openMobile === i ? "rotate(180deg)" : undefined }} />
                 </button>
                 {openMobile === i && (
                   <div className="px-5 pb-4 pl-[70px] text-[13.5px] text-[#474747] leading-[1.6]">

@@ -19,7 +19,7 @@ export default function Team() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[70px] items-center">
 
           {/* Left — content */}
-          <Reveal variant="left">
+          <Reveal variant="left" className="order-2 md:order-1">
             <div className="flex flex-col gap-5">
               <h2 className="text-[32px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1]">
                 Behind the{" "}
@@ -55,7 +55,7 @@ export default function Team() {
           </Reveal>
 
           {/* Right — image */}
-          <Reveal variant="right">
+          <Reveal variant="right" className="order-1 md:order-2">
             <div className="rounded-[24px] overflow-hidden">
               <Image
                 src="/images/landing/behind.svg"

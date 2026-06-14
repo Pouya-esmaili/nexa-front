@@ -1,6 +1,7 @@
 "use client";
 
-import Reveal from "@/components/global/Reveal";
+import Reveal from "@/components/global/LazyReveal";
+import Image from "next/image";
 
 const projects = [
   { name: "Landa Trip",      tag: "Tourism · Travel",                 img: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=700&q=80" },
@@ -30,12 +31,15 @@ export default function ProjectsSection() {
           {projects.map((p, i) => (
             <Reveal key={p.name} variant="up" delay={i * 50}>
               <div className="group relative rounded-[20px] overflow-hidden md:h-[260px] h-[200px] cursor-pointer">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={p.img}
-                  alt={p.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+                <div className="absolute inset-0">
+                  <Image
+                    src={p.img}
+                    alt={p.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
 
                 {/* base overlay */}
                 <div className="absolute inset-0 transition-all duration-300"

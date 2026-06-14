@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import Row from "@/components/global/Row";
-import Reveal from "@/components/global/Reveal";
+import Reveal from "@/components/global/LazyReveal";
 import PhoneField from "@/components/global/PhoneField";
 
 const inputCls = "font-[inherit] text-[14px] bg-[#F7F6F9] border border-[#E2E2E2] rounded-[10px] px-[14px] py-3 text-black font-medium transition-all duration-150 outline-none focus:border-[#8F27FF] focus:shadow-[0_0_0_3px_rgba(143,39,255,0.12)] focus:bg-white w-full";

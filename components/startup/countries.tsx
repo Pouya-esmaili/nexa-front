@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import Row from "@/components/global/Row";
-import Reveal from "@/components/global/Reveal";
+import Reveal from "@/components/global/LazyReveal";
+import Image from "next/image";
 
 const CanadaFlag = () => (
   <svg width="44" height="26" viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -94,7 +95,7 @@ export default function StartupCountries() {
                   className="absolute inset-0 group-hover:scale-[1.06] transition-transform duration-[600ms]"
                   style={{ filter: "brightness(.72)" }}
                 >
-                  <img src={c.img} alt={c.name} className="w-full h-full object-cover" />
+                  <Image src={c.img} alt={c.name} fill className="object-cover" sizes="(max-width: 640px) 100vw, 33vw" />
                 </div>
 
                 {/* Gradient overlay */}

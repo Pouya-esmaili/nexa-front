@@ -1,5 +1,6 @@
 import React from "react";
 import Row from "../global/Row";
+import Image from "next/image";
 
 const TripTimeline: React.FC = () => {
   return (
@@ -33,12 +34,8 @@ const TripTimeline: React.FC = () => {
           >
 
             {/* Image */}
-            <div className="relative w-full">
-              <img
-                src="/images/about/trip.svg"
-                alt="Landa Trip"
-                className="h-full w-full object-cover"
-              />
+            <div className="relative w-full h-[240px]">
+              <Image src="/images/about/trip.svg" alt="Landa Trip" fill className="object-cover" sizes="100vw" />
             </div>
 
             {/* Content */}
@@ -84,20 +81,16 @@ const TripTimeline: React.FC = () => {
 
               {/* Year */}
               <div className="order-2 flex items-center justify-center">
-                <img
-                  src="/images/about/2023.svg"
-                  alt="2023"
-                  className="h-38 w-auto"
-                />
+                <div className="relative h-[96px] w-[96px]">
+                  <Image src="/images/about/2023.svg" alt="2023" fill className="object-contain" sizes="96px" />
+                </div>
               </div>
 
               {/* Image */}
               <div className="order-1 flex justify-center md:order-3 md:justify-end">
-                <img
-                  src="/images/about/trip.svg"
-                  alt="Landa Trip"
-                  className="w-full rounded-xl object-cover"
-                />
+                <div className="relative w-full h-[320px] md:h-[420px]">
+                  <Image src="/images/about/trip.svg" alt="Landa Trip" fill className="rounded-xl object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+                </div>
               </div>
 
             </div>

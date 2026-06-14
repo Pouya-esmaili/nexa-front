@@ -4,12 +4,12 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        // Apply to all routes
-        source: "/(.*)",
+        // HTML pages: allow short CDN caching and stale-while-revalidate
+        source: "/:path*",
         headers: [
           {
             key: "Cache-Control",
-            value: "no-cache, no-store, must-revalidate",
+            value: "public, max-age=0, s-maxage=60, stale-while-revalidate=86400",
           },
         ],
       },
@@ -41,6 +41,10 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
       },
     ],
   },

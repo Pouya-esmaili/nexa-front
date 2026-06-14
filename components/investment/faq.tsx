@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Reveal from "@/components/global/Reveal";
+import Row from "@/components/global/Row";
 
-const FAQ_DATA = [
+const MOBILE_INITIAL_COUNT = 6;
+
+const faqs = [
   {
     q: "What type of fields does Nexa invest in?",
     a: "Nexa invests in high-potential startups and growth-stage companies across real estate, energy & renewables, information technology, innovation-driven technology, and healthcare & medical sectors. We focus on scalable, impact-driven, and globally expandable businesses.",
@@ -55,107 +57,113 @@ const FAQ_DATA = [
 ];
 
 export default function InvestmentFAQ() {
-  const [openIdx, setOpenIdx] = useState<number | null>(0);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [showAll, setShowAll] = useState(false);
 
-  const toggle = (i: number) => setOpenIdx(openIdx === i ? null : i);
+  const toggle = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  const visibleMobileFaqs = showAll ? faqs : faqs.slice(0, MOBILE_INITIAL_COUNT);
 
   return (
-    <section style={{ padding: "90px 0", background: "#F7F6F9" }}>
-      <div className="px-6 mx-auto w-full" style={{ maxWidth: 1240 }}>
-        {/* Header */}
-        <Reveal>
-          <div className="text-center mb-14">
-            <h2
-              style={{
-                fontSize: "clamp(26px, 3vw, 40px)",
-                fontWeight: 700,
-                letterSpacing: "-0.03em",
-                lineHeight: 1.1,
-                color: "#000",
-              }}
-            >
-              FAQ
-            </h2>
-          </div>
-        </Reveal>
+    <div className="py-12 md:py-20">
+      {/* Mobile */}
+      <div className="md:hidden px-5">
+        <h2 className="text-2xl font-bold text-center mb-8">FAQ</h2>
+        <div className="flex flex-col gap-3 rounded-2xl p-5" style={{ background: "#F6F6F6" }}>
+          {visibleMobileFaqs.map((item, index) => {
+            const isActive = activeIndex === index;
+            return (
+              <div
+                key={index}
+                onClick={() => toggle(index)}
+                className="cursor-pointer bg-white rounded-xl p-4 transition-all duration-300"
+                style={{
+                  boxShadow: isActive ? "0px 4px 8px 0px #8F27FF40" : "0px 4px 4px 0px #0000001A",
+                  borderStyle: "solid",
+                  borderWidth: "1px 1px 1px 5px",
+                  borderColor: isActive ? "#8F27FF" : "#D2D2D2",
+                }}
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="text-xs font-medium text-black leading-snug">{item.q}</h3>
+                  <img
+                    src={isActive ? "/images/Entrepreneurship/close.svg" : "/images/Entrepreneurship/open.svg"}
+                    alt={isActive ? "Close" : "Open"}
+                    className="w-5 h-5 flex-shrink-0 mt-0.5"
+                  />
+                </div>
+                {isActive && <p className="mt-3 text-xs text-gray-600 leading-relaxed">{item.a}</p>}
+              </div>
+            );
+          })}
 
-        {/* 2-col grid */}
-        <Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {FAQ_DATA.map((item, i) => {
-              const isOpen = openIdx === i;
+          {!showAll && faqs.length > MOBILE_INITIAL_COUNT && (
+            <button
+              onClick={() => setShowAll(true)}
+              className="mt-2 flex items-center justify-center gap-2 text-sm font-semibold text-[#8F27FF]"
+            >
+              Show More
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8F27FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+          )}
+
+          {showAll && (
+            <button
+              onClick={() => setShowAll(false)}
+              className="mt-2 flex items-center justify-center gap-2 text-sm font-semibold text-[#8F27FF]"
+            >
+              Show Less
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8F27FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="18 15 12 9 6 15" />
+              </svg>
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Desktop */}
+      <div className="hidden md:block">
+        <Row>
+          <h2 className="text-center text-3xl md:text-4xl font-bold mb-12">FAQ</h2>
+          <div
+            className="mx-auto mt-10 grid grid-cols-2 gap-6 items-start"
+            style={{ background: "#F6F6F6", borderRadius: "20px", padding: "48px", width: "100%" }}
+          >
+            {faqs.map((item, index) => {
+              const isActive = activeIndex === index;
               return (
                 <div
-                  key={i}
-                  className="overflow-hidden transition-all duration-200"
+                  key={index}
+                  onClick={() => toggle(index)}
+                  className="cursor-pointer bg-white rounded-xl p-6 transition-all duration-300"
                   style={{
-                    background: isOpen ? "#FAF6FF" : "white",
-                    border: isOpen
-                      ? "1px solid rgba(143,39,255,0.18)"
-                      : "1px solid #E2E2E2",
-                    borderRadius: 14,
+                    boxShadow: isActive ? "0px 4px 8px 0px #8F27FF40" : "0px 4px 4px 0px #0000001A",
+                    borderStyle: "solid",
+                    borderWidth: "1px 1px 1px 6px",
+                    borderColor: isActive ? "#8F27FF" : "#D2D2D2",
                   }}
                 >
-                  {/* Question row */}
-                  <button
-                    className="flex items-center justify-between gap-3.5 w-full text-left"
-                    style={{ padding: "20px 24px", cursor: "pointer" }}
-                    onClick={() => toggle(i)}
-                  >
-                    <span
-                      style={{
-                        fontSize: 14,
-                        fontWeight: 600,
-                        lineHeight: 1.35,
-                        color: "#000",
-                      }}
-                    >
-                      {item.q}
-                    </span>
-                    {/* Chevron / plus */}
-                    <span
-                      className="grid place-items-center flex-shrink-0 transition-all duration-200"
-                      style={{
-                        width: 28,
-                        height: 28,
-                        borderRadius: "50%",
-                        background: isOpen ? "#8F27FF" : "#F4F4F4",
-                        transform: isOpen ? "rotate(45deg)" : "none",
-                      }}
-                    >
-                      <svg
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke={isOpen ? "white" : "#929292"}
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      >
-                        <path d="M12 5v14M5 12h14"/>
-                      </svg>
-                    </span>
-                  </button>
-
-                  {/* Answer */}
-                  {isOpen && (
-                    <div
-                      style={{
-                        padding: "0 24px 20px",
-                        fontSize: 13.5,
-                        color: "#474747",
-                        lineHeight: 1.65,
-                      }}
-                    >
-                      {item.a}
-                    </div>
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="text-sm font-medium text-black leading-snug">{item.q}</h3>
+                    <img
+                      src={isActive ? "/images/Entrepreneurship/close.svg" : "/images/Entrepreneurship/open.svg"}
+                      alt={isActive ? "Close" : "Open"}
+                      className="w-6 h-6 flex-shrink-0"
+                    />
+                  </div>
+                  {isActive && (
+                    <p className="mt-3 text-sm text-gray-600 leading-relaxed">{item.a}</p>
                   )}
                 </div>
               );
             })}
           </div>
-        </Reveal>
+        </Row>
       </div>
-    </section>
+    </div>
   );
 }

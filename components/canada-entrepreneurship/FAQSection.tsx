@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Row from "@/components/global/Row";
 
+const MOBILE_INITIAL_COUNT = 6;
+
 const faqs = [
   {
     q: "What province best fits my business and settlement goals?",
@@ -54,28 +56,28 @@ const faqs = [
   },
 ];
 
-const MOBILE_INITIAL_COUNT = 6;
-
 export default function FAQSection() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);
 
-  const toggle = (i: number) => setActiveIndex(activeIndex === i ? null : i);
-  const visibleMobile = showAll ? faqs : faqs.slice(0, MOBILE_INITIAL_COUNT);
+  const toggle = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  const visibleMobileFaqs = showAll ? faqs : faqs.slice(0, MOBILE_INITIAL_COUNT);
 
   return (
-    <div className="py-12 md:py-20" style={{ background: "#F4F4F4" }}>
-
-      {/* ========== MOBILE ========== */}
+    <div className="py-12 md:py-20">
+      {/* Mobile */}
       <div className="md:hidden px-5">
         <h2 className="text-2xl font-bold text-center mb-8">FAQs</h2>
         <div className="flex flex-col gap-3 rounded-2xl p-5" style={{ background: "#F6F6F6" }}>
-          {visibleMobile.map((item, i) => {
-            const isActive = activeIndex === i;
+          {visibleMobileFaqs.map((item, index) => {
+            const isActive = activeIndex === index;
             return (
               <div
-                key={i}
-                onClick={() => toggle(i)}
+                key={index}
+                onClick={() => toggle(index)}
                 className="cursor-pointer bg-white rounded-xl p-4 transition-all duration-300"
                 style={{
                   boxShadow: isActive ? "0px 4px 8px 0px #8F27FF40" : "0px 4px 4px 0px #0000001A",
@@ -123,20 +125,20 @@ export default function FAQSection() {
         </div>
       </div>
 
-      {/* ========== DESKTOP ========== */}
+      {/* Desktop */}
       <div className="hidden md:block">
         <Row>
-          <h2 className="text-center text-4xl font-bold mb-12">FAQs</h2>
+          <h2 className="text-center text-3xl md:text-4xl font-bold mb-12">FAQs</h2>
           <div
-            className="grid grid-cols-2 gap-4"
-            style={{ background: "#F6F6F6", borderRadius: "20px", padding: "48px" }}
+            className="mx-auto mt-10 grid grid-cols-2 gap-6 items-start"
+            style={{ background: "#F6F6F6", borderRadius: "20px", padding: "48px", width: "100%" }}
           >
-            {faqs.map((item, i) => {
-              const isActive = activeIndex === i;
+            {faqs.map((item, index) => {
+              const isActive = activeIndex === index;
               return (
                 <div
-                  key={i}
-                  onClick={() => toggle(i)}
+                  key={index}
+                  onClick={() => toggle(index)}
                   className="cursor-pointer bg-white rounded-xl p-6 transition-all duration-300"
                   style={{
                     boxShadow: isActive ? "0px 4px 8px 0px #8F27FF40" : "0px 4px 4px 0px #0000001A",
@@ -153,14 +155,15 @@ export default function FAQSection() {
                       className="w-6 h-6 flex-shrink-0"
                     />
                   </div>
-                  {isActive && <p className="mt-3 text-sm text-gray-600 leading-relaxed">{item.a}</p>}
+                  {isActive && (
+                    <p className="mt-3 text-sm text-gray-600 leading-relaxed">{item.a}</p>
+                  )}
                 </div>
               );
             })}
           </div>
         </Row>
       </div>
-
     </div>
   );
 }

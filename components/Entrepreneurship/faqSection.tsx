@@ -66,7 +66,7 @@ const faqData = [
 const MOBILE_INITIAL_COUNT = 6;
 
 export default function StartupFAQ() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);
   const toggle = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -148,7 +148,7 @@ export default function StartupFAQ() {
         <Row>
           <h2 className="text-center text-3xl md:text-4xl font-bold mb-12">FAQs</h2>
           <div
-            className="mx-auto mt-10 grid grid-cols-2 gap-6"
+            className="mx-auto mt-10 grid grid-cols-2 gap-6 items-start"
             style={{ background: "#F6F6F6", borderRadius: "20px", padding: "48px", width: "100%" }}
           >
             {faqData.map((item, index) => {

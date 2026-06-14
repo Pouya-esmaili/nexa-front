@@ -300,25 +300,33 @@ export default function Header() {
 
           {/* Services accordion */}
           <MobAccordion label="Services" open={mobileAcc === "services"} toggle={() => toggleAcc("services")}>
-            <MobCatLink href="/Entrepreneurship" label="Entrepreneurship" />
+            <MobCatLink href="/Entrepreneurship" label="Entrepreneurship">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg>
+            </MobCatLink>
             <MobSubLink href="/Entrepreneurship/canada" label="Canada Entrepreneurship" />
             <MobSubLink href="/Entrepreneurship/spain" label="Spain Entrepreneurship" />
             <MobSubLink href="/Entrepreneurship/portugal" label="Portugal Entrepreneurship" />
             <MobSubLink href="/Entrepreneurship/finland" label="Finland Entrepreneurship" />
             <MobSubLink href="/Entrepreneurship/netherlands" label="Netherland Entrepreneurship" />
-            <MobCatLink href="/startup" label="Startup" />
+            <MobCatLink href="/startup" label="Startup">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M22 2L11 13" /><polygon points="22 2 15 22 11 13 2 9 22 2" /></svg>
+            </MobCatLink>
             <MobSubLink href="/startup/finland" label="Finland Startup" />
             <MobSubLink href="/startup/canada" label="Canada Startup" />
             <MobSubLink href="/startup/uk" label="UK Startup" />
             <MobSubLink href="/startup/greece" label="greece Startup" />
             <MobSubLink href="/startup/spain" label="spain Startup" />
-            <MobCatLink href="/investment" label="Investment" />
+            <MobCatLink href="/investment" label="Investment">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
+            </MobCatLink>
             <MobSubLink href="/investment/uae" label="UAE Investment" />
             <MobSubLink href="/investment/turkiye" label="Turkey Investment" />
             <MobSubLink href="/investment/greece" label="Greece Investment" />
             <MobSubLink href="/investment/spain" label="Spain Investment" />
             <MobSubLink href="/investment/france" label="France Investment" />
-            <MobCatLink href="/advisory" label="Advisory" />
+            <MobCatLink href="/advisory" label="Advisory">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10" /><path d="M12 8v4l3 3" /></svg>
+            </MobCatLink>
             <MobSubLink href="/Advisory/Business-Model-Design" label="Business Model Design" />
             <MobSubLink href="/Advisory/Brand-Strategy" label="Brand Strategy" />
             <MobSubLink href="/Advisory/Go-To-Market-Strategy" label="Go-To-Market Strategy" />
@@ -406,12 +414,17 @@ function MobAccordion({ label, open, toggle, children }: { label: string; open: 
   );
 }
 
-function MobCatLink({ href, label }: { href: string; label: string }) {
+function MobCatLink({ href, label, children }: { href: string; label: string; children?: ReactNode }) {
   return (
     <Link href={href}
-      className="flex items-center justify-between px-6 py-3.5 text-[14px] font-bold text-[#1a1a1a] border-b border-[#E2E2E2] hover:text-[#8F27FF] hover:bg-[#FAF6FF] transition-colors">
-      {label}
-      <svg className="w-4 h-4 text-[#8F27FF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}><polyline points="9 18 15 12 9 6" /></svg>
+      className="flex items-center gap-3 px-6 py-3.5 text-[14px] font-bold text-[#1a1a1a] border-b border-[#E2E2E2] hover:text-[#8F27FF] hover:bg-[#FAF6FF] transition-colors group">
+      {children && (
+        <span className="w-5 h-6 rounded-md bg-[#f5f0ff] grid place-items-center flex-shrink-0 group-hover:bg-[#8F27FF] transition-colors [&>svg]:w-3 [&>svg]:h-3 [&>svg]:text-[#8F27FF] group-hover:[&>svg]:text-white [&>svg]:transition-colors">
+          {children}
+        </span>
+      )}
+      <span className="flex-1">{label}</span>
+      <svg className="w-4 h-4 text-[#8F27FF] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}><polyline points="9 18 15 12 9 6" /></svg>
     </Link>
   );
 }

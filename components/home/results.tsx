@@ -1,5 +1,4 @@
 import Reveal from "@/components/global/Reveal";
-import Image from "next/image";
 
 /* ─────────────────────────────────────────────────────────────
    plan.svg  →  viewBox 0 0 1440 665
@@ -28,28 +27,18 @@ export default function Results() {
         {/* ── Map wrapper – full width ── */}
         <Reveal variant="up" delay={80}>
           <div
-            className="relative overflow-hidden"
+            className="relative overflow-hidden h-[60vw] md:h-auto"
             style={{ background: "#000" }}
           >
-            {/*
-              plan.svg has a light (#FAF6FF) background and light-gray (#DAD6DC) paths.
-              Filter pipeline:
-                invert(1)     → background becomes near-black,  paths become dark-gray
-                brightness(4) → paths rise to ~58% gray,  background stays ~8%
-                contrast(4)   → paths push to ~82% (light-gray ✓),  bg collapses to 0 (black ✓)
-                saturate(0)   → remove any colour cast → pure grayscale ✓
-            */}
-            <Image
+            <img
               src="/images/landing/plan.svg"
               alt="World map"
-              width={1440}
-              height={665}
-              className="w-full block"
+              className="absolute inset-0 w-full h-full md:static md:inset-auto md:h-auto object-cover md:object-none block"
               style={{
                 filter: "invert(1) brightness(6) contrast(8) saturate(0)",
                 opacity: 1,
               }}
-              priority
+              loading="eager"
             />
 
             {/* ── SVG overlay – viewBox matches plan.svg 1440×665 ── */}
@@ -57,7 +46,7 @@ export default function Results() {
               viewBox="0 0 1440 665"
               xmlns="http://www.w3.org/2000/svg"
               className="absolute inset-0 w-full h-full"
-              preserveAspectRatio="xMidYMid meet"
+              preserveAspectRatio="xMidYMid slice"
             >
               <defs>
                 <filter id="glow2">
@@ -134,10 +123,9 @@ export default function Results() {
               </g>
             </svg>
 
-            {/* ── Pin label overlays ── */}
-            {/* Vancouver: 130/1440 = 9.0% from left, 110/665 = 16.5% from top */}
+            {/* ── Pin label overlays (desktop only) ── */}
             <div
-              className="absolute text-white font-bold px-2.5 py-1.5 rounded-[7px] pointer-events-none whitespace-nowrap leading-none"
+              className="hidden md:block absolute text-white font-bold px-2.5 py-1.5 rounded-[7px] pointer-events-none whitespace-nowrap leading-none"
               style={{
                 fontSize: "clamp(9px,1.1vw,12px)",
                 background: "rgba(10,0,20,0.9)",
@@ -148,9 +136,8 @@ export default function Results() {
             >
               📍 Vancouver, Canada
             </div>
-            {/* Tehran: 630/1440 = 43.75% from left, 175/665 = 26.3% from top */}
             <div
-              className="absolute text-white font-bold px-2.5 py-1.5 rounded-[7px] pointer-events-none whitespace-nowrap leading-none"
+              className="hidden md:block absolute text-white font-bold px-2.5 py-1.5 rounded-[7px] pointer-events-none whitespace-nowrap leading-none"
               style={{
                 fontSize: "clamp(9px,1.1vw,12px)",
                 background: "rgba(10,0,20,0.9)",

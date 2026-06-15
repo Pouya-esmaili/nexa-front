@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Row from "@/components/global/Row";
+import Reveal from "@/components/global/LazyReveal";
 
 const MOBILE_INITIAL_COUNT = 6;
 

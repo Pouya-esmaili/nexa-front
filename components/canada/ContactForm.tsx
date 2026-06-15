@@ -8,9 +8,31 @@ import PhoneField from "@/components/global/PhoneField";
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const body = {
+      formName: 'canada_contact',
+      firstName: fd.get('firstName')?.toString() || '',
+      lastName: fd.get('lastName')?.toString() || '',
+      email: fd.get('email')?.toString() || '',
+      phone: fd.get('phone')?.toString() || '',
+      message: fd.get('message')?.toString() || '',
+    };
+
+    try {
+      const res = await fetch('/api/forms', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+
+      if (res.ok) setSent(true);
+      else console.error('Submit failed', await res.json());
+    } catch (err) {
+      console.error('Submit error', err);
+    }
   }
 
   return (
@@ -46,19 +68,19 @@ export default function ContactForm() {
                   {/* Row 1 */}
                   <label className="flex flex-col gap-1.5 text-[12.5px] font-medium text-[#474747]">
                     First Name <em className="text-[#8F27FF] not-italic">*</em>
-                    <input type="text" required
+                    <input name="firstName" type="text" required
                       className="h-10 px-3.5 rounded-[10px] border border-[#E2E2E2] bg-[#F4F4F4] text-[13.5px] outline-none focus:border-[#8F27FF] focus:bg-white transition-colors"
                     />
                   </label>
                   <label className="flex flex-col gap-1.5 text-[12.5px] font-medium text-[#474747]">
                     Last Name <em className="text-[#8F27FF] not-italic">*</em>
-                    <input type="text" required
+                    <input name="lastName" type="text" required
                       className="h-10 px-3.5 rounded-[10px] border border-[#E2E2E2] bg-[#F4F4F4] text-[13.5px] outline-none focus:border-[#8F27FF] focus:bg-white transition-colors"
                     />
                   </label>
                   <label className="flex flex-col gap-1.5 text-[12.5px] font-medium text-[#474747]">
                     Email <em className="text-[#8F27FF] not-italic">*</em>
-                    <input type="email" required
+                    <input name="email" type="email" required
                       className="h-10 px-3.5 rounded-[10px] border border-[#E2E2E2] bg-[#F4F4F4] text-[13.5px] outline-none focus:border-[#8F27FF] focus:bg-white transition-colors"
                     />
                   </label>
@@ -66,7 +88,7 @@ export default function ContactForm() {
                   {/* Row 2 */}
                   <label className="flex flex-col gap-1.5 text-[12.5px] font-medium text-[#474747]">
                     Phone Number <em className="text-[#8F27FF] not-italic">*</em>
-                    <PhoneField defaultCountryCode="+1" />
+                    <PhoneField name="phone" defaultCountryCode="+1" />
                   </label>
                   <label className="flex flex-col gap-1.5 text-[12.5px] font-medium text-[#474747]">
                     Which best describes you? <em className="text-[#8F27FF] not-italic">*</em>
@@ -128,6 +150,7 @@ export default function ContactForm() {
                     <textarea
                       rows={4}
                       placeholder="Describe your business idea, target province, and what you're looking to achieve in Canada…"
+                      name="message"
                       className="px-3.5 py-3 rounded-[10px] border border-[#E2E2E2] bg-[#F4F4F4] text-[13.5px] outline-none focus:border-[#8F27FF] focus:bg-white transition-colors resize-y"
                     />
                   </label>

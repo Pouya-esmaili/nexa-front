@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import Row from "@/components/global/Row";
-import Reveal from "@/components/global/Reveal";
+import Reveal from "@/components/global/LazyReveal";
 import PhoneField from "@/components/global/PhoneField";
 
 const inputCls = "font-[inherit] text-[14px] bg-[#F7F6F9] border border-[#E2E2E2] rounded-[10px] px-[14px] py-3 text-black font-medium transition-all duration-150 outline-none focus:border-[#8F27FF] focus:shadow-[0_0_0_3px_rgba(143,39,255,0.12)] focus:bg-white w-full";
@@ -10,9 +10,34 @@ const inputCls = "font-[inherit] text-[14px] bg-[#F7F6F9] border border-[#E2E2E2
 export default function Contact() {
   const [sent, setSent] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    console.log('Submitting form');
     e.preventDefault();
-    setSent(true);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const body = {
+      firstName: fd.get('firstName')?.toString() || '',
+      lastName: fd.get('lastName')?.toString() || '',
+      email: fd.get('email')?.toString() || '',
+      phone: fd.get('phone')?.toString() || '',
+      message: fd.get('message')?.toString() || '',
+    };
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+
+      if (res.ok) setSent(true);
+      else {
+        // optional: show error
+        console.error('Submit failed', await res.json());
+      }
+    } catch (err) {
+      console.error('Submit error', err);
+    }
   }
 
   return (
@@ -36,15 +61,15 @@ export default function Contact() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
                 <label className="flex flex-col gap-2 text-[13px] font-medium text-black">
                   <span>First Name <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
-                  <input type="text" required placeholder="Your first name" className={inputCls} />
+                  <input name="firstName" type="text" required placeholder="Your first name" className={inputCls} />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium text-black">
                   <span>Last Name <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
-                  <input type="text" required placeholder="Your last name" className={inputCls} />
+                  <input name="lastName" type="text" required placeholder="Your last name" className={inputCls} />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium text-black">
                   <span>Email <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
-                  <input type="email" required placeholder="you@example.com" className={inputCls} />
+                  <input name="email" type="email" required placeholder="you@example.com" className={inputCls} />
                 </label>
               </div>
 
@@ -52,7 +77,7 @@ export default function Contact() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
                 <label className="flex flex-col gap-2 text-[13px] font-medium text-black">
                   <span>Phone Number <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
-                  <PhoneField defaultCountryCode="+1" />
+                  <PhoneField name="phone" defaultCountryCode="+1" />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium text-black">
                   <span>Do you have a 2025 Certificate?</span>
@@ -80,6 +105,7 @@ export default function Contact() {
                   <textarea
                     rows={4}
                     placeholder="Describe your venture, team size, current stage, and your 2026 filing timeline…"
+                    name="message"
                     className={`${inputCls} resize-y min-h-[110px]`}
                   />
                 </label>

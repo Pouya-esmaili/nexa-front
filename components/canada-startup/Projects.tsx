@@ -1,5 +1,6 @@
 import Row from "@/components/global/Row";
-import Reveal from "@/components/global/Reveal";
+import Reveal from "@/components/global/LazyReveal";
+import Image from "next/image";
 
 const projects = [
   { name: "Landa Trip", tag: "Tourism · Travel", img: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=700&q=80" },
@@ -26,9 +27,9 @@ export default function Projects() {
           {projects.map((p, i) => (
             <Reveal key={p.name} variant="up" delay={i * 50}>
               <div className="rounded-[20px] overflow-hidden relative h-[260px] cursor-pointer group">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={p.img} alt={p.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <div className="absolute inset-0">
+                  <Image src={p.img} alt={p.name} fill sizes="(max-width: 640px) 100vw, 25vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                </div>
                 <div className="absolute inset-0 transition-all duration-300 [background:linear-gradient(180deg,transparent_40%,rgba(0,0,0,0.75)_100%)] group-hover:[background:linear-gradient(180deg,rgba(143,39,255,0.08)_0%,rgba(0,0,0,0.85)_100%)]" />
                 <div className="absolute bottom-0 left-0 right-0 p-[22px]">
                   <div className="text-white font-bold text-[16px] tracking-[-0.01em]">{p.name}</div>

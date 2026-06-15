@@ -1,7 +1,7 @@
 "use client";
 
 import Row from "@/components/global/Row";
-import Reveal from "@/components/global/Reveal";
+import Reveal from "@/components/global/LazyReveal";
 import { useState } from "react";
 
 const items = [

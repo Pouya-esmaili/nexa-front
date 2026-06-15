@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "../components/global/Header";
 import Footer from "../components/global/Footer";
+import NavLoader from "../components/global/NavLoader";
 
 export const metadata: Metadata = {
   title: "Nexa",
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr">
       <body className="antialiased">
+        <NavLoader />
         <Header />
         {children}
         <Footer />

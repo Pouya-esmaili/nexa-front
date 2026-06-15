@@ -1,5 +1,6 @@
 "use client";
 
+import Reveal from "@/components/global/LazyReveal";
 import { useState } from "react";
 import Row from "@/components/global/Row";
 

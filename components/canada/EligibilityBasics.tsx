@@ -1,7 +1,7 @@
 "use client";
 
 import Row from "@/components/global/Row";
-import Reveal from "@/components/global/Reveal";
+import Reveal from "@/components/global/LazyReveal";
 
 const items = [
   { title: "Scalable Business Plan", desc: "A strong, market-validated, and growth-oriented business plan." },

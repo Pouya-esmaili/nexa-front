@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
-import Reveal from "@/components/global/Reveal";
+import Reveal from "@/components/global/LazyReveal";
 
 const testimonials = [
   {

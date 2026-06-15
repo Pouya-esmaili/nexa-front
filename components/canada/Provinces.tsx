@@ -1,5 +1,6 @@
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import Image from "next/image";
 
 interface Province {
   name: string;
@@ -34,13 +35,13 @@ function ProvinceCard({ p, delay }: { p: Province; delay: number }) {
       <div className="bg-white rounded-[20px] overflow-hidden border border-[#E2E2E2] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg"
         style={{ boxShadow: "0 1px 2px rgba(0,0,0,0.03)" }}>
         {/* Image */}
-        <div className="h-[150px] relative overflow-hidden" style={{ backgroundImage: `url('${p.bg}')`, backgroundSize: "cover", backgroundPosition: "center" }}>
+        <div className="h-[150px] relative overflow-hidden">
+          <Image src={p.bg} alt={`${p.name} background`} fill className="object-cover" sizes="(max-width: 640px) 100vw, 50vw" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.72))" }} />
           {/* Flag */}
           <div className="absolute top-3 left-3 w-[38px] h-[26px] rounded-[3px] overflow-hidden z-10 bg-white"
             style={{ boxShadow: "0 3px 8px rgba(0,0,0,0.4)", border: "1.5px solid white" }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={p.flag} alt={p.name} loading="lazy" className="w-full h-full object-cover" />
+            <Image src={p.flag} alt={`${p.name} flag`} fill className="object-cover" sizes="38px" />
           </div>
           <span className="absolute bottom-3 left-3.5 text-white font-semibold text-[15px] z-10 tracking-[-0.01em]">{p.name}</span>
         </div>

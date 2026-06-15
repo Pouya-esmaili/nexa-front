@@ -1,4 +1,4 @@
-import Reveal from "@/components/global/Reveal";
+import Reveal from "@/components/global/LazyReveal";
 
 /* ─────────────────────────────────────────────────────────────
    plan.svg  →  viewBox 0 0 1440 665
@@ -30,16 +30,19 @@ export default function Results() {
             className="relative overflow-hidden h-[60vw] md:h-auto"
             style={{ background: "#000" }}
           >
-            <img
-              src="/images/landing/plan.svg"
-              alt="World map"
-              className="absolute inset-0 w-full h-full md:static md:inset-auto md:h-auto object-cover md:object-none block"
-              style={{
-                filter: "invert(1) brightness(6) contrast(8) saturate(0)",
-                opacity: 1,
-              }}
-              loading="eager"
-            />
+            {/* Use next/image for the large background SVG so Next can optimize and prefetch */}
+            <div className="absolute inset-0 w-full h-full md:static md:inset-auto md:h-auto block">
+              <img
+                src="/images/landing/plan.svg"
+                alt="World map"
+                className="absolute inset-0 w-full h-full md:static md:inset-auto md:h-auto object-cover md:object-none block"
+                style={{
+                  filter: "invert(1) brightness(6) contrast(8) saturate(0)",
+                  opacity: 1,
+                }}
+                loading="eager"
+              />
+            </div>
 
             {/* ── SVG overlay – viewBox matches plan.svg 1440×665 ── */}
             <svg

@@ -33,7 +33,7 @@ export default function ContactForm() {
               </svg>
             </div>
             <h3 className="text-[22px] font-bold">Thank you!</h3>
-            <p className="text-gray-500 text-[15px]">A Nexa advisor will reach out within 24 hours.</p>
+            <p className="text-gray-500 text-[15px]">A Nexa advisor will reach out within 48 hours.</p>
           </div>
         ) : (
           <Reveal variant="up" delay={100}>
@@ -104,7 +104,7 @@ export default function ContactForm() {
             {/* Footer */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
               <small className="text-[12px] text-gray-500 leading-relaxed max-w-[50ch]">
-                Your information is reviewed confidentially by Nexa&apos;s advisory team. We typically respond within 24 hours.
+                Your information is reviewed confidentially by Nexa&apos;s advisory team. We typically respond within 48 hours.
               </small>
               <button
                 type="submit"

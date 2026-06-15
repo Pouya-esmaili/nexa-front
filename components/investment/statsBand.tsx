@@ -69,13 +69,13 @@ export default function InvestmentStatsBand() {
 
       <div className="px-6 mx-auto w-full relative z-10" style={{ maxWidth: 1240 }}>
         <div
-          className="grid"
+          className="stats-band-grid grid"
           style={{ gridTemplateColumns: "repeat(3,1fr)" }}
         >
           {STATS.map((stat, i) => (
             <div
               key={i}
-              className="flex flex-col items-center text-center"
+              className="stats-band-item flex flex-col items-center text-center"
               style={{
                 padding: "36px 24px",
                 borderRight: i < 2 ? "1px solid rgba(255,255,255,0.07)" : "none",
@@ -83,7 +83,7 @@ export default function InvestmentStatsBand() {
             >
               {/* Pill */}
               <div
-                className="inline-flex items-center gap-1 font-bold uppercase mb-2.5"
+                className="stats-band-pill inline-flex items-center gap-1 font-bold uppercase mb-2.5"
                 style={{
                   fontSize: 10,
                   letterSpacing: "0.12em",
@@ -99,7 +99,7 @@ export default function InvestmentStatsBand() {
 
               {/* Number */}
               <div
-                className="font-extrabold text-white mb-2"
+                className="stats-band-number font-extrabold text-white mb-2"
                 style={{
                   fontSize: 48,
                   lineHeight: 1,
@@ -122,6 +122,22 @@ export default function InvestmentStatsBand() {
           ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 767px) {
+          .stats-band-item {
+            padding: 24px 8px !important;
+          }
+          .stats-band-pill {
+            font-size: 8px !important;
+            padding: 4px 7px !important;
+            text-align: center;
+          }
+          .stats-band-number {
+            font-size: 32px !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

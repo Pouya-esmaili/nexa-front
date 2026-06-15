@@ -26,7 +26,7 @@ export default function Contact() {
 
         {sent ? (
           <div className="mt-4 px-[14px] py-3.5 bg-[#FAF6FF] border border-[rgba(143,39,255,0.18)] rounded-[10px] text-[#8F27FF] font-semibold text-[14px] text-center max-w-xl mx-auto">
-            ✓ Thank you — a Nexa advisor will reach out within 24 hours.
+            ✓ Thank you — a Nexa advisor will reach out within 48 hours.
           </div>
         ) : (
           <Reveal variant="up" delay={80}>

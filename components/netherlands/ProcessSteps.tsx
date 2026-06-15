@@ -32,11 +32,14 @@ const steps = [
 
 export default function ProcessSteps() {
   const [active, setActive] = useState<number | null>(null);
+  const [hoveredCircle, setHoveredCircle] = useState<number | null>(null);
 
   return (
     <section className="py-16 md:py-20 bg-[#F7F6F9]" id="process">
       <Row>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+
+          {/* Left — sticky via Reveal className (همان الگوی UK) */}
           <Reveal variant="left" delay={0} className="md:sticky md:top-24">
             <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] mb-5">
               Step-by-Step Application Timeline
@@ -50,6 +53,7 @@ export default function ProcessSteps() {
             </p>
           </Reveal>
 
+          {/* Right — steps */}
           <div className="relative pl-[52px]">
             <div className="absolute top-[22px] bottom-[22px] left-5 w-0.5 rounded-full"
               style={{ background: "linear-gradient(180deg, #8F27FF 0%, rgba(143,39,255,0.15) 100%)" }} />
@@ -62,11 +66,13 @@ export default function ProcessSteps() {
                 >
                   <div
                     className="absolute -left-[52px] top-0 w-[42px] h-[42px] rounded-full flex items-center justify-center text-[13px] font-bold z-10 transition-all duration-300 hover:scale-110"
+                    onMouseEnter={() => setHoveredCircle(i)}
+                    onMouseLeave={() => setHoveredCircle(null)}
                     style={{
                       border: "2px solid #8F27FF",
                       boxShadow: "0 0 0 5px #FAF6FF, 0 4px 12px rgba(143,39,255,0.12)",
-                      background: active === i ? "#8F27FF" : "white",
-                      color: active === i ? "white" : "#8F27FF",
+                      background: active === i || hoveredCircle === i ? "#8F27FF" : "white",
+                      color: active === i || hoveredCircle === i ? "white" : "#8F27FF",
                     }}
                   >
                     {s.num}
@@ -83,6 +89,7 @@ export default function ProcessSteps() {
               </Reveal>
             ))}
           </div>
+
         </div>
       </Row>
     </section>

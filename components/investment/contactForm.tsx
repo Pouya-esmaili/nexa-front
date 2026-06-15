@@ -80,7 +80,7 @@ export default function InvestmentContactForm() {
         {/* Card */}
         <Reveal>
           <div
-            className="mx-auto relative overflow-hidden"
+            className="form-card-inner mx-auto relative overflow-hidden"
             style={{
               maxWidth: 860,
               background: "#fff",
@@ -91,7 +91,7 @@ export default function InvestmentContactForm() {
             }}
           >
             <form
-              className="grid gap-[22px_28px]"
+              className="nform-grid grid gap-[22px_28px]"
               style={{ gridTemplateColumns: "1fr 1fr" }}
               onSubmit={handleSubmit}
             >
@@ -204,7 +204,7 @@ export default function InvestmentContactForm() {
 
               {/* Footer */}
               <div
-                className="flex items-center justify-between flex-wrap gap-4"
+                className="nform-footer flex items-center justify-between flex-wrap gap-4"
                 style={{
                   gridColumn: "span 2",
                   marginTop: 8,
@@ -224,7 +224,7 @@ export default function InvestmentContactForm() {
                 <button
                   type="submit"
                   disabled={submitting || submitted}
-                  className="inline-flex items-center gap-2.5 font-semibold transition-all duration-300 hover:-translate-y-px"
+                  className="nform-submit inline-flex items-center gap-2.5 font-semibold transition-all duration-300 hover:-translate-y-px"
                   style={{
                     padding: "14px 40px",
                     background: submitted ? "#10b981" : "#8F27FF",
@@ -285,7 +285,7 @@ export default function InvestmentContactForm() {
           cursor: pointer;
           background-color: #F7F6F9;
         }
-        @media (max-width: 640px) {
+        @media (max-width: 767px) {
           .nform-grid { grid-template-columns: 1fr !important; }
           .nform-full { grid-column: span 1 !important; }
           .nform-footer { grid-column: span 1 !important; flex-direction: column; align-items: stretch; }
@@ -310,7 +310,7 @@ function FormGroup({
 }) {
   return (
     <div
-      className="flex flex-col gap-[7px]"
+      className={`flex flex-col gap-[7px]${fullWidth ? " nform-full" : ""}`}
       style={{ gridColumn: fullWidth ? "span 2" : undefined }}
     >
       <label

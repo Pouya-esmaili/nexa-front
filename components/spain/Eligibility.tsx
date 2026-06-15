@@ -62,8 +62,8 @@ export default function Eligibility() {
           </Reveal>
 
           {/* Aside */}
-          <Reveal variant="right">
-            <div className="flex flex-col gap-4 md:sticky md:top-24">
+          <div className="flex flex-col gap-4 md:sticky md:top-24">
+            <Reveal variant="right" delay={150}>
               {/* Benefits note */}
               <div className="rounded-[20px] p-8" style={{ background: "#FAF6FF", border: "1px solid rgba(143,39,255,0.18)" }}>
                 <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#8F27FF] uppercase tracking-[0.1em] px-3 py-1.5 bg-white rounded-full mb-5"
@@ -87,7 +87,9 @@ export default function Eligibility() {
                   ))}
                 </ul>
               </div>
+            </Reveal>
 
+            <Reveal variant="up" delay={250}>
               {/* Warning */}
               <div className="rounded-[14px] p-5 flex gap-3.5 items-start" style={{ background: "#FFFBEB", border: "1px solid #FDE68A" }}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 flex-shrink-0 mt-[1px]" style={{ color: "#D97706" }}>
@@ -99,8 +101,8 @@ export default function Eligibility() {
                   <strong className="font-semibold" style={{ color: "#78350F" }}>ENISA evaluation takes 30–60 days.</strong> The UGE decision runs 20 working days, but the preliminary ENISA business review takes an average of 30 to 60 days. Nexa structures your full timeline to account for this window.
                 </p>
               </div>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
         </div>
       </Row>
     </section>

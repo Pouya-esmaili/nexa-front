@@ -14,11 +14,11 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact" className="py-16 md:py-20 bg-white">
+    <section id="contact" className="py-20 md:py-24 bg-white">
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10 md:mb-14">
-            Start Your UK Innovator Founder Visa Journey
+            Start Your Spain Investor Visa Journey
           </h2>
         </Reveal>
 
@@ -33,7 +33,7 @@ export default function ContactForm() {
               </svg>
             </div>
             <h3 className="text-[22px] font-bold">Thank you!</h3>
-            <p className="text-gray-500 text-[15px]">A Nexa advisor will reach out within 48 hours.</p>
+            <p className="text-[#929292] text-[15px]">A Nexa advisor will reach out within 48 hours.</p>
           </div>
         ) : (
           <Reveal variant="up" delay={100}>
@@ -42,75 +42,73 @@ export default function ContactForm() {
               className="rounded-[20px] p-5 sm:p-8 md:p-11 flex flex-col gap-5"
               style={{ background: "#F7F6F9", border: "1px solid #E2E2E2" }}
             >
-              {/* Row 1 */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="flex items-center gap-1 text-[#474747]">First Name <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <span className="flex items-center gap-1 text-[#474747]">
+                    First Name <em className="text-[#8F27FF] not-italic font-semibold">*</em>
+                  </span>
                   <input type="text" required placeholder="Your first name"
-                    className="h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors"
-                  />
+                    className="h-11 px-3.5 rounded-[10px] border border-[#E2E2E2] bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors" />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="flex items-center gap-1 text-[#474747]">Last Name <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <span className="flex items-center gap-1 text-[#474747]">
+                    Last Name <em className="text-[#8F27FF] not-italic font-semibold">*</em>
+                  </span>
                   <input type="text" required placeholder="Your last name"
-                    className="h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors"
-                  />
+                    className="h-11 px-3.5 rounded-[10px] border border-[#E2E2E2] bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors" />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="flex items-center gap-1 text-[#474747]">Email <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <span className="flex items-center gap-1 text-[#474747]">
+                    Email <em className="text-[#8F27FF] not-italic font-semibold">*</em>
+                  </span>
                   <input type="email" required placeholder="you@example.com"
-                    className="h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors"
-                  />
+                    className="h-11 px-3.5 rounded-[10px] border border-[#E2E2E2] bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors" />
                 </label>
               </div>
 
-              {/* Row 2 */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="flex items-center gap-1 text-[#474747]">Phone Number <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
-                  <PhoneField defaultCountryCode="+44" />
+                  <span className="flex items-center gap-1 text-[#474747]">
+                    Phone Number <em className="text-[#8F27FF] not-italic font-semibold">*</em>
+                  </span>
+                  <PhoneField defaultCountryCode="+34" />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="text-[#474747]">Your Role</span>
-                  <select className="h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors">
-                    <option>Lead Founder</option>
-                    <option>Co-Founder</option>
-                    <option>Currently in UK (Switch)</option>
+                  <span className="text-[#474747]">Investment Route</span>
+                  <select className="h-11 px-3.5 rounded-[10px] border border-[#E2E2E2] bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors">
+                    <option>Spanish Government Bonds (€2M)</option>
+                    <option>Investment Funds / VC (€1M)</option>
+                    <option>Corporate Equity (€1M)</option>
+                    <option>Bank Deposits (€1M)</option>
+                    <option>Enterprise / Business Project</option>
+                    <option>Exploring Options</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="text-[#474747]">Industry / Sector</span>
-                  <select className="h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors">
-                    <option>Technology / SaaS</option>
-                    <option>Fintech</option>
-                    <option>Healthtech</option>
-                    <option>Deep Tech / AI</option>
-                    <option>Cleantech</option>
-                    <option>Other</option>
+                  <span className="text-[#474747]">Family Composition</span>
+                  <select className="h-11 px-3.5 rounded-[10px] border border-[#E2E2E2] bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors">
+                    <option>Main applicant only</option>
+                    <option>Applicant + spouse</option>
+                    <option>Full family (children)</option>
+                    <option>Including elderly parents</option>
                   </select>
                 </label>
               </div>
 
-              {/* Textarea */}
               <label className="flex flex-col gap-2 text-[13px] font-medium">
-                <span className="text-[#474747]">Tell us about your startup &amp; goals</span>
-                <textarea
-                  rows={4}
-                  placeholder="Describe your business idea, innovation credentials, and what you're looking to achieve in the UK…"
-                  className="px-3.5 py-3 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors resize-y"
-                />
+                <span className="text-[#474747]">Tell us about your investment profile &amp; goals</span>
+                <textarea rows={4}
+                  placeholder="Describe your preferred investment route, capital capacity, family situation, and long-term Spain goals…"
+                  className="px-3.5 py-3 rounded-[10px] border border-[#E2E2E2] bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors resize-y" />
               </label>
 
-              {/* Footer */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
-                <small className="text-[12px] text-gray-500 leading-relaxed max-w-[50ch]">
+                <small className="text-[12px] text-[#929292] leading-relaxed max-w-[50ch]">
                   Your information is reviewed confidentially by Nexa&apos;s advisory team. We typically respond within 48 hours.
                 </small>
-                <button
-                  type="submit"
+                <button type="submit"
                   className="w-full sm:w-auto flex-shrink-0 inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"
-                  style={{ boxShadow: "0 10px 24px rgba(143,39,255,0.28)" }}
-                >
+                  style={{ boxShadow: "0 10px 24px rgba(143,39,255,0.28)" }}>
                   Submit Application →
                 </button>
               </div>

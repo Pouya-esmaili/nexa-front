@@ -171,9 +171,10 @@ interface PhoneFieldProps {
   defaultCountryCode?: string;
   /** bg color of the wrapper div — matches form background */
   bg?: string;
+  name?: string;
 }
 
-export default function PhoneField({ defaultCountryCode = "+1", bg = "#F7F6F9" }: PhoneFieldProps) {
+export default function PhoneField({ defaultCountryCode = "+1", bg = "#F7F6F9", name }: PhoneFieldProps) {
   return (
     <div
       className="h-11 flex items-center border border-gray-200 rounded-[10px] overflow-hidden focus-within:border-[#8F27FF] transition-colors"
@@ -191,6 +192,7 @@ export default function PhoneField({ defaultCountryCode = "+1", bg = "#F7F6F9" }
         ))}
       </select>
       <input
+        name={name}
         type="tel"
         required
         placeholder="Phone number"

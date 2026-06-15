@@ -8,9 +8,31 @@ import PhoneField from "@/components/global/PhoneField";
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const body = {
+      formName: 'turkiye_contact',
+      firstName: fd.get('firstName')?.toString() || '',
+      lastName: fd.get('lastName')?.toString() || '',
+      email: fd.get('email')?.toString() || '',
+      phone: fd.get('phone')?.toString() || '',
+      message: fd.get('message')?.toString() || '',
+    };
+
+    try {
+      const res = await fetch('/api/forms', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+
+      if (res.ok) setSent(true);
+      else console.error('Submit failed', await res.json());
+    } catch (err) {
+      console.error('Submit error', err);
+    }
   }
 
   return (
@@ -51,15 +73,15 @@ export default function ContactForm() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <label className="flex flex-col gap-1.5">
                 <span className="text-[13px] font-medium text-gray-700">First Name <em className="text-[#8F27FF] not-italic">*</em></span>
-                <input type="text" required className="h-11 px-4 rounded-xl border border-gray-200 text-[14px] outline-none focus:border-[#8F27FF] transition-colors" />
+                <input name="firstName" type="text" required className="h-11 px-4 rounded-xl border border-gray-200 text-[14px] outline-none focus:border-[#8F27FF] transition-colors" />
               </label>
               <label className="flex flex-col gap-1.5">
                 <span className="text-[13px] font-medium text-gray-700">Last Name <em className="text-[#8F27FF] not-italic">*</em></span>
-                <input type="text" required className="h-11 px-4 rounded-xl border border-gray-200 text-[14px] outline-none focus:border-[#8F27FF] transition-colors" />
+                <input name="lastName" type="text" required className="h-11 px-4 rounded-xl border border-gray-200 text-[14px] outline-none focus:border-[#8F27FF] transition-colors" />
               </label>
               <label className="flex flex-col gap-1.5">
                 <span className="text-[13px] font-medium text-gray-700">Email <em className="text-[#8F27FF] not-italic">*</em></span>
-                <input type="email" required className="h-11 px-4 rounded-xl border border-gray-200 text-[14px] outline-none focus:border-[#8F27FF] transition-colors" />
+                <input name="email" type="email" required className="h-11 px-4 rounded-xl border border-gray-200 text-[14px] outline-none focus:border-[#8F27FF] transition-colors" />
               </label>
             </div>
 
@@ -67,7 +89,7 @@ export default function ContactForm() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <label className="flex flex-col gap-1.5">
                 <span className="text-[13px] font-medium text-gray-700">Phone Number <em className="text-[#8F27FF] not-italic">*</em></span>
-                <PhoneField defaultCountryCode="+90" bg="white" />
+                <PhoneField name="phone" defaultCountryCode="+90" bg="white" />
               </label>
               <label className="flex flex-col gap-1.5">
                 <span className="text-[13px] font-medium text-gray-700">Which best describes you? <em className="text-[#8F27FF] not-italic">*</em></span>
@@ -126,6 +148,7 @@ export default function ContactForm() {
               <textarea
                 rows={4}
                 placeholder="Tell us about your goals, timeline, and family structure…"
+                name="message"
                 className="px-4 py-3 rounded-xl border border-gray-200 text-[14px] outline-none focus:border-[#8F27FF] transition-colors resize-none"
               />
             </label>

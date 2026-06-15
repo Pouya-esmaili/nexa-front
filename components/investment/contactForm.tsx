@@ -30,13 +30,34 @@ export default function InvestmentContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    setTimeout(() => {
+    const form = e.currentTarget as HTMLFormElement;
+    const fd = new FormData(form);
+    const body = {
+      formName: 'investment_contact',
+      firstName: fd.get('firstName')?.toString() || '',
+      lastName: fd.get('lastName')?.toString() || '',
+      email: fd.get('email')?.toString() || '',
+      phone: fd.get('phone')?.toString() || '',
+      message: fd.get('message')?.toString() || '',
+    };
+
+    try {
+      const res = await fetch('/api/forms', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+
+      if (res.ok) setSubmitted(true);
+      else console.error('Submit failed', await res.json());
+    } catch (err) {
+      console.error('Submit error', err);
+    } finally {
       setSubmitting(false);
-      setSubmitted(true);
-    }, 1200);
+    }
   };
 
   return (
@@ -98,6 +119,7 @@ export default function InvestmentContactForm() {
               {/* First Name */}
               <FormGroup label="First Name" required>
                 <input
+                  name="firstName"
                   className="nform-input"
                   type="text"
                   placeholder="Your first name"
@@ -108,6 +130,7 @@ export default function InvestmentContactForm() {
               {/* Last Name */}
               <FormGroup label="Last Name" required>
                 <input
+                  name="lastName"
                   className="nform-input"
                   type="text"
                   placeholder="Your last name"
@@ -118,6 +141,7 @@ export default function InvestmentContactForm() {
               {/* Email */}
               <FormGroup label="Email Address" required>
                 <input
+                  name="email"
                   className="nform-input"
                   type="email"
                   placeholder="you@example.com"
@@ -127,7 +151,7 @@ export default function InvestmentContactForm() {
 
               {/* Phone */}
               <FormGroup label="Phone Number" required>
-                <PhoneField />
+                <PhoneField name="phone" />
               </FormGroup>
 
               {/* I Am A */}
@@ -196,6 +220,7 @@ export default function InvestmentContactForm() {
               {/* Tell Us (full width) */}
               <FormGroup label="Tell Us About Your Project" fullWidth>
                 <textarea
+                  name="message"
                   className="nform-input"
                   placeholder="Briefly describe your business or project, the sector, current stage, and what kind of investment or partnership you are seeking…"
                   style={{ minHeight: 120, resize: "vertical", lineHeight: 1.65 }}
@@ -330,7 +355,7 @@ function FormGroup({
   );
 }
 
-function PhoneField() {
+function PhoneField({ name }: { name?: string }) {
   const [selected, setSelected] = useState(COUNTRIES[0]);
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
@@ -463,6 +488,7 @@ function PhoneField() {
 
       {/* Phone input */}
       <input
+        name={name}
         className="nform-input"
         type="tel"
         placeholder="Phone number"

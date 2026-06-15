@@ -8,9 +8,31 @@ import PhoneField from "@/components/global/PhoneField";
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const body = {
+      formName: 'finland_contact',
+      firstName: fd.get('firstName')?.toString() || '',
+      lastName: fd.get('lastName')?.toString() || '',
+      email: fd.get('email')?.toString() || '',
+      phone: fd.get('phone')?.toString() || '',
+      message: fd.get('message')?.toString() || '',
+    };
+
+    try {
+      const res = await fetch('/api/forms', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+
+      if (res.ok) setSent(true);
+      else console.error('Submit failed', await res.json());
+    } catch (err) {
+      console.error('Submit error', err);
+    }
   }
 
   return (
@@ -48,20 +70,20 @@ export default function ContactForm() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               <label className="flex flex-col gap-2 text-[13px] font-medium">
                 <span className="flex items-center gap-1 text-[#474747]">First Name <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
-                <input type="text" required placeholder="Your first name"
+                <input name="firstName" type="text" required placeholder="Your first name"
                   className="h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors"
                   style={{ boxShadow: "none" }}
                 />
               </label>
               <label className="flex flex-col gap-2 text-[13px] font-medium">
                 <span className="flex items-center gap-1 text-[#474747]">Last Name <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
-                <input type="text" required placeholder="Your last name"
+                <input name="lastName" type="text" required placeholder="Your last name"
                   className="h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors"
                 />
               </label>
               <label className="flex flex-col gap-2 text-[13px] font-medium">
                 <span className="flex items-center gap-1 text-[#474747]">Email <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
-                <input type="email" required placeholder="you@example.com"
+                <input name="email" type="email" required placeholder="you@example.com"
                   className="h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors"
                 />
               </label>
@@ -71,7 +93,7 @@ export default function ContactForm() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               <label className="flex flex-col gap-2 text-[13px] font-medium">
                 <span className="flex items-center gap-1 text-[#474747]">Phone Number <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
-                <PhoneField defaultCountryCode="+358" />
+                <PhoneField name="phone" defaultCountryCode="+358" />
               </label>
               <label className="flex flex-col gap-2 text-[13px] font-medium">
                 <span className="flex items-center gap-1 text-[#474747]">Your Role <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
@@ -130,6 +152,7 @@ export default function ContactForm() {
               <textarea
                 rows={4}
                 placeholder="Describe your business idea, target market, and what you're looking to achieve in Finland…"
+                name="message"
                 className="px-3.5 py-3 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors resize-y"
               />
             </label>

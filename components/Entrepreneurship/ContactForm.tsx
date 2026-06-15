@@ -24,9 +24,31 @@ const labelCls = "text-[12px] font-semibold tracking-[.08em] uppercase text-[#92
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const body = {
+      formName: 'entrepreneurship_contact',
+      firstName: fd.get('firstName')?.toString() || '',
+      lastName: fd.get('lastName')?.toString() || '',
+      email: fd.get('email')?.toString() || '',
+      phone: fd.get('phone')?.toString() || '',
+      message: fd.get('message')?.toString() || '',
+    };
+
+    try {
+      const res = await fetch('/api/forms', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+
+      if (res.ok) setSent(true);
+      else console.error('Submit failed', await res.json());
+    } catch (err) {
+      console.error('Submit error', err);
+    }
   }
 
   return (
@@ -70,22 +92,22 @@ export default function ContactForm() {
 
                 <div className="flex flex-col gap-[7px]">
                   <label className={labelCls}>First Name <span className="text-[#8F27FF]">*</span></label>
-                  <input type="text" required placeholder="Your first name" className={inputCls} />
+                  <input name="firstName" type="text" required placeholder="Your first name" className={inputCls} />
                 </div>
 
                 <div className="flex flex-col gap-[7px]">
                   <label className={labelCls}>Last Name <span className="text-[#8F27FF]">*</span></label>
-                  <input type="text" required placeholder="Your last name" className={inputCls} />
+                  <input name="lastName" type="text" required placeholder="Your last name" className={inputCls} />
                 </div>
 
                 <div className="flex flex-col gap-[7px]">
                   <label className={labelCls}>Email Address <span className="text-[#8F27FF]">*</span></label>
-                  <input type="email" required placeholder="you@example.com" className={inputCls} />
+                  <input name="email" type="email" required placeholder="you@example.com" className={inputCls} />
                 </div>
 
                 <div className="flex flex-col gap-[7px]">
                   <label className={labelCls}>Phone Number <span className="text-[#8F27FF]">*</span></label>
-                  <PhoneField defaultCountryCode="+1" />
+                  <PhoneField name="phone" defaultCountryCode="+1" />
                 </div>
 
                 <div className="flex flex-col gap-[7px]">
@@ -162,6 +184,7 @@ export default function ContactForm() {
                   <textarea
                     rows={5}
                     placeholder="Briefly describe your business, goals, and what you're looking to achieve through international expansion…"
+                    name="message"
                     className={`${inputCls} resize-y min-h-[120px] leading-[1.65]`}
                   />
                 </div>

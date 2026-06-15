@@ -185,10 +185,38 @@ export default function ContactForm() {
   const [sending, setSending] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState(COUNTRIES[0]);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setSending(true);
-    setTimeout(() => { setSending(false); setSent(true); }, 1200);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const body = {
+      formName: 'home_contact',
+      firstName: fd.get('firstName')?.toString() || '',
+      lastName: fd.get('lastName')?.toString() || '',
+      email: fd.get('email')?.toString() || '',
+      phone: fd.get('phone')?.toString() || '',
+      countryCode: fd.get('countryCode')?.toString() || selectedCountry.code,
+      message: fd.get('message')?.toString() || '',
+    };
+
+    try {
+      const res = await fetch('/api/forms', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+
+      if (res.ok) {
+        setSent(true);
+      } else {
+        console.error('Submit failed', await res.json());
+      }
+    } catch (err) {
+      console.error('Submit error', err);
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -230,17 +258,17 @@ export default function ContactForm() {
 
                   {/* First Name */}
                   <FormGroup label="First Name" required>
-                    <input type="text" required placeholder="e.g., John" className={inputCls} />
+                    <input name="firstName" type="text" required placeholder="e.g., John" className={inputCls} />
                   </FormGroup>
 
                   {/* Last Name */}
                   <FormGroup label="Last Name" required>
-                    <input type="text" required placeholder="e.g., Doe" className={inputCls} />
+                    <input name="lastName" type="text" required placeholder="e.g., Doe" className={inputCls} />
                   </FormGroup>
 
                   {/* Email */}
                   <FormGroup label="Email Address" required>
-                    <input type="email" required placeholder="you@example.com" className={inputCls} />
+                    <input name="email" type="email" required placeholder="you@example.com" className={inputCls} />
                   </FormGroup>
 
                   {/* Phone */}
@@ -250,7 +278,8 @@ export default function ContactForm() {
                         selected={selectedCountry}
                         onChange={setSelectedCountry}
                       />
-                      <input type="tel" required placeholder="(000) 000-0000"
+                      <input type="hidden" name="countryCode" value={selectedCountry.code} />
+                      <input name="phone" type="tel" required placeholder="(000) 000-0000"
                         className="flex-1 h-[52px] px-4 bg-[#F7F6F9] border-[1.5px] border-[#E2E2E2] border-l-0 rounded-r-[12px] text-[15px] text-black outline-none focus:border-[#8F27FF] focus:bg-[#FAF6FF] focus:shadow-[0_0_0_3px_rgba(143,39,255,0.1)] transition-all" />
                     </div>
                   </FormGroup>
@@ -296,6 +325,7 @@ export default function ContactForm() {
                       <textarea
                         rows={4}
                         placeholder="Describe your business goals and what you're looking to achieve…"
+                        name="message"
                         className={`${inputCls} min-h-[120px] resize-y`}
                       />
                     </FormGroup>

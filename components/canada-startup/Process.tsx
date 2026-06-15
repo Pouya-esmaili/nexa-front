@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
 
@@ -14,7 +17,7 @@ const steps = [
     meta: "Step 2 · Deadline: June 30, 2026",
     title: "PR Portal Compilation & Complete Group Submission",
     desc: "All co-founders compile civil documents, police clearances, CLB 5 language transcripts, and settlement fund statements. Every team member submits their PR file simultaneously via the online Permanent Residence Portal. One missing submission invalidates the entire group file.",
-    urgent: true,
+    urgent: false,
   },
   {
     num: "3",
@@ -33,6 +36,8 @@ const steps = [
 ];
 
 export default function Process() {
+  const [active, setActive] = useState<string | null>(null);
+
   return (
     <section className="py-20 md:py-24 bg-[#F7F6F9]">
       <Row>
@@ -60,10 +65,19 @@ export default function Process() {
               <div className="absolute top-[22px] bottom-[22px] left-[20px] w-[2px] rounded-[2px]"
                 style={{ background: "linear-gradient(180deg, #8F27FF 0%, rgba(143,39,255,0.15) 100%)" }} />
 
-              {steps.map((s, i) => (
+              {steps.map((s, i) => {
+                const isActive = active === s.num;
+                return (
                 <div key={s.num} className={`relative group ${i < steps.length - 1 ? "pb-8" : ""}`}>
-                  <div className="absolute -left-[52px] top-0 w-[42px] h-[42px] rounded-full flex items-center justify-center text-[13px] font-bold text-[#8F27FF] bg-white transition-all duration-300 group-hover:bg-[#8F27FF] group-hover:text-white"
-                    style={{ border: "2px solid #8F27FF", boxShadow: "0 0 0 5px #FAF6FF, 0 4px 12px rgba(143,39,255,0.12)" }}>
+                  <div
+                    onClick={() => setActive(isActive ? null : s.num)}
+                    className="absolute -left-[52px] top-0 w-[42px] h-[42px] rounded-full flex items-center justify-center text-[13px] font-bold transition-all duration-300 cursor-pointer group-hover:bg-[#8F27FF] group-hover:text-white"
+                    style={{
+                      border: "2px solid #8F27FF",
+                      boxShadow: "0 0 0 5px #FAF6FF, 0 4px 12px rgba(143,39,255,0.12)",
+                      background: isActive ? "#8F27FF" : "#fff",
+                      color: isActive ? "#fff" : "#8F27FF",
+                    }}>
                     {s.num}
                   </div>
 
@@ -79,7 +93,8 @@ export default function Process() {
                     <p className="text-[13.5px] text-[#929292] leading-[1.6] m-0">{s.desc}</p>
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </Reveal>
 

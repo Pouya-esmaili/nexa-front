@@ -56,7 +56,7 @@ export default function ContactForm() {
               </svg>
             </div>
             <h3 className="text-[22px] font-bold">Thank you!</h3>
-            <p className="text-gray-500 text-[15px]">A Nexa advisor will reach out within 24 hours.</p>
+            <p className="text-gray-500 text-[15px]">A Nexa advisor will reach out within 48 hours.</p>
           </div>
           </Reveal>
         ) : (

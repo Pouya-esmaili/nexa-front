@@ -11,10 +11,10 @@ const TAGS = [
 
 export default function InvestmentWhatIs() {
   return (
-    <section style={{ padding: "90px 0", background: "#F7F6F9" }}>
+    <section className="investment-whatis-section" style={{ padding: "90px 0", background: "#F7F6F9" }}>
       <div className="px-6 mx-auto w-full" style={{ maxWidth: 1240 }}>
         <div
-          className="grid items-center gap-10 lg:gap-[70px]"
+          className="investment-whatis-grid grid items-center gap-10 lg:gap-[70px]"
           style={{ gridTemplateColumns: "1fr 1fr" }}
         >
           {/* ── Image ── */}
@@ -111,6 +111,18 @@ export default function InvestmentWhatIs() {
           </Reveal>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 767px) {
+          .investment-whatis-section {
+            padding: 48px 0 !important;
+          }
+          .investment-whatis-grid {
+            grid-template-columns: 1fr !important;
+            gap: 28px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

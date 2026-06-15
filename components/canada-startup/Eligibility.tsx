@@ -72,9 +72,9 @@ export default function Eligibility() {
           </Reveal>
 
           {/* Right — aside sticky */}
-          <Reveal variant="up" delay={80}>
-            <div className="flex flex-col gap-4 md:sticky md:top-[100px]">
+          <div className="flex flex-col gap-4 md:sticky md:top-[100px]">
 
+            <Reveal variant="up" delay={80}>
               {/* Benefits card */}
               <div className="rounded-[20px] p-8" style={{ background: "#FAF6FF", border: "1px solid rgba(143,39,255,0.18)" }}>
                 <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#8F27FF] uppercase tracking-[0.1em] px-3 py-1.5 bg-white rounded-full mb-5"
@@ -94,7 +94,9 @@ export default function Eligibility() {
                   ))}
                 </ul>
               </div>
+            </Reveal>
 
+            <Reveal variant="up" delay={160}>
               {/* Warning */}
               <div className="rounded-[14px] p-5 flex gap-3.5 items-start" style={{ background: "#FFFBEB", border: "1px solid #FDE68A" }}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-[#D97706] flex-shrink-0 mt-0.5">
@@ -105,9 +107,9 @@ export default function Eligibility() {
                   <strong className="text-[#78350F] font-semibold">Program currently paused.</strong> New applications are closed as of January 1, 2026. Only founders with a valid 2025 Commitment Certificate can file — with a hard deadline of <strong className="text-[#78350F] font-semibold">June 30, 2026</strong>.
                 </p>
               </div>
+            </Reveal>
 
-            </div>
-          </Reveal>
+          </div>
 
         </div>
       </Row>

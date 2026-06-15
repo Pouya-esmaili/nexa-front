@@ -37,6 +37,7 @@ const items = [
 
 export default function Pathway() {
   const [open, setOpen] = useState<number>(0);
+  const [activeCircle, setActiveCircle] = useState<number>(0);
 
   return (
     <section className="py-20 md:py-24 bg-[#F7F6F9]">
@@ -55,13 +56,15 @@ export default function Pathway() {
               style={{ background: "linear-gradient(90deg, #8F27FF, rgba(143,39,255,0.2))" }} />
 
             {items.map((item, i) => (
-              <div key={item.dot} className="flex flex-col items-center text-center relative z-10 px-3 group">
-                <div className={`w-14 h-14 rounded-full flex items-center justify-center text-[14px] font-bold mb-4 transition-all duration-300 group-hover:scale-[1.08] cursor-default ${
-                  i === 0 ? "bg-[#8F27FF] text-white" : "bg-white text-[#8F27FF] group-hover:bg-[#8F27FF] group-hover:text-white"
-                }`}
+              <div key={item.dot} className="flex flex-col items-center text-center relative z-10 px-3">
+                <div
+                  onClick={() => setActiveCircle(i)}
+                  className="w-14 h-14 rounded-full flex items-center justify-center text-[14px] font-bold mb-4 transition-all duration-300 hover:scale-[1.08] cursor-pointer"
                   style={{
                     border: "2.5px solid #8F27FF",
                     boxShadow: "0 0 0 6px #FAF6FF",
+                    background: activeCircle === i ? "#8F27FF" : "#fff",
+                    color: activeCircle === i ? "#fff" : "#8F27FF",
                   }}>
                   {item.dot}
                 </div>
@@ -101,7 +104,18 @@ export default function Pathway() {
                       <div className="text-[14px] font-semibold text-black mb-0.5">{item.label}</div>
                       <span className="text-[11px] font-semibold text-[#8F27FF] bg-[#FAF6FF] px-2 py-0.5 rounded-full">{item.year}</span>
                     </div>
-                    <span className={`text-[#929292] text-lg transition-transform duration-200 ${isOpen ? "rotate-180 text-[#8F27FF]" : ""}`}>▾</span>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke={isOpen ? "#8F27FF" : "#929292"}
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="flex-shrink-0 transition-transform duration-200"
+                      style={{ width: 18, height: 18, transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+                    >
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
                   </button>
                   {isOpen && (
                     <div className="px-5 pb-[18px] pl-[70px] text-[13.5px] text-[#474747] leading-[1.6]">

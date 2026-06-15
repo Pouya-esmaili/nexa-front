@@ -97,7 +97,7 @@ function ServiceCard({ badge, title, name }: (typeof SERVICES)[0]) {
       <h3
         className="relative z-10 flex-1"
         style={{
-          fontSize: 18,
+          fontSize: 16,
           fontWeight: 700,
           letterSpacing: "-0.02em",
           color: "#000",

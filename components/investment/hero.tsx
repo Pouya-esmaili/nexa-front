@@ -6,10 +6,10 @@ import Reveal from "@/components/global/Reveal";
 
 export default function InvestmentHero() {
   return (
-    <section className="relative overflow-hidden bg-white" style={{ padding: "64px 0 72px" }}>
+    <section className="relative overflow-hidden bg-white investment-hero-section" style={{ padding: "64px 0 72px" }}>
       <div className="px-6 mx-auto w-full" style={{ maxWidth: 1240 }}>
         <div
-          className="grid items-center gap-12"
+          className="investment-hero-grid grid items-center gap-12"
           style={{ gridTemplateColumns: "1fr 1.15fr" }}
         >
           {/* ── Left: Text ── */}
@@ -97,7 +97,7 @@ export default function InvestmentHero() {
           </Reveal>
 
           {/* ── Right: Image ── */}
-          <Reveal variant="right">
+          <Reveal variant="right" className="investment-hero-image">
             <div
               className="relative w-full overflow-hidden"
               style={{ borderRadius: "140px 20px 20px 20px", height: 380 }}
@@ -125,6 +125,22 @@ export default function InvestmentHero() {
         @keyframes nexaPulse {
           0%,100% { opacity:1; transform:scale(1); }
           50% { opacity:.5; transform:scale(1.4); }
+        }
+        @media (max-width: 767px) {
+          .investment-hero-section {
+            padding: 32px 0 48px !important;
+          }
+          .investment-hero-grid {
+            grid-template-columns: 1fr !important;
+            gap: 28px !important;
+          }
+          .investment-hero-image {
+            order: -1;
+          }
+          .investment-hero-image > div {
+            height: 240px !important;
+            border-radius: 20px 20px 20px 20px !important;
+          }
         }
       `}</style>
     </section>

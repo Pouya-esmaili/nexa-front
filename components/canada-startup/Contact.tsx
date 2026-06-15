@@ -51,7 +51,7 @@ export default function Contact() {
 
         {sent ? (
           <div className="mt-4 px-[14px] py-3.5 bg-[#FAF6FF] border border-[rgba(143,39,255,0.18)] rounded-[10px] text-[#8F27FF] font-semibold text-[14px] text-center max-w-xl mx-auto">
-            ✓ Thank you — a Nexa advisor will reach out within 24 hours.
+            ✓ Thank you — a Nexa advisor will reach out within 48 hours.
           </div>
         ) : (
           <Reveal variant="up" delay={80}>
@@ -114,7 +114,7 @@ export default function Contact() {
               {/* Footer */}
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mt-2">
                 <small className="text-[12px] text-[#929292] leading-[1.5]">
-                  Your information is reviewed confidentially by Nexa&apos;s advisory team. We typically respond within 24 hours.
+                  Your information is reviewed confidentially by Nexa&apos;s advisory team. We typically respond within 48 hours.
                 </small>
                 <button type="submit"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-[10px] px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5 flex-shrink-0"

@@ -45,7 +45,7 @@ export default function Hero() {
               style={{ borderRadius: "140px 20px 20px 20px" }}
             >
               <img
-                src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=900&q=80"
+                src="/images/Entrepreneurship/herooo.svg"
                 alt="Entrepreneurship"
                 className="w-full h-full object-cover object-top"
               />

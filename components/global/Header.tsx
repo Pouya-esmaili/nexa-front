@@ -162,7 +162,7 @@ export default function Header() {
                     </div>
 
                     {/* Advisory */}
-                    <div className="pl-7 border-l border-[#E2E2E2]">
+                    {/* <div className="pl-7 border-l border-[#E2E2E2]">
                       <Link href="/advisory" className="flex items-center gap-2 text-[16px] font-bold text-[#1a1a1a] mb-2.5 pb-2.5 border-b-2 border-[#E2E2E2] hover:text-[#8F27FF] transition-colors group">
                         <span className="w-8 h-8 rounded-lg bg-[#f5f0ff] grid place-items-center flex-shrink-0 group-hover:bg-[#8F27FF] transition-colors">
                           <svg className="w-4 h-4 text-[#8F27FF] group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10" /><path d="M12 8v4l3 3" /></svg>
@@ -184,7 +184,7 @@ export default function Header() {
                           {label}
                         </Link>
                       ))}
-                    </div>
+                    </div> */}
 
                   </div>
                 </div>
@@ -327,14 +327,14 @@ export default function Header() {
             <MobCatLink href="/advisory" label="Advisory">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10" /><path d="M12 8v4l3 3" /></svg>
             </MobCatLink>
-            <MobSubLink href="/Advisory/Business-Model-Design" label="Business Model Design" />
+            {/* <MobSubLink href="/Advisory/Business-Model-Design" label="Business Model Design" />
             <MobSubLink href="/Advisory/Brand-Strategy" label="Brand Strategy" />
             <MobSubLink href="/Advisory/Go-To-Market-Strategy" label="Go-To-Market Strategy" />
             <MobSubLink href="/Advisory/Marketing-Strategy" label="Marketing Strategy & Planning" />
             <MobSubLink href="/Advisory/Market-Analysis" label="Market Analysis" />
             <MobSubLink href="/Advisory/Visual-Identity" label="Visual Identity" />
             <MobSubLink href="/Advisory/Web-Design" label="Web Design" />
-            <MobSubLink href="/Advisory/Content-Creation" label="Content Creation" />
+            <MobSubLink href="/Advisory/Content-Creation" label="Content Creation" /> */}
           </MobAccordion>
 
           {/* About Us accordion */}

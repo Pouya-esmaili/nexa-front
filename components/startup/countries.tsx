@@ -4,51 +4,41 @@ import Row from "@/components/global/Row";
 import Reveal from "@/components/global/LazyReveal";
 import Image from "next/image";
 
-const CanadaFlag = () => (
-  <svg width="44" height="26" viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g clipPath="url(#ca2)">
-      <rect width="40" height="24" fill="white" />
-      <path d="M0 0H11.0721V24H0V0ZM28.9279 0H40V24H28.9279V0ZM23.8986 14.4561L27.8285 12.6877L25.8635 11.8035V10.0351L21.9337 11.8035L23.8986 8.26667H21.9337L19.9688 5.61404L18.0039 8.26667H16.039L18.0039 11.8035L14.0741 10.0351V11.8035L12.1092 12.6877L16.039 14.4561L15.0565 16.2246H18.9864V18.8772H20.9513V16.2246H24.8811L23.8986 14.4561Z" fill="#FF0000" />
-    </g>
-    <defs><clipPath id="ca2"><rect width="40" height="24" fill="white" /></clipPath></defs>
-  </svg>
-);
-
 const countries = [
   {
     name: "Finland",
-    flagEl: <span style={{ fontSize: 22, lineHeight: 1, filter: "drop-shadow(0 2px 6px rgba(0,0,0,.4))" }}>🇫🇮</span>,
+    flag: "/images/Entrepreneurship/FI.svg",
     desc: "Startup Permit in Europe's leading innovation ecosystem",
     href: "/startup/finland",
-    img: "https://images.unsplash.com/photo-1538332576228-eb5b4c4de6f5?w=700&q=80",
+    img: "/images/Entrepreneurship/finland.png",
   },
   {
     name: "Canada",
-    flagEl: <CanadaFlag />,
+    flag: "/images/Entrepreneurship/cn.svg",
     desc: "Startup Visa with access to world-class accelerator networks",
     href: "/startup/canada",
-    img: "https://images.unsplash.com/photo-1517935706615-2717063c2225?w=700&q=80",
+    img: "/images/Entrepreneurship/canada.png",
   },
   {
-    name: "United Kingdom",
-    flagEl: <span style={{ fontSize: 22, lineHeight: 1, filter: "drop-shadow(0 2px 6px rgba(0,0,0,.4))" }}>🇬🇧</span>,
+    name: "UK",
+    flag: "/images/startup/england.svg",
     desc: "Innovator Founder Visa for high-growth ventures",
     href: "/startup/uk",
-    img: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=700&q=80",
+    img: "/images/startup/uk.svg",
   },
   {
     name: "Netherlands",
-    flagEl: <span style={{ fontSize: 22, lineHeight: 1, filter: "drop-shadow(0 2px 6px rgba(0,0,0,.4))" }}>🇳🇱</span>,
+    flag: "/images/Entrepreneurship/netherlands.svg",
     desc: "Startup Visa in Europe's most connected tech hub",
     href: "/startup/netherlands",
-    img: "https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?w=700&q=80",
+    img: "/images/Entrepreneurship/netherland.png",
   },
   {
     name: "France",
-    flagEl: <span style={{ fontSize: 22, lineHeight: 1, filter: "drop-shadow(0 2px 6px rgba(0,0,0,.4))" }}>🇫🇷</span>,
+    flag: "/images/investment/fr.svg",
     desc: "French Tech Visa for founders backed by a recognized program",
     href: "/startup/france",
-    img: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=700&q=80",
+    img: "/images/investment/france.svg",
   },
 ];
 
@@ -109,7 +99,7 @@ export default function StartupCountries() {
                   className="absolute top-[14px] left-[14px] z-[3] rounded-[5px] overflow-hidden leading-none"
                   style={{ boxShadow: "0 2px 8px rgba(0,0,0,.35)" }}
                 >
-                  {c.flagEl}
+                  <Image src={c.flag} alt={c.name} width={40} height={26} className="object-contain" />
                 </div>
 
                 {/* Content bottom */}

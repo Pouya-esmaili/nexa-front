@@ -4,17 +4,17 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        // HTML pages: allow short CDN caching and stale-while-revalidate
+        // HTML pages: always fresh — prevents stale HTML pointing to old JS bundles after deploy
         source: "/:path*",
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=0, s-maxage=60, stale-while-revalidate=86400",
+            value: "public, max-age=0, must-revalidate",
           },
         ],
       },
       {
-        // Static assets can be cached longer
+        // Versioned JS/CSS bundles — safe to cache forever (content-hashed filenames)
         source: "/_next/static/(.*)",
         headers: [
           {
@@ -24,12 +24,12 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // Images and public files
+        // Local images — cache 7 days, no stale-while-revalidate
         source: "/images/(.*)",
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=86400, stale-while-revalidate=604800",
+            value: "public, max-age=604800",
           },
         ],
       },
@@ -37,16 +37,7 @@ const nextConfig: NextConfig = {
   },
 
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-      {
-        protocol: "https",
-        hostname: "upload.wikimedia.org",
-      },
-    ],
+    remotePatterns: [],
   },
 };
 

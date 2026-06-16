@@ -13,7 +13,7 @@ const projects = [
     img: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=700&q=80",
   },
   {
-    name: "Green Frame",
+    name: "Green farm",
     tag: "Sustainability · Global",
     img: "https://images.unsplash.com/photo-1542601906897-ecd40029e09e?w=700&q=80",
   },

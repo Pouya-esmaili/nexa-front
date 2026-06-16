@@ -7,46 +7,38 @@ import Reveal from "@/components/global/Reveal";
 const markets = [
   {
     name: "Canada",
-    flagEl: (
-      <svg width="44" height="26" viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clipPath="url(#ca)">
-          <rect width="40" height="24" fill="white" />
-          <path d="M0 0H11.0721V24H0V0ZM28.9279 0H40V24H28.9279V0ZM23.8986 14.4561L27.8285 12.6877L25.8635 11.8035V10.0351L21.9337 11.8035L23.8986 8.26667H21.9337L19.9688 5.61404L18.0039 8.26667H16.039L18.0039 11.8035L14.0741 10.0351V11.8035L12.1092 12.6877L16.039 14.4561L15.0565 16.2246H18.9864V18.8772H20.9513V16.2246H24.8811L23.8986 14.4561Z" fill="#FF0000" />
-        </g>
-        <defs><clipPath id="ca"><rect width="40" height="24" fill="white" /></clipPath></defs>
-      </svg>
-    ),
+    flag: "/images/Entrepreneurship/canada.svg",
     desc: "Entrepreneur Visa with permanent residency pathway",
-    href: "/canada",
-    img: "/images/photos/1517935706615-2717063c2225-w700.jpg",
+    href: "/Entrepreneurship/canada",
+    img: "/images/Entrepreneurship/canada.png",
   },
   {
     name: "Spain",
-    flagEl: <span style={{ fontSize: 22, lineHeight: 1, filter: "drop-shadow(0 2px 6px rgba(0,0,0,.4))" }}>🇪🇸</span>,
+    flag: "/images/Entrepreneurship/ES.svg",
     desc: "Entrepreneur Visa with 20-day fast-track approval",
-    href: "/spain",
-    img: "/images/photos/1539037116277-4db20889f2d4-w700.jpg",
+    href: "/Entrepreneurship/spain",
+    img: "/images/Entrepreneurship/spain.png",
   },
   {
     name: "Finland",
-    flagEl: <span style={{ fontSize: 22, lineHeight: 1, filter: "drop-shadow(0 2px 6px rgba(0,0,0,.4))" }}>🇫🇮</span>,
+    flag: "/images/Entrepreneurship/FI.svg",
     desc: "Entrepreneur Permit for business owners entering EU markets",
-    href: "/Entrepreneurship/Subpage-Finland",
-    img: "/images/photos/1538332576228-eb5b4c4de6f5-w700.jpg",
+    href: "/Entrepreneurship/finland",
+    img: "/images/Entrepreneurship/finland.png",
   },
   {
     name: "Portugal",
-    flagEl: <span style={{ fontSize: 22, lineHeight: 1, filter: "drop-shadow(0 2px 6px rgba(0,0,0,.4))" }}>🇵🇹</span>,
+    flag: "/images/Entrepreneurship/PT.svg",
     desc: "D2 Entrepreneur Visa with EU residency path",
-    href: "/portugal",
-    img: "/images/photos/1555881400-74d7acaacd8b-w700.jpg",
+    href: "/Entrepreneurship/portugal",
+    img: "/images/Entrepreneurship/portugal.png",
   },
   {
     name: "Netherlands",
-    flagEl: <span style={{ fontSize: 22, lineHeight: 1, filter: "drop-shadow(0 2px 6px rgba(0,0,0,.4))" }}>🇳🇱</span>,
+    flag: "/images/Entrepreneurship/NT (1).svg",
     desc: "Entrepreneur Visa in Europe's most connected business hub",
-    href: "/Entrepreneurship/Subpage-Netherland",
-    img: "/images/photos/1512470876302-972faa2aa9a4-w700.jpg",
+    href: "/Entrepreneurship/netherlands",
+    img: "/images/Entrepreneurship/netherland.png",
   },
 ];
 
@@ -111,7 +103,7 @@ export default function Markets() {
                   className="absolute top-[14px] left-[14px] z-[3] rounded-[5px] overflow-hidden leading-none"
                   style={{ boxShadow: "0 2px 8px rgba(0,0,0,.35)" }}
                 >
-                  {m.flagEl}
+                  <Image src={m.flag} alt={m.name} width={40} height={26} className="object-contain" />
                 </div>
 
                 {/* Content bottom */}

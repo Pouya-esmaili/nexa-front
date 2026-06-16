@@ -38,7 +38,7 @@ export default function Hero() {
             <div className="relative w-full h-[380px] overflow-hidden"
               style={{ borderRadius: "140px 20px 20px 20px" }}>
               <Image
-                src="/images/photos/1522071820081-009f0129c71c-w900.jpg"
+                src="/images/startup/Sturtup Hero.jpg"
                 alt="Startup team"
                 fill
                 className="object-cover object-top"

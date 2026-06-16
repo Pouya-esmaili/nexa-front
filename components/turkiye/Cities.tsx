@@ -22,12 +22,12 @@ const cities = [
   {
     name: "Izmir",
     meta: "Aegean trade hub",
-    img: "https://images.unsplash.com/photo-1605537964570-d8ce4ec88c80?w=1000&q=85&auto=format&fit=crop",
+    img: "/images/investment/izmir.jpg",
   },
   {
     name: "Bodrum",
     meta: "Luxury & hospitality",
-    img: "https://images.unsplash.com/photo-1539650116574-75c0c6d73f97?w=1000&q=85&auto=format&fit=crop",
+    img: "/images/investment/bodrum.jpg",
   },
 ];
 

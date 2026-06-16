@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import Reveal from "@/components/global/LazyReveal";
 
 const testimonials = [
@@ -31,7 +31,6 @@ const testimonials = [
   },
 ];
 
-/* Google-review SVG icon */
 const GoogleIcon = () => (
   <svg viewBox="0 0 24 24" width="18" height="18" className="ml-auto flex-shrink-0">
     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -41,40 +40,46 @@ const GoogleIcon = () => (
   </svg>
 );
 
+const GAP = 20;
+
 export default function CommentsSection() {
   const [index, setIndex] = useState(0);
   const [perView, setPerView] = useState(3);
-  const [containerWidth, setContainerWidth] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [trackWidth, setTrackWidth] = useState(0);
+  const trackRef = useRef<HTMLDivElement>(null);
 
-  const GAP = 20; // gap-5 = 20px
+  /* ResizeObserver — accurate on first paint and on every resize */
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(() => setTrackWidth(el.offsetWidth));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
-  /* responsive: 1 on mobile, 2 on tablet, 3 on desktop */
+  /* responsive perView */
   useEffect(() => {
     const update = () => {
       if (window.innerWidth < 640)       setPerView(1);
       else if (window.innerWidth < 1024) setPerView(2);
       else                               setPerView(3);
-
-      if (containerRef.current) {
-        setContainerWidth(containerRef.current.offsetWidth);
-      }
     };
     update();
     window.addEventListener("resize", update);
     return () => window.removeEventListener("resize", update);
   }, []);
 
-  const maxIndex = testimonials.length - perView;
+  const maxIndex = Math.max(0, testimonials.length - perView);
+  const cardW    = trackWidth > 0 ? (trackWidth - GAP * (perView - 1)) / perView : 0;
+  const offsetPx = index * (cardW + GAP);
 
   const prev = useCallback(() => setIndex((i) => Math.max(0, i - 1)), []);
   const next = useCallback(() => setIndex((i) => Math.min(maxIndex, i + 1)), [maxIndex]);
 
-  /* card width and translate — pixel-based so offset is always exact */
-  const cardW = containerWidth > 0
-    ? (containerWidth - GAP * (perView - 1)) / perView
-    : 0;
-  const translatePx = index * (cardW + GAP);
+  /* clamp index if perView changes (e.g. window resize) */
+  useEffect(() => {
+    setIndex((i) => Math.min(i, maxIndex));
+  }, [maxIndex]);
 
   return (
     <section className="py-20 md:py-24 bg-[#F7F6F9]">
@@ -88,57 +93,68 @@ export default function CommentsSection() {
           </div>
         </Reveal>
 
-        {/* Slider */}
         <Reveal variant="up" delay={80}>
-          <div className="overflow-hidden" ref={containerRef}>
+          <div className="overflow-hidden" ref={trackRef}>
             <div
-              className="flex gap-5 transition-transform duration-500"
-              style={{ transform: `translateX(-${translatePx}px)` }}
+              className="flex gap-5 transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${offsetPx}px)` }}
             >
-              {testimonials.map((t) => (
-                <div
-                  key={t.name}
-                  className="flex-shrink-0 bg-white border border-[#E2E2E2] rounded-[20px] p-7 hover:border-[#8F27FF] hover:shadow-[0_8px_24px_rgba(143,39,255,0.1)] transition-all duration-200"
-                  style={{ width: cardW > 0 ? `${cardW}px` : undefined }}
-                >
-                  {/* Top row */}
-                  <div className="flex items-center gap-3 mb-4">
-                    <div
-                      className="w-[42px] h-[42px] rounded-full grid place-items-center text-white font-bold text-[16px] flex-shrink-0 border-2 border-white/30"
-                      style={{ background: t.gradient }}
-                    >
-                      {t.initial}
+              {testimonials.map((t, i) => {
+                const isLast = i === index + perView - 1;
+                return (
+                  <div
+                    key={t.name}
+                    className={[
+                      "flex-shrink-0 bg-white rounded-[20px] p-7 border transition-all duration-200",
+                      isLast
+                        ? "border-[#8F27FF] shadow-[0_8px_24px_rgba(143,39,255,0.12)]"
+                        : "border-[#E2E2E2] hover:border-[#8F27FF] hover:shadow-[0_8px_24px_rgba(143,39,255,0.1)]",
+                    ].join(" ")}
+                    style={{ width: cardW > 0 ? `${cardW}px` : undefined }}
+                  >
+                    {/* Top row */}
+                    <div className="flex items-center gap-3 mb-4">
+                      <div
+                        className="w-[42px] h-[42px] rounded-full grid place-items-center text-white font-bold text-[16px] flex-shrink-0"
+                        style={{ background: t.gradient }}
+                      >
+                        {t.initial}
+                      </div>
+                      <div>
+                        <div className="font-semibold text-[14px] tracking-[-0.01em]">{t.name}</div>
+                        <div className="text-[12px] text-[#929292] mt-0.5">{t.date}</div>
+                      </div>
+                      <GoogleIcon />
                     </div>
-                    <div>
-                      <div className="font-semibold text-[14px] tracking-[-0.01em]">{t.name}</div>
-                      <div className="text-[12px] text-[#929292] mt-0.5">{t.date}</div>
+
+                    {/* Stars */}
+                    <div className="flex gap-0.5 mb-3">
+                      {[...Array(5)].map((_, i) => (
+                        <span key={i} className="text-[#F59E0B] text-[14px]">★</span>
+                      ))}
                     </div>
-                    <GoogleIcon />
-                  </div>
 
-                  {/* Stars */}
-                  <div className="flex gap-0.5 mb-3">
-                    {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-[#F59E0B] text-[14px]">★</span>
-                    ))}
+                    {/* Text */}
+                    <p className="text-[14px] text-[#929292] leading-[1.68]">{t.text}</p>
                   </div>
-
-                  {/* Text */}
-                  <p className="text-[14px] text-[#929292] leading-[1.68]">{t.text}</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </Reveal>
 
         {/* Nav */}
         <div className="flex items-center justify-center gap-2.5 mt-9">
-          <button onClick={prev} disabled={index === 0}
-            className="w-10 h-10 rounded-full bg-white border-[1.5px] border-[#E2E2E2] grid place-items-center text-[#474747] hover:bg-[#8F27FF] hover:border-[#8F27FF] hover:text-white disabled:opacity-40 disabled:cursor-not-allowed transition-all">
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}><path d="M15 18l-6-6 6-6"/></svg>
+          <button
+            onClick={prev}
+            disabled={index === 0}
+            className="w-10 h-10 rounded-full bg-white border-[1.5px] border-[#E2E2E2] grid place-items-center text-[#474747] hover:bg-[#8F27FF] hover:border-[#8F27FF] hover:text-white disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+          >
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
           </button>
 
-          {/* Dots */}
           <div className="flex items-center gap-1.5 px-3">
             {Array.from({ length: maxIndex + 1 }).map((_, i) => (
               <button
@@ -153,9 +169,14 @@ export default function CommentsSection() {
             ))}
           </div>
 
-          <button onClick={next} disabled={index >= maxIndex}
-            className="w-10 h-10 rounded-full bg-white border-[1.5px] border-[#E2E2E2] grid place-items-center text-[#474747] hover:bg-[#8F27FF] hover:border-[#8F27FF] hover:text-white disabled:opacity-40 disabled:cursor-not-allowed transition-all">
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}><path d="M9 18l6-6-6-6"/></svg>
+          <button
+            onClick={next}
+            disabled={index >= maxIndex}
+            className="w-10 h-10 rounded-full bg-white border-[1.5px] border-[#E2E2E2] grid place-items-center text-[#474747] hover:bg-[#8F27FF] hover:border-[#8F27FF] hover:text-white disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+          >
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
           </button>
         </div>
 

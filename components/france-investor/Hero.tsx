@@ -63,7 +63,7 @@ export default function Hero() {
               style={{ borderRadius: "32px 120px 32px 32px", boxShadow: "0 20px 50px rgba(0,0,0,0.08)" }}
             >
               <Image
-                src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=900&q=80"
+                src="/images/investment/france.svg"
                 alt="Paris, France"
                 fill
                 className="object-cover"

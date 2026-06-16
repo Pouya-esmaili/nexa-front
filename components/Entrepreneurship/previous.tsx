@@ -15,7 +15,7 @@ export default function PreviousProjectsSection() {
     },
     {
       title: "Green Frame",
-      image: "/images/Entrepreneurship/green.svg",
+      image: "/images/Entrepreneurship/green-farm.jpg",
     },
     {
       title: "Aurora Clinic",

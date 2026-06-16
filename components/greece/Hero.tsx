@@ -64,7 +64,7 @@ export default function GreeceHero() {
             <div className="absolute inset-0 overflow-hidden"
               style={{
                 borderRadius: "32px 120px 32px 32px",
-                background: "#0d1620 url('https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?w=900&q=80') center/cover",
+                background: "#0d1620 url('/images/photos/1603565816030-6b389eeb23cb-w900.jpg') center/cover",
                 boxShadow: "0 20px 50px rgba(0,0,0,0.08)",
               }}>
               <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.12))" }} />

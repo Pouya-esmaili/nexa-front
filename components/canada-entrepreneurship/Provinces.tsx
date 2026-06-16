@@ -10,7 +10,7 @@ const keyProvinces: Province[] = [
   {
     name: "Ontario",
 
-    bg: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=80",
+    bg: "/images/photos/1503614472-8c93d56e92ce-w600.jpg",
     stats: [
       { label: "Min Net Worth", value: "CAD 800K" },
       { label: "Min Investment", value: "CAD 200K" },
@@ -20,7 +20,7 @@ const keyProvinces: Province[] = [
   {
     name: "British Columbia",
    
-    bg: "https://images.unsplash.com/photo-1559511260-66a654ae982a?w=600&q=80",
+    bg: "/images/photos/1559511260-66a654ae982a-w600.jpg",
     stats: [
       { label: "Min Net Worth", value: "CAD 600K" },
       { label: "Min Investment", value: "CAD 200K" },
@@ -30,7 +30,7 @@ const keyProvinces: Province[] = [
   {
     name: "Alberta",
 
-    bg: "https://images.unsplash.com/photo-1609825488888-3a766db05542?w=600&q=80",
+    bg: "/images/photos/1609825488888-3a766db05542-w600.jpg",
     stats: [
       { label: "Min Net Worth", value: "Flexible" },
       { label: "Min Investment", value: "CAD 100K+" },
@@ -40,7 +40,7 @@ const keyProvinces: Province[] = [
   {
     name: "Quebec",
  
-    bg: "https://images.unsplash.com/photo-1519178614-68673b201f36?w=600&q=80",
+    bg: "/images/photos/1519178614-68673b201f36-w600.jpg",
     stats: [
       { label: "Min Net Worth", value: "CAD 900K" },
       { label: "Min Investment", value: "CAD 200K" },
@@ -50,7 +50,7 @@ const keyProvinces: Province[] = [
   {
     name: "Manitoba",
   
-    bg: "https://images.unsplash.com/photo-1572206912757-5a78ff4d79be?w=600&q=80",
+    bg: "/images/photos/1572206912757-5a78ff4d79be-w600.jpg",
     stats: [
       { label: "Min Net Worth", value: "CAD 500K" },
       { label: "Min Investment", value: "CAD 150K" },
@@ -60,7 +60,7 @@ const keyProvinces: Province[] = [
   {
     name: "Saskatchewan",
     
-    bg: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80",
+    bg: "/images/photos/1500382017468-9049fed747ef-w600.jpg",
     stats: [
       { label: "Min Net Worth", value: "CAD 500K" },
       { label: "Min Investment", value: "CAD 300K" },
@@ -70,7 +70,7 @@ const keyProvinces: Province[] = [
   {
     name: "Yukon",
    
-    bg: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=600&q=80",
+    bg: "/images/photos/1531366936337-7c912a4589a7-w600.jpg",
     stats: [
       { label: "Min Net Worth", value: "CAD 500K" },
       { label: "Min Investment", value: "CAD 300K" },
@@ -80,7 +80,7 @@ const keyProvinces: Province[] = [
   {
     name: "NW Territories",
   
-    bg: "https://images.unsplash.com/photo-1483347756197-71ef80e95f73?w=600&q=80",
+    bg: "/images/photos/1483347756197-71ef80e95f73-w600.jpg",
     stats: [
       { label: "Min Net Worth", value: "CAD 250–500K" },
       { label: "Min Investment", value: "CAD 150K" },
@@ -93,7 +93,7 @@ const atlanticProvinces: Province[] = [
   {
     name: "New Brunswick",
     
-    bg: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=600&q=80",
+    bg: "/images/photos/1551038247-3d9af20df552-w600.jpg",
     stats: [
       { label: "Min Net Worth", value: "CAD 500K" },
       { label: "Min Investment", value: "CAD 150K" },
@@ -113,7 +113,7 @@ const atlanticProvinces: Province[] = [
   {
     name: "Prince Edward Island",
    
-    bg: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&q=80",
+    bg: "/images/photos/1469854523086-cc02fe5d8800-w600.jpg",
     stats: [
       { label: "Min Net Worth", value: "CAD 600K" },
       { label: "Min Investment", value: "CAD 150K" },

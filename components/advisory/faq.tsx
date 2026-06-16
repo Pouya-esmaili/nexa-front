@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Row from "../global/Row";
+import IconOpen from '@/components/global/IconOpen';
+import IconClose from '@/components/global/IconClose';
 
 const faqData = [
   {
@@ -96,15 +98,11 @@ const Faq = () => {
                     {item.title}
                   </h3>
 
-                  <img
-                    src={
-                      isActive
-                        ? "/images/Entrepreneurship/close.svg"
-                        : "/images/Entrepreneurship/open.svg"
-                    }
-                    alt={isActive ? "Close" : "Open"}
-                    className="w-5 h-5 flex-shrink-0"
-                  />
+                  {isActive ? (
+                    <IconClose className="w-5 h-5 flex-shrink-0" stroke="#8F27FF" />
+                  ) : (
+                    <IconOpen className="w-5 h-5 flex-shrink-0" stroke="#8F27FF" />
+                  )}
                 </div>
 
                 {isActive && (
@@ -197,15 +195,11 @@ const Faq = () => {
                         {item.title}
                       </h3>
 
-                      <img
-                        src={
-                          isActive
-                            ? "/images/Entrepreneurship/close.svg"
-                            : "/images/Entrepreneurship/open.svg"
-                        }
-                        alt={isActive ? "Close" : "Open"}
-                        className="w-6 h-6"
-                      />
+                      {isActive ? (
+                        <IconClose className="w-6 h-6" stroke="#8F27FF" />
+                      ) : (
+                        <IconOpen className="w-6 h-6" stroke="#8F27FF" />
+                      )}
                     </div>
 
                     {isActive && (

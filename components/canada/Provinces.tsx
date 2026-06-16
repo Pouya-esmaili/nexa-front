@@ -12,21 +12,21 @@ interface Province {
 }
 
 const mainProvinces: Province[] = [
-  { name: "Ontario", bg: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=80", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Ontario.svg/320px-Flag_of_Ontario.svg.png", netWorth: "CAD 800K", investment: "CAD 200K", operation: "18-20 mo" },
-  { name: "British Columbia", bg: "https://images.unsplash.com/photo-1559511260-66a654ae982a?w=600&q=80", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Flag_of_British_Columbia.svg/320px-Flag_of_British_Columbia.svg.png", netWorth: "CAD 600K", investment: "CAD 200K", operation: "12-20 mo" },
-  { name: "Alberta", bg: "https://images.unsplash.com/photo-1609825488888-3a766db05542?w=600&q=80", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_Alberta.svg/320px-Flag_of_Alberta.svg.png", netWorth: "Flexible", investment: "CAD 100K+", operation: "12-18 mo" },
-  { name: "Quebec", bg: "https://images.unsplash.com/photo-1519178614-68673b201f36?w=600&q=80", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Flag_of_Quebec.svg/320px-Flag_of_Quebec.svg.png", netWorth: "CAD 900K", investment: "CAD 200K", operation: "Verified" },
-  { name: "Manitoba", bg: "https://images.unsplash.com/photo-1572206912757-5a78ff4d79be?w=600&q=80", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Flag_of_Manitoba.svg/320px-Flag_of_Manitoba.svg.png", netWorth: "CAD 500K", investment: "CAD 150K", operation: "12 mo" },
-  { name: "Saskatchewan", bg: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Flag_of_Saskatchewan.svg/320px-Flag_of_Saskatchewan.svg.png", netWorth: "CAD 500K", investment: "CAD 300K", operation: "6-12 mo" },
-  { name: "Yukon", bg: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=600&q=80", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Flag_of_Yukon.svg/320px-Flag_of_Yukon.svg.png", netWorth: "CAD 500K", investment: "CAD 300K", operation: "12 mo" },
-  { name: "NW Territories", bg: "https://images.unsplash.com/photo-1483347756197-71ef80e95f73?w=600&q=80", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Flag_of_the_Northwest_Territories.svg/320px-Flag_of_the_Northwest_Territories.svg.png", netWorth: "CAD 250-500K", investment: "CAD 150K", operation: "12 mo" },
+  { name: "Ontario", bg: "/images/photos/1503614472-8c93d56e92ce-w600.jpg", flag: "/images/flags/Flag_of_Ontario.svg.png", netWorth: "CAD 800K", investment: "CAD 200K", operation: "18-20 mo" },
+  { name: "British Columbia", bg: "/images/photos/1559511260-66a654ae982a-w600.jpg", flag: "/images/flags/Flag_of_British_Columbia.svg.png", netWorth: "CAD 600K", investment: "CAD 200K", operation: "12-20 mo" },
+  { name: "Alberta", bg: "/images/photos/1609825488888-3a766db05542-w600.jpg", flag: "/images/flags/Flag_of_Alberta.svg.png", netWorth: "Flexible", investment: "CAD 100K+", operation: "12-18 mo" },
+  { name: "Quebec", bg: "/images/photos/1519178614-68673b201f36-w600.jpg", flag: "/images/flags/Flag_of_Quebec.svg.png", netWorth: "CAD 900K", investment: "CAD 200K", operation: "Verified" },
+  { name: "Manitoba", bg: "/images/photos/1572206912757-5a78ff4d79be-w600.jpg", flag: "/images/flags/Flag_of_Manitoba.svg.png", netWorth: "CAD 500K", investment: "CAD 150K", operation: "12 mo" },
+  { name: "Saskatchewan", bg: "/images/photos/1500382017468-9049fed747ef-w600.jpg", flag: "/images/flags/Flag_of_Saskatchewan.svg.png", netWorth: "CAD 500K", investment: "CAD 300K", operation: "6-12 mo" },
+  { name: "Yukon", bg: "/images/photos/1531366936337-7c912a4589a7-w600.jpg", flag: "/images/flags/Flag_of_Yukon.svg.png", netWorth: "CAD 500K", investment: "CAD 300K", operation: "12 mo" },
+  { name: "NW Territories", bg: "/images/photos/1483347756197-71ef80e95f73-w600.jpg", flag: "/images/flags/Flag_of_the_Northwest_Territories.svg.png", netWorth: "CAD 250-500K", investment: "CAD 150K", operation: "12 mo" },
 ];
 
 const atlanticProvinces: Province[] = [
-  { name: "New Brunswick", bg: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=600&q=80", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_New_Brunswick.svg/320px-Flag_of_New_Brunswick.svg.png", netWorth: "CAD 500K", investment: "CAD 150K", operation: "12 mo" },
-  { name: "Nova Scotia", bg: "https://images.unsplash.com/photo-1565024144815-79bc8094a0d3?w=600&q=80", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Flag_of_Nova_Scotia.svg/320px-Flag_of_Nova_Scotia.svg.png", netWorth: "CAD 600K", investment: "CAD 150K", operation: "12 mo" },
-  { name: "Prince Edward Island", bg: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&q=80", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Prince_Edward_Island.svg/320px-Flag_of_Prince_Edward_Island.svg.png", netWorth: "CAD 600K", investment: "CAD 150K", operation: "12 mo" },
-  { name: "Newfoundland & Labrador", bg: "https://images.unsplash.com/photo-1504608524841-42584120d693?w=600&q=80", flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Newfoundland_and_Labrador.svg/320px-Flag_of_Newfoundland_and_Labrador.svg.png", netWorth: "CAD 500K", investment: "CAD 200K", operation: "12 mo" },
+  { name: "New Brunswick", bg: "/images/photos/1551038247-3d9af20df552-w600.jpg", flag: "/images/flags/Flag_of_New_Brunswick.svg.png", netWorth: "CAD 500K", investment: "CAD 150K", operation: "12 mo" },
+  { name: "Nova Scotia", bg: "https://images.unsplash.com/photo-1565024144815-79bc8094a0d3?w=600&q=80", flag: "/images/flags/Flag_of_Nova_Scotia.svg.png", netWorth: "CAD 600K", investment: "CAD 150K", operation: "12 mo" },
+  { name: "Prince Edward Island", bg: "/images/photos/1469854523086-cc02fe5d8800-w600.jpg", flag: "/images/flags/Flag_of_Prince_Edward_Island.svg.png", netWorth: "CAD 600K", investment: "CAD 150K", operation: "12 mo" },
+  { name: "Newfoundland & Labrador", bg: "https://images.unsplash.com/photo-1504608524841-42584120d693?w=600&q=80", flag: "/images/flags/Flag_of_Newfoundland_and_Labrador.svg.png", netWorth: "CAD 500K", investment: "CAD 200K", operation: "12 mo" },
 ];
 
 function ProvinceCard({ p, delay }: { p: Province; delay: number }) {

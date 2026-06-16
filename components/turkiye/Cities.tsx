@@ -1,22 +1,23 @@
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import Image from "next/image";
 
 const cities = [
   {
     name: "Istanbul",
     meta: "Financial capital · Bosphorus",
-    img: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1400&q=85&auto=format&fit=crop",
+    img: "/images/photos/1541432901042-2d8bd64b4a9b-w1400.jpg",
     large: true,
   },
   {
     name: "Ankara",
     meta: "Government & diplomacy",
-    img: "https://images.unsplash.com/photo-1527838832700-5059252407fa?w=1200&q=85&auto=format&fit=crop",
+    img: "/images/photos/1527838832700-5059252407fa-w1200.jpg",
   },
   {
     name: "Antalya",
     meta: "Mediterranean tourism",
-    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1000&q=85&auto=format&fit=crop",
+    img: "/images/photos/1558618666-fcd25c85cd64-w1000.jpg",
   },
   {
     name: "Izmir",
@@ -45,10 +46,12 @@ export default function Cities() {
           {cities.map((c, i) => (
             <Reveal key={c.name} variant="up" delay={i * 80}>
               <div className="relative h-48 rounded-2xl overflow-hidden group">
-                <img
+                <Image
                   src={c.img}
                   alt={c.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="100vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 <figcaption className="absolute bottom-4 left-4 text-white">
@@ -65,10 +68,12 @@ export default function Cities() {
           {/* Istanbul — spans 2 rows */}
           <Reveal variant="left" className="row-span-2">
             <div className="relative rounded-2xl overflow-hidden h-full group">
-              <img
+              <Image
                 src={cities[0].img}
                 alt={cities[0].name}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               <figcaption className="absolute bottom-5 left-5 text-white">
@@ -82,10 +87,12 @@ export default function Cities() {
           {cities.slice(1).map((c, i) => (
             <Reveal key={c.name} variant="up" delay={i * 80 + 100}>
               <div className="relative rounded-2xl overflow-hidden h-full group">
-                <img
+                <Image
                   src={c.img}
                   alt={c.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 <figcaption className="absolute bottom-4 left-4 text-white">

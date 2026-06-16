@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import Row from "@/components/global/Row";
 
@@ -36,10 +37,12 @@ export default function Hero() {
           <div className={`${base} ${right}`} style={{ transitionDelay: "80ms" }}>
             <div className="relative w-full h-[380px] overflow-hidden"
               style={{ borderRadius: "140px 20px 20px 20px" }}>
-              <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=80"
+              <Image
+                src="/images/photos/1522071820081-009f0129c71c-w900.jpg"
                 alt="Startup team"
-                className="w-full h-full object-cover object-top"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 57vw"
               />
               <div className="absolute inset-0"
                 style={{ background: "linear-gradient(180deg,rgba(143,39,255,.05) 0%,rgba(0,0,0,.08) 100%)" }} />

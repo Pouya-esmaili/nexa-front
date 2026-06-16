@@ -60,7 +60,7 @@ export default function FounderSection() {
           {/* Photo */}
           <div className="relative w-[140px] h-[140px] rounded-full overflow-hidden border-[3px] border-white/[0.12] z-10 flex-shrink-0">
             <Image
-              src="/images/ourteam/hadi.svg"
+              src="/images/ourteam/hadi.webp"
               alt="Hadi Hasanpour"
               fill
               className="object-cover"

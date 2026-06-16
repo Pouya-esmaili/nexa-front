@@ -93,7 +93,7 @@ export default function Hero() {
                 className="absolute inset-0"
                 style={{
                   borderRadius: "32px 120px 32px 32px",
-                  backgroundImage: "url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=85&auto=format&fit=crop')",
+                  backgroundImage: "url('/images/photos/1524231757912-21f4fe3a7200-w1200.jpg')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   boxShadow: "0 20px 50px rgba(0,0,0,0.08)",

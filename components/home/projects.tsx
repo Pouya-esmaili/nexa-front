@@ -4,14 +4,14 @@ import Reveal from "@/components/global/LazyReveal";
 import Image from "next/image";
 
 const projects = [
-  { name: "Landa Trip",      tag: "Tourism · Travel",                 img: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=700&q=80" },
-  { name: "Landa Craft",     tag: "Handcraft · Artisan Market",       img: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=700&q=80" },
-  { name: "AutiLab",         tag: "Autism Support · Child EdTech",    img: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=700&q=80" },
-  { name: "Vision Raft",     tag: "Virtual Reality · Immersive Tech", img: "https://images.unsplash.com/photo-1617802690992-15d93263d3a9?w=700&q=80" },
-  { name: "Diaco",           tag: "Business Solutions · Corporate",   img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&q=80" },
-  { name: "Arshia Gallery",  tag: "Fine Jewelry · Luxury Retail",     img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=700&q=80" },
-  { name: "Preventie Gene",  tag: "Genetics · Health Prevention",     img: "https://images.unsplash.com/photo-1532187643603-ba119ca4109e?w=700&q=80" },
-  { name: "SteadySkull",     tag: "Surgical Device · MedTech",        img: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=700&q=80" },
+  { name: "Landa Trip",      tag: "Tourism · Travel",                 img: "/images/photos/1469854523086-cc02fe5d8800-w700.jpg" },
+  { name: "Landa Craft",     tag: "Handcraft · Artisan Market",       img: "/images/photos/1565193566173-7a0ee3dbe261-w700.jpg" },
+  { name: "AutiLab",         tag: "Autism Support · Child EdTech",    img: "/images/photos/1588072432836-e10032774350-w700.jpg" },
+  { name: "Vision Raft",     tag: "Virtual Reality · Immersive Tech", img: "/images/photos/1617802690992-15d93263d3a9-w700.jpg" },
+  { name: "Diaco",           tag: "Business Solutions · Corporate",   img: "/images/photos/1600880292203-757bb62b4baf-w700.jpg" },
+  { name: "Arshia Gallery",  tag: "Fine Jewelry · Luxury Retail",     img: "/images/photos/1611591437281-460bfbe1220a-w700.jpg" },
+  { name: "Preventie Gene",  tag: "Genetics · Health Prevention",     img: "/images/photos/1532187643603-ba119ca4109e-w700.jpg" },
+  { name: "SteadySkull",     tag: "Surgical Device · MedTech",        img: "/images/photos/1551190822-a9333d879b1f-w700.jpg" },
 ];
 
 export default function ProjectsSection() {

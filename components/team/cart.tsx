@@ -3,17 +3,17 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const team = [
-  { name: "Mahsa Esmaeili",      role: "Legal Advisor",        dept: "Legal",      image: "/images/ourteam/mahsa.svg" },
-  { name: "Iman Nasr Esfahani",  role: "COO",                  dept: "Leadership", image: "/images/ourteam/iman.png" },
-  { name: "Lida Parvizi",        role: "HR & Administrative",  dept: "Operations", image: "/images/ourteam/lida.svg" },
-  { name: "Gelareh Bahrami",     role: "Sales Officer",        dept: "Sales",      image: "/images/ourteam/gelareh.svg" },
-  { name: "Parastoo Sanaifar",   role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/parastoo.svg" },
-  { name: "Milad Fatemi",        role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/milad.svg" },
-  { name: "Mehdi Esmaeili",      role: "Front-End Developer",  dept: "Tech",       image: "/images/ourteam/pouya.svg" },
-  { name: "Sajjad Momeni",       role: "Full-Stack Developer", dept: "Tech",       image: "/images/ourteam/sajjad.png" },
-  { name: "Ali Soleimani",       role: "Accountant",           dept: "Finance",    image: "/images/ourteam/ali.svg" },
-  { name: "Narjes Orouji",       role: "UI/UX Designer",       dept: "Design",     image: "/images/ourteam/narges.svg" },
-  { name: "Amir Esfahanizade",   role: "Back-End Developer",   dept: "Tech",       image: "/images/ourteam/amirmohammad.svg" },
+  { name: "Mahsa Esmaeili",      role: "Legal Advisor",        dept: "Legal",      image: "/images/ourteam/mahsa.webp" },
+  { name: "Iman Nasr Esfahani",  role: "COO",                  dept: "Leadership", image: "/images/ourteam/iman.webp" },
+  { name: "Lida Parvizi",        role: "HR & Administrative",  dept: "Operations", image: "/images/ourteam/lida.webp" },
+  { name: "Gelareh Bahrami",     role: "Sales Officer",        dept: "Sales",      image: "/images/ourteam/gelareh.webp" },
+  { name: "Parastoo Sanaifar",   role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/parastoo.webp" },
+  { name: "Milad Fatemi",        role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/milad.webp" },
+  { name: "Mehdi Esmaeili",      role: "Front-End Developer",  dept: "Tech",       image: "/images/ourteam/pouya.webp" },
+  { name: "Sajjad Momeni",       role: "Full-Stack Developer", dept: "Tech",       image: "/images/ourteam/sajjad.webp" },
+  { name: "Ali Soleimani",       role: "Accountant",           dept: "Finance",    image: "/images/ourteam/ali.webp" },
+  { name: "Narjes Orouji",       role: "UI/UX Designer",       dept: "Design",     image: "/images/ourteam/narges.webp" },
+  { name: "Amir Esfahanizade",   role: "Back-End Developer",   dept: "Tech",       image: "/images/ourteam/amirmohammad.webp" },
 ];
 
 const DELAYS = [60, 130, 200, 270, 340, 410, 480, 550, 620, 690, 760];

@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
 
@@ -17,35 +18,35 @@ const markets = [
     ),
     desc: "Entrepreneur Visa with permanent residency pathway",
     href: "/canada",
-    img: "https://images.unsplash.com/photo-1517935706615-2717063c2225?w=700&q=80",
+    img: "/images/photos/1517935706615-2717063c2225-w700.jpg",
   },
   {
     name: "Spain",
     flagEl: <span style={{ fontSize: 22, lineHeight: 1, filter: "drop-shadow(0 2px 6px rgba(0,0,0,.4))" }}>🇪🇸</span>,
     desc: "Entrepreneur Visa with 20-day fast-track approval",
     href: "/spain",
-    img: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=700&q=80",
+    img: "/images/photos/1539037116277-4db20889f2d4-w700.jpg",
   },
   {
     name: "Finland",
     flagEl: <span style={{ fontSize: 22, lineHeight: 1, filter: "drop-shadow(0 2px 6px rgba(0,0,0,.4))" }}>🇫🇮</span>,
     desc: "Entrepreneur Permit for business owners entering EU markets",
     href: "/Entrepreneurship/Subpage-Finland",
-    img: "https://images.unsplash.com/photo-1538332576228-eb5b4c4de6f5?w=700&q=80",
+    img: "/images/photos/1538332576228-eb5b4c4de6f5-w700.jpg",
   },
   {
     name: "Portugal",
     flagEl: <span style={{ fontSize: 22, lineHeight: 1, filter: "drop-shadow(0 2px 6px rgba(0,0,0,.4))" }}>🇵🇹</span>,
     desc: "D2 Entrepreneur Visa with EU residency path",
     href: "/portugal",
-    img: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=700&q=80",
+    img: "/images/photos/1555881400-74d7acaacd8b-w700.jpg",
   },
   {
     name: "Netherlands",
     flagEl: <span style={{ fontSize: 22, lineHeight: 1, filter: "drop-shadow(0 2px 6px rgba(0,0,0,.4))" }}>🇳🇱</span>,
     desc: "Entrepreneur Visa in Europe's most connected business hub",
     href: "/Entrepreneurship/Subpage-Netherland",
-    img: "https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?w=700&q=80",
+    img: "/images/photos/1512470876302-972faa2aa9a4-w700.jpg",
   },
 ];
 
@@ -89,7 +90,15 @@ export default function Markets() {
                   className="absolute inset-0 group-hover:scale-[1.06] transition-transform duration-[600ms] "
                   style={{ filter: "brightness(.72)" }}
                 >
-                  <img src={m.img} alt={m.name} className="w-full h-full object-cover" />
+                  <Image
+                    src={m.img}
+                    alt={m.name}
+                    fill
+                    className="object-cover"
+                    quality={75}
+                    sizes="(min-width:1024px) 20vw, (min-width:640px) 33vw, 100vw"
+                    priority={i < 3}
+                  />
                 </div>
                 {/* Gradient overlay */}
                 <div

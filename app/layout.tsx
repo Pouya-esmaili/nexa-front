@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "../components/global/Header";
 import Footer from "../components/global/Footer";
 import NavLoader from "../components/global/NavLoader";
+import LinkPrefetcher from "../components/global/LinkPrefetcher";
 
 export const metadata: Metadata = {
   title: "Nexa",
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html lang="en" dir="ltr">
       <body className="antialiased">
         <NavLoader />
+        <LinkPrefetcher />
         <Header />
         {children}
         <Footer />

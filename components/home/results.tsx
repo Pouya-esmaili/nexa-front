@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "@/components/global/LazyReveal";
 
 /* ─────────────────────────────────────────────────────────────
@@ -32,15 +33,17 @@ export default function Results() {
           >
             {/* Use next/image for the large background SVG so Next can optimize and prefetch */}
             <div className="absolute inset-0 w-full h-full md:static md:inset-auto md:h-auto block">
-              <img
+              <Image
                 src="/images/landing/plan.svg"
                 alt="World map"
-                className="absolute inset-0 w-full h-full md:static md:inset-auto md:h-auto object-cover md:object-none block"
+                fill
+                sizes="100vw"
+                className="md:static md:inset-auto md:h-auto object-cover md:object-none block"
                 style={{
                   filter: "invert(1) brightness(6) contrast(8) saturate(0)",
                   opacity: 1,
                 }}
-                loading="eager"
+                priority
               />
             </div>
 

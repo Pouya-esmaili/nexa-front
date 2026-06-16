@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Row from "@/components/global/Row";
 
 const MOBILE_INITIAL_COUNT = 6;
@@ -72,9 +73,11 @@ export default function FAQs() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="text-xs font-medium text-black leading-snug">{item.q}</h3>
-                  <img
+                  <Image
                     src={isActive ? "/images/Entrepreneurship/close.svg" : "/images/Entrepreneurship/open.svg"}
                     alt={isActive ? "Close" : "Open"}
+                    width={20}
+                    height={20}
                     className="w-5 h-5 flex-shrink-0 mt-0.5"
                   />
                 </div>
@@ -133,9 +136,11 @@ export default function FAQs() {
                 >
                   <div className="flex items-start justify-between gap-4">
                     <h3 className="text-sm font-medium text-black leading-snug">{item.q}</h3>
-                    <img
+                    <Image
                       src={isActive ? "/images/Entrepreneurship/close.svg" : "/images/Entrepreneurship/open.svg"}
                       alt={isActive ? "Close" : "Open"}
+                      width={24}
+                      height={24}
                       className="w-6 h-6 flex-shrink-0"
                     />
                   </div>

@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import Row from "@/components/global/Row";
 
@@ -44,10 +45,12 @@ export default function Hero() {
               className="overflow-hidden relative w-full h-[380px]"
               style={{ borderRadius: "140px 20px 20px 20px" }}
             >
-              <img
-                src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=900&q=80"
+              <Image
+                src="/images/photos/1559136555-9303baea8ebd-w900.jpg"
                 alt="Entrepreneurship"
-                className="w-full h-full object-cover object-top"
+                fill
+                sizes="(max-width: 768px) 100vw, 57vw"
+                className="object-cover object-top"
               />
               <div
                 className="absolute inset-0"

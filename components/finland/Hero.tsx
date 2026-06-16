@@ -35,7 +35,7 @@ export default function Hero() {
       <div className="md:hidden px-5 relative z-10">
         <div
           className={`h-56 rounded-[32px_80px_32px_32px] mb-6 overflow-hidden ${base} duration-700 delay-75 ${mounted ? show : hideUp}`}
-          style={{ background: "#0d1f2d url('https://images.unsplash.com/photo-1578054320988-a2ac16f42591?w=900&q=80') center/cover" }}
+          style={{ background: "#0d1f2d url('/images/photos/1578054320988-a2ac16f42591-w900.jpg') center/cover" }}
         />
         <h1 className={`text-3xl font-bold leading-tight tracking-tight mb-4 ${base} duration-600 delay-150 ${mounted ? show : hideUp}`}>
           Build a <span className="text-[#8F27FF]">global company</span> from inside the European Union.
@@ -95,7 +95,7 @@ export default function Hero() {
                 className="absolute inset-0"
                 style={{
                   borderRadius: "32px 120px 32px 32px",
-                  background: "#0d1f2d url('https://images.unsplash.com/photo-1578054320988-a2ac16f42591?w=900&q=80') center/cover",
+                  background: "#0d1f2d url('/images/photos/1578054320988-a2ac16f42591-w900.jpg') center/cover",
                   boxShadow: "0 20px 50px rgba(0,0,0,0.08)",
                 }}
               />

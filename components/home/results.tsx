@@ -2,13 +2,12 @@ import Reveal from "@/components/global/LazyReveal";
 
 /* ─────────────────────────────────────────────────────────────
    plan.svg  →  viewBox 0 0 1440 665
-   Equirectangular pin positions:
-     Vancouver  lon=-123.1  lat=49.3   →  x=227  y=150
-     Tehran     lon=51.4    lat=35.7   →  x=926  y=200
-   Stat-card bottom positions (scaled from original 1017×517 design):
-     Card 1 (89%)   : x=78    y=535
-     Card 2 (400+)  : x=600   y=535
-     Card 3 (7+Yrs) : x=1125  y=535
+   Verified pin positions (visual inspection at 1440px):
+     Vancouver  →  x=325  y=225
+     Tehran     →  x=850  y=295
+   Both image (object-cover) and SVG (xMidYMid slice) scale
+   identically inside a fixed-aspect container → pins stay on
+   the correct cities at every viewport width.
 ─────────────────────────────────────────────────────────────── */
 
 export default function Results() {
@@ -24,27 +23,23 @@ export default function Results() {
           </div>
         </Reveal>
 
-        {/* ── Map wrapper – full width ── */}
+        {/* ── Map wrapper – fixed aspect ratio so image & SVG always scale identically ── */}
         <Reveal variant="up" delay={80}>
           <div
-            className="relative overflow-hidden h-[60vw] md:h-auto"
-            style={{ background: "#000" }}
+            className="relative overflow-hidden w-full"
+            style={{ aspectRatio: "1440 / 665", background: "#000" }}
           >
-            {/* Use next/image for the large background SVG so Next can optimize and prefetch */}
-            <div className="absolute inset-0 w-full h-full md:static md:inset-auto md:h-auto block">
-              <img
-                src="/images/landing/plan.svg"
-                alt="World map"
-                className="absolute inset-0 w-full h-full md:static md:inset-auto md:h-auto object-cover md:object-none block"
-                style={{
-                  filter: "invert(1) brightness(6) contrast(8) saturate(0)",
-                  opacity: 1,
-                }}
-                loading="eager"
-              />
-            </div>
+            <img
+              src="/images/landing/plan.svg"
+              alt="World map"
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{
+                filter: "invert(1) brightness(6) contrast(8) saturate(0)",
+              }}
+              loading="eager"
+            />
 
-            {/* ── SVG overlay – viewBox matches plan.svg 1440×665 ── */}
+            {/* ── SVG overlay – same viewBox as plan.svg, same cover behaviour ── */}
             <svg
               viewBox="0 0 1440 665"
               xmlns="http://www.w3.org/2000/svg"
@@ -65,33 +60,38 @@ export default function Results() {
                 </filter>
               </defs>
 
-              {/* Arc: Vancouver → Tehran */}
+              {/* Arc: Vancouver (325,225) → Tehran (850,295) */}
               <path
-                d="M325,225 Q586,100 848,295"
+                d="M325,225 Q590,100 850,295"
                 fill="none"
                 stroke="rgba(143,39,255,0.8)"
                 strokeWidth="2"
                 strokeDasharray="10,6"
+                strokeDashoffset="0"
               >
-                <animate attributeName="stroke-dashoffset"
-                  values="0;-100" dur="2.5s" repeatCount="indefinite"/>
+                <animate
+                  attributeName="stroke-dashoffset"
+                  values="0;-160"
+                  dur="2.5s"
+                  repeatCount="indefinite"
+                />
               </path>
 
-              {/* ── Pin: Vancouver (130, 110) ── */}
+              {/* ── Pin: Vancouver x=325 y=225 ── */}
               <g transform="translate(325,225)">
                 <circle r="22" fill="rgba(143,39,255,0.15)">
-                  <animate attributeName="r"   values="22;34;22" dur="2.5s" repeatCount="indefinite"/>
-                  <animate attributeName="opacity" values="0.5;0;0.5" dur="2.5s" repeatCount="indefinite"/>
+                  <animate attributeName="r" values="22;34;22" dur="2.5s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.6;0;0.6" dur="2.5s" repeatCount="indefinite"/>
                 </circle>
                 <circle r="10" fill="#8F27FF" filter="url(#glow2)"/>
                 <circle r="4.5" fill="white"/>
               </g>
 
-              {/* ── Pin: Tehran (630, 175) ── */}
-              <g transform="translate(848,295)">
+              {/* ── Pin: Tehran x=850 y=295 ── */}
+              <g transform="translate(850,295)">
                 <circle r="22" fill="rgba(143,39,255,0.15)">
-                  <animate attributeName="r"   values="22;34;22" dur="2.5s" begin="0.8s" repeatCount="indefinite"/>
-                  <animate attributeName="opacity" values="0.5;0;0.5" dur="2.5s" begin="0.8s" repeatCount="indefinite"/>
+                  <animate attributeName="r" values="22;34;22" dur="2.5s" begin="0.8s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.6;0;0.6" dur="2.5s" begin="0.8s" repeatCount="indefinite"/>
                 </circle>
                 <circle r="10" fill="#8F27FF" filter="url(#glow2)"/>
                 <circle r="4.5" fill="white"/>
@@ -99,53 +99,52 @@ export default function Results() {
 
               {/* ── Stat cards (desktop) ── */}
               <g id="result-stat-cards">
-                {/* 89% */}
-                <g transform="translate(130,535)" filter="url(#cs2)">
+                <g transform="translate(270,535)" filter="url(#cs2)">
                   <rect width="210" height="100" rx="16" fill="rgba(22,4,50,0.95)" stroke="rgba(143,39,255,0.5)" strokeWidth="1.5"/>
                   <rect width="6" height="100" rx="3" fill="#8F27FF"/>
-                  <text x="26" y="48"  fontSize="40" fontWeight="800" fill="white" fontFamily="Inter,sans-serif">89</text>
-                  <text x="96" y="48"  fontSize="26" fontWeight="700" fill="#8F27FF" fontFamily="Inter,sans-serif">%</text>
-                  <text x="26" y="76"  fontSize="13" fontWeight="500" fill="rgba(255,255,255,0.65)" fontFamily="Inter,sans-serif">Successful Cases</text>
+                  <text x="26" y="48" fontSize="40" fontWeight="800" fill="white" fontFamily="Inter,sans-serif">89</text>
+                  <text x="96" y="48" fontSize="26" fontWeight="700" fill="#8F27FF" fontFamily="Inter,sans-serif">%</text>
+                  <text x="26" y="76" fontSize="13" fontWeight="500" fill="rgba(255,255,255,0.65)" fontFamily="Inter,sans-serif">Successful Cases</text>
                 </g>
-                {/* 400+ */}
                 <g transform="translate(600,535)" filter="url(#cs2)">
                   <rect width="210" height="100" rx="16" fill="rgba(22,4,50,0.95)" stroke="rgba(143,39,255,0.5)" strokeWidth="1.5"/>
                   <rect width="6" height="100" rx="3" fill="#8F27FF"/>
-                  <text x="26" y="48"  fontSize="40" fontWeight="800" fill="white" fontFamily="Inter,sans-serif">400</text>
+                  <text x="26" y="48" fontSize="40" fontWeight="800" fill="white" fontFamily="Inter,sans-serif">400</text>
                   <text x="118" y="48" fontSize="26" fontWeight="700" fill="#8F27FF" fontFamily="Inter,sans-serif">+</text>
-                  <text x="26" y="76"  fontSize="13" fontWeight="500" fill="rgba(255,255,255,0.65)" fontFamily="Inter,sans-serif">Clients Worldwide</text>
+                  <text x="26" y="76" fontSize="13" fontWeight="500" fill="rgba(255,255,255,0.65)" fontFamily="Inter,sans-serif">Clients Worldwide</text>
                 </g>
-                {/* 7+ Yrs */}
-                <g transform="translate(1110,535)" filter="url(#cs2)">
+                <g transform="translate(960,535)" filter="url(#cs2)">
                   <rect width="210" height="100" rx="16" fill="rgba(22,4,50,0.95)" stroke="rgba(143,39,255,0.5)" strokeWidth="1.5"/>
                   <rect width="6" height="100" rx="3" fill="#8F27FF"/>
-                  <text x="26" y="48"  fontSize="40" fontWeight="800" fill="white" fontFamily="Inter,sans-serif">10</text>
-                  <text x="68" y="48"  fontSize="26" fontWeight="700" fill="#8F27FF" fontFamily="Inter,sans-serif">+ Yrs</text>
-                  <text x="26" y="76"  fontSize="13" fontWeight="500" fill="rgba(255,255,255,0.65)" fontFamily="Inter,sans-serif">Years of Expertise</text>
+                  <text x="26" y="48" fontSize="40" fontWeight="800" fill="white" fontFamily="Inter,sans-serif">10</text>
+                  <text x="68" y="48" fontSize="26" fontWeight="700" fill="#8F27FF" fontFamily="Inter,sans-serif">+ Yrs</text>
+                  <text x="26" y="76" fontSize="13" fontWeight="500" fill="rgba(255,255,255,0.65)" fontFamily="Inter,sans-serif">Years of Expertise</text>
                 </g>
               </g>
             </svg>
 
-            {/* ── Pin label overlays (desktop only) ── */}
+            {/* ── Pin labels – positioned as % of the fixed-aspect container ── */}
+            {/* Vancouver (325/1440 = 22.57%, 225/665 = 33.83%) */}
             <div
-              className="hidden md:block absolute text-white font-bold px-2.5 py-1.5 rounded-[7px] pointer-events-none whitespace-nowrap leading-none"
+              className="hidden sm:block absolute text-white font-bold px-2.5 py-1.5 rounded-[7px] pointer-events-none whitespace-nowrap leading-none"
               style={{
-                fontSize: "clamp(9px,1.1vw,12px)",
+                fontSize: "clamp(8px, 0.9vw, 12px)",
                 background: "rgba(10,0,20,0.9)",
-                left: "21.0%",
-                top: "36.5%",
+                left: "22.57%",
+                top: "33.83%",
                 transform: "translate(14px, 8px)",
               }}
             >
               📍 Vancouver, Canada
             </div>
+            {/* Tehran (850/1440 = 59.03%, 295/665 = 44.36%) */}
             <div
-              className="hidden md:block absolute text-white font-bold px-2.5 py-1.5 rounded-[7px] pointer-events-none whitespace-nowrap leading-none"
+              className="hidden sm:block absolute text-white font-bold px-2.5 py-1.5 rounded-[7px] pointer-events-none whitespace-nowrap leading-none"
               style={{
-                fontSize: "clamp(9px,1.1vw,12px)",
+                fontSize: "clamp(8px, 0.9vw, 12px)",
                 background: "rgba(10,0,20,0.9)",
-                left: "54.75%",
-                top: "46.3%",
+                left: "59.03%",
+                top: "44.36%",
                 transform: "translate(14px, 8px)",
               }}
             >
@@ -154,33 +153,6 @@ export default function Results() {
           </div>
         </Reveal>
 
-        {/* ── Mobile stats row ── */}
-        <div className="md:hidden grid grid-cols-3 gap-2.5 mt-4 px-4">
-          {[
-            { num: "89",  suffix: "%",     label: "Successful Cases"   },
-            { num: "400", suffix: "+",     label: "Clients Worldwide"  },
-            { num: "7",   suffix: "+ Yrs", label: "Years of Expertise" },
-          ].map((s) => (
-            <div key={s.num} className="rounded-[12px] p-3.5 flex flex-col gap-1"
-              style={{
-                background: "rgba(22,4,50,0.95)",
-                border: "1.5px solid rgba(143,39,255,0.45)",
-                borderLeft: "4px solid #8F27FF",
-              }}>
-              <span className="text-[26px] font-extrabold text-white leading-none">
-                {s.num}<span className="text-[16px] font-bold text-[#8F27FF]">{s.suffix}</span>
-              </span>
-              <span className="text-[10px] text-white/65 font-medium leading-tight">{s.label}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* Hide SVG stat cards on mobile */}
-        <style>{`
-          @media (max-width: 768px) {
-            #result-stat-cards { display: none; }
-          }
-        `}</style>
 
     </section>
   );

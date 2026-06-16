@@ -20,13 +20,13 @@ const cardData = [
     icon: '/images/landing/Startup.svg',
     link: '/startup',
   },
-  {
-    id: 3,
-    title: 'Advisory',
-    desc: 'Our expertise spans business development, financial planning and modeling, compelling pitch deck creation, IP guidance, go-to-market strategy, and strategic investor engagement.',
-    icon: '/images/landing/Advisory.svg',
-    link: '/advisory',
-  },
+  // {
+  //   id: 3,
+  //   title: 'Advisory',
+  //   desc: 'Our expertise spans business development, financial planning and modeling, compelling pitch deck creation, IP guidance, go-to-market strategy, and strategic investor engagement.',
+  //   icon: '/images/landing/Advisory.svg',
+  //   link: '/advisory',
+  // },
   {
     id: 4,
     title: 'Investment',
@@ -38,7 +38,8 @@ const cardData = [
 
 export default function CardsPage() {
   return (
-    <div id="services" className="flex flex-col items-center justify-center px-4 py-8 md:px-10 md:py-18 md:mb-4 md:mt-4">
+    <div id="services" className="py-8 md:py-18 md:mb-4 md:mt-4">
+      <div className="max-w-[1240px] mx-auto px-6">
 
       {/* ── Section Title ── */}
       <div className="text-center mb-10">
@@ -46,12 +47,11 @@ export default function CardsPage() {
           Our Services
         </h2>
       </div>
-      
+
       <div
         className="
-          grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4
+          grid grid-cols-1 md:grid-cols-3
           gap-x-6 gap-y-12 md:gap-y-6
-          w-full max-w-[1440px]
           items-stretch
         "
       >
@@ -68,6 +68,7 @@ export default function CardsPage() {
             />
           </Link>
         ))}
+      </div>
       </div>
     </div>
   );

@@ -4,30 +4,35 @@ import Image from "next/image";
 
 const cities = [
   {
+    cls: "city-istanbul",
     name: "Istanbul",
     meta: "Financial capital · Bosphorus",
-    img: "/images/photos/1541432901042-2d8bd64b4a9b-w1400.jpg",
+    img: "/images/investment/Istanbul.jpg",
     large: true,
   },
   {
+    cls: "city-ankara",
     name: "Ankara",
     meta: "Government & diplomacy",
-    img: "/images/photos/1527838832700-5059252407fa-w1200.jpg",
+    img: "/images/investment/Ankara.jpg",
   },
   {
+    cls: "city-antalya",
     name: "Antalya",
     meta: "Mediterranean tourism",
-    img: "/images/photos/1558618666-fcd25c85cd64-w1000.jpg",
+    img: "/images/investment/Antalya.jpg",
   },
   {
+    cls: "city-izmir",
     name: "Izmir",
     meta: "Aegean trade hub",
-    img: "/images/investment/izmir.jpg",
+    img: "/images/investment/Izmir.jpg",
   },
   {
+    cls: "city-bodrum",
     name: "Bodrum",
     meta: "Luxury & hospitality",
-    img: "/images/investment/bodrum.jpg",
+    img: "/images/investment/Bodrum.jpg",
   },
 ];
 

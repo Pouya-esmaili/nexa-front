@@ -853,7 +853,7 @@ export default function MultiStepForm() {
           })}
         </aside>
 
-        {/* Main content — fixed height so buttons always stay at bottom */}
+       
         <div className="flex-1 flex flex-col rounded-2xl border border-[#929292] bg-[#F4F4F4] p-6 md:p-8" style={{ height: '620px' }}>
 
           {/* Step title */}
@@ -864,7 +864,7 @@ export default function MultiStepForm() {
             <h2 className="text-lg font-bold text-black">{currentLabel}</h2>
           </div>
 
-          {/* Fields area — grows to push buttons down */}
+          
           <div className="flex-1 overflow-y-auto pb-2">
             {currentStep === 1 && (
               <Step1 data={formData} errors={errors} onChange={handleChange} />

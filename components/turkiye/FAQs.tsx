@@ -21,10 +21,7 @@ export default function FAQs() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);
 
-  const toggle = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-
+  const toggle = (i: number) => setActiveIndex(activeIndex === i ? null : i);
   const visibleMobileFaqs = showAll ? faqs : faqs.slice(0, MOBILE_INITIAL_COUNT);
 
   return (

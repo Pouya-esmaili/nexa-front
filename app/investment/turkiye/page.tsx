@@ -1,3 +1,4 @@
+import "./turkiye.css";
 import Hero from "@/components/turkiye/Hero";
 import WhyTurkiye from "@/components/turkiye/WhyTurkiye";
 import Residency from "@/components/turkiye/Residency";
@@ -18,7 +19,7 @@ export const metadata = {
 
 export default function TurkiyePage() {
   return (
-    <div className="w-full bg-white">
+    <div className="tk-root">
       <Hero />
       <WhyTurkiye />
       <Residency />

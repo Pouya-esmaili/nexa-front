@@ -1,14 +1,16 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Row from "@/components/global/Row";
-import { useEffect, useState } from "react";
 
 const stats = [
   { num: "USD 600K", label: "Min. investment" },
   { num: "6–12 mo", label: "Processing" },
   { num: "3 yrs", label: "Hold period" },
 ];
+
+const HERO_IMG = "/images/investment/Türkiye.jpg";
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
@@ -93,23 +95,17 @@ export default function Hero() {
                 className="absolute inset-0"
                 style={{
                   borderRadius: "32px 120px 32px 32px",
-                  backgroundImage: "url('/images/photos/1524231757912-21f4fe3a7200-w1200.jpg')",
+                  backgroundImage: `url('${HERO_IMG}')`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   boxShadow: "0 20px 50px rgba(0,0,0,0.08)",
                 }}
               />
-
             </div>
 
           </div>
         </Row>
       </div>
-
-      <style>{`
-        @keyframes floatBadge { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-        @keyframes pulse { 0%,100%{box-shadow:0 0 0 4px rgba(16,185,129,0.2)} 50%{box-shadow:0 0 0 7px rgba(16,185,129,0.1)} }
-      `}</style>
     </section>
   );
 }

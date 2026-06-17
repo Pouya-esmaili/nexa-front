@@ -3,17 +3,17 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const team = [
-  { name: "Mahsa Esmaeili",      role: "Legal Advisor",        dept: "Legal",      image: "/images/ourteam/mahsa.webp" },
-  { name: "Iman Nasr Esfahani",  role: "COO",                  dept: "Leadership", image: "/images/ourteam/iman.webp" },
-  { name: "Lida Parvizi",        role: "HR & Administrative",  dept: "Operations", image: "/images/ourteam/lida.webp" },
-  { name: "Gelareh Bahrami",     role: "Sales Officer",        dept: "Sales",      image: "/images/ourteam/gelareh.webp" },
-  { name: "Parastoo Sanaifar",   role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/parastoo.webp" },
-  { name: "Milad Fatemi",        role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/milad.webp" },
-  { name: "Mehdi Esmaeili",      role: "Front-End Developer",  dept: "Tech",       image: "/images/ourteam/pouya.webp" },
-  { name: "Sajjad Momeni",       role: "Full-Stack Developer", dept: "Tech",       image: "/images/ourteam/sajjad.webp" },
-  { name: "Ali Soleimani",       role: "Accountant",           dept: "Finance",    image: "/images/ourteam/ali.webp" },
-  { name: "Narjes Orouji",       role: "UI/UX Designer",       dept: "Design",     image: "/images/ourteam/narges.webp" },
-  { name: "Amir Esfahanizade",   role: "Back-End Developer",   dept: "Tech",       image: "/images/ourteam/amirmohammad.webp" },
+  { name: "Mahsa Esmaeili",      role: "Legal Advisor",        dept: "Legal",      image: "/images/ourteam/mahsa.jpg" },
+  { name: "Iman Nasr Esfahani",  role: "COO",                  dept: "Leadership", image: "/images/ourteam/iman.jpg" },
+  { name: "Lida Parvizi",        role: "HR & Administrative",  dept: "Operations", image: "/images/ourteam/lida.jpg" },
+  { name: "Gelareh Bahrami",     role: "Sales Officer",        dept: "Sales",      image: "/images/ourteam/gelareh.jpg" },
+  { name: "Parastoo Sanaifar",   role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/parastoo.jpg" },
+  { name: "Milad Fatemi",        role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/milad.jpg" },
+  { name: "Mehdi Esmaeili",      role: "Front-End Developer",  dept: "Tech",       image: "/images/ourteam/pouya.jpg" },
+  { name: "Sajjad Momeni",       role: "Full-Stack Developer", dept: "Tech",       image: "/images/ourteam/sajjad.jpg" },
+  { name: "Ali Soleimani",       role: "Accountant",           dept: "Finance",    image: "/images/ourteam/ali.jpg" },
+  { name: "Narjes Orouji",       role: "UI/UX Designer",       dept: "Design",     image: "/images/ourteam/narges.jpg" },
+  { name: "Amir Esfahanizade",   role: "Back-End Developer",   dept: "Tech",       image: "/images/ourteam/amir.jpg" },
 ];
 
 const DELAYS = [60, 130, 200, 270, 340, 410, 480, 550, 620, 690, 760];
@@ -25,17 +25,24 @@ export default function TeamGrid() {
   const gridRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const makeObs = (el: HTMLElement | null, set: (v: boolean) => void) => {
+    // Fallback: if already in viewport on mount, show immediately
+    const showIfVisible = (el: HTMLElement | null, set: (v: boolean) => void) => {
       if (!el) return;
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        set(true);
+        return; // no observer needed
+      }
       const obs = new IntersectionObserver(
         ([e]) => { if (e.isIntersecting) { set(true); obs.disconnect(); } },
-        { threshold: 0.1, rootMargin: "0px 0px -36px 0px" }
+        { threshold: 0.05, rootMargin: "0px 0px -20px 0px" }
       );
       obs.observe(el);
       return () => obs.disconnect();
     };
-    const c1 = makeObs(headRef.current, setHeadVis);
-    const c2 = makeObs(gridRef.current, setGridVis);
+
+    const c1 = showIfVisible(headRef.current, setHeadVis);
+    const c2 = showIfVisible(gridRef.current, setGridVis);
     return () => { c1?.(); c2?.(); };
   }, []);
 
@@ -66,8 +73,8 @@ export default function TeamGrid() {
             }`}
             style={{ transitionDelay: gridVis ? `${DELAYS[i]}ms` : "0ms" }}
           >
-            {/* Photo */}
-            <div className="relative w-full aspect-square overflow-hidden bg-[#FAF6FF]">
+            {/* Photo — padding-bottom trick for reliable SSR height */}
+            <div className="relative w-full overflow-hidden bg-[#FAF6FF] aspect-square">
               <Image
                 src={member.image}
                 alt={member.name}

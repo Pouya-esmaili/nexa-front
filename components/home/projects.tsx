@@ -4,14 +4,14 @@ import Reveal from "@/components/global/LazyReveal";
 import Image from "next/image";
 
 const projects = [
-  { name: "Landa Trip",      tag: "Tourism · Travel",                 img: "/images/about/trip.webp" },
-  { name: "Landa Craft",     tag: "Handcraft · Artisan Market",       img: "/images/about/craft.webp" },
-  { name: "AutiLab",         tag: "Autism Support · Child EdTech",    img: "/images/about/autilab.webp" },
-  { name: "Vision Raft",     tag: "Virtual Reality · Immersive Tech", img: "/images/about/vision.webp" },
-  { name: "Diaco",           tag: "Business Solutions · Corporate",   img: "/images/about/Diaco.svg" },
+  { name: "Landa Trip",      tag: "Tourism · Travel",                 img: "/images/about/trip.jpg" },
+  { name: "Landa Craft",     tag: "Handcraft · Artisan Market",       img: "/images/about/craft.jpg" },
+  { name: "AutiLab",         tag: "Autism Support · Child EdTech",    img: "/images/about/autiLab.jpg" },
+  { name: "Vision Raft",     tag: "Virtual Reality · Immersive Tech", img: "/images/about/vision.jpg" },
+  { name: "Diaco",           tag: "Business Solutions · Corporate",   img: "/images/about/Diaco.jpg" },
   { name: "Arshia Gallery",  tag: "Fine Jewelry · Luxury Retail",     img: "/images/about/academylanda.svg" },
-  { name: "Preventie Gene",  tag: "Genetics · Health Prevention",     img: "/images/about/preventigene.webp" },
-  { name: "SteadySkull",     tag: "Surgical Device · MedTech",        img: "/images/about/diacocenter.webp" },
+  { name: "Preventie Gene",  tag: "Genetics · Health Prevention",     img: "/images/about/preventigene.jpg" },
+  { name: "SteadySkull",     tag: "Surgical Device · MedTech",        img: "/images/about/steadyskull.jpg" },
 ];
 
 export default function ProjectsSection() {

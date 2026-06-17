@@ -30,6 +30,7 @@ export default function HeroTeam() {
             src="/images/ourteam/Team.webp"
             alt="Nexa Team"
             fill
+            sizes="(max-width: 1200px) 100vw, 1200px"
             className="object-cover"
             priority
           />

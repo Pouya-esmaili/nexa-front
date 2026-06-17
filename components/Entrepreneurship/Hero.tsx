@@ -46,7 +46,7 @@ export default function Hero() {
               style={{ borderRadius: "140px 20px 20px 20px" }}
             >
               <Image
-                src="/images/Entrepreneurship/herooo.webp"
+                src="/images/Entrepreneurship/hero.jpg"
                 alt="Entrepreneurship"
                 fill
                 sizes="(max-width: 768px) 100vw, 57vw"

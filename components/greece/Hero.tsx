@@ -20,7 +20,7 @@ export default function GreeceHero() {
         <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-14 items-center">
 
           {/* Left */}
-          <div>
+          <div className="order-2 md:order-1">
 
             <h1 className={`${base} ${mounted ? show : hidden} text-[36px] md:text-[48px] font-bold leading-[1.08] tracking-[-0.03em] mb-6`}
               style={{ transitionDelay: "80ms" }}>
@@ -59,7 +59,7 @@ export default function GreeceHero() {
           </div>
 
           {/* Right */}
-          <div className={`${base} ${mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"} relative h-[480px] md:h-[520px]`}
+          <div className={`${base} ${mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"} order-1 md:order-2 relative h-[240px] md:h-[520px]`}
             style={{ transitionDelay: "100ms", transitionDuration: "800ms" }}>
             <div className="absolute inset-0 overflow-hidden"
               style={{

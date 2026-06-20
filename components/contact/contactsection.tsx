@@ -90,7 +90,7 @@ export default function ContactSection() {
             {contactItems.map((item) => (
               <div
                 key={item.title}
-                className="rounded-3xl border-[0.5px] border-[#8F27FF] bg-white p-5 shadow-[0px_4px_10px_rgba(143,39,255,0.08)]"
+                className="rounded-3xl border-[0.5px] border-[#8F27FF] bg-white p-5 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0px_18px_45px_rgba(143,39,255,0.35)]"
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#8F27FF] shadow-[0px_4px_12px_rgba(143,39,255,0.35)]">
@@ -100,7 +100,18 @@ export default function ContactSection() {
                     <h3 className="mb-2 text-md text-[#8F27FF]">{item.title}</h3>
                     <div className="space-y-1">
                       {item.content.map((text) => (
-                        <p key={text} className="text-md leading-6 text-[#474747]">{text}</p>
+                        <p key={text} className="text-md leading-6 text-[#474747]">
+                          {item.title === "Phone Number" ? (
+                            <a
+                              href={`tel:${text.replace(/[^\d+]/g, "")}`}
+                              className="transition-colors hover:text-[#8F27FF]"
+                            >
+                              {text}
+                            </a>
+                          ) : (
+                            text
+                          )}
+                        </p>
                       ))}
                     </div>
                   </div>

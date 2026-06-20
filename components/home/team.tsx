@@ -2,15 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/global/LazyReveal";
 
-const tags = [
-  "Global Marketing Strategy",
-  "Product Development",
-  "Advanced R&D",
-  "Branding & Design",
-  "UI/UX Design",
-  "Go-to-Market",
-  "Content Strategy",
-];
+// const tags = [
+//   "Global Marketing Strategy",
+//   "Product Development",
+//   "Advanced R&D",
+//   "Branding & Design",
+//   "UI/UX Design",
+//   "Go-to-Market",
+//   "Content Strategy",
+// ];
 
 export default function Team() {
   return (
@@ -37,14 +37,14 @@ export default function Team() {
               </p>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-2 mt-2">
+              {/* <div className="flex flex-wrap gap-2 mt-2">
                 {tags.map((t) => (
                   <span key={t}
                     className="px-3.5 py-1.5 bg-[#F7F6F9] border border-[#E2E2E2] rounded-full text-[14px] text-[#474747] font-medium hover:bg-[#FAF6FF] hover:border-[#8F27FF] hover:text-[#8F27FF] transition-all cursor-default">
                     {t}
                   </span>
                 ))}
-              </div>
+              </div> */}
 
               <Link
                 href="/our-team"

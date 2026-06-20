@@ -3,14 +3,14 @@
 import Image from "next/image";
 
 const logos = [
-  { src: "/images/landing/craft.svg",            name: "Landa Craft",    size: "w-10 h-10"  },
-  { src: "/images/landing/Autilab.svg",           name: "Autilab",        size: "w-16 h-16"  },
-  { src: "/images/landing/preventigene.svg",      name: "Preventigene",   size: "w-10 h-10"  },
-  { src: "/images/landing/diaco.svg",             name: "Diaco Center",   size: "w-10 h-10"  },
-  { src: "/images/landing/raft.svg",              name: "Vision Raft",    size: "w-10 h-10"  },
-  { src: "/images/landing/trip.svg",              name: "Landa Trip",     size: "w-10 h-10"  },
-  { src: "/images/landing/SteadySkull.svg",       name: "Steady Skull",   size: "w-10 h-10"  },
-  { src: "/images/landing/Arshia Gallery.svg",    name: "Arshia Gallery", size: "w-16 h-16"  },
+  { src: "/images/landing/craft.svg", name: "Landa Craft", size: "w-10 h-10" },
+  { src: "/images/landing/Autilab.svg", name: "Autilab", size: "w-16 h-16" },
+  { src: "/images/landing/preventigene.svg", name: "Preventigene", size: "w-10 h-10" },
+  { src: "/images/landing/diaco.svg", name: "Diaco Center", size: "w-10 h-10" },
+  { src: "/images/landing/raft.svg", name: "Vision Raft", size: "w-10 h-10" },
+  { src: "/images/landing/Landa Trip.svg", name: "Landa Trip", size: "w-10 h-10" },
+  { src: "/images/landing/SteadySkull.svg", name: "Steady Skull", size: "w-10 h-10" },
+  { src: "/images/landing/Arshia Gallery.svg", name: "Arshia Gallery", size: "w-16 h-16" },
 ];
 
 /* triplicate for seamless infinite loop */

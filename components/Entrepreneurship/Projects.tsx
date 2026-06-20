@@ -63,14 +63,6 @@ export default function Projects() {
                     <div className="text-white font-bold text-[16px] tracking-[-0.01em]">{p.name}</div>
                     <div className="text-white/65 text-[12px] mt-1 font-medium">{p.tag}</div>
                   </div>
-                  <div
-                    className="w-9 h-9 rounded-full flex-shrink-0 grid place-items-center transition-all duration-[250ms] group-hover:bg-[#8F27FF] group-hover:border-[#8F27FF]"
-                    style={{ background: "rgba(255,255,255,.15)", border: "1px solid rgba(255,255,255,.3)" }}
-                  >
-                    <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={2.5} className="w-[14px] h-[14px]">
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                  </div>
                 </div>
               </div>
             </Reveal>

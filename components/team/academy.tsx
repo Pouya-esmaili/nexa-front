@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 export default function FounderSection() {
   const [headVis, setHeadVis] = useState(false);
   const [cardVis, setCardVis] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   const headRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -28,9 +29,8 @@ export default function FounderSection() {
       {/* Section header */}
       <div
         ref={headRef}
-        className={`text-center mb-[52px] transition-all duration-700 delay-75 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-          headVis ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-        }`}
+        className={`text-center mb-[52px] transition-all duration-700 delay-75 ease-[cubic-bezier(0.22,1,0.36,1)] ${headVis ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
       >
         <h2 className="text-[26px] sm:text-[32px] lg:text-[40px] font-extrabold tracking-[-1.2px] leading-[1.1]">
           Before{" "}
@@ -43,9 +43,8 @@ export default function FounderSection() {
       {/* Founder card */}
       <div
         ref={cardRef}
-        className={`grid grid-cols-1 md:grid-cols-[280px_1fr] rounded-[20px] overflow-hidden mt-11 shadow-[0_2px_40px_rgba(0,0,0,0.10)] transition-all duration-700 delay-[130ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
-          cardVis ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-        }`}
+        className={`grid grid-cols-1 md:grid-cols-[280px_1fr] rounded-[20px] overflow-hidden mt-11 shadow-[0_2px_40px_rgba(0,0,0,0.10)] transition-all duration-700 delay-[130ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${cardVis ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
       >
         {/* Left: dark panel */}
         <div className="relative bg-[#0D0D0D] px-8 py-12 flex flex-col items-center text-center gap-4 overflow-hidden rounded-t-[20px] md:rounded-tr-none md:rounded-l-[20px]">
@@ -60,7 +59,7 @@ export default function FounderSection() {
           {/* Photo */}
           <div className="relative w-[140px] h-[140px] rounded-full overflow-hidden border-[3px] border-white/[0.12] z-10 flex-shrink-0">
             <Image
-              src="/images/ourteam/hadi.svg"
+              src="/images/ourteam/IMG_8824 (1).jpg"
               alt="Hadi Hasanpour"
               fill
               className="object-cover"
@@ -86,12 +85,36 @@ export default function FounderSection() {
           <p className="text-[18px] font-bold leading-[1.5] tracking-[-0.3px] border-l-[3px] border-[#FFE600] pl-[18px]">
             &ldquo;Engineering taught me how systems work. Entrepreneurship taught me how people do.&rdquo;
           </p>
-          <p className="text-[14px] text-[#5A5A5A] leading-[1.8]">
-            With formal training across electrical, civil, and mechanical engineering — and years of
-            hands-on experience in structured consulting and systems analysis — Hadi built Nexa long
-            before its name existed. Every venture that followed was a proof of concept for one belief:
-            that the right structure turns any idea into a global company.
-          </p>
+          <div className="text-[14px] text-[#5A5A5A] leading-[1.8] flex flex-col gap-4">
+            <p className={expanded ? "" : "line-clamp-4"}>
+              For Hadi Hasanpour, entrepreneurship has never been just about building companies—it has always been about building people.
+            </p>
+            {expanded && (
+              <>
+                <p>
+                  With a foundation in electrical engineering and more than 15 years of experience delivering technical and engineering solutions across multiple industries, Hadi developed a deep understanding of how systems, organizations, and businesses grow. His continuous pursuit of knowledge, including studies in both electrical and mechanical disciplines, shaped a multidisciplinary mindset that would later define his entrepreneurial journey.
+                </p>
+                <p>
+                  Driven by a passion for helping young people unlock their potential, Hadi founded Landa Academy, an entrepreneurship-focused learning environment that provided practical education, mentorship, and growth opportunities for future professionals. More than 300 participants joined the academy, many of whom successfully entered the job market, launched businesses, or accelerated their careers.
+                </p>
+                <p>
+                  Building on this impact, Hadi established Landa International Holding with a vision to help entrepreneurs transform ambitious ideas into global ventures. Today, through international partnerships and projects spanning Canada, the UAE, India, China, and beyond, he continues to support founders, startups, and growing businesses in their journey from concept to market. His mission remains simple: to create opportunities, empower innovators, and help great ideas reach their full potential.
+                </p>
+              </>
+            )}
+          </div>
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            className="self-start inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#8F27FF] transition-colors hover:text-[#6f17cc]"
+          >
+            {expanded ? "Read less" : "Read more"}
+            <svg
+              className={`w-3.5 h-3.5 transition-transform duration-200 ${expanded ? "rotate-180" : ""}`}
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>

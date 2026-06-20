@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 /* ─── Data ─── */
 
@@ -43,7 +43,7 @@ const timelineItems = [
     title: 'Learning Without Borders – Landa Trip',
     desc: 'LandaTrip redefined education beyond traditional settings by integrating learning with purposeful travel.',
     img: '/images/about/trip.svg',
-    logo: '/images/landing/trip.svg',
+    logo: '/images/landing/Landa Trip.svg',
     side: 'right' as const,
   },
   {
@@ -104,6 +104,15 @@ const certificates = [
 /* ─── Component ─── */
 
 export default function OurStoryPage() {
+  const [lightbox, setLightbox] = useState<{ img: string; title: string } | null>(null);
+
+  useEffect(() => {
+    if (!lightbox) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setLightbox(null); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [lightbox]);
+
   useEffect(() => {
     // Fade-up observer for general animated elements
     const observer = new IntersectionObserver(
@@ -404,7 +413,10 @@ export default function OurStoryPage() {
                 >
                   {/* Mobile layout */}
                   <div className="md:hidden">
-                    <div style={{ position: 'relative', width: '100%', paddingBottom: '65%', overflow: 'hidden', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
+                    <div
+                      onClick={() => setLightbox({ img: cert.img, title: cert.title })}
+                      style={{ position: 'relative', width: '100%', paddingBottom: '65%', overflow: 'hidden', borderBottom: '1px solid rgba(255,255,255,.07)', cursor: 'zoom-in' }}
+                    >
                       <Image
                         src={cert.img}
                         alt={cert.title}
@@ -422,7 +434,10 @@ export default function OurStoryPage() {
 
                   {/* Desktop layout */}
                   <div className="hidden items-center gap-8 px-10 py-11 md:flex">
-                    <div style={{ position: 'relative', flexShrink: 0, width: '100px', height: '130px', borderRadius: '10px', overflow: 'hidden', background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.1)' }}>
+                    <div
+                      onClick={() => setLightbox({ img: cert.img, title: cert.title })}
+                      style={{ position: 'relative', flexShrink: 0, width: '100px', height: '130px', borderRadius: '10px', overflow: 'hidden', background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.1)', cursor: 'zoom-in' }}
+                    >
                       <Image
                         src={cert.img}
                         alt={cert.title}
@@ -443,6 +458,46 @@ export default function OurStoryPage() {
           </div>
         </div>
       </section>
+
+      {/* ── CERTIFICATE LIGHTBOX ── */}
+      {lightbox && (
+        <div
+          onClick={() => setLightbox(null)}
+          style={{
+            position: 'fixed', inset: 0, zIndex: 1000,
+            background: 'rgba(0,0,0,.85)', backdropFilter: 'blur(4px)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px',
+            animation: 'osFadeIn .2s ease',
+          }}
+        >
+          <button
+            onClick={() => setLightbox(null)}
+            aria-label="Close"
+            style={{
+              position: 'absolute', top: '24px', right: '24px', width: '44px', height: '44px',
+              borderRadius: '999px', border: '1px solid rgba(255,255,255,.25)',
+              background: 'rgba(255,255,255,.1)', color: '#fff', fontSize: '22px',
+              display: 'grid', placeItems: 'center', cursor: 'pointer',
+            }}
+          >
+            ✕
+          </button>
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{ position: 'relative', width: 'min(92vw, 820px)', height: 'min(88vh, 1060px)' }}
+          >
+            <Image
+              src={lightbox.img}
+              alt={lightbox.title}
+              fill
+              className="object-contain"
+              sizes="92vw"
+            />
+          </div>
+        </div>
+      )}
+
+      <style>{`@keyframes osFadeIn { from { opacity: 0 } to { opacity: 1 } }`}</style>
     </>
   );
 }

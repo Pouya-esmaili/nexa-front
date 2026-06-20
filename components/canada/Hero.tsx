@@ -27,7 +27,7 @@ export default function Hero() {
       <Row>
         <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-14 items-center">
           {/* Left */}
-          <div>
+          <div className="order-2 md:order-1">
             {/* Eyebrow */}
             <div className={`${base} ${mounted ? show : hidden} inline-flex items-center gap-2 px-4 py-[7px] rounded-full text-[13px] font-semibold mb-6`}
               style={{ background: "#FAF6FF", border: "1px solid rgba(143,39,255,0.18)", color: "#8F27FF", transitionDelay: "0ms" }}>
@@ -72,7 +72,7 @@ export default function Hero() {
           </div>
 
           {/* Right — visual */}
-          <div className={`${base} ${mounted ? show : hidden} relative h-[480px] md:h-[540px]`} style={{ transitionDelay: "100ms" }}>
+          <div className={`${base} ${mounted ? show : hidden} order-1 md:order-2 relative h-[240px] md:h-[540px]`} style={{ transitionDelay: "100ms" }}>
             {/* Main image */}
             <div className="absolute inset-0 overflow-hidden"
               style={{

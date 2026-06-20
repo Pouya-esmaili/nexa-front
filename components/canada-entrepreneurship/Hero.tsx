@@ -14,6 +14,16 @@ export default function Hero() {
       {/* ========== MOBILE ========== */}
       <div className="md:hidden px-5">
 
+        <div
+          className="relative h-[240px] mb-6"
+          style={{
+            borderRadius: "32px 80px 32px 32px",
+            backgroundImage: "url('/images/Entrepreneurship/canada-hero.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            boxShadow: "0 20px 50px rgba(0,0,0,0.08)",
+          }}
+        />
         <h1 className="text-3xl font-bold leading-tight tracking-tight mb-4">
           Build a <span className="text-[#8F27FF]">scalable</span> company on a high-stability economic platform.
         </h1>
@@ -71,7 +81,7 @@ export default function Hero() {
               <div
                 className="absolute inset-0"
                 style={{
-                  borderRadius: "32px 32px 32px 120px",
+                  borderRadius: "32px 120px 32px 32px",
                   backgroundImage: "url('/images/Entrepreneurship/canada-hero.jpg')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",

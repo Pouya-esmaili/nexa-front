@@ -1,6 +1,12 @@
-import Link from "next/link";
+"use client";
+
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+
+function scrollToContact(e: React.MouseEvent) {
+  e.preventDefault();
+  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+}
 
 const points = [
   "Align team equity to meet the strict 60% ownership rule",
@@ -85,12 +91,13 @@ export default function NexaRole() {
               <p className="text-[14px] leading-relaxed relative z-10" style={{ color: "rgba(255,255,255,0.85)" }}>
                 We handle the complexity — portal submissions, financial structuring, immigration compliance, and family documentation — so you arrive in Helsinki ready to build, not stressed about paperwork.
               </p>
-              <Link
+              <a
                 href="#contact"
-                className="mt-auto self-start inline-flex items-center gap-2.5 px-6 py-3.5 bg-white text-black font-semibold rounded-full text-[14px] transition-all hover:bg-[#FFE600] hover:-translate-y-0.5 relative z-10"
+                onClick={scrollToContact}
+                className="mt-auto self-start inline-flex items-center gap-2.5 px-6 py-3.5 bg-white text-black font-semibold rounded-full text-[14px] transition-all hover:bg-[#FFE600] hover:-translate-y-0.5 relative z-10 cursor-pointer"
               >
                 Book a Strategy Call →
-              </Link>
+              </a>
             </div>
           </Reveal>
 

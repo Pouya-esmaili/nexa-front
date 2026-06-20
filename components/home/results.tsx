@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "@/components/global/LazyReveal";
 
 /* ─────────────────────────────────────────────────────────────
@@ -29,14 +30,16 @@ export default function Results() {
             className="relative overflow-hidden w-full"
             style={{ aspectRatio: "1440 / 665", background: "#000" }}
           >
-            <img
+            <Image
               src="/images/landing/plan.svg"
               alt="World map"
-              className="absolute inset-0 w-full h-full object-cover"
+              fill
+              sizes="100vw"
+              className="object-cover"
               style={{
                 filter: "invert(1) brightness(6) contrast(8) saturate(0)",
               }}
-              loading="eager"
+              priority
             />
 
             {/* ── SVG overlay – same viewBox as plan.svg, same cover behaviour ── */}

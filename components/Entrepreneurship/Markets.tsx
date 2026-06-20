@@ -82,7 +82,15 @@ export default function Markets() {
                   className="absolute inset-0 group-hover:scale-[1.06] transition-transform duration-[600ms] "
                   style={{ filter: "brightness(.72)" }}
                 >
-                  <img src={m.img} alt={m.name} className="w-full h-full object-cover" />
+                  <Image
+                    src={m.img}
+                    alt={m.name}
+                    fill
+                    className="object-cover"
+                    quality={75}
+                    sizes="(min-width:1024px) 20vw, (min-width:640px) 33vw, 100vw"
+                    priority={i < 3}
+                  />
                 </div>
                 {/* Gradient overlay */}
                 <div

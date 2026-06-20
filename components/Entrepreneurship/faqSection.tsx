@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Row from "../global/Row";
 
 const faqData = [
@@ -103,9 +104,11 @@ export default function StartupFAQ() {
                   <h3 className="text-xs font-medium text-black leading-snug">
                     {item.title}
                   </h3>
-                  <img
+                  <Image
                     src={isActive ? "/images/Entrepreneurship/close.svg" : "/images/Entrepreneurship/open.svg"}
                     alt={isActive ? "Close" : "Open"}
+                    width={20}
+                    height={20}
                     className="w-5 h-5 flex-shrink-0"
                   />
                 </div>
@@ -169,9 +172,11 @@ export default function StartupFAQ() {
                     <h3 className="text-sm font-medium text-black leading-snug">
                       {item.title}
                     </h3>
-                    <img
+                    <Image
                       src={isActive ? "/images/Entrepreneurship/close.svg" : "/images/Entrepreneurship/open.svg"}
                       alt={isActive ? "Close" : "Open"}
+                      width={24}
+                      height={24}
                       className="w-6 h-6 flex-shrink-0"
                     />
                   </div>

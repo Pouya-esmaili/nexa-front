@@ -81,8 +81,8 @@ export default function Hero() {
               <div
                 className="absolute inset-0"
                 style={{
-                  borderRadius: "32px 120px 32px 32px",
-                  backgroundImage: "url('/images/Entrepreneurship/canada-hero.jpg')",
+                  borderRadius: "32px 32px 32px 120px",
+                  backgroundImage: "url('/images/photos/1517935706615-2717063c2225-w900.jpg')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   boxShadow: "0 20px 50px rgba(0,0,0,0.08)",

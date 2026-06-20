@@ -41,4 +41,10 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+// Bundle analyzer (enabled by running `ANALYZE=true npm run analyze`)
+// Uses @next/bundle-analyzer to produce a bundle-size report.
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true' || process.env.ANALYZE === '1' || process.env.ANALYZE,
+});
+
+export default withBundleAnalyzer(nextConfig);

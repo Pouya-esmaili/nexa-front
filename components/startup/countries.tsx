@@ -24,7 +24,7 @@ const countries = [
     flag: "/images/startup/england.svg",
     desc: "Innovator Founder Visa for high-growth ventures",
     href: "/startup/uk",
-    img: "/images/startup/uk.svg",
+    img: "/images/startup/uk.webp",
   },
   {
     name: "Netherlands",
@@ -38,7 +38,7 @@ const countries = [
     flag: "/images/investment/fr.svg",
     desc: "French Tech Visa for founders backed by a recognized program",
     href: "/startup/france",
-    img: "/images/investment/france.svg",
+    img: "/images/investment/france.webp",
   },
 ];
 

@@ -1,0 +1,76 @@
+.loader {
+  display: block;
+}
+
+.circle {
+  fill: none;
+  stroke: #9a3bff;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 380;
+  stroke-dashoffset: 380;
+  animation: drawCircle 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.stem {
+  fill: none;
+  stroke: #9a3bff;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: 130;
+  stroke-dashoffset: 130;
+  animation: drawStem 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.arrow {
+  fill: none;
+  stroke: #9a3bff;
+  stroke-width: 8;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  animation: drawArrow 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.tail {
+  fill: none;
+  stroke: #9a3bff;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+  animation: drawTail 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes drawCircle {
+  0%   { stroke-dashoffset: 380; opacity: 1; }
+  55%  { stroke-dashoffset: 0;   opacity: 1; }
+  85%  { stroke-dashoffset: 0;   opacity: 1; }
+  100% { stroke-dashoffset: 0;   opacity: 0; }
+}
+
+@keyframes drawStem {
+  0%   { stroke-dashoffset: 130; opacity: 0; }
+  20%  { stroke-dashoffset: 130; opacity: 0; }
+  55%  { stroke-dashoffset: 0;   opacity: 1; }
+  85%  { stroke-dashoffset: 0;   opacity: 1; }
+  100% { stroke-dashoffset: 0;   opacity: 0; }
+}
+
+@keyframes drawArrow {
+  0%   { stroke-dashoffset: 120; opacity: 0; }
+  40%  { stroke-dashoffset: 120; opacity: 0; }
+  70%  { stroke-dashoffset: 0;   opacity: 1; }
+  85%  { stroke-dashoffset: 0;   opacity: 1; }
+  100% { stroke-dashoffset: 0;   opacity: 0; }
+}
+
+@keyframes drawTail {
+  0%   { stroke-dashoffset: 60; opacity: 0; }
+  50%  { stroke-dashoffset: 60; opacity: 0; }
+  75%  { stroke-dashoffset: 0;  opacity: 1; }
+  85%  { stroke-dashoffset: 0;  opacity: 1; }
+  100% { stroke-dashoffset: 0;  opacity: 0; }
+}

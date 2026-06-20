@@ -27,9 +27,10 @@ export default function HeroTeam() {
       >
         <div className="relative w-full h-[260px] sm:h-[380px] lg:h-[520px] rounded-[20px] overflow-hidden shadow-[0_24px_80px_rgba(143,39,255,0.12),0_4px_16px_rgba(0,0,0,0.06)]">
           <Image
-            src="/images/ourteam/Team.jpg"
+            src="/images/ourteam/Team.webp"
             alt="Nexa Team"
             fill
+            sizes="(max-width: 1200px) 100vw, 1200px"
             className="object-cover"
             priority
           />

@@ -34,8 +34,8 @@ export default function Hero() {
       <div className="md:hidden px-5 relative z-10">
 
         <div
-          className={`h-[240px] rounded-[32px_80px_32px_32px] mb-6 overflow-hidden ${base} duration-700 delay-75 ${mounted ? show : hideUp}`}
-          style={{ background: "#1a1a2e url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=900&q=80') center/cover" }}
+          className={`h-56 rounded-[32px_80px_32px_32px] mb-6 overflow-hidden ${base} duration-700 delay-75 ${mounted ? show : hideUp}`}
+          style={{ background: "#1a1a2e url('/images/photos/1502602898657-3e91760cbb34-w900.jpg') center/cover" }}
         />
         <h1 className={`text-3xl font-bold leading-tight tracking-tight mb-4 ${base} duration-600 delay-150 ${mounted ? show : hideUp}`}>
           Launch your <span className="text-[#8F27FF]">innovative venture</span> at the heart of Europe.
@@ -92,7 +92,7 @@ export default function Hero() {
                 className="absolute inset-0"
                 style={{
                   borderRadius: "32px 120px 32px 32px",
-                  background: "#1a1a2e url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=900&q=80') center/cover",
+                  background: "#1a1a2e url('/images/photos/1502602898657-3e91760cbb34-w900.jpg') center/cover",
                   boxShadow: "0 20px 50px rgba(0,0,0,0.08)",
                 }}
               />

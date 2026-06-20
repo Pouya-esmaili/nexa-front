@@ -5,12 +5,12 @@ const projects = [
   {
     name: "Arshia Gallery",
     tag: "Fine Jewelry · Luxury Retail",
-    img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=700&q=80",
+    img: "/images/photos/1611591437281-460bfbe1220a-w700.jpg",
   },
   {
     name: "Afra Cafe",
     tag: "F&B · International",
-    img: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=700&q=80",
+    img: "/images/photos/1501339847302-ac426a4a7cbb-w700.jpg",
   },
   {
     name: "Green farm",
@@ -20,7 +20,7 @@ const projects = [
   {
     name: "Aurora Clinic",
     tag: "Healthcare · Canada",
-    img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&q=80",
+    img: "/images/photos/1576091160399-112ba8d25d1d-w700.jpg",
   },
 ];
 

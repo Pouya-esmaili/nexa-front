@@ -3,17 +3,28 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const team = [
-  { name: "Mahsa Esmaeili",      role: "Legal Advisor",        dept: "Legal",      image: "/images/ourteam/mahsa.svg",        linkedin: "https://www.linkedin.com/in/mahsa-esmaili" },
-  { name: "Iman Nasr Esfahani",  role: "COO",                  dept: "Leadership", image: "/images/ourteam/iman.png",         linkedin: "https://www.linkedin.com/in/iman-nasr-esfahani", pos: "center 30%" },
-  { name: "Lida Parvizi",        role: "HR & Administrative",  dept: "Operations", image: "/images/ourteam/lida.svg",         linkedin: "https://www.linkedin.com/in/lida-parvizi-ab7b8721a", pos: "center 30%" },
-  { name: "Gelareh Bahrami",     role: "Sales Officer",        dept: "Sales",      image: "/images/ourteam/gelareh.svg",      linkedin: "https://www.linkedin.com/in/gelareh-bahrami-baba59185", pos: "center 30%" },
-  { name: "Parastoo Sanaifar",   role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/parastoo.svg",     linkedin: "https://www.linkedin.com/in/parastoo-sanaifar" },
-  { name: "Milad Fatemi",        role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/milad.svg",        linkedin: "https://www.linkedin.com/in/miladfatemi", pos: "center 30%" },
-  { name: "Mehdi Esmaeili",      role: "Front-End Developer",  dept: "Tech",       image: "/images/ourteam/pouya.svg",        linkedin: "" },
-  { name: "Sajjad Momeni",       role: "Full-Stack Developer", dept: "Tech",       image: "/images/ourteam/sajjad.png",       linkedin: "https://www.linkedin.com/in/sajjad-momeni-17ab4778" },
-  { name: "Ali Soleimani",       role: "Accountant",           dept: "Finance",    image: "/images/ourteam/ali.svg",          linkedin: "https://www.linkedin.com/in/ali-soleimani-b761b6223" },
-  { name: "Narjes Orouji",       role: "UI/UX Designer",       dept: "Design",     image: "/images/ourteam/narges.svg",       linkedin: "https://www.linkedin.com/in/narges-orouji-7ab846214" },
-  { name: "Amir Esfahanizade",   role: "Back-End Developer",   dept: "Tech",       image: "/images/ourteam/amirmohammad.svg", linkedin: "" },
+  // { name: "Mahsa Esmaeili",      role: "Legal Advisor",        dept: "Legal",      image: "/images/ourteam/mahsa.svg",        linkedin: "https://www.linkedin.com/in/mahsa-esmaili" },
+  // { name: "Iman Nasr Esfahani",  role: "COO",                  dept: "Leadership", image: "/images/ourteam/iman.png",         linkedin: "https://www.linkedin.com/in/iman-nasr-esfahani", pos: "center 30%" },
+  // { name: "Lida Parvizi",        role: "HR & Administrative",  dept: "Operations", image: "/images/ourteam/lida.svg",         linkedin: "https://www.linkedin.com/in/lida-parvizi-ab7b8721a", pos: "center 30%" },
+  // { name: "Gelareh Bahrami",     role: "Sales Officer",        dept: "Sales",      image: "/images/ourteam/gelareh.svg",      linkedin: "https://www.linkedin.com/in/gelareh-bahrami-baba59185", pos: "center 30%" },
+  // { name: "Parastoo Sanaifar",   role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/parastoo.svg",     linkedin: "https://www.linkedin.com/in/parastoo-sanaifar" },
+  // { name: "Milad Fatemi",        role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/milad.svg",        linkedin: "https://www.linkedin.com/in/miladfatemi", pos: "center 30%" },
+  // { name: "Mehdi Esmaeili",      role: "Front-End Developer",  dept: "Tech",       image: "/images/ourteam/pouya.svg",        linkedin: "" },
+  // { name: "Sajjad Momeni",       role: "Full-Stack Developer", dept: "Tech",       image: "/images/ourteam/sajjad.png",       linkedin: "https://www.linkedin.com/in/sajjad-momeni-17ab4778" },
+  // { name: "Ali Soleimani",       role: "Accountant",           dept: "Finance",    image: "/images/ourteam/ali.svg",          linkedin: "https://www.linkedin.com/in/ali-soleimani-b761b6223" },
+  // { name: "Narjes Orouji",       role: "UI/UX Designer",       dept: "Design",     image: "/images/ourteam/narges.svg",       linkedin: "https://www.linkedin.com/in/narges-orouji-7ab846214" },
+  // { name: "Amir Esfahanizade",   role: "Back-End Developer",   dept: "Tech",       image: "/images/ourteam/amirmohammad.svg", linkedin: "" },
+  { name: "Mahsa Esmaeili",      role: "Legal Advisor",        dept: "Legal",      image: "/images/ourteam/mahsa.jpg" , linkedin: "https://www.linkedin.com/in/mahsa-esmaili" },
+  { name: "Iman Nasr Esfahani",  role: "COO",                  dept: "Leadership", image: "/images/ourteam/iman.jpg" , linkedin: "https://www.linkedin.com/in/iman-nasr-esfahani" },
+  { name: "Lida Parvizi",        role: "HR & Administrative",  dept: "Operations", image: "/images/ourteam/lida.jpg" , linkedin: "https://www.linkedin.com/in/lida-parvizi-ab7b8721a" },
+  { name: "Gelareh Bahrami",     role: "Sales Officer",        dept: "Sales",      image: "/images/ourteam/gelareh.jpg" , linkedin: "https://www.linkedin.com/in/gelareh-bahrami-baba59185" },
+  { name: "Parastoo Sanaifar",   role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/parastoo.jpg" , linkedin: "https://www.linkedin.com/in/parastoo-sanaifar" },
+  { name: "Milad Fatemi",        role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/milad.jpg" , linkedin: "https://www.linkedin.com/in/miladfatemi" },
+  { name: "Mehdi Esmaeili",      role: "Front-End Developer",  dept: "Tech",       image: "/images/ourteam/pouya.jpg" , linkedin: "" },
+  { name: "Sajjad Momeni",       role: "Full-Stack Developer", dept: "Tech",       image: "/images/ourteam/sajjad.jpg" , linkedin: "https://www.linkedin.com/in/sajjad-momeni-17ab4778" },
+  { name: "Ali Soleimani",       role: "Accountant",           dept: "Finance",    image: "/images/ourteam/ali.jpg" , linkedin: "https://www.linkedin.com/in/ali-soleimani-b761b6223" },
+  { name: "Narjes Orouji",       role: "UI/UX Designer",       dept: "Design",     image: "/images/ourteam/narges.jpg" , linkedin: "https://www.linkedin.com/in/narges-orouji-7ab846214" },
+  { name: "Amir Esfahanizade",   role: "Back-End Developer",   dept: "Tech",       image: "/images/ourteam/amir.jpg" , linkedin: "" },
 ];
 
 const DELAYS = [60, 130, 200, 270, 340, 410, 480, 550, 620, 690, 760];
@@ -25,17 +36,24 @@ export default function TeamGrid() {
   const gridRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const makeObs = (el: HTMLElement | null, set: (v: boolean) => void) => {
+    // Fallback: if already in viewport on mount, show immediately
+    const showIfVisible = (el: HTMLElement | null, set: (v: boolean) => void) => {
       if (!el) return;
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        set(true);
+        return; // no observer needed
+      }
       const obs = new IntersectionObserver(
         ([e]) => { if (e.isIntersecting) { set(true); obs.disconnect(); } },
-        { threshold: 0.1, rootMargin: "0px 0px -36px 0px" }
+        { threshold: 0.05, rootMargin: "0px 0px -20px 0px" }
       );
       obs.observe(el);
       return () => obs.disconnect();
     };
-    const c1 = makeObs(headRef.current, setHeadVis);
-    const c2 = makeObs(gridRef.current, setGridVis);
+
+    const c1 = showIfVisible(headRef.current, setHeadVis);
+    const c2 = showIfVisible(gridRef.current, setGridVis);
     return () => { c1?.(); c2?.(); };
   }, []);
 
@@ -66,14 +84,14 @@ export default function TeamGrid() {
             }`}
             style={{ transitionDelay: gridVis ? `${DELAYS[i]}ms` : "0ms" }}
           >
-            {/* Photo */}
-            <div className="relative w-full aspect-square overflow-hidden bg-[#FAF6FF]">
+            {/* Photo — padding-bottom trick for reliable SSR height */}
+            <div className="relative w-full overflow-hidden bg-[#FAF6FF] aspect-square">
               <Image
                 src={member.image}
                 alt={member.name}
                 fill
                 className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                style={member.pos ? { objectPosition: member.pos } : undefined}
+                style={member.role ? { objectPosition: member.role } : undefined}
                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               />
             </div>

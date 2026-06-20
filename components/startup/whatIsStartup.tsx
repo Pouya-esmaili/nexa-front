@@ -1,5 +1,6 @@
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import Image from "next/image";
 
 const tags = [
   "Team-Driven Vision & Collaborative Execution",
@@ -15,12 +16,13 @@ export default function WhatIsStartup() {
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1.1fr] gap-12 md:gap-16 items-center">
           <Reveal variant="left">
             <div className="relative">
-              <div className="rounded-[24px] overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80"
+              <div className="relative rounded-[24px] overflow-hidden" style={{ height: 460 }}>
+                <Image
+                  src="/images/photos/1559136555-9303baea8ebd-w800.jpg"
                   alt="Entrepreneur planning global expansion"
-                  className="w-full object-cover"
-                  style={{ height: 460, objectFit: "cover" }}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
               <div className="absolute bottom-6 left-6 bg-white rounded-[14px] px-5 py-4 flex items-center gap-4"

@@ -103,7 +103,7 @@ export default function InvestmentHero() {
               style={{ borderRadius: "140px 20px 20px 20px", height: 380 }}
             >
               <Image
-                src="/images/Entrepreneurship/herooo.svg"
+                src="/images/investment/hero.jpg"
                 alt="Investment strategy"
                 fill
                 className="object-cover object-top"

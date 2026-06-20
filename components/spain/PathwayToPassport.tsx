@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import IconArrow from '@/components/global/IconArrow';
 
 const stages = [
   {
@@ -125,7 +126,7 @@ export default function PathwayToPassport() {
                     <div className="text-[14px] font-semibold">{s.label}</div>
                     <div className="text-[11px] font-semibold text-[#8F27FF]">{s.year}</div>
                   </div>
-                  <img src="/images/arrow.svg" alt="" className="w-4 h-4 transition-transform" style={{ transform: openMobile === i ? "rotate(180deg)" : undefined }} />
+                  <IconArrow className="w-4 h-4 transition-transform" style={{ transform: openMobile === i ? 'rotate(180deg)' : undefined }} />
                 </button>
                 {openMobile === i && (
                   <div className="px-5 pb-4 pl-[70px] text-[13.5px] text-[#474747] leading-[1.6]">

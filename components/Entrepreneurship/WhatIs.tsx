@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/LazyReveal";
 
@@ -18,12 +19,13 @@ export default function WhatIs() {
           {/* Image */}
           <Reveal variant="left">
             <div className="relative">
-              <div className="rounded-[24px] overflow-hidden" style={{ maxHeight: 520 }}>
-                <img
-                  src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80"
+              <div className="relative rounded-[24px] overflow-hidden" style={{ maxHeight: 520, height: 460 }}>
+                <Image
+                  src="/images/photos/1559136555-9303baea8ebd-w800.jpg"
                   alt="Entrepreneur planning global expansion"
-                  className="w-full object-cover"
-                  style={{ height: 460, objectFit: "cover" }}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
               {/* Badge */}

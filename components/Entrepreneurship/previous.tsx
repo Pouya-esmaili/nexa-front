@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Row from "../global/Row";
 
 export default function PreviousProjectsSection() {
@@ -48,11 +49,13 @@ export default function PreviousProjectsSection() {
         <div className="relative">
 
           {/* Card */}
-          <div className="relative rounded-2xl overflow-hidden">
-            <img
+          <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+            <Image
               src={projects[current].image}
               alt={projects[current].title}
-              className="w-full object-cover"
+              fill
+              className="object-cover"
+              sizes="100vw"
             />
 
             {/* Label */}
@@ -97,13 +100,15 @@ export default function PreviousProjectsSection() {
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className="relative rounded-2xl overflow-hidden group cursor-pointer transition duration-300"
+                  className="relative rounded-2xl overflow-hidden group cursor-pointer transition duration-300 aspect-[4/3]"
                 >
                   {/* Image */}
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
-                    className="w-full object-cover group-hover:scale-105 transition duration-500"
+                    fill
+                    className="object-cover group-hover:scale-105 transition duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
 
                   {/* Label */}

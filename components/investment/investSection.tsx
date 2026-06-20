@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Row from "../global/Row";
 
 export default function InvestSection() {
@@ -60,9 +61,11 @@ export default function InvestSection() {
               "
             >
               {/* Image */}
-              <img
+              <Image
                 src={item.image}
                 alt={item.title}
+                width={65}
+                height={65}
                 className="
                   w-[65px]
                   h-[65px]
@@ -117,9 +120,11 @@ export default function InvestSection() {
                 "
               >
                 {/* Image */}
-                <img
+                <Image
                   src={item.image}
                   alt={item.title}
+                  width={110}
+                  height={90}
                   className="
                     w-[110px]
                     h-[90px]

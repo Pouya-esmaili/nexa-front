@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
 
@@ -5,12 +6,12 @@ const projects = [
   {
     name: "Arshia Gallery",
     tag: "Fine Jewelry · Luxury Retail",
-    img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=700&q=80",
+    img: "/images/photos/1611591437281-460bfbe1220a-w700.jpg",
   },
   {
     name: "Afra Cafe",
     tag: "F&B · International",
-    img: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=700&q=80",
+    img: "/images/photos/1501339847302-ac426a4a7cbb-w700.jpg",
   },
   {
     name: "Green Farm",
@@ -20,7 +21,7 @@ const projects = [
   {
     name: "Aurora Clinic",
     tag: "Healthcare · Canada",
-    img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&q=80",
+    img: "/images/photos/1576091160399-112ba8d25d1d-w700.jpg",
   },
 ];
 
@@ -43,10 +44,12 @@ export default function Projects() {
                 className="group relative overflow-hidden cursor-pointer"
                 style={{ borderRadius: 20, height: 260 }}
               >
-                <img
+                <Image
                   src={p.img}
                   alt={p.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
                 />
                 {/* Overlay */}
                 <div

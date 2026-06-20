@@ -51,9 +51,6 @@ export default function StartupCountries() {
             <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1]">
               Where We Offer
             </h2>
-            <p className="text-[15px] text-[#929292] mt-3 max-w-[480px] mx-auto">
-              Five government-backed startup programs. One trusted partner.
-            </p>
           </div>
         </Reveal>
 

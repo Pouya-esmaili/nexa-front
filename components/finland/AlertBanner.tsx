@@ -1,6 +1,12 @@
-import Link from "next/link";
+"use client";
+
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+
+function scrollToContact(e: React.MouseEvent) {
+  e.preventDefault();
+  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+}
 
 export default function AlertBanner() {
   return (
@@ -16,12 +22,13 @@ export default function AlertBanner() {
                 Business Finland is actively evaluating applications for the Finland Startup Permit. Financial thresholds and program criteria are current as of 2026. Our team can assess your eligibility within 48 hours.
               </p>
             </div>
-            <Link
+            <a
               href="#contact"
-              className="flex-shrink-0 inline-flex items-center gap-2.5 px-6 py-3.5 bg-black text-white font-semibold rounded-full text-[14px] transition-all hover:bg-[#8F27FF] hover:-translate-y-0.5 whitespace-nowrap"
+              onClick={scrollToContact}
+              className="flex-shrink-0 inline-flex items-center gap-2.5 px-6 py-3.5 bg-black text-white font-semibold rounded-full text-[14px] transition-all hover:bg-[#8F27FF] hover:-translate-y-0.5 whitespace-nowrap cursor-pointer"
             >
               Check My Eligibility →
-            </Link>
+            </a>
           </div>
         </Reveal>
       </Row>

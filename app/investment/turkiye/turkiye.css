@@ -433,7 +433,7 @@
 
   /* Hero */
   .tk-root .hero-grid{gap:24px}
-  .tk-root .hero-visual{order:1;aspect-ratio:4/3;max-width:none}
+  .tk-root .hero-visual{order:1;aspect-ratio:auto;height:240px;max-width:none}
   .tk-root .display{font-size:32px;line-height:1.1;margin-bottom:16px}
   .tk-root .lede{font-size:14px;margin-bottom:24px}
   .tk-root .hero-stats{padding:18px 0;margin-bottom:22px}

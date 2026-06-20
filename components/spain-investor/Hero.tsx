@@ -32,7 +32,7 @@ export default function Hero() {
       {/* MOBILE */}
       <div className="md:hidden px-5 relative z-10">
         <div
-          className={`h-56 rounded-[32px_80px_32px_32px] mb-6 overflow-hidden ${base} duration-700 delay-75 ${mounted ? show : hideUp}`}
+          className={`h-[240px] rounded-[32px_80px_32px_32px] mb-6 overflow-hidden ${base} duration-700 delay-75 ${mounted ? show : hideUp}`}
           style={{
             background:
               "#1a0820 url('/images/investment/spain-hero.jpg') center/cover",

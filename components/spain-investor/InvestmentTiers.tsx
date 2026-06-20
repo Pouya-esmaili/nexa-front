@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useRef, useEffect } from "react";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
 
@@ -54,6 +55,19 @@ const tiers = [
 ];
 
 export default function InvestmentTiers() {
+  const [selected, setSelected] = useState<number | null>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (gridRef.current && !gridRef.current.contains(e.target as Node)) {
+        setSelected(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
     <section className="py-20 md:py-24 bg-white">
       <Row>
@@ -71,24 +85,28 @@ export default function InvestmentTiers() {
           </p>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {tiers.map((tier, i) => (
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {tiers.map((tier, i) => {
+            const isActive = selected === i;
+            return (
             <Reveal key={i} variant="up" delay={i * 60}>
               <div
-                className="rounded-[20px] p-8 flex flex-col gap-4 h-full transition-all duration-200 hover:-translate-y-0.5"
+                onClick={() => setSelected((prev) => (prev === i ? null : i))}
+                className="rounded-[20px] p-8 flex flex-col gap-4 h-full transition-all duration-200 hover:-translate-y-0.5 cursor-pointer"
                 style={{
-                  background: tier.featured ? "#FAF6FF" : "#F7F6F9",
-                  border: tier.featured ? "1.5px solid #8F27FF" : "1.5px solid #E2E2E2",
+                  background: isActive ? "#FAF6FF" : "#F7F6F9",
+                  border: isActive ? "1.5px solid #8F27FF" : "1.5px solid #E2E2E2",
+                  boxShadow: isActive ? "0 16px 40px rgba(143,39,255,0.08)" : "none",
                 }}
                 onMouseEnter={(e) => {
-                  if (!tier.featured) {
+                  if (!isActive) {
                     const el = e.currentTarget as HTMLDivElement;
                     el.style.borderColor = "#8F27FF";
                     el.style.boxShadow = "0 16px 40px rgba(143,39,255,0.08)";
                   }
                 }}
                 onMouseLeave={(e) => {
-                  if (!tier.featured) {
+                  if (!isActive) {
                     const el = e.currentTarget as HTMLDivElement;
                     el.style.borderColor = "#E2E2E2";
                     el.style.boxShadow = "none";
@@ -123,7 +141,8 @@ export default function InvestmentTiers() {
                 <p className="text-[13.5px] text-[#474747] leading-[1.6] m-0">{tier.desc}</p>
               </div>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
       </Row>
     </section>

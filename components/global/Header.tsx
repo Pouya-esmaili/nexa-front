@@ -13,6 +13,7 @@ export default function Header() {
   const [openPanel, setOpenPanel] = useState<PanelName>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileAcc, setMobileAcc] = useState<string | null>(null);
+  const [mobileServiceCat, setMobileServiceCat] = useState<string | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
 
@@ -21,6 +22,7 @@ export default function Header() {
     setOpenPanel(null);
     setMobileOpen(false);
     setMobileAcc(null);
+    setMobileServiceCat(null);
   }, [pathname]);
 
   /* close on outside click (mobile) — exclude hamburger so click-toggle still works */
@@ -49,8 +51,27 @@ export default function Header() {
     closeTimer.current = setTimeout(() => setOpenPanel(null), 80);
   };
 
+  /* navigate to the homepage contact form from any page */
+  const goToContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setOpenPanel(null);
+    setMobileOpen(false);
+    if (pathname === "/") {
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.href = "/#contact";
+    }
+  };
+
   const toggleAcc = (name: string) =>
-    setMobileAcc((prev) => (prev === name ? null : name));
+    setMobileAcc((prev) => {
+      const next = prev === name ? null : name;
+      if (next !== "services") setMobileServiceCat(null);
+      return next;
+    });
+
+  const toggleServiceCat = (name: string) =>
+    setMobileServiceCat((prev) => (prev === name ? null : name));
 
   return (
     <>
@@ -93,7 +114,7 @@ export default function Header() {
                   onMouseEnter={() => enter("services")}
                   onMouseLeave={leave}
                 >
-                  <div className="max-w-[1240px] mx-auto px-10 py-9 grid grid-cols-4 gap-0">
+                  <div className="max-w-[1240px] mx-auto px-6 py-9 grid grid-cols-3 gap-0">
 
                     {/* Entrepreneurship */}
                     <div className="pr-7 border-r border-[#E2E2E2]">
@@ -140,7 +161,7 @@ export default function Header() {
                     </div>
 
                     {/* Investment */}
-                    <div className="px-7">
+                    <div className="pl-7">
                       <Link href="/investment" className="flex items-center gap-2 text-[16px] font-bold text-[#1a1a1a] mb-2.5 pb-2.5 border-b-2 border-[#E2E2E2] hover:text-[#8F27FF] transition-colors group">
                         <span className="w-8 h-8 rounded-lg bg-[#f5f0ff] grid place-items-center flex-shrink-0 group-hover:bg-[#8F27FF] transition-colors">
                           <svg className="w-4 h-4 text-[#8F27FF] group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
@@ -212,7 +233,7 @@ export default function Header() {
                   onMouseEnter={() => enter("about")}
                   onMouseLeave={leave}
                 >
-                  <div className="max-w-[1240px] mx-auto px-10 py-9 grid grid-cols-3 gap-6">
+                  <div className="max-w-[1240px] mx-auto px-6 py-9 grid grid-cols-2 gap-6">
                     <DdCard href="/our-team" title="Our Team" desc="Meet the people behind Nexa.">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
                     </DdCard>
@@ -245,11 +266,11 @@ export default function Header() {
                   onMouseEnter={() => enter("forms")}
                   onMouseLeave={leave}
                 >
-                  <div className="max-w-[1240px] mx-auto px-10 py-9 grid grid-cols-3 gap-6">
+                  <div className="max-w-[1240px] mx-auto px-6 py-9 grid grid-cols-2 gap-6">
                     <DdCard href="/form/step-1" title="Apply for Funding" desc="Submit your funding application.">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7}><rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>
                     </DdCard>
-                    <DdCard href="/form-2" title="Evaluate Form" desc="Evaluate your eligibility quickly.">
+                    <DdCard href="/#contact" onClick={goToContact} title="Evaluate Form" desc="Evaluate your eligibility quickly.">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7}><path d="M9 11l3 3L22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
                     </DdCard>
                   </div>
@@ -300,41 +321,56 @@ export default function Header() {
 
           {/* Services accordion */}
           <MobAccordion label="Services" open={mobileAcc === "services"} toggle={() => toggleAcc("services")}>
-            <MobCatLink href="/Entrepreneurship" label="Entrepreneurship">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg>
-            </MobCatLink>
-            <MobSubLink href="/Entrepreneurship/canada" label="Canada Entrepreneurship" />
-            <MobSubLink href="/Entrepreneurship/spain" label="Spain Entrepreneurship" />
-            <MobSubLink href="/Entrepreneurship/portugal" label="Portugal Entrepreneurship" />
-            <MobSubLink href="/Entrepreneurship/finland" label="Finland Entrepreneurship" />
-            <MobSubLink href="/Entrepreneurship/netherlands" label="Netherland Entrepreneurship" />
-            <MobCatLink href="/startup" label="Startup">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M22 2L11 13" /><polygon points="22 2 15 22 11 13 2 9 22 2" /></svg>
-            </MobCatLink>
-            <MobSubLink href="/startup/finland" label="Finland Startup" />
-            <MobSubLink href="/startup/canada" label="Canada Startup" />
-            <MobSubLink href="/startup/uk" label="UK Startup" />
-            <MobSubLink href="/startup/nethelands" label="Netherlands Startup" />
-            <MobSubLink href="/startup/france" label="France Startup" />
-            <MobCatLink href="/investment" label="Investment">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
-            </MobCatLink>
-            <MobSubLink href="/investment/uae" label="UAE Investment" />
-            <MobSubLink href="/investment/turkiye" label="Turkey Investment" />
-            <MobSubLink href="/investment/greece" label="Greece Investment" />
-            <MobSubLink href="/investment/spain" label="Spain Investment" />
-            <MobSubLink href="/investment/france" label="France Investment" />
-            <MobCatLink href="/advisory" label="Advisory">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10" /><path d="M12 8v4l3 3" /></svg>
-            </MobCatLink>
-            {/* <MobSubLink href="/Advisory/Business-Model-Design" label="Business Model Design" />
-            <MobSubLink href="/Advisory/Brand-Strategy" label="Brand Strategy" />
-            <MobSubLink href="/Advisory/Go-To-Market-Strategy" label="Go-To-Market Strategy" />
-            <MobSubLink href="/Advisory/Marketing-Strategy" label="Marketing Strategy & Planning" />
-            <MobSubLink href="/Advisory/Market-Analysis" label="Market Analysis" />
-            <MobSubLink href="/Advisory/Visual-Identity" label="Visual Identity" />
-            <MobSubLink href="/Advisory/Web-Design" label="Web Design" />
-            <MobSubLink href="/Advisory/Content-Creation" label="Content Creation" /> */}
+            <MobServiceCat
+              label="Entrepreneurship"
+              href="/Entrepreneurship"
+              open={mobileServiceCat === "entrepreneurship"}
+              toggle={() => toggleServiceCat("entrepreneurship")}
+              icon={<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg>}
+              items={[
+                ["Canada Entrepreneurship", "/Entrepreneurship/canada"],
+                ["Spain Entrepreneurship", "/Entrepreneurship/spain"],
+                ["Portugal Entrepreneurship", "/Entrepreneurship/portugal"],
+                ["Finland Entrepreneurship", "/Entrepreneurship/finland"],
+                ["Netherland Entrepreneurship", "/Entrepreneurship/netherlands"],
+              ]}
+            />
+            <MobServiceCat
+              label="Startup"
+              href="/startup"
+              open={mobileServiceCat === "startup"}
+              toggle={() => toggleServiceCat("startup")}
+              icon={<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M22 2L11 13" /><polygon points="22 2 15 22 11 13 2 9 22 2" /></svg>}
+              items={[
+                ["Finland Startup", "/startup/finland"],
+                ["Canada Startup", "/startup/canada"],
+                ["UK Startup", "/startup/uk"],
+                ["Netherlands Startup", "/startup/nethelands"],
+                ["France Startup", "/startup/france"],
+              ]}
+            />
+            <MobServiceCat
+              label="Investment"
+              href="/investment"
+              open={mobileServiceCat === "investment"}
+              toggle={() => toggleServiceCat("investment")}
+              icon={<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>}
+              items={[
+                ["UAE Investment", "/investment/uae"],
+                ["Turkey Investment", "/investment/turkiye"],
+                ["Greece Investment", "/investment/greece"],
+                ["Spain Investment", "/investment/spain"],
+                ["France Investment", "/investment/france"],
+              ]}
+            />
+            <MobServiceCat
+              label="Advisory"
+              href="/advisory"
+              open={mobileServiceCat === "advisory"}
+              toggle={() => toggleServiceCat("advisory")}
+              icon={<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10" /><path d="M12 8v4l3 3" /></svg>}
+              items={[]}
+            />
           </MobAccordion>
 
           {/* About Us accordion */}
@@ -346,7 +382,7 @@ export default function Header() {
           {/* Forms accordion */}
           <MobAccordion label="Forms" open={mobileAcc === "forms"} toggle={() => toggleAcc("forms")}>
             <MobSubLink href="/form/step-1" label="Apply for Funding" />
-            <MobSubLink href="/form-2" label="Evaluate Form" />
+            <MobSubLink href="/#contact" onClick={goToContact} label="Evaluate Form" />
           </MobAccordion>
 
           {/* Bottom CTA */}
@@ -374,9 +410,9 @@ export default function Header() {
 
 /* ─── Sub-components ─────────────────────────── */
 
-function DdCard({ href, title, desc, children }: { href: string; title: string; desc: string; children: ReactNode }) {
+function DdCard({ href, title, desc, children, onClick }: { href: string; title: string; desc: string; children: ReactNode; onClick?: (e: React.MouseEvent) => void }) {
   return (
-    <Link href={href}
+    <Link href={href} onClick={onClick}
       className="flex items-start gap-3.5 p-3.5 rounded-[10px] hover:bg-[#FAF6FF] transition-colors group">
       <span className="w-[38px] h-[38px] rounded-[9px] bg-[#f5f0ff] grid place-items-center flex-shrink-0 group-hover:bg-[#8F27FF] transition-colors [&>svg]:w-[18px] [&>svg]:h-[18px] [&>svg]:text-[#8F27FF] group-hover:[&>svg]:text-white [&>svg]:transition-colors">
         {children}
@@ -414,24 +450,56 @@ function MobAccordion({ label, open, toggle, children }: { label: string; open: 
   );
 }
 
-function MobCatLink({ href, label, children }: { href: string; label: string; children?: ReactNode }) {
+function MobServiceCat({
+  label,
+  href,
+  icon,
+  items,
+  open,
+  toggle,
+}: {
+  label: string;
+  href: string;
+  icon: ReactNode;
+  items: [string, string][];
+  open: boolean;
+  toggle: () => void;
+}) {
   return (
-    <Link href={href}
-      className="flex items-center gap-3 px-6 py-3.5 text-[14px] font-bold text-[#1a1a1a] border-b border-[#E2E2E2] hover:text-[#8F27FF] hover:bg-[#FAF6FF] transition-colors group">
-      {children && (
+    <div className="border-b border-[#E2E2E2]">
+      <button
+        onClick={toggle}
+        className={`w-full flex items-center gap-3 px-6 py-3.5 text-[14px] font-bold transition-colors group ${open ? "text-[#8F27FF] bg-[#FAF6FF]" : "text-[#1a1a1a] hover:text-[#8F27FF] hover:bg-[#FAF6FF]"}`}
+      >
         <span className="w-5 h-6 rounded-md bg-[#f5f0ff] grid place-items-center flex-shrink-0 group-hover:bg-[#8F27FF] transition-colors [&>svg]:w-3 [&>svg]:h-3 [&>svg]:text-[#8F27FF] group-hover:[&>svg]:text-white [&>svg]:transition-colors">
-          {children}
+          {icon}
         </span>
-      )}
-      <span className="flex-1">{label}</span>
-      <svg className="w-4 h-4 text-[#8F27FF] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}><polyline points="9 18 15 12 9 6" /></svg>
-    </Link>
+        <span className="flex-1 text-left">{label}</span>
+        <svg
+          className={`w-4 h-4 flex-shrink-0 transition-transform duration-200 ${open ? "rotate-180 text-[#8F27FF]" : "opacity-50"}`}
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      <div
+        className="bg-[#F7F6F9] overflow-hidden transition-all duration-300"
+        style={{ maxHeight: open ? "1000px" : "0" }}
+      >
+        <Link href={href}
+          className="block px-12 py-3.5 text-[13.5px] font-semibold text-[#8F27FF] border-b border-[#F4F4F4] hover:bg-[#f3ecff] transition-colors">
+          View all {label}
+        </Link>
+        {items.map(([itemLabel, itemHref]) => (
+          <MobSubLink key={itemHref} href={itemHref} label={itemLabel} />
+        ))}
+      </div>
+    </div>
   );
 }
 
-function MobSubLink({ href, label }: { href: string; label: string }) {
+function MobSubLink({ href, label, onClick }: { href: string; label: string; onClick?: (e: React.MouseEvent) => void }) {
   return (
-    <Link href={href}
+    <Link href={href} onClick={onClick}
       className="block px-12 py-3.5 text-[14px] text-[#444] border-b border-[#F4F4F4] hover:text-[#8F27FF] hover:bg-[#f3ecff] transition-colors">
       {label}
     </Link>

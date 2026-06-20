@@ -122,7 +122,7 @@ export default function ContactForm() {
 
         <div className="form-foot">
           <small>Your information is reviewed confidentially by Nexa&apos;s advisory team.</small>
-          <button type="submit" className="btn-primary">Submit</button>
+          <button type="submit" className="btn-primary purple">Submit</button>
         </div>
 
         {sent && (

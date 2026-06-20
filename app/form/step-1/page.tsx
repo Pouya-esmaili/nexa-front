@@ -854,7 +854,7 @@ export default function MultiStepForm() {
         </aside>
 
        
-        <div className="flex-1 flex flex-col rounded-2xl border border-[#929292] bg-[#F4F4F4] p-6 md:p-8" style={{ height: '620px' }}>
+        <div className="flex-1 flex flex-col rounded-2xl border border-[#929292] bg-[#F4F4F4] p-6 md:p-8 lg:h-[620px]">
 
           {/* Step title */}
           <div className="mb-6">

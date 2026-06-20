@@ -17,7 +17,7 @@ export default function Hero() {
       <Row>
         <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-16 items-center relative z-10">
           <div
-            className="transition-all duration-700"
+            className="order-2 md:order-1 transition-all duration-700"
             style={{ opacity: mounted ? 1 : 0, transform: mounted ? "none" : "translateY(24px)" }}
           >
             <h1 className="text-[32px] md:text-[48px] font-bold tracking-[-0.03em] leading-[1.06] mb-[22px]">
@@ -55,7 +55,7 @@ export default function Hero() {
           </div>
 
           <div
-            className="relative h-[260px] md:h-[520px] transition-all duration-700 delay-150"
+            className="order-1 md:order-2 relative h-[240px] md:h-[520px] transition-all duration-700 delay-150"
             style={{ opacity: mounted ? 1 : 0, transform: mounted ? "none" : "translateY(24px)" }}
           >
             <div

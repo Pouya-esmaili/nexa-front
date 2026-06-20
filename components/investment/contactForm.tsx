@@ -266,7 +266,7 @@ export default function InvestmentContactForm() {
                     ? "Sending…"
                     : (
                       <>
-                        Submit Proposal
+                        Send Message
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="white" strokeWidth="2.5">
                           <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>

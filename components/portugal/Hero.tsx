@@ -27,7 +27,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
 
           {/* Left */}
-          <div>
+          <div className="order-2 md:order-1">
 
             <h1 className={`${base} ${mounted ? show : hidden} text-[38px] md:text-[48px] font-bold leading-[1.06] tracking-[-0.03em] mb-5`}
               style={{ transitionDelay: "80ms" }}>
@@ -65,7 +65,7 @@ export default function Hero() {
           </div>
 
           {/* Right visual */}
-          <div className={`${base} ${mounted ? show : hidden} relative h-[460px] md:h-[520px]`} style={{ transitionDelay: "100ms" }}>
+          <div className={`${base} ${mounted ? show : hidden} order-1 md:order-2 relative h-[240px] md:h-[520px]`} style={{ transitionDelay: "100ms" }}>
             {/* Main image — Lisbon */}
             <div className="absolute inset-0 overflow-hidden"
               style={{

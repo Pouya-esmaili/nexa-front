@@ -25,7 +25,9 @@ export default function WhatIsStartup() {
               </div>
               <div className="absolute bottom-6 left-6 bg-white rounded-[14px] px-5 py-4 flex items-center gap-4"
                 style={{ boxShadow: "0 16px 48px rgba(0,0,0,0.09)" }}>
-                <div className="w-[42px] h-[42px] rounded-[12px] bg-[#8F27FF] grid place-items-center text-[20px] flex-shrink-0">🌍</div>
+                <div className="w-[42px] h-[42px] rounded-[12px] bg-[#8F27FF] grid place-items-center text-white flex-shrink-0">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-[22px] h-[22px]"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
                 <div>
                   <strong className="block text-[14px] font-bold text-black">400+ Entrepreneurs Placed</strong>
                   <span className="text-[12px] text-[#929292]">Across 5 countries</span>

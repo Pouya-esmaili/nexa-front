@@ -16,7 +16,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1.15fr] gap-[48px] items-center">
 
           {/* LEFT */}
-          <div className={`${base} ${left}`}>
+          <div className={`${base} ${left} order-2 md:order-1`}>
             <h1 className="text-[38px] md:text-[52px] font-bold leading-[1.06] tracking-[-0.03em] text-black mb-[20px]">
               Your Independent Global{" "}
               <span className="highlight">Startup Partner</span>
@@ -33,8 +33,8 @@ export default function Hero() {
           </div>
 
           {/* RIGHT */}
-          <div className={`${base} ${right}`} style={{ transitionDelay: "80ms" }}>
-            <div className="relative w-full h-[380px] overflow-hidden"
+          <div className={`${base} ${right} order-1 md:order-2`} style={{ transitionDelay: "80ms" }}>
+            <div className="relative w-full h-[240px] md:h-[380px] overflow-hidden"
               style={{ borderRadius: "140px 20px 20px 20px" }}>
               <img
                 src="/images/startup/Sturtup Hero.jpg"

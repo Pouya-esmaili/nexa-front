@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.0",
-    "@tailwindcss/line-clamp": "^0.4.4",
     "lucide-react": "^0.562.0",
     "next": "16.1.0",
     "pg": "^8.21.0",
@@ -24,9 +23,10 @@
     "zustand": "^5.0.9"
   },
   "devDependencies": {
-    "@types/pg": "^8.6.7",
+    "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/pg": "^8.6.7",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

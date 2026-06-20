@@ -20,7 +20,7 @@ export default function StartupHero() {
         <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-16 items-center relative z-10">
 
           {/* Left */}
-          <div>
+          <div className="order-2 md:order-1">
             <h1 className={`${base} ${mounted ? show : hidden} text-[32px] md:text-[48px] font-bold leading-[1.06] tracking-[-0.03em] mb-5`}
               style={{ transitionDelay: "0ms" }}>
               Direct permanent residency for{" "}
@@ -57,7 +57,7 @@ export default function StartupHero() {
           </div>
 
           {/* Right */}
-          <div className={`${base} ${mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"} relative h-[480px] md:h-[520px]`}
+          <div className={`${base} ${mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"} order-1 md:order-2 relative h-[240px] md:h-[520px]`}
             style={{ transitionDelay: "100ms", transitionDuration: "800ms" }}>
             <div className="absolute inset-0 overflow-hidden"
               style={{

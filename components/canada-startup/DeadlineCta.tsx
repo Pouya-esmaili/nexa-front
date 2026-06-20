@@ -20,7 +20,7 @@ export default function DeadlineCta() {
                 </div>
 
                 <h2 className="text-[26px] md:text-[34px] font-bold text-white tracking-[-0.03em] leading-[1.1] relative z-10">
-                  The window is open.<br />
+                  The window was open.<br />
                   <em className="text-[#FFE600] not-italic">But only until June 30.</em>
                 </h2>
 

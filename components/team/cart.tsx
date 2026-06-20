@@ -3,17 +3,17 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const team = [
-  { name: "Mahsa Esmaeili",      role: "Legal Advisor",        dept: "Legal",      image: "/images/ourteam/mahsa.svg" },
-  { name: "Iman Nasr Esfahani",  role: "COO",                  dept: "Leadership", image: "/images/ourteam/iman.png" },
-  { name: "Lida Parvizi",        role: "HR & Administrative",  dept: "Operations", image: "/images/ourteam/lida.svg" },
-  { name: "Gelareh Bahrami",     role: "Sales Officer",        dept: "Sales",      image: "/images/ourteam/gelareh.svg" },
-  { name: "Parastoo Sanaifar",   role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/parastoo.svg" },
-  { name: "Milad Fatemi",        role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/milad.svg" },
-  { name: "Mehdi Esmaeili",      role: "Front-End Developer",  dept: "Tech",       image: "/images/ourteam/pouya.svg" },
-  { name: "Sajjad Momeni",       role: "Full-Stack Developer", dept: "Tech",       image: "/images/ourteam/sajjad.png" },
-  { name: "Ali Soleimani",       role: "Accountant",           dept: "Finance",    image: "/images/ourteam/ali.svg" },
-  { name: "Narjes Orouji",       role: "UI/UX Designer",       dept: "Design",     image: "/images/ourteam/narges.svg" },
-  { name: "Amir Esfahanizade",   role: "Back-End Developer",   dept: "Tech",       image: "/images/ourteam/amirmohammad.svg" },
+  { name: "Mahsa Esmaeili",      role: "Legal Advisor",        dept: "Legal",      image: "/images/ourteam/mahsa.svg",        linkedin: "https://www.linkedin.com/in/mahsa-esmaili" },
+  { name: "Iman Nasr Esfahani",  role: "COO",                  dept: "Leadership", image: "/images/ourteam/iman.png",         linkedin: "https://www.linkedin.com/in/iman-nasr-esfahani", pos: "center 30%" },
+  { name: "Lida Parvizi",        role: "HR & Administrative",  dept: "Operations", image: "/images/ourteam/lida.svg",         linkedin: "https://www.linkedin.com/in/lida-parvizi-ab7b8721a", pos: "center 30%" },
+  { name: "Gelareh Bahrami",     role: "Sales Officer",        dept: "Sales",      image: "/images/ourteam/gelareh.svg",      linkedin: "https://www.linkedin.com/in/gelareh-bahrami-baba59185", pos: "center 30%" },
+  { name: "Parastoo Sanaifar",   role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/parastoo.svg",     linkedin: "https://www.linkedin.com/in/parastoo-sanaifar" },
+  { name: "Milad Fatemi",        role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/milad.svg",        linkedin: "https://www.linkedin.com/in/miladfatemi", pos: "center 30%" },
+  { name: "Mehdi Esmaeili",      role: "Front-End Developer",  dept: "Tech",       image: "/images/ourteam/pouya.svg",        linkedin: "" },
+  { name: "Sajjad Momeni",       role: "Full-Stack Developer", dept: "Tech",       image: "/images/ourteam/sajjad.png",       linkedin: "https://www.linkedin.com/in/sajjad-momeni-17ab4778" },
+  { name: "Ali Soleimani",       role: "Accountant",           dept: "Finance",    image: "/images/ourteam/ali.svg",          linkedin: "https://www.linkedin.com/in/ali-soleimani-b761b6223" },
+  { name: "Narjes Orouji",       role: "UI/UX Designer",       dept: "Design",     image: "/images/ourteam/narges.svg",       linkedin: "https://www.linkedin.com/in/narges-orouji-7ab846214" },
+  { name: "Amir Esfahanizade",   role: "Back-End Developer",   dept: "Tech",       image: "/images/ourteam/amirmohammad.svg", linkedin: "" },
 ];
 
 const DELAYS = [60, 130, 200, 270, 340, 410, 480, 550, 620, 690, 760];
@@ -72,7 +72,8 @@ export default function TeamGrid() {
                 src={member.image}
                 alt={member.name}
                 fill
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                style={member.pos ? { objectPosition: member.pos } : undefined}
                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               />
             </div>
@@ -88,14 +89,19 @@ export default function TeamGrid() {
               <div className="inline-block bg-[#F7F7F7] border border-[#E8E8E8] text-[#A0A0A0] text-[11px] px-[9px] py-[3px] rounded-full font-medium mb-[9px]">
                 {member.dept}
               </div>
-              <div className="flex gap-[6px]">
-                <a
-                  href="#"
-                  className="w-[26px] h-[26px] border border-[#E8E8E8] rounded-md flex items-center justify-center text-[#A0A0A0] text-[10px] font-bold no-underline transition-colors duration-200 hover:border-[#8F27FF] hover:text-[#8F27FF]"
-                >
-                  in
-                </a>
-              </div>
+              {member.linkedin && (
+                <div className="flex gap-[6px]">
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${member.name} on LinkedIn`}
+                    className="w-[26px] h-[26px] border border-[#E8E8E8] rounded-md flex items-center justify-center text-[#A0A0A0] text-[10px] font-bold no-underline transition-colors duration-200 hover:border-[#8F27FF] hover:text-[#8F27FF]"
+                  >
+                    in
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         ))}

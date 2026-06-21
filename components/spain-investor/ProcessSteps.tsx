@@ -99,11 +99,13 @@ export default function ProcessSteps() {
       <Row>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[70px] items-start">
           {/* Left sticky */}
-          <Reveal variant="left">
-            <div className="md:sticky md:top-[100px]">
+          <div className="md:sticky md:top-[100px]">
+            <Reveal variant="left">
               <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] mb-5">
                 Step-by-Step Application Process
               </h2>
+            </Reveal>
+            <Reveal variant="left" delay={120}>
               <blockquote
                 className="text-[17px] italic font-medium leading-[1.5] text-black py-5 mb-4"
                 style={{ paddingLeft: "24px", borderLeft: "3px solid #8F27FF" }}
@@ -111,12 +113,14 @@ export default function ProcessSteps() {
                 &ldquo;Misordering these steps leads to immediate administrative rejection — Nexa sequences every
                 milestone precisely.&rdquo;
               </blockquote>
+            </Reveal>
+            <Reveal variant="left" delay={240}>
               <p className="text-[14.5px] text-[#929292] leading-[1.7]">
                 From capital deployment to TIE card in hand — the full process takes approximately 4 to 5 months. The
                 consulate holds a statutory 90-day review window after submission.
               </p>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
 
           {/* Right — steps with single line + circles in padding */}
           <div className="relative pl-[52px]">

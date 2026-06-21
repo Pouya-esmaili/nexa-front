@@ -106,7 +106,7 @@ export default function Hero() {
                 style={{
                   borderRadius: "32px 120px 32px 32px",
                   background:
-                    "#1a0820 url('/images/photos/1558642452-9d2a7deb7f62-w900.jpg') center/cover",
+                    "#1a0820 url('/images/startup/Spain Sturtup.jpg') center/cover",
                   boxShadow: "0 20px 50px rgba(0,0,0,0.08)",
                 }}
               >

@@ -92,11 +92,13 @@ export default function ProcessSteps() {
       <Row>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[70px] items-start">
           {/* Left sticky */}
-          <Reveal variant="left">
-            <div className="md:sticky md:top-[100px]">
+          <div className="md:sticky md:top-[100px]">
+            <Reveal variant="left">
               <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] mb-5">
                 Step-by-Step Application Process
               </h2>
+            </Reveal>
+            <Reveal variant="left" delay={120}>
               <blockquote
                 className="text-[17px] italic font-medium leading-[1.5] text-black py-5 mb-4"
                 style={{ paddingLeft: "24px", borderLeft: "3px solid #8F27FF" }}
@@ -104,12 +106,14 @@ export default function ProcessSteps() {
                 &ldquo;Missing the order of operations — ELY assessment before Migri review — is the most common cause
                 of denial.&rdquo;
               </blockquote>
+            </Reveal>
+            <Reveal variant="left" delay={240}>
               <p className="text-[14.5px] text-[#929292] leading-[1.7]">
                 The two-stage evaluation (ELY Centre → Migri) means your application is reviewed by both a business
                 authority and an immigration authority. Average processing time: 3 to 4 months.
               </p>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
 
           {/* Right — steps with single line + circles in padding */}
           <div className="relative pl-[52px]">

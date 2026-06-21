@@ -17,7 +17,7 @@ const projects = [
   { name: "AutiLab",         tag: "Autism Support · Child EdTech",    img: "/images/about/autiLab.jpg", icon: "/images/landing/Autilab.svg" },
   { name: "Vision Raft",     tag: "Virtual Reality · Immersive Tech", img: "/images/about/vision.jpg", icon: "/images/landing/raft.svg" },
   { name: "Diaco",           tag: "Business Solutions · Corporate",   img: "/images/about/Diaco.jpg", icon: "/images/startup/Diaco.svg" },
-  { name: "Arshia Gallery",  tag: "Fine Jewelry · Luxury Retail",     img: "/images/about/academylanda.svg",  icon: "/images/landing/Arshia Gallery.svg" },
+  { name: "Arshia Gallery",  tag: "Fine Jewelry · Luxury Retail",     img: "/images/Entrepreneurship/Arshia Gallery.jpg",  icon: "/images/landing/Arshia Gallery.svg" },
   { name: "Preventie Gene",  tag: "Genetics · Health Prevention",     img: "/images/about/preventigene.jpg",  icon: "/images/landing/preventigene.svg" },
   { name: "SteadySkull",     tag: "Surgical Device · MedTech",        img: "/images/about/steadyskull.jpg",   icon: "/images/landing/SteadySkull.svg" },
 ];

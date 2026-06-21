@@ -72,8 +72,8 @@ export default function CommentsSection() {
   const lastIndex = testimonials.length - 1;
   const maxIndex = Math.max(0, testimonials.length - perView);
   const cardW    = trackWidth > 0 ? (trackWidth - GAP * (perView - 1)) / perView : 0;
-  /* scroll the track just enough to keep the active card in view */
-  const index    = Math.min(Math.max(active - perView + 1, 0), maxIndex);
+  /* page one card at a time, stopping at the last full view */
+  const index    = Math.min(active, maxIndex);
   const offsetPx = index * (cardW + GAP);
 
   const prev = useCallback(() => setActive((a) => Math.max(0, a - 1)), []);

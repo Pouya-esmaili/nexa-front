@@ -10,7 +10,7 @@ const keyProvinces: Province[] = [
   {
     name: "Ontario",
 
-    bg: "/images/photos/1503614472-8c93d56e92ce-w600.jpg",
+    bg: "/images/Entrepreneurship/Ontario.jpg",
     stats: [
       { label: "Min Net Worth", value: "CAD 800K" },
       { label: "Min Investment", value: "CAD 200K" },
@@ -19,8 +19,8 @@ const keyProvinces: Province[] = [
   },
   {
     name: "British Columbia",
-   
-    bg: "/images/photos/1559511260-66a654ae982a-w600.jpg",
+
+    bg: "/images/Entrepreneurship/British Columbia.jpg",
     stats: [
       { label: "Min Net Worth", value: "CAD 600K" },
       { label: "Min Investment", value: "CAD 200K" },
@@ -30,7 +30,7 @@ const keyProvinces: Province[] = [
   {
     name: "Alberta",
 
-    bg: "/images/photos/1609825488888-3a766db05542-w600.jpg",
+    bg: "/images/Entrepreneurship/Alberta.jpg",
     stats: [
       { label: "Min Net Worth", value: "Flexible" },
       { label: "Min Investment", value: "CAD 100K+" },
@@ -39,8 +39,8 @@ const keyProvinces: Province[] = [
   },
   {
     name: "Quebec",
- 
-    bg: "/images/photos/1519178614-68673b201f36-w600.jpg",
+
+    bg: "/images/Entrepreneurship/Quebec.jpg",
     stats: [
       { label: "Min Net Worth", value: "CAD 900K" },
       { label: "Min Investment", value: "CAD 200K" },
@@ -49,8 +49,8 @@ const keyProvinces: Province[] = [
   },
   {
     name: "Manitoba",
-  
-    bg: "/images/photos/1572206912757-5a78ff4d79be-w600.jpg",
+
+    bg: "/images/Entrepreneurship/Manitoba.jpg",
     stats: [
       { label: "Min Net Worth", value: "CAD 500K" },
       { label: "Min Investment", value: "CAD 150K" },
@@ -79,8 +79,8 @@ const keyProvinces: Province[] = [
   },
   {
     name: "NW Territories",
-  
-    bg: "/images/photos/1483347756197-71ef80e95f73-w600.jpg",
+
+    bg: "/images/Entrepreneurship/NW Territories.jpg",
     stats: [
       { label: "Min Net Worth", value: "CAD 250–500K" },
       { label: "Min Investment", value: "CAD 150K" },
@@ -92,8 +92,8 @@ const keyProvinces: Province[] = [
 const atlanticProvinces: Province[] = [
   {
     name: "New Brunswick",
-    
-    bg: "/images/photos/1551038247-3d9af20df552-w600.jpg",
+
+    bg: "/images/Entrepreneurship/New Brunswick.jpg",
     stats: [
       { label: "Min Net Worth", value: "CAD 500K" },
       { label: "Min Investment", value: "CAD 150K" },
@@ -102,8 +102,8 @@ const atlanticProvinces: Province[] = [
   },
   {
     name: "Nova Scotia",
-  
-    bg: "https://images.unsplash.com/photo-1565024144815-79bc8094a0d3?w=600&q=80",
+
+    bg: "/images/Entrepreneurship/Nova Scotia.jpg",
     stats: [
       { label: "Min Net Worth", value: "CAD 600K" },
       { label: "Min Investment", value: "CAD 150K" },
@@ -112,8 +112,8 @@ const atlanticProvinces: Province[] = [
   },
   {
     name: "Prince Edward Island",
-   
-    bg: "/images/photos/1469854523086-cc02fe5d8800-w600.jpg",
+
+    bg: "/images/Entrepreneurship/Prince Edward Island.jpg",
     stats: [
       { label: "Min Net Worth", value: "CAD 600K" },
       { label: "Min Investment", value: "CAD 150K" },
@@ -122,8 +122,8 @@ const atlanticProvinces: Province[] = [
   },
   {
     name: "Newfoundland & Labrador",
-   
-    bg: "https://images.unsplash.com/photo-1504608524841-42584120d693?w=600&q=80",
+
+    bg: "/images/Entrepreneurship/Newfoundland & Labrador.jpg",
     stats: [
       { label: "Min Net Worth", value: "CAD 500K" },
       { label: "Min Investment", value: "CAD 200K" },

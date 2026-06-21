@@ -63,22 +63,26 @@ export default function ProcessSteps() {
     <section className="py-20 md:py-24" style={{ background: "#F7F6F9" }}>
       <Row>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[70px] items-start">
-          <Reveal variant="left">
-            <div className="md:sticky md:top-[100px]">
+          <div className="md:sticky md:top-[100px]">
+            <Reveal variant="left">
               <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] mb-5">
                 6-Step Transition Protocol
               </h2>
+            </Reveal>
+            <Reveal variant="left" delay={120}>
               <blockquote
                 className="text-[17px] italic font-medium leading-[1.5] text-black py-5 mb-4"
                 style={{ paddingLeft: "24px", borderLeft: "3px solid #8F27FF" }}
               >
                 &ldquo;Nexa manages the full lifecycle — guaranteeing clean data handoffs between home consulates and French prefectures.&rdquo;
               </blockquote>
+            </Reveal>
+            <Reveal variant="left" delay={240}>
               <p className="text-[14.5px] text-[#929292] leading-[1.7]">
                 From business modeling to physical 4-year card in hand, the full pipeline spans approximately 5–6 months. Steps 1–2 happen in your home country; Steps 4–6 unfold inside France after arrival.
               </p>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
 
           <div className="relative pl-[52px]">
             <div

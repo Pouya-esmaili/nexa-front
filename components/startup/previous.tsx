@@ -1,67 +1,84 @@
-import Row from "@/components/global/Row";
-import Reveal from "@/components/global/Reveal";
+"use client";
+
+import Reveal from "@/components/global/LazyReveal";
+import Image from "next/image";
 
 const projects = [
-  {
-    name: "Arshia Gallery",
-    tag: "Fine Jewelry · Luxury Retail",
-    img: "/images/photos/1611591437281-460bfbe1220a-w700.jpg",
-  },
-  {
-    name: "Afra Cafe",
-    tag: "F&B · International",
-    img: "/images/photos/1501339847302-ac426a4a7cbb-w700.jpg",
-  },
-  {
-    name: "Green farm",
-    tag: "Sustainability · Global",
-    img: "https://images.unsplash.com/photo-1542601906897-ecd40029e09e?w=700&q=80",
-  },
-  {
-    name: "Aurora Clinic",
-    tag: "Healthcare · Canada",
-    img: "/images/photos/1576091160399-112ba8d25d1d-w700.jpg",
-  },
+  // { name: "Landa Trip",      tag: "Tourism · Travel",                 img: "/images/about/trip.svg",          icon: "/images/landing/Landa Trip.svg" },
+  // { name: "Landa Craft",     tag: "Handcraft · Artisan Market",       img: "/images/about/craft.svg",         icon: "/images/landing/craft.svg" },
+  // { name: "AutiLab",         tag: "Autism Support · Child EdTech",    img: "/images/about/autilab.svg",       icon: "/images/landing/Autilab.svg" },
+  // { name: "Vision Raft",     tag: "Virtual Reality · Immersive Tech", img: "/images/about/vision.svg",        icon: "/images/landing/raft.svg" },
+  // { name: "Diaco",           tag: "Business Solutions · Corporate",   img: "/images/about/Diaco.svg",         icon: "/images/startup/Diaco.svg" },
+  // { name: "Arshia Gallery",  tag: "Fine Jewelry · Luxury Retail",     img: "/images/about/academylanda.svg",  icon: "/images/landing/Arshia Gallery.svg" },
+  // { name: "Preventie Gene",  tag: "Genetics · Health Prevention",     img: "/images/about/preventigene.svg",  icon: "/images/landing/preventigene.svg" },
+  // { name: "SteadySkull",     tag: "Surgical Device · MedTech",        img: "/images/about/diacocenter.svg",   icon: "/images/landing/SteadySkull.svg" },
+  { name: "Landa Trip",      tag: "Tourism · Travel",                 img: "/images/about/trip.jpg", icon: "/images/landing/Landa Trip.svg" },
+  { name: "Landa Craft",     tag: "Handcraft · Artisan Market",       img: "/images/about/craft.jpg", icon: "/images/landing/craft.svg" },
+  { name: "AutiLab",         tag: "Autism Support · Child EdTech",    img: "/images/about/autiLab.jpg", icon: "/images/landing/Autilab.svg" },
+  { name: "Vision Raft",     tag: "Virtual Reality · Immersive Tech", img: "/images/about/vision.jpg", icon: "/images/landing/raft.svg" },
+  { name: "Diaco",           tag: "Business Solutions · Corporate",   img: "/images/about/Diaco.jpg", icon: "/images/startup/Diaco.svg" },
+  { name: "Arshia Gallery",  tag: "Fine Jewelry · Luxury Retail",     img: "/images/about/academylanda.svg",  icon: "/images/landing/Arshia Gallery.svg" },
+  { name: "Preventie Gene",  tag: "Genetics · Health Prevention",     img: "/images/about/preventigene.jpg",  icon: "/images/landing/preventigene.svg" },
+  { name: "SteadySkull",     tag: "Surgical Device · MedTech",        img: "/images/about/steadyskull.jpg",   icon: "/images/landing/SteadySkull.svg" },
 ];
 
-export default function StartupPreviousProjects() {
+export default function ProjectsSection() {
   return (
-    <section className="py-16 md:py-20 bg-white">
-      <Row>
+    <section className="py-20 md:py-24 bg-white">
+      <div className="max-w-[1240px] mx-auto px-6">
+
         <Reveal variant="up">
-          <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-12">
-            Our Previous <span className="text-[#8F27FF]">Projects</span>
-          </h2>
+          <div className="text-center mb-14">
+            <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em]">
+              Our Successful Projects
+            </h2>
+          </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[22px]">
           {projects.map((p, i) => (
-            <Reveal key={i} variant="up" delay={i * 80}>
-              <div
-                className="group relative rounded-[20px] overflow-hidden h-[300px] md:h-[380px]"
-                style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.07)" }}
-              >
-                {/* BG image */}
-                <div
-                  className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
-                  style={{
-                    backgroundImage: `url('${p.img}')`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
-                {/* Text */}
-                <div className="absolute inset-x-0 bottom-0 p-5 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
-                  <div className="text-white font-bold text-[17px] leading-tight">{p.name}</div>
-                  <div className="text-white/65 text-[12px] mt-1">{p.tag}</div>
+            <Reveal key={p.name} variant="up" delay={i * 50}>
+              <div className="group relative rounded-[20px] overflow-hidden md:h-[260px] h-[200px] cursor-pointer">
+                <div className="absolute inset-0">
+                  <Image
+                    src={p.img}
+                    alt={p.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* base overlay */}
+                <div className="absolute inset-0 transition-all duration-300"
+                  style={{ background: "linear-gradient(180deg,transparent 40%,rgba(0,0,0,0.75) 100%)" }} />
+                {/* hover overlay */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{ background: "linear-gradient(180deg,rgba(143,39,255,0.08) 0%,rgba(0,0,0,0.85) 100%)" }} />
+
+                {/* body */}
+                <div className="absolute bottom-0 left-0 right-0 p-[22px] flex items-end justify-between gap-3">
+                  <div>
+                    <div className="text-white font-bold text-[16px] tracking-[-0.01em]">{p.name}</div>
+                    <div className="text-[rgba(255,255,255,0.65)] text-[12px] font-medium mt-1">{p.tag}</div>
+                  </div>
+                  {/* project icon — opposite the name */}
+                  <div className="w-11 h-12 rounded-2xl grid place-items-center overflow-hidden flex-shrink-0 bg-white/15 backdrop-blur-md border border-white/30 shadow-[0_10px_30px_rgba(0,0,0,0.75)] transition-transform duration-300 group-hover:scale-110">
+                    <Image
+                      src={p.icon}
+                      alt={`${p.name} icon`}
+                      width={44}
+                      height={44}
+                      className="w-full h-full object-contain p-1.5"
+                    />
+                  </div>
                 </div>
               </div>
             </Reveal>
           ))}
         </div>
-      </Row>
+
+      </div>
     </section>
   );
 }

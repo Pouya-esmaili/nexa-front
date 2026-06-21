@@ -11,11 +11,11 @@ export default function Contact() {
   const [sent, setSent] = useState(false);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    console.log('Submitting form');
     e.preventDefault();
     const form = e.currentTarget;
     const fd = new FormData(form);
     const body = {
+      formName: 'canada_startup_contact',
       firstName: fd.get('firstName')?.toString() || '',
       lastName: fd.get('lastName')?.toString() || '',
       email: fd.get('email')?.toString() || '',
@@ -24,17 +24,14 @@ export default function Contact() {
     };
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('/api/forms', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       });
 
       if (res.ok) setSent(true);
-      else {
-        // optional: show error
-        console.error('Submit failed', await res.json());
-      }
+      else console.error('Submit failed', await res.json());
     } catch (err) {
       console.error('Submit error', err);
     }
@@ -50,8 +47,17 @@ export default function Contact() {
         </Reveal>
 
         {sent ? (
-          <div className="mt-4 px-[14px] py-3.5 bg-[#FAF6FF] border border-[rgba(143,39,255,0.18)] rounded-[10px] text-[#8F27FF] font-semibold text-[14px] text-center max-w-xl mx-auto">
-            ✓ Thank you — a Nexa advisor will reach out within 48 hours.
+          <div
+            className="flex flex-col items-center justify-center gap-4 rounded-[20px] p-14 text-center max-w-xl mx-auto"
+            style={{ background: "#FAF6FF", border: "1.5px solid rgba(143,39,255,0.2)" }}
+          >
+            <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#8F27FF]">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={2.5} strokeLinecap="round" className="w-7 h-7">
+                <path d="M5 12l4 4 10-10" />
+              </svg>
+            </div>
+            <h3 className="text-[22px] font-bold">Thank you!</h3>
+            <p className="text-gray-500 text-[15px]">A Nexa advisor will reach out within 48 hours.</p>
           </div>
         ) : (
           <Reveal variant="up" delay={80}>
@@ -73,7 +79,7 @@ export default function Contact() {
                 </label>
               </div>
 
-              {/* Row 2 */}
+              Row 2
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
                 <label className="flex flex-col gap-2 text-[13px] font-medium text-black">
                   <span>Phone Number <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>

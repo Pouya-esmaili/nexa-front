@@ -16,7 +16,7 @@ const team = [
   // { name: "Amir Esfahanizade",   role: "Back-End Developer",   dept: "Tech",       image: "/images/ourteam/amirmohammad.svg", linkedin: "" },
   { name: "Mahsa Esmaeili",      role: "Legal Advisor",        dept: "Legal",      image: "/images/ourteam/mahsa.jpg" , linkedin: "https://www.linkedin.com/in/mahsa-esmaili" },
   { name: "Iman Nasr Esfahani",  role: "COO",                  dept: "Leadership", image: "/images/ourteam/iman.jpg" , linkedin: "https://www.linkedin.com/in/iman-nasr-esfahani" },
-  { name: "Lida Parvizi",        role: "HR & Administrative",  dept: "Operations", image: "/images/ourteam/lida.jpg" , linkedin: "https://www.linkedin.com/in/lida-parvizi-ab7b8721a" },
+  { name: "Lida Parvizi",        role: "HR & Administrative",  dept: "Operations", image: "/images/ourteam/lidaa.JPG" , linkedin: "https://www.linkedin.com/in/lida-parvizi-ab7b8721a" },
   { name: "Gelareh Bahrami",     role: "Sales Officer",        dept: "Sales",      image: "/images/ourteam/gelareh.jpg" , linkedin: "https://www.linkedin.com/in/gelareh-bahrami-baba59185" },
   { name: "Parastoo Sanaifar",   role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/parastoo.jpg" , linkedin: "https://www.linkedin.com/in/parastoo-sanaifar" },
   { name: "Milad Fatemi",        role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/milad.jpg" , linkedin: "https://www.linkedin.com/in/miladfatemi" },
@@ -25,9 +25,11 @@ const team = [
   { name: "Ali Soleimani",       role: "Accountant",           dept: "Finance",    image: "/images/ourteam/ali.jpg" , linkedin: "https://www.linkedin.com/in/ali-soleimani-b761b6223" },
   { name: "Narjes Orouji",       role: "UI/UX Designer",       dept: "Design",     image: "/images/ourteam/narges.jpg" , linkedin: "https://www.linkedin.com/in/narges-orouji-7ab846214" },
   { name: "Amir Esfahanizade",   role: "Back-End Developer",   dept: "Tech",       image: "/images/ourteam/amir.jpg" , linkedin: "" },
+  { name: "Pouya Shafaghatiyan", role: "Marketing Specialist", dept: "Marketing",  image: "/images/ourteam/pooya.JPG" , linkedin: "https://www.linkedin.com/in/pouya-shafaghatian-a772a82b4" },
+  { name: "Kiyana Mehrasa",      role: "Content Strategist",   dept: "Marketing",  image: "/images/ourteam/kiana.JPG" , linkedin: "" },
 ];
 
-const DELAYS = [60, 130, 200, 270, 340, 410, 480, 550, 620, 690, 760];
+const DELAYS = [60, 130, 200, 270, 340, 410, 480, 550, 620, 690, 760, 830, 900];
 
 export default function TeamGrid() {
   const [headVis, setHeadVis] = useState(false);

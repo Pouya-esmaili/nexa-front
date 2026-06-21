@@ -26,7 +26,7 @@ export default function Hero() {
   const hideRight = "opacity-0 translate-x-8";
 
   return (
-    <section className="py-16 md:py-20 overflow-hidden bg-[#faf9f5]">
+    <section className="py-16 md:py-20 overflow-hidden bg-white relative">
 
       {/* MOBILE */}
       <div className="md:hidden px-5">
@@ -53,7 +53,7 @@ export default function Hero() {
         </div>
         <Link
           href="#contact"
-          className={`inline-flex items-center gap-2 px-6 py-3 bg-[#8F27FF] text-white font-semibold rounded-full text-sm ${base} duration-500 delay-400 ${mounted ? show : hideUp}`}
+          className={`inline-flex items-center gap-2 px-6 py-3 bg-[#8F27FF] font-semibold rounded-full text-sm ${base} duration-500 delay-400 ${mounted ? show : hideUp}`}
         >
           Start your application →
         </Link>

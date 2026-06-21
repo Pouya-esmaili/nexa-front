@@ -44,20 +44,24 @@ export default function Process() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-[70px] items-start">
 
           {/* Left — sticky lead */}
-          <Reveal variant="up">
-            <div className="md:sticky md:top-[100px]">
+          <div className="md:sticky md:top-[100px]">
+            <Reveal variant="up">
               <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] mb-5">
                 2026 Application Workflow
               </h2>
+            </Reveal>
+            <Reveal variant="up" delay={120}>
               <blockquote className="text-[18px] italic font-medium leading-[1.5] text-black py-5 pl-6 mb-4"
                 style={{ borderLeft: "3px solid #8F27FF" }}>
                 "Nexa structures your deployment pipeline into clear chronological checkpoints, aligned to the strict June 2026 regulatory timeline."
               </blockquote>
+            </Reveal>
+            <Reveal variant="up" delay={240}>
               <p className="text-[14.5px] text-[#929292] leading-[1.7]">
                 The current intake window is open exclusively to founders holding a valid 2025 Commitment Certificate. Every step must be completed before the hard June 30, 2026 deadline.
               </p>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
 
           {/* Right — steps */}
           <Reveal variant="up" delay={80}>

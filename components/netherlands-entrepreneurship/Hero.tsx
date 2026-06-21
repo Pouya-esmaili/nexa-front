@@ -101,7 +101,7 @@ export default function Hero() {
               {/* Stats */}
               <div
                 className={`grid grid-cols-3 py-6 mb-9 ${base} duration-700 delay-300 ${mounted ? show : hideLeft}`}
-                style={{ borderTop: "1px solid #E2E2E2", borderBottom: "1px solid #1a1a1f" }}
+                style={{ borderTop: "1px solid #E2E2E2", borderBottom: "1px solid #E2E2E2" }}
               >
                 {stats.map((s) => (
                   <div key={s.label} className="text-center">

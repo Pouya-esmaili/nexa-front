@@ -43,7 +43,7 @@ const GoogleIcon = () => (
 const GAP = 20;
 
 export default function CommentsSection() {
-  const [index, setIndex] = useState(0);
+  const [active, setActive] = useState(0);
   const [perView, setPerView] = useState(3);
   const [trackWidth, setTrackWidth] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -69,17 +69,15 @@ export default function CommentsSection() {
     return () => window.removeEventListener("resize", update);
   }, []);
 
+  const lastIndex = testimonials.length - 1;
   const maxIndex = Math.max(0, testimonials.length - perView);
   const cardW    = trackWidth > 0 ? (trackWidth - GAP * (perView - 1)) / perView : 0;
+  /* scroll the track just enough to keep the active card in view */
+  const index    = Math.min(Math.max(active - perView + 1, 0), maxIndex);
   const offsetPx = index * (cardW + GAP);
 
-  const prev = useCallback(() => setIndex((i) => Math.max(0, i - 1)), []);
-  const next = useCallback(() => setIndex((i) => Math.min(maxIndex, i + 1)), [maxIndex]);
-
-  /* clamp index if perView changes (e.g. window resize) */
-  useEffect(() => {
-    setIndex((i) => Math.min(i, maxIndex));
-  }, [maxIndex]);
+  const prev = useCallback(() => setActive((a) => Math.max(0, a - 1)), []);
+  const next = useCallback(() => setActive((a) => Math.min(lastIndex, a + 1)), [lastIndex]);
 
   return (
     <section className="py-20 md:py-24 bg-[#F7F6F9]">
@@ -100,13 +98,13 @@ export default function CommentsSection() {
               style={{ transform: `translateX(-${offsetPx}px)` }}
             >
               {testimonials.map((t, i) => {
-                const isLast = i === index + perView - 1;
+                const isActive = i === active;
                 return (
                   <div
                     key={t.name}
                     className={[
                       "flex-shrink-0 bg-white rounded-[20px] p-7 border transition-all duration-200",
-                      isLast
+                      isActive
                         ? "border-[#8F27FF] shadow-[0_8px_24px_rgba(143,39,255,0.12)]"
                         : "border-[#E2E2E2] hover:border-[#8F27FF] hover:shadow-[0_8px_24px_rgba(143,39,255,0.1)]",
                     ].join(" ")}
@@ -147,7 +145,7 @@ export default function CommentsSection() {
         <div className="flex items-center justify-center gap-2.5 mt-9">
           <button
             onClick={prev}
-            disabled={index === 0}
+            disabled={active === 0}
             className="w-10 h-10 rounded-full bg-white border-[1.5px] border-[#E2E2E2] grid place-items-center text-[#474747] hover:bg-[#8F27FF] hover:border-[#8F27FF] hover:text-white disabled:opacity-40 disabled:cursor-not-allowed transition-all"
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
@@ -156,14 +154,14 @@ export default function CommentsSection() {
           </button>
 
           <div className="flex items-center gap-1.5 px-3">
-            {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+            {testimonials.map((_, i) => (
               <button
                 key={i}
-                onClick={() => setIndex(i)}
+                onClick={() => setActive(i)}
                 className="h-2 rounded-full transition-all duration-300"
                 style={{
-                  width: i === index ? "22px" : "8px",
-                  background: i === index ? "#8F27FF" : "#D9D9D9",
+                  width: i === active ? "22px" : "8px",
+                  background: i === active ? "#8F27FF" : "#D9D9D9",
                 }}
               />
             ))}
@@ -171,7 +169,7 @@ export default function CommentsSection() {
 
           <button
             onClick={next}
-            disabled={index >= maxIndex}
+            disabled={active >= lastIndex}
             className="w-10 h-10 rounded-full bg-white border-[1.5px] border-[#E2E2E2] grid place-items-center text-[#474747] hover:bg-[#8F27FF] hover:border-[#8F27FF] hover:text-white disabled:opacity-40 disabled:cursor-not-allowed transition-all"
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>

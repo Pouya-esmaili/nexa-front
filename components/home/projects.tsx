@@ -2,6 +2,7 @@
 
 import Reveal from "@/components/global/LazyReveal";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const projects = [
   // { name: "Landa Trip",      tag: "Tourism · Travel",                 img: "/images/about/trip.svg",          icon: "/images/landing/Landa Trip.svg" },
@@ -23,6 +24,7 @@ const projects = [
 ];
 
 export default function ProjectsSection() {
+  const t = useTranslations("home.projects");
   return (
     <section className="py-20 md:py-24 bg-white">
       <div className="max-w-[1240px] mx-auto px-6">
@@ -30,7 +32,7 @@ export default function ProjectsSection() {
         <Reveal variant="up">
           <div className="text-center mb-14">
             <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em]">
-              Our Successful Projects
+              {t("title")}
             </h2>
           </div>
         </Reveal>

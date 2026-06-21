@@ -1,14 +1,16 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Reveal from "@/components/global/LazyReveal";
+import { getTranslations } from "next-intl/server";
 
-const bullets = [
-  "Direct Access to Top Accelerators and Research Ecosystems",
-  "Cross-border Co-founder and Elite Talent Pools",
-  "Global Investor Circles and Strategic Growth Capital",
-];
+export default async function Bio() {
+  const t = await getTranslations("home.bio");
 
-export default function Bio() {
+  const bullets = [
+    t("bullet1"),
+    t("bullet2"),
+    t("bullet3"),
+  ];
   return (
     <section className="py-20 md:py-24 bg-[#F7F6F9]">
       <div className="max-w-[1240px] mx-auto px-6">
@@ -33,22 +35,17 @@ export default function Bio() {
             <div className="flex flex-col gap-5">
 
               <h2 className="text-[32px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1]">
-                NEXA is where{" "}
-                <span className="inline bg-[#FFE600] rounded-[3px] px-[5px] pb-[3px]">bold founders</span>{" "}
-                come to grow.
+                {t("title1")}{" "}
+                <span className="inline bg-[#FFE600] rounded-[3px] px-[5px] pb-[3px]">{t("titleHighlight")}</span>{" "}
+                {t("title2")}
               </h2>
 
               <p className="text-[16px] text-[#929292] leading-[1.72]">
-                NEXA is a global hub where bold founders and breakthrough ideas come to grow.
-                We bring together industry expertise and the creativity of a young, globally
-                minded team — blending fearless innovation with strategic insight to transform
-                early-stage concepts into world-ready companies.
+                {t("p1")}
               </p>
 
               <p className="text-[16px] text-[#929292] leading-[1.72]">
-                With strong roots in emerging markets and an extensive international network,
-                we provide entrepreneurs with the capital, mentorship, and global opportunities
-                they need to succeed.
+                {t("p2")}
               </p>
 
               {/* Bullets */}
@@ -65,7 +62,7 @@ export default function Bio() {
               <Link
                 href="/our-team"
                 className="self-start mt-2 inline-flex items-center gap-2 px-7 py-3.5 border-[1.5px] border-[#8F27FF] text-[#8F27FF] font-semibold rounded-full text-[14px] hover:bg-[#8F27FF] hover:text-white hover:-translate-y-px transition-all">
-                Meet Our Team →
+                {t("meetOurTeam")}
               </Link>
             </div>
           </Reveal>

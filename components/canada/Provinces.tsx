@@ -24,9 +24,9 @@ const mainProvinces: Province[] = [
 
 const atlanticProvinces: Province[] = [
   { name: "New Brunswick", bg: "/images/photos/1551038247-3d9af20df552-w600.jpg", flag: "/images/flags/Flag_of_New_Brunswick.svg.png", netWorth: "CAD 500K", investment: "CAD 150K", operation: "12 mo" },
-  { name: "Nova Scotia", bg: "https://images.unsplash.com/photo-1565024144815-79bc8094a0d3?w=600&q=80", flag: "/images/flags/Flag_of_Nova_Scotia.svg.png", netWorth: "CAD 600K", investment: "CAD 150K", operation: "12 mo" },
+  { name: "Nova Scotia", bg: "/images/photos/1519178614-68673b201f36-w600.jpg", flag: "/images/flags/Flag_of_Nova_Scotia.svg.png", netWorth: "CAD 600K", investment: "CAD 150K", operation: "12 mo" },
   { name: "Prince Edward Island", bg: "/images/photos/1469854523086-cc02fe5d8800-w600.jpg", flag: "/images/flags/Flag_of_Prince_Edward_Island.svg.png", netWorth: "CAD 600K", investment: "CAD 150K", operation: "12 mo" },
-  { name: "Newfoundland & Labrador", bg: "https://images.unsplash.com/photo-1504608524841-42584120d693?w=600&q=80", flag: "/images/flags/Flag_of_Newfoundland_and_Labrador.svg.png", netWorth: "CAD 500K", investment: "CAD 200K", operation: "12 mo" },
+  { name: "Newfoundland & Labrador", bg: "/images/photos/1503614472-8c93d56e92ce-w600.jpg", flag: "/images/flags/Flag_of_Newfoundland_and_Labrador.svg.png", netWorth: "CAD 500K", investment: "CAD 200K", operation: "12 mo" },
 ];
 
 function ProvinceCard({ p, delay }: { p: Province; delay: number }) {

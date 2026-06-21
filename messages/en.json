@@ -1,0 +1,745 @@
+{
+  "global": {
+    "header": {
+      "home": "Home",
+      "services": "Services",
+      "aboutUs": "About Us",
+      "forms": "Forms",
+      "contactUs": "Contact Us",
+      "entrepreneurship": "Entrepreneurship",
+      "startup": "Startup",
+      "investment": "Investment",
+      "advisory": "Advisory",
+      "ourTeam": "Our Team",
+      "ourStory": "Our Story",
+      "applyForFunding": "Apply for Funding",
+      "evaluateForm": "Evaluate Form",
+      "submitYourApplication": "Submit your funding application.",
+      "evaluateEligibility": "Evaluate your eligibility quickly.",
+      "meetThePeople": "Meet the people behind Nexa.",
+      "ourJourney": "Our journey and mission for the future.",
+      "canadaEntrepreneurship": "Canada Entrepreneurship",
+      "spainEntrepreneurship": "Spain Entrepreneurship",
+      "portugalEntrepreneurship": "Portugal Entrepreneurship",
+      "finlandEntrepreneurship": "Finland Entrepreneurship",
+      "netherlandEntrepreneurship": "Netherland Entrepreneurship",
+      "finlandStartup": "Finland Startup",
+      "netherlandStartup": "Netherland Startup",
+      "canadaStartup": "Canada Startup",
+      "ukStartup": "UK Startup",
+      "franceStartup": "France Startup",
+      "netherlandsStartup": "Netherlands Startup",
+      "uaeInvestment": "UAE Investment",
+      "turkeyInvestment": "Turkey Investment",
+      "greeceInvestment": "Greece Investment",
+      "spainInvestment": "Spain Investment",
+      "franceInvestment": "France Investment",
+      "viewAll": "View all {category}",
+      "menu": "Menu"
+    },
+    "footer": {
+      "description": "At NEXA, Global Launchpad for Entrepreneurship, Startup Acceleration, and Strategic Investment, Backed by Over 10 Years of Proven Expertise in Business Development, Strategic Planning, and International Market Access.",
+      "services": "Services",
+      "aboutNexa": "About Nexa",
+      "ourOffices": "Our Offices",
+      "canada": "Canada",
+      "iran": "Iran",
+      "canadaAddress": "906-935 Marine Dr, West Vancouver, British Columbia, Canada",
+      "iranAddress": "No. 27, Neom Building (Next to the Tandis Complex), Tajrish Square, Tehran, Iran",
+      "copyright": "Copyright © 2025 Nexa. All rights reserved.",
+      "startup": "Startup",
+      "investment": "Investment",
+      "advisory": "Advisory",
+      "entrepreneurship": "Entrepreneurship",
+      "ourStory": "Our Story",
+      "ourTeam": "Our Team",
+      "contactUs": "Contact Us"
+    }
+  },
+  "home": {
+    "hero": {
+      "title1": "Your Global Launchpad",
+      "title2": "for Investment,",
+      "titleHighlight": "Startups & Growth.",
+      "lead": "We fuel the global expansion of startups into new markets — for entrepreneurs ready to scale and investors seeking high-growth opportunities.",
+      "exploreServices": "Explore Services →",
+      "bookACall": "Book a Call"
+    },
+    "feature": {
+      "sectionTitle": "Our Services",
+      "entrepreneurshipTitle": "Entrepreneurship",
+      "entrepreneurshipDesc": "From business development to investor engagement, we guide ambitious founders to scale globally — turning bold ideas into borderless, investment-ready ventures.",
+      "startupTitle": "Startup",
+      "startupDesc": "We deliver precise startup advisory, crafting professional business plans, financial models, and investor pitch decks tailored for global success.",
+      "investmentTitle": "Investment",
+      "investmentDesc": "With Exclusive Access to International Investors and Emerging Opportunities, We Focus on Growth-Stage Startups Driving Scalable Innovation."
+    },
+    "bio": {
+      "title1": "NEXA is where",
+      "titleHighlight": "bold founders",
+      "title2": "come to grow.",
+      "p1": "NEXA is a global hub where bold founders and breakthrough ideas come to grow. We bring together industry expertise and the creativity of a young, globally minded team — blending fearless innovation with strategic insight to transform early-stage concepts into world-ready companies.",
+      "p2": "With strong roots in emerging markets and an extensive international network, we provide entrepreneurs with the capital, mentorship, and global opportunities they need to succeed.",
+      "bullet1": "Direct Access to Top Accelerators and Research Ecosystems",
+      "bullet2": "Cross-border Co-founder and Elite Talent Pools",
+      "bullet3": "Global Investor Circles and Strategic Growth Capital",
+      "meetOurTeam": "Meet Our Team →"
+    },
+    "results": {
+      "title": "Our Results Tell the Story",
+      "successfulCases": "Successful Cases",
+      "clientsWorldwide": "Clients Worldwide",
+      "yearsOfExpertise": "Years of Expertise",
+      "vancouver": "Vancouver, Canada",
+      "tehran": "Tehran, Iran"
+    },
+    "projects": {
+      "title": "Our Successful Projects"
+    },
+    "comments": {
+      "title": "Our Community's Experience"
+    },
+    "choose": {
+      "title": "Why Choose Us?",
+      "item1": "Partnered With Government-Certified Global Lawyers",
+      "item2": "Full Service From Contract To Settlement In Destination",
+      "item3": "Global Team Of Young Professionals And Experts",
+      "item4": "Registered Legal Entity In Canada&Iran, Compliant & Active",
+      "item5": "Connected To A Strong Nationwide Network",
+      "item6": "Supported By Senior Business Consultants"
+    },
+    "team": {
+      "title1": "Behind the",
+      "titleHighlight": "Nexa",
+      "p1": "NEXA is an international team with 10+ years of hands-on experience in launching and scaling businesses globally. Our expertise spans multiple disciplines, with a strong focus on execution.",
+      "p2": "We deliver investment-ready strategies through close collaboration with international consultants and legal experts, helping founders turn early-stage ideas into scalable, market-ready companies.",
+      "meetOurTeam": "Meet Our Team →"
+    },
+    "contactForm": {
+      "title": "Start Your Journey",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "emailAddress": "Email Address",
+      "phoneNumber": "Phone Number",
+      "serviceOfInterest": "Service of Interest",
+      "selectService": "Select a service...",
+      "optEntrepreneurship": "Entrepreneurship",
+      "optStartupAcceleration": "Startup Acceleration",
+      "optInvestment": "Investment",
+      "optBusinessAdvisory": "Business Advisory",
+      "howDidYouHear": "How Did You Hear About Us?",
+      "select": "Select...",
+      "optGoogle": "Google",
+      "optSocialMedia": "Social Media",
+      "optFriendReferral": "Friend / Referral",
+      "optAttorney": "Attorney",
+      "optWebinar": "Webinar",
+      "optTradeshowConference": "Tradeshow / Conference",
+      "optOther": "Other",
+      "tellUsAbout": "Tell Us About Your Project",
+      "tellUsPlaceholder": "Describe your business goals and what you're looking to achieve…",
+      "confidential": "Your information is kept strictly confidential.",
+      "sendMessage": "Send Message",
+      "sending": "Sending…",
+      "messageSent": "Message Sent!",
+      "advisorReachOut": "A Nexa advisor will reach out within 48 hours.",
+      "searchCountry": "Search country...",
+      "noResults": "No results",
+      "firstNamePlaceholder": "e.g., John",
+      "lastNamePlaceholder": "e.g., Doe",
+      "emailPlaceholder": "you@example.com",
+      "phonePlaceholder": "(000) 000-0000"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Let's Build Beyond Borders",
+      "description": "Every global breakthrough starts with a single conversation. Whether you are an ambitious founder ready to scale international heights, an investor seeking high-conviction pathways, or a partner aligned with a borderless future, Nexa is your bridge to global influence."
+    },
+    "section": {
+      "emailAddress": "Email Address",
+      "phoneNumber": "Phone Number",
+      "officeLocation": "Office Location",
+      "sendMessage": "Send a Message",
+      "responseTime": "Most inquiries receive a response within 48 hours.",
+      "fullName": "Full Name",
+      "email": "Email",
+      "serviceType": "Service Type",
+      "selectService": "Select a service",
+      "startup": "Startup",
+      "entrepreneurship": "Entrepreneurship",
+      "investment": "Investment",
+      "advisory": "Advisory",
+      "other": "Other",
+      "yourMessage": "Your Message",
+      "messagePlaceholder": "Write your message here...",
+      "submit": "Submit",
+      "sending": "Sending...",
+      "messageSent": "Message Sent!",
+      "thankYou": "Thank you for reaching out. We'll get back to you within 48 hours.",
+      "sendAnother": "Send Another Message",
+      "nameRequired": "Full name is required.",
+      "emailRequired": "Email address is required.",
+      "emailInvalid": "Please enter a valid email address.",
+      "serviceRequired": "Please select a service type.",
+      "messageRequired": "Message is required.",
+      "messageMinLength": "Message must be at least 10 characters."
+    }
+  },
+  "entrepreneurship": {
+    "main": {
+      "hero": {
+        "title": "Launch Your Next Business Branch in the",
+        "titleHighlight": "Global Market",
+        "description": "From business development to investor engagement, we guide ambitious founders to scale globally — turning bold ideas into borderless, investment-ready ventures.",
+        "cta": "Book a Free Consultation"
+      },
+      "whatIs": {
+        "tag1": "Access to global markets",
+        "tag2": "Designed for innovative founders",
+        "tag3": "Growth & expansion opportunities",
+        "tag4": "Business-friendly legal frameworks",
+        "tag5": "Family inclusion pathways",
+        "title": "What is an",
+        "titleHighlight": "Entrepreneurship",
+        "title2": "Program?",
+        "p1": "Entrepreneurship programs help founders and business owners access global markets, scale their ideas, and build sustainable businesses through clear, government-backed pathways.",
+        "p2": "Each program offers a structured route to legal residency, company registration, and long-term growth — supported by Nexa's end-to-end advisory at every step.",
+        "badge": "400+ Entrepreneurs Placed",
+        "badgeSub": "Across 5 countries"
+      },
+      "services": {
+        "title": "Our Services",
+        "s1Badge": "Analysis",
+        "s1Name": "Feasibility Analysis",
+        "s1Title": "Business Model & Financial Feasibility",
+        "s2Badge": "Legal",
+        "s2Name": "Immigration Legal",
+        "s2Title": "Legal Guidance for Immigration Applications",
+        "s3Badge": "Setup",
+        "s3Name": "Company Registration",
+        "s3Title": "Company Registration & Post-Launch Support",
+        "s4Badge": "Growth",
+        "s4Name": "Ongoing Advisory",
+        "s4Title": "Ongoing Advisory & Performance Monitoring"
+      },
+      "impact": {
+        "title": "How Programs Strengthen Countries",
+        "i1Pill": "Economy",
+        "i1Title": "Attracts Foreign Investment",
+        "i2Pill": "Growth",
+        "i2Title": "Stimulates Economic Growth",
+        "i3Pill": "Employment",
+        "i3Title": "Creates New Jobs",
+        "i4Pill": "Ecosystem",
+        "i4Title": "Builds a Dynamic Ecosystem"
+      },
+      "markets": {
+        "title": "Choose Your Market",
+        "exploreProgram": "Explore Program",
+        "canada": "Canada",
+        "canadaDesc": "Entrepreneur Visa with permanent residency pathway",
+        "spain": "Spain",
+        "spainDesc": "Entrepreneur Visa with 20-day fast-track approval",
+        "finland": "Finland",
+        "finlandDesc": "Entrepreneur Permit for business owners entering EU markets",
+        "portugal": "Portugal",
+        "portugalDesc": "D2 Entrepreneur Visa with EU residency path",
+        "netherlands": "Netherlands",
+        "netherlandsDesc": "Entrepreneur Visa in Europe's most connected business hub"
+      },
+      "stats": {
+        "s1Pill": "Track Record",
+        "s1Label": "Successful cases across all programs",
+        "s2Pill": "Global Reach",
+        "s2Label": "Entrepreneurs placed in 5 countries",
+        "s3Pill": "Experience",
+        "s3Label": "Years of proven market expertise"
+      },
+      "projects": {
+        "title": "Our Previous",
+        "titleHighlight": "Projects"
+      },
+      "faq": {
+        "title": "FAQ",
+        "showMore": "Show More",
+        "showLess": "Show Less"
+      },
+      "contactForm": {
+        "title": "Ready to Take Your Business",
+        "titleHighlight": "Global?",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "emailAddress": "Email Address",
+        "phoneNumber": "Phone Number",
+        "countryOfInterest": "Country of Interest",
+        "industryType": "Industry / Business Type",
+        "businessStage": "Current Business Stage",
+        "estimatedCapital": "Estimated Available Capital",
+        "howDidYouHear": "How Did You Hear About Us?",
+        "tellUs": "Tell Us About Your Project",
+        "tellUsPlaceholder": "Briefly describe your business, goals, and what you're looking to achieve through international expansion…",
+        "confidential": "Your information is kept strictly confidential.",
+        "sendMessage": "Send Message",
+        "sending": "Sending…",
+        "thankYou": "Thank you!",
+        "advisorReachOut": "A Nexa advisor will reach out within 48 hours.",
+        "countryCanada": "Canada — Start-Up Visa",
+        "countrySpain": "Spain — Entrepreneur Visa",
+        "countryFinland": "Finland — Startup Permit",
+        "countryPortugal": "Portugal — D2 Visa",
+        "countryNetherlands": "Netherlands — Startup Visa",
+        "countryNotSure": "Not sure yet",
+        "industryTech": "Technology / SaaS",
+        "industryEcommerce": "E-commerce / Retail",
+        "industryHealthcare": "Healthcare / Medical",
+        "industryFnb": "Food & Beverage",
+        "industryEducation": "Education / EdTech",
+        "industryFintech": "Finance / FinTech",
+        "industryManufacturing": "Manufacturing",
+        "industryCreative": "Creative / Media",
+        "industryOther": "Other",
+        "stageIdea": "Idea / Pre-revenue",
+        "stageMvp": "MVP / Early Traction",
+        "stageEstablished": "Established (1–3 years)",
+        "stageScaling": "Scaling / Growth Stage",
+        "capitalUnder50": "Under $50,000",
+        "capital50to100": "$50,000 – $100,000",
+        "capital100to250": "$100,000 – $250,000",
+        "capital250to500": "$250,000 – $500,000",
+        "capital500plus": "$500,000+",
+        "sourceGoogle": "Google",
+        "sourceSocialMedia": "Social Media",
+        "sourceFriend": "Friend / Referral",
+        "sourceAttorney": "Attorney",
+        "sourceWebinar": "Webinar",
+        "sourceTradeshow": "Tradeshow / Conference",
+        "sourceOther": "Other"
+      }
+    }
+  },
+  "startup": {
+    "main": {
+      "hero": {
+        "title": "Your Independent Global",
+        "titleHighlight": "Startup Partner",
+        "description": "We support startups on their path to global growth — from idea to scale, capital access to immigration — with end-to-end advisory and investor network access.",
+        "cta": "Book a Free Consultation"
+      },
+      "whatIs": {
+        "tag1": "Team-Driven Vision & Collaborative Execution",
+        "tag2": "Innovative Solutions for Real Market Needs",
+        "tag3": "Sustainable Revenue & Wealth Creation Models",
+        "tag4": "Scalable Structure with Global Growth Potential",
+        "title1": "Built To",
+        "title1Highlight": "Innovate.",
+        "title2": "Designed To Scale.",
+        "p1": "A Startup is a team-driven venture focused on solving real market needs through innovation and technology, while building sustainable revenue models designed for scalable, long-term growth.",
+        "p2": "Nexa supports founders at every stage — from idea validation and visa application to fundraising and post-launch scaling across global markets.",
+        "badge": "400+ Entrepreneurs Placed",
+        "badgeSub": "Across 5 countries"
+      },
+      "services": {
+        "title": "Our Services",
+        "s1Badge": "Strategy",
+        "s1Name": "Feasibility Analysis",
+        "s1Title": "Business Model & Financial Feasibility Analysis",
+        "s2Badge": "Legal",
+        "s2Name": "Immigration Legal",
+        "s2Title": "Legal Guidance for Immigration Applications",
+        "s3Badge": "Setup",
+        "s3Name": "Company Registration",
+        "s3Title": "Company Registration & Post-Launch Support",
+        "s4Badge": "Capital",
+        "s4Name": "Fundraising",
+        "s4Title": "Capital Access & Fundraising Through Global Networks"
+      },
+      "designedFor": {
+        "title": "Who Is This Program Designed For?",
+        "item1": "Experienced Business Owners Looking to Expand Internationally",
+        "item2": "Highly Skilled Professionals Ready to Compete Internationally",
+        "item3": "Investors Actively Looking to Access High-Potential Opportunities",
+        "item4": "Educated and Ambitious Young Entrepreneurs Seeking Growth"
+      },
+      "whyImportant": {
+        "title": "Why Startup Programs Are Important for Countries",
+        "i1Pill": "Competition",
+        "i1Title": "Enhancing Competitiveness",
+        "i2Pill": "Innovation",
+        "i2Title": "Fostering Innovation",
+        "i3Pill": "Employment",
+        "i3Title": "Job Creation",
+        "i4Pill": "Economy",
+        "i4Title": "Wealth Creation"
+      },
+      "countries": {
+        "title": "Where We Offer",
+        "exploreProgram": "Explore Program",
+        "finland": "Finland",
+        "finlandDesc": "Startup Permit in Europe's leading innovation ecosystem",
+        "canada": "Canada",
+        "canadaDesc": "Startup Visa with access to world-class accelerator networks",
+        "uk": "UK",
+        "ukDesc": "Innovator Founder Visa for high-growth ventures",
+        "netherlands": "Netherlands",
+        "netherlandsDesc": "Startup Visa in Europe's most connected tech hub",
+        "france": "France",
+        "franceDesc": "French Tech Visa for founders backed by a recognized program"
+      },
+      "stats": {
+        "s1Pill": "Track Record",
+        "s1Label": "Successful cases across all programs",
+        "s2Pill": "Global Reach",
+        "s2Label": "Entrepreneurs placed in 5 countries",
+        "s3Pill": "Experience",
+        "s3Label": "Years of proven market expertise"
+      },
+      "faq": {
+        "title": "FAQ",
+        "showMore": "Show More",
+        "showLess": "Show Less"
+      },
+      "contactForm": {
+        "title": "Ready to Scale Your",
+        "titleHighlight": "Startup Globally?",
+        "sendMessage": "Send Message →",
+        "confidential": "Your information is kept strictly confidential. We respond within 48 hours.",
+        "thankYou": "Thank you!",
+        "advisorReachOut": "A Nexa advisor will reach out within 48 hours.",
+        "tellUsPlaceholder": "Tell us about your startup idea, target country, current stage, and what kind of support you're looking for…"
+      }
+    }
+  },
+  "investment": {
+    "main": {
+      "hero": {
+        "title": "Invest With",
+        "titleHighlight": "Confidence,",
+        "title2": "Grow With Vision",
+        "description": "Nexa is a global investor and strategic business partner — combining capital, expert guidance, and international networks to help ventures scale and succeed across markets worldwide.",
+        "cta": "Submit Your Proposal"
+      },
+      "whatIs": {
+        "tag1": "Startup Investment Advisory",
+        "tag2": "Project Capital Structuring",
+        "tag3": "Mergers & Acquisitions",
+        "tag4": "Business Development",
+        "tag5": "Risk Management International",
+        "title": "Capital, Strategy &",
+        "titleHighlight": "Global Networks",
+        "p1": "Nexa is a global investor and business partner, providing specialized investment and advisory services across a wide range of industries and growth-stage ventures.",
+        "p2": "We empower entrepreneurs and innovators by combining capital, strategic guidance, and global networks — enabling businesses to scale, innovate, and succeed across markets worldwide.",
+        "badge": "Global Investor Network",
+        "badgeSub": "Capital + Strategy + Execution"
+      },
+      "services": {
+        "title": "Our Services",
+        "s1Badge": "Advisory",
+        "s1Name": "Strategic Advisory",
+        "s1Title": "Strategic Advisory & Expert Guidance",
+        "s2Badge": "Access",
+        "s2Name": "Market Access",
+        "s2Title": "Market Access & Business Opportunities",
+        "s3Badge": "Growth",
+        "s3Name": "Expansion",
+        "s3Title": "Scaling & International Expansion Strategies",
+        "s4Badge": "Risk",
+        "s4Name": "Risk Management",
+        "s4Title": "Governance & Risk Management Solutions"
+      },
+      "offer": {
+        "title": "Investment",
+        "subtitle": "Invest With Confidence, Grow with Vision.",
+        "bullet1": "Startup Investment Advisory",
+        "bullet2": "Project Capital Structuring",
+        "bullet3": "Strategic Growth & Market Expansion",
+        "bullet4": "Legal Documentation Preparing"
+      },
+      "process": {
+        "title": "Investment Process",
+        "s1Title": "Opportunity Review",
+        "s1Desc": "Initial assessment of the proposal and market fit",
+        "s2Title": "Due Diligence",
+        "s2Desc": "In-depth analysis of financials, team, and scalability",
+        "s3Title": "Structuring & Legal",
+        "s3Desc": "Deal structuring, term sheets, and legal documentation",
+        "s4Title": "Capital Deployment",
+        "s4Desc": "Funds deployed and business operations activated",
+        "s5Title": "Ongoing Support",
+        "s5Desc": "Strategic guidance, KPI monitoring, and growth advisory"
+      },
+      "impact": {
+        "title": "Why Investment Programs Strengthen Economies",
+        "i1Pill": "Growth",
+        "i1Title": "Accelerates Economic Growth",
+        "i2Pill": "Jobs",
+        "i2Title": "Creates Sustainable Employment",
+        "i3Pill": "Innovation",
+        "i3Title": "Drives Technological Innovation",
+        "i4Pill": "Wealth",
+        "i4Title": "Builds Long-Term Wealth & Value"
+      },
+      "stats": {
+        "s1Pill": "Track Record",
+        "s1Label": "Successful cases across all programs",
+        "s2Pill": "Portfolio",
+        "s2Label": "Ventures supported globally",
+        "s3Pill": "Experience",
+        "s3Label": "Years of investment expertise"
+      },
+      "faq": {
+        "title": "FAQ",
+        "showMore": "Show More",
+        "showLess": "Show Less"
+      },
+      "contactForm": {
+        "title": "Ready to",
+        "titleHighlight": "Invest",
+        "title2": "or Raise Capital?",
+        "sendMessage": "Send Message",
+        "sending": "Sending…",
+        "sent": "Sent ✓",
+        "confidential": "Your information is kept strictly confidential.",
+        "thankYou": "Thank you!",
+        "advisorReachOut": "A Nexa advisor will reach out within 48 hours.",
+        "tellUsPlaceholder": "Briefly describe your business or project, the sector, current stage, and what kind of investment or partnership you are seeking…",
+        "iAmA": "I Am a",
+        "investmentSector": "Investment Sector",
+        "projectStage": "Project / Business Stage",
+        "capitalRange": "Capital Range"
+      }
+    }
+  },
+  "ourTeam": {
+    "values": {
+      "title": "Our Values",
+      "v1Title": "Global Mindset",
+      "v1Desc": "We think beyond borders and build solutions that scale internationally from day one.",
+      "v2Title": "Fearless Innovation",
+      "v2Desc": "Bold ideas are our foundation — we embrace risk to unlock breakthrough growth.",
+      "v3Title": "Trusted Partnership",
+      "v3Desc": "We build long-term relationships based on transparency and measurable results."
+    },
+    "offices": {
+      "title": "Our Offices",
+      "vancouver": "Vancouver, Canada",
+      "vancouverAddress": "906-935 Marine Dr, West Vancouver,\nBritish Columbia, Canada",
+      "vancouverPhone": "+1 (604) 351-5951",
+      "tehran": "Tehran, Iran",
+      "tehranAddress": "No. 27, Neom Building (Next to the Tandis Complex),\nTajrish Square, Tehran",
+      "tehranPhone": "+98 (21) 2691-7416"
+    },
+    "academy": {
+      "beforeTheAcademy": "Before the Academy",
+      "founderName": "Hadi Hasanpour",
+      "founderTitle": "Founder & CEO",
+      "quote": "Engineering taught me how systems work. Entrepreneurship taught me how people do.",
+      "p1": "For Hadi Hasanpour, entrepreneurship has never been just about building companies—it has always been about building people.",
+      "p2": "With a foundation in electrical engineering and more than 15 years of experience delivering technical and engineering solutions across multiple industries, Hadi developed a deep understanding of how systems, organizations, and businesses grow. His continuous pursuit of knowledge, including studies in both electrical and mechanical disciplines, shaped a multidisciplinary mindset that would later define his entrepreneurial journey.",
+      "p3": "Driven by a passion for helping young people unlock their potential, Hadi founded Landa Academy, an entrepreneurship-focused learning environment that provided practical education, mentorship, and growth opportunities for future professionals. More than 300 participants joined the academy, many of whom successfully entered the job market, launched businesses, or accelerated their careers.",
+      "p4": "Building on this impact, Hadi established Landa International Holding with a vision to help entrepreneurs transform ambitious ideas into global ventures. Today, through international partnerships and projects spanning Canada, the UAE, India, China, and beyond, he continues to support founders, startups, and growing businesses in their journey from concept to market. His mission remains simple: to create opportunities, empower innovators, and help great ideas reach their full potential.",
+      "readMore": "Read more",
+      "readLess": "Read less"
+    },
+    "cta": {
+      "title": "Ready to Work With the Best?",
+      "description": "Every great company starts with the right team. We're ready to build yours.",
+      "startJourney": "Start Your Journey",
+      "learnAboutUs": "Learn About Us"
+    }
+  },
+  "ourStory": {
+    "hero": {
+      "title": "Where Bold Founders Come to Grow",
+      "description": "Nexa is guided by a team shaped around Hadi Hasanpour, whose multidisciplinary engineering background and analytical expertise established a structured approach to building ventures worldwide."
+    },
+    "story": {
+      "title": "Our Story",
+      "description": "Nexa is guided by a team shaped around Hadi Hasanpour, whose multidisciplinary engineering background and analytical expertise established a structured approach to building ventures. With formal training across electrical, civil, and mechanical engineering, combined with experience in structured consulting, systems analysis, and entrepreneurship, this foundation defined Nexa's direction long before its first venture was launched."
+    },
+    "vision": {
+      "title": "Vision & Mission",
+      "visionTitle": "Vision",
+      "visionText": "To build a world without entrepreneurial borders. A world where ideas travel freely, capital follows courage, and founders from every corner of the globe have the power to scale beyond limits. Nexa aims to become the bridge that turns ambition into global influence and vision into international reality.",
+      "missionTitle": "Mission",
+      "missionText": "Nexa's mission is to build a trusted global hub for capital transfer and business relocation – empowering entrepreneurs and investors to expand across borders through structured advisory, strategic investment pathways, and direct access to international markets."
+    },
+    "timeline": {
+      "title": "NEXA Timeline"
+    },
+    "certificates": {
+      "title": "NEXA Certificate",
+      "subtitle": "Our certifications and professional affiliations reflect our commitment to transparency, ethical conduct, and operational credibility.",
+      "cert1Title": "Official Registration Certificate",
+      "cert1Desc": "Registered legal entity in Canada – British Columbia Registry. Compliant and active in international business advisory and consulting services.",
+      "cert2Title": "Professional Affiliation",
+      "cert2Desc": "Certified partnership with internationally recognized advisory and investment networks, ensuring credibility across all operational jurisdictions."
+    },
+    "projects": {
+      "title": "Our Successful Projects"
+    }
+  },
+  "advisory": {
+    "business": {
+      "title": "Business Advisory",
+      "subtitle": "Professional advisory for business growth and investment readiness",
+      "item1": "Shaping and scaling your business",
+      "item2": "Leveraging our connections growth",
+      "item3": "Acquiring high-potential startups"
+    },
+    "services": {
+      "title": "Our Services",
+      "s1": "Preparation of Professional Business Documents",
+      "s2": "Registration of Intellectual Property and Patent",
+      "s3": "Access to Our International Network of Experts",
+      "s4": "Fundraising Support and Developing KPI System"
+    },
+    "precision": {
+      "title": "Precision in Every Document",
+      "description": "Every document we deliver is crafted with precision to help you and your clients see the full picture and make informed decisions. We start by creating professional business documents that clearly convey the story of your deal, while also assisting with intellectual property and patent registration to protect your innovations. Along the way, you benefit from access to our international network of experts, gaining insights and connections that elevate your strategy."
+    },
+    "growth": {
+      "title": "Growth That Is Measurable and Sustainable",
+      "description": "To ensure your growth is measurable and sustainable, we provide fundraising support and KPI system development, aligning every step with your business goals. This is more than just completing tasks—it's about giving you clarity, strategic guidance, and the right resources to move forward confidently. Whether you're preparing for a negotiation or setting the stage for a successful acquisition, our approach transforms complex information into actionable steps that drive real results."
+    },
+    "process": {
+      "title": "Our Process",
+      "s1Title": "Discovery Call",
+      "s1Desc": "We listen intently about the details of your endeavor with a focus on what you're looking to achieve. From there, we propose the services that are needed to help you accomplish your goal.",
+      "s2Title": "Proposal",
+      "s2Desc": "We put together and send you a proposal inclusive of the scope of work, delivery timing, Price, and terms of engagement.",
+      "s3Title": "Contract & Invoice",
+      "s3Desc": "Once the Proposal is accepted by you, we finalize our contract and send you the invoice. We're ready to start your project!",
+      "s4Title": "Questionnaire",
+      "s4Desc": "You receive our comprehensive questionnaire, designed specifically to allow you to easily share the details of your endeavor with us. We'll use this knowledge to expertly create the agreed upon products that will help you achieve your goal.",
+      "s5Title": "Review",
+      "s5Desc": "Upon receiving your complete questionnaire, our team analyzes the answers and reaches out to you in case of any missing data or additional questions.",
+      "s6Title": "Writing Process",
+      "s6Desc": "Your dedicated team creates your custom built first draft of the first product within the specified time frame. And we never miss a deadline!",
+      "s7Title": "Optional Revisions",
+      "s7Desc": "Once the Proposal is accepted by you, we finalize our contract and send you the invoice. We're ready to start your project!"
+    },
+    "projects": {
+      "title": "Our Highlighted Projects"
+    },
+    "faq": {
+      "title": "FAQs",
+      "showMore": "Show More",
+      "showLess": "Show Less"
+    }
+  },
+  "form": {
+    "title": "Apply For Funding",
+    "stepOf": "Step {current} of {total}",
+    "prev": "Prev",
+    "next": "Next",
+    "submitApplication": "Submit Application",
+    "submitting": "Submitting...",
+    "applicationSubmitted": "Application Submitted!",
+    "thankYou": "Thank you for applying. We will review your application and get back to you within 2–3 business days.",
+    "sidebar": {
+      "personalInfo": "Personal Information",
+      "contactInfo": "Contact Information",
+      "companyOverview": "Company Overview",
+      "companyAddress": "Company Address",
+      "businessModel": "Company Business Model",
+      "businessSummary": "Business Summary",
+      "problem": "Problem",
+      "solution": "Solution",
+      "stageGrowth": "Company Stage & Growth",
+      "stageGrowthSub": "Stage & Growth",
+      "documents": "Documents & Confirmation",
+      "supportingDocs": "Supporting Documents",
+      "legalDeclarations": "Legal Declarations"
+    },
+    "step1": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "phoneNumber": "Phone Number",
+      "email": "Email",
+      "phonePlaceholder": "+1 000 000 0000",
+      "firstNameRequired": "First name is required.",
+      "lastNameRequired": "Last name is required.",
+      "phoneRequired": "Phone number is required.",
+      "phoneInvalid": "Enter a valid phone number.",
+      "emailRequired": "Email is required.",
+      "emailInvalid": "Enter a valid email address."
+    },
+    "step2": {
+      "companyName": "Company Name",
+      "industry": "Industry / Sector",
+      "selectIndustry": "Select Industry",
+      "fintech": "Fintech",
+      "healthtech": "Healthtech",
+      "edtech": "Edtech",
+      "ecommerce": "Ecommerce",
+      "saas": "SaaS",
+      "ai": "AI",
+      "website": "Company Website",
+      "websitePlaceholder": "https://",
+      "companyNameRequired": "Company name is required.",
+      "industryRequired": "Please select an industry.",
+      "websiteInvalid": "Website must start with http:// or https://"
+    },
+    "step3": {
+      "streetAddress": "Street Address",
+      "addressLine2": "Address Line 2",
+      "city": "City",
+      "stateProvince": "State / Province",
+      "postalCode": "Postal / ZIP Code",
+      "country": "Country",
+      "streetRequired": "Street address is required.",
+      "cityRequired": "City is required.",
+      "stateRequired": "State / Province is required.",
+      "countryRequired": "Country is required."
+    },
+    "step4": {
+      "label": "Short company description",
+      "hint": "A one-line 'elevator pitch' for your company. Maximum 300 characters.",
+      "required": "Business summary is required."
+    },
+    "step5": {
+      "label": "What problem are you solving?",
+      "hint": "What is the specific problem that you are aiming to solve? Maximum 600 characters.",
+      "required": "Please describe the problem."
+    },
+    "step6": {
+      "label": "What is your solution to the problem?",
+      "hint": "What is your product/service, and how does it solve the problem? Maximum 600 characters.",
+      "required": "Please describe your solution."
+    },
+    "step7": {
+      "label": "Current Stage",
+      "idea": "Idea",
+      "ideaDesc": "Concept stage, no product yet",
+      "trial": "Trial",
+      "trialDesc": "Testing the idea with early users",
+      "mvp": "MVP",
+      "mvpDesc": "Minimum viable product built",
+      "firstSale": "First Sale",
+      "firstSaleDesc": "First paying customers",
+      "saleDevelopment": "Sale Development",
+      "saleDevelopmentDesc": "Growing revenue",
+      "required": "Please select a stage."
+    },
+    "step8": {
+      "uploadLabel": "Upload your investor deck for review",
+      "uploadHint": "Please send us your investor/pitch deck (PDF ONLY – 20MB max).",
+      "uploadButton": "Click to upload PDF",
+      "canadaQuestion": "My company is based in Canada",
+      "canadaYes": "YES, My company is based in Canada.",
+      "canadaNo": "NO, My company is not based in Canada.",
+      "uploadRequired": "Please upload your pitch deck (PDF).",
+      "canadaRequired": "Please answer this question."
+    },
+    "step9": {
+      "acknowledgementTitle": "Acknowledgement – Canadian Companies",
+      "ack1": "Nexa Venture Inc. is a Canadian Corporation.",
+      "ack2": "Participation fees may apply only after passing the screening process and agreeing to present.",
+      "ack3": "Nexa Venture Inc. does not take equity, success fees, or commissions.",
+      "ack4": "Investors act in their individual capacity and applicants are responsible for their own due diligence.",
+      "termsLabel": "I have read and agree to the Terms and Legal Declarations",
+      "termsRequired": "You must agree to the terms to continue."
+    }
+  }
+}

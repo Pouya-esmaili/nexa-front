@@ -1,39 +1,49 @@
+"use client";
+
 import type { ReactNode } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export default function Footer() {
+  const t = useTranslations("global.footer");
+
   return (
     <footer style={{ background: "#E3E3E3", borderTop: "1px solid #C8C8C8" }} className="pt-12">
 
       {/* ── Top Row: Logo / Services / About ── */}
       <div className="max-w-[1240px] mx-auto px-6">
-        {/* ── Mobile: Brand full-width, then 2-col links ── */}
-        {/* ── Desktop: 3-col grid (brand + services + about) ── */}
 
         {/* Desktop 3-col */}
         <div className="hidden md:grid md:grid-cols-[1.8fr_1fr_1fr] gap-12 pb-9" style={{ borderBottom: "1px solid #C0C0C0" }}>
           <div>
             <Image src="/images/logo.svg" alt="Nexa" width={110} height={38} className="mb-4" />
             <p className="text-[14px] text-[#555] leading-[1.7] max-w-[400px]">
-              At NEXA, Global Launchpad for Entrepreneurship, Startup Acceleration, and Strategic
-              Investment, Backed by Over 10 Years of Proven Expertise in Business Development,
-              Strategic Planning, and International Market Access.
+              {t("description")}
             </p>
           </div>
           <div className="md:text-center">
-            <h5 className="text-[16px] font-bold text-[#1a1a1a] mb-4">Services</h5>
+            <h5 className="text-[16px] font-bold text-[#1a1a1a] mb-4">{t("services")}</h5>
             <ul className="space-y-[5px]">
-              {[["Startup","/startup"],["Investment","/investment"],["Advisory","/advisory"],["Entrepreneurship","/Entrepreneurship"]].map(([l,h]) => (
-                <li key={l}><Link href={h} className="text-[14px] text-[#555] hover:text-[#8F27FF] transition-colors">{l}</Link></li>
+              {([
+                ["startup", "/startup"],
+                ["investment", "/investment"],
+                ["advisory", "/advisory"],
+                ["entrepreneurship", "/Entrepreneurship"],
+              ] as const).map(([key, h]) => (
+                <li key={key}><Link href={h} className="text-[14px] text-[#555] hover:text-[#8F27FF] transition-colors">{t(key)}</Link></li>
               ))}
             </ul>
           </div>
           <div className="md:text-center">
-            <h5 className="text-[16px] font-bold text-[#1a1a1a] mb-4">About Nexa</h5>
+            <h5 className="text-[16px] font-bold text-[#1a1a1a] mb-4">{t("aboutNexa")}</h5>
             <ul className="space-y-[5px]">
-              {[["Our Story","/our-story"],["Our Team","/our-team"],["Contact Us","/contact"]].map(([l,h]) => (
-                <li key={l}><Link href={h} className="text-[14px] text-[#555] hover:text-[#8F27FF] transition-colors">{l}</Link></li>
+              {([
+                ["ourStory", "/our-story"],
+                ["ourTeam", "/our-team"],
+                ["contactUs", "/contact"],
+              ] as const).map(([key, h]) => (
+                <li key={key}><Link href={h} className="text-[14px] text-[#555] hover:text-[#8F27FF] transition-colors">{t(key)}</Link></li>
               ))}
             </ul>
           </div>
@@ -43,27 +53,34 @@ export default function Footer() {
         <div className="md:hidden pb-6" style={{ borderBottom: "1px solid #C0C0C0" }}>
           <Image src="/images/logo.svg" alt="Nexa" width={110} height={38} className="mb-4" />
           <p className="text-[14px] text-[#555] leading-[1.7]">
-            At NEXA, Global Launchpad for Entrepreneurship, Startup Acceleration, and Strategic
-            Investment, Backed by Over 10 Years of Proven Expertise in Business Development,
-            Strategic Planning, and International Market Access.
+            {t("description")}
           </p>
         </div>
 
         {/* Mobile: 2-col links */}
         <div className="md:hidden grid grid-cols-2 gap-8 py-6" style={{ borderBottom: "1px solid #C0C0C0" }}>
           <div>
-            <h5 className="text-[16px] font-bold text-[#1a1a1a] mb-4">Services</h5>
+            <h5 className="text-[16px] font-bold text-[#1a1a1a] mb-4">{t("services")}</h5>
             <ul className="space-y-[10px]">
-              {[["Startup","/startup"],["Investment","/investment"],["Advisory","/advisory"],["Entrepreneurship","/Entrepreneurship"]].map(([l,h]) => (
-                <li key={l}><Link href={h} className="text-[14px] text-[#555] hover:text-[#8F27FF] transition-colors">{l}</Link></li>
+              {([
+                ["startup", "/startup"],
+                ["investment", "/investment"],
+                ["advisory", "/advisory"],
+                ["entrepreneurship", "/Entrepreneurship"],
+              ] as const).map(([key, h]) => (
+                <li key={key}><Link href={h} className="text-[14px] text-[#555] hover:text-[#8F27FF] transition-colors">{t(key)}</Link></li>
               ))}
             </ul>
           </div>
           <div>
-            <h5 className="text-[16px] font-bold text-[#1a1a1a] mb-4">About Nexa</h5>
+            <h5 className="text-[16px] font-bold text-[#1a1a1a] mb-4">{t("aboutNexa")}</h5>
             <ul className="space-y-[10px]">
-              {[["Our Story","/our-story"],["Our Team","/our-team"],["Contact Us","/contact"]].map(([l,h]) => (
-                <li key={l}><Link href={h} className="text-[14px] text-[#555] hover:text-[#8F27FF] transition-colors">{l}</Link></li>
+              {([
+                ["ourStory", "/our-story"],
+                ["ourTeam", "/our-team"],
+                ["contactUs", "/contact"],
+              ] as const).map(([key, h]) => (
+                <li key={key}><Link href={h} className="text-[14px] text-[#555] hover:text-[#8F27FF] transition-colors">{t(key)}</Link></li>
               ))}
             </ul>
           </div>
@@ -71,14 +88,14 @@ export default function Footer() {
 
         {/* ── Offices Row ── */}
         <div className="py-7" style={{ borderBottom: "1px solid #C0C0C0" }}>
-          <h5 className="text-[16px] font-bold text-[#1a1a1a] mb-5">Our Offices</h5>
+          <h5 className="text-[16px] font-bold text-[#1a1a1a] mb-5">{t("ourOffices")}</h5>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
             <div>
-              <strong className="block text-[14px] font-semibold text-[#1a1a1a] mb-2">Canada</strong>
+              <strong className="block text-[14px] font-semibold text-[#1a1a1a] mb-2">{t("canada")}</strong>
               <div className="flex items-start gap-2 text-[14px] text-[#555] mb-1.5 leading-[1.6]">
                 <svg className="w-4 h-4 text-[#8F27FF] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
-                906-935 Marine Dr, West Vancouver, British Columbia, Canada
+                {t("canadaAddress")}
               </div>
               <div className="flex items-center gap-2 text-[14px] text-[#555]">
                 <svg className="w-4 h-4 text-[#8F27FF] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.39 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.89a16 16 0 0 0 6.07 6.07l1.06-1.06a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
@@ -87,10 +104,10 @@ export default function Footer() {
             </div>
 
             <div>
-              <strong className="block text-[14px] font-semibold text-[#1a1a1a] mb-2">Iran</strong>
+              <strong className="block text-[14px] font-semibold text-[#1a1a1a] mb-2">{t("iran")}</strong>
               <div className="flex items-start gap-2 text-[14px] text-[#555] mb-1.5 leading-[1.6]">
                 <svg className="w-4 h-4 text-[#8F27FF] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
-                No. 27, Neom Building (Next to the Tandis Complex), Tajrish Square, Tehran, Iran
+                {t("iranAddress")}
               </div>
               <div className="flex items-center gap-2 text-[14px] text-[#555]">
                 <svg className="w-4 h-4 text-[#8F27FF] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.39 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.89a16 16 0 0 0 6.07 6.07l1.06-1.06a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
@@ -103,7 +120,7 @@ export default function Footer() {
 
         {/* ── Bottom Bar ── */}
         <div className="py-[18px] flex flex-col items-center md:flex-row md:justify-between gap-4 text-[14px] text-[#555]">
-          <span className="order-2 md:order-1">Copyright © 2025 Nexa. All rights reserved.</span>
+          <span className="order-2 md:order-1">{t("copyright")}</span>
           <div className="order-1 md:order-2 flex gap-2.5">
             {/* YouTube */}
             <SocialLink href="#" label="YouTube">

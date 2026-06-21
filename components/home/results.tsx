@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/global/LazyReveal";
+import { getTranslations } from "next-intl/server";
 
 /* ─────────────────────────────────────────────────────────────
    plan.svg  →  viewBox 0 0 1440 665
@@ -11,7 +12,8 @@ import Reveal from "@/components/global/LazyReveal";
    the correct cities at every viewport width.
 ─────────────────────────────────────────────────────────────── */
 
-export default function Results() {
+export default async function Results() {
+  const t = await getTranslations("home.results");
   return (
     <section style={{ background: "#000", padding: "72px 0 60px" }}>
 
@@ -19,7 +21,7 @@ export default function Results() {
         <Reveal variant="up">
           <div className="text-center">
             <h2 className="text-[28px] md:text-[40px] font-bold text-white tracking-[-0.03em]">
-              Our Results Tell the Story
+              {t("title")}
             </h2>
           </div>
         </Reveal>
@@ -107,21 +109,21 @@ export default function Results() {
                   <rect width="6" height="100" rx="3" fill="#8F27FF"/>
                   <text x="26" y="48" fontSize="40" fontWeight="800" fill="white" fontFamily="Inter,sans-serif">89</text>
                   <text x="96" y="48" fontSize="26" fontWeight="700" fill="#8F27FF" fontFamily="Inter,sans-serif">%</text>
-                  <text x="26" y="76" fontSize="13" fontWeight="500" fill="rgba(255,255,255,0.65)" fontFamily="Inter,sans-serif">Successful Cases</text>
+                  <text x="26" y="76" fontSize="13" fontWeight="500" fill="rgba(255,255,255,0.65)" fontFamily="Inter,sans-serif">{t("successfulCases")}</text>
                 </g>
                 <g transform="translate(600,535)" filter="url(#cs2)">
                   <rect width="210" height="100" rx="16" fill="rgba(22,4,50,0.95)" stroke="rgba(143,39,255,0.5)" strokeWidth="1.5"/>
                   <rect width="6" height="100" rx="3" fill="#8F27FF"/>
                   <text x="26" y="48" fontSize="40" fontWeight="800" fill="white" fontFamily="Inter,sans-serif">400</text>
                   <text x="118" y="48" fontSize="26" fontWeight="700" fill="#8F27FF" fontFamily="Inter,sans-serif">+</text>
-                  <text x="26" y="76" fontSize="13" fontWeight="500" fill="rgba(255,255,255,0.65)" fontFamily="Inter,sans-serif">Clients Worldwide</text>
+                  <text x="26" y="76" fontSize="13" fontWeight="500" fill="rgba(255,255,255,0.65)" fontFamily="Inter,sans-serif">{t("clientsWorldwide")}</text>
                 </g>
                 <g transform="translate(960,535)" filter="url(#cs2)">
                   <rect width="210" height="100" rx="16" fill="rgba(22,4,50,0.95)" stroke="rgba(143,39,255,0.5)" strokeWidth="1.5"/>
                   <rect width="6" height="100" rx="3" fill="#8F27FF"/>
                   <text x="26" y="48" fontSize="40" fontWeight="800" fill="white" fontFamily="Inter,sans-serif">10</text>
                   <text x="68" y="48" fontSize="26" fontWeight="700" fill="#8F27FF" fontFamily="Inter,sans-serif">+ Yrs</text>
-                  <text x="26" y="76" fontSize="13" fontWeight="500" fill="rgba(255,255,255,0.65)" fontFamily="Inter,sans-serif">Years of Expertise</text>
+                  <text x="26" y="76" fontSize="13" fontWeight="500" fill="rgba(255,255,255,0.65)" fontFamily="Inter,sans-serif">{t("yearsOfExpertise")}</text>
                 </g>
               </g>
             </svg>
@@ -138,7 +140,7 @@ export default function Results() {
                 transform: "translate(14px, 8px)",
               }}
             >
-              📍 Vancouver, Canada
+              {t("vancouver")}
             </div>
             {/* Tehran (850/1440 = 59.03%, 295/665 = 44.36%) */}
             <div
@@ -151,7 +153,7 @@ export default function Results() {
                 transform: "translate(14px, 8px)",
               }}
             >
-              📍 Tehran, Iran
+              {t("tehran")}
             </div>
           </div>
         </Reveal>

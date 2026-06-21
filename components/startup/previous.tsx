@@ -15,7 +15,7 @@ const projects = [
   {
     name: "Green farm",
     tag: "Sustainability · Global",
-    img: "https://images.unsplash.com/photo-1542601906897-ecd40029e09e?w=700&q=80",
+    img: "/images/photos/1538332576228-eb5b4c4de6f5-w700.jpg",
   },
   {
     name: "Aurora Clinic",

@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect, useRef } from "react";
 import Reveal from "@/components/global/LazyReveal";
+import { useTranslations } from "next-intl";
 
 const testimonials = [
   {
@@ -43,6 +44,7 @@ const GoogleIcon = () => (
 const GAP = 20;
 
 export default function CommentsSection() {
+  const t = useTranslations("home.comments");
   const [index, setIndex] = useState(0);
   const [perView, setPerView] = useState(3);
   const [trackWidth, setTrackWidth] = useState(0);
@@ -88,7 +90,7 @@ export default function CommentsSection() {
         <Reveal variant="up">
           <div className="text-center mb-14">
             <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em]">
-              Our Community&apos;s Experience
+              {t("title")}
             </h2>
           </div>
         </Reveal>

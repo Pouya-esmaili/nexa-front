@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
+  const t = useTranslations("home.hero");
   const [mounted, setMounted] = useState(false);
   useEffect(() => { const t = setTimeout(() => setMounted(true), 80); return () => clearTimeout(t); }, []);
 
@@ -25,9 +27,9 @@ export default function Hero() {
               className={`${base} ${mounted ? shown : hidden} text-[32px] md:text-[46px] font-extrabold leading-[1.06] tracking-[-0.035em] text-black mb-5`}
               style={{ transitionDelay: "80ms" }}
             >
-              Your Global Launchpad<br></br> for Investment,{" "}
+              {t("title1")}<br></br> {t("title2")}{" "}
               <span className="inline bg-[#FFE600] rounded-[3px] pb-[3px]">
-                <br></br>Startups &amp; Growth.
+                <br></br>{t("titleHighlight")}
               </span>
             </h1>
 
@@ -36,8 +38,7 @@ export default function Hero() {
               className={`${base} ${mounted ? shown : hidden} text-[16px] text-[#929292] leading-[1.68] max-w-[520px] mb-9`}
               style={{ transitionDelay: "160ms" }}
             >
-              We fuel the global expansion of startups into new markets — for entrepreneurs
-              ready to scale and investors seeking high-growth opportunities.
+              {t("lead")}
             </p>
 
             {/* CTA */}
@@ -48,11 +49,11 @@ export default function Hero() {
               <button
                 onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:bg-[#7A1FE0] hover:-translate-y-px hover:shadow-[0_8px_22px_rgba(143,39,255,0.28)]">
-                Explore Services →
+                {t("exploreServices")}
               </button>
               <Link href="#contact"
                 className="inline-flex items-center gap-2 px-[22px] py-[10px] border-[1.5px] border-[#1a1a1a] text-[#1a1a1a] font-semibold rounded-full text-[13px] transition-all hover:border-[#8F27FF] hover:text-[#8F27FF]">
-                Book a Call
+                {t("bookACall")}
               </Link>
             </div>
 

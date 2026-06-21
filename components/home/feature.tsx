@@ -1,42 +1,43 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import { Link } from "@/i18n/navigation";
 import Image from 'next/image';
-
-// Card data
-const cardData = [
-  {
-    id: 1,
-    title: 'Entrepreneurship',
-    desc: 'From business development to investor engagement, we guide ambitious founders to scale globally — turning bold ideas into borderless, investment-ready ventures.',
-    icon: '/images/landing/Entrepeneurship.svg',
-    link: '/Entrepreneurship',
-  },
-  {
-    id: 2,
-    title: 'Startup',
-    desc: 'We deliver precise startup advisory, crafting professional business plans, financial models, and investor pitch decks tailored for global success.',
-    icon: '/images/landing/Startup.svg',
-    link: '/startup',
-  },
-  // {
-  //   id: 3,
-  //   title: 'Advisory',
-  //   desc: 'Our expertise spans business development, financial planning and modeling, compelling pitch deck creation, IP guidance, go-to-market strategy, and strategic investor engagement.',
-  //   icon: '/images/landing/Advisory.svg',
-  //   link: '/advisory',
-  // },
-  {
-    id: 4,
-    title: 'Investment',
-    desc: 'With Exclusive Access to International Investors and Emerging Opportunities, We Focus on Growth-Stage Startups Driving Scalable Innovation.',
-    icon: '/images/landing/Investment.svg',
-    link: '/investment',
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function CardsPage() {
+  const t = useTranslations("home.feature");
+
+  const cardData = [
+    {
+      id: 1,
+      title: t('entrepreneurshipTitle'),
+      desc: t('entrepreneurshipDesc'),
+      icon: '/images/landing/Entrepeneurship.svg',
+      link: '/Entrepreneurship',
+    },
+    {
+      id: 2,
+      title: t('startupTitle'),
+      desc: t('startupDesc'),
+      icon: '/images/landing/Startup.svg',
+      link: '/startup',
+    },
+    // {
+    //   id: 3,
+    //   title: 'Advisory',
+    //   desc: 'Our expertise spans business development, financial planning and modeling, compelling pitch deck creation, IP guidance, go-to-market strategy, and strategic investor engagement.',
+    //   icon: '/images/landing/Advisory.svg',
+    //   link: '/advisory',
+    // },
+    {
+      id: 4,
+      title: t('investmentTitle'),
+      desc: t('investmentDesc'),
+      icon: '/images/landing/Investment.svg',
+      link: '/investment',
+    },
+  ];
   return (
     <div id="services" className="py-8 md:py-18 md:mb-4 md:mt-4">
       <div className="max-w-[1240px] mx-auto px-6">
@@ -44,7 +45,7 @@ export default function CardsPage() {
       {/* ── Section Title ── */}
       <div className="text-center mb-10">
         <h2 className="text-[32px] md:text-[40px] font-bold tracking-[-0.03em] text-black">
-          Our Services
+          {t('sectionTitle')}
         </h2>
       </div>
 

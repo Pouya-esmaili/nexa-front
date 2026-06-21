@@ -2,27 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-
-const contactItems = [
-  {
-    title: "Email Address",
-    icon: "/images/contact/sms.svg",
-    content: ["info@nexavc.com"],
-  },
-  {
-    title: "Phone Number",
-    icon: "/images/contact/call-calling.svg",
-    content: ["+98 (31) 3131-1914", "+1 (604) 351 - 5951"],
-  },
-  {
-    title: "Office Location",
-    icon: "/images/contact/location-tick.svg",
-    content: [
-      "No. 27, Neom Building (Next to the Tandis Complex), Tajrish Square, Tehran, Iran",
-      "906-935 Marine Dr, West Vancouver, British Columbia, Canada",
-    ],
-  },
-];
+import { useTranslations } from "next-intl";
 
 type FormData = {
   fullName: string;
@@ -33,21 +13,43 @@ type FormData = {
 
 type FormErrors = Partial<Record<keyof FormData, string>>;
 
-function validate(data: FormData): FormErrors {
-  const errors: FormErrors = {};
-  if (!data.fullName.trim()) errors.fullName = "Full name is required.";
-  if (!data.email.trim()) {
-    errors.email = "Email address is required.";
-  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
-    errors.email = "Please enter a valid email address.";
-  }
-  if (!data.service) errors.service = "Please select a service type.";
-  if (!data.message.trim()) errors.message = "Message is required.";
-  else if (data.message.trim().length < 10) errors.message = "Message must be at least 10 characters.";
-  return errors;
-}
-
 export default function ContactSection() {
+  const t = useTranslations("contact.section");
+
+  const contactItems = [
+    {
+      title: t("emailAddress"),
+      icon: "/images/contact/sms.svg",
+      content: ["info@nexavc.com"],
+    },
+    {
+      title: t("phoneNumber"),
+      icon: "/images/contact/call-calling.svg",
+      content: ["+98 (31) 3131-1914", "+1 (604) 351 - 5951"],
+    },
+    {
+      title: t("officeLocation"),
+      icon: "/images/contact/location-tick.svg",
+      content: [
+        "No. 27, Neom Building (Next to the Tandis Complex), Tajrish Square, Tehran, Iran",
+        "906-935 Marine Dr, West Vancouver, British Columbia, Canada",
+      ],
+    },
+  ];
+
+  function validate(data: FormData): FormErrors {
+    const errors: FormErrors = {};
+    if (!data.fullName.trim()) errors.fullName = t("nameRequired");
+    if (!data.email.trim()) {
+      errors.email = t("emailRequired");
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+      errors.email = t("emailInvalid");
+    }
+    if (!data.service) errors.service = t("serviceRequired");
+    if (!data.message.trim()) errors.message = t("messageRequired");
+    else if (data.message.trim().length < 10) errors.message = t("messageMinLength");
+    return errors;
+  }
   const [form, setForm] = useState<FormData>({
     fullName: "",
     email: "",
@@ -101,7 +103,7 @@ export default function ContactSection() {
                     <div className="space-y-1">
                       {item.content.map((text) => (
                         <p key={text} className="text-md leading-6 text-[#474747]">
-                          {item.title === "Phone Number" ? (
+                          {item.title === t("phoneNumber") ? (
                             <a
                               href={`tel:${text.replace(/[^\d+]/g, "")}`}
                               className="transition-colors hover:text-[#8F27FF]"
@@ -131,31 +133,31 @@ export default function ContactSection() {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-black">Message Sent!</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-black">{t("messageSent")}</h2>
                 <p className="text-[15px] text-[#929292] max-w-[320px] leading-relaxed">
-                  Thank you for reaching out. We&apos;ll get back to you within 48 hours.
+                  {t("thankYou")}
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); setForm({ fullName: "", email: "", service: "", message: "" }); }}
                   className="mt-2 px-7 py-3 rounded-full border-[1.5px] border-[#8F27FF] text-[#8F27FF] font-semibold text-[14px] hover:bg-[#8F27FF] hover:text-white transition-all duration-200"
                 >
-                  Send Another Message
+                  {t("sendAnother")}
                 </button>
               </div>
             ) : (
               /* ── Form ── */
               <>
-                <h2 className="md:text-4xl text-2xl font-bold">Send a Message</h2>
-                <p className="mt-2 text-sm text-[#474747]">Most inquiries receive a response within 48 hours.</p>
+                <h2 className="md:text-4xl text-2xl font-bold">{t("sendMessage")}</h2>
+                <p className="mt-2 text-sm text-[#474747]">{t("responseTime")}</p>
 
                 <form className="mt-10" onSubmit={handleSubmit} noValidate>
                   <div className="grid gap-5 md:grid-cols-2">
                     {/* Full Name */}
                     <div>
-                      <label className="mb-2 block text-md text-[#222]">Full Name</label>
+                      <label className="mb-2 block text-md text-[#222]">{t("fullName")}</label>
                       <input
                         type="text"
-                        placeholder="Full Name"
+                        placeholder={t("fullName")}
                         value={form.fullName}
                         onChange={(e) => set("fullName", e.target.value)}
                         className={`${inputBase} ${errors.fullName ? inputErr : ""}`}
@@ -165,10 +167,10 @@ export default function ContactSection() {
 
                     {/* Email */}
                     <div>
-                      <label className="mb-2 block text-md text-[#222]">Email Address</label>
+                      <label className="mb-2 block text-md text-[#222]">{t("emailAddress")}</label>
                       <input
                         type="email"
-                        placeholder="Email"
+                        placeholder={t("email")}
                         value={form.email}
                         onChange={(e) => set("email", e.target.value)}
                         className={`${inputBase} ${errors.email ? inputErr : ""}`}
@@ -179,28 +181,28 @@ export default function ContactSection() {
 
                   {/* Service */}
                   <div className="mt-5">
-                    <label className="mb-2 block text-md text-[#222]">Service Type</label>
+                    <label className="mb-2 block text-md text-[#222]">{t("serviceType")}</label>
                     <select
                       value={form.service}
                       onChange={(e) => set("service", e.target.value)}
                       className={`h-12 w-full rounded-xl bg-white px-4 text-md outline-none shadow-[0px_3px_8px_rgba(0,0,0,0.08)] transition-all border border-transparent focus:border-[#8F27FF] ${errors.service ? inputErr : ""} ${!form.service ? "text-[#929292]" : "text-[#222]"}`}
                     >
-                      <option value="" disabled>Select a service</option>
-                      <option value="Startup">Startup</option>
-                      <option value="Entrepreneurship">Entrepreneurship</option>
-                      <option value="Investment">Investment</option>
-                      <option value="Advisory">Advisory</option>
-                      <option value="Other">Other</option>
+                      <option value="" disabled>{t("selectService")}</option>
+                      <option value="Startup">{t("startup")}</option>
+                      <option value="Entrepreneurship">{t("entrepreneurship")}</option>
+                      <option value="Investment">{t("investment")}</option>
+                      <option value="Advisory">{t("advisory")}</option>
+                      <option value="Other">{t("other")}</option>
                     </select>
                     {errors.service && <p className="mt-1.5 text-[12px] text-red-500">{errors.service}</p>}
                   </div>
 
                   {/* Message */}
                   <div className="mt-5">
-                    <label className="mb-2 block text-md text-[#222]">Your Message</label>
+                    <label className="mb-2 block text-md text-[#222]">{t("yourMessage")}</label>
                     <textarea
                       rows={7}
-                      placeholder="Write your message here..."
+                      placeholder={t("messagePlaceholder")}
                       value={form.message}
                       onChange={(e) => set("message", e.target.value)}
                       className={`w-full resize-none rounded-xl bg-white p-4 text-sm outline-none shadow-[0px_3px_8px_rgba(0,0,0,0.08)] transition-all border border-transparent focus:border-[#8F27FF] ${errors.message ? inputErr : ""}`}
@@ -219,9 +221,9 @@ export default function ContactSection() {
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="white" strokeWidth="4" />
                           <path className="opacity-75" fill="white" d="M4 12a8 8 0 018-8v8z" />
                         </svg>
-                        Sending...
+                        {t("sending")}
                       </>
-                    ) : "Submit"}
+                    ) : t("submit")}
                   </button>
                 </form>
               </>

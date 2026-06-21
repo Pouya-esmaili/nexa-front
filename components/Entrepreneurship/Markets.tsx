@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";

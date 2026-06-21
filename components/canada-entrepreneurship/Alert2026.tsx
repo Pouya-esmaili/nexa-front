@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Row from "@/components/global/Row";
 
 export default function Alert2026() {

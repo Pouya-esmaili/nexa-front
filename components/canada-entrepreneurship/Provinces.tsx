@@ -103,7 +103,7 @@ const atlanticProvinces: Province[] = [
   {
     name: "Nova Scotia",
   
-    bg: "https://images.unsplash.com/photo-1565024144815-79bc8094a0d3?w=600&q=80",
+    bg: "/images/photos/1519178614-68673b201f36-w600.jpg",
     stats: [
       { label: "Min Net Worth", value: "CAD 600K" },
       { label: "Min Investment", value: "CAD 150K" },
@@ -123,7 +123,7 @@ const atlanticProvinces: Province[] = [
   {
     name: "Newfoundland & Labrador",
    
-    bg: "https://images.unsplash.com/photo-1504608524841-42584120d693?w=600&q=80",
+    bg: "/images/photos/1503614472-8c93d56e92ce-w600.jpg",
     stats: [
       { label: "Min Net Worth", value: "CAD 500K" },
       { label: "Min Investment", value: "CAD 200K" },

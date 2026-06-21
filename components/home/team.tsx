@@ -1,6 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Reveal from "@/components/global/LazyReveal";
+import { getTranslations } from "next-intl/server";
 
 // const tags = [
 //   "Global Marketing Strategy",
@@ -12,7 +13,8 @@ import Reveal from "@/components/global/LazyReveal";
 //   "Content Strategy",
 // ];
 
-export default function Team() {
+export default async function Team() {
+  const t = await getTranslations("home.team");
   return (
     <section className="py-20 md:py-24 bg-[#F7F6F9]">
       <div className="max-w-[1240px] mx-auto px-6">
@@ -22,18 +24,14 @@ export default function Team() {
           <Reveal variant="left" className="order-2 md:order-1">
             <div className="flex flex-col gap-5">
               <h2 className="text-[32px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1]">
-                Behind the{" "}
-                <span className="inline bg-[#FFE600] rounded-[3px] px-[5px] pb-[3px]">Nexa</span>
+                {t("title1")}{" "}
+                <span className="inline bg-[#FFE600] rounded-[3px] px-[5px] pb-[3px]">{t("titleHighlight")}</span>
               </h2>
               <p className="text-[16px] text-[#929292] leading-[1.72]">
-                NEXA is an international team with 10+ years of hands-on experience in launching
-                and scaling businesses globally. Our expertise spans multiple disciplines, with a
-                strong focus on execution.
+                {t("p1")}
               </p>
               <p className="text-[16px] text-[#929292] leading-[1.72]">
-                We deliver investment-ready strategies through close collaboration with
-                international consultants and legal experts, helping founders turn early-stage
-                ideas into scalable, market-ready companies.
+                {t("p2")}
               </p>
 
               {/* Tags */}
@@ -49,7 +47,7 @@ export default function Team() {
               <Link
                 href="/our-team"
                 className="self-start mt-2 inline-flex items-center gap-2 px-7 py-3.5 border-[1.5px] border-[#8F27FF] text-[#8F27FF] font-semibold rounded-full text-[14px] hover:bg-[#8F27FF] hover:text-white hover:-translate-y-px transition-all">
-                Meet Our Team →
+                {t("meetOurTeam")}
               </Link>
             </div>
           </Reveal>

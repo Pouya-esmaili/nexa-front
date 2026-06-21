@@ -81,7 +81,7 @@ export default function Hero() {
               <div
                 className="absolute inset-0"
                 style={{
-                  borderRadius: "32px 32px 32px 120px",
+                  borderRadius: "32px 120px 32px 32px",
                   backgroundImage: "url('/images/photos/1517935706615-2717063c2225-w900.jpg')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",

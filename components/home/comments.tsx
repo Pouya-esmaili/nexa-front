@@ -110,7 +110,7 @@ export default function CommentsSection() {
                         ? "border-[#8F27FF] shadow-[0_8px_24px_rgba(143,39,255,0.12)]"
                         : "border-[#E2E2E2] hover:border-[#8F27FF] hover:shadow-[0_8px_24px_rgba(143,39,255,0.1)]",
                     ].join(" ")}
-                    style={{ width: cardW > 0 ? `${cardW}px` : undefined }}
+                    style={{ width: `calc((100% - ${GAP * (perView - 1)}px) / ${perView})` }}
                   >
                     {/* Top row */}
                     <div className="flex items-center gap-3 mb-4">

@@ -12,7 +12,7 @@ const timelineItems = [
     tag: 'Education',
     title: 'The Spark – Landa Academy is Born',
     desc: "Hadi established Landa Academy in Isfahan to mentor students – creating fertile ground for Nexa's first ventures.",
-    img: '/images/about/academy.svg',
+    img: '/images/about/Landa Academy.jpg',
     logo: '/images/about/academylanda.svg',
     side: 'left' as const,
   },
@@ -22,7 +22,7 @@ const timelineItems = [
     tag: 'Automation',
     title: 'First Venture – Diaco',
     desc: 'Diaco was launched to address factory automation challenges by translating technical expertise into operational solutions.',
-    img: '/images/about/diacoo.svg',
+    img: '/images/about/Diacoo.jpg',
     logo: '/images/about/Diaco.svg',
     side: 'right' as const,
   },
@@ -32,7 +32,7 @@ const timelineItems = [
     tag: 'EdTech & AR',
     title: 'Reimagining Education – Vision Raft',
     desc: 'Vision Raft brought augmented reality into learning, helping children engage beyond traditional classroom methods.',
-    img: '/images/about/vision.svg',
+    img: '/images/about/Vision Raft.jpg',
     logo: '/images/landing/raft.svg',
     side: 'left' as const,
   },
@@ -42,7 +42,7 @@ const timelineItems = [
     tag: 'Travel',
     title: 'Learning Without Borders – Landa Trip',
     desc: 'LandaTrip redefined education beyond traditional settings by integrating learning with purposeful travel.',
-    img: '/images/about/trip.svg',
+    img: '/images/about/Landa Trip.jpg',
     logo: '/images/landing/Landa Trip.svg',
     side: 'right' as const,
   },
@@ -52,7 +52,7 @@ const timelineItems = [
     tag: 'Marketplace',
     title: 'The Innovation Hub – Diaco Center',
     desc: 'Diaco Center connects technology seekers with validated technology providers.',
-    img: '/images/about/diacocenter.svg',
+    img: '/images/about/Diaco Center.jpg',
     logo: '/images/about/Diaco.svg',
     side: 'left' as const,
   },
@@ -62,7 +62,7 @@ const timelineItems = [
     tag: 'HealthTech & AI',
     title: 'Engineering a Healthier Future – PreventiGene',
     desc: 'PreventiGene applies AI and genetic analysis in early breast cancer risk prevention.',
-    img: '/images/about/preventigene.svg',
+    img: '/images/about/PreventiGenee.jpg',
     logo: '/images/landing/preventigene.svg',
     side: 'right' as const,
   },
@@ -72,7 +72,7 @@ const timelineItems = [
     tag: 'AI & Health',
     title: 'A Platform for Hope – AutiLab',
     desc: 'AutiLab enables early autism detection combining AI-driven systems with specialist expertise.',
-    img: '/images/about/autilab.svg',
+    img: '/images/about/AutiLabb.jpg',
     logo: '/images/landing/Autilab.svg',
     side: 'left' as const,
   },
@@ -82,7 +82,7 @@ const timelineItems = [
     tag: 'Creative',
     title: 'Protecting Artisans – Landa Craft',
     desc: 'Landa Craft enables secure and transparent exchange within the art and creative economy.',
-    img: '/images/about/landacraft.svg',
+    img: '/images/about/Landa Craft (2).jpg',
     logo: '/images/landing/craft.svg',
     side: 'right' as const,
   },
@@ -213,7 +213,7 @@ export default function OurStoryPage() {
           {/* image always visible, no animation wrapper */}
           <div className="mb-6 overflow-hidden rounded-[20px]" style={{ position: 'relative', width: '100%', paddingBottom: '75%' }}>
             <Image
-              src="/images/about/IMG_0881.svg"
+              src="/images/ourteam/Teams.jpg"
               alt="Our Story"
               fill
               className="object-cover"
@@ -255,7 +255,7 @@ export default function OurStoryPage() {
           </div>
           <div className="os-anim os-d3 overflow-hidden rounded-[20px]" style={{ position: 'relative', width: '100%', paddingBottom: '75%' }}>
             <Image
-              src="/images/about/IMG_0881.svg"
+              src="/images/ourteam/Teams.jpg"
               alt="Our Story"
               fill
               className="object-cover"

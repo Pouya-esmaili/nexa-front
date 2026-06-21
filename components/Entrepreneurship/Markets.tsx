@@ -7,7 +7,7 @@ import Reveal from "@/components/global/Reveal";
 const markets = [
   {
     name: "Canada",
-    flag: "/images/Entrepreneurship/canada.svg",
+    flag: "/images/Entrepreneurship/cn.svg",
     desc: "Entrepreneur Visa with permanent residency pathway",
     href: "/Entrepreneurship/canada",
     img: "/images/Entrepreneurship/canada.png",

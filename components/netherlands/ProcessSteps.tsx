@@ -40,18 +40,24 @@ export default function ProcessSteps() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
 
           {/* Left — sticky via Reveal className (همان الگوی UK) */}
-          <Reveal variant="left" delay={0} className="md:sticky md:top-24">
-            <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] mb-5">
-              Step-by-Step Application Timeline
-            </h2>
-            <blockquote className="text-[18px] italic font-medium leading-[1.5] py-5 pl-6 mb-4"
-              style={{ borderLeft: "3px solid #8F27FF" }}>
-              &ldquo;Nexa coordinates your application flow into a clear, linear progression to avoid processing rejections.&rdquo;
-            </blockquote>
-            <p className="text-[14.5px] text-[#929292] leading-[1.7]">
-              From securing your facilitator to landing in the Netherlands and registering your business, the full process takes approximately 4 to 5 months when properly prepared.
-            </p>
-          </Reveal>
+          <div className="md:sticky md:top-24">
+            <Reveal variant="left">
+              <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] mb-5">
+                Step-by-Step Application Timeline
+              </h2>
+            </Reveal>
+            <Reveal variant="left" delay={120}>
+              <blockquote className="text-[18px] italic font-medium leading-[1.5] py-5 pl-6 mb-4"
+                style={{ borderLeft: "3px solid #8F27FF" }}>
+                &ldquo;Nexa coordinates your application flow into a clear, linear progression to avoid processing rejections.&rdquo;
+              </blockquote>
+            </Reveal>
+            <Reveal variant="left" delay={240}>
+              <p className="text-[14.5px] text-[#929292] leading-[1.7]">
+                From securing your facilitator to landing in the Netherlands and registering your business, the full process takes approximately 4 to 5 months when properly prepared.
+              </p>
+            </Reveal>
+          </div>
 
           {/* Right — steps */}
           <div className="relative pl-[52px]">

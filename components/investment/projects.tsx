@@ -7,22 +7,22 @@ const PROJECTS = [
   {
     name: "Arshia Gallery",
     tag: "Fine Jewelry · Luxury Retail",
-    img: "/images/Entrepreneurship/galleryy.svg",
+    img: "/images/Entrepreneurship/Arshia Gallery.jpg",
   },
   {
     name: "Afra Cafe",
     tag: "F&B · International",
-    img: "/images/Entrepreneurship/afra.svg",
+    img: "/images/Entrepreneurship/Afra Cafe.jpg",
   },
   {
-    name: "Green Frame",
+    name: "Green farm",
     tag: "Sustainability · Global",
-    img: "/images/Entrepreneurship/green.svg",
+    img: "/images/Entrepreneurship/Green Farm.jpg",
   },
   {
     name: "Aurora Clinic",
     tag: "Healthcare · Canada",
-    img: "/images/Entrepreneurship/clinic.svg",
+    img: "/images/Entrepreneurship/Aurora Clinic.jpg",
   },
 ];
 

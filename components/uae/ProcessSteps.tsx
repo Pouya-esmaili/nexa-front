@@ -44,11 +44,13 @@ export default function ProcessSteps() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-[70px] items-start">
 
           {/* Left — sticky */}
-          <Reveal variant="left">
-            <div className="md:sticky md:top-[100px]">
+          <div className="md:sticky md:top-[100px]">
+            <Reveal variant="left">
               <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] mb-5">
                 5-Phase Application Pipeline
               </h2>
+            </Reveal>
+            <Reveal variant="left" delay={120}>
               <blockquote
                 className="text-[18px] italic font-medium leading-[1.5] text-black py-5 mb-4"
                 style={{ borderLeft: "3px solid #8F27FF", paddingLeft: "24px" }}
@@ -56,13 +58,15 @@ export default function ProcessSteps() {
                 &ldquo;We treat the application timeline as a synchronous critical path — data
                 validation occurs well before capital deployment.&rdquo;
               </blockquote>
+            </Reveal>
+            <Reveal variant="left" delay={240}>
               <p className="text-[14.5px] text-[#929292] leading-[1.7]">
                 From asset certification to physical Emirates ID activation, the complete pipeline
                 spans 2 to 6 weeks once capital is deployed. Nexa manages the entire architecture —
                 asset diligence, ICP filing, medical coordination, and family sponsorship deployment.
               </p>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
 
           {/* Right — each step scrolls in individually */}
           <div className="relative pl-[52px]">

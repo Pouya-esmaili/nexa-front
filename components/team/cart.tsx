@@ -2,7 +2,19 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const team = [
+type Member = {
+  name: string;
+  role: string;
+  dept: string;
+  image: string;
+  linkedin: string;
+  /** CSS object-position for the photo, e.g. "center 20%" */
+  pos?: string;
+  /** Extra zoom applied to the photo, e.g. 1.15 */
+  zoom?: number;
+};
+
+const team: Member[] = [
   // { name: "Mahsa Esmaeili",      role: "Legal Advisor",        dept: "Legal",      image: "/images/ourteam/mahsa.svg",        linkedin: "https://www.linkedin.com/in/mahsa-esmaili" },
   // { name: "Iman Nasr Esfahani",  role: "COO",                  dept: "Leadership", image: "/images/ourteam/iman.png",         linkedin: "https://www.linkedin.com/in/iman-nasr-esfahani", pos: "center 30%" },
   // { name: "Lida Parvizi",        role: "HR & Administrative",  dept: "Operations", image: "/images/ourteam/lida.svg",         linkedin: "https://www.linkedin.com/in/lida-parvizi-ab7b8721a", pos: "center 30%" },
@@ -17,16 +29,16 @@ const team = [
   { name: "Mahsa Esmaeili",      role: "Legal Advisor",        dept: "Legal",      image: "/images/ourteam/mahsa.jpg" , linkedin: "https://www.linkedin.com/in/mahsa-esmaili" },
   { name: "Iman Nasr Esfahani",  role: "COO",                  dept: "Leadership", image: "/images/ourteam/iman.jpg" , linkedin: "https://www.linkedin.com/in/iman-nasr-esfahani" },
   { name: "Lida Parvizi",        role: "HR & Administrative",  dept: "Operations", image: "/images/ourteam/lidaa.JPG" , linkedin: "https://www.linkedin.com/in/lida-parvizi-ab7b8721a" },
-  { name: "Gelareh Bahrami",     role: "Sales Officer",        dept: "Sales",      image: "/images/ourteam/gelareh.jpg" , linkedin: "https://www.linkedin.com/in/gelareh-bahrami-baba59185" },
+  { name: "Gelareh Bahrami",     role: "Sales Officer",        dept: "Sales",      image: "/images/ourteam/gelareh.jpg" , linkedin: "https://www.linkedin.com/in/gelareh-bahrami-baba59185", pos: "center 20%" },
   { name: "Parastoo Sanaifar",   role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/parastoo.jpg" , linkedin: "https://www.linkedin.com/in/parastoo-sanaifar" },
-  { name: "Milad Fatemi",        role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/milad.jpg" , linkedin: "https://www.linkedin.com/in/miladfatemi" },
+  { name: "Milad Fatemi",        role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/milad.jpg" , linkedin: "https://www.linkedin.com/in/miladfatemi", pos: "center 20%" },
   { name: "Mehdi Esmaeili",      role: "Front-End Developer",  dept: "Tech",       image: "/images/ourteam/pouya.jpg" , linkedin: "" },
   { name: "Sajjad Momeni",       role: "Full-Stack Developer", dept: "Tech",       image: "/images/ourteam/sajjad.jpg" , linkedin: "https://www.linkedin.com/in/sajjad-momeni-17ab4778" },
   { name: "Ali Soleimani",       role: "Accountant",           dept: "Finance",    image: "/images/ourteam/ali.jpg" , linkedin: "https://www.linkedin.com/in/ali-soleimani-b761b6223" },
   { name: "Narjes Orouji",       role: "UI/UX Designer",       dept: "Design",     image: "/images/ourteam/narges.jpg" , linkedin: "https://www.linkedin.com/in/narges-orouji-7ab846214" },
   { name: "Amir Esfahanizade",   role: "Back-End Developer",   dept: "Tech",       image: "/images/ourteam/amir.jpg" , linkedin: "" },
-  { name: "Pouya Shafaghatiyan", role: "Marketing Specialist", dept: "Marketing",  image: "/images/ourteam/pooya.JPG" , linkedin: "https://www.linkedin.com/in/pouya-shafaghatian-a772a82b4" },
-  { name: "Kiyana Mehrasa",      role: "Content Strategist",   dept: "Marketing",  image: "/images/ourteam/kiana.JPG" , linkedin: "" },
+  { name: "Pouya Shafaghatiyan", role: "Marketing Specialist", dept: "Marketing",  image: "/images/ourteam/pooya.JPG" , linkedin: "https://www.linkedin.com/in/pouya-shafaghatian-a772a82b4", zoom: 1.45 },
+  { name: "Kiyana Mehrasa",      role: "Content Strategist",   dept: "Marketing",  image: "/images/ourteam/kiana.JPG" , linkedin: "https://www.linkedin.com/in/kiana-mehrasa-00aa38380" },
 ];
 
 const DELAYS = [60, 130, 200, 270, 340, 410, 480, 550, 620, 690, 760, 830, 900];
@@ -93,7 +105,10 @@ export default function TeamGrid() {
                 alt={member.name}
                 fill
                 className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                style={member.role ? { objectPosition: member.role } : undefined}
+                style={{
+                  ...(member.pos ? { objectPosition: member.pos } : {}),
+                  ...(member.zoom ? { transform: `scale(${member.zoom})` } : {}),
+                }}
                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               />
             </div>

@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 const STATS = [
   { pill: "Track Record", target: 89, suffix: "%", label: "Successful cases across all programs", startDelay: 200 },
   { pill: "Portfolio",    target: 400, suffix: "+", label: "Ventures supported globally",         startDelay: 360 },
-  { pill: "Experience",  target: 7,   suffix: "+", label: "Years of investment expertise",        startDelay: 520 },
+  { pill: "Experience",  target: 10,  suffix: "+", label: "Years of investment expertise",        startDelay: 520 },
 ];
 
 const DURATION = 1400;

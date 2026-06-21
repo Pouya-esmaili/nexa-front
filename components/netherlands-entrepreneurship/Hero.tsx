@@ -40,7 +40,7 @@ export default function Hero() {
           className={`h-[240px] rounded-[32px_80px_32px_32px] mb-6 overflow-hidden ${base} duration-700 delay-75 ${mounted ? show : hideUp}`}
           style={{
             background:
-              "#0d1a1f url('https://images.unsplash.com/photo-1558618047-3c8c76ca9a0e?w=900&q=80') center/cover",
+              "#0d1a1f url('/images/Entrepreneurship/Netherland entre.jpg') center/cover",
           }}
         />
         <h1
@@ -137,7 +137,7 @@ export default function Hero() {
                 style={{
                   borderRadius: "32px 120px 32px 32px",
                   background:
-                    "#0d1a1f url('https://images.unsplash.com/photo-1558618047-3c8c76ca9a0e?w=900&q=80') center/cover",
+                    "#0d1a1f url('/images/Entrepreneurship/Netherland entre.jpg') center/cover",
                   boxShadow: "0 20px 50px rgba(0,0,0,0.08)",
                 }}
               >

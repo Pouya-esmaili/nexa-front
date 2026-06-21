@@ -345,7 +345,7 @@ export default function Header() {
                 ["Finland Startup", "/startup/finland"],
                 ["Canada Startup", "/startup/canada"],
                 ["UK Startup", "/startup/uk"],
-                ["Netherlands Startup", "/startup/nethelands"],
+                ["Netherlands Startup", "/startup/netherlands"],
                 ["France Startup", "/startup/france"],
               ]}
             />

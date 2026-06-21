@@ -23,7 +23,7 @@ const timelineItems = [
     title: 'First Venture – Diaco',
     desc: 'Diaco was launched to address factory automation challenges by translating technical expertise into operational solutions.',
     img: '/images/about/Diacoo.jpg',
-    logo: '/images/about/Diaco.svg',
+    logo: '/images/landing/diaco.svg',
     side: 'right' as const,
   },
   {

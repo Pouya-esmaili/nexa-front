@@ -47,11 +47,36 @@ export default function Contact() {
         </Reveal>
 
         {sent ? (
-          <div className="mt-4 px-[14px] py-3.5 bg-[#FAF6FF] border border-[rgba(143,39,255,0.18)] rounded-[10px] text-[#8F27FF] font-semibold text-[14px] text-center max-w-xl mx-auto">
-            ✓ Thank you — a Nexa advisor will reach out within 48 hours.
-          </div>
+          <Reveal variant="scale">
+            <div
+              className="flex flex-col items-center justify-center gap-4 rounded-[20px] p-14 text-center max-w-xl mx-auto"
+              style={{
+                background: "#FAF6FF",
+                border: "1.5px solid rgba(143,39,255,0.2)",
+              }}
+            >
+              <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#8F27FF]">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fff"
+                  strokeWidth={2.5}
+                  strokeLinecap="round"
+                  className="w-7 h-7"
+                >
+                  <path d="M5 12l4 4 10-10" />
+                </svg>
+              </div>
+
+              <h3 className="text-[22px] font-bold">Thank you!</h3>
+
+              <p className="text-gray-500 text-[15px]">
+                A Nexa advisor will reach out within 48 hours.
+              </p>
+            </div>
+          </Reveal>
         ) : (
-          <Reveal variant="up" delay={80}>
+          <Reveal variant="up" delay={100}>
             <form
               onSubmit={handleSubmit}
               className="bg-[#F7F6F9] border border-[#E2E2E2] rounded-[20px] p-5 sm:p-8 md:p-[44px]"

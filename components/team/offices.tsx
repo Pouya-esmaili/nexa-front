@@ -5,14 +5,20 @@ const offices = [
   {
     flag: "🇨🇦",
     country: "Vancouver, Canada",
-    address: "906-935 Marine Dr, West Vancouver,\nBritish Columbia, Canada",
+    address: "301-1414 Barclay St, Vancouver,\nBritish Columbia, Canada",
     phone: "+1 (604) 351-5951",
   },
   {
     flag: "🇮🇷",
     country: "Tehran, Iran",
-    address: "No. 27, Neom Building (Next to the Tandis Complex),\nTajrish Square, Tehran",
-    phone: "+98 (21) 2691-7416",
+    address: "No. 27, Neom Building ,\nTajrish Square, Tehran",
+    phone: "+98 (31) 3131-1914",
+  },
+    {
+    flag: "🇮🇷",
+    country: "Esfahan, Iran",
+    address: "Tala Building, Saadat Abad,   Azadi Square, Esfahan",
+    phone: "+98 (31) 3131-1914",
   },
 ];
 
@@ -52,7 +58,7 @@ export default function OfficesSection() {
 
       <div
         ref={gridRef}
-        className="grid grid-cols-1 sm:grid-cols-2 gap-[18px] mt-11"
+        className="grid grid-cols-1 sm:grid-cols-3 gap-[18px] mt-11"
       >
         {offices.map((office, i) => (
           <div

@@ -33,10 +33,10 @@ const team: Member[] = [
   { name: "Parastoo Sanaifar",   role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/parastoo.jpg" , linkedin: "https://www.linkedin.com/in/parastoo-sanaifar" },
   { name: "Milad Fatemi",        role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/milad.jpg" , linkedin: "https://www.linkedin.com/in/miladfatemi", pos: "center 20%" },
   { name: "Mehdi Esmaeili",      role: "Front-End Developer",  dept: "Tech",       image: "/images/ourteam/pouya.jpg" , linkedin: "" },
-  { name: "Sajjad Momeni",       role: "Full-Stack Developer", dept: "Tech",       image: "/images/ourteam/sajjad.jpg" , linkedin: "https://www.linkedin.com/in/sajjad-momeni-17ab4778" },
+  { name: "Sajjad Momeni",       role: "AI Engineer",          dept: "Tech",       image: "/images/ourteam/sajjad.jpg" , linkedin: "https://www.linkedin.com/in/sajjad-momeni-17ab4778" },
   { name: "Ali Soleimani",       role: "Accountant",           dept: "Finance",    image: "/images/ourteam/ali.jpg" , linkedin: "https://www.linkedin.com/in/ali-soleimani-b761b6223" },
   { name: "Narjes Orouji",       role: "UI/UX Designer",       dept: "Design",     image: "/images/ourteam/narges.jpg" , linkedin: "https://www.linkedin.com/in/narges-orouji-7ab846214" },
-  { name: "Amir Esfahanizade",   role: "Back-End Developer",   dept: "Tech",       image: "/images/ourteam/amir.jpg" , linkedin: "" },
+  { name: "Amir Esfahanizade",   role: "Back-End Developer",   dept: "Tech",       image: "/images/ourteam/amir.jpg" , linkedin: "https://www.linkedin.com/in/amir-esfahanizadeh-151522364" },
   { name: "Pouya Shafaghatiyan", role: "Marketing Specialist", dept: "Marketing",  image: "/images/ourteam/pooya.JPG" , linkedin: "https://www.linkedin.com/in/pouya-shafaghatian-a772a82b4", zoom: 1.45 },
   { name: "Kiyana Mehrasa",      role: "Content Strategist",   dept: "Marketing",  image: "/images/ourteam/kiana.JPG" , linkedin: "https://www.linkedin.com/in/kiana-mehrasa-00aa38380" },
 ];

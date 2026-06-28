@@ -24,7 +24,7 @@ export default function Footer() {
           <div className="md:text-center">
             <h5 className="text-[16px] font-bold text-[#1a1a1a] mb-4">Services</h5>
             <ul className="space-y-[5px]">
-              {[["Startup","/startup"],["Investment","/investment"],["Advisory","/advisory"],["Entrepreneurship","/Entrepreneurship"]].map(([l,h]) => (
+              {[["Entrepreneurship","/Entrepreneurship"],["Startup","/startup"],["Investment","/investment"],["Advisory","/advisory"]].map(([l,h]) => (
                 <li key={l}><Link href={h} className="text-[14px] text-[#555] hover:text-[#8F27FF] transition-colors">{l}</Link></li>
               ))}
             </ul>

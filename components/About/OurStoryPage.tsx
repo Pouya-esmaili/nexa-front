@@ -91,13 +91,23 @@ const timelineItems = [
 const certificates = [
   {
     img: '/images/about/Small Certificate.svg',
+    title: 'Professional Affiliation',
+    desc: 'Certified partnership with internationally recognized advisory and investment networks, ensuring credibility across all operational jurisdictions.',
+  },
+  {
+    img: '/images/about/Small Certificate2.svg',
     title: 'Official Registration Certificate',
     desc: 'Registered legal entity in Canada – British Columbia Registry. Compliant and active in international business advisory and consulting services.',
   },
   {
-    img: '/images/about/Small Certificate2.svg',
-    title: 'Professional Affiliation',
-    desc: 'Certified partnership with internationally recognized advisory and investment networks, ensuring credibility across all operational jurisdictions.',
+    img: '/images/about/IMG_6819.PNG',
+    title: 'Official Entrepreneurship & Consulting Center License',
+    desc: 'Officially licensed to provide entrepreneurship consulting, business development services, and support for entrepreneurs and businesses.',
+  },
+  {
+    img: '/images/about/IMG_6820.PNG',
+    title: 'Official Coworking Space License',
+    desc: 'Officially licensed to operate a coworking space and collaborative environment for entrepreneurs, startups, and growing businesses.',
   },
 ];
 
@@ -269,49 +279,49 @@ export default function OurStoryPage() {
       {/* ── VISION / MISSION ── */}
       <section className="px-4 pt-16 pb-0 md:px-16 md:pt-[88px]">
         <div className="mx-auto max-w-[1200px]">
-        <div className="os-anim mb-14 text-center">
-          <h2 className="font-extrabold text-[#0D0D0D]" style={{ fontSize: 'clamp(28px, 4vw, 40px)', letterSpacing: '-1.2px' }}>
-            Vision &amp; Mission
-          </h2>
-        </div>
-        <div className="os-vmgrid grid grid-cols-1 gap-6 md:grid-cols-2">
-          {/* Vision */}
-          <div
-            className="os-vmcard relative overflow-hidden rounded-[20px] transition-all duration-300"
-            style={{ background: '#0D0D0D', border: '1.5px solid rgba(255,255,255,.08)' }}
-          >
-            <div className="pointer-events-none absolute" style={{ top: '-80px', right: '-80px', width: '260px', height: '260px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(143,39,255,.22) 0%, transparent 70%)' }} />
-            <div className="relative z-10 p-9 md:p-11">
-              <div className="mb-6 flex h-[52px] w-[52px] items-center justify-center rounded-[14px]" style={{ background: 'rgba(143,39,255,.2)', border: '1.5px solid rgba(143,39,255,.3)' }}>
-                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="#DEC8FF" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M2 12h4m12 0h4M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M19.07 4.93l-2.83 2.83M7.76 16.24l-2.83 2.83" /><circle cx="12" cy="12" r="4" />
-                </svg>
+          <div className="os-anim mb-14 text-center">
+            <h2 className="font-extrabold text-[#0D0D0D]" style={{ fontSize: 'clamp(28px, 4vw, 40px)', letterSpacing: '-1.2px' }}>
+              Vision &amp; Mission
+            </h2>
+          </div>
+          <div className="os-vmgrid grid grid-cols-1 gap-6 md:grid-cols-2">
+            {/* Vision */}
+            <div
+              className="os-vmcard relative overflow-hidden rounded-[20px] transition-all duration-300"
+              style={{ background: '#0D0D0D', border: '1.5px solid rgba(255,255,255,.08)' }}
+            >
+              <div className="pointer-events-none absolute" style={{ top: '-80px', right: '-80px', width: '260px', height: '260px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(143,39,255,.22) 0%, transparent 70%)' }} />
+              <div className="relative z-10 p-9 md:p-11">
+                <div className="mb-6 flex h-[52px] w-[52px] items-center justify-center rounded-[14px]" style={{ background: 'rgba(143,39,255,.2)', border: '1.5px solid rgba(143,39,255,.3)' }}>
+                  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="#DEC8FF" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M2 12h4m12 0h4M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M19.07 4.93l-2.83 2.83M7.76 16.24l-2.83 2.83" /><circle cx="12" cy="12" r="4" />
+                  </svg>
+                </div>
+                <h2 className="mb-4 font-extrabold text-white" style={{ fontSize: '24px', letterSpacing: '-0.4px' }}>Vision</h2>
+                <p className="text-sm leading-7" style={{ color: 'rgba(255,255,255,.6)' }}>
+                  To build a world without entrepreneurial borders. A world where ideas travel freely, capital follows courage, and founders from every corner of the globe have the power to scale beyond limits. Nexa aims to become the bridge that turns ambition into global influence and vision into international reality.
+                </p>
               </div>
-              <h2 className="mb-4 font-extrabold text-white" style={{ fontSize: '24px', letterSpacing: '-0.4px' }}>Vision</h2>
-              <p className="text-sm leading-7" style={{ color: 'rgba(255,255,255,.6)' }}>
-                To build a world without entrepreneurial borders. A world where ideas travel freely, capital follows courage, and founders from every corner of the globe have the power to scale beyond limits. Nexa aims to become the bridge that turns ambition into global influence and vision into international reality.
-              </p>
+            </div>
+            {/* Mission */}
+            <div
+              className="os-vmcard relative overflow-hidden rounded-[20px] transition-all duration-300"
+              style={{ background: '#0D0D0D', border: '1.5px solid rgba(255,255,255,.08)' }}
+            >
+              <div className="pointer-events-none absolute" style={{ top: '-80px', right: '-80px', width: '260px', height: '260px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(143,39,255,.22) 0%, transparent 70%)' }} />
+              <div className="relative z-10 p-9 md:p-11">
+                <div className="mb-6 flex h-[52px] w-[52px] items-center justify-center rounded-[14px]" style={{ background: 'rgba(143,39,255,.2)', border: '1.5px solid rgba(143,39,255,.3)' }}>
+                  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="#DEC8FF" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
+                  </svg>
+                </div>
+                <h2 className="mb-4 font-extrabold text-white" style={{ fontSize: '24px', letterSpacing: '-0.4px' }}>Mission</h2>
+                <p className="text-sm leading-7" style={{ color: 'rgba(255,255,255,.6)' }}>
+                  Nexa&apos;s mission is to build a trusted global hub for capital transfer and business relocation – empowering entrepreneurs and investors to expand across borders through structured advisory, strategic investment pathways, and direct access to international markets.
+                </p>
+              </div>
             </div>
           </div>
-          {/* Mission */}
-          <div
-            className="os-vmcard relative overflow-hidden rounded-[20px] transition-all duration-300"
-            style={{ background: '#0D0D0D', border: '1.5px solid rgba(255,255,255,.08)' }}
-          >
-            <div className="pointer-events-none absolute" style={{ top: '-80px', right: '-80px', width: '260px', height: '260px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(143,39,255,.22) 0%, transparent 70%)' }} />
-            <div className="relative z-10 p-9 md:p-11">
-              <div className="mb-6 flex h-[52px] w-[52px] items-center justify-center rounded-[14px]" style={{ background: 'rgba(143,39,255,.2)', border: '1.5px solid rgba(143,39,255,.3)' }}>
-                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="#DEC8FF" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
-                </svg>
-              </div>
-              <h2 className="mb-4 font-extrabold text-white" style={{ fontSize: '24px', letterSpacing: '-0.4px' }}>Mission</h2>
-              <p className="text-sm leading-7" style={{ color: 'rgba(255,255,255,.6)' }}>
-                Nexa&apos;s mission is to build a trusted global hub for capital transfer and business relocation – empowering entrepreneurs and investors to expand across borders through structured advisory, strategic investment pathways, and direct access to international markets.
-              </p>
-            </div>
-          </div>
-        </div>
         </div>
       </section>
 

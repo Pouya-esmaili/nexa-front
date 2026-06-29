@@ -44,32 +44,36 @@ export default function WhyFinland() {
           </h2>
         </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border border-gray-200 rounded-[20px] overflow-hidden">
-          {cards.map((c, i) => (
-            <Reveal key={c.title} variant="up" delay={i * 80}>
-              <div
-                className={`p-8 md:p-9 h-full transition-colors duration-300 hover:bg-[#F7F6F9] ${
-                  i % 3 !== 2 ? "lg:border-r lg:border-gray-200" : ""
-                } ${
-                  i % 2 !== 1 ? "sm:border-r sm:border-gray-200 lg:border-r-0" : ""
-                } ${
-                  i < 3 ? "lg:border-b lg:border-gray-200" : ""
-                } ${
-                  i < 4 ? "sm:border-b sm:border-gray-200" : ""
-                } border-b border-gray-200 last:border-b-0 sm:border-b-0`}
-              >
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center text-[#8F27FF] mb-5 transition-all duration-300 hover:scale-110"
-                  style={{ background: "#FAF6FF" }}
-                >
-                  {c.icon}
-                </div>
-                <h3 className="font-semibold text-[17px] mb-2.5 tracking-[-0.015em]">{c.title}</h3>
-                <p className="text-[14px] text-gray-500 leading-relaxed">{c.desc}</p>
-              </div>
-            </Reveal>
-          ))}
+<div
+  className="grid grid-cols-1 md:grid-cols-3 rounded-[20px] overflow-hidden"
+  style={{ border: "1px solid #E2E2E2" }}
+>
+  {cards.map((c, i) => (
+    <Reveal key={c.title} variant="up" delay={i * 80}>
+      <div
+        className="p-8 md:p-9 h-full transition-colors duration-300 hover:bg-[#F7F6F9]"
+        style={{
+          borderRight: (i + 1) % 3 !== 0 ? "1px solid #E2E2E2" : undefined,
+          borderBottom: i < 5 ? "1px solid #E2E2E2" : undefined,
+        }}
+      >
+        <div
+          className="w-12 h-12 rounded-[12px] bg-[#FAF6FF] text-[#8F27FF] flex items-center justify-center mb-5 transition-transform duration-300 hover:scale-110"
+        >
+          {c.icon}
         </div>
+
+        <h3 className="text-[17px] font-semibold tracking-[-0.015em] mb-2.5">
+          {c.title}
+        </h3>
+
+        <p className="text-[14px] text-[#929292] leading-[1.6]">
+          {c.desc}
+        </p>
+      </div>
+    </Reveal>
+  ))}
+</div>
       </Row>
     </section>
   );

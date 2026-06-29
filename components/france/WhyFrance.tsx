@@ -83,7 +83,7 @@ export default function WhyFrance() {
                 className="p-8 md:p-9 h-full transition-colors duration-300 hover:bg-[#F7F6F9]"
                 style={{
                   borderRight: (i + 1) % 3 !== 0 ? "1px solid #E2E2E2" : undefined,
-                  borderBottom: i < 3 ? "1px solid #E2E2E2" : undefined,
+                  borderBottom: i < 5 ? "1px solid #E2E2E2" : undefined,
                 }}
               >
                 <div className="w-12 h-12 rounded-[12px] bg-[#FAF6FF] text-[#8F27FF] flex items-center justify-center mb-5 transition-transform duration-300 hover:scale-110">

@@ -3,26 +3,31 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const contactItems = [
+
+const contactItem = [
   {
-    title: "Email Address",
-    icon: "/images/contact/sms.svg",
-    content: ["info@nexavc.com"],
+    flag: "/images/Entrepreneurship/cn.svg",
+    country: "Vancouver, Canada",
+    address: "301-1414 Barclay St, Vancouver, British Columbia, Canada",
+    phone: "+1 (604) 351-5951",
+    tel: "+16043515951",
   },
   {
-    title: "Phone Number",
-    icon: "/images/contact/call-calling.svg",
-    content: ["+98 (31) 3131-1914", "+1 (604) 351 - 5951"],
+    flag: "/images/about/IR.svg",
+    country: "Tehran, Iran",
+    address: "No. 27, Neom Building, Tajrish Square, Tehran",
+    phone: "+98 (31) 3131-1914",
+    tel: "+983131311914",
   },
   {
-    title: "Office Location",
-    icon: "/images/contact/location-tick.svg",
-    content: [
-      "No. 27, Neom Building (Next to the Tandis Complex), Tajrish Square, Tehran, Iran",
-      "906-935 Marine Dr, West Vancouver, British Columbia, Canada",
-    ],
+    flag: "/images/about/IR.svg",
+    country: "Esfahan, Iran",
+    address: "Tala Building, Saadat Abad,Azadi Square, Esfahan",
+    phone: "+98 (31) 3131-1914",
+    tel: "+983131311914",
   },
 ];
+
 
 type FormData = {
   fullName: string;
@@ -86,35 +91,37 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 gap-10 md:gap-20 lg:grid-cols-2">
 
           {/* Left Side */}
-          <div className="space-y-5 w-full">
-            {contactItems.map((item) => (
+          <div className=" p-1 md:px-6 space-y-8  max-w-[480px]">
+            {contactItem.map((office) => (
               <div
-                key={item.title}
-                className="rounded-3xl border-[0.5px] border-[#8F27FF] bg-white p-5 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0px_18px_45px_rgba(143,39,255,0.35)]"
+                key={office.country}
+                className="border border-[#E8E8E8] rounded-[12px] px-[34px] py-[30px] flex gap-[18px] items-start transition-all duration-300 hover:border-[#DEC8FF]"
               >
-                <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#8F27FF] shadow-[0px_4px_12px_rgba(143,39,255,0.35)]">
-                    <Image src={item.icon} alt={item.title} width={22} height={22} />
+                <div className="w-10 h-10 flex-shrink-0">
+                  <Image
+                    src={office.flag}
+                    alt={office.country}
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+
+                <div>
+                  <div className="text-[17px] font-extrabold tracking-[-0.3px] mb-[5px]">
+                    {office.country}
                   </div>
-                  <div>
-                    <h3 className="mb-2 text-md text-[#8F27FF]">{item.title}</h3>
-                    <div className="space-y-1">
-                      {item.content.map((text) => (
-                        <p key={text} className="text-md leading-6 text-[#474747]">
-                          {item.title === "Phone Number" ? (
-                            <a
-                              href={`tel:${text.replace(/[^\d+]/g, "")}`}
-                              className="transition-colors hover:text-[#8F27FF]"
-                            >
-                              {text}
-                            </a>
-                          ) : (
-                            text
-                          )}
-                        </p>
-                      ))}
-                    </div>
+
+                  <div className="text-[13px] text-[#5A5A5A] leading-[1.65] whitespace-pre-line mb-[7px]">
+                    {office.address}
                   </div>
+
+                  <a
+                    href={`tel:${office.tel}`}
+                    className="text-[13px] text-[#8F27FF] font-bold hover:underline"
+                  >
+                    {office.phone}
+                  </a>
                 </div>
               </div>
             ))}

@@ -374,15 +374,89 @@ export default function Header() {
           </MobAccordion>
 
           {/* About Us accordion */}
-          <MobAccordion label="About Us" open={mobileAcc === "about"} toggle={() => toggleAcc("about")}>
-            <MobSubLink href="/our-team" label="Our Team" />
-            <MobSubLink href="/our-story" label="Our Story" />
+          <MobAccordion
+            label="About Us"
+            open={mobileAcc === "about"}
+            toggle={() => toggleAcc("about")}
+          >
+            <MobSubLink
+              href="/our-team"
+              label="Our Team"
+              icon={
+                <svg
+                  className="w-4 h-4 text-[#8F27FF]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={1.8}
+                >
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              }
+            />
+
+            <MobSubLink
+              href="/our-story"
+              label="Our Story"
+              icon={
+                <svg
+                  className="w-4 h-4 text-[#8F27FF]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={1.8}
+                >
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                </svg>
+              }
+            />
           </MobAccordion>
 
           {/* Forms accordion */}
-          <MobAccordion label="Forms" open={mobileAcc === "forms"} toggle={() => toggleAcc("forms")}>
-            <MobSubLink href="/form/step-1" label="Apply for Funding" />
-            <MobSubLink href="/#contact" onClick={goToContact} label="Evaluate Form" />
+          <MobAccordion
+            label="Forms"
+            open={mobileAcc === "forms"}
+            toggle={() => toggleAcc("forms")}
+          >
+            <MobSubLink
+              href="/form/step-1"
+              label="Apply for Funding"
+              icon={
+                <svg
+                  className="w-4 h-4 text-[#8F27FF]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={1.8}
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+              }
+            />
+
+            <MobSubLink
+              href="/#contact"
+              onClick={goToContact}
+              label="Evaluate Form"
+              icon={
+                <svg
+                  className="w-4 h-4 text-[#8F27FF]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={1.8}
+                >
+                  <path d="M9 11l3 3L22 4" />
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                </svg>
+              }
+            />
           </MobAccordion>
 
           {/* Bottom CTA */}
@@ -497,11 +571,29 @@ function MobServiceCat({
   );
 }
 
-function MobSubLink({ href, label, onClick }: { href: string; label: string; onClick?: (e: React.MouseEvent) => void }) {
+function MobSubLink({
+  href,
+  label,
+  icon,
+  onClick,
+}: {
+  href: string;
+  label: string;
+  icon?: ReactNode;
+  onClick?: (e: React.MouseEvent) => void;
+}) {
   return (
-    <Link href={href} onClick={onClick}
-      className="block px-12 py-3.5 text-[14px] text-[#444] border-b border-[#F4F4F4] hover:text-[#8F27FF] hover:bg-[#f3ecff] transition-colors">
-      {label}
+    <Link
+      href={href}
+      onClick={onClick}
+      className="flex items-center gap-3 px-6 py-3.5 text-[14px] text-[#444] border-b border-[#F4F4F4] hover:text-[#8F27FF] hover:bg-[#f3ecff] transition-colors"
+    >
+      {icon && (
+        <span className="w-8 h-8 rounded-lg bg-[#f5f0ff] grid place-items-center flex-shrink-0">
+          {icon}
+        </span>
+      )}
+      <span>{label}</span>
     </Link>
   );
 }

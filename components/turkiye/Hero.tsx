@@ -27,10 +27,10 @@ export default function Hero() {
   const hideRight = "opacity-0 translate-x-8";
 
   return (
-    <Row className="mt-10 mb-20">
+    <Row className="mt-18 mb-20">
 
       {/* ================= MOBILE ================= */}
-      <div className="md:hidden px-5 relative z-10">
+      <div className="md:hidden px-2 relative z-10">
         {/* Image */}
         <div
           className={`${base} duration-700 delay-75 ${mounted ? show : hideUp
@@ -152,7 +152,7 @@ export default function Hero() {
 
           {/* Right */}
           <div
-            className={`relative h-[440px] ${base} duration-800 delay-200 ${mounted ? show : hideRight
+            className={`relative h-[400px] xl:h-[520px] ${base} duration-800 delay-200 ${mounted ? show : hideRight
               }`}
           >
             <div

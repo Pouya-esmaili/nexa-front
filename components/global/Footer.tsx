@@ -24,7 +24,7 @@ export default function Footer() {
           <div className="md:text-center">
             <h5 className="text-[16px] font-bold text-[#1a1a1a] mb-4">Services</h5>
             <ul className="space-y-[5px]">
-              {[["Entrepreneurship","/Entrepreneurship"],["Startup","/startup"],["Investment","/investment"],["Advisory","/advisory"]].map(([l,h]) => (
+              {[["Entrepreneurship", "/Entrepreneurship"], ["Startup", "/startup"], ["Investment", "/investment"], ["Advisory", "/advisory"]].map(([l, h]) => (
                 <li key={l}><Link href={h} className="text-[14px] text-[#555] hover:text-[#8F27FF] transition-colors">{l}</Link></li>
               ))}
             </ul>
@@ -32,7 +32,7 @@ export default function Footer() {
           <div className="md:text-center">
             <h5 className="text-[16px] font-bold text-[#1a1a1a] mb-4">About Nexa</h5>
             <ul className="space-y-[5px]">
-              {[["Our Story","/our-story"],["Our Team","/our-team"],["Contact Us","/contact"]].map(([l,h]) => (
+              {[["Our Story", "/our-story"], ["Our Team", "/our-team"], ["Contact Us", "/contact"]].map(([l, h]) => (
                 <li key={l}><Link href={h} className="text-[14px] text-[#555] hover:text-[#8F27FF] transition-colors">{l}</Link></li>
               ))}
             </ul>
@@ -54,7 +54,7 @@ export default function Footer() {
           <div>
             <h5 className="text-[16px] font-bold text-[#1a1a1a] mb-4">Services</h5>
             <ul className="space-y-[10px]">
-              {[["Startup","/startup"],["Investment","/investment"],["Advisory","/advisory"],["Entrepreneurship","/Entrepreneurship"]].map(([l,h]) => (
+              {[["Startup", "/startup"], ["Investment", "/investment"], ["Advisory", "/advisory"], ["Entrepreneurship", "/Entrepreneurship"]].map(([l, h]) => (
                 <li key={l}><Link href={h} className="text-[14px] text-[#555] hover:text-[#8F27FF] transition-colors">{l}</Link></li>
               ))}
             </ul>
@@ -62,7 +62,7 @@ export default function Footer() {
           <div>
             <h5 className="text-[16px] font-bold text-[#1a1a1a] mb-4">About Nexa</h5>
             <ul className="space-y-[10px]">
-              {[["Our Story","/our-story"],["Our Team","/our-team"],["Contact Us","/contact"]].map(([l,h]) => (
+              {[["Our Story", "/our-story"], ["Our Team", "/our-team"], ["Contact Us", "/contact"]].map(([l, h]) => (
                 <li key={l}><Link href={h} className="text-[14px] text-[#555] hover:text-[#8F27FF] transition-colors">{l}</Link></li>
               ))}
             </ul>
@@ -78,7 +78,7 @@ export default function Footer() {
               <strong className="block text-[14px] font-semibold text-[#1a1a1a] mb-2">Canada</strong>
               <div className="flex items-start gap-2 text-[14px] text-[#555] mb-1.5 leading-[1.6]">
                 <svg className="w-4 h-4 text-[#8F27FF] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
-                906-935 Marine Dr, West Vancouver, British Columbia, Canada
+                301-1414 Barclay St, Vancouver, British Columbia, Canada
               </div>
               <div className="flex items-center gap-2 text-[14px] text-[#555]">
                 <svg className="w-4 h-4 text-[#8F27FF] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.39 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.89a16 16 0 0 0 6.07 6.07l1.06-1.06a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
@@ -91,6 +91,10 @@ export default function Footer() {
               <div className="flex items-start gap-2 text-[14px] text-[#555] mb-1.5 leading-[1.6]">
                 <svg className="w-4 h-4 text-[#8F27FF] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
                 No. 27, Neom Building (Next to the Tandis Complex), Tajrish Square, Tehran, Iran
+              </div>
+              <div className="flex items-start gap-2 text-[14px] text-[#555] mb-1.5 leading-[1.6]">
+                <svg className="w-4 h-4 text-[#8F27FF] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+                Tala Building, Saadat Abad, Azadi Square, Esfahan
               </div>
               <div className="flex items-center gap-2 text-[14px] text-[#555]">
                 <svg className="w-4 h-4 text-[#8F27FF] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.39 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.89a16 16 0 0 0 6.07 6.07l1.06-1.06a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>

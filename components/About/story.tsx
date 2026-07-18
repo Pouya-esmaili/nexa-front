@@ -17,7 +17,7 @@ const Story = () => {
                 <Image
                     width={1200}
                     height={1200}
-                    src="/images/about/IMG_0881.svg"
+                    src="/images/about/IMG_0881.webp"
                     alt="hero"
                     className="w-full h-auto object-contain"
                 />
@@ -38,7 +38,7 @@ const Story = () => {
                             <Image
                                 width={1500}
                                 height={1500}
-                                src="/images/about/IMG_0881.svg"
+                                src="/images/about/IMG_0881.webp"
                                 alt="hero"
                                 className="w-full h-auto object-cover"
                             />

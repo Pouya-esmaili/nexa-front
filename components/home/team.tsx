@@ -58,7 +58,7 @@ export default function Team() {
           <Reveal variant="right" className="order-1 md:order-2">
             <div className="rounded-[24px] overflow-hidden">
               <Image
-                src="/images/landing/behind.svg"
+                src="/images/landing/behind.webp"
                 alt="Behind Nexa"
                 width={600}
                 height={500}

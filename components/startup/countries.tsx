@@ -10,14 +10,14 @@ const countries = [
     flag: "/images/Entrepreneurship/FI.svg",
     desc: "Startup Permit in Europe's leading innovation ecosystem",
     href: "/startup/finland",
-    img: "/images/Entrepreneurship/finland.png",
+    img: "/images/Entrepreneurship/finland.webp",
   },
   {
     name: "Canada",
     flag: "/images/Entrepreneurship/cn.svg",
     desc: "Startup Visa with access to world-class accelerator networks",
     href: "/startup/canada",
-    img: "/images/Entrepreneurship/canada.png",
+    img: "/images/Entrepreneurship/canada.webp",
   },
   {
     name: "UK",
@@ -31,7 +31,7 @@ const countries = [
     flag: "/images/Entrepreneurship/netherlands.svg",
     desc: "Startup Visa in Europe's most connected tech hub",
     href: "/startup/netherlands",
-    img: "/images/Entrepreneurship/netherland.png",
+    img: "/images/Entrepreneurship/netherland.webp",
   },
   {
     name: "France",

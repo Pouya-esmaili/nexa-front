@@ -103,7 +103,7 @@ const atlanticProvinces: Province[] = [
   {
     name: "Nova Scotia",
 
-    bg: "/images/Entrepreneurship/Nova Scotia.jpg",
+    bg: "/images/Entrepreneurship/Nova Scotia.webp",
     stats: [
       { label: "Min Net Worth", value: "CAD 600K" },
       { label: "Min Investment", value: "CAD 150K" },

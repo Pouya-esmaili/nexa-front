@@ -37,7 +37,7 @@ const CertificateSection: React.FC = () => {
 
                                 <div className="relative rounded-[20px] p-4">
                                     <Image
-                                        src="/images/about/Small Certificate.svg"
+                                        src="/images/about/Small Certificate.webp"
                                         alt="Certificate 1"
                                         width={320}
                                         height={220}
@@ -51,7 +51,7 @@ const CertificateSection: React.FC = () => {
 
                                 <div className="relative rounded-[20px] p-4">
                                     <Image
-                                        src="/images/about/Small Certificate2.svg"
+                                        src="/images/about/Small Certificate2.webp"
                                         alt="Certificate 2"
                                         width={320}
                                         height={220}

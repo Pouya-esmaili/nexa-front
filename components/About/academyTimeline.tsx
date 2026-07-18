@@ -45,7 +45,7 @@ const AcademyTimeline: React.FC = () => {
       {/* Image */}
       <div className="relative mt-4 h-[220px] w-full">
         <Image
-          src="/images/about/academy.svg"
+          src="/images/about/academy.webp"
           alt="Landa Academy"
           fill
           className="object-cover"
@@ -96,7 +96,7 @@ const AcademyTimeline: React.FC = () => {
               {/* Image */}
               <div className="flex justify-start">
                 <Image
-                  src="/images/about/academy.svg"
+                  src="/images/about/academy.webp"
                   alt="Landa Academy"
                   width={400}
                   height={300}

@@ -9,7 +9,7 @@ const Strategy = () => {
                 <Image
                     width={1200}
                     height={1200}
-                    src="/images/advisory/Growth.svg"
+                    src="/images/advisory/Growth.webp"
                     alt="hero"
                     className="w-full h-auto object-contain"
                 />
@@ -31,7 +31,7 @@ const Strategy = () => {
                             <Image
                                 width={1500}
                                 height={1500}
-                                src="/images/advisory/Growth.svg"
+                                src="/images/advisory/Growth.webp"
                                 alt="hero"
                                 className="w-full h-auto object-cover"
                             />

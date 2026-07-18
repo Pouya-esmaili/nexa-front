@@ -12,7 +12,7 @@ const Hero = () => {
                 <Image
                     width={800}
                     height={500}
-                    src="/images/advisory/IMG_1328 1 (1).svg"
+                    src="/images/advisory/IMG_1328 1 (1).webp"
                     alt="Startup hero"
                     className="w-full h-[240px] object-cover rounded-2xl mt-2"
                 />
@@ -41,7 +41,7 @@ const Hero = () => {
                             <Image
                                 width={1500}
                                 height={1500}
-                                src="/images/advisory/IMG_1328 1 (1).svg"
+                                src="/images/advisory/IMG_1328 1 (1).webp"
                                 alt="Startup hero"
                                 className="w-full object-cover rounded-2xl"
                             />

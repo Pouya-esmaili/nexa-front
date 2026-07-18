@@ -65,7 +65,7 @@ export default function Hero() {
           >
             <div className="relative rounded-[20px] overflow-hidden">
               <Image
-                src="/images/landing/TEAM 2 (1).svg"
+                src="/images/landing/TEAM 2 (1).webp"
                 alt="Nexa Team"
                 width={700}
                 height={520}

@@ -10,27 +10,27 @@ const steps = [
   {
     title: "Discovery Call",
     desc: "We listen intently about the details of your endeavor with a focus on what you’re looking to achieve. From there, we propose the services that are needed to help you accomplish your goal.",
-    image: "/images/advisory/Discovery.png",
+    image: "/images/advisory/Discovery.webp",
   },
   {
     title: "Proposal",
     desc: "We put together and send you a proposal inclusive of the scope of work, delivery timing, Price, and terms of engagement.",
-    image: "/images/advisory/Proposal.png",
+    image: "/images/advisory/Proposal.webp",
   },
   {
     title: "Contract & Invoice",
     desc: "Once the Proposal is accepted by you, we finalize our contract and send you the invoice. We’re ready to start your project!",
-    image: "/images/advisory/Contract.png",
+    image: "/images/advisory/Contract.webp",
   },
   {
     title: "Questionnaire",
     desc: "You receive our comprehensive questionnaire, designed specifically to allow you to easily share the details of your endeavor with us. We’ll use this knowledge to expertly create the agreed upon products that will help you achieve your goal.",
-    image: "/images/advisory/Questionnaire.png",
+    image: "/images/advisory/Questionnaire.webp",
   },
   {
     title: "Review",
     desc: "Upon receiving your complete questionnaire, our team analyzes the answers and reaches out to you in case of any missing data or additional questions.",
-    image: "/images/advisory/Review.png",
+    image: "/images/advisory/Review.webp",
   },
   {
     title: "Writing Process",
@@ -40,7 +40,7 @@ const steps = [
   {
     title: "Optional Revisions",
     desc: "Once the Proposal is accepted by you, we finalize our contract and send you the invoice. We’re ready to start your project!",
-    image: "/images/advisory/2 1537 (1).png",
+    image: "/images/advisory/2 1537 (1).webp",
   },
 ];
 

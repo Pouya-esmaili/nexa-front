@@ -41,7 +41,7 @@ const business = () => {
                 <Image
                     width={1200}
                     height={1200}
-                    src="/images/advisory/IMG_1328 1 (1).svg"
+                    src="/images/advisory/IMG_1328 1 (1).webp"
                     alt="hero"
                     className="w-full h-auto object-contain"
                 />
@@ -89,7 +89,7 @@ const business = () => {
                             <Image
                                 width={1500}
                                 height={1500}
-                                src="/images/advisory/IMG_1328 1 (1).svg"
+                                src="/images/advisory/IMG_1328 1 (1).webp"
                                 alt="hero"
                                 className="w-full object-cover"
                             />

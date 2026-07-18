@@ -7,32 +7,32 @@ const cities = [
     cls: "city-istanbul",
     name: "Istanbul",
     meta: "Financial capital · Bosphorus",
-    img: "/images/investment/Istanbul.jpg",
+    img: "/images/investment/Istanbul.webp",
     large: true,
   },
   {
     cls: "city-ankara",
     name: "Ankara",
     meta: "Government & diplomacy",
-    img: "/images/investment/Ankara.jpg",
+    img: "/images/investment/Ankara.webp",
   },
   {
     cls: "city-antalya",
     name: "Antalya",
     meta: "Mediterranean tourism",
-    img: "/images/investment/Antalya.jpg",
+    img: "/images/investment/Antalya.webp",
   },
   {
     cls: "city-izmir",
     name: "Izmir",
     meta: "Aegean trade hub",
-    img: "/images/investment/Izmir.jpg",
+    img: "/images/investment/Izmir.webp",
   },
   {
     cls: "city-bodrum",
     name: "Bodrum",
     meta: "Luxury & hospitality",
-    img: "/images/investment/Bodrum.jpg",
+    img: "/images/investment/Bodrum.webp",
   },
 ];
 

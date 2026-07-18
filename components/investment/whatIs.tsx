@@ -21,7 +21,7 @@ export default function InvestmentWhatIs() {
           <Reveal variant="left">
             <div className="relative overflow-hidden" style={{ borderRadius: 24 }}>
               <Image
-                src="/images/investment/IMG_1328 1.png"
+                src="/images/investment/IMG_1328 1.webp"
                 alt="Investment strategy"
                 width={800}
                 height={600}

@@ -11,15 +11,15 @@ const projects = [
   // { name: "Diaco",           tag: "Business Solutions · Corporate",   img: "/images/about/Diaco.svg",         icon: "/images/startup/Diaco.svg" },
   // { name: "Arshia Gallery",  tag: "Fine Jewelry · Luxury Retail",     img: "/images/about/academylanda.svg",  icon: "/images/landing/Arshia Gallery.svg" },
   // { name: "Preventie Gene",  tag: "Genetics · Health Prevention",     img: "/images/about/preventigene.svg",  icon: "/images/landing/preventigene.svg" },
-  // { name: "SteadySkull",     tag: "Surgical Device · MedTech",        img: "/images/about/diacocenter.svg",   icon: "/images/landing/SteadySkull.svg" },
-  { name: "Landa Trip",      tag: "Tourism · Travel",                 img: "/images/about/trip.jpg", icon: "/images/landing/Landa Trip.svg" },
-  { name: "Landa Craft",     tag: "Handcraft · Artisan Market",       img: "/images/about/craft.jpg", icon: "/images/landing/craft.svg" },
-  { name: "AutiLab",         tag: "Autism Support · Child EdTech",    img: "/images/about/autiLab.jpg", icon: "/images/landing/Autilab.svg" },
+  // { name: "SteadySkull",     tag: "Surgical Device · MedTech",        img: "/images/about/diacocenter.svg",   icon: "/images/landing/SteadySkull.webp" },
+  { name: "Landa Trip",      tag: "Tourism · Travel",                 img: "/images/about/trip.webp", icon: "/images/landing/Landa Trip.svg" },
+  { name: "Landa Craft",     tag: "Handcraft · Artisan Market",       img: "/images/about/craft.webp", icon: "/images/landing/craft.svg" },
+  { name: "AutiLab",         tag: "Autism Support · Child EdTech",    img: "/images/about/autiLab.webp", icon: "/images/landing/Autilab.svg" },
   { name: "Vision Raft",     tag: "Virtual Reality · Immersive Tech", img: "/images/about/vision.jpg", icon: "/images/landing/raft.svg" },
-  { name: "Diaco",           tag: "Business Solutions · Corporate",   img: "/images/about/Diaco.jpg", icon: "/images/startup/Diaco.svg" },
+  { name: "Diaco",           tag: "Business Solutions · Corporate",   img: "/images/about/Diaco.webp", icon: "/images/startup/Diaco.svg" },
   { name: "Arshia Gallery",  tag: "Fine Jewelry · Luxury Retail",     img: "/images/about/academylanda.svg",  icon: "/images/landing/Arshia Gallery.svg" },
-  { name: "Preventie Gene",  tag: "Genetics · Health Prevention",     img: "/images/about/preventigene.jpg",  icon: "/images/landing/preventigene.svg" },
-  { name: "SteadySkull",     tag: "Surgical Device · MedTech",        img: "/images/about/steadyskull.jpg",   icon: "/images/landing/SteadySkull.svg" },
+  { name: "Preventie Gene",  tag: "Genetics · Health Prevention",     img: "/images/about/preventigene.webp",  icon: "/images/landing/preventigene.svg" },
+  { name: "SteadySkull",     tag: "Surgical Device · MedTech",        img: "/images/about/steadyskull.webp",   icon: "/images/landing/SteadySkull.webp" },
 ];
 
 export default function ProjectsSection() {

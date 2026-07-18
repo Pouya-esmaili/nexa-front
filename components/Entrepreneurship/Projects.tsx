@@ -6,7 +6,7 @@ const projects = [
   {
     name: "Arshia Gallery",
     tag: "Fine Jewelry · Luxury Retail",
-    img: "/images/Entrepreneurship/Arshia Gallery.jpg",
+    img: "/images/Entrepreneurship/Arshia Gallery.webp",
   },
   {
     name: "Afra Cafe",

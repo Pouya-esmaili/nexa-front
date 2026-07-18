@@ -69,7 +69,7 @@ export default function Hero() {
             <div className="absolute inset-0 overflow-hidden"
               style={{
                 borderRadius: "32px 120px 32px 32px",
-                background: "#1a1020 url('/images/photos/1539037116277-4db20889f2d4-w900.jpg') center/cover",
+                background: "#1a1020 url('/images/photos/1539037116277-4db20889f2d4-w900.webp') center/cover",
                 boxShadow: "0 20px 50px rgba(0,0,0,0.08)",
               }}>
               <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.12))" }} />

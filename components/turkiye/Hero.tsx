@@ -10,7 +10,7 @@ const stats = [
   { num: "3 yrs", label: "Hold Period" },
 ];
 
-const HERO_IMG = "/images/investment/Türkiye.jpg";
+const HERO_IMG = "/images/investment/Türkiye.webp";
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);

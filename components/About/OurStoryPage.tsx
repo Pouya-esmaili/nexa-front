@@ -12,7 +12,7 @@ const timelineItems = [
     tag: 'Education',
     title: 'The Spark – Landa Academy is Born',
     desc: "Hadi established Landa Academy in Isfahan to mentor students – creating fertile ground for Nexa's first ventures.",
-    img: '/images/about/Landa Academy.jpg',
+    img: '/images/about/Landa Academy.webp',
     logo: '/images/about/academylanda.svg',
     side: 'left' as const,
   },
@@ -22,7 +22,7 @@ const timelineItems = [
     tag: 'Automation',
     title: 'First Venture – Diaco',
     desc: 'Diaco was launched to address factory automation challenges by translating technical expertise into operational solutions.',
-    img: '/images/about/Diacoo.jpg',
+    img: '/images/about/Diacoo.webp',
     logo: '/images/landing/diaco.svg',
     side: 'right' as const,
   },
@@ -42,7 +42,7 @@ const timelineItems = [
     tag: 'Travel',
     title: 'Learning Without Borders – Landa Trip',
     desc: 'LandaTrip redefined education beyond traditional settings by integrating learning with purposeful travel.',
-    img: '/images/about/Landa Trip.jpg',
+    img: '/images/about/Landa Trip.webp',
     logo: '/images/landing/Landa Trip.svg',
     side: 'right' as const,
   },
@@ -52,7 +52,7 @@ const timelineItems = [
     tag: 'Marketplace',
     title: 'The Innovation Hub – Diaco Center',
     desc: 'Diaco Center connects technology seekers with validated technology providers.',
-    img: '/images/about/Diaco Center.jpg',
+    img: '/images/about/Diaco Center.webp',
     logo: '/images/about/Diaco.svg',
     side: 'left' as const,
   },
@@ -62,7 +62,7 @@ const timelineItems = [
     tag: 'HealthTech & AI',
     title: 'Engineering a Healthier Future – PreventiGene',
     desc: 'PreventiGene applies AI and genetic analysis in early breast cancer risk prevention.',
-    img: '/images/about/PreventiGenee.jpg',
+    img: '/images/about/PreventiGenee.webp',
     logo: '/images/landing/preventigene.svg',
     side: 'right' as const,
   },
@@ -72,7 +72,7 @@ const timelineItems = [
     tag: 'AI & Health',
     title: 'A Platform for Hope – AutiLab',
     desc: 'AutiLab enables early autism detection combining AI-driven systems with specialist expertise.',
-    img: '/images/about/AutiLabb.jpg',
+    img: '/images/about/AutiLabb.webp',
     logo: '/images/landing/Autilab.svg',
     side: 'left' as const,
   },
@@ -90,22 +90,22 @@ const timelineItems = [
 
 const certificates = [
   {
-    img: '/images/about/Small Certificate.svg',
+    img: '/images/about/Small Certificate.webp',
     title: 'Professional Affiliation',
     desc: 'Certified partnership with internationally recognized advisory and investment networks, ensuring credibility across all operational jurisdictions.',
   },
   {
-    img: '/images/about/Small Certificate2.svg',
+    img: '/images/about/Small Certificate2.webp',
     title: 'Official Registration Certificate',
     desc: 'Registered legal entity in Canada – British Columbia Registry. Compliant and active in international business advisory and consulting services.',
   },
   {
-    img: '/images/about/IMG_6819.PNG',
+    img: '/images/about/IMG_6819.webp',
     title: 'Official Entrepreneurship & Consulting Center License',
     desc: 'Officially licensed to provide entrepreneurship consulting, business development services, and support for entrepreneurs and businesses.',
   },
   {
-    img: '/images/about/IMG_6820.PNG',
+    img: '/images/about/IMG_6820.webp',
     title: 'Official Coworking Space License',
     desc: 'Officially licensed to operate a coworking space and collaborative environment for entrepreneurs, startups, and growing businesses.',
   },
@@ -223,7 +223,7 @@ export default function OurStoryPage() {
           {/* image always visible, no animation wrapper */}
           <div className="mb-6 overflow-hidden rounded-[20px]" style={{ position: 'relative', width: '100%', paddingBottom: '75%' }}>
             <Image
-              src="/images/ourteam/Teams.jpg"
+              src="/images/ourteam/Teams.webp"
               alt="Our Story"
               fill
               className="object-cover"
@@ -265,7 +265,7 @@ export default function OurStoryPage() {
           </div>
           <div className="os-anim os-d3 overflow-hidden rounded-[20px]" style={{ position: 'relative', width: '100%', paddingBottom: '75%' }}>
             <Image
-              src="/images/ourteam/Teams.jpg"
+              src="/images/ourteam/Teams.webp"
               alt="Our Story"
               fill
               className="object-cover"

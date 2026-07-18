@@ -34,7 +34,7 @@ const LandacraftTimeline: React.FC = () => {
 
             {/* Image */}
             <div className="relative w-full h-[240px]">
-              <Image src="/images/about/landacraft.svg" alt="Landa Craft" fill className="object-cover" sizes="100vw" />
+              <Image src="/images/about/landacraft.webp" alt="Landa Craft" fill className="object-cover" sizes="100vw" />
             </div>
 
             {/* Content */}
@@ -90,7 +90,7 @@ const LandacraftTimeline: React.FC = () => {
               {/* Image */}
               <div className="order-1 flex justify-center md:order-3 md:justify-end">
                 <div className="relative w-full h-[320px] md:h-[420px]">
-                  <Image src="/images/about/landacraft.svg" alt="Landa Craft" fill className="rounded-xl object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+                  <Image src="/images/about/landacraft.webp" alt="Landa Craft" fill className="rounded-xl object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
                 </div>
               </div>
 

@@ -5,7 +5,7 @@ import Row from "../global/Row";
 const projects = [
   {
     name: "Landa Academy",
-    imageSrc: "/images/about/academy.svg",
+    imageSrc: "/images/about/academy.webp",
     year: "2017",
   },
   {

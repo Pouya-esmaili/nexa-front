@@ -9,7 +9,7 @@ const logos = [
   { src: "/images/landing/diaco.svg", name: "Diaco Center", size: "w-10 h-10" },
   { src: "/images/landing/raft.svg", name: "Vision Raft", size: "w-10 h-10" },
   { src: "/images/landing/Landa Trip.svg", name: "Landa Trip", size: "w-10 h-10" },
-  { src: "/images/landing/SteadySkull.svg", name: "Steady Skull", size: "w-10 h-10" },
+  { src: "/images/landing/SteadySkull.webp", name: "Steady Skull", size: "w-10 h-10" },
   { src: "/images/landing/Arshia Gallery.svg", name: "Arshia Gallery", size: "w-16 h-16" },
 ];
 

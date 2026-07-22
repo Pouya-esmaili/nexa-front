@@ -2,16 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/global/LazyReveal";
 
-// const tags = [
-//   "Global Marketing Strategy",
-//   "Product Development",
-//   "Advanced R&D",
-//   "Branding & Design",
-//   "UI/UX Design",
-//   "Go-to-Market",
-//   "Content Strategy",
-// ];
-
 export default function Team() {
   return (
     <section className="py-20 md:py-24 bg-[#F7F6F9]">
@@ -35,16 +25,6 @@ export default function Team() {
                 international consultants and legal experts, helping founders turn early-stage
                 ideas into scalable, market-ready companies.
               </p>
-
-              {/* Tags */}
-              {/* <div className="flex flex-wrap gap-2 mt-2">
-                {tags.map((t) => (
-                  <span key={t}
-                    className="px-3.5 py-1.5 bg-[#F7F6F9] border border-[#E2E2E2] rounded-full text-[14px] text-[#474747] font-medium hover:bg-[#FAF6FF] hover:border-[#8F27FF] hover:text-[#8F27FF] transition-all cursor-default">
-                    {t}
-                  </span>
-                ))}
-              </div> */}
 
               <Link
                 href="/our-team"

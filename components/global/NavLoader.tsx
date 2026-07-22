@@ -9,17 +9,19 @@ export default function NavLoader() {
   const [loading, setLoading] = useState(false);
   const hideTimerRef = useRef<number | undefined>(undefined);
 
+  const isFirstRun = useRef(true);
+
   useEffect(() => {
-    // show loader briefly when pathname changes (navigation completed)
-    if (!pathname) return;
-    setLoading(true);
-    const t = window.setTimeout(() => setLoading(false), 900);
-    // clear any safety hide timer set by click handler
+    // pathname changed => navigation actually completed, hide the loader
+    if (isFirstRun.current) {
+      isFirstRun.current = false;
+      return;
+    }
+    setLoading(false);
     if (hideTimerRef.current) {
       clearTimeout(hideTimerRef.current);
       hideTimerRef.current = undefined;
     }
-    return () => clearTimeout(t);
   }, [pathname]);
 
   useEffect(() => {
@@ -46,12 +48,13 @@ export default function NavLoader() {
       }
 
       setLoading(true);
-      // set a safety hide timer in case navigation doesn't change pathname
+      // safety fallback only: hide if navigation never actually happens
+      // (broken link, cancelled nav, etc.) — not meant to fire on normal loads
       if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
       hideTimerRef.current = window.setTimeout(() => {
         setLoading(false);
         hideTimerRef.current = undefined;
-      }, 2000);
+      }, 15000);
     };
 
     // also listen to pointerdown to catch interactions earlier than click
@@ -79,7 +82,7 @@ export default function NavLoader() {
       hideTimerRef.current = window.setTimeout(() => {
         setLoading(false);
         hideTimerRef.current = undefined;
-      }, 2000);
+      }, 15000);
     };
 
     document.addEventListener("click", handler, { capture: true });

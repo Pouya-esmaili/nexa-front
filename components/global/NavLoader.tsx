@@ -57,39 +57,9 @@ export default function NavLoader() {
       }, 15000);
     };
 
-    // also listen to pointerdown to catch interactions earlier than click
-    const pointerHandler = (e: PointerEvent) => {
-      const t = e.target as Element | null;
-      if (!t) return;
-      const a = t.closest && (t.closest("a") as HTMLAnchorElement | null);
-      if (!a) return;
-      const href = a.getAttribute("href");
-      if (!href) return;
-
-      const target = a.getAttribute("target");
-      if (target && target !== "") return;
-
-      try {
-        const url = new URL(href, location.href);
-        if (url.origin !== location.origin) return;
-        if (url.pathname === location.pathname && url.hash && url.hash !== "") return;
-      } catch (err) {
-        return;
-      }
-
-      setLoading(true);
-      if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
-      hideTimerRef.current = window.setTimeout(() => {
-        setLoading(false);
-        hideTimerRef.current = undefined;
-      }, 15000);
-    };
-
     document.addEventListener("click", handler, { capture: true });
-    document.addEventListener("pointerdown", pointerHandler, { capture: true });
     return () => {
       document.removeEventListener("click", handler, { capture: true });
-      document.removeEventListener("pointerdown", pointerHandler, { capture: true });
       if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
     };
   }, []);

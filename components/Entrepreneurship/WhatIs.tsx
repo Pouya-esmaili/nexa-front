@@ -24,7 +24,7 @@ export default function WhatIs() {
             <div className="relative">
               <div className="relative rounded-[24px] overflow-hidden" style={{ maxHeight: 520, height: 460 }}>
                 <Image
-                  src="/images/photos/1559136555-9303baea8ebd-w800.jpg"
+                  src="/images/photos/1559136555-9303baea8ebd-w800.webp"
                   alt="Entrepreneur planning global expansion"
                   fill
                   className="object-cover"

@@ -6,27 +6,27 @@ import Row from "../global/Row";
 const countries = [
     {
         name: "Canada",
-        image: "/images/Entrepreneurship/canada.png",
+        image: "/images/Entrepreneurship/canada.webp",
         flag: "/images/Entrepreneurship/cn.svg",
     },
     {
         name: "Spain",
-        image: "/images/Entrepreneurship/spain.png",
+        image: "/images/Entrepreneurship/spain.webp",
         flag: "/images/Entrepreneurship/ES.svg",
     },
     {
         name: "Finland",
-        image: "/images/Entrepreneurship/finland.png",
+        image: "/images/Entrepreneurship/finland.webp",
         flag: "/images/Entrepreneurship/FI.svg",
     },
     {
         name: "Portugal",
-        image: "/images/Entrepreneurship/portugal.png",
+        image: "/images/Entrepreneurship/portugal.webp",
         flag: "/images/Entrepreneurship/PT.svg",
     },
     {
         name: "Netherland",
-        image: "/images/Entrepreneurship/netherland.png",
+        image: "/images/Entrepreneurship/netherland.webp",
         flag: "/images/Entrepreneurship/NT (1).svg",
     },
 ];

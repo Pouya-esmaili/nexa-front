@@ -13,7 +13,7 @@ const markets = [
     desc: "Entrepreneur Visa with permanent residency pathway",
     descFa: "ویزای کارآفرینی با مسیر دریافت اقامت دائم",
     href: "/Entrepreneurship/canada",
-    img: "/images/Entrepreneurship/canada.png",
+    img: "/images/Entrepreneurship/canada.webp",
   },
   {
     name: "Spain",
@@ -22,7 +22,7 @@ const markets = [
     desc: "Entrepreneur Visa with 20-day fast-track approval",
     descFa: "ویزای کارآفرینی با بررسی سریع ۲۰ روزه",
     href: "/Entrepreneurship/spain",
-    img: "/images/Entrepreneurship/spain.png",
+    img: "/images/Entrepreneurship/spain.webp",
   },
   {
     name: "Finland",
@@ -31,7 +31,7 @@ const markets = [
     desc: "Entrepreneur Permit for business owners entering EU markets",
     descFa: "مجوز کارآفرینی برای ورود صاحبان کسب‌وکار به بازارهای اتحادیه اروپا",
     href: "/Entrepreneurship/finland",
-    img: "/images/Entrepreneurship/finland.png",
+    img: "/images/Entrepreneurship/finland.webp",
   },
   {
     name: "Portugal",
@@ -40,7 +40,7 @@ const markets = [
     desc: "D2 Entrepreneur Visa with EU residency path",
     descFa: "ویزای کارآفرینی D2 با مسیر دریافت اقامت اروپا",
     href: "/Entrepreneurship/portugal",
-    img: "/images/Entrepreneurship/portugal.png",
+    img: "/images/Entrepreneurship/portugal.webp",
   },
   {
     name: "Netherlands",
@@ -49,7 +49,7 @@ const markets = [
     desc: "Entrepreneur Visa in Europe's most connected business hub",
     descFa: "ویزای کارآفرینی در یکی از پیشرفته‌ترین مراکز کسب‌وکار اروپا",
     href: "/Entrepreneurship/netherlands",
-    img: "/images/Entrepreneurship/netherland.png",
+    img: "/images/Entrepreneurship/netherland.webp",
   },
 ];
 

@@ -59,14 +59,14 @@ const mainProvinces: Province[] = [
   { name: "British Columbia", bg: "/images/photos/1559511260-66a654ae982a-w600.jpg", flag: "/images/flags/Flag_of_British_Columbia.svg.png", netWorth: "CAD 600K", investment: "CAD 200K", operation: "12-20 mo" },
   { name: "Alberta", bg: "/images/photos/1609825488888-3a766db05542-w600.jpg", flag: "/images/flags/Flag_of_Alberta.svg.png", netWorth: "Flexible", investment: "CAD 100K+", operation: "12-18 mo" },
   { name: "Quebec", bg: "/images/photos/1519178614-68673b201f36-w600.jpg", flag: "/images/flags/Flag_of_Quebec.svg.png", netWorth: "CAD 900K", investment: "CAD 200K", operation: "Verified" },
-  { name: "Manitoba", bg: "/images/photos/1572206912757-5a78ff4d79be-w600.jpg", flag: "/images/flags/Flag_of_Manitoba.svg.png", netWorth: "CAD 500K", investment: "CAD 150K", operation: "12 mo" },
+  { name: "Manitoba", bg: "/images/photos/1572206912757-5a78ff4d79be-w600.webp", flag: "/images/flags/Flag_of_Manitoba.svg.png", netWorth: "CAD 500K", investment: "CAD 150K", operation: "12 mo" },
   { name: "Saskatchewan", bg: "/images/photos/1500382017468-9049fed747ef-w600.jpg", flag: "/images/flags/Flag_of_Saskatchewan.svg.png", netWorth: "CAD 500K", investment: "CAD 300K", operation: "6-12 mo" },
   { name: "Yukon", bg: "/images/photos/1531366936337-7c912a4589a7-w600.jpg", flag: "/images/flags/Flag_of_Yukon.svg.png", netWorth: "CAD 500K", investment: "CAD 300K", operation: "12 mo" },
   { name: "NW Territories", bg: "/images/photos/1483347756197-71ef80e95f73-w600.jpg", flag: "/images/flags/Flag_of_the_Northwest_Territories.svg.png", netWorth: "CAD 250-500K", investment: "CAD 150K", operation: "12 mo" },
 ];
 
 const atlanticProvinces: Province[] = [
-  { name: "New Brunswick", bg: "/images/photos/1551038247-3d9af20df552-w600.jpg", flag: "/images/flags/Flag_of_New_Brunswick.svg.png", netWorth: "CAD 500K", investment: "CAD 150K", operation: "12 mo" },
+  { name: "New Brunswick", bg: "/images/photos/1551038247-3d9af20df552-w600.webp", flag: "/images/flags/Flag_of_New_Brunswick.svg.png", netWorth: "CAD 500K", investment: "CAD 150K", operation: "12 mo" },
   { name: "Nova Scotia", bg: "https://images.unsplash.com/photo-1565024144815-79bc8094a0d3?w=600&q=80", flag: "/images/flags/Flag_of_Nova_Scotia.svg.png", netWorth: "CAD 600K", investment: "CAD 150K", operation: "12 mo" },
   { name: "Prince Edward Island", bg: "/images/photos/1469854523086-cc02fe5d8800-w600.jpg", flag: "/images/flags/Flag_of_Prince_Edward_Island.svg.png", netWorth: "CAD 600K", investment: "CAD 150K", operation: "12 mo" },
   { name: "Newfoundland & Labrador", bg: "https://images.unsplash.com/photo-1504608524841-42584120d693?w=600&q=80", flag: "/images/flags/Flag_of_Newfoundland_and_Labrador.svg.png", netWorth: "CAD 500K", investment: "CAD 200K", operation: "12 mo" },

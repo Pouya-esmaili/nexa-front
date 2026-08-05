@@ -22,7 +22,7 @@ const COUNTRIES = [
     desc: "Strategic investment gateway between Europe and Asia",
     descFa: "دروازه‌ای راهبردی برای سرمایه‌گذاری میان اروپا و آسیا",
     href: "/investment/turkiye",
-    img: "/images/investment/turkey.svg",
+    img: "/images/investment/turkey.webp",
   },
   {
     name: "Greece",
@@ -31,7 +31,7 @@ const COUNTRIES = [
     desc: "Golden Visa program with EU residency and property investment",
     descFa: "گلدن ویزا از طریق سرمایه‌گذاری در املاک با مسیر دریافت اقامت اروپا",
     href: "/investment/greece",
-    img: "/images/investment/greece.svg",
+    img: "/images/investment/greece.webp",
   },
   {
     name: "Spain",
@@ -40,7 +40,7 @@ const COUNTRIES = [
     desc: "High-yield property and business investment in Southern Europe",
     descFa: "فرصت‌های سرمایه‌گذاری در املاک و کسب‌وکار در  جنوب اروپا",
     href: "/investment/spain",
-    img: "/images/investment/spain.png",
+    img: "/images/investment/spain.webp",
   },
   {
     name: "France",

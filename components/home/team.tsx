@@ -5,16 +5,6 @@ import Link from "next/link";
 import Reveal from "@/components/global/LazyReveal";
 import { useLang } from "@/components/global/LanguageProvider";
 
-// const tags = [
-//   "Global Marketing Strategy",
-//   "Product Development",
-//   "Advanced R&D",
-//   "Branding & Design",
-//   "UI/UX Design",
-//   "Go-to-Market",
-//   "Content Strategy",
-// ];
-
 export default function Team() {
   const { t } = useLang();
   return (
@@ -42,16 +32,6 @@ export default function Team() {
                 )}
               </p>
 
-              {/* Tags */}
-              {/* <div className="flex flex-wrap gap-2 mt-2">
-                {tags.map((t) => (
-                  <span key={t}
-                    className="px-3.5 py-1.5 bg-[#F7F6F9] border border-[#E2E2E2] rounded-full text-[14px] text-[#474747] font-medium hover:bg-[#FAF6FF] hover:border-[#8F27FF] hover:text-[#8F27FF] transition-all cursor-default">
-                    {t}
-                  </span>
-                ))}
-              </div> */}
-
               <Link
                 href="/our-team"
                 className="self-start mt-2 inline-flex items-center gap-2 px-7 py-3.5 border-[1.5px] border-[#8F27FF] text-[#8F27FF] font-semibold rounded-full text-[14px] hover:bg-[#8F27FF] hover:text-white hover:-translate-y-px transition-all">
@@ -64,7 +44,7 @@ export default function Team() {
           <Reveal variant="right" className="order-1 md:order-2">
             <div className="rounded-[24px] overflow-hidden">
               <Image
-                src="/images/landing/behind.svg"
+                src="/images/landing/behind.webp"
                 alt="Behind Nexa"
                 width={600}
                 height={500}

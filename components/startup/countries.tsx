@@ -13,7 +13,7 @@ const countries = [
     desc: "Startup Permit in Europe's leading innovation ecosystem",
     descFa: "مجوز استارتاپ در یکی از پیشرفته‌ترین اکوسیستم‌های نوآوری اروپا",
     href: "/startup/finland",
-    img: "/images/Entrepreneurship/finland.png",
+    img: "/images/Entrepreneurship/finland.webp",
   },
   {
     name: "Canada",
@@ -22,7 +22,7 @@ const countries = [
     desc: "Startup Visa with access to world-class accelerator networks",
     descFa: "ویزای استارتاپ با دسترسی به برترین شتاب‌دهنده‌های بین‌المللی",
     href: "/startup/canada",
-    img: "/images/Entrepreneurship/canada.png",
+    img: "/images/Entrepreneurship/canada.webp",
   },
   {
     name: "UK",
@@ -40,7 +40,7 @@ const countries = [
     desc: "Startup Visa in Europe's most connected tech hub",
     descFa: "ویزای استارتاپ در یکی از پویاترین مراکز فناوری و نوآوری اروپا",
     href: "/startup/netherlands",
-    img: "/images/Entrepreneurship/netherland.png",
+    img: "/images/Entrepreneurship/netherland.webp",
   },
   {
     name: "France",

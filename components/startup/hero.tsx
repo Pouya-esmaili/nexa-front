@@ -43,7 +43,7 @@ export default function Hero() {
             <div className="relative w-full h-[240px] md:h-[380px] overflow-hidden"
               style={{ borderRadius: "140px 20px 20px 20px" }}>
               <Image
-                src="/images/startup/Sturtup Hero.jpg"
+                src="/images/startup/Sturtup Hero.webp"
                 alt="Startup team"
                 fill
                 className="object-cover object-top"

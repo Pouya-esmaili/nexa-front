@@ -11,7 +11,7 @@ const stats = [
   { num: "3 yrs", numFa: "۳ سال", label: "Hold Period", labelFa: "دوره‌ی نگهداری" },
 ];
 
-const HERO_IMG = "/images/investment/Türkiye.jpg";
+const HERO_IMG = "/images/investment/Türkiye.webp";
 
 export default function Hero() {
   const { t } = useLang();

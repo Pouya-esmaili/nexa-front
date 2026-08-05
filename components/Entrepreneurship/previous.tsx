@@ -8,7 +8,7 @@ export default function PreviousProjectsSection() {
   const projects = [
     {
       title: "Arshia Gallery",
-      image: "/images/Entrepreneurship/galleryy.svg",
+      image: "/images/Entrepreneurship/galleryy.webp",
     },
     {
       title: "Afra Cafe",

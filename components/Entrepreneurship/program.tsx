@@ -26,7 +26,7 @@ const Program = () => {
                         <Image
                             width={1400}
                             height={1000}
-                            src="/images/Entrepreneurship/programs.svg"
+                            src="/images/Entrepreneurship/programs.webp"
                             alt="startup"
                             className="w-full h-[420px] object-cover rounded-[32px]"
                         />
@@ -68,7 +68,7 @@ const Program = () => {
                         <Image
                             width={1200}
                             height={1000}
-                            src="/images/Entrepreneurship/programs.svg"
+                            src="/images/Entrepreneurship/programs.webp"
                             alt="startup"
                             className="w-full h-[250px] object-cover rounded-[24px]"
                         />

@@ -65,7 +65,7 @@ export default function Hero() {
               style={{ borderRadius: "32px 120px 32px 32px", boxShadow: "0 20px 50px rgba(0,0,0,0.08)" }}
             >
               <Image
-                src="/images/investment/investment france.jpg"
+                src="/images/investment/investment france.webp"
                 alt="Paris, France"
                 fill
                 className="object-cover"

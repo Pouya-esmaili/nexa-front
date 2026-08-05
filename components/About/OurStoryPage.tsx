@@ -121,28 +121,28 @@ const timelineItems = [
 
 const certificates = [
   {
-    img: '/images/about/Small Certificate.svg',
+    img: '/images/about/Small Certificate.webp',
     title: 'Professional Affiliation',
     titleFa: 'وابستگی حرفه‌ای',
     desc: 'Certified partnership with internationally recognized advisory and investment networks, ensuring credibility across all operational jurisdictions.',
     descFa: 'همکاری تأییدشده با شبکه‌های مشاوره و سرمایه‌گذاری معتبر بین‌المللی، که اعتبار ما را در تمام حوزه‌های عملیاتی تضمین می‌کند.',
   },
   {
-    img: '/images/about/Small Certificate2.svg',
+    img: '/images/about/Small Certificate2.webp',
     title: 'Official Registration Certificate',
     titleFa: 'گواهی ثبت رسمی',
     desc: 'Registered legal entity in Canada – British Columbia Registry. Compliant and active in international business advisory and consulting services.',
     descFa: 'شخصیت حقوقی ثبت‌شده در کانادا — ثبت بریتیش کلمبیا. منطبق و فعال در خدمات مشاوره و راهبری کسب‌وکار بین‌المللی.',
   },
   {
-    img: '/images/about/IMG_6819.PNG',
+    img: '/images/about/IMG_6819.webp',
     title: 'Official Entrepreneurship & Consulting Center License',
     titleFa: 'مجوز رسمی مرکز کارآفرینی و مشاوره',
     desc: 'Officially licensed to provide entrepreneurship consulting, business development services, and support for entrepreneurs and businesses.',
     descFa: 'دارای مجوز رسمی برای ارائه‌ی مشاوره‌ی کارآفرینی، خدمات توسعه‌ی کسب‌وکار و پشتیبانی از کارآفرینان و کسب‌وکارها.',
   },
   {
-    img: '/images/about/IMG_6820.PNG',
+    img: '/images/about/IMG_6820.webp',
     title: 'Official Coworking Space License',
     titleFa: 'مجوز رسمی فضای کار اشتراکی',
     desc: 'Officially licensed to operate a coworking space and collaborative environment for entrepreneurs, startups, and growing businesses.',
@@ -263,7 +263,7 @@ export default function OurStoryPage() {
           {/* image always visible, no animation wrapper */}
           <div className="mb-6 overflow-hidden rounded-[20px]" style={{ position: 'relative', width: '100%', paddingBottom: '75%' }}>
             <Image
-              src="/images/ourteam/Teams.jpg"
+              src="/images/ourteam/Teams.webp"
               alt="Our Story"
               fill
               className="object-cover"
@@ -309,7 +309,7 @@ export default function OurStoryPage() {
           </div>
           <div className="os-anim os-d3 overflow-hidden rounded-[20px]" style={{ position: 'relative', width: '100%', paddingBottom: '75%' }}>
             <Image
-              src="/images/ourteam/Teams.jpg"
+              src="/images/ourteam/Teams.webp"
               alt="Our Story"
               fill
               className="object-cover"

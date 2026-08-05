@@ -21,11 +21,11 @@ export default function InvestSection() {
     },
     {
       title: "Information Technology (IT)",
-      image: "/images/investment/Information.svg",
+      image: "/images/investment/Information.webp",
     },
     {
       title: "Tourism",
-      image: "/images/investment/tourism.svg",
+      image: "/images/investment/tourism.webp",
     },
   ];
 

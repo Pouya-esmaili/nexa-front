@@ -37,7 +37,7 @@ export default function Hero() {
 
         <div
           className={`h-56 rounded-[32px_80px_32px_32px] mb-6 overflow-hidden ${base} duration-700 delay-75 ${mounted ? show : hideUp}`}
-          style={{ background: "#1a1a2e url('/images/photos/1502602898657-3e91760cbb34-w900.jpg') center/cover" }}
+          style={{ background: "#1a1a2e url('/images/photos/1502602898657-3e91760cbb34-w900.webp') center/cover" }}
         />
         <h1 className={`text-3xl font-bold leading-tight tracking-tight mb-4 ${base} duration-600 delay-150 ${mounted ? show : hideUp}`}>
           {t("Launch your", "")} <span className="text-[#8F27FF]">{t("innovative venture", "کسب‌وکار نوآورانه‌ی")}</span> {t("at the heart of Europe.", "خود را در قلب اروپا راه‌اندازی کنید.")}
@@ -94,7 +94,7 @@ export default function Hero() {
                 className="absolute inset-0"
                 style={{
                   borderRadius: "32px 120px 32px 32px",
-                  background: "#1a1a2e url('/images/photos/1502602898657-3e91760cbb34-w900.jpg') center/cover",
+                  background: "#1a1a2e url('/images/photos/1502602898657-3e91760cbb34-w900.webp') center/cover",
                   boxShadow: "0 20px 50px rgba(0,0,0,0.08)",
                 }}
               />

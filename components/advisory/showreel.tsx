@@ -38,7 +38,7 @@ const SLIDES = [
   { img: "/images/advisory/1.jpg", alt: "Bounty product concept", tag: "Website Design", brand: "PreventiGene", type: "Website Design" },
   { img: "/images/advisory/6.jpg", alt: "Coca-Cola Lassi packaging concept", tag: "Application", brand: "Autilab", type: "Application" },
   { img: "/images/advisory/17.jpg", alt: "Beauty e-commerce website", tag: "Brand Identity", brand: "Orbiq", type: "Brand Identity" },
-  { img: "/images/advisory/3.jpg", alt: "Bold landing page design", tag: "Application", brand: "forlu", type: "Application" },
+  { img: "/images/advisory/3.jpg", alt: "Bold landing page design", tag: "Application", brand: "furlu", type: "Application" },
 ];
 
 const CREDITS = SLIDES.map((s) => s.brand);

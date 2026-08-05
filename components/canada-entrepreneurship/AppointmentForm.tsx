@@ -4,11 +4,13 @@ import { useState, FormEvent } from "react";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
 import PhoneField from "@/components/global/PhoneField";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const inputCls = "h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors w-full";
 const selectCls = "h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors w-full";
 
 export default function AppointmentForm() {
+  const { t } = useLang();
   const [sent, setSent] = useState(false);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -43,7 +45,7 @@ export default function AppointmentForm() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10 md:mb-14">
-            Book an Appointment
+            {t("Book an Appointment", "رزرو وقت ملاقات")}
           </h2>
         </Reveal>
 
@@ -57,8 +59,8 @@ export default function AppointmentForm() {
                 <path d="M5 12l4 4 10-10" />
               </svg>
             </div>
-            <h3 className="text-[22px] font-bold">Thank you!</h3>
-            <p className="text-gray-500 text-[15px]">A Nexa advisor will reach out within 48 hours.</p>
+            <h3 className="text-[22px] font-bold">{t("Thank you!", "سپاسگزاریم!")}</h3>
+            <p className="text-gray-500 text-[15px]">{t("A Nexa advisor will reach out within 48 hours.", "یک مشاور نکسا ظرف ۴۸ ساعت با شما تماس خواهد گرفت.")}</p>
           </div>
         ) : (
           <Reveal variant="up" delay={100}>
@@ -70,15 +72,15 @@ export default function AppointmentForm() {
               {/* Row 1 */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="flex items-center gap-1 text-[#474747]">First Name <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
-                  <input name="firstName" type="text" required placeholder="Your first name" className={inputCls} />
+                  <span className="flex items-center gap-1 text-[#474747]">{t("First Name", "نام")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <input name="firstName" type="text" required placeholder={t("Your first name", "نام شما")} className={inputCls} />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="flex items-center gap-1 text-[#474747]">Last Name <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
-                  <input name="lastName" type="text" required placeholder="Your last name" className={inputCls} />
+                  <span className="flex items-center gap-1 text-[#474747]">{t("Last Name", "نام خانوادگی")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <input name="lastName" type="text" required placeholder={t("Your last name", "نام خانوادگی شما")} className={inputCls} />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="flex items-center gap-1 text-[#474747]">Email <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <span className="flex items-center gap-1 text-[#474747]">{t("Email", "ایمیل")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
                   <input name="email" type="email" required placeholder="you@example.com" className={inputCls} />
                 </label>
               </div>
@@ -86,24 +88,24 @@ export default function AppointmentForm() {
               {/* Row 2 */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="flex items-center gap-1 text-[#474747]">Phone Number <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <span className="flex items-center gap-1 text-[#474747]">{t("Phone Number", "شماره تماس")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
                   <PhoneField name="phone" defaultCountryCode="+1" />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="flex items-center gap-1 text-[#474747]">Which best describes you? <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <span className="flex items-center gap-1 text-[#474747]">{t("Which best describes you?", "کدام گزینه شما را بهتر توصیف می‌کند؟")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
                   <select className={selectCls}>
-                    <option>Investor</option>
-                    <option>Entrepreneur</option>
-                    <option>Startup Founder</option>
+                    <option>{t("Investor", "سرمایه‌گذار")}</option>
+                    <option>{t("Entrepreneur", "کارآفرین")}</option>
+                    <option>{t("Startup Founder", "بنیان‌گذار استارتاپ")}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="text-[#474747]">Primary Objective</span>
+                  <span className="text-[#474747]">{t("Primary Objective", "هدف اصلی")}</span>
                   <select className={selectCls}>
-                    <option>Start a business in Canada</option>
-                    <option>Obtain Permanent Residence</option>
-                    <option>Expand existing business</option>
-                    <option>Seeking Investment</option>
+                    <option>{t("Start a business in Canada", "راه‌اندازی کسب‌وکار در کانادا")}</option>
+                    <option>{t("Obtain Permanent Residence", "دریافت اقامت دائم")}</option>
+                    <option>{t("Expand existing business", "گسترش کسب‌وکار موجود")}</option>
+                    <option>{t("Seeking Investment", "جست‌وجوی سرمایه‌گذاری")}</option>
                   </select>
                 </label>
               </div>
@@ -111,50 +113,50 @@ export default function AppointmentForm() {
               {/* Row 3 */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="flex items-center gap-1 text-[#474747]">Industry / Sector <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <span className="flex items-center gap-1 text-[#474747]">{t("Industry / Sector", "صنعت / حوزه")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
                   <select className={selectCls}>
-                    <option>Real Estate</option>
-                    <option>Technology &amp; Innovation</option>
-                    <option>Healthcare</option>
-                    <option>Manufacturing</option>
-                    <option>Clean Energy</option>
-                    <option>Tourism &amp; Hospitality</option>
-                    <option>Agriculture</option>
+                    <option>{t("Real Estate", "املاک و مستغلات")}</option>
+                    <option>{t("Technology & Innovation", "فناوری و نوآوری")}</option>
+                    <option>{t("Healthcare", "بهداشت و درمان")}</option>
+                    <option>{t("Manufacturing", "تولید")}</option>
+                    <option>{t("Clean Energy", "انرژی پاک")}</option>
+                    <option>{t("Tourism & Hospitality", "گردشگری و مهمان‌نوازی")}</option>
+                    <option>{t("Agriculture", "کشاورزی")}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="text-[#474747]">Target Province</span>
+                  <span className="text-[#474747]">{t("Target Province", "استان هدف")}</span>
                   <select className={selectCls}>
-                    <option>Ontario</option>
-                    <option>British Columbia</option>
-                    <option>Alberta</option>
-                    <option>Quebec</option>
-                    <option>Manitoba</option>
-                    <option>Saskatchewan</option>
-                    <option>Yukon</option>
-                    <option>NW Territories</option>
-                    <option>Atlantic Provinces</option>
-                    <option>Not decided yet</option>
+                    <option>{t("Ontario", "انتاریو")}</option>
+                    <option>{t("British Columbia", "بریتیش کلمبیا")}</option>
+                    <option>{t("Alberta", "آلبرتا")}</option>
+                    <option>{t("Quebec", "کبک")}</option>
+                    <option>{t("Manitoba", "مانیتوبا")}</option>
+                    <option>{t("Saskatchewan", "ساسکاچوان")}</option>
+                    <option>{t("Yukon", "یوکان")}</option>
+                    <option>{t("NW Territories", "قلمروهای شمال‌غربی")}</option>
+                    <option>{t("Atlantic Provinces", "استان‌های آتلانتیک")}</option>
+                    <option>{t("Not decided yet", "هنوز تصمیم نگرفته‌ام")}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="text-[#474747]">Estimated Investment Size</span>
+                  <span className="text-[#474747]">{t("Estimated Investment Size", "میزان تخمینی سرمایه‌گذاری")}</span>
                   <select className={selectCls}>
-                    <option>Under CAD 150K</option>
-                    <option>CAD 150K – 300K</option>
-                    <option>CAD 300K – 600K</option>
-                    <option>CAD 600K – 1M</option>
-                    <option>CAD 1M+</option>
+                    <option>{t("Under CAD 150K", "کمتر از ۱۵۰ هزار دلار کانادا")}</option>
+                    <option>{t("CAD 150K – 300K", "۱۵۰ تا ۳۰۰ هزار دلار کانادا")}</option>
+                    <option>{t("CAD 300K – 600K", "۳۰۰ تا ۶۰۰ هزار دلار کانادا")}</option>
+                    <option>{t("CAD 600K – 1M", "۶۰۰ هزار تا ۱ میلیون دلار کانادا")}</option>
+                    <option>{t("CAD 1M+", "بیش از ۱ میلیون دلار کانادا")}</option>
                   </select>
                 </label>
               </div>
 
               {/* Textarea */}
               <label className="flex flex-col gap-2 text-[13px] font-medium">
-                <span className="text-[#474747]">Tell us about your goals &amp; business</span>
+                <span className="text-[#474747]">{t("Tell us about your goals & business", "درباره‌ی اهداف و کسب‌وکار خود به ما بگویید")}</span>
                 <textarea
                   rows={4}
-                  placeholder="Describe your business idea, target province, timeline, and what you're looking to achieve in Canada…"
+                  placeholder={t("Describe your business idea, target province, timeline, and what you're looking to achieve in Canada…", "ایده‌ی کسب‌وکار، استان هدف، زمان‌بندی و آنچه می‌خواهید در کانادا به آن دست یابید را شرح دهید…")}
                   name="message"
                   className="px-3.5 py-3 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors resize-y"
                 />
@@ -163,14 +165,14 @@ export default function AppointmentForm() {
               {/* Footer */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
                 <small className="text-[12px] text-gray-500 leading-relaxed max-w-[50ch]">
-                  Your information is reviewed confidentially by Nexa&apos;s advisory team. We typically respond within 48 hours.
+                  {t("Your information is reviewed confidentially by Nexa's advisory team. We typically respond within 48 hours.", "اطلاعات شما به‌صورت محرمانه توسط تیم مشاوره‌ی نکسا بررسی می‌شود. ما معمولاً ظرف ۴۸ ساعت پاسخ می‌دهیم.")}
                 </small>
                 <button
                   type="submit"
                   className="w-full sm:w-auto flex-shrink-0 inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"
                   style={{ boxShadow: "0 10px 24px rgba(143,39,255,0.28)" }}
                 >
-                  Submit Application →
+                  {t("Submit Application →", "ارسال درخواست →")}
                 </button>
               </div>
             </form>

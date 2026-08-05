@@ -1,14 +1,18 @@
+"use client";
+
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
-const pills = [
-  "No consulate required",
-  "3-year TIE card directly",
-  "20-day decision window",
-  "Silence = approval",
+const pills: { en: string; fa: string }[] = [
+  { en: "No consulate required", fa: "بدون نیاز به کنسولگری" },
+  { en: "3-year TIE card directly", fa: "کارت TIE سه‌ساله به‌طور مستقیم" },
+  { en: "20-day decision window", fa: "بازه‌ی تصمیم‌گیری ۲۰ روزه" },
+  { en: "Silence = approval", fa: "سکوت = تأیید" },
 ];
 
 export default function OnshoreCTA() {
+  const { t } = useLang();
   return (
     <section className="py-20 md:py-24 bg-black relative overflow-hidden">
       {/* Yellow radial glow */}
@@ -23,21 +27,21 @@ export default function OnshoreCTA() {
               <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.1em] px-3.5 py-1.5 rounded-full mb-5"
                 style={{ background: "#FFE600", color: "#7A6800" }}>
                 <span className="w-1.5 h-1.5 rounded-full bg-[#7A6800]" />
-                Unique Structural Advantage
+                {t("Unique Structural Advantage", "مزیت ساختاری منحصربه‌فرد")}
               </div>
               <h2 className="text-[36px] font-bold tracking-[-0.03em] leading-[1.1] mb-3.5 text-white">
-                Apply from inside Spain.<br />
-                <em className="not-italic" style={{ color: "#FFE600" }}>Get 3 years. Not 1.</em>
+                {t("Apply from inside Spain.", "از داخل اسپانیا درخواست دهید.")}<br />
+                <em className="not-italic" style={{ color: "#FFE600" }}>{t("Get 3 years. Not 1.", "۳ سال بگیرید. نه ۱ سال.")}</em>
               </h2>
               <p className="text-[15px] leading-[1.65] max-w-[52ch] mb-6" style={{ color: "rgba(255,255,255,0.6)" }}>
-                Enter on a tourist visa, file directly with the UGE — and receive a 3-year residence card without ever visiting a consulate. No other major EU entrepreneur program works this way.
+                {t("Enter on a tourist visa, file directly with the UGE — and receive a 3-year residence card without ever visiting a consulate. No other major EU entrepreneur program works this way.", "با ویزای توریستی وارد شوید، مستقیماً نزد UGE ثبت کنید — و یک کارت اقامت ۳ ساله بدون مراجعه به هیچ کنسولگری دریافت کنید. هیچ برنامه‌ی کارآفرینی بزرگ دیگری در اتحادیه اروپا این‌گونه عمل نمی‌کند.")}
               </p>
               <div className="flex flex-wrap gap-2">
                 {pills.map((p) => (
-                  <span key={p} className="flex items-center gap-1.5 text-[13px] font-medium text-white px-3.5 py-1.5 rounded-full"
+                  <span key={p.en} className="flex items-center gap-1.5 text-[13px] font-medium text-white px-3.5 py-1.5 rounded-full"
                     style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>
                     <span className="w-1.5 h-1.5 rounded-full bg-[#FFE600] flex-shrink-0" />
-                    {p}
+                    {t(p.en, p.fa)}
                   </span>
                 ))}
               </div>
@@ -47,15 +51,15 @@ export default function OnshoreCTA() {
             <div className="flex flex-col items-center gap-4 flex-shrink-0">
               {/* Yellow stat box */}
               <div className="rounded-[20px] px-9 py-7 text-center min-w-[180px]" style={{ background: "#FFE600" }}>
-                <div className="text-[52px] font-extrabold tracking-[-0.05em] leading-none text-black">20</div>
+                <div className="text-[52px] font-extrabold tracking-[-0.05em] leading-none text-black">{t("20", "۲۰")}</div>
                 <div className="text-[12px] font-bold uppercase tracking-[0.08em] mt-1.5" style={{ color: "rgba(0,0,0,0.55)" }}>
-                  Working Days<br />to Decision
+                  {t("Working Days", "روز کاری")}<br />{t("to Decision", "تا تصمیم")}
                 </div>
               </div>
               <a href="#contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 font-bold rounded-full text-[14px] whitespace-nowrap transition-all hover:-translate-y-0.5"
                 style={{ background: "#FFE600", color: "#000", boxShadow: "0 12px 28px rgba(255,230,0,0.3)" }}>
-                Start Now →
+                {t("Start Now →", "همین حالا شروع کنید →")}
               </a>
             </div>
           </div>

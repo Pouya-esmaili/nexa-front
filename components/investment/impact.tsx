@@ -1,11 +1,14 @@
 "use client";
 
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const ITEMS = [
   {
     pill: "Growth",
+    pillFa: "رشد",
     title: "Accelerates Economic Growth",
+    titleFa: "محرک توسعه اقتصادی و گسترش فرصت‌های کسب‌وکار",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="22" height="22">
         <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
@@ -15,7 +18,9 @@ const ITEMS = [
   },
   {
     pill: "Jobs",
+    pillFa: "اشتغال",
     title: "Creates Sustainable Employment",
+    titleFa: "ایجاد فرصت‌های شغلی پایدار و تقویت بازار کار",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="22" height="22">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
@@ -27,7 +32,9 @@ const ITEMS = [
   },
   {
     pill: "Innovation",
+    pillFa: "نوآوری",
     title: "Drives Technological Innovation",
+    titleFa: "توسعه فناوری و حمایت از ایده‌های نوآورانه",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="22" height="22">
         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
@@ -36,7 +43,9 @@ const ITEMS = [
   },
   {
     pill: "Wealth",
+    pillFa: "ارزش‌آفرینی",
     title: "Builds Long-Term Wealth & Value",
+    titleFa: "ایجاد ثروت پایدار و افزایش ارزش در بلندمدت",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="22" height="22">
         <line x1="12" y1="1" x2="12" y2="23"/>
@@ -47,6 +56,7 @@ const ITEMS = [
 ];
 
 export default function InvestmentImpact() {
+  const { t } = useLang();
   return (
     <section
       className="relative overflow-hidden"
@@ -84,7 +94,7 @@ export default function InvestmentImpact() {
                 color: "white",
               }}
             >
-              Why Investment Programs Strengthen Economies
+              {t("Why Investment Programs Strengthen Economies", "مزایای برنامه‌های سرمایه‌گذاری برای اقتصاد کشورها")}
             </h2>
           </div>
         </Reveal>
@@ -102,7 +112,8 @@ export default function InvestmentImpact() {
   );
 }
 
-function ImpactCard({ pill, title, icon }: (typeof ITEMS)[0]) {
+function ImpactCard({ pill, pillFa, title, titleFa, icon }: (typeof ITEMS)[0]) {
+  const { t } = useLang();
   return (
     <div
       className="cursor-pointer"
@@ -151,7 +162,7 @@ function ImpactCard({ pill, title, icon }: (typeof ITEMS)[0]) {
           color: "#FFE600",
         }}
       >
-        {pill}
+        {t(pill, pillFa)}
       </div>
 
       {/* Icon — color is currentColor so inherits from parent div color */}
@@ -179,7 +190,7 @@ function ImpactCard({ pill, title, icon }: (typeof ITEMS)[0]) {
           letterSpacing: "-0.01em",
         }}
       >
-        {title}
+        {t(title, titleFa)}
       </h4>
     </div>
   );

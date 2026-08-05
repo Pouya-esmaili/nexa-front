@@ -4,39 +4,57 @@ import { useState } from "react";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
 import IconArrow from '@/components/global/IconArrow';
+import { useLang } from "@/components/global/LanguageProvider";
 
 const stages = [
   {
     num: "01",
     label: "Initial Permit",
+    labelFa: "مجوز اولیه",
     year: "Years 1–2",
+    yearFa: "سال‌های ۱ تا ۲",
     detail: "Initial Startup Permit",
+    detailFa: "مجوز اولیه‌ی استارتاپ",
     desc: "Live in Finland and actively develop your company under your initial 2-year residence permit. Travel across Schengen freely.",
+    descFa: "با مجوز اقامت اولیه‌ی ۲ ساله در فنلاند زندگی کنید و فعالانه شرکتتان را توسعه دهید. آزادانه در سراسر شنگن سفر کنید.",
   },
   {
     num: "02",
     label: "Extended Permit",
+    labelFa: "مجوز تمدیدشده",
     year: "Up to Year 4",
+    yearFa: "تا سال ۴",
     detail: "Extended Permit",
+    detailFa: "مجوز تمدیدشده",
     desc: "Before expiry, apply for extension. Immigration verifies your company is in the Finnish Trade Register and actively operating.",
+    descFa: "پیش از انقضا، برای تمدید درخواست دهید. اداره‌ی مهاجرت تأیید می‌کند که شرکت شما در دفتر ثبت تجاری فنلاند ثبت شده و فعالانه در حال فعالیت است.",
   },
   {
     num: "03",
     label: "Permanent Residency",
+    labelFa: "اقامت دائم",
     year: "Year 4",
+    yearFa: "سال ۴",
     detail: "Permanent Residency",
+    detailFa: "اقامت دائم",
     desc: "After 4 consecutive years on continuous permits, your right to live and work in Europe is permanently yours — startup or not.",
+    descFa: "پس از ۴ سال متوالی با مجوزهای پیوسته، حق زندگی و کار شما در اروپا برای همیشه از آنِ شماست — با استارتاپ یا بدون آن.",
   },
   {
     num: "04",
     label: "Finnish Passport",
+    labelFa: "پاسپورت فنلاند",
     year: "Year 6",
+    yearFa: "سال ۶",
     detail: "Finnish Citizenship",
+    detailFa: "تابعیت فنلاند",
     desc: "After ~6 years of continuous residence plus a basic Finnish or Swedish language test — full EU voting rights and a top-tier passport.",
+    descFa: "پس از حدود ۶ سال اقامت پیوسته به‌علاوه‌ی یک آزمون پایه‌ی زبان فنلاندی یا سوئدی — حق کامل رأی در اتحادیه اروپا و یک پاسپورت درجه‌یک.",
   },
 ];
 
 export default function PathwayToPassport() {
+  const { t } = useLang();
   const [openMobile, setOpenMobile] = useState<number>(0);
   const [selectedDesktop, setSelectedDesktop] = useState(0);
 
@@ -45,7 +63,7 @@ export default function PathwayToPassport() {
       <Row>
         <Reveal variant="up" className="text-center mb-10 md:mb-14">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em]">
-            Path to Permanent Residency &amp; Passport
+            {t("Path to Permanent Residency & Passport", "مسیر اقامت دائم و پاسپورت")}
           </h2>
         </Reveal>
 
@@ -76,12 +94,12 @@ export default function PathwayToPassport() {
                   >
                     {s.num}
                   </div>
-                  <div className="font-semibold text-[15px] mb-1 tracking-[-0.015em]">{s.label}</div>
+                  <div className="font-semibold text-[15px] mb-1 tracking-[-0.015em]">{t(s.label, s.labelFa)}</div>
                   <span
                     className="text-[12px] font-semibold px-2.5 py-1 rounded-full"
                     style={{ background: "#FAF6FF", color: "#8F27FF" }}
                   >
-                    {s.year}
+                    {t(s.year, s.yearFa)}
                   </span>
                 </div>
               ))}
@@ -92,8 +110,8 @@ export default function PathwayToPassport() {
             {stages.map((s, i) => (
               <Reveal key={s.num} variant="up" delay={i * 80 + 150} className="h-full">
                 <div className="h-full bg-[#F7F6F9] border border-gray-200 rounded-[14px] p-5 transition-all duration-300 hover:border-[rgba(143,39,255,0.3)] hover:bg-[#FAF6FF]">
-                  <h5 className="font-semibold text-[14px] mb-2 tracking-[-0.01em]">{s.detail}</h5>
-                  <p className="text-[13px] text-gray-500 leading-relaxed m-0">{s.desc}</p>
+                  <h5 className="font-semibold text-[14px] mb-2 tracking-[-0.01em]">{t(s.detail, s.detailFa)}</h5>
+                  <p className="text-[13px] text-gray-500 leading-relaxed m-0">{t(s.desc, s.descFa)}</p>
                 </div>
               </Reveal>
             ))}
@@ -117,19 +135,19 @@ export default function PathwayToPassport() {
                     {s.num}
                   </div>
                   <div className="flex-1 text-left">
-                    <div className="font-semibold text-[14px]">{s.label}</div>
+                    <div className="font-semibold text-[14px]">{t(s.label, s.labelFa)}</div>
                     <span
                       className="inline-block text-[11px] font-semibold px-2 py-0.5 rounded-full mt-0.5"
                       style={{ background: "#FAF6FF", color: "#8F27FF" }}
                     >
-                      {s.year}
+                      {t(s.year, s.yearFa)}
                     </span>
                   </div>
                   <IconArrow className="w-4 h-4 transition-transform duration-300" style={{ transform: openMobile === i ? 'rotate(180deg)' : undefined }} />
                 </button>
                 {openMobile === i && (
                   <div className="px-5 pb-4 pt-1 text-[13.5px] text-[#474747] leading-relaxed pl-[70px]">
-                    {s.desc}
+                    {t(s.desc, s.descFa)}
                   </div>
                 )}
               </div>

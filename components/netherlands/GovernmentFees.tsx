@@ -1,28 +1,37 @@
+"use client";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const fees = [
   {
     stage: "Initial Application",
+    stageFa: "درخواست اولیه",
     amount: "€192",
     label: "IND Startup Visa Application Fee",
+    labelFa: "هزینه‌ی درخواست ویزای استارتاپ IND",
     desc: "Standard IND processing fee for the initial Startup Residence Permit application. Submitted digitally by your facilitator on your behalf.",
+    descFa: "هزینه‌ی استاندارد پردازش IND برای درخواست اولیه‌ی مجوز اقامت استارتاپ. به‌صورت دیجیتال توسط تسهیل‌گر شما از طرف شما ثبت می‌شود.",
   },
   {
     stage: "Self-Employed Transition",
+    stageFa: "گذار به خوداشتغالی",
     amount: "€192",
     label: "Change of Status Application",
+    labelFa: "درخواست تغییر وضعیت",
     desc: "Fee to transition from your Startup Visa into a standard Self-Employed Residence Permit at the end of your first year, based on your facilitator's positive progress assessment.",
+    descFa: "هزینه‌ی گذار از ویزای استارتاپ به یک مجوز اقامت خوداشتغالی استاندارد در پایان سال نخست، بر اساس ارزیابی مثبت پیشرفت توسط تسهیل‌گر شما.",
   },
 ];
 
 export default function GovernmentFees() {
+  const { t } = useLang();
   return (
     <section className="py-16 md:py-20 bg-white">
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10 md:mb-14">
-            Government Fee Structure
+            {t("Government Fee Structure", "ساختار هزینه‌های دولتی")}
           </h2>
         </Reveal>
 
@@ -39,11 +48,11 @@ export default function GovernmentFees() {
                   className="self-start text-[11px] font-bold uppercase tracking-[.1em] px-2.5 py-1 rounded-full"
                   style={{ background: "#FFFBE6", border: "1px solid #F0D800", color: "#7A6800" }}
                 >
-                  {f.stage}
+                  {t(f.stage, f.stageFa)}
                 </span>
                 <div className="text-[52px] font-bold tracking-[-0.04em] leading-none">{f.amount}</div>
-                <div className="text-[14px] font-semibold">{f.label}</div>
-                <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{f.desc}</p>
+                <div className="text-[14px] font-semibold">{t(f.label, f.labelFa)}</div>
+                <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{t(f.desc, f.descFa)}</p>
               </div>
             </Reveal>
           ))}
@@ -54,7 +63,7 @@ export default function GovernmentFees() {
             className="rounded-[8px] px-4 py-3.5 text-[13px] leading-[1.6]"
             style={{ background: "#FFFBE6", border: "1px solid #F0D800", color: "#7A6800" }}
           >
-            Note: Government fees are subject to IND annual updates. Additional costs include certified document translations, apostilles, facilitator fees, and KVK business registration (~€50).
+            {t("Note: Government fees are subject to IND annual updates. Additional costs include certified document translations, apostilles, facilitator fees, and KVK business registration (~€50).", "توجه: هزینه‌های دولتی مشمول به‌روزرسانی‌های سالانه‌ی IND هستند. هزینه‌های اضافی شامل ترجمه‌ی رسمی اسناد، آپوستیل، هزینه‌های تسهیل‌گر و ثبت کسب‌وکار KVK (حدود ۵۰ یورو) است.")}
           </div>
         </Reveal>
       </Row>

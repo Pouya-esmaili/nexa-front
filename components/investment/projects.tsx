@@ -2,31 +2,37 @@
 
 import Image from "next/image";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const PROJECTS = [
   {
     name: "Arshia Gallery",
     tag: "Fine Jewelry · Luxury Retail",
+    tagFa: "جواهرات نفیس · خرده‌فروشی لوکس",
     img: "/images/Entrepreneurship/Arshia Gallery.jpg",
   },
   {
     name: "Afra Cafe",
     tag: "F&B · International",
+    tagFa: "غذا و نوشیدنی · بین‌المللی",
     img: "/images/Entrepreneurship/Afra Cafe.jpg",
   },
   {
     name: "Green farm",
     tag: "Sustainability · Global",
+    tagFa: "پایداری · جهانی",
     img: "/images/Entrepreneurship/Green Farm.jpg",
   },
   {
     name: "Aurora Clinic",
     tag: "Healthcare · Canada",
+    tagFa: "سلامت · کانادا",
     img: "/images/Entrepreneurship/Aurora Clinic.jpg",
   },
 ];
 
 export default function InvestmentProjects() {
+  const { t } = useLang();
   return (
     <section style={{ padding: "90px 0", background: "#fff" }}>
       <div className="px-6 mx-auto w-full" style={{ maxWidth: 1240 }}>
@@ -42,7 +48,7 @@ export default function InvestmentProjects() {
                 color: "#000",
               }}
             >
-              Our Previous Projects
+              {t("Our Previous Projects", "نمونه‌ای از پروژه‌های موفق ما")}
             </h2>
           </div>
         </Reveal>
@@ -60,7 +66,8 @@ export default function InvestmentProjects() {
   );
 }
 
-function ProjectCard({ name, tag, img }: (typeof PROJECTS)[0]) {
+function ProjectCard({ name, tag, tagFa, img }: (typeof PROJECTS)[0]) {
+  const { t } = useLang();
   return (
     <div
       className="group relative overflow-hidden cursor-pointer"
@@ -124,7 +131,7 @@ function ProjectCard({ name, tag, img }: (typeof PROJECTS)[0]) {
               fontWeight: 500,
             }}
           >
-            {tag}
+            {t(tag, tagFa)}
           </div>
         </div>
 

@@ -1,34 +1,46 @@
+"use client";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const fees = [
   {
     stage: "Stage 1 · Consular Entry",
+    stageFa: "مرحله ۱ · ورود کنسولی",
     amount: "€99",
     label: "Long-Stay Visa (VLS-TS)",
+    labelFa: "ویزای اقامت بلندمدت (VLS-TS)",
     desc: "Initial long-stay visa fee paid at the French Consulate or visa application center in your country of residence.",
+    descFa: "هزینه‌ی اولیه‌ی ویزای اقامت بلندمدت که در کنسولگری فرانسه یا مرکز درخواست ویزا در کشور محل اقامت شما پرداخت می‌شود.",
   },
   {
     stage: "Stage 2 · Prefecture Onshore",
+    stageFa: "مرحله ۲ · فرمانداری داخل کشور",
     amount: "€350",
     label: "Physical 4-Year Talent Card",
+    labelFa: "کارت فیزیکی استعداد ۴ ساله",
     desc: "€300 administrative fee + €50 stamp duty. Paid via ANEF portal after arrival in France to issue your physical residence card.",
+    descFa: "۳۰۰ یورو هزینه‌ی اداری + ۵۰ یورو حق تمبر. پس از ورود به فرانسه از طریق پرتال ANEF برای صدور کارت اقامت فیزیکی شما پرداخت می‌شود.",
   },
   {
     stage: "Stage 3 · Renewal",
+    stageFa: "مرحله ۳ · تمدید",
     amount: "€250",
     label: "Card Extension",
+    labelFa: "تمدید کارت",
     desc: "Standard fee for subsequent permit renewals via ANEF. Does not include certified translations, apostilles, or corporate setup costs.",
+    descFa: "هزینه‌ی استاندارد برای تمدیدهای بعدی مجوز از طریق ANEF. شامل ترجمه‌های رسمی، آپوستیل یا هزینه‌های راه‌اندازی شرکت نمی‌شود.",
   },
 ];
 
 export default function GovernmentFees() {
+  const { t } = useLang();
   return (
     <section className="py-16 md:py-20 bg-white">
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10 md:mb-14">
-            Government Fee Structure
+            {t("Government Fee Structure", "ساختار هزینه‌های دولتی")}
           </h2>
         </Reveal>
 
@@ -47,11 +59,11 @@ export default function GovernmentFees() {
                 className="self-start text-[11px] font-bold uppercase tracking-[.1em] px-2.5 py-1 rounded-full"
                 style={{ background: "#FFFBE6", border: "1px solid #F0D800", color: "#7A6800" }}
               >
-                {f.stage}
+                {t(f.stage, f.stageFa)}
               </span>
               <div className="text-[52px] font-bold tracking-[-0.04em] leading-none">{f.amount}</div>
-              <div className="text-[14px] font-semibold">{f.label}</div>
-              <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{f.desc}</p>
+              <div className="text-[14px] font-semibold">{t(f.label, f.labelFa)}</div>
+              <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{t(f.desc, f.descFa)}</p>
             </div>
             </Reveal>
           ))}
@@ -62,7 +74,7 @@ export default function GovernmentFees() {
           className="rounded-[8px] px-4 py-3.5 text-[13px] leading-[1.6]"
           style={{ background: "#FFFBE6", border: "1px solid #F0D800", color: "#7A6800" }}
         >
-          Note: These are standard government fees only. Additional costs include certified document translations, apostilles, incubation fees (~€800/month), and corporate setup fees.
+          {t("Note: These are standard government fees only. Additional costs include certified document translations, apostilles, incubation fees (~€800/month), and corporate setup fees.", "توجه: این‌ها فقط هزینه‌های استاندارد دولتی هستند. هزینه‌های اضافی شامل ترجمه‌ی رسمی اسناد، آپوستیل، هزینه‌های شتاب‌دهنده (حدود ۸۰۰ یورو در ماه) و هزینه‌های راه‌اندازی شرکت است.")}
         </div>
         </Reveal>
       </Row>

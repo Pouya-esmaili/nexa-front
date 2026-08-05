@@ -1,10 +1,15 @@
+"use client";
+
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const benefits = [
   {
     title: "Zero Personal Income Tax",
+    titleFa: "مالیات بر درآمد شخصی صفر",
     desc: "The UAE operates a zero-bracket personal income tax regime. Salaries, dividends, capital gains, and investment returns are entirely untaxed at the individual level.",
+    descFa: "امارات یک نظام مالیات بر درآمد شخصی با نرخ صفر دارد. حقوق، سود سهام، عایدی سرمایه و بازده سرمایه‌گذاری در سطح فردی به‌طور کامل بدون مالیات هستند.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="9" />
@@ -14,7 +19,9 @@ const benefits = [
   },
   {
     title: "No Local Sponsor Required",
+    titleFa: "بدون نیاز به حامی محلی",
     desc: "The Golden Visa eliminates the historical Emirati sponsor requirement — providing complete operational autonomy and legal independence from day one.",
+    descFa: "ویزای طلایی الزام تاریخی حامی اماراتی را حذف می‌کند — و از روز نخست استقلال عملیاتی کامل و استقلال حقوقی فراهم می‌کند.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z" />
@@ -24,7 +31,9 @@ const benefits = [
   },
   {
     title: "100% Corporate Ownership",
+    titleFa: "مالکیت ۱۰۰٪ شرکتی",
     desc: "Full foreign ownership of UAE business entities is permitted. Establish or acquire domestic corporate structures with complete shareholding control and profit repatriation rights.",
+    descFa: "مالکیت کامل خارجی نهادهای تجاری امارات مجاز است. ساختارهای شرکتی داخلی را با کنترل کامل سهام و حق بازگرداندن سود ایجاد یا تملک کنید.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2" />
@@ -34,7 +43,9 @@ const benefits = [
   },
   {
     title: "Three-Generation Family Coverage",
+    titleFa: "پوشش خانوادگی سه‌نسلی",
     desc: "Sponsor spouse, children of any age (unmarried daughters, sons with no age caps), domestic staff, and executive support personnel — all under one application.",
+    descFa: "همسر، فرزندان در هر سنی (دختران مجرد، پسران بدون محدودیت سنی)، کارکنان خانگی و پرسنل پشتیبانی اجرایی را حمایت کنید — همه تحت یک درخواست.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -45,7 +56,9 @@ const benefits = [
   },
   {
     title: "Unrestricted Global Mobility",
+    titleFa: "تحرک جهانی نامحدود",
     desc: "The Golden Visa explicitly waives the standard 6-month travel restriction. Remain outside the UAE indefinitely without risking your legal status, Emirates ID, or asset linkages.",
+    descFa: "ویزای طلایی صراحتاً محدودیت سفر استاندارد ۶ ماهه را لغو می‌کند. بدون به‌خطر انداختن وضعیت قانونی، شناسه‌ی اماراتی یا پیوندهای دارایی خود، به‌طور نامحدود بیرون از امارات بمانید.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
@@ -55,7 +68,9 @@ const benefits = [
   },
   {
     title: "Seamless Capital Mobility",
+    titleFa: "تحرک بی‌وقفه‌ی سرمایه",
     desc: "The UAE enforces no restrictions on capital repatriation, profit transfers, or cross-border fund movements — full financial integration with international markets.",
+    descFa: "امارات هیچ محدودیتی بر بازگرداندن سرمایه، انتقال سود یا جابه‌جایی وجوه فرامرزی اعمال نمی‌کند — یکپارچگی مالی کامل با بازارهای بین‌المللی.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M13 3L4 14h7l-1 7 9-11h-7l1-7z" />
@@ -65,12 +80,13 @@ const benefits = [
 ];
 
 export default function Benefits() {
+  const { t } = useLang();
   return (
     <section className="py-20 md:py-24 bg-white">
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-center mb-14">
-            Program Advantages &amp; Strategic Benefits
+            {t("Program Advantages & Strategic Benefits", "مزایای برنامه و منافع راهبردی")}
           </h2>
         </Reveal>
 
@@ -96,9 +112,9 @@ export default function Benefits() {
                   <span className="w-6 h-6">{b.icon}</span>
                 </div>
                 <h3 className="text-[16px] font-semibold text-black mb-2 tracking-[-0.015em]">
-                  {b.title}
+                  {t(b.title, b.titleFa)}
                 </h3>
-                <p className="text-[13.5px] text-[#929292] leading-[1.6] m-0">{b.desc}</p>
+                <p className="text-[13.5px] text-[#929292] leading-[1.6] m-0">{t(b.desc, b.descFa)}</p>
               </div>
             ))}
           </div>
@@ -118,8 +134,8 @@ export default function Benefits() {
                 >
                   <span className="w-5 h-5">{b.icon}</span>
                 </div>
-                <h3 className="text-[15px] font-semibold text-black mb-1.5">{b.title}</h3>
-                <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{b.desc}</p>
+                <h3 className="text-[15px] font-semibold text-black mb-1.5">{t(b.title, b.titleFa)}</h3>
+                <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{t(b.desc, b.descFa)}</p>
               </div>
             </Reveal>
           ))}

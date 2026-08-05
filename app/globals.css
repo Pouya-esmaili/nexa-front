@@ -44,6 +44,50 @@
   font-display: swap;
 }
 
+/* ====== IRANSansX Local Font (Persian) ====== */
+
+@font-face {
+  font-family: "IRANSansX";
+  src: url("/fonts/IRANSansX-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANSansX";
+  src: url("/fonts/IRANSansX-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANSansX";
+  src: url("/fonts/IRANSansX-DemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANSansX";
+  src: url("/fonts/IRANSansX-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANSansX";
+  src: url("/fonts/IRANSansX-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANSansX";
+  src: url("/fonts/IRANSansX-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-display: swap;
+}
+
 /* ====== Theme Config ====== */
 
 :root {
@@ -75,6 +119,11 @@ body {
   font-family: var(--font-primary);
   overflow-x: clip;
   max-width: 100%;
+}
+
+/* ====== Persian language: swap to IRANSansX (layout stays LTR) ====== */
+html[lang="fa"] body {
+  font-family: "IRANSansX", var(--font-primary), sans-serif;
 }
 
 *, *::before, *::after {

@@ -2,15 +2,24 @@
 
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const cards = [
   {
     title: "Minimum Capital Investment",
+    titleFa: "حداقل سرمایه‌گذاری",
     text: (
       <>
         A minimum of <strong className="text-white font-semibold">€4,500</strong> in unencumbered
         personal equity must be injected directly into your Dutch business entity. Cannot be sourced
         from unapproved loans or credit lines.
+      </>
+    ),
+    textFa: (
+      <>
+        حداقل <strong className="text-white font-semibold">۴٬۵۰۰ یورو</strong> سرمایه‌ی شخصی بدون قید
+        باید مستقیماً به نهاد تجاری هلندی شما تزریق شود. نمی‌تواند از وام‌ها یا خطوط اعتباری
+        تأییدنشده تأمین شود.
       </>
     ),
     icon: (
@@ -22,11 +31,18 @@ const cards = [
   },
   {
     title: "Bank Statement Runway",
+    titleFa: "پشتوانه‌ی صورت‌حساب بانکی",
     text: (
       <>
         A <strong className="text-white font-semibold">3 to 6-month bank statement</strong> proving
         continuous personal income at or above the Dutch minimum wage threshold, with clean capital
         origin pathways.
+      </>
+    ),
+    textFa: (
+      <>
+        یک <strong className="text-white font-semibold">صورت‌حساب بانکی ۳ تا ۶ ماهه</strong> که درآمد
+        شخصی پیوسته در حد یا بالاتر از آستانه‌ی حداقل دستمزد هلند را با مسیرهای پاک منشأ سرمایه اثبات کند.
       </>
     ),
     icon: (
@@ -40,11 +56,19 @@ const cards = [
   },
   {
     title: "No Single-Client Operations",
+    titleFa: "بدون فعالیت تک‌مشتری",
     text: (
       <>
         Relying on a <strong className="text-white font-semibold">single primary client mirrors employment</strong>{" "}
         and triggers RVO rejection. Your pipeline must prove multiple B2B relationships, independent
         risk, and separate marketing infrastructure.
+      </>
+    ),
+    textFa: (
+      <>
+        اتکا به یک <strong className="text-white font-semibold">مشتری اصلی واحد، شبیه اشتغال است</strong>{" "}
+        و موجب رد شدن از سوی RVO می‌شود. خط لوله‌ی شما باید چند رابطه‌ی B2B، ریسک مستقل و زیرساخت
+        بازاریابی جداگانه را اثبات کند.
       </>
     ),
     icon: (
@@ -58,6 +82,7 @@ const cards = [
 ];
 
 export default function Financials() {
+  const { t, lang } = useLang();
   return (
     <section className="py-20 md:py-24 relative overflow-hidden" style={{ background: "#000000" }}>
       <div
@@ -68,7 +93,7 @@ export default function Financials() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-center text-white mb-14">
-            Financial Self-Sufficiency Requirements
+            {t("Financial Self-Sufficiency Requirements", "الزامات خودکفایی مالی")}
           </h2>
         </Reveal>
 
@@ -83,34 +108,39 @@ export default function Financials() {
                 className="self-start text-[11px] font-bold tracking-[0.12em] uppercase px-3.5 py-1.5 rounded-full"
                 style={{ background: "rgba(255,230,0,0.12)", border: "1px solid rgba(255,230,0,0.3)", color: "#FFE600" }}
               >
-                Monthly Income Baseline
+                {t("Monthly Income Baseline", "پایه‌ی درآمد ماهانه")}
               </span>
 
               <div>
                 <span
                   className="text-[64px] sm:text-[72px] font-bold tracking-[-0.04em] leading-[0.9] text-white tabular-nums"
                 >
-                  €1,734
+                  {t("€1,734", "۱٬۷۳۴ یورو")}
                 </span>
               </div>
 
               <p className="text-[14px] leading-[1.65]" style={{ color: "#B5B5BA" }}>
-                Minimum gross monthly personal income required — equal to the Dutch single-person{" "}
+                {t("Minimum gross monthly personal income required — equal to the Dutch single-person", "حداقل درآمد ناخالص ماهانه‌ی شخصی موردنیاز — برابر با استاندارد")}{" "}
                 <strong className="font-semibold" style={{ color: "#FFE600" }}>levensonderhoud</strong>{" "}
-                standard for 2026, inclusive of the 8% mandatory holiday allowance.
+                {t("standard for 2026, inclusive of the 8% mandatory holiday allowance.", "تک‌نفره‌ی هلند برای سال ۲۰۲۶، شامل کمک‌هزینه‌ی مرخصی الزامی ۸٪.")}
               </p>
 
               <div
                 className="flex flex-wrap gap-2 mt-auto pt-4"
                 style={{ borderTop: "1px solid #1f1f24" }}
               >
-                {["Signed B2B contracts", "Letters of Intent (LOIs)", "MOUs with Dutch firms", "Audited balance sheets"].map((chip) => (
+                {[
+                  { en: "Signed B2B contracts", fa: "قراردادهای B2B امضاشده" },
+                  { en: "Letters of Intent (LOIs)", fa: "نامه‌های اعلام قصد (LOI)" },
+                  { en: "MOUs with Dutch firms", fa: "تفاهم‌نامه‌ها با شرکت‌های هلندی" },
+                  { en: "Audited balance sheets", fa: "ترازنامه‌های حسابرسی‌شده" },
+                ].map((chip) => (
                   <span
-                    key={chip}
+                    key={chip.en}
                     className="text-[12px] px-3 py-1.5 rounded-full font-medium text-white"
                     style={{ border: "1px solid #2a2a30" }}
                   >
-                    {chip}
+                    {t(chip.en, chip.fa)}
                   </span>
                 ))}
               </div>
@@ -143,9 +173,9 @@ export default function Financials() {
                     <span className="w-5 h-5">{card.icon}</span>
                   </div>
                   <div>
-                    <h4 className="text-[14px] font-semibold text-white mb-1">{card.title}</h4>
+                    <h4 className="text-[14px] font-semibold text-white mb-1">{t(card.title, card.titleFa)}</h4>
                     <p className="text-[13px] leading-[1.6] m-0" style={{ color: "#B5B5BA" }}>
-                      {card.text}
+                      {lang === "fa" ? card.textFa : card.text}
                     </p>
                   </div>
                 </div>

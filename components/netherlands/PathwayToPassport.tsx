@@ -4,51 +4,69 @@ import { useState } from "react";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
 import IconArrow from '@/components/global/IconArrow';
+import { useLang } from "@/components/global/LanguageProvider";
 
 const stages = [
   {
     num: "01",
     label: "Startup Visa",
+    labelFa: "ویزای استارتاپ",
     year: "Year 1",
+    yearFa: "سال ۱",
     detail: {
       title: "Startup Visa (1 Year)",
+      titleFa: "ویزای استارتاپ (۱ سال)",
       desc: "Build your venture under a 1-year residence permit. Side employment is permitted. Permit stays valid until expiry even if the startup closes.",
+      descFa: "کسب‌وکار خود را با مجوز اقامت ۱ ساله بسازید. اشتغال جانبی مجاز است. حتی اگر استارتاپ تعطیل شود، مجوز تا انقضا معتبر می‌ماند.",
     },
     active: true,
   },
   {
     num: "02",
     label: "Self-Employed Permit",
+    labelFa: "مجوز خوداشتغالی",
     year: "Year 1–5",
+    yearFa: "سال ۱ تا ۵",
     detail: {
       title: "Self-Employed Transition",
+      titleFa: "گذار به خوداشتغالی",
       desc: "At year-end, transition to a Self-Employed Residence Permit. Your facilitator issues a formal positive assessment verifying your startup's evolution into an active, operational business.",
+      descFa: "در پایان سال، به یک مجوز اقامت خوداشتغالی گذار کنید. تسهیل‌گر شما یک ارزیابی مثبت رسمی صادر می‌کند که تبدیل استارتاپ شما به یک کسب‌وکار فعال و عملیاتی را تأیید می‌کند.",
     },
     active: false,
   },
   {
     num: "03",
     label: "Permanent Residency",
+    labelFa: "اقامت دائم",
     year: "Year 5",
+    yearFa: "سال ۵",
     detail: {
       title: "Permanent Residency",
+      titleFa: "اقامت دائم",
       desc: "After 5 years of continuous legal residence, apply for an EU Long-Term Resident Permit or Dutch Permanent Residence Card. Your legal right to stay fully uncouples from your business.",
+      descFa: "پس از ۵ سال اقامت قانونی پیوسته، برای مجوز اقامت بلندمدت اتحادیه اروپا یا کارت اقامت دائم هلند درخواست دهید. حق قانونی اقامت شما به‌طور کامل از کسب‌وکارتان مستقل می‌شود.",
     },
     active: false,
   },
   {
     num: "04",
     label: "Dutch Citizenship",
+    labelFa: "تابعیت هلند",
     year: "Year 5+",
+    yearFa: "سال ۵ به بعد",
     detail: {
       title: "Dutch Citizenship",
+      titleFa: "تابعیت هلند",
       desc: "At 5 years, apply for naturalization. Requires civic integration exam (Inburgering), Dutch language at A2 level, and renunciation of original nationality (with limited statutory exemptions).",
+      descFa: "در ۵ سالگی برای تابعیت‌پذیری درخواست دهید. نیازمند آزمون ادغام مدنی (Inburgering)، زبان هلندی در سطح A2 و انصراف از تابعیت اصلی (با معافیت‌های قانونی محدود) است.",
     },
     active: false,
   },
 ];
 
 export default function PathwayToPassport() {
+  const { t } = useLang();
   const [openMobile, setOpenMobile] = useState(0);
   const [selectedDesktop, setSelectedDesktop] = useState(0);
 
@@ -57,7 +75,7 @@ export default function PathwayToPassport() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10 md:mb-14">
-            Long-Term Pathways
+            {t("Long-Term Pathways", "مسیرهای بلندمدت")}
           </h2>
         </Reveal>
 
@@ -88,12 +106,12 @@ export default function PathwayToPassport() {
                   >
                     {s.num}
                   </div>
-                  <div className="text-[15px] font-semibold mb-1">{s.label}</div>
+                  <div className="text-[15px] font-semibold mb-1">{t(s.label, s.labelFa)}</div>
                   <span
                     className="text-[12px] font-semibold px-2.5 py-0.5 rounded-full"
                     style={{ background: "#FAF6FF", color: "#8F27FF" }}
                   >
-                    {s.year}
+                    {t(s.year, s.yearFa)}
                   </span>
                 </div>
               </Reveal>
@@ -108,8 +126,8 @@ export default function PathwayToPassport() {
                   className="h-full rounded-[14px] p-5 transition-all hover:border-[rgba(143,39,255,0.3)] hover:bg-[#FAF6FF]"
                   style={{ background: "#F7F6F9", border: "1px solid #E2E2E2" }}
                 >
-                  <h5 className="text-[14px] font-semibold mb-2">{s.detail.title}</h5>
-                  <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{s.detail.desc}</p>
+                  <h5 className="text-[14px] font-semibold mb-2">{t(s.detail.title, s.detail.titleFa)}</h5>
+                  <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{t(s.detail.desc, s.detail.descFa)}</p>
                 </div>
               </Reveal>
             ))}
@@ -134,19 +152,19 @@ export default function PathwayToPassport() {
                   {s.num}
                 </div>
                 <div className="flex-1">
-                  <div className="text-[14px] font-semibold">{s.label}</div>
+                  <div className="text-[14px] font-semibold">{t(s.label, s.labelFa)}</div>
                   <span
                     className="text-[11px] font-semibold px-2 py-0.5 rounded-full inline-block mt-0.5"
                     style={{ background: "#FAF6FF", color: "#8F27FF" }}
                   >
-                    {s.year}
+                    {t(s.year, s.yearFa)}
                   </span>
                 </div>
                 <IconArrow className="w-4 h-4 transition-transform" style={{ transform: openMobile === i ? 'rotate(180deg)' : undefined }} />
               </button>
               {openMobile === i && (
                 <div className="px-5 pb-4 pl-[70px] text-[13.5px] text-[#474747] leading-[1.6]">
-                  {s.detail.desc}
+                  {t(s.detail.desc, s.detail.descFa)}
                 </div>
               )}
             </div>

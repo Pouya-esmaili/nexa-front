@@ -1,17 +1,21 @@
+"use client";
+
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const rows = [
-  { label: "1 Person (Main Applicant)", amount: "$15,263" },
-  { label: "2 People", sub: "Applicant + Spouse", amount: "$19,001" },
-  { label: "3 People", amount: "$23,360" },
-  { label: "4 People", amount: "$28,362" },
-  { label: "5 People", amount: "$32,168" },
-  { label: "6 People", amount: "$36,280" },
-  { label: "Each Additional Member", sub: "Dynamic scaling rule", amount: "+$4,112" },
+  { label: "1 Person (Main Applicant)", labelFa: "۱ نفر (متقاضی اصلی)", amount: "$15,263", amountFa: "۱۵٬۲۶۳ دلار" },
+  { label: "2 People", labelFa: "۲ نفر", sub: "Applicant + Spouse", subFa: "متقاضی + همسر", amount: "$19,001", amountFa: "۱۹٬۰۰۱ دلار" },
+  { label: "3 People", labelFa: "۳ نفر", amount: "$23,360", amountFa: "۲۳٬۳۶۰ دلار" },
+  { label: "4 People", labelFa: "۴ نفر", amount: "$28,362", amountFa: "۲۸٬۳۶۲ دلار" },
+  { label: "5 People", labelFa: "۵ نفر", amount: "$32,168", amountFa: "۳۲٬۱۶۸ دلار" },
+  { label: "6 People", labelFa: "۶ نفر", amount: "$36,280", amountFa: "۳۶٬۲۸۰ دلار" },
+  { label: "Each Additional Member", labelFa: "هر عضو اضافی", sub: "Dynamic scaling rule", subFa: "قاعده‌ی مقیاس‌بندی پویا", amount: "+$4,112", amountFa: "+۴٬۱۱۲ دلار" },
 ];
 
 export default function Financials() {
+  const { t } = useLang();
   return (
     <section className="py-20 md:py-24 bg-black relative overflow-hidden">
       <div className="pointer-events-none absolute -bottom-[100px] -right-[100px] w-[500px] h-[500px] rounded-full"
@@ -20,7 +24,7 @@ export default function Financials() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center text-white mb-14">
-            Settlement Funds & Personal Maintenance
+            {t("Settlement Funds & Personal Maintenance", "وجوه استقرار و تأمین معاش شخصی")}
           </h2>
         </Reveal>
 
@@ -32,16 +36,20 @@ export default function Financials() {
               style={{ background: "#0E0E10", border: "1px solid #1f1f24" }}>
               <span className="self-start text-[11px] font-bold tracking-[0.12em] uppercase px-3.5 py-1.5 rounded-full text-[#FFE600]"
                 style={{ background: "rgba(255,230,0,0.12)", border: "1px solid rgba(255,230,0,0.3)" }}>
-                Cannot Be Borrowed
+                {t("Cannot Be Borrowed", "قابل قرض گرفتن نیست")}
               </span>
-              <div className="text-[72px] font-bold tracking-[-0.04em] leading-none text-white">$15.2K</div>
+              <div className="text-[72px] font-bold tracking-[-0.04em] leading-none text-white">{t("$15.2K", "۱۵٫۲ هزار دلار")}</div>
               <p className="text-[14px] text-[#B5B5BA] leading-[1.65]">
-                Minimum personal funds for a <strong className="text-[#FFE600] font-semibold">solo applicant</strong> in CAD — unencumbered, liquid, and <strong className="text-[#FFE600] font-semibold">cannot come from lines of credit or third parties</strong>.
+                {t("Minimum personal funds for a", "حداقل وجوه شخصی برای یک")} <strong className="text-[#FFE600] font-semibold">{t("solo applicant", "متقاضی منفرد")}</strong> {t("in CAD — unencumbered, liquid, and", "به دلار کانادا — بدون قید، نقدشونده، و")} <strong className="text-[#FFE600] font-semibold">{t("cannot come from lines of credit or third parties", "نمی‌تواند از خطوط اعتباری یا اشخاص ثالث تأمین شود")}</strong>{t(".", ".")}
               </p>
               <div className="flex flex-wrap gap-2 mt-auto pt-5" style={{ borderTop: "1px solid #1f1f24" }}>
-                {["Certified bank statements (4–6 months)", "Institution letters", "Fixed-term certificates"].map((chip) => (
-                  <span key={chip} className="text-[12px] px-3 py-1.5 rounded-full text-white font-medium"
-                    style={{ border: "1px solid #2a2a30" }}>{chip}</span>
+                {[
+                  { en: "Certified bank statements (4–6 months)", fa: "صورت‌حساب‌های بانکی تأییدشده (۴ تا ۶ ماه)" },
+                  { en: "Institution letters", fa: "نامه‌های مؤسسه" },
+                  { en: "Fixed-term certificates", fa: "گواهی‌های مدت‌دار" },
+                ].map((chip) => (
+                  <span key={chip.en} className="text-[12px] px-3 py-1.5 rounded-full text-white font-medium"
+                    style={{ border: "1px solid #2a2a30" }}>{t(chip.en, chip.fa)}</span>
                 ))}
               </div>
             </div>
@@ -53,10 +61,10 @@ export default function Financials() {
                   className="rounded-[8px] px-5 py-3.5 flex justify-between items-center gap-4 transition-all duration-200 hover:border-[rgba(143,39,255,0.3)]"
                   style={{ background: "#0E0E10", border: "1px solid #1f1f24" }}>
                   <div>
-                    <div className="text-[13px] text-white font-semibold">{r.label}</div>
-                    {r.sub && <div className="text-[12px] text-[#B5B5BA]">{r.sub}</div>}
+                    <div className="text-[13px] text-white font-semibold">{t(r.label, r.labelFa)}</div>
+                    {r.sub && <div className="text-[12px] text-[#B5B5BA]">{t(r.sub, r.subFa)}</div>}
                   </div>
-                  <div className="text-[20px] font-bold text-[#FFE600] tracking-[-0.02em] whitespace-nowrap">{r.amount}</div>
+                  <div className="text-[20px] font-bold text-[#FFE600] tracking-[-0.02em] whitespace-nowrap">{t(r.amount, r.amountFa)}</div>
                 </div>
               ))}
             </div>

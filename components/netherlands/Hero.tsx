@@ -3,14 +3,16 @@
 import Link from "next/link";
 import Row from "@/components/global/Row";
 import { useEffect, useState } from "react";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const stats = [
-  { num: "1 yr", label: "Initial Permit" },
-  { num: "€21K", label: "Solo Threshold" },
-  { num: "5 yr", label: "Path to PR" },
+  { num: "1 yr", numFa: "۱ سال", label: "Initial Permit", labelFa: "مجوز اولیه" },
+  { num: "€21K", numFa: "۲۱ هزار یورو", label: "Solo Threshold", labelFa: "آستانه‌ی انفرادی" },
+  { num: "5 yr", numFa: "۵ سال", label: "Path to PR", labelFa: "مسیر اقامت دائم" },
 ];
 
 export default function Hero() {
+  const { t } = useLang();
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     const t = setTimeout(() => setMounted(true), 80);
@@ -37,16 +39,16 @@ export default function Hero() {
           style={{ background: "#0f1f2e url('/images/photos/1512470876302-972faa2aa9a4-w900.jpg') center/cover" }}
         />
         <h1 className={`text-3xl font-bold leading-tight tracking-tight mb-4 ${base} duration-600 delay-150 ${mounted ? show : hideUp}`}>
-          Scale your <span className="text-[#8F27FF]">innovative venture</span> inside the European Union.
+          {t("Scale your", "")} <span className="text-[#8F27FF]">{t("innovative venture", "کسب‌وکار نوآورانه‌ی")}</span> {t("inside the European Union.", "خود را در دل اتحادیه اروپا مقیاس دهید.")}
         </h1>
         <p className={`text-sm text-gray-600 leading-relaxed mb-6 ${base} duration-600 delay-200 ${mounted ? show : hideUp}`}>
-          The Netherlands Startup Visa gives non-EU founders a structured, institutionally supported entry into one of Europe's most competitive digital economies — no complex capital scoring, no minimum investment floor.
+          {t("The Netherlands Startup Visa gives non-EU founders a structured, institutionally supported entry into one of Europe's most competitive digital economies — no complex capital scoring, no minimum investment floor.", "ویزای استارتاپ هلند به بنیان‌گذاران خارج از اتحادیه اروپا ورودی ساختارمند و مورد حمایت نهادی به یکی از رقابتی‌ترین اقتصادهای دیجیتال اروپا می‌دهد — بدون امتیازدهی پیچیده‌ی سرمایه و بدون کف حداقلی سرمایه‌گذاری.")}
         </p>
         <div className={`grid grid-cols-3 gap-4 py-6 border-t border-b border-gray-200 mb-6 ${base} duration-600 delay-300 ${mounted ? show : hideUp}`}>
           {stats.map((s) => (
             <div key={s.label} className="text-center">
-              <div className="text-xl font-extrabold tracking-tight">{s.num}</div>
-              <div className="text-[11px] text-gray-500 font-medium mt-1 uppercase tracking-wide">{s.label}</div>
+              <div className="text-xl font-extrabold tracking-tight">{t(s.num, s.numFa)}</div>
+              <div className="text-[11px] text-gray-500 font-medium mt-1 uppercase tracking-wide">{t(s.label, s.labelFa)}</div>
             </div>
           ))}
         </div>
@@ -54,7 +56,7 @@ export default function Hero() {
           href="#contact"
           className={`inline-flex items-center gap-2 px-6 py-3 bg-[#8F27FF] text-white font-semibold rounded-full text-sm ${base} duration-500 delay-[400ms] ${mounted ? show : hideUp}`}
         >
-          Book an Appointment →
+          {t("Book an Appointment →", "رزرو وقت ملاقات →")}
         </Link>
       </div>
 
@@ -64,16 +66,16 @@ export default function Hero() {
           <div className="grid grid-cols-[1.1fr_0.9fr] gap-16 items-center">
             <div>
               <h1 className={`text-[48px] font-bold leading-[1.06] tracking-[-0.03em] mb-6 ${base} duration-700 delay-100 ${mounted ? show : hideLeft}`}>
-                Scale your <span className="text-[#8F27FF]">innovative venture</span> inside the European Union.
+                {t("Scale your", "")} <span className="text-[#8F27FF]">{t("innovative venture", "کسب‌وکار نوآورانه‌ی")}</span> {t("inside the European Union.", "خود را در دل اتحادیه اروپا مقیاس دهید.")}
               </h1>
               <p className={`text-[16px] text-[#474747] leading-[1.65] mb-8 max-w-[520px] ${base} duration-700 delay-200 ${mounted ? show : hideLeft}`}>
-                The Netherlands Startup Visa gives non-EU founders a structured, institutionally supported entry into one of Europe&apos;s most competitive digital economies — no complex capital scoring, no minimum investment floor.
+                {t("The Netherlands Startup Visa gives non-EU founders a structured, institutionally supported entry into one of Europe's most competitive digital economies — no complex capital scoring, no minimum investment floor.", "ویزای استارتاپ هلند به بنیان‌گذاران خارج از اتحادیه اروپا ورودی ساختارمند و مورد حمایت نهادی به یکی از رقابتی‌ترین اقتصادهای دیجیتال اروپا می‌دهد — بدون امتیازدهی پیچیده‌ی سرمایه و بدون کف حداقلی سرمایه‌گذاری.")}
               </p>
               <div className={`grid grid-cols-3 py-6 border-t border-b border-gray-200 mb-9 ${base} duration-700 delay-300 ${mounted ? show : hideLeft}`}>
                 {stats.map((s) => (
                   <div key={s.label} className="text-center">
-                    <div className="text-[26px] font-bold tracking-[-0.03em] leading-none">{s.num}</div>
-                    <div className="text-[11px] text-gray-500 font-medium mt-2 uppercase tracking-widest">{s.label}</div>
+                    <div className="text-[26px] font-bold tracking-[-0.03em] leading-none">{t(s.num, s.numFa)}</div>
+                    <div className="text-[11px] text-gray-500 font-medium mt-2 uppercase tracking-widest">{t(s.label, s.labelFa)}</div>
                   </div>
                 ))}
               </div>
@@ -82,7 +84,7 @@ export default function Hero() {
                 className={`inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5 ${base} duration-500 delay-[400ms] ${mounted ? show : hideLeft}`}
                 style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
               >
-                Book an Appointment →
+                {t("Book an Appointment →", "رزرو وقت ملاقات →")}
               </Link>
             </div>
 

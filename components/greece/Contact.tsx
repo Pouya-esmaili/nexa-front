@@ -4,10 +4,12 @@ import { useState, FormEvent } from "react";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
 import PhoneField from "@/components/global/PhoneField";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const inputCls = "font-[inherit] text-[14px] bg-white border border-[#E2E2E2] rounded-[10px] px-[14px] py-3 text-black font-medium transition-all duration-150 outline-none focus:border-[#8F27FF] focus:shadow-[0_0_0_3px_rgba(143,39,255,0.12)] w-full";
 
 export default function Contact() {
+  const { t } = useLang();
   const [sent, setSent] = useState(false);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -42,7 +44,7 @@ export default function Contact() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10">
-            Start Your Greece Golden Visa Journey
+            {t("Start Your Greece Golden Visa Journey", "سفر ویزای طلایی یونان خود را آغاز کنید")}
           </h2>
         </Reveal>
 
@@ -68,10 +70,10 @@ export default function Contact() {
                 </svg>
               </div>
 
-              <h3 className="text-[22px] font-bold">Thank you!</h3>
+              <h3 className="text-[22px] font-bold">{t("Thank you!", "سپاسگزاریم!")}</h3>
 
               <p className="text-gray-500 text-[15px]">
-                A Nexa advisor will reach out within 48 hours.
+                {t("A Nexa advisor will reach out within 48 hours.", "یک مشاور نکسا ظرف ۴۸ ساعت با شما تماس خواهد گرفت.")}
               </p>
             </div>
           </Reveal>
@@ -84,15 +86,15 @@ export default function Contact() {
               {/* Row 1 */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
                 <label className="flex flex-col gap-2 text-[13px] font-medium text-black">
-                  <span>First Name <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
-                  <input name="firstName" type="text" required placeholder="Your first name" className={inputCls} />
+                  <span>{t("First Name", "نام")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <input name="firstName" type="text" required placeholder={t("Your first name", "نام شما")} className={inputCls} />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium text-black">
-                  <span>Last Name <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
-                  <input name="lastName" type="text" required placeholder="Your last name" className={inputCls} />
+                  <span>{t("Last Name", "نام خانوادگی")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <input name="lastName" type="text" required placeholder={t("Your last name", "نام خانوادگی شما")} className={inputCls} />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium text-black">
-                  <span>Email <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <span>{t("Email", "ایمیل")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
                   <input name="email" type="email" required placeholder="you@example.com" className={inputCls} />
                 </label>
               </div>
@@ -100,26 +102,26 @@ export default function Contact() {
               {/* Row 2 */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
                 <label className="flex flex-col gap-2 text-[13px] font-medium text-black">
-                  <span>Phone Number <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <span>{t("Phone Number", "شماره تماس")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
                   <PhoneField name="phone" defaultCountryCode="+30" bg="white" />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium text-black">
-                  <span>Investment Tier</span>
+                  <span>{t("Investment Tier", "سطح سرمایه‌گذاری")}</span>
                   <select className={inputCls}>
-                    <option>€800,000 — Prime Markets</option>
-                    <option>€400,000 — Regional Zones</option>
-                    <option>€250,000 — Special Category</option>
-                    <option>€500,000 — Financial Instruments</option>
-                    <option>Exploring Options</option>
+                    <option>{t("€800,000 — Prime Markets", "۸۰۰٬۰۰۰ یورو — بازارهای درجه‌یک")}</option>
+                    <option>{t("€400,000 — Regional Zones", "۴۰۰٬۰۰۰ یورو — مناطق منطقه‌ای")}</option>
+                    <option>{t("€250,000 — Special Category", "۲۵۰٬۰۰۰ یورو — دسته‌ی ویژه")}</option>
+                    <option>{t("€500,000 — Financial Instruments", "۵۰۰٬۰۰۰ یورو — ابزارهای مالی")}</option>
+                    <option>{t("Exploring Options", "در حال بررسی گزینه‌ها")}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium text-black">
-                  <span>Family Composition</span>
+                  <span>{t("Family Composition", "ترکیب خانواده")}</span>
                   <select className={inputCls}>
-                    <option>Main applicant only</option>
-                    <option>Main applicant + spouse</option>
-                    <option>Full family (children included)</option>
-                    <option>Three-generation (parents included)</option>
+                    <option>{t("Main applicant only", "فقط متقاضی اصلی")}</option>
+                    <option>{t("Main applicant + spouse", "متقاضی اصلی + همسر")}</option>
+                    <option>{t("Full family (children included)", "خانواده‌ی کامل (شامل فرزندان)")}</option>
+                    <option>{t("Three-generation (parents included)", "سه‌نسلی (شامل والدین)")}</option>
                   </select>
                 </label>
               </div>
@@ -127,10 +129,10 @@ export default function Contact() {
               {/* Textarea */}
               <div className="mb-5">
                 <label className="flex flex-col gap-2 text-[13px] font-medium text-black">
-                  <span>Tell us about your goals & investment profile</span>
+                  <span>{t("Tell us about your goals & investment profile", "درباره‌ی اهداف و پروفایل سرمایه‌گذاری خود به ما بگویید")}</span>
                   <textarea
                     rows={4}
-                    placeholder="Describe your investment interests, preferred region in Greece, family situation, and long-term residency goals…"
+                    placeholder={t("Describe your investment interests, preferred region in Greece, family situation, and long-term residency goals…", "علایق سرمایه‌گذاری، منطقه‌ی موردنظر در یونان، وضعیت خانوادگی و اهداف بلندمدت اقامتی خود را شرح دهید…")}
                     name="message"
                     className={`${inputCls} resize-y min-h-[110px]`}
                   />
@@ -140,14 +142,14 @@ export default function Contact() {
               {/* Footer */}
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mt-2">
                 <small className="text-[12px] text-[#929292] leading-[1.5]">
-                  Your information is reviewed confidentially by Nexa&apos;s advisory team. We typically respond within 48 hours.
+                  {t("Your information is reviewed confidentially by Nexa's advisory team. We typically respond within 48 hours.", "اطلاعات شما به‌صورت محرمانه توسط تیم مشاوره‌ی نکسا بررسی می‌شود. ما معمولاً ظرف ۴۸ ساعت پاسخ می‌دهیم.")}
                 </small>
                 <button
                   type="submit"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-[10px] px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5 flex-shrink-0"
                   style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
                 >
-                  Submit Application →
+                  {t("Submit Application →", "ارسال درخواست →")}
                 </button>
               </div>
             </form>

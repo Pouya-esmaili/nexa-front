@@ -4,27 +4,29 @@ import { useState } from "react";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
 import IconArrow from '@/components/global/IconArrow';
+import { useLang } from "@/components/global/LanguageProvider";
 
 const stages = [
   {
-    num: "01", label: "D2 Residence Card", year: "Years 1–2",
-    detail: { title: "D2 Residence Card (2 Years)", body: "Build and operate your venture in Portugal. Secondary employment and freelance contracts permitted. Family included with unrestricted work rights." },
+    num: "01", label: "D2 Residence Card", labelFa: "کارت اقامت D2", year: "Years 1–2", yearFa: "سال‌های ۱ تا ۲",
+    detail: { title: "D2 Residence Card (2 Years)", titleFa: "کارت اقامت D2 (۲ سال)", body: "Build and operate your venture in Portugal. Secondary employment and freelance contracts permitted. Family included with unrestricted work rights.", bodyFa: "کسب‌وکار خود را در پرتغال بسازید و اداره کنید. اشتغال ثانویه و قراردادهای آزاد مجاز است. خانواده با حقوق کار نامحدود گنجانده می‌شوند." },
   },
   {
-    num: "02", label: "3-Year Renewal", year: "Year 2",
-    detail: { title: "3-Year Renewal", body: "Show active corporate continuity — operational business, tax compliance, clean accounting. Must maintain minimum 6 consecutive or 8 alternate months in Portugal per validity period." },
+    num: "02", label: "3-Year Renewal", labelFa: "تمدید ۳ ساله", year: "Year 2", yearFa: "سال ۲",
+    detail: { title: "3-Year Renewal", titleFa: "تمدید ۳ ساله", body: "Show active corporate continuity — operational business, tax compliance, clean accounting. Must maintain minimum 6 consecutive or 8 alternate months in Portugal per validity period.", bodyFa: "تداوم شرکتی فعال را نشان دهید — کسب‌وکار عملیاتی، انطباق مالیاتی، حسابداری پاک. باید حداقل ۶ ماه متوالی یا ۸ ماه متناوب در هر دوره‌ی اعتبار در پرتغال بمانید." },
   },
   {
-    num: "03", label: "Permanent Residency", year: "Year 5",
-    detail: { title: "Permanent Residency", body: "After 5 continuous years, apply for permanent residence. Legal status fully uncouples from your business — complete professional freedom across Portugal and the EU." },
+    num: "03", label: "Permanent Residency", labelFa: "اقامت دائم", year: "Year 5", yearFa: "سال ۵",
+    detail: { title: "Permanent Residency", titleFa: "اقامت دائم", body: "After 5 continuous years, apply for permanent residence. Legal status fully uncouples from your business — complete professional freedom across Portugal and the EU.", bodyFa: "پس از ۵ سال پیوسته، برای اقامت دائم درخواست دهید. وضعیت قانونی به‌طور کامل از کسب‌وکار شما مستقل می‌شود — آزادی حرفه‌ای کامل در سراسر پرتغال و اتحادیه اروپا." },
   },
   {
-    num: "04", label: "Portuguese Citizenship", year: "Year 5",
-    detail: { title: "Portuguese Citizenship", body: "Also eligible at year 5. Requires a clean criminal record and passing the CIPLE exam at A2 Portuguese level. Dual citizenship fully permitted — no renunciation required." },
+    num: "04", label: "Portuguese Citizenship", labelFa: "تابعیت پرتغال", year: "Year 5", yearFa: "سال ۵",
+    detail: { title: "Portuguese Citizenship", titleFa: "تابعیت پرتغال", body: "Also eligible at year 5. Requires a clean criminal record and passing the CIPLE exam at A2 Portuguese level. Dual citizenship fully permitted — no renunciation required.", bodyFa: "همچنین در سال ۵ واجد شرایط. نیازمند سوءپیشینه‌ی پاک و قبولی در آزمون CIPLE در سطح A2 پرتغالی است. تابعیت دوگانه کاملاً مجاز است — بدون نیاز به انصراف." },
   },
 ];
 
 export default function PathwayToPassport() {
+  const { t } = useLang();
   const [openMobile, setOpenMobile] = useState<number | null>(0);
   const [selectedDesktop, setSelectedDesktop] = useState(0);
 
@@ -33,7 +35,7 @@ export default function PathwayToPassport() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-12">
-            Long-Term Horizons
+            {t("Long-Term Horizons", "افق‌های بلندمدت")}
           </h2>
         </Reveal>
 
@@ -59,8 +61,8 @@ export default function PathwayToPassport() {
                     }}
                     onClick={() => setSelectedDesktop(i)}
                   >{s.num}</div>
-                  <div className="text-[15px] font-semibold mb-1">{s.label}</div>
-                  <div className="text-[12px] font-semibold px-2.5 py-[3px] rounded-full" style={{ color: "#8F27FF", background: "#FAF6FF" }}>{s.year}</div>
+                  <div className="text-[15px] font-semibold mb-1">{t(s.label, s.labelFa)}</div>
+                  <div className="text-[12px] font-semibold px-2.5 py-[3px] rounded-full" style={{ color: "#8F27FF", background: "#FAF6FF" }}>{t(s.year, s.yearFa)}</div>
                 </div>
               ))}
             </div>
@@ -70,8 +72,8 @@ export default function PathwayToPassport() {
             {stages.map((s, i) => (
               <Reveal key={s.num} variant="up" delay={i * 80 + 200} className="h-full">
                 <div className="h-full bg-[#F7F6F9] border border-[#E2E2E2] rounded-[14px] p-5 transition-all duration-200 hover:border-[rgba(143,39,255,0.18)] hover:bg-[#FAF6FF]">
-                  <h5 className="text-[14px] font-semibold mb-2">{s.detail.title}</h5>
-                  <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{s.detail.body}</p>
+                  <h5 className="text-[14px] font-semibold mb-2">{t(s.detail.title, s.detail.titleFa)}</h5>
+                  <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{t(s.detail.body, s.detail.bodyFa)}</p>
                 </div>
               </Reveal>
             ))}
@@ -93,13 +95,13 @@ export default function PathwayToPassport() {
                     {s.num}
                   </div>
                   <div className="flex-1">
-                    <div className="text-[14px] font-semibold">{s.label}</div>
-                    <div className="text-[11px] font-semibold text-[#8F27FF]">{s.year}</div>
+                    <div className="text-[14px] font-semibold">{t(s.label, s.labelFa)}</div>
+                    <div className="text-[11px] font-semibold text-[#8F27FF]">{t(s.year, s.yearFa)}</div>
                   </div>
                   <IconArrow className="w-4 h-4 transition-transform" style={{ transform: openMobile === i ? 'rotate(180deg)' : undefined }} />
                 </button>
                 {openMobile === i && (
-                  <div className="px-5 pb-4 pl-[70px] text-[13.5px] text-[#474747] leading-[1.6]">{s.detail.body}</div>
+                  <div className="px-5 pb-4 pl-[70px] text-[13.5px] text-[#474747] leading-[1.6]">{t(s.detail.body, s.detail.bodyFa)}</div>
                 )}
               </div>
             ))}

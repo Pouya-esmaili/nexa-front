@@ -3,8 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 export default function InvestmentHero() {
+  const { t } = useLang();
   return (
     <section className="relative overflow-hidden bg-white investment-hero-section" style={{ padding: "64px 0 72px" }}>
       <div className="px-6 mx-auto w-full" style={{ maxWidth: 1240 }}>
@@ -26,7 +28,7 @@ export default function InvestmentHero() {
                 marginBottom: 20,
               }}
             >
-              Invest With{" "}
+              {t("Invest With", "سرمایه گذاری")}{" "}
               <mark
                 style={{
                   display: "inline",
@@ -35,9 +37,9 @@ export default function InvestmentHero() {
                   padding: "0 5px 3px",
                 }}
               >
-                Confidence,
+                {t("Confidence,", "برای آینده ای")}
               </mark>{" "}
-              Grow With Vision
+              {t("Grow With Vision", "  بزرگ تر")}
             </h1>
 
             {/* Lead */}
@@ -50,9 +52,10 @@ export default function InvestmentHero() {
                 marginBottom: 36,
               }}
             >
-              Nexa is a global investor and strategic business partner —
-              combining capital, expert guidance, and international networks to
-              help ventures scale and succeed across markets worldwide.
+              {t(
+                "Nexa is a global investor and strategic business partner — combining capital, expert guidance, and international networks to help ventures scale and succeed across markets worldwide.",
+                "نکسا یک سرمایه گذار جهانی و شریک تجاری استراتژیک است که سرمایه، راهنمایی کارشناسان و شبکه های بین المللی را برای کمک به مقیاس گذاری و موفقیت شرکت ها در سراسر بازارهای جهانی ترکیب می کند."
+              )}
             </p>
 
             {/* CTA */}
@@ -81,7 +84,7 @@ export default function InvestmentHero() {
                     "none";
                 }}
               >
-                Submit Your Proposal
+                {t("Submit Your Proposal", "ارسال پیشنهاد خود")}
                 <svg
                   width="16"
                   height="16"

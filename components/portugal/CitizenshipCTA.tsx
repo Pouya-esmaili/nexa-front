@@ -1,13 +1,17 @@
+"use client";
+
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
-const features = [
-  "Full EU citizen status",
-  "Live & work in 27 EU member states",
-  "CIPLE exam at A2 Portuguese only",
+const features: { en: string; fa: string }[] = [
+  { en: "Full EU citizen status", fa: "وضعیت کامل شهروندی اتحادیه اروپا" },
+  { en: "Live & work in 27 EU member states", fa: "زندگی و کار در ۲۷ کشور عضو اتحادیه اروپا" },
+  { en: "CIPLE exam at A2 Portuguese only", fa: "فقط آزمون CIPLE در سطح A2 پرتغالی" },
 ];
 
 export default function CitizenshipCTA() {
+  const { t } = useLang();
   return (
     <section className="py-20 bg-white" style={{ borderTop: "1px solid #E2E2E2", borderBottom: "1px solid #E2E2E2" }}>
       <Row>
@@ -18,14 +22,14 @@ export default function CitizenshipCTA() {
             <div className="bg-black px-12 py-14 flex flex-col gap-5">
               <div className="inline-flex items-center gap-1.5 self-start text-[11px] font-bold uppercase tracking-[0.1em] px-3.5 py-1.5 rounded-full"
                 style={{ background: "#FFE600", color: "#000" }}>
-                Portugal&apos;s Unique Advantage
+                {t("Portugal's Unique Advantage", "مزیت منحصربه‌فرد پرتغال")}
               </div>
               <h2 className="text-[38px] font-bold tracking-[-0.03em] leading-[1.1] text-white">
-                Keep your passport.<br />
-                <em className="not-italic" style={{ color: "#FFE600" }}>Add a Portuguese one.</em>
+                {t("Keep your passport.", "پاسپورت خود را حفظ کنید.")}<br />
+                <em className="not-italic" style={{ color: "#FFE600" }}>{t("Add a Portuguese one.", "یک پاسپورت پرتغالی هم اضافه کنید.")}</em>
               </h2>
               <p className="text-[15px] leading-[1.65] max-w-[44ch]" style={{ color: "rgba(255,255,255,0.6)" }}>
-                Portugal is one of the only EU countries that allows full dual citizenship at naturalization — no renunciation of your original nationality required.
+                {t("Portugal is one of the only EU countries that allows full dual citizenship at naturalization — no renunciation of your original nationality required.", "پرتغال یکی از معدود کشورهای اتحادیه اروپاست که تابعیت دوگانه‌ی کامل را هنگام تابعیت‌پذیری مجاز می‌داند — بدون نیاز به انصراف از تابعیت اصلی شما.")}
               </p>
             </div>
 
@@ -33,18 +37,18 @@ export default function CitizenshipCTA() {
             <div className="bg-[#FFE600] px-12 py-14 flex flex-col gap-6 justify-center">
               {/* Stat */}
               <div className="pb-6" style={{ borderBottom: "1.5px solid rgba(0,0,0,0.12)" }}>
-                <div className="text-[64px] font-extrabold tracking-[-0.05em] leading-[0.9] text-black">180+</div>
+                <div className="text-[64px] font-extrabold tracking-[-0.05em] leading-[0.9] text-black">{t("180+", "۱۸۰+")}</div>
                 <div className="text-[13px] font-semibold uppercase tracking-[0.08em] mt-2" style={{ color: "rgba(0,0,0,0.55)" }}>
-                  Countries with visa-free access<br />on a Portuguese passport
+                  {t("Countries with visa-free access", "کشور با دسترسی بدون ویزا")}<br />{t("on a Portuguese passport", "با پاسپورت پرتغالی")}
                 </div>
               </div>
 
               {/* Features */}
               <div className="flex flex-col gap-2.5">
                 {features.map((f) => (
-                  <div key={f} className="flex items-center gap-2.5 text-[14px] font-semibold text-black">
+                  <div key={f.en} className="flex items-center gap-2.5 text-[14px] font-semibold text-black">
                     <span className="w-2 h-2 rounded-full bg-black flex-shrink-0" />
-                    {f}
+                    {t(f.en, f.fa)}
                   </div>
                 ))}
               </div>
@@ -52,7 +56,7 @@ export default function CitizenshipCTA() {
               {/* CTA */}
               <a href="#contact"
                 className="self-start inline-flex items-center gap-2 px-7 py-3.5 bg-black text-white font-bold rounded-full text-[14px] transition-all hover:-translate-y-0.5 hover:bg-[#8F27FF] mt-2">
-                Check My Eligibility →
+                {t("Check My Eligibility →", "واجد شرایط بودنم را بررسی کنید →")}
               </a>
             </div>
           </div>

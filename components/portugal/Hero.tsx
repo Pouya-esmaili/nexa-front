@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from "react";
 import Row from "@/components/global/Row";
+import { useLang } from "@/components/global/LanguageProvider";
 
 export default function Hero() {
+  const { t } = useLang();
   const [mounted, setMounted] = useState(false);
   useEffect(() => { const t = setTimeout(() => setMounted(true), 80); return () => clearTimeout(t); }, []);
 
@@ -31,26 +33,26 @@ export default function Hero() {
 
             <h1 className={`${base} ${mounted ? show : hidden} text-[38px] md:text-[48px] font-bold leading-[1.06] tracking-[-0.03em] mb-5`}
               style={{ transitionDelay: "80ms" }}>
-              Expand to Europe with{" "}
-              <span className="text-[#8F27FF]">any business model.</span>
+              {t("Expand to Europe with", "به اروپا گسترش یابید با")}{" "}
+              <span className="text-[#8F27FF]">{t("any business model.", "هر مدل کسب‌وکاری.")}</span>
             </h1>
 
             <p className={`${base} ${mounted ? show : hidden} text-[16px] text-[#474747] leading-[1.65] mb-8 max-w-[520px]`}
               style={{ transitionDelay: "160ms" }}>
-              The Portugal D2 Entrepreneur Visa is the EU&apos;s most flexible founder pathway — open to any viable commercial enterprise, from tech startups to consulting firms, import-export operations, and service businesses.
+              {t("The Portugal D2 Entrepreneur Visa is the EU's most flexible founder pathway — open to any viable commercial enterprise, from tech startups to consulting firms, import-export operations, and service businesses.", "ویزای کارآفرینی D2 پرتغال منعطف‌ترین مسیر بنیان‌گذاری اتحادیه اروپا است — باز برای هر بنگاه تجاری قابل‌اجرا، از استارتاپ‌های فناوری تا شرکت‌های مشاوره، عملیات واردات-صادرات و کسب‌وکارهای خدماتی.")}
             </p>
 
             {/* Stats */}
             <div className={`${base} ${mounted ? show : hidden} grid grid-cols-3 py-6 mb-8`}
               style={{ borderTop: "1px solid #E2E2E2", borderBottom: "1px solid #E2E2E2", transitionDelay: "240ms" }}>
               {[
-                { num: "2 yr", label: "Initial Card" },
-                { num: "~€10K", label: "Personal Threshold" },
-                { num: "5 yr", label: "Path to Citizenship" },
+                { num: "2 yr", numFa: "۲ سال", label: "Initial Card", labelFa: "کارت اولیه" },
+                { num: "~€10K", numFa: "~۱۰ هزار یورو", label: "Personal Threshold", labelFa: "آستانه‌ی شخصی" },
+                { num: "5 yr", numFa: "۵ سال", label: "Path to Citizenship", labelFa: "مسیر تابعیت" },
               ].map((s) => (
                 <div key={s.label} className="text-center">
-                  <div className="text-[26px] font-bold tracking-[-0.03em] leading-none">{s.num}</div>
-                  <div className="text-[11px] text-[#929292] mt-1.5 font-medium uppercase tracking-[0.06em]">{s.label}</div>
+                  <div className="text-[26px] font-bold tracking-[-0.03em] leading-none">{t(s.num, s.numFa)}</div>
+                  <div className="text-[11px] text-[#929292] mt-1.5 font-medium uppercase tracking-[0.06em]">{t(s.label, s.labelFa)}</div>
                 </div>
               ))}
             </div>
@@ -59,7 +61,7 @@ export default function Hero() {
               <a href="#contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"
                 style={{ boxShadow: "0 10px 24px rgba(143,39,255,0.28)" }}>
-                Book an Appointment →
+                {t("Book an Appointment →", "رزرو وقت ملاقات →")}
               </a>
             </div>
           </div>

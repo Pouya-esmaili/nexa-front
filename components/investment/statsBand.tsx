@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const STATS = [
-  { pill: "Track Record", target: 89, suffix: "%", label: "Successful cases across all programs", startDelay: 200 },
-  { pill: "Portfolio",    target: 400, suffix: "+", label: "Ventures supported globally",         startDelay: 360 },
-  { pill: "Experience",  target: 10,  suffix: "+", label: "Years of investment expertise",        startDelay: 520 },
+  { pill: "Track Record", pillFa: "کارنامه موفق", target: 89, suffix: "%", label: "Successful cases across all programs", labelFa: "پرونده‌های موفق در تمامی برنامه‌ها", startDelay: 200 },
+  { pill: "Portfolio",    pillFa: "شبکه جهانی", target: 400, suffix: "+", label: "Ventures supported globally", labelFa: "همراهی بیش از ۴۰۰ کارآفرین در ۵ کشور", startDelay: 360 },
+  { pill: "Experience",  pillFa: "تجربه", target: 10,  suffix: "+", label: "Years of investment expertise", labelFa: "بیش از ۱۰ سال تجربه در بازارهای بین‌الملل", startDelay: 520 },
 ];
 
 const DURATION = 1400;
@@ -15,6 +16,7 @@ function easeOut(p: number) {
 }
 
 export default function InvestmentStatsBand() {
+  const { t } = useLang();
   const bandRef = useRef<HTMLDivElement>(null);
   const [counts, setCounts] = useState([0, 0, 0]);
   const triggered = useRef(false);
@@ -94,7 +96,7 @@ export default function InvestmentStatsBand() {
                   color: "#FFE600",
                 }}
               >
-                {stat.pill}
+                {t(stat.pill, stat.pillFa)}
               </div>
 
               {/* Number */}
@@ -116,7 +118,7 @@ export default function InvestmentStatsBand() {
                 className="font-medium text-center leading-snug"
                 style={{ fontSize: 12.5, color: "rgba(255,255,255,0.4)", maxWidth: "18ch" }}
               >
-                {stat.label}
+                {t(stat.label, stat.labelFa)}
               </div>
             </div>
           ))}

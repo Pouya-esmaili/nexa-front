@@ -2,27 +2,29 @@
 
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 function scrollToContact(e: React.MouseEvent) {
   e.preventDefault();
   document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
 }
 
-const points = [
-  "Align team equity to meet the strict 60% ownership rule",
-  "Stress-test your plan against Business Finland's exact benchmarks",
-  "Structure family applications for the 14-day Fast Track",
-  "Prepare banking documentation to meet all financial thresholds",
-  "End-to-end compliance management from concept to permit",
+const points: { en: string; fa: string }[] = [
+  { en: "Align team equity to meet the strict 60% ownership rule", fa: "هم‌ترازکردن سهام تیم برای رعایت قانون سختگیرانه‌ی مالکیت ۶۰٪" },
+  { en: "Stress-test your plan against Business Finland's exact benchmarks", fa: "آزمودن طرح شما در برابر معیارهای دقیق Business Finland" },
+  { en: "Structure family applications for the 14-day Fast Track", fa: "ساختاردهی درخواست‌های خانواده برای مسیر سریع ۱۴ روزه" },
+  { en: "Prepare banking documentation to meet all financial thresholds", fa: "آماده‌سازی مدارک بانکی برای برآورده کردن تمام آستانه‌های مالی" },
+  { en: "End-to-end compliance management from concept to permit", fa: "مدیریت انطباق سرتاسری از ایده تا مجوز" },
 ];
 
 export default function NexaRole() {
+  const { t } = useLang();
   return (
     <section className="py-16 md:py-20 bg-white">
       <Row>
         <Reveal variant="up" className="text-center mb-10 md:mb-14">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em]">
-            How Nexa Engineers Your Journey
+            {t("How Nexa Engineers Your Journey", "نکسا چگونه مسیر شما را مهندسی می‌کند")}
           </h2>
         </Reveal>
 
@@ -39,17 +41,17 @@ export default function NexaRole() {
                   N
                 </div>
                 <div>
-                  <strong className="block text-[18px] font-bold tracking-[-0.01em]">Nexa Advisory</strong>
-                  <small className="block text-gray-500 text-[13px] mt-0.5">Investment migration &amp; startup relocation · Canada</small>
+                  <strong className="block text-[18px] font-bold tracking-[-0.01em]">{t("Nexa Advisory", "مشاوره‌ی نکسا")}</strong>
+                  <small className="block text-gray-500 text-[13px] mt-0.5">{t("Investment migration & startup relocation · Canada", "مهاجرت سرمایه‌گذاری و جابه‌جایی استارتاپ · کانادا")}</small>
                 </div>
               </div>
               <p className="text-[15px] leading-[1.65] text-[#474747] m-0">
-                Moving your entire life and business to a new country can feel overwhelming when dealing with foreign portals, complex financial models, and immigration compliance. At Nexa, we approach your move with structural engineering clarity — not generic templates.
+                {t("Moving your entire life and business to a new country can feel overwhelming when dealing with foreign portals, complex financial models, and immigration compliance. At Nexa, we approach your move with structural engineering clarity — not generic templates.", "انتقال کل زندگی و کسب‌وکارتان به یک کشور جدید، هنگام سروکار داشتن با پرتال‌های خارجی، مدل‌های مالی پیچیده و انطباق مهاجرتی می‌تواند طاقت‌فرسا باشد. در نکسا، جابه‌جایی شما را با شفافیت مهندسی سازه‌ای پیش می‌بریم — نه قالب‌های عمومی.")}
               </p>
               <ul className="flex flex-col mt-auto">
                 {points.map((p, i) => (
                   <li
-                    key={p}
+                    key={p.en}
                     className="flex items-center gap-3 text-[14px] font-medium py-3 border-b border-gray-200 last:border-b-0 transition-transform duration-200 hover:translate-x-1"
                     style={{ transitionDelay: `${i * 30}ms` }}
                   >
@@ -61,7 +63,7 @@ export default function NexaRole() {
                         <path d="M5 12l4 4 10-10" />
                       </svg>
                     </span>
-                    {p}
+                    {t(p.en, p.fa)}
                   </li>
                 ))}
               </ul>
@@ -83,20 +85,20 @@ export default function NexaRole() {
                 className="self-start text-[11px] font-bold uppercase tracking-[.08em] px-3.5 py-1.5 rounded-full relative z-10"
                 style={{ background: "rgba(255,255,255,0.16)", border: "1px solid rgba(255,255,255,0.18)" }}
               >
-                Integrated Advisory Platform
+                {t("Integrated Advisory Platform", "پلتفرم مشاوره‌ی یکپارچه")}
               </span>
               <h3 className="text-[24px] font-bold leading-[1.2] tracking-[-0.025em] text-white relative z-10">
-                Regulatory engineering so you can focus on building your global vision.
+                {t("Regulatory engineering so you can focus on building your global vision.", "مهندسی مقرراتی تا شما بتوانید بر ساختن چشم‌انداز جهانی‌تان تمرکز کنید.")}
               </h3>
               <p className="text-[14px] leading-relaxed relative z-10" style={{ color: "rgba(255,255,255,0.85)" }}>
-                We handle the complexity — portal submissions, financial structuring, immigration compliance, and family documentation — so you arrive in Helsinki ready to build, not stressed about paperwork.
+                {t("We handle the complexity — portal submissions, financial structuring, immigration compliance, and family documentation — so you arrive in Helsinki ready to build, not stressed about paperwork.", "ما پیچیدگی را مدیریت می‌کنیم — ثبت در پرتال، ساختاردهی مالی، انطباق مهاجرتی و مدارک خانواده — تا شما آماده‌ی ساختن به هلسینکی برسید، نه نگران کاغذبازی.")}
               </p>
               <a
                 href="#contact"
                 onClick={scrollToContact}
                 className="mt-auto self-start inline-flex items-center gap-2.5 px-6 py-3.5 bg-white text-black font-semibold rounded-full text-[14px] transition-all hover:bg-[#FFE600] hover:-translate-y-0.5 relative z-10 cursor-pointer"
               >
-                Book a Strategy Call →
+                {t("Book a Strategy Call →", "رزرو تماس استراتژی →")}
               </a>
             </div>
           </Reveal>

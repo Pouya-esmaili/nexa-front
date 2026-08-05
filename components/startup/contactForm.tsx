@@ -3,11 +3,13 @@ import { useState, FormEvent } from "react";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
 import PhoneField from "@/components/global/PhoneField";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const inputCls = "h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors w-full";
 const selectCls = "h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors w-full";
 
 export default function StartupContactForm() {
+  const { t } = useLang();
   const [sent, setSent] = useState(false);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -42,8 +44,8 @@ export default function StartupContactForm() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10 md:mb-14">
-            Ready to Scale Your{" "}
-            <span className="text-[#8F27FF]">Startup Globally?</span>
+            {t("Ready to Scale Your", "آماده توسعه ")}{" "}
+            <span className="text-[#8F27FF]">{t("Startup Globally?", "استارتاپ خود هستید؟")}</span>
           </h2>
         </Reveal>
 
@@ -57,8 +59,8 @@ export default function StartupContactForm() {
                 <path d="M5 12l4 4 10-10" />
               </svg>
             </div>
-            <h3 className="text-[22px] font-bold">Thank you!</h3>
-            <p className="text-gray-500 text-[15px]">A Nexa advisor will reach out within 48 hours.</p>
+            <h3 className="text-[22px] font-bold">{t("Thank you!", "سپاسگزاریم!")}</h3>
+            <p className="text-gray-500 text-[15px]">{t("A Nexa advisor will reach out within 48 hours.", "یکی از مشاوران نکسا ظرف ۴۸ ساعت با شما تماس می‌گیرد.")}</p>
           </div>
         ) : (
           <Reveal variant="up" delay={100}>
@@ -70,15 +72,15 @@ export default function StartupContactForm() {
               {/* Row 1 */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="flex items-center gap-1 text-[#474747]">First Name <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
-                  <input name="firstName" type="text" required placeholder="Your first name" className={inputCls} />
+                  <span className="flex items-center gap-1 text-[#474747]">{t("First Name", "نام")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <input name="firstName" type="text" required placeholder={t("Your first name", "نام شما")} className={inputCls} />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="flex items-center gap-1 text-[#474747]">Last Name <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
-                  <input name="lastName" type="text" required placeholder="Your last name" className={inputCls} />
+                  <span className="flex items-center gap-1 text-[#474747]">{t("Last Name", "نام خانوادگی")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <input name="lastName" type="text" required placeholder={t("Your last name", "نام خانوادگی شما")} className={inputCls} />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="flex items-center gap-1 text-[#474747]">Email Address <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <span className="flex items-center gap-1 text-[#474747]">{t("Email Address", "آدرس ایمیل")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
                   <input name="email" type="email" required placeholder="you@example.com" className={inputCls} />
                 </label>
               </div>
@@ -86,35 +88,35 @@ export default function StartupContactForm() {
               {/* Row 2 */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="flex items-center gap-1 text-[#474747]">Phone Number <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <span className="flex items-center gap-1 text-[#474747]">{t("Phone Number", "شماره تماس")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
                   <PhoneField name="phone" defaultCountryCode="+1" />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="flex items-center gap-1 text-[#474747]">Country of Interest <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <span className="flex items-center gap-1 text-[#474747]">{t("Country of Interest", "کشور موردنظر")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
                   <select required className={selectCls}>
-                    <option value="">Select a country…</option>
-                    <option>Finland — Startup Permit</option>
-                    <option>Canada — Startup Visa</option>
-                    <option>United Kingdom — Innovator Founder Visa</option>
-                    <option>Netherlands — Startup Visa</option>
-                    <option>France — French Tech Visa</option>
-                    <option>Not sure yet</option>
+                    <option value="">{t("Select a country…", "یک کشور را انتخاب کنید…")}</option>
+                    <option>{t("Finland — Startup Permit", "فنلاند — مجوز استارتاپ")}</option>
+                    <option>{t("Canada — Startup Visa", "کانادا — ویزای استارتاپ")}</option>
+                    <option>{t("United Kingdom — Innovator Founder Visa", "انگلستان — ویزای بنیان‌گذار نوآور")}</option>
+                    <option>{t("Netherlands — Startup Visa", "هلند — ویزای استارتاپ")}</option>
+                    <option>{t("France — French Tech Visa", "فرانسه — ویزای فرنچ‌تک")}</option>
+                    <option>{t("Not sure yet", "هنوز مطمئن نیستم")}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="flex items-center gap-1 text-[#474747]">Industry / Business Type <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <span className="flex items-center gap-1 text-[#474747]">{t("Industry / Business Type", "صنعت / نوع کسب‌وکار")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
                   <select required className={selectCls}>
-                    <option value="">Select your industry…</option>
-                    <option>Technology / SaaS</option>
-                    <option>E-commerce / Retail</option>
-                    <option>Healthcare / Medical</option>
-                    <option>Food &amp; Beverage</option>
-                    <option>Real Estate</option>
-                    <option>Education / EdTech</option>
-                    <option>Finance / FinTech</option>
-                    <option>Manufacturing</option>
-                    <option>Creative / Media</option>
-                    <option>Other</option>
+                    <option value="">{t("Select your industry…", "صنعت خود را انتخاب کنید…")}</option>
+                    <option>{t("Technology / SaaS", "فناوری / SaaS")}</option>
+                    <option>{t("E-commerce / Retail", "تجارت الکترونیک / خرده‌فروشی")}</option>
+                    <option>{t("Healthcare / Medical", "سلامت / پزشکی")}</option>
+                    <option>{t("Food & Beverage", "غذا و نوشیدنی")}</option>
+                    <option>{t("Real Estate", "املاک")}</option>
+                    <option>{t("Education / EdTech", "آموزش / فناوری آموزش")}</option>
+                    <option>{t("Finance / FinTech", "مالی / فین‌تک")}</option>
+                    <option>{t("Manufacturing", "تولید")}</option>
+                    <option>{t("Creative / Media", "خلاقیت / رسانه")}</option>
+                    <option>{t("Other", "سایر")}</option>
                   </select>
                 </label>
               </div>
@@ -122,47 +124,47 @@ export default function StartupContactForm() {
               {/* Row 3 */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="text-[#474747]">Current Business Stage</span>
+                  <span className="text-[#474747]">{t("Current Business Stage", "مرحله‌ی فعلی کسب‌وکار")}</span>
                   <select className={selectCls}>
-                    <option value="">Select stage…</option>
-                    <option>Idea / Pre-revenue</option>
-                    <option>MVP / Early Traction</option>
-                    <option>Established (1–3 years)</option>
-                    <option>Scaling / Growth Stage</option>
+                    <option value="">{t("Select stage…", "مرحله را انتخاب کنید…")}</option>
+                    <option>{t("Idea / Pre-revenue", "ایده / پیش از درآمد")}</option>
+                    <option>{t("MVP / Early Traction", "MVP / جذب اولیه")}</option>
+                    <option>{t("Established (1–3 years)", "تثبیت‌شده (۱ تا ۳ سال)")}</option>
+                    <option>{t("Scaling / Growth Stage", "مرحله‌ی مقیاس‌دهی / رشد")}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="text-[#474747]">Estimated Available Capital</span>
+                  <span className="text-[#474747]">{t("Estimated Available Capital", "سرمایه‌ی در دسترس تخمینی")}</span>
                   <select className={selectCls}>
-                    <option value="">Select range…</option>
-                    <option>Under $50,000</option>
-                    <option>$50,000 – $100,000</option>
-                    <option>$100,000 – $250,000</option>
-                    <option>$250,000 – $500,000</option>
-                    <option>$500,000+</option>
+                    <option value="">{t("Select range…", "بازه را انتخاب کنید…")}</option>
+                    <option>{t("Under $50,000", "زیر ۵۰٬۰۰۰ دلار")}</option>
+                    <option>{t("$50,000 – $100,000", "۵۰٬۰۰۰ تا ۱۰۰٬۰۰۰ دلار")}</option>
+                    <option>{t("$100,000 – $250,000", "۱۰۰٬۰۰۰ تا ۲۵۰٬۰۰۰ دلار")}</option>
+                    <option>{t("$250,000 – $500,000", "۲۵۰٬۰۰۰ تا ۵۰۰٬۰۰۰ دلار")}</option>
+                    <option>{t("$500,000+", "بیش از ۵۰۰٬۰۰۰ دلار")}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="text-[#474747]">How Did You Hear About Us?</span>
+                  <span className="text-[#474747]">{t("How Did You Hear About Us?", "چطور با ما آشنا شدید؟")}</span>
                   <select className={selectCls}>
-                    <option value="">Select…</option>
-                    <option>Google</option>
-                    <option>Social Media</option>
-                    <option>Friend / Referral</option>
-                    <option>Attorney</option>
-                    <option>Webinar</option>
-                    <option>Tradeshow / Conference</option>
-                    <option>Other</option>
+                    <option value="">{t("Select…", "انتخاب کنید…")}</option>
+                    <option>{t("Google", "گوگل")}</option>
+                    <option>{t("Social Media", "شبکه‌های اجتماعی")}</option>
+                    <option>{t("Friend / Referral", "دوست / معرفی")}</option>
+                    <option>{t("Attorney", "وکیل")}</option>
+                    <option>{t("Webinar", "وبینار")}</option>
+                    <option>{t("Tradeshow / Conference", "نمایشگاه / کنفرانس")}</option>
+                    <option>{t("Other", "سایر")}</option>
                   </select>
                 </label>
               </div>
 
               {/* Textarea */}
               <label className="flex flex-col gap-2 text-[13px] font-medium">
-                <span className="text-[#474747]">Tell Us About Your Project</span>
+                <span className="text-[#474747]">{t("Tell Us About Your Project", "درباره‌ی پروژه‌تان بگویید")}</span>
                 <textarea
                   rows={4}
-                  placeholder="Tell us about your startup idea, target country, current stage, and what kind of support you're looking for…"
+                  placeholder={t("Tell us about your startup idea, target country, current stage, and what kind of support you're looking for…", "درباره‌ی ایده‌ی استارتاپ، کشور هدف، مرحله‌ی فعلی و نوع پشتیبانی موردنظرتان برای ما بنویسید…")}
                   name="message"
                   className="px-3.5 py-3 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors resize-y w-full"
                 />
@@ -174,14 +176,14 @@ export default function StartupContactForm() {
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="flex-shrink-0">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                   </svg>
-                  Your information is kept strictly confidential. We respond within 48 hours.
+                  {t("Your information is kept strictly confidential. We respond within 48 hours.", "اطلاعات شما کاملاً محرمانه نگهداری می‌شود. ظرف ۴۸ ساعت پاسخ می‌دهیم.")}
                 </small>
                 <button
                   type="submit"
                   className="w-full sm:w-auto flex-shrink-0 inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"
                   style={{ boxShadow: "0 10px 24px rgba(143,39,255,0.28)" }}
                 >
-                  Send Message →
+                  {t("Send Message →", "ارسال پیام →")}
                 </button>
               </div>
             </form>

@@ -1,5 +1,10 @@
 import type { NextConfig } from "next";
 
+// In dev, Next reuses stable chunk names, so an `immutable` cache freezes edits
+// in the browser. Only send long-lived immutable caching in production, where
+// bundles are content-hashed.
+const isDev = process.env.NODE_ENV !== "production";
+
 const nextConfig: NextConfig = {
   async headers() {
     return [
@@ -14,12 +19,15 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // Versioned JS/CSS bundles — safe to cache forever (content-hashed filenames)
+        // Versioned JS/CSS bundles — safe to cache forever in prod (content-hashed filenames);
+        // no caching in dev so edits show without a hard refresh.
         source: "/_next/static/(.*)",
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
+            value: isDev
+              ? "no-store, must-revalidate"
+              : "public, max-age=31536000, immutable",
           },
         ],
       },

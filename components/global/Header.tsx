@@ -4,12 +4,15 @@ import { useState, useEffect, useRef, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useLang } from "./LanguageProvider";
+import LangSwitch from "./LangSwitch";
 
 /* ─── Types ─────────────────────────────────── */
 type PanelName = "services" | "about" | "forms" | null;
 
 export default function Header() {
   const pathname = usePathname();
+  const { t } = useLang();
   const [openPanel, setOpenPanel] = useState<PanelName>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileAcc, setMobileAcc] = useState<string | null>(null);
@@ -31,10 +34,10 @@ export default function Header() {
     const handler = (e: MouseEvent) => {
       const drawer = document.getElementById("nexaMobDrawer");
       const ham = hamburgerRef.current;
-      const t = e.target as Node;
+      const target = e.target as Node;
       if (
-        drawer && !drawer.contains(t) &&
-        ham && !ham.contains(t)
+        drawer && !drawer.contains(target) &&
+        ham && !ham.contains(target)
       ) {
         setMobileOpen(false);
       }
@@ -80,7 +83,7 @@ export default function Header() {
         <div className="max-w-[1240px] mx-auto px-6 h-[72px] flex items-center">
 
           {/* LOGO */}
-          <Link href="/" className="flex items-center pr-10 flex-shrink-0">
+          <Link href="/" className="flex items-center pe-10 flex-shrink-0">
             <Image src="/images/logo.svg" alt="Nexa" width={72} height={26} priority />
           </Link>
 
@@ -89,7 +92,7 @@ export default function Header() {
 
             <Link href="/"
               className="relative flex items-center h-[72px] px-[22px] text-[15px] font-medium text-[#1a1a1a] hover:text-[#8F27FF] transition-colors after:content-[''] after:absolute after:bottom-0 after:left-[22px] after:right-[22px] after:h-[2px] after:bg-[#8F27FF] after:scale-x-0 hover:after:scale-x-100 after:transition-transform">
-              Home
+              {t("Home", "خانه")}
             </Link>
 
             {/* Services dropdown */}
@@ -99,7 +102,7 @@ export default function Header() {
               onMouseLeave={leave}
             >
               <button className="relative flex items-center gap-1.5 h-[72px] px-[22px] text-[15px] font-medium text-[#1a1a1a] hover:text-[#8F27FF] transition-colors cursor-pointer after:content-[''] after:absolute after:bottom-0 after:left-[22px] after:right-[22px] after:h-[2px] after:bg-[#8F27FF] after:scale-x-0 hover:after:scale-x-100 after:transition-transform">
-                Services
+                {t("Services", "خدمات")}
                 <svg
                   className={`w-[14px] h-[14px] opacity-55 transition-transform duration-200 ${openPanel === "services" ? "rotate-180 opacity-100" : ""}`}
                   viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
@@ -114,7 +117,7 @@ export default function Header() {
                   onMouseEnter={() => enter("services")}
                   onMouseLeave={leave}
                 >
-                  <div className="max-w-[1240px] mx-auto px-6 py-9 grid grid-cols-3 gap-0">
+                  <div className="max-w-[1240px] mx-auto px-6 py-9 grid grid-cols-4 gap-0">
 
                     {/* Entrepreneurship */}
                     <div className="pr-7 border-r border-[#E2E2E2]">
@@ -122,18 +125,18 @@ export default function Header() {
                         <span className="w-8 h-8 rounded-lg bg-[#f5f0ff] grid place-items-center flex-shrink-0 group-hover:bg-[#8F27FF] transition-colors">
                           <svg className="w-4 h-4 text-[#8F27FF] group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg>
                         </span>
-                        Entrepreneurship
+                        {t("Entrepreneurship", "کارآفرینی")}
                       </Link>
                       {[
-                        ["Canada Entrepreneurship", "/Entrepreneurship/canada"],
-                        ["Spain Entrepreneurship", "/Entrepreneurship/spain"],
-                        ["Portugal Entrepreneurship", "/Entrepreneurship/portugal"],
-                        ["Finland Entrepreneurship", "/Entrepreneurship/finland"],
-                        ["Netherland Entrepreneurship", "/Entrepreneurship/netherlands"],
-                      ].map(([label, href]) => (
-                        <Link key={label} href={href}
+                        ["Canada Entrepreneurship", "کارآفرینی کانادا", "/Entrepreneurship/canada"],
+                        ["Spain Entrepreneurship", "کارآفرینی اسپانیا", "/Entrepreneurship/spain"],
+                        ["Portugal Entrepreneurship", "کارآفرینی پرتغال", "/Entrepreneurship/portugal"],
+                        ["Finland Entrepreneurship", "کارآفرینی فنلاند", "/Entrepreneurship/finland"],
+                        ["Netherland Entrepreneurship", "کارآفرینی هلند", "/Entrepreneurship/netherlands"],
+                      ].map(([en, fa, href]) => (
+                        <Link key={href} href={href}
                           className="block text-[13.5px] text-[#555] py-[5px] hover:text-[#8F27FF] hover:text-[15.5px] transition-all whitespace-nowrap">
-                          {label}
+                          {t(en, fa)}
                         </Link>
                       ))}
                     </div>
@@ -144,68 +147,68 @@ export default function Header() {
                         <span className="w-8 h-8 rounded-lg bg-[#f5f0ff] grid place-items-center flex-shrink-0 group-hover:bg-[#8F27FF] transition-colors">
                           <svg className="w-4 h-4 text-[#8F27FF] group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M22 2L11 13" /><polygon points="22 2 15 22 11 13 2 9 22 2" /></svg>
                         </span>
-                        Startup
+                        {t("Startup", "استارتاپ")}
                       </Link>
                       {[
-                        ["Finland Startup", "/startup/finland"],
-                        ["Netherland Startup", "/startup/netherlands"],
-                        ["Canada Startup", "/startup/canada"],
-                        ["UK Startup", "/startup/uk"],
-                        ["France Startup", "/startup/france"],
-                      ].map(([label, href]) => (
-                        <Link key={label} href={href}
+                        ["Finland Startup", "استارتاپ فنلاند", "/startup/finland"],
+                        ["Netherland Startup", "استارتاپ هلند", "/startup/netherlands"],
+                        ["Canada Startup", "استارتاپ کانادا", "/startup/canada"],
+                        ["UK Startup", "استارتاپ انگلستان", "/startup/uk"],
+                        ["France Startup", "استارتاپ فرانسه", "/startup/france"],
+                      ].map(([en, fa, href]) => (
+                        <Link key={href} href={href}
                           className="block text-[13.5px] text-[#555] py-[5px] hover:text-[#8F27FF] hover:text-[15.5px] transition-all whitespace-nowrap">
-                          {label}
+                          {t(en, fa)}
                         </Link>
                       ))}
                     </div>
 
                     {/* Investment */}
-                    <div className="pl-7">
+                    <div className="px-7 border-r border-[#E2E2E2]">
                       <Link href="/investment" className="flex items-center gap-2 text-[16px] font-bold text-[#1a1a1a] mb-2.5 pb-2.5 border-b-2 border-[#E2E2E2] hover:text-[#8F27FF] transition-colors group">
                         <span className="w-8 h-8 rounded-lg bg-[#f5f0ff] grid place-items-center flex-shrink-0 group-hover:bg-[#8F27FF] transition-colors">
                           <svg className="w-4 h-4 text-[#8F27FF] group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
                         </span>
-                        Investment
+                        {t("Investment", "سرمایه‌گذاری")}
                       </Link>
                       {[
-                        ["UAE Investment", "/investment/uae"],
-                        ["Turkey Investment", "/investment/turkiye"],
-                        ["Greece Investment", "/investment/greece"],
-                        ["Spain Investment", "/investment/spain"],
-                        ["France Investment", "/investment/france"],
-                      ].map(([label, href]) => (
-                        <Link key={label} href={href}
+                        ["UAE Investment", "سرمایه‌گذاری امارات", "/investment/uae"],
+                        ["Turkey Investment", "سرمایه‌گذاری ترکیه", "/investment/turkiye"],
+                        ["Greece Investment", "سرمایه‌گذاری یونان", "/investment/greece"],
+                        ["Spain Investment", "سرمایه‌گذاری اسپانیا", "/investment/spain"],
+                        ["France Investment", "سرمایه‌گذاری فرانسه", "/investment/france"],
+                      ].map(([en, fa, href]) => (
+                        <Link key={href} href={href}
                           className="block text-[13.5px] text-[#555] py-[5px] hover:text-[#8F27FF] hover:text-[15.5px] transition-all whitespace-nowrap">
-                          {label}
+                          {t(en, fa)}
                         </Link>
                       ))}
                     </div>
 
                     {/* Advisory */}
-                    {/* <div className="pl-7 border-l border-[#E2E2E2]">
+                    <div className="pl-7">
                       <Link href="/advisory" className="flex items-center gap-2 text-[16px] font-bold text-[#1a1a1a] mb-2.5 pb-2.5 border-b-2 border-[#E2E2E2] hover:text-[#8F27FF] transition-colors group">
                         <span className="w-8 h-8 rounded-lg bg-[#f5f0ff] grid place-items-center flex-shrink-0 group-hover:bg-[#8F27FF] transition-colors">
                           <svg className="w-4 h-4 text-[#8F27FF] group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10" /><path d="M12 8v4l3 3" /></svg>
                         </span>
-                        Advisory
+                        {t("Advisory", "مشاوره")}
                       </Link>
                       {[
-                        ["Business Model Design", "/Advisory/Business-Model-Design"],
-                        ["Brand Strategy", "/Advisory/Brand-Strategy"],
-                        ["Go-To-Market Strategy", "/Advisory/Go-To-Market-Strategy"],
-                        ["Marketing Strategy & Planning", "/Advisory/Marketing-Strategy"],
-                        ["Market Analysis", "/Advisory/Market-Analysis"],
-                        ["Visual Identity", "/Advisory/Visual-Identity"],
-                        ["Web Design", "/Advisory/Web-Design"],
-                        ["Content Creation", "/Advisory/Content-Creation"],
-                      ].map(([label, href]) => (
-                        <Link key={label} href={href}
+                        ["Business Model Design", "طراحی مدل کسب‌وکار", "/advisory/business-model-design"],
+                        ["Brand Strategy", "استراتژی برند", "/advisory/brand-strategy"],
+                        ["Go-To-Market Strategy", "استراتژی ورود به بازار", "/advisory/go-to-market-strategy"],
+                        ["Marketing Strategy & Planning", "استراتژی و برنامه‌ریزی بازاریابی", "/advisory/marketing-strategy"],
+                        ["Market Analysis", "تحلیل بازار", "/advisory/market-analysis"],
+                        ["Visual Identity", "هویت بصری", "/advisory/visual-identity"],
+                        ["Web Design", "طراحی وب", "/advisory/web-design"],
+                        ["Content Creation", "تولید محتوا", "/advisory/content-creation"],
+                      ].map(([en, fa, href]) => (
+                        <Link key={href} href={href}
                           className="block text-[13.5px] text-[#555] py-[5px] hover:text-[#8F27FF] hover:text-[15.5px] transition-all whitespace-nowrap">
-                          {label}
+                          {t(en, fa)}
                         </Link>
                       ))}
-                    </div> */}
+                    </div>
 
                   </div>
                 </div>
@@ -219,7 +222,7 @@ export default function Header() {
               onMouseLeave={leave}
             >
               <button className="relative flex items-center gap-1.5 h-[72px] px-[22px] text-[15px] font-medium text-[#1a1a1a] hover:text-[#8F27FF] transition-colors cursor-pointer after:content-[''] after:absolute after:bottom-0 after:left-[22px] after:right-[22px] after:h-[2px] after:bg-[#8F27FF] after:scale-x-0 hover:after:scale-x-100 after:transition-transform">
-                About Us
+                {t("About Us", "درباره ما")}
                 <svg
                   className={`w-[14px] h-[14px] opacity-55 transition-transform duration-200 ${openPanel === "about" ? "rotate-180 opacity-100" : ""}`}
                   viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
@@ -234,10 +237,10 @@ export default function Header() {
                   onMouseLeave={leave}
                 >
                   <div className="max-w-[1240px] mx-auto px-6 py-9 grid grid-cols-2 gap-6">
-                    <DdCard href="/our-team" title="Our Team" desc="Meet the people behind Nexa.">
+                    <DdCard href="/our-team" title={t("Our Team", "تیم ما")} desc={t("Meet the people behind Nexa.", "با افراد پشت نکسا آشنا شوید.")}>
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
                     </DdCard>
-                    <DdCard href="/our-story" title="Our Story" desc="Our journey and mission for the future.">
+                    <DdCard href="/our-story" title={t("Our Story", "داستان ما")} desc={t("Our journey and mission for the future.", "مسیر و مأموریت ما برای آینده.")}>
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7}><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></svg>
                     </DdCard>
                   </div>
@@ -252,7 +255,7 @@ export default function Header() {
               onMouseLeave={leave}
             >
               <button className="relative flex items-center gap-1.5 h-[72px] px-[22px] text-[15px] font-medium text-[#1a1a1a] hover:text-[#8F27FF] transition-colors cursor-pointer after:content-[''] after:absolute after:bottom-0 after:left-[22px] after:right-[22px] after:h-[2px] after:bg-[#8F27FF] after:scale-x-0 hover:after:scale-x-100 after:transition-transform">
-                Forms
+                {t("Forms", "فرم‌ها")}
                 <svg
                   className={`w-[14px] h-[14px] opacity-55 transition-transform duration-200 ${openPanel === "forms" ? "rotate-180 opacity-100" : ""}`}
                   viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
@@ -267,10 +270,10 @@ export default function Header() {
                   onMouseLeave={leave}
                 >
                   <div className="max-w-[1240px] mx-auto px-6 py-9 grid grid-cols-2 gap-6">
-                    <DdCard href="/form/step-1" title="Apply for Funding" desc="Submit your funding application.">
+                    <DdCard href="/form/step-1" title={t("Apply for Funding", "درخواست سرمایه")} desc={t("Submit your funding application.", "درخواست سرمایه خود را ثبت کنید.")}>
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7}><rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>
                     </DdCard>
-                    <DdCard href="/#contact" onClick={goToContact} title="Evaluate Form" desc="Evaluate your eligibility quickly.">
+                    <DdCard href="/#contact" onClick={goToContact} title={t("Evaluate Form", "فرم ارزیابی")} desc={t("Evaluate your eligibility quickly.", "واجد شرایط بودن خود را سریع بسنجید.")}>
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7}><path d="M9 11l3 3L22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
                     </DdCard>
                   </div>
@@ -281,10 +284,11 @@ export default function Header() {
           </nav>
 
           {/* Right: CTA (desktop) + Hamburger (mobile) — always in same right slot */}
-          <div className="ml-auto flex items-center gap-3 flex-shrink-0">
+          <div className="ms-auto flex items-center gap-3 flex-shrink-0">
+            <LangSwitch className="hidden md:inline-flex" />
             <Link href="/contact"
               className="hidden md:inline-flex items-center gap-2 px-[22px] py-[10px] bg-white border-[1.5px] border-[#8F27FF] text-[#8F27FF] font-semibold rounded-full text-[13px] transition-all hover:bg-[#8F27FF] hover:text-white hover:-translate-y-px hover:shadow-[0_8px_22px_rgba(143,39,255,0.28)]">
-              Contact Us
+              {t("Contact Us", "تماس با ما")}
             </Link>
             <button
               ref={hamburgerRef}
@@ -316,72 +320,81 @@ export default function Header() {
           {/* Home */}
           <Link href="/"
             className="block px-6 py-5 text-[16px] font-medium border-b border-[#E2E2E2] hover:text-[#8F27FF] hover:bg-[#FAF6FF] transition-colors">
-            Home
+            {t("Home", "خانه")}
           </Link>
 
           {/* Services accordion */}
-          <MobAccordion label="Services" open={mobileAcc === "services"} toggle={() => toggleAcc("services")}>
+          <MobAccordion label={t("Services", "خدمات")} open={mobileAcc === "services"} toggle={() => toggleAcc("services")}>
             <MobServiceCat
-              label="Entrepreneurship"
+              label={t("Entrepreneurship", "کارآفرینی")}
               href="/Entrepreneurship"
               open={mobileServiceCat === "entrepreneurship"}
               toggle={() => toggleServiceCat("entrepreneurship")}
               icon={<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg>}
               items={[
-                ["Canada Entrepreneurship", "/Entrepreneurship/canada"],
-                ["Spain Entrepreneurship", "/Entrepreneurship/spain"],
-                ["Portugal Entrepreneurship", "/Entrepreneurship/portugal"],
-                ["Finland Entrepreneurship", "/Entrepreneurship/finland"],
-                ["Netherland Entrepreneurship", "/Entrepreneurship/netherlands"],
+                ["Canada Entrepreneurship", "کارآفرینی کانادا", "/Entrepreneurship/canada"],
+                ["Spain Entrepreneurship", "کارآفرینی اسپانیا", "/Entrepreneurship/spain"],
+                ["Portugal Entrepreneurship", "کارآفرینی پرتغال", "/Entrepreneurship/portugal"],
+                ["Finland Entrepreneurship", "کارآفرینی فنلاند", "/Entrepreneurship/finland"],
+                ["Netherland Entrepreneurship", "کارآفرینی هلند", "/Entrepreneurship/netherlands"],
               ]}
             />
             <MobServiceCat
-              label="Startup"
+              label={t("Startup", "استارتاپ")}
               href="/startup"
               open={mobileServiceCat === "startup"}
               toggle={() => toggleServiceCat("startup")}
               icon={<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M22 2L11 13" /><polygon points="22 2 15 22 11 13 2 9 22 2" /></svg>}
               items={[
-                ["Finland Startup", "/startup/finland"],
-                ["Canada Startup", "/startup/canada"],
-                ["UK Startup", "/startup/uk"],
-                ["Netherlands Startup", "/startup/netherlands"],
-                ["France Startup", "/startup/france"],
+                ["Finland Startup", "استارتاپ فنلاند", "/startup/finland"],
+                ["Canada Startup", "استارتاپ کانادا", "/startup/canada"],
+                ["UK Startup", "استارتاپ انگلستان", "/startup/uk"],
+                ["Netherlands Startup", "استارتاپ هلند", "/startup/netherlands"],
+                ["France Startup", "استارتاپ فرانسه", "/startup/france"],
               ]}
             />
             <MobServiceCat
-              label="Investment"
+              label={t("Investment", "سرمایه‌گذاری")}
               href="/investment"
               open={mobileServiceCat === "investment"}
               toggle={() => toggleServiceCat("investment")}
               icon={<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>}
               items={[
-                ["UAE Investment", "/investment/uae"],
-                ["Turkey Investment", "/investment/turkiye"],
-                ["Greece Investment", "/investment/greece"],
-                ["Spain Investment", "/investment/spain"],
-                ["France Investment", "/investment/france"],
+                ["UAE Investment", "سرمایه‌گذاری امارات", "/investment/uae"],
+                ["Turkey Investment", "سرمایه‌گذاری ترکیه", "/investment/turkiye"],
+                ["Greece Investment", "سرمایه‌گذاری یونان", "/investment/greece"],
+                ["Spain Investment", "سرمایه‌گذاری اسپانیا", "/investment/spain"],
+                ["France Investment", "سرمایه‌گذاری فرانسه", "/investment/france"],
               ]}
             />
             <MobServiceCat
-              label="Advisory"
+              label={t("Advisory", "مشاوره")}
               href="/advisory"
               open={mobileServiceCat === "advisory"}
               toggle={() => toggleServiceCat("advisory")}
               icon={<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10" /><path d="M12 8v4l3 3" /></svg>}
-              items={[]}
+              items={[
+                ["Business Model Design", "طراحی مدل کسب‌وکار", "/advisory/business-model-design"],
+                ["Brand Strategy", "استراتژی برند", "/advisory/brand-strategy"],
+                ["Go-To-Market Strategy", "استراتژی ورود به بازار", "/advisory/go-to-market-strategy"],
+                ["Marketing Strategy & Planning", "استراتژی و برنامه‌ریزی بازاریابی", "/advisory/marketing-strategy"],
+                ["Market Analysis", "تحلیل بازار", "/advisory/market-analysis"],
+                ["Visual Identity", "هویت بصری", "/advisory/visual-identity"],
+                ["Web Design", "طراحی وب", "/advisory/web-design"],
+                ["Content Creation", "تولید محتوا", "/advisory/content-creation"],
+              ]}
             />
           </MobAccordion>
 
           {/* About Us accordion */}
           <MobAccordion
-            label="About Us"
+            label={t("About Us", "درباره ما")}
             open={mobileAcc === "about"}
             toggle={() => toggleAcc("about")}
           >
             <MobSubLink
               href="/our-team"
-              label="Our Team"
+              label={t("Our Team", "تیم ما")}
               icon={
                 <svg
                   className="w-4 h-4 text-[#8F27FF]"
@@ -400,7 +413,7 @@ export default function Header() {
 
             <MobSubLink
               href="/our-story"
-              label="Our Story"
+              label={t("Our Story", "داستان ما")}
               icon={
                 <svg
                   className="w-4 h-4 text-[#8F27FF]"
@@ -418,13 +431,13 @@ export default function Header() {
 
           {/* Forms accordion */}
           <MobAccordion
-            label="Forms"
+            label={t("Forms", "فرم‌ها")}
             open={mobileAcc === "forms"}
             toggle={() => toggleAcc("forms")}
           >
             <MobSubLink
               href="/form/step-1"
-              label="Apply for Funding"
+              label={t("Apply for Funding", "درخواست سرمایه")}
               icon={
                 <svg
                   className="w-4 h-4 text-[#8F27FF]"
@@ -443,7 +456,7 @@ export default function Header() {
             <MobSubLink
               href="/#contact"
               onClick={goToContact}
-              label="Evaluate Form"
+              label={t("Evaluate Form", "فرم ارزیابی")}
               icon={
                 <svg
                   className="w-4 h-4 text-[#8F27FF]"
@@ -461,9 +474,10 @@ export default function Header() {
 
           {/* Bottom CTA */}
           <div className="mt-auto p-6 border-t border-[#E2E2E2] flex flex-col gap-2.5">
+            <LangSwitch className="justify-center w-full" />
             <Link href="/contact"
               className="flex items-center justify-center px-6 py-3.5 border-[1.5px] border-[#8F27FF] text-[#8F27FF] font-semibold rounded-full text-[15px] hover:bg-[#8F27FF] hover:text-white transition-all">
-              Contact Us
+              {t("Contact Us", "تماس با ما")}
             </Link>
           </div>
 
@@ -535,10 +549,11 @@ function MobServiceCat({
   label: string;
   href: string;
   icon: ReactNode;
-  items: [string, string][];
+  items: [string, string, string][];
   open: boolean;
   toggle: () => void;
 }) {
+  const { t } = useLang();
   return (
     <div className="border-b border-[#E2E2E2]">
       <button
@@ -561,10 +576,10 @@ function MobServiceCat({
       >
         <Link href={href}
           className="block px-12 py-3.5 text-[13.5px] font-semibold text-[#8F27FF] border-b border-[#F4F4F4] hover:bg-[#f3ecff] transition-colors">
-          View all {label}
+          {t("View all", "مشاهده همه")} {label}
         </Link>
-        {items.map(([itemLabel, itemHref]) => (
-          <MobSubLink key={itemHref} href={itemHref} label={itemLabel} />
+        {items.map(([itemEn, itemFa, itemHref]) => (
+          <MobSubLink key={itemHref} href={itemHref} label={t(itemEn, itemFa)} />
         ))}
       </div>
     </div>

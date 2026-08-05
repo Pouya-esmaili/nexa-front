@@ -3,8 +3,10 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Row from "@/components/global/Row";
+import { useLang } from "@/components/global/LanguageProvider";
 
 export default function Hero() {
+  const { t } = useLang();
   const [mounted, setMounted] = useState(false);
   useEffect(() => { setMounted(true); }, []);
 
@@ -21,12 +23,12 @@ export default function Hero() {
             style={{ opacity: mounted ? 1 : 0, transform: mounted ? "none" : "translateY(24px)" }}
           >
             <h1 className="text-[32px] md:text-[48px] font-bold tracking-[-0.03em] leading-[1.06] mb-[22px]">
-              Europe&apos;s premier{" "}
-              <em className="text-[#8F27FF] not-italic">active residency</em>{" "}
-              for investors and founders.
+              {t("Europe's premier", "برترین")}{" "}
+              <em className="text-[#8F27FF] not-italic">{t("active residency", "اقامت فعال")}</em>{" "}
+              {t("for investors and founders.", "اروپا برای سرمایه‌گذاران و بنیان‌گذاران.")}
             </h1>
             <p className="text-[16px] text-[#474747] mb-8 leading-[1.65] max-w-[520px]">
-              The France Talent Passport – Economic Investor embeds you directly into the EU&apos;s largest tech and industrial ecosystem. A 4-year renewable card, full family inclusion, and a clear 5-year path to permanent residency.
+              {t("The France Talent Passport – Economic Investor embeds you directly into the EU's largest tech and industrial ecosystem. A 4-year renewable card, full family inclusion, and a clear 5-year path to permanent residency.", "پاسپورت استعداد فرانسه – سرمایه‌گذار اقتصادی شما را مستقیماً در بزرگ‌ترین اکوسیستم فناوری و صنعتی اتحادیه اروپا جای می‌دهد. یک کارت ۴ ساله‌ی قابل‌تمدید، شمول کامل خانواده و یک مسیر روشن ۵ ساله به اقامت دائم.")}
             </p>
 
             <div
@@ -34,13 +36,13 @@ export default function Hero() {
               style={{ borderTop: "1px solid #E2E2E2", borderBottom: "1px solid #E2E2E2" }}
             >
               {[
-                { num: "€300K", label: "Min Investment" },
-                { num: "4 yr", label: "Residence Card" },
-                { num: "5 yr", label: "Path to PR" },
+                { num: "€300K", numFa: "۳۰۰ هزار یورو", label: "Min Investment", labelFa: "حداقل سرمایه‌گذاری" },
+                { num: "4 yr", numFa: "۴ سال", label: "Residence Card", labelFa: "کارت اقامت" },
+                { num: "5 yr", numFa: "۵ سال", label: "Path to PR", labelFa: "مسیر اقامت دائم" },
               ].map((s, i) => (
                 <div key={i} className="text-center">
-                  <div className="text-[26px] font-bold tracking-[-0.03em] leading-none">{s.num}</div>
-                  <div className="text-[11px] text-[#929292] mt-1.5 font-medium uppercase tracking-[0.06em]">{s.label}</div>
+                  <div className="text-[26px] font-bold tracking-[-0.03em] leading-none">{t(s.num, s.numFa)}</div>
+                  <div className="text-[11px] text-[#929292] mt-1.5 font-medium uppercase tracking-[0.06em]">{t(s.label, s.labelFa)}</div>
                 </div>
               ))}
             </div>
@@ -50,7 +52,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"
               style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
             >
-              Book an Appointment →
+              {t("Book an Appointment →", "رزرو وقت ملاقات →")}
             </a>
           </div>
 

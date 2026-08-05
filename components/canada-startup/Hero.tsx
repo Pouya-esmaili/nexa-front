@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from "react";
 import Row from "@/components/global/Row";
+import { useLang } from "@/components/global/LanguageProvider";
 
 export default function StartupHero() {
+  const { t } = useLang();
   const [mounted, setMounted] = useState(false);
   useEffect(() => { const t = setTimeout(() => setMounted(true), 80); return () => clearTimeout(t); }, []);
 
@@ -23,26 +25,26 @@ export default function StartupHero() {
           <div className="order-2 md:order-1">
             <h1 className={`${base} ${mounted ? show : hidden} text-[32px] md:text-[48px] font-bold leading-[1.06] tracking-[-0.03em] mb-5`}
               style={{ transitionDelay: "0ms" }}>
-              Direct permanent residency for{" "}
-              <em className="text-[#8F27FF] not-italic">innovative founders</em>{" "}
-              in North America.
+              {t("Direct permanent residency for", "اقامت دائم مستقیم برای")}{" "}
+              <em className="text-[#8F27FF] not-italic">{t("innovative founders", "بنیان‌گذاران نوآور")}</em>{" "}
+              {t("in North America.", "در آمریکای شمالی.")}
             </h1>
 
             <p className={`${base} ${mounted ? show : hidden} text-[16px] text-[#474747] leading-[1.65] mb-8 max-w-[520px]`}
               style={{ transitionDelay: "80ms" }}>
-              The Canada Start-Up Visa grants — not a temporary visa. If your venture fails after landing, your permanent residency stands. Build in one of the world's most business-friendly economies from day one.
+              {t("The Canada Start-Up Visa grants — not a temporary visa. If your venture fails after landing, your permanent residency stands. Build in one of the world's most business-friendly economies from day one.", "ویزای استارتاپ کانادا اقامت دائم اعطا می‌کند — نه یک ویزای موقت. اگر کسب‌وکار شما پس از ورود شکست بخورد، اقامت دائم شما پابرجا می‌ماند. از روز نخست در یکی از دوستدارترین اقتصادهای جهان برای کسب‌وکار بسازید.")}
             </p>
 
             <div className={`${base} ${mounted ? show : hidden} grid grid-cols-3 gap-6 py-6 mb-8`}
               style={{ borderTop: "1px solid #E2E2E2", borderBottom: "1px solid #E2E2E2", transitionDelay: "160ms" }}>
               {[
-                { num: "Direct", label: "PR — Not a Visa" },
-                { num: "5", label: "Max Co-Founders" },
-                { num: "3 yr", label: "Path to Citizenship" },
+                { num: "Direct", numFa: "مستقیم", label: "PR — Not a Visa", labelFa: "اقامت دائم — نه ویزا" },
+                { num: "5", numFa: "۵", label: "Max Co-Founders", labelFa: "حداکثر هم‌بنیان‌گذاران" },
+                { num: "3 yr", numFa: "۳ سال", label: "Path to Citizenship", labelFa: "مسیر تابعیت" },
               ].map((s) => (
                 <div key={s.label} className="text-center">
-                  <div className="text-[26px] font-bold tracking-[-0.03em] leading-none">{s.num}</div>
-                  <div className="text-[11px] text-[#929292] mt-1.5 font-medium uppercase tracking-[0.06em]">{s.label}</div>
+                  <div className="text-[26px] font-bold tracking-[-0.03em] leading-none">{t(s.num, s.numFa)}</div>
+                  <div className="text-[11px] text-[#929292] mt-1.5 font-medium uppercase tracking-[0.06em]">{t(s.label, s.labelFa)}</div>
                 </div>
               ))}
             </div>
@@ -51,7 +53,7 @@ export default function StartupHero() {
               <a href="#contact"
                 className="inline-flex items-center gap-[10px] px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"
                 style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}>
-                Book an Appointment →
+                {t("Book an Appointment →", "رزرو وقت ملاقات →")}
               </a>
             </div>
           </div>

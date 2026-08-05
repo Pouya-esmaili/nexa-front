@@ -1,40 +1,50 @@
+"use client";
+
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const requirements = [
   {
     num: "01",
     title: "Innovation & Scalability",
+    titleFa: "نوآوری و مقیاس‌پذیری",
     desc: "The project must possess a unique value proposition, specialized technology, or an original organizational method — with a clear trajectory for generating corporate volume, scalable profits, and local market expansion.",
+    descFa: "پروژه باید یک ارزش پیشنهادی منحصربه‌فرد، فناوری تخصصی یا روش سازمانی اصیل داشته باشد — با مسیری روشن برای ایجاد حجم شرکتی، سود مقیاس‌پذیر و گسترش بازار محلی.",
   },
   {
     num: "02",
     title: "Job Creation Metrics",
+    titleFa: "شاخص‌های ایجاد اشتغال",
     desc: "Your business plan must illustrate a realistic capacity to hire local employees, contract regional suppliers, and actively contribute to the employment landscape of Spain over a 3-year horizon.",
+    descFa: "طرح کسب‌وکار شما باید ظرفیتی واقع‌بینانه برای استخدام کارکنان محلی، عقد قرارداد با تأمین‌کنندگان منطقه‌ای و مشارکت فعال در چشم‌انداز اشتغال اسپانیا در افق ۳ ساله را نشان دهد.",
   },
   {
     num: "03",
     title: "Founder Professional Profile",
+    titleFa: "پروفایل حرفه‌ای بنیان‌گذار",
     desc: "ENISA analyzes your professional CV, academic credentials, and entrepreneurship history to verify that you possess the technical capabilities and leadership experience required to execute the business plan.",
+    descFa: "ENISA رزومه‌ی حرفه‌ای، مدارک تحصیلی و سابقه‌ی کارآفرینی شما را تحلیل می‌کند تا تأیید کند که قابلیت‌های فنی و تجربه‌ی رهبری لازم برای اجرای طرح کسب‌وکار را دارید.",
   },
 ];
 
-const benefits = [
-  "3-year TIE residence card (applied from Spain)",
-  "Apply from inside Spain on tourist entry",
-  "Secondary employment & consulting permitted",
-  "Full family included with unrestricted work rights",
-  "29-country Schengen travel freedom",
-  "2-year fast-track citizenship for Ibero-Americans",
+const benefits: { en: string; fa: string }[] = [
+  { en: "3-year TIE residence card (applied from Spain)", fa: "کارت اقامت TIE سه‌ساله (درخواست از داخل اسپانیا)" },
+  { en: "Apply from inside Spain on tourist entry", fa: "درخواست از داخل اسپانیا با ورود توریستی" },
+  { en: "Secondary employment & consulting permitted", fa: "اشتغال ثانویه و مشاوره مجاز است" },
+  { en: "Full family included with unrestricted work rights", fa: "کل خانواده با حقوق کار نامحدود گنجانده می‌شوند" },
+  { en: "29-country Schengen travel freedom", fa: "آزادی سفر شنگن در ۲۹ کشور" },
+  { en: "2-year fast-track citizenship for Ibero-Americans", fa: "تابعیت سریع ۲ ساله برای ایبرو-آمریکایی‌ها" },
 ];
 
 export default function Eligibility() {
+  const { t } = useLang();
   return (
     <section className="py-20 md:py-24 bg-[#F7F6F9]">
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-12">
-            Core Eligibility &amp; Business Evaluation
+            {t("Core Eligibility & Business Evaluation", "شرایط اصلی واجد بودن و ارزیابی کسب‌وکار")}
           </h2>
         </Reveal>
 
@@ -43,7 +53,7 @@ export default function Eligibility() {
           <Reveal variant="left">
             <div className="bg-white border border-[#E2E2E2] rounded-[20px] p-11 flex flex-col">
               <p className="text-[16px] text-[#474747] leading-[1.65] mb-8 pb-8" style={{ borderBottom: "1px solid #E2E2E2" }}>
-                Your project must be vetted as <strong className="text-black font-semibold">innovative and of special economic interest to Spain</strong>. The official evaluation is conducted by <strong className="text-black font-semibold">ENISA</strong> (Empresa Nacional de Innovación S.A.) against three strict parameters.
+                {t("Your project must be vetted as", "پروژه‌ی شما باید به‌عنوان")} <strong className="text-black font-semibold">{t("innovative and of special economic interest to Spain", "نوآورانه و دارای منافع اقتصادی ویژه برای اسپانیا")}</strong>{t(". The official evaluation is conducted by", " ارزیابی شود. ارزیابی رسمی توسط")} <strong className="text-black font-semibold">ENISA</strong> {t("(Empresa Nacional de Innovación S.A.) against three strict parameters.", "(Empresa Nacional de Innovación S.A.) در برابر سه پارامتر سختگیرانه انجام می‌شود.")}
               </p>
 
               {requirements.map((r, i) => (
@@ -53,8 +63,8 @@ export default function Eligibility() {
                     {r.num}
                   </div>
                   <div>
-                    <h4 className="text-[16px] font-semibold tracking-[-0.015em] mb-1.5">{r.title}</h4>
-                    <p className="text-[13.5px] text-[#929292] leading-[1.6] m-0">{r.desc}</p>
+                    <h4 className="text-[16px] font-semibold tracking-[-0.015em] mb-1.5">{t(r.title, r.titleFa)}</h4>
+                    <p className="text-[13.5px] text-[#929292] leading-[1.6] m-0">{t(r.desc, r.descFa)}</p>
                   </div>
                 </div>
               ))}
@@ -71,18 +81,18 @@ export default function Eligibility() {
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" className="w-3 h-3">
                     <path d="M5 12l4 4 10-10" />
                   </svg>
-                  Key Benefits
+                  {t("Key Benefits", "مزایای کلیدی")}
                 </div>
-                <h3 className="text-[17px] font-semibold mb-4">What the permit grants you</h3>
+                <h3 className="text-[17px] font-semibold mb-4">{t("What the permit grants you", "این مجوز چه چیزی به شما می‌دهد")}</h3>
                 <ul className="flex flex-col gap-3">
                   {benefits.map((b) => (
-                    <li key={b} className="flex items-center gap-3 text-[14px] font-medium leading-[1.45]">
+                    <li key={b.en} className="flex items-center gap-3 text-[14px] font-medium leading-[1.45]">
                       <span className="w-[22px] h-[22px] rounded-full bg-[#8F27FF] text-white flex items-center justify-center flex-shrink-0">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" className="w-3 h-3">
                           <path d="M5 12l4 4 10-10" />
                         </svg>
                       </span>
-                      {b}
+                      {t(b.en, b.fa)}
                     </li>
                   ))}
                 </ul>
@@ -98,7 +108,7 @@ export default function Eligibility() {
                   <line x1="12" y1="17" x2="12.01" y2="17"/>
                 </svg>
                 <p className="text-[13.5px] leading-[1.55] m-0" style={{ color: "#92400E" }}>
-                  <strong className="font-semibold" style={{ color: "#78350F" }}>ENISA evaluation takes 30–60 days.</strong> The UGE decision runs 20 working days, but the preliminary ENISA business review takes an average of 30 to 60 days. Nexa structures your full timeline to account for this window.
+                  <strong className="font-semibold" style={{ color: "#78350F" }}>{t("ENISA evaluation takes 30–60 days.", "ارزیابی ENISA ۳۰ تا ۶۰ روز طول می‌کشد.")}</strong> {t("The UGE decision runs 20 working days, but the preliminary ENISA business review takes an average of 30 to 60 days. Nexa structures your full timeline to account for this window.", "تصمیم UGE ۲۰ روز کاری طول می‌کشد، اما بررسی مقدماتی کسب‌وکار توسط ENISA به‌طور میانگین ۳۰ تا ۶۰ روز طول می‌کشد. نکسا کل زمان‌بندی شما را برای در نظر گرفتن این بازه ساختاردهی می‌کند.")}
                 </p>
               </div>
             </Reveal>

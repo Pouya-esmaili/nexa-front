@@ -1,34 +1,50 @@
+"use client";
+
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/LazyReveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const steps = [
   {
     num: "1",
     meta: "Step 1 · Weeks 1–3",
+    metaFa: "گام ۱ · هفته‌های ۱ تا ۳",
     title: "Asset Selection & Legal Structure Setup",
+    titleFa: "انتخاب دارایی و راه‌اندازی ساختار حقوقی",
     desc: "Select your investment tier (€250K, €400K, or €800K). Issue a remote Power of Attorney via your local Greek Consulate or apostilled notary. Nexa secures your Greek Tax Number (AFM) and opens your local bank account remotely.",
+    descFa: "سطح سرمایه‌گذاری خود را انتخاب کنید (۲۵۰، ۴۰۰ یا ۸۰۰ هزار یورو). یک وکالت‌نامه‌ی از راه دور از طریق کنسولگری محلی یونان یا دفتر اسناد رسمی آپوستیل‌شده صادر کنید. نکسا شماره‌ی مالیاتی یونان (AFM) شما را تأمین می‌کند و حساب بانکی محلی شما را از راه دور باز می‌کند.",
   },
   {
     num: "2",
     meta: "Step 2 · Weeks 4–8",
+    metaFa: "گام ۲ · هفته‌های ۴ تا ۸",
     title: "Legal Due Diligence & Property Purchase",
+    titleFa: "بررسی دقیق حقوقی و خرید ملک",
     desc: "Nexa's real estate attorneys audit the property registry — guaranteeing clean title ownership, freedom from mortgages, and total building permit compliance. Execute the final digital purchase contract and wire the full investment capital.",
+    descFa: "وکلای املاک نکسا دفتر ثبت ملک را حسابرسی می‌کنند — که مالکیت سند پاک، عاری بودن از رهن و انطباق کامل با مجوز ساخت را تضمین می‌کند. قرارداد نهایی خرید دیجیتال را اجرا کنید و کل سرمایه‌ی سرمایه‌گذاری را انتقال دهید.",
   },
   {
     num: "3",
     meta: "Step 3 · Weeks 9–12",
+    metaFa: "گام ۳ · هفته‌های ۹ تا ۱۲",
     title: "Deed Registration & Residency Filing",
+    titleFa: "ثبت سند و ثبت درخواست اقامت",
     desc: "Notary submits the executed deed to the Land Registry. Nexa compiles apostilled civil documents (birth/marriage certificates, background checks, health insurance) and files the application digitally with the Ministry of Migration.",
+    descFa: "دفتر اسناد رسمی سند اجراشده را به اداره‌ی ثبت زمین ارسال می‌کند. نکسا اسناد مدنی آپوستیل‌شده (گواهی تولد/ازدواج، بررسی سوءپیشینه، بیمه‌ی درمانی) را گردآوری کرده و درخواست را به‌صورت دیجیتال نزد وزارت مهاجرت ثبت می‌کند.",
   },
   {
     num: "4",
     meta: "Step 4 · Months 4–6",
+    metaFa: "گام ۴ · ماه‌های ۴ تا ۶",
     title: "Biometric Collection & Card Issuance",
+    titleFa: "جمع‌آوری بیومتریک و صدور کارت",
     desc: "Ministry issues a temporary receipt certificate (Blue Paper) granting 12 months of legal entry to Greece. Schedule a single biometric appointment in Greece. Physical permanent residence cards issued within 30 to 60 days post-biometrics.",
+    descFa: "وزارت یک گواهی رسید موقت (کاغذ آبی) صادر می‌کند که ۱۲ ماه ورود قانونی به یونان را اعطا می‌کند. یک نوبت بیومتریک واحد در یونان تنظیم کنید. کارت‌های فیزیکی اقامت دائم ظرف ۳۰ تا ۶۰ روز پس از بیومتریک صادر می‌شوند.",
   },
 ];
 
 export default function Process() {
+  const { t } = useLang();
   return (
     <section className="py-20 md:py-24 bg-[#F7F6F9]">
       <Row>
@@ -38,18 +54,18 @@ export default function Process() {
           <div className="md:sticky md:top-[100px]">
             <Reveal variant="up">
               <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] mb-5">
-                Investment & Application Timeline
+                {t("Investment & Application Timeline", "زمان‌بندی سرمایه‌گذاری و درخواست")}
               </h2>
             </Reveal>
             <Reveal variant="up" delay={120}>
               <blockquote className="text-[18px] italic font-medium leading-[1.5] text-black py-5 pl-6 mb-4"
                 style={{ borderLeft: "3px solid #8F27FF" }}>
-                "Nexa coordinates your investment life cycle into a linear engineering workflow — data validation occurs well before capital deployment."
+                &ldquo;{t("Nexa coordinates your investment life cycle into a linear engineering workflow — data validation occurs well before capital deployment.", "نکسا چرخه‌ی عمر سرمایه‌گذاری شما را به یک گردش‌کار مهندسی خطی هماهنگ می‌کند — اعتبارسنجی داده‌ها مدت‌ها پیش از به‌کارگیری سرمایه انجام می‌شود.")}&rdquo;
               </blockquote>
             </Reveal>
             <Reveal variant="up" delay={240}>
               <p className="text-[14.5px] text-[#929292] leading-[1.7]">
-                From remote Power of Attorney to physical residence card collection, the full process takes approximately 4 to 6 months. Nexa manages the entire pipeline — property diligence, AFM registration, deed execution, and Ministry filing.
+                {t("From remote Power of Attorney to physical residence card collection, the full process takes approximately 4 to 6 months. Nexa manages the entire pipeline — property diligence, AFM registration, deed execution, and Ministry filing.", "از وکالت‌نامه‌ی از راه دور تا دریافت فیزیکی کارت اقامت، کل فرایند حدود ۴ تا ۶ ماه طول می‌کشد. نکسا کل این خط لوله را مدیریت می‌کند — بررسی دقیق ملک، ثبت AFM، اجرای سند و ثبت نزد وزارت.")}
               </p>
             </Reveal>
           </div>
@@ -75,10 +91,10 @@ export default function Process() {
                   {/* Step card */}
                   <div className="rounded-[14px] p-[18px_22px] border border-[#E2E2E2] bg-white transition-all duration-200 group-hover:translate-x-1 group-hover:border-[rgba(143,39,255,0.18)]">
                     <div className="text-[11px] font-bold text-[#8F27FF] uppercase tracking-[0.08em] mb-1.5">
-                      {s.meta}
+                      {t(s.meta, s.metaFa)}
                     </div>
-                    <h4 className="text-[16px] font-semibold text-black mb-1.5">{s.title}</h4>
-                    <p className="text-[13.5px] text-[#929292] leading-[1.6] m-0">{s.desc}</p>
+                    <h4 className="text-[16px] font-semibold text-black mb-1.5">{t(s.title, s.titleFa)}</h4>
+                    <p className="text-[13.5px] text-[#929292] leading-[1.6] m-0">{t(s.desc, s.descFa)}</p>
                   </div>
                 </div>
               ))}

@@ -1,38 +1,45 @@
+"use client";
 import Image from "next/image";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const projects = [
   {
     name: "Arshia Gallery",
     tag: "Fine Jewelry · Luxury Retail",
+    tagFa: "جواهرات نفیس · خرده‌فروشی لوکس",
     img: "/images/Entrepreneurship/Arshia Gallery.jpg",
   },
   {
     name: "Afra Cafe",
     tag: "F&B · International",
+    tagFa: "غذا و نوشیدنی · بین‌المللی",
     img: "/images/Entrepreneurship/Afra Cafe.jpg",
   },
   {
     name: "Green Farm",
     tag: "Sustainability · Global",
+    tagFa: "پایداری · جهانی",
     img: "/images/Entrepreneurship/Green Farm.jpg",
   },
   {
     name: "Aurora Clinic",
     tag: "Healthcare · Canada",
+    tagFa: "سلامت · کانادا",
     img: "/images/Entrepreneurship/Aurora Clinic.jpg",
   },
 ];
 
 export default function Projects() {
+  const { t } = useLang();
   return (
     <section className="py-[90px] bg-white">
       <Row>
         <Reveal variant="up">
           <div className="text-center max-w-[700px] mx-auto mb-14">
             <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1]">
-              Our Previous <span className="highlight">Projects</span>
+              {t("Our Previous", "نمومه ای از پروژه های موفق ما")} <span className="highlight">{t("Projects", "ما")}</span>
             </h2>
           </div>
         </Reveal>
@@ -64,7 +71,7 @@ export default function Projects() {
                 <div className="absolute inset-x-0 bottom-0 p-[22px] flex items-end justify-between">
                   <div>
                     <div className="text-white font-bold text-[16px] tracking-[-0.01em]">{p.name}</div>
-                    <div className="text-white/65 text-[12px] mt-1 font-medium">{p.tag}</div>
+                    <div className="text-white/65 text-[12px] mt-1 font-medium">{t(p.tag, p.tagFa)}</div>
                   </div>
                 </div>
               </div>

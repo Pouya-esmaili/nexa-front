@@ -3,51 +3,73 @@
 import { useState } from "react";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const pathwayItems = [
   {
     num: "01",
     label: "Initial Card",
+    labelFa: "کارت اولیه",
     year: "2 Years",
+    yearFa: "۲ سال",
     detail: {
       title: "2-Year Initial Card",
+      titleFa: "کارت اولیه‌ی ۲ ساله",
       text: "Operate your Dutch entity with full work authorization. Sponsor spouse and minor children under family reunification channels.",
+      textFa: "نهاد هلندی خود را با مجوز کامل کار اداره کنید. همسر و فرزندان صغیر را تحت کانال‌های پیوند مجدد خانواده حمایت کنید.",
     },
     body: "Operate your Dutch business with full work authorization. Sponsor your spouse and minor children under family reunification channels — they receive a matching residence card.",
+    bodyFa: "کسب‌وکار هلندی خود را با مجوز کامل کار اداره کنید. همسر و فرزندان صغیر خود را تحت کانال‌های پیوند مجدد خانواده حمایت کنید — آن‌ها یک کارت اقامت متناظر دریافت می‌کنند.",
   },
   {
     num: "02",
     label: "Renewals",
+    labelFa: "تمدیدها",
     year: "2–5 Year Blocks",
+    yearFa: "بازه‌های ۲ تا ۵ ساله",
     detail: {
       title: "Indefinite Renewals",
+      titleFa: "تمدیدهای نامحدود",
       text: "Renewable for subsequent 2-to-5-year blocks as long as the business remains financially viable and yields income at Dutch minimum wage standards.",
+      textFa: "قابل‌تمدید برای بازه‌های بعدی ۲ تا ۵ ساله تا زمانی که کسب‌وکار از نظر مالی پابرجا بماند و درآمدی در حد استانداردهای حداقل دستمزد هلند ایجاد کند.",
     },
     body: "Renewable for subsequent 2-to-5-year blocks, provided the business remains financially viable and you continue to earn at or above Dutch minimum wage standards.",
+    bodyFa: "قابل‌تمدید برای بازه‌های بعدی ۲ تا ۵ ساله، مشروط بر اینکه کسب‌وکار از نظر مالی پابرجا بماند و شما به کسب درآمد در حد یا بالاتر از استانداردهای حداقل دستمزد هلند ادامه دهید.",
   },
   {
     num: "03",
     label: "Permanent Residency",
+    labelFa: "اقامت دائم",
     year: "Year 5",
+    yearFa: "سال ۵",
     detail: {
       title: "Dutch Permanent Residency",
+      titleFa: "اقامت دائم هلند",
       text: "After 5 consecutive years of continuous, legal residency, your right to live and work in the Netherlands permanently uncouples from the business.",
+      textFa: "پس از ۵ سال متوالی اقامت قانونی و پیوسته، حق شما برای زندگی و کار در هلند به‌طور دائم از کسب‌وکار مستقل می‌شود.",
     },
     body: "After 5 consecutive years of legal, continuous residency with no unapproved extended absences, your right to live and work in the Netherlands permanently uncouples from your business performance.",
+    bodyFa: "پس از ۵ سال متوالی اقامت قانونی و پیوسته بدون غیبت‌های طولانی تأییدنشده، حق شما برای زندگی و کار در هلند به‌طور دائم از عملکرد کسب‌وکارتان مستقل می‌شود.",
   },
   {
     num: "04",
     label: "Dutch Citizenship",
+    labelFa: "تابعیت هلند",
     year: "Year 5+",
+    yearFa: "سال ۵ به بعد",
     detail: {
       title: "Dutch Citizenship",
+      titleFa: "تابعیت هلند",
       text: "Requires passing civic integration exams (Inburgering) at A2 Dutch level. Note: the Netherlands enforces a strict renunciation policy — exceptions apply only in specific circumstances.",
+      textFa: "نیازمند قبولی در آزمون‌های ادغام مدنی (Inburgering) در سطح A2 هلندی است. توجه: هلند یک سیاست انصراف سختگیرانه اعمال می‌کند — استثناها فقط در شرایط خاص اعمال می‌شوند.",
     },
     body: "Requires passing the civic integration exams (Inburgering) at A2 Dutch proficiency. The Netherlands enforces a strict renunciation policy — you must legally give up your original nationality, unless you qualify for specific exemptions such as being married to a Dutch citizen.",
+    bodyFa: "نیازمند قبولی در آزمون‌های ادغام مدنی (Inburgering) در سطح تسلط A2 هلندی است. هلند یک سیاست انصراف سختگیرانه اعمال می‌کند — باید به‌طور قانونی از تابعیت اصلی خود صرف‌نظر کنید، مگر اینکه واجد شرایط معافیت‌های خاصی مانند ازدواج با یک شهروند هلندی باشید.",
   },
 ];
 
 export default function Pathway() {
+  const { t } = useLang();
   const [openIndex, setOpenIndex] = useState<number>(0);
 
   return (
@@ -55,7 +77,7 @@ export default function Pathway() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-center mb-14">
-            Long-Term Horizon
+            {t("Long-Term Horizon", "افق بلندمدت")}
           </h2>
         </Reveal>
 
@@ -90,12 +112,12 @@ export default function Pathway() {
                   >
                     {item.num}
                   </div>
-                  <div className="text-[15px] font-semibold text-black mb-1">{item.label}</div>
+                  <div className="text-[15px] font-semibold text-black mb-1">{t(item.label, item.labelFa)}</div>
                   <span
                     className="text-[12px] font-semibold px-2.5 py-0.5 rounded-full"
                     style={{ color: "#8F27FF", background: "#FAF6FF" }}
                   >
-                    {item.year}
+                    {t(item.year, item.yearFa)}
                   </span>
                 </div>
               ))}
@@ -113,8 +135,8 @@ export default function Pathway() {
                     border: openIndex === i ? "1px solid rgba(143,39,255,0.18)" : "1px solid #E2E2E2",
                   }}
                 >
-                  <h5 className="text-[14px] font-semibold text-black mb-2">{item.detail.title}</h5>
-                  <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{item.detail.text}</p>
+                  <h5 className="text-[14px] font-semibold text-black mb-2">{t(item.detail.title, item.detail.titleFa)}</h5>
+                  <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{t(item.detail.text, item.detail.textFa)}</p>
                 </div>
               ))}
             </div>
@@ -150,12 +172,12 @@ export default function Pathway() {
                     {item.num}
                   </div>
                   <div className="flex-1">
-                    <div className="text-[14px] font-semibold text-black mb-0.5">{item.label}</div>
+                    <div className="text-[14px] font-semibold text-black mb-0.5">{t(item.label, item.labelFa)}</div>
                     <span
                       className="text-[11px] font-semibold px-2 py-0.5 rounded-full inline-block"
                       style={{ color: "#8F27FF", background: "#FAF6FF" }}
                     >
-                      {item.year}
+                      {t(item.year, item.yearFa)}
                     </span>
                   </div>
                   <svg
@@ -175,7 +197,7 @@ export default function Pathway() {
                     className="px-4 pb-4 text-[13px] leading-[1.6] text-[#474747]"
                     style={{ paddingLeft: "62px" }}
                   >
-                    {item.body}
+                    {t(item.body, item.bodyFa)}
                   </div>
                 )}
               </div>

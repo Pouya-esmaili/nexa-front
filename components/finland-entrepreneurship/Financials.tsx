@@ -2,6 +2,7 @@
 
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const cards = [
   {
@@ -12,10 +13,17 @@ const cards = [
       </svg>
     ),
     title: "Minimum Net Income",
+    titleFa: "حداقل درآمد خالص",
     desc: (
       <>
         <strong className="text-white font-semibold">€1,030–€1,210/month</strong> — fluctuates by municipality. Your
         business must comfortably cover operational costs and personal living expenses.
+      </>
+    ),
+    descFa: (
+      <>
+        <strong className="text-white font-semibold">۱٬۰۳۰ تا ۱٬۲۱۰ یورو در ماه</strong> — بسته به شهرداری متغیر است.
+        کسب‌وکار شما باید به‌راحتی هزینه‌های عملیاتی و هزینه‌های زندگی شخصی را پوشش دهد.
       </>
     ),
   },
@@ -29,11 +37,19 @@ const cards = [
       </svg>
     ),
     title: "ELY Centre Business Assessment",
+    titleFa: "ارزیابی کسب‌وکار مرکز ELY",
     desc: (
       <>
         Before Migri reviews your file, the{" "}
         <strong className="text-white font-semibold">ELY Centre</strong> conducts an independent assessment of
         commercial viability and profitability — the first critical gate.
+      </>
+    ),
+    descFa: (
+      <>
+        پیش از اینکه Migri پرونده‌ی شما را بررسی کند، {" "}
+        <strong className="text-white font-semibold">مرکز ELY</strong> یک ارزیابی مستقل از امکان‌پذیری تجاری و
+        سودآوری انجام می‌دهد — نخستین دروازه‌ی حیاتی.
       </>
     ),
   },
@@ -45,6 +61,7 @@ const cards = [
       </svg>
     ),
     title: "Processing Fee",
+    titleFa: "هزینه‌ی پردازش",
     desc: (
       <>
         Electronic application via Enter Finland:{" "}
@@ -52,10 +69,18 @@ const cards = [
         <strong className="text-white font-semibold">€900</strong>. Fee is non-refundable regardless of decision outcome.
       </>
     ),
+    descFa: (
+      <>
+        درخواست الکترونیکی از طریق Enter Finland:{" "}
+        <strong className="text-white font-semibold">۷۵۰ یورو</strong>. درخواست‌های کاغذی:{" "}
+        <strong className="text-white font-semibold">۹۰۰ یورو</strong>. هزینه صرف‌نظر از نتیجه‌ی تصمیم غیرقابل‌استرداد است.
+      </>
+    ),
   },
 ];
 
 export default function Financials() {
+  const { t, lang } = useLang();
   return (
     <section className="py-20 md:py-24 bg-black relative overflow-hidden">
       <div
@@ -65,7 +90,7 @@ export default function Financials() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-white text-center mb-14">
-            Financial Requirements
+            {t("Financial Requirements", "الزامات مالی")}
           </h2>
         </Reveal>
 
@@ -84,33 +109,37 @@ export default function Financials() {
                   color: "#FFE600",
                 }}
               >
-                12-Month Runway Required
+                {t("12-Month Runway Required", "پشتوانه‌ی ۱۲ ماهه لازم است")}
               </div>
               <div>
                 <div
                   className="font-bold leading-[0.9] tabular-nums text-white"
                   style={{ fontSize: "64px", letterSpacing: "-0.04em" }}
                 >
-                  €12<span style={{ fontSize: "32px" }}>–14K</span>
+                  {t("€12", "۱۲")}<span style={{ fontSize: "32px" }}>{t("–14K", "–۱۴ هزار یورو")}</span>
                 </div>
               </div>
               <p className="text-[14px] leading-[1.65]" style={{ color: "#B5B5BA" }}>
-                Minimum personal cash reserve upfront — covering{" "}
-                <strong style={{ color: "#FFE600", fontWeight: 600 }}>12 months</strong> at the €1,030–1,210/month
-                threshold. Exact amount varies by municipality.
+                {t("Minimum personal cash reserve upfront — covering", "حداقل ذخیره‌ی نقدی شخصی اولیه — که")}{" "}
+                <strong style={{ color: "#FFE600", fontWeight: 600 }}>{t("12 months", "۱۲ ماه")}</strong> {t("at the €1,030–1,210/month threshold. Exact amount varies by municipality.", "را در آستانه‌ی ۱٬۰۳۰ تا ۱٬۲۱۰ یورو در ماه پوشش می‌دهد. مبلغ دقیق بسته به شهرداری متفاوت است.")}
               </p>
               <div
                 className="flex flex-wrap gap-2 mt-auto pt-[18px]"
                 style={{ borderTop: "1px solid #1f1f24" }}
               >
-                {["Bank statements (3 months)", "B2B contracts / LOIs", "Capital commitments", "Interim balance sheets"].map(
+                {[
+                  { en: "Bank statements (3 months)", fa: "صورت‌حساب‌های بانکی (۳ ماه)" },
+                  { en: "B2B contracts / LOIs", fa: "قراردادهای B2B / LOIها" },
+                  { en: "Capital commitments", fa: "تعهدات سرمایه" },
+                  { en: "Interim balance sheets", fa: "ترازنامه‌های موقت" },
+                ].map(
                   (chip) => (
                     <span
-                      key={chip}
+                      key={chip.en}
                       className="text-[12px] px-3 py-1.5 rounded-full text-white font-medium"
                       style={{ border: "1px solid #2a2a30" }}
                     >
-                      {chip}
+                      {t(chip.en, chip.fa)}
                     </span>
                   )
                 )}
@@ -143,9 +172,9 @@ export default function Financials() {
                     <div className="w-[18px] h-[18px]">{c.icon}</div>
                   </div>
                   <div>
-                    <h4 className="text-[14px] font-semibold text-white mb-1">{c.title}</h4>
+                    <h4 className="text-[14px] font-semibold text-white mb-1">{t(c.title, c.titleFa)}</h4>
                     <p className="text-[13px] leading-[1.6] m-0" style={{ color: "#B5B5BA" }}>
-                      {c.desc}
+                      {lang === "fa" ? c.descFa : c.desc}
                     </p>
                   </div>
                 </div>

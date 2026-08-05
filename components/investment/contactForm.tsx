@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const COUNTRIES = [
   { flag: "🇨🇦", name: "Canada",         dial: "+1" },
@@ -27,6 +28,7 @@ const COUNTRIES = [
 ];
 
 export default function InvestmentContactForm() {
+  const { t } = useLang();
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
@@ -89,11 +91,11 @@ export default function InvestmentContactForm() {
                 color: "#000",
               }}
             >
-              Ready to{" "}
+              {t("Ready to", "آماده")}{" "}
               <mark style={{ display: "inline", background: "#FFE600", borderRadius: 3, padding: "0 5px 3px" }}>
-                Invest
+                {t("Invest", "جذب سرمایه")}
               </mark>{" "}
-              or Raise Capital?
+              {t("or Raise Capital?", "یا سرمایه گذاری هستید؟")}
             </h2>
           </div>
         </Reveal>
@@ -117,29 +119,29 @@ export default function InvestmentContactForm() {
               onSubmit={handleSubmit}
             >
               {/* First Name */}
-              <FormGroup label="First Name" required>
+              <FormGroup label={t("First Name", "نام")} required>
                 <input
                   name="firstName"
                   className="nform-input"
                   type="text"
-                  placeholder="Your first name"
+                  placeholder={t("Your first name", "نام شما")}
                   required
                 />
               </FormGroup>
 
               {/* Last Name */}
-              <FormGroup label="Last Name" required>
+              <FormGroup label={t("Last Name", "نام خانوادگی")} required>
                 <input
                   name="lastName"
                   className="nform-input"
                   type="text"
-                  placeholder="Your last name"
+                  placeholder={t("Your last name", "نام خانوادگی شما")}
                   required
                 />
               </FormGroup>
 
               {/* Email */}
-              <FormGroup label="Email Address" required>
+              <FormGroup label={t("Email Address", "آدرس ایمیل")} required>
                 <input
                   name="email"
                   className="nform-input"
@@ -150,79 +152,79 @@ export default function InvestmentContactForm() {
               </FormGroup>
 
               {/* Phone */}
-              <FormGroup label="Phone Number" required>
+              <FormGroup label={t("Phone Number", "شماره تماس")} required>
                 <PhoneField name="phone" />
               </FormGroup>
 
               {/* I Am A */}
-              <FormGroup label="I Am a" required>
+              <FormGroup label={t("I Am a", "من هستم")} required>
                 <select className="nform-input nform-select" required>
-                  <option value="">Select your role…</option>
-                  <option>Entrepreneur / Founder seeking investment</option>
-                  <option>Investor looking for opportunities</option>
-                  <option>Company seeking strategic partnership</option>
-                  <option>Project owner seeking capital structuring</option>
-                  <option>Other</option>
+                  <option value="">{t("Select your role…", "نقش خود را انتخاب کنید…")}</option>
+                  <option>{t("Entrepreneur / Founder seeking investment", "کارآفرین / بنیان‌گذار در جست‌وجوی سرمایه")}</option>
+                  <option>{t("Investor looking for opportunities", "سرمایه‌گذار در جست‌وجوی فرصت")}</option>
+                  <option>{t("Company seeking strategic partnership", "شرکت در جست‌وجوی مشارکت استراتژیک")}</option>
+                  <option>{t("Project owner seeking capital structuring", "صاحب پروژه در جست‌وجوی ساختاردهی سرمایه")}</option>
+                  <option>{t("Other", "سایر")}</option>
                 </select>
               </FormGroup>
 
               {/* Investment Sector */}
-              <FormGroup label="Investment Sector" required>
+              <FormGroup label={t("Investment Sector", "بخش سرمایه‌گذاری")} required>
                 <select className="nform-input nform-select" required>
-                  <option value="">Select sector…</option>
-                  <option>Real Estate</option>
-                  <option>Energy &amp; Renewables</option>
-                  <option>Information Technology</option>
-                  <option>Technology &amp; Innovation</option>
-                  <option>Healthcare &amp; Medical</option>
-                  <option>Tourism &amp; Hospitality</option>
-                  <option>Other</option>
+                  <option value="">{t("Select sector…", "بخش را انتخاب کنید…")}</option>
+                  <option>{t("Real Estate", "املاک")}</option>
+                  <option>{t("Energy & Renewables", "انرژی و تجدیدپذیرها")}</option>
+                  <option>{t("Information Technology", "فناوری اطلاعات")}</option>
+                  <option>{t("Technology & Innovation", "فناوری و نوآوری")}</option>
+                  <option>{t("Healthcare & Medical", "سلامت و پزشکی")}</option>
+                  <option>{t("Tourism & Hospitality", "گردشگری و مهمان‌نوازی")}</option>
+                  <option>{t("Other", "سایر")}</option>
                 </select>
               </FormGroup>
 
               {/* Business Stage */}
-              <FormGroup label="Project / Business Stage">
+              <FormGroup label={t("Project / Business Stage", "مرحله‌ی پروژه / کسب‌وکار")}>
                 <select className="nform-input nform-select">
-                  <option value="">Select stage…</option>
-                  <option>Idea / Pre-revenue</option>
-                  <option>Growth Stage (Seed / Series A)</option>
-                  <option>Expansion Phase</option>
-                  <option>Established — Seeking M&amp;A or Restructuring</option>
+                  <option value="">{t("Select stage…", "مرحله را انتخاب کنید…")}</option>
+                  <option>{t("Idea / Pre-revenue", "ایده / پیش از درآمد")}</option>
+                  <option>{t("Growth Stage (Seed / Series A)", "مرحله‌ی رشد (سید / سری A)")}</option>
+                  <option>{t("Expansion Phase", "فاز گسترش")}</option>
+                  <option>{t("Established — Seeking M&A or Restructuring", "تثبیت‌شده — در جست‌وجوی ادغام و تملیک یا بازساختاردهی")}</option>
                 </select>
               </FormGroup>
 
               {/* Capital Range */}
-              <FormGroup label="Capital Range">
+              <FormGroup label={t("Capital Range", "بازه‌ی سرمایه")}>
                 <select className="nform-input nform-select">
-                  <option value="">Select range…</option>
-                  <option>Under $100,000</option>
-                  <option>$100,000 – $500,000</option>
-                  <option>$500,000 – $1,000,000</option>
-                  <option>$1,000,000 – $5,000,000</option>
-                  <option>$5,000,000+</option>
+                  <option value="">{t("Select range…", "بازه را انتخاب کنید…")}</option>
+                  <option>{t("Under $100,000", "زیر ۱۰۰٬۰۰۰ دلار")}</option>
+                  <option>{t("$100,000 – $500,000", "۱۰۰٬۰۰۰ تا ۵۰۰٬۰۰۰ دلار")}</option>
+                  <option>{t("$500,000 – $1,000,000", "۵۰۰٬۰۰۰ تا ۱٬۰۰۰٬۰۰۰ دلار")}</option>
+                  <option>{t("$1,000,000 – $5,000,000", "۱٬۰۰۰٬۰۰۰ تا ۵٬۰۰۰٬۰۰۰ دلار")}</option>
+                  <option>{t("$5,000,000+", "بیش از ۵٬۰۰۰٬۰۰۰ دلار")}</option>
                 </select>
               </FormGroup>
 
               {/* How Did You Hear */}
-              <FormGroup label="How Did You Hear About Us?">
+              <FormGroup label={t("How Did You Hear About Us?", "چطور با ما آشنا شدید؟")}>
                 <select className="nform-input nform-select">
-                  <option value="">Select…</option>
-                  <option>Google</option>
-                  <option>Social Media</option>
-                  <option>Friend / Referral</option>
-                  <option>Attorney</option>
-                  <option>Webinar</option>
-                  <option>Tradeshow / Conference</option>
-                  <option>Other</option>
+                  <option value="">{t("Select…", "انتخاب کنید…")}</option>
+                  <option>{t("Google", "گوگل")}</option>
+                  <option>{t("Social Media", "شبکه‌های اجتماعی")}</option>
+                  <option>{t("Friend / Referral", "دوست / معرفی")}</option>
+                  <option>{t("Attorney", "وکیل")}</option>
+                  <option>{t("Webinar", "وبینار")}</option>
+                  <option>{t("Tradeshow / Conference", "نمایشگاه / کنفرانس")}</option>
+                  <option>{t("Other", "سایر")}</option>
                 </select>
               </FormGroup>
 
               {/* Tell Us (full width) */}
-              <FormGroup label="Tell Us About Your Project" fullWidth>
+              <FormGroup label={t("Tell Us About Your Project", "درباره‌ی پروژه‌تان بگویید")} fullWidth>
                 <textarea
                   name="message"
                   className="nform-input"
-                  placeholder="Briefly describe your business or project, the sector, current stage, and what kind of investment or partnership you are seeking…"
+                  placeholder={t("Briefly describe your business or project, the sector, current stage, and what kind of investment or partnership you are seeking…", "به‌طور خلاصه کسب‌وکار یا پروژه، بخش، مرحله‌ی فعلی و نوع سرمایه‌گذاری یا مشارکتی که به دنبال آن هستید را شرح دهید…")}
                   style={{ minHeight: 120, resize: "vertical", lineHeight: 1.65 }}
                 />
               </FormGroup>
@@ -244,7 +246,7 @@ export default function InvestmentContactForm() {
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                   </svg>
-                  Your information is kept strictly confidential.
+                  {t("Your information is kept strictly confidential.", "اطلاعات شما کاملاً محرمانه نگهداری می‌شود.")}
                 </span>
                 <button
                   type="submit"
@@ -261,12 +263,12 @@ export default function InvestmentContactForm() {
                   }}
                 >
                   {submitted
-                    ? "Sent ✓"
+                    ? t("Sent ✓", "ارسال شد ✓")
                     : submitting
-                    ? "Sending…"
+                    ? t("Sending…", "در حال ارسال…")
                     : (
                       <>
-                        Send Message
+                        {t("Send Message", "ارسال پیام")}
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="white" strokeWidth="2.5">
                           <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
@@ -356,6 +358,7 @@ function FormGroup({
 }
 
 function PhoneField({ name }: { name?: string }) {
+  const { t } = useLang();
   const [selected, setSelected] = useState(COUNTRIES[0]);
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
@@ -434,7 +437,7 @@ function PhoneField({ name }: { name?: string }) {
               autoFocus
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search country…"
+              placeholder={t("Search country…", "جستجوی کشور…")}
               style={{
                 width: "100%",
                 padding: "8px 12px",
@@ -491,7 +494,7 @@ function PhoneField({ name }: { name?: string }) {
         name={name}
         className="nform-input"
         type="tel"
-        placeholder="Phone number"
+        placeholder={t("Phone number", "شماره تماس")}
         required
         style={{
           borderRadius: "0 12px 12px 0",

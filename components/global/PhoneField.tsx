@@ -174,7 +174,10 @@ interface PhoneFieldProps {
   name?: string;
 }
 
+import { useLang } from "@/components/global/LanguageProvider";
+
 export default function PhoneField({ defaultCountryCode = "+1", bg = "#F7F6F9", name }: PhoneFieldProps) {
+  const { t } = useLang();
   return (
     <div
       className="h-11 flex items-center border border-gray-200 rounded-[10px] overflow-hidden focus-within:border-[#8F27FF] transition-colors"
@@ -195,7 +198,7 @@ export default function PhoneField({ defaultCountryCode = "+1", bg = "#F7F6F9", 
         name={name}
         type="tel"
         required
-        placeholder="Phone number"
+        placeholder={t("Phone number", "شماره تماس")}
         className="flex-1 h-full px-3 text-[14px] outline-none bg-transparent font-medium min-w-0"
       />
     </div>

@@ -4,51 +4,69 @@ import { useState } from "react";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
 import IconArrow from '@/components/global/IconArrow';
+import { useLang } from "@/components/global/LanguageProvider";
 
 const stages = [
   {
     num: "01",
     label: "Talent Permit",
+    labelFa: "مجوز استعداد",
     year: "Up to 4 Years",
+    yearFa: "تا ۴ سال",
     detail: {
       title: "Talent – Innovative Project Permit",
+      titleFa: "مجوز استعداد – پروژه‌ی نوآورانه",
       desc: "Build and operate your startup with full work authorization and Schengen travel rights for up to 4 years.",
+      descFa: "استارتاپ خود را با مجوز کامل کار و حق سفر شنگن تا ۴ سال بسازید و اداره کنید.",
     },
     active: true,
   },
   {
     num: "02",
     label: "Renewal",
+    labelFa: "تمدید",
     year: "Before Expiry",
+    yearFa: "پیش از انقضا",
     detail: {
       title: "Seamless Renewal via ANEF",
+      titleFa: "تمدید روان از طریق ANEF",
       desc: "Apply 2–4 months before expiry. Show documented project growth: tax filings, financial statements, and client contracts — plus continued SMIC-level income.",
+      descFa: "۲ تا ۴ ماه پیش از انقضا درخواست دهید. رشد مستند پروژه را نشان دهید: اظهارنامه‌های مالیاتی، صورت‌های مالی و قراردادهای مشتری — به‌علاوه‌ی درآمد مستمر در سطح SMIC.",
     },
     active: false,
   },
   {
     num: "03",
     label: "Permanent Residency",
+    labelFa: "اقامت دائم",
     year: "Year 5",
+    yearFa: "سال ۵",
     detail: {
       title: "10-Year Permanent Resident Card",
+      titleFa: "کارت اقامت دائم ۱۰ ساله",
       desc: "After 5 years of continuous residence, your legal status uncouples from the startup entirely. Full freedom to exit, pivot, or enter any employment in France.",
+      descFa: "پس از ۵ سال اقامت پیوسته، وضعیت حقوقی شما به‌طور کامل از استارتاپ مستقل می‌شود. آزادی کامل برای خروج، تغییر مسیر یا ورود به هر شغلی در فرانسه.",
     },
     active: false,
   },
   {
     num: "04",
     label: "French Citizenship",
+    labelFa: "تابعیت فرانسه",
     year: "Year 5+",
+    yearFa: "سال ۵ به بعد",
     detail: {
       title: "French Naturalization",
+      titleFa: "تابعیت‌پذیری فرانسه",
       desc: "B1 French language (CEFR), clean tax compliance record (Bordereau P237), and an in-person civic interview on French history, values, and duties.",
+      descFa: "زبان فرانسه‌ی سطح B1 (CEFR)، سابقه‌ی تمیز پایبندی مالیاتی (Bordereau P237) و یک مصاحبه‌ی حضوری مدنی درباره‌ی تاریخ، ارزش‌ها و وظایف فرانسه.",
     },
     active: false,
   },
 ];
 
 export default function PathwayToPassport() {
+  const { t } = useLang();
   const [openMobile, setOpenMobile] = useState(0);
   const [selectedDesktop, setSelectedDesktop] = useState(0);
 
@@ -57,7 +75,7 @@ export default function PathwayToPassport() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10 md:mb-14">
-            The Long-Term Horizon
+            {t("The Long-Term Horizon", "افق بلندمدت")}
           </h2>
         </Reveal>
 
@@ -88,12 +106,12 @@ export default function PathwayToPassport() {
                 >
                   {s.num}
                 </div>
-                <div className="text-[15px] font-semibold mb-1">{s.label}</div>
+                <div className="text-[15px] font-semibold mb-1">{t(s.label, s.labelFa)}</div>
                 <span
                   className="text-[12px] font-semibold px-2.5 py-0.5 rounded-full"
                   style={{ background: "#FAF6FF", color: "#8F27FF" }}
                 >
-                  {s.year}
+                  {t(s.year, s.yearFa)}
                 </span>
               </div>
               </Reveal>
@@ -108,8 +126,8 @@ export default function PathwayToPassport() {
                 className="h-full rounded-[14px] p-5 transition-all hover:border-[rgba(143,39,255,0.3)] hover:bg-[#FAF6FF]"
                 style={{ background: "#F7F6F9", border: "1px solid #E2E2E2" }}
               >
-                <h5 className="text-[14px] font-semibold mb-2">{s.detail.title}</h5>
-                <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{s.detail.desc}</p>
+                <h5 className="text-[14px] font-semibold mb-2">{t(s.detail.title, s.detail.titleFa)}</h5>
+                <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{t(s.detail.desc, s.detail.descFa)}</p>
               </div>
               </Reveal>
             ))}
@@ -140,7 +158,7 @@ export default function PathwayToPassport() {
                   {s.num}
                 </div>
                 <div className="flex-1">
-                  <div className="text-[14px] font-semibold">{s.label}</div>
+                  <div className="text-[14px] font-semibold">{t(s.label, s.labelFa)}</div>
                   <span
                     className="text-[11px] font-semibold px-2 py-0.5 rounded-full inline-block mt-0.5"
                     style={{ background: "#FAF6FF", color: "#8F27FF" }}
@@ -152,7 +170,7 @@ export default function PathwayToPassport() {
               </button>
               {openMobile === i && (
                 <div className="px-5 pb-4 pl-[70px] text-[13.5px] text-[#474747] leading-[1.6]">
-                  {s.detail.desc}
+                  {t(s.detail.desc, s.detail.descFa)}
                 </div>
               )}
             </div>

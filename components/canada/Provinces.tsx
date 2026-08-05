@@ -1,6 +1,9 @@
+"use client";
+
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
 import Image from "next/image";
+import { useLang } from "@/components/global/LanguageProvider";
 
 interface Province {
   name: string;
@@ -10,6 +13,46 @@ interface Province {
   investment: string;
   operation: string;
 }
+
+const NAME_FA: Record<string, string> = {
+  "Ontario": "انتاریو",
+  "British Columbia": "بریتیش کلمبیا",
+  "Alberta": "آلبرتا",
+  "Quebec": "کبک",
+  "Manitoba": "مانیتوبا",
+  "Saskatchewan": "ساسکاچوان",
+  "Yukon": "یوکان",
+  "NW Territories": "قلمروهای شمال‌غربی",
+  "New Brunswick": "نیوبرانزویک",
+  "Nova Scotia": "نوا اسکوشیا",
+  "Prince Edward Island": "جزیره‌ی پرنس ادوارد",
+  "Newfoundland & Labrador": "نیوفاندلند و لابرادور",
+};
+
+const LABEL_FA: Record<string, string> = {
+  "Min Net Worth": "حداقل دارایی خالص",
+  "Min Investment": "حداقل سرمایه‌گذاری",
+  "Operation": "بهره‌برداری",
+};
+
+const VALUE_FA: Record<string, string> = {
+  "CAD 800K": "۸۰۰ هزار دلار کانادا",
+  "CAD 900K": "۹۰۰ هزار دلار کانادا",
+  "CAD 600K": "۶۰۰ هزار دلار کانادا",
+  "CAD 500K": "۵۰۰ هزار دلار کانادا",
+  "CAD 300K": "۳۰۰ هزار دلار کانادا",
+  "CAD 200K": "۲۰۰ هزار دلار کانادا",
+  "CAD 150K": "۱۵۰ هزار دلار کانادا",
+  "CAD 100K+": "۱۰۰ هزار دلار کانادا به بالا",
+  "CAD 250-500K": "۲۵۰ تا ۵۰۰ هزار دلار کانادا",
+  "Flexible": "منعطف",
+  "Verified": "تأییدشده",
+  "18-20 mo": "۱۸ تا ۲۰ ماه",
+  "12-20 mo": "۱۲ تا ۲۰ ماه",
+  "12-18 mo": "۱۲ تا ۱۸ ماه",
+  "6-12 mo": "۶ تا ۱۲ ماه",
+  "12 mo": "۱۲ ماه",
+};
 
 const mainProvinces: Province[] = [
   { name: "Ontario", bg: "/images/photos/1503614472-8c93d56e92ce-w600.jpg", flag: "/images/flags/Flag_of_Ontario.svg.png", netWorth: "CAD 800K", investment: "CAD 200K", operation: "18-20 mo" },
@@ -30,6 +73,7 @@ const atlanticProvinces: Province[] = [
 ];
 
 function ProvinceCard({ p, delay }: { p: Province; delay: number }) {
+  const { t } = useLang();
   return (
     <Reveal variant="up" delay={delay}>
       <div className="bg-white rounded-[20px] overflow-hidden border border-[#E2E2E2] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg"
@@ -43,7 +87,7 @@ function ProvinceCard({ p, delay }: { p: Province; delay: number }) {
             style={{ boxShadow: "0 3px 8px rgba(0,0,0,0.4)", border: "1.5px solid white" }}>
             <Image src={p.flag} alt={`${p.name} flag`} fill className="object-cover" sizes="38px" />
           </div>
-          <span className="absolute bottom-3 left-3.5 text-white font-semibold text-[15px] z-10 tracking-[-0.01em]">{p.name}</span>
+          <span className="absolute bottom-3 left-3.5 text-white font-semibold text-[15px] z-10 tracking-[-0.01em]">{t(p.name, NAME_FA[p.name] ?? p.name)}</span>
         </div>
         {/* Body */}
         <div className="p-4.5 p-[18px]">
@@ -54,12 +98,12 @@ function ProvinceCard({ p, delay }: { p: Province; delay: number }) {
           ].map((stat, j, arr) => (
             <div key={stat.label} className="flex justify-between items-center text-[12px] py-2"
               style={{ borderBottom: j < arr.length - 1 ? "1px dashed #E2E2E2" : undefined }}>
-              <span className="text-[#929292] font-medium">{stat.label}</span>
-              <span className="font-bold">{stat.val}</span>
+              <span className="text-[#929292] font-medium">{t(stat.label, LABEL_FA[stat.label] ?? stat.label)}</span>
+              <span className="font-bold">{t(stat.val, VALUE_FA[stat.val] ?? stat.val)}</span>
             </div>
           ))}
           <a href="#" className="mt-3 text-[13px] font-semibold text-[#8F27FF] inline-flex items-center gap-1.5 transition-all hover:gap-2.5">
-            Read More →
+            {t("Read More →", "بیشتر بخوانید →")}
           </a>
         </div>
       </div>
@@ -68,19 +112,20 @@ function ProvinceCard({ p, delay }: { p: Province; delay: number }) {
 }
 
 export default function Provinces() {
+  const { t } = useLang();
   return (
     <section className="py-20 md:py-24 bg-white">
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-12">
-            Key Canadian Provinces &amp; Entrepreneur Streams
+            {t("Key Canadian Provinces & Entrepreneur Streams", "استان‌های کلیدی کانادا و جریان‌های کارآفرینی")}
           </h2>
         </Reveal>
 
         {/* Group label */}
         <Reveal variant="up" delay={80}>
           <div className="flex items-center gap-4 mb-8">
-            <span className="text-[13px] font-bold tracking-[0.1em] uppercase text-[#929292] whitespace-nowrap">Key Provinces</span>
+            <span className="text-[13px] font-bold tracking-[0.1em] uppercase text-[#929292] whitespace-nowrap">{t("Key Provinces", "استان‌های کلیدی")}</span>
             <div className="flex-1 h-px bg-[#E2E2E2]" />
           </div>
         </Reveal>
@@ -98,7 +143,7 @@ export default function Provinces() {
 
           <Reveal variant="up">
             <div className="flex items-center gap-4 mb-8">
-              <span className="text-[13px] font-bold tracking-[0.1em] uppercase text-[#929292] whitespace-nowrap">Atlantic Provinces</span>
+              <span className="text-[13px] font-bold tracking-[0.1em] uppercase text-[#929292] whitespace-nowrap">{t("Atlantic Provinces", "استان‌های آتلانتیک")}</span>
               <div className="flex-1 h-px bg-[#E2E2E2]" />
             </div>
           </Reveal>

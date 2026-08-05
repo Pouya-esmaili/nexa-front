@@ -2,6 +2,18 @@
 
 import Reveal from "@/components/global/LazyReveal";
 import Image from "next/image";
+import { useLang } from "@/components/global/LanguageProvider";
+
+const TAG_FA: Record<string, string> = {
+  "Tourism · Travel": "گردشگری · سفر",
+  "Handcraft · Artisan Market": "صنایع‌دستی · بازار هنر",
+  "Autism Support · Child EdTech": "حمایت از اوتیسم · فناوری آموزش کودک",
+  "Virtual Reality · Immersive Tech": "واقعیت مجازی · فناوری فراگیر",
+  "Business Solutions · Corporate": "راهکارهای کسب‌وکار · سازمانی",
+  "Fine Jewelry · Luxury Retail": "جواهرات نفیس · خرده‌فروشی لوکس",
+  "Genetics · Health Prevention": "ژنتیک · پیشگیری سلامت",
+  "Surgical Device · MedTech": "تجهیزات جراحی · فناوری پزشکی",
+};
 
 const projects = [
   // { name: "Landa Trip",      tag: "Tourism · Travel",                 img: "/images/about/trip.svg",          icon: "/images/landing/Landa Trip.svg" },
@@ -23,6 +35,7 @@ const projects = [
 ];
 
 export default function ProjectsSection() {
+  const { t } = useLang();
   return (
     <section className="py-20 md:py-24 bg-white">
       <div className="max-w-[1240px] mx-auto px-6">
@@ -30,7 +43,8 @@ export default function ProjectsSection() {
         <Reveal variant="up">
           <div className="text-center mb-14">
             <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em]">
-              Our Successful Projects
+              {t("Our Successful Projects"," نمونه‌ای از استارتاپ‌های موفق ما"
+)}
             </h2>
           </div>
         </Reveal>
@@ -60,7 +74,7 @@ export default function ProjectsSection() {
                 <div className="absolute bottom-0 left-0 right-0 p-[22px] flex items-end justify-between gap-3">
                   <div>
                     <div className="text-white font-bold text-[16px] tracking-[-0.01em]">{p.name}</div>
-                    <div className="text-[rgba(255,255,255,0.65)] text-[12px] font-medium mt-1">{p.tag}</div>
+                    <div className="text-[rgba(255,255,255,0.65)] text-[12px] font-medium mt-1">{t(p.tag, TAG_FA[p.tag] ?? p.tag)}</div>
                   </div>
                   {/* project icon — opposite the name */}
                   <div className="w-11 h-12 rounded-2xl grid place-items-center overflow-hidden flex-shrink-0 bg-white/15 backdrop-blur-md border border-white/30 shadow-[0_10px_30px_rgba(0,0,0,0.75)] transition-transform duration-300 group-hover:scale-110">

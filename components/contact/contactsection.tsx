@@ -2,27 +2,34 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useLang } from "@/components/global/LanguageProvider";
 
 
 const contactItem = [
   {
     flag: "/images/Entrepreneurship/cn.svg",
     country: "Vancouver, Canada",
+    countryFa: "ونکوور، کانادا",
     address: "301-1414 Barclay St, Vancouver, British Columbia, Canada",
+    addressFa: "۳۰۱-۱۴۱۴ خیابان بارکلی، ونکوور، بریتیش کلمبیا، کانادا",
     phone: "+1 (604) 351-5951",
     tel: "+16043515951",
   },
   {
     flag: "/images/about/IR.svg",
     country: "Tehran, Iran",
+    countryFa: "تهران، ایران",
     address: "No. 27, Neom Building, Tajrish Square, Tehran",
+    addressFa: "تهران، میدان تجریش، مجتمع نئوم، پلاک ۲۷",
     phone: "+98 (31) 3131-1914",
     tel: "+983131311914",
   },
   {
     flag: "/images/about/IR.svg",
     country: "Esfahan, Iran",
+    countryFa: "اصفهان، ایران",
     address: "Tala Building, Saadat Abad,Azadi Square, Esfahan",
+    addressFa: "اصفهان، میدان آزادی، سعادت‌آباد، ساختمان طلا",
     phone: "+98 (31) 3131-1914",
     tel: "+983131311914",
   },
@@ -38,21 +45,22 @@ type FormData = {
 
 type FormErrors = Partial<Record<keyof FormData, string>>;
 
-function validate(data: FormData): FormErrors {
+function validate(data: FormData, t: (en: string, fa: string) => string): FormErrors {
   const errors: FormErrors = {};
-  if (!data.fullName.trim()) errors.fullName = "Full name is required.";
+  if (!data.fullName.trim()) errors.fullName = t("Full name is required.", "نام کامل الزامی است.");
   if (!data.email.trim()) {
-    errors.email = "Email address is required.";
+    errors.email = t("Email address is required.", "آدرس ایمیل الزامی است.");
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
-    errors.email = "Please enter a valid email address.";
+    errors.email = t("Please enter a valid email address.", "لطفاً یک آدرس ایمیل معتبر وارد کنید.");
   }
-  if (!data.service) errors.service = "Please select a service type.";
-  if (!data.message.trim()) errors.message = "Message is required.";
-  else if (data.message.trim().length < 10) errors.message = "Message must be at least 10 characters.";
+  if (!data.service) errors.service = t("Please select a service type.", "لطفاً نوع خدمت را انتخاب کنید.");
+  if (!data.message.trim()) errors.message = t("Message is required.", "متن پیام الزامی است.");
+  else if (data.message.trim().length < 10) errors.message = t("Message must be at least 10 characters.", "پیام باید حداقل ۱۰ کاراکتر باشد.");
   return errors;
 }
 
 export default function ContactSection() {
+  const { t } = useLang();
   const [form, setForm] = useState<FormData>({
     fullName: "",
     email: "",
@@ -70,7 +78,7 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const errs = validate(form);
+    const errs = validate(form, t);
     if (Object.keys(errs).length > 0) {
       setErrors(errs);
       return;
@@ -109,11 +117,11 @@ export default function ContactSection() {
 
                 <div>
                   <div className="text-[17px] font-extrabold tracking-[-0.3px] mb-[5px]">
-                    {office.country}
+                    {t(office.country, office.countryFa)}
                   </div>
 
                   <div className="text-[13px] text-[#5A5A5A] leading-[1.65] whitespace-pre-line mb-[7px]">
-                    {office.address}
+                    {t(office.address, office.addressFa)}
                   </div>
 
                   <a
@@ -138,31 +146,31 @@ export default function ContactSection() {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-black">Message Sent!</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-black">{t("Message Sent!", "پیام ارسال شد!")}</h2>
                 <p className="text-[15px] text-[#929292] max-w-[320px] leading-relaxed">
-                  Thank you for reaching out. We&apos;ll get back to you within 48 hours.
+                  {t("Thank you for reaching out. We'll get back to you within 48 hours.", "از پیام شما سپاسگزاریم. ظرف ۴۸ ساعت با شما تماس می‌گیریم.")}
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); setForm({ fullName: "", email: "", service: "", message: "" }); }}
                   className="mt-2 px-7 py-3 rounded-full border-[1.5px] border-[#8F27FF] text-[#8F27FF] font-semibold text-[14px] hover:bg-[#8F27FF] hover:text-white transition-all duration-200"
                 >
-                  Send Another Message
+                  {t("Send Another Message", "ارسال پیام دیگر")}
                 </button>
               </div>
             ) : (
               /* ── Form ── */
               <>
-                <h2 className="md:text-4xl text-2xl font-bold">Send a Message</h2>
-                <p className="mt-2 text-sm text-[#474747]">Most inquiries receive a response within 48 hours.</p>
+                <h2 className="md:text-4xl text-2xl font-bold">{t("Send a Message", "ارسال پیام")}</h2>
+                <p className="mt-2 text-sm text-[#474747]">{t("Most inquiries receive a response within 48 hours.", "به بیشتر درخواست‌ها ظرف ۴۸ ساعت پاسخ داده می‌شود.")}</p>
 
                 <form className="mt-10" onSubmit={handleSubmit} noValidate>
                   <div className="grid gap-5 md:grid-cols-2">
                     {/* Full Name */}
                     <div>
-                      <label className="mb-2 block text-md text-[#222]">Full Name</label>
+                      <label className="mb-2 block text-md text-[#222]">{t("Full Name", "نام کامل")}</label>
                       <input
                         type="text"
-                        placeholder="Full Name"
+                        placeholder={t("Full Name", "نام کامل")}
                         value={form.fullName}
                         onChange={(e) => set("fullName", e.target.value)}
                         className={`${inputBase} ${errors.fullName ? inputErr : ""}`}
@@ -172,10 +180,10 @@ export default function ContactSection() {
 
                     {/* Email */}
                     <div>
-                      <label className="mb-2 block text-md text-[#222]">Email Address</label>
+                      <label className="mb-2 block text-md text-[#222]">{t("Email Address", "آدرس ایمیل")}</label>
                       <input
                         type="email"
-                        placeholder="Email"
+                        placeholder={t("Email", "ایمیل")}
                         value={form.email}
                         onChange={(e) => set("email", e.target.value)}
                         className={`${inputBase} ${errors.email ? inputErr : ""}`}
@@ -186,28 +194,28 @@ export default function ContactSection() {
 
                   {/* Service */}
                   <div className="mt-5">
-                    <label className="mb-2 block text-md text-[#222]">Service Type</label>
+                    <label className="mb-2 block text-md text-[#222]">{t("Service Type", "نوع خدمت")}</label>
                     <select
                       value={form.service}
                       onChange={(e) => set("service", e.target.value)}
                       className={`h-12 w-full rounded-xl bg-white px-4 text-md outline-none shadow-[0px_3px_8px_rgba(0,0,0,0.08)] transition-all border border-transparent focus:border-[#8F27FF] ${errors.service ? inputErr : ""} ${!form.service ? "text-[#929292]" : "text-[#222]"}`}
                     >
-                      <option value="" disabled>Select a service</option>
-                      <option value="Startup">Startup</option>
-                      <option value="Entrepreneurship">Entrepreneurship</option>
-                      <option value="Investment">Investment</option>
-                      <option value="Advisory">Advisory</option>
-                      <option value="Other">Other</option>
+                      <option value="" disabled>{t("Select a service", "یک خدمت را انتخاب کنید")}</option>
+                      <option value="Startup">{t("Startup", "استارتاپ")}</option>
+                      <option value="Entrepreneurship">{t("Entrepreneurship", "کارآفرینی")}</option>
+                      <option value="Investment">{t("Investment", "سرمایه‌گذاری")}</option>
+                      <option value="Advisory">{t("Advisory", "مشاوره")}</option>
+                      <option value="Other">{t("Other", "سایر")}</option>
                     </select>
                     {errors.service && <p className="mt-1.5 text-[12px] text-red-500">{errors.service}</p>}
                   </div>
 
                   {/* Message */}
                   <div className="mt-5">
-                    <label className="mb-2 block text-md text-[#222]">Your Message</label>
+                    <label className="mb-2 block text-md text-[#222]">{t("Your Message", "پیام شما")}</label>
                     <textarea
                       rows={7}
-                      placeholder="Write your message here..."
+                      placeholder={t("Write your message here...", "پیام خود را اینجا بنویسید...")}
                       value={form.message}
                       onChange={(e) => set("message", e.target.value)}
                       className={`w-full resize-none rounded-xl bg-white p-4 text-sm outline-none shadow-[0px_3px_8px_rgba(0,0,0,0.08)] transition-all border border-transparent focus:border-[#8F27FF] ${errors.message ? inputErr : ""}`}
@@ -226,9 +234,9 @@ export default function ContactSection() {
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="white" strokeWidth="4" />
                           <path className="opacity-75" fill="white" d="M4 12a8 8 0 018-8v8z" />
                         </svg>
-                        Sending...
+                        {t("Sending...", "در حال ارسال...")}
                       </>
-                    ) : "Submit"}
+                    ) : t("Submit", "ارسال")}
                   </button>
                 </form>
               </>

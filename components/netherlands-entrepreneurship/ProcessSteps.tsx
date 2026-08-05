@@ -3,41 +3,58 @@
 import { useState } from "react";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const steps = [
   {
     num: "1",
     meta: "Weeks 1–4",
+    metaFa: "هفته‌های ۱ تا ۴",
     title: "Document Synthesis & KvK Setup",
+    titleFa: "گردآوری اسناد و راه‌اندازی KvK",
     desc: "Nexa audits your educational transcripts, attests corporate filings, and drafts the RVO-compliant business plan backed by signed client LOIs. KvK registration is prepared.",
+    descFa: "نکسا ریزنمرات تحصیلی شما را بررسی می‌کند، اسناد شرکتی را تأیید می‌کند و طرح کسب‌وکار منطبق با RVO را با پشتیبانی LOIهای امضاشده‌ی مشتری تدوین می‌کند. ثبت KvK آماده می‌شود.",
   },
   {
     num: "2",
     meta: "Day 1 of Submission",
+    metaFa: "روز اول ثبت",
     title: "TEV Application & Fee Execution",
+    titleFa: "درخواست TEV و پرداخت هزینه",
     desc: "Full document architecture submitted to the IND. The mandatory government processing fee of €423 is executed via bank transfer or online payment portal.",
+    descFa: "کل معماری اسناد به IND ارسال می‌شود. هزینه‌ی پردازش دولتی الزامی ۴۲۳ یورو از طریق انتقال بانکی یا پورتال پرداخت آنلاین پرداخت می‌شود.",
   },
   {
     num: "3",
     meta: "Weeks 2–12 (Up to 90 Days)",
+    metaFa: "هفته‌های ۲ تا ۱۲ (تا ۹۰ روز)",
     title: "RVO Advisory & Points Evaluation",
+    titleFa: "مشاوره‌ی RVO و ارزیابی امتیازی",
     desc: "IND routes the file to the RVO for the 300-point scoring assessment. The RVO analyzes the business model, economic utility, and founder profile against all three legs.",
+    descFa: "IND پرونده را برای ارزیابی امتیازدهی ۳۰۰ امتیازی به RVO ارجاع می‌دهد. RVO مدل کسب‌وکار، فایده‌ی اقتصادی و پروفایل بنیان‌گذار را در برابر هر سه بخش تحلیل می‌کند.",
   },
   {
     num: "4",
     meta: "Weeks 12–14",
+    metaFa: "هفته‌های ۱۲ تا ۱۴",
     title: "MVV Issuance & Dutch Entry",
+    titleFa: "صدور MVV و ورود به هلند",
     desc: "Upon positive adjudication, the Provisional Residence Permit (MVV) sticker is collected from your local Dutch Embassy, enabling legal entry into the Schengen Zone.",
+    descFa: "پس از تصمیم مثبت، برچسب مجوز اقامت موقت (MVV) از سفارت محلی هلند دریافت می‌شود که ورود قانونی به منطقه‌ی شنگن را ممکن می‌سازد.",
   },
   {
     num: "5",
     meta: "Weeks 14–16",
+    metaFa: "هفته‌های ۱۴ تا ۱۶",
     title: "Biometrics, BSN & Residence Card",
+    titleFa: "بیومتریک، BSN و کارت اقامت",
     desc: "IND biometric appointment, municipality (Gemeente) address registration for your BSN (Citizen Service Number), and physical 2-year renewable residence card collection.",
+    descFa: "نوبت بیومتریک IND، ثبت آدرس در شهرداری (Gemeente) برای BSN (شماره‌ی خدمات شهروندی) شما، و دریافت کارت فیزیکی اقامت ۲ ساله‌ی قابل‌تمدید.",
   },
 ];
 
 export default function ProcessSteps() {
+  const { t } = useLang();
   return (
     <section id="process" className="py-20 md:py-24 bg-white">
       <Row>
@@ -47,18 +64,16 @@ export default function ProcessSteps() {
           <Reveal variant="left">
             <div className="md:sticky md:top-28">
               <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] mb-5">
-                Step-by-Step Application Timeline
+                {t("Step-by-Step Application Timeline", "زمان‌بندی گام‌به‌گام درخواست")}
               </h2>
               <blockquote
                 className="text-[18px] italic font-medium leading-[1.5] py-5 mb-4"
                 style={{ borderLeft: "3px solid #8F27FF", paddingLeft: "24px" }}
               >
-                &ldquo;Nexa maps the immigration pipeline as a synchronous critical path — each phase
-                must be sequenced precisely.&rdquo;
+                &ldquo;{t("Nexa maps the immigration pipeline as a synchronous critical path — each phase must be sequenced precisely.", "نکسا خط لوله‌ی مهاجرت را به‌عنوان یک مسیر بحرانی هم‌زمان ترسیم می‌کند — هر مرحله باید به‌دقت توالی‌بندی شود.")}&rdquo;
               </blockquote>
               <p className="text-[14.5px] text-[#929292] leading-[1.7]">
-                From document synthesis to physical residence card activation, the full process spans
-                approximately 14 to 16 weeks. The RVO evaluation alone can take up to 90 days.
+                {t("From document synthesis to physical residence card activation, the full process spans approximately 14 to 16 weeks. The RVO evaluation alone can take up to 90 days.", "از گردآوری اسناد تا فعال‌سازی کارت فیزیکی اقامت، کل فرایند حدود ۱۴ تا ۱۶ هفته طول می‌کشد. ارزیابی RVO به‌تنهایی می‌تواند تا ۹۰ روز طول بکشد.")}
               </p>
             </div>
           </Reveal>
@@ -96,6 +111,7 @@ function StepItem({
   step: (typeof steps)[0];
   isLast: boolean;
 }) {
+  const { t } = useLang();
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -133,10 +149,10 @@ function StepItem({
           className="text-[11px] font-bold uppercase tracking-[0.08em] mb-1.5"
           style={{ color: "#8F27FF" }}
         >
-          {step.meta}
+          {t(step.meta, step.metaFa)}
         </div>
-        <h4 className="text-[16px] font-semibold text-black mb-1.5">{step.title}</h4>
-        <p className="text-[13.5px] text-[#929292] leading-[1.6] m-0">{step.desc}</p>
+        <h4 className="text-[16px] font-semibold text-black mb-1.5">{t(step.title, step.titleFa)}</h4>
+        <p className="text-[13.5px] text-[#929292] leading-[1.6] m-0">{t(step.desc, step.descFa)}</p>
       </div>
     </div>
   );

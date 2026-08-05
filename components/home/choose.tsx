@@ -1,52 +1,56 @@
+"use client";
+
 import type { ReactNode } from "react";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
-const items: { icon: ReactNode; title: string }[] = [
+const items: { icon: ReactNode; title: { en: string; fa: string } }[] = [
   {
 
     icon: (
       <svg className="w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
     ),
-    title: "Partnered With Government-Certified Global Lawyers",
+    title: { en: "Partnered With Government-Certified Global Lawyers", fa: "همکاری با وکلای بین‌المللی دارای مجوز رسمی" },
   },
   {
 
     icon: (
       <svg className="w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path d="M9 11l3 3L22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
     ),
-    title: "Full Service From Contract To Settlement In Destination",
+    title: { en: "Full Service From Contract To Settlement In Destination", fa: "همراهی کامل؛ از قرارداد تا استقرار در مقصد" },
   },
   {
 
     icon: (
       <svg className="w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
     ),
-    title: "Global Team Of Young Professionals And Experts",
+    title: { en: "Global Team Of Young Professionals And Experts", fa: "تیمی بین‌المللی از متخصصان و استعدادهای جوان" },
   },
   {
 
     icon: (
       <svg className="w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /></svg>
     ),
-    title: "Registered Legal Entity In Canada&Iran, Compliant & Active",
+    title: { en: "Registered Legal Entity In Canada&Iran, Compliant & Active", fa: "شرکتی ثبت‌شده حقوقی و فعال در کانادا و ایران" },
   },
   {
 
     icon: (
       <svg className="w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
     ),
-    title: "Connected To A Strong Nationwide Network",
+    title: { en: "Connected To A Strong Nationwide Network", fa: "متصل به شبکه‌ای گسترده از شرکای بین‌المللی" },
   },
   {
 
     icon: (
       <svg className="w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path d="M12 20h9" /><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" /></svg>
     ),
-    title: "Supported By Senior Business Consultants",
+    title: { en: "Supported By Senior Business Consultants", fa: "با پشتیبانی مشاوران ارشد کسب‌وکار" },
   },
 ];
 
 export default function Choose() {
+  const { t } = useLang();
   return (
     <section className="py-20 md:py-24 bg-white">
       <div className="max-w-[1240px] mx-auto px-6">
@@ -54,7 +58,7 @@ export default function Choose() {
         <Reveal variant="up">
           <div className="text-center max-w-[700px] mx-auto mb-14">
             <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1]">
-              Why Choose Us?
+              {t("Why Choose Us?", "دلایل اعتماد به نکسا")}
             </h2>
           </div>
         </Reveal>
@@ -76,7 +80,7 @@ export default function Choose() {
                   </div>
 
                   <h4 className="text-[15px] md:text-[16px] font-medium leading-[1.4] tracking-[-0.01em] text-left">
-                    {item.title}
+                    {t(item.title.en, item.title.fa)}
                   </h4>
                 </div>
               </div>

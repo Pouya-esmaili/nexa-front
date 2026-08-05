@@ -1,16 +1,19 @@
+"use client";
 import Image from "next/image";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/LazyReveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
-const tags = [
-  "Access to global markets",
-  "Designed for innovative founders",
-  "Growth & expansion opportunities",
-  "Business-friendly legal frameworks",
-  "Family inclusion pathways",
+const tags: { en: string; fa: string }[] = [
+  { en: "Access to global markets", fa: "دسترسی به بازارهای بین‌المللی" },
+  { en: "Designed for innovative founders", fa: "مناسب برای کارآفرینان و بنیان‌گذاران نوآور" },
+  { en: "Growth & expansion opportunities", fa: "فرصت توسعه و گسترش کسب‌وکار" },
+  { en: "Business-friendly legal frameworks", fa: "بهره‌مندی از چارچوب‌های حقوقی و تجاری مناسب" },
+  { en: "Family inclusion pathways", fa: "امکان همراهی اعضای خانواده در فرآیند مهاجرت" },
 ];
 
 export default function WhatIs() {
+  const { t } = useLang();
   return (
     <section className="py-[90px] bg-[#F7F6F9]">
       <Row>
@@ -37,8 +40,8 @@ export default function WhatIs() {
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-[22px] h-[22px]"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                 </div>
                 <div>
-                  <strong className="block text-[14px] font-bold text-black">400+ Entrepreneurs Placed</strong>
-                  <span className="text-[12px] text-[#929292]">Across 5 countries</span>
+                  <strong className="block text-[14px] font-bold text-black">{t("400+ Entrepreneurs Placed", "بیش از ۴۰۰ کارآفرین مستقر")}</strong>
+                  <span className="text-[12px] text-[#929292]">{t("Across 5 countries", "در ۵ کشور")}</span>
                 </div>
               </div>
             </div>
@@ -47,21 +50,27 @@ export default function WhatIs() {
           {/* Content */}
           <Reveal variant="right">
             <h2 className="text-[32px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] mb-5">
-              What is an <span className="highlight">Entrepreneurship</span> Program?
+              {t("What is an", "برنامه‌ی")} <span className="highlight">{t("Entrepreneurship", "کارآفرینی")}</span> {t("Program?", "چیست؟")}
             </h2>
             <p className="text-[16px] text-[#929292] leading-[1.72] mb-4">
-              Entrepreneurship programs help founders and business owners access global markets, scale their ideas, and build sustainable businesses through clear, government-backed pathways.
+              {t(
+                "Entrepreneurship programs help founders and business owners access global markets, scale their ideas, and build sustainable businesses through clear, government-backed pathways.",
+                "برنامه‌های کارآفرینی به بنیان‌گذاران استارتاپ‌ها و صاحبان کسب‌وکار کمک می‌کنند تا وارد بازارهای بین‌المللی شوند، فعالیت خود را گسترش دهند و با استفاده از مسیرهای قانونی و مورد تأیید دولت‌ها، کسب‌وکاری پایدار و آینده‌دار ایجاد کنند."
+              )}
             </p>
             <p className="text-[16px] text-[#929292] leading-[1.72] mb-[22px]">
-              Each program offers a structured route to legal residency, company registration, and long-term growth — supported by Nexa&apos;s end-to-end advisory at every step.
+              {t(
+                "Each program offers a structured route to legal residency, company registration, and long-term growth — supported by Nexa's end-to-end advisory at every step.",
+                "هر برنامه، مسیری شفاف برای ثبت شرکت، دریافت اقامت قانونی و توسعه بلندمدت کسب‌وکار ارائه می‌دهد. در نکسا نیز در تمام مراحل، از ارزیابی اولیه تا راه‌اندازی و توسعه کسب‌وکار، با خدمات مشاوره‌ای جامع در کنار شما خواهیم بود."
+              )}
             </p>
             <div className="flex flex-wrap gap-2 mt-[22px]">
-              {tags.map(t => (
+              {tags.map(tag => (
                 <span
-                  key={t}
+                  key={tag.en}
                   className="px-[14px] py-[6px] rounded-full text-[14px] font-medium border border-[#E2E2E2] bg-[#F7F6F9] text-[#474747] hover:bg-[#FAF6FF] hover:border-[#8F27FF] hover:text-[#8F27FF] transition-all duration-[200ms] cursor-default"
                 >
-                  {t}
+                  {t(tag.en, tag.fa)}
                 </span>
               ))}
             </div>

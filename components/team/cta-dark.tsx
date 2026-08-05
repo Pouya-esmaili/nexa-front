@@ -1,7 +1,9 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { useLang } from "@/components/global/LanguageProvider";
 
 export default function CtaDark() {
+  const { t } = useLang();
   const [vis, setVis] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -31,18 +33,18 @@ export default function CtaDark() {
         }`}
       >
         <h2 className="text-[28px] sm:text-[32px] lg:text-[42px] font-extrabold text-white tracking-[-1.5px] mb-4 leading-[1.1]">
-          Ready to Work With{" "}
-          <span className="text-[#FFE600]">the Best?</span>
+          {t("Ready to Work With", "آماده‌ی همکاری با")}{" "}
+          <span className="text-[#FFE600]">{t("the Best?", "بهترین‌ها؟")}</span>
         </h2>
         <p className="text-[16px] text-white/50 mb-10">
-          Every great company starts with the right team. We&apos;re ready to build yours.
+          {t("Every great company starts with the right team. We're ready to build yours.", "هر شرکت بزرگ با تیم مناسب آغاز می‌شود. ما آماده‌ایم تیم شما را بسازیم.")}
         </p>
         <div className="flex gap-3 justify-center flex-wrap">
           <button className="bg-[#FFE600] text-[#0D0D0D] border-none px-8 py-[14px] rounded-full text-[14px] font-extrabold cursor-pointer font-[inherit] transition-[opacity,transform] duration-200 hover:opacity-90 hover:-translate-y-[1px]">
-            Start Your Journey
+            {t("Start Your Journey", "سفر خود را آغاز کنید")}
           </button>
           <button className="bg-transparent text-white border border-white/20 px-8 py-[14px] rounded-full text-[14px] font-semibold cursor-pointer font-[inherit] transition-colors duration-200 hover:border-white/55">
-            Learn About Us
+            {t("Learn About Us", "درباره‌ی ما بیشتر بدانید")}
           </button>
         </div>
       </div>

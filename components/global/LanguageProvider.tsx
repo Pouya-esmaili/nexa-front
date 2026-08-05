@@ -38,18 +38,9 @@ export function LanguageProvider({
   /** Language read from the cookie on the server, so SSR matches the client. */
   initialLang?: Lang;
 }) {
+  // Language switching is disabled for now — English only, regardless of any
+  // previously saved preference in localStorage/cookie.
   const [lang, setLangState] = useState<Lang>(initialLang);
-
-  /* reconcile with localStorage after mount (in case it drifted from the cookie) */
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY) as Lang | null;
-      if ((saved === "en" || saved === "fa") && saved !== lang) setLangState(saved);
-    } catch {
-      /* ignore storage errors (private mode, etc.) */
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   /* persist + reflect the choice on <html> — Persian flips the whole layout to RTL */
   useEffect(() => {

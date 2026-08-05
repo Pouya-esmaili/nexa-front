@@ -21,7 +21,7 @@ const WORK = [
   { img: "/images/advisory/8.jpg", alt: "Verdalyn smart-farming mobile app UI", brand: "Verdalyn", type: "Mobile App Design", h: "wk-h-sm" },
   { img: "/images/advisory/Cream.jpg", alt: "Gourmet fruit and nut spread packaging", brand: "Gourmet Spreads", type: "Packaging Design", h: "wk-h-lg" },
   { img: "/images/advisory/pitch deck tPreventiGenee.jpg", alt: "Autilab autism-care mobile app UI", brand: "PreventiGene", type: "Pitch Deck", h: "wk-h-md" },
-  { img: "/images/advisory/kamvar (2).jpg", alt: "Kamvar biscuit cream spread packaging", brand: "Kamvar", type: "Packaging Design", h: "wk-h-xl" },
+  { img: "/images/advisory/yam-yam.jpg", alt: "Yam Yam biscuit cream spread packaging", brand: "Yam Yam", type: "Packaging Design", h: "wk-h-xl" },
   { img: "/images/advisory/16.jpg", alt: "Orbiq astronomy learning mobile app UI", brand: "Orbiq", type: "Mobile App Design", h: "wk-h-sm" },
   { img: "/images/advisory/Landa Trip Identity.jpg ", alt: "Landa Academy mentoring brand identity", brand: "Landa Trip", type: "Brand Identity", h: "wk-h-lg" },
 ];

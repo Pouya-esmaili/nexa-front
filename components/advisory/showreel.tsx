@@ -28,17 +28,17 @@ const WORDS_FA = ["برند", "مدل", "بازار", "رشد", "هویت", "د�
 
 /* Portfolio slides — order & captions match the original design */
 const SLIDES = [
-  { img: "/images/advisory/13.jpg", alt: "Kidsa website design", tag: "Website", brand: "Kidsa", type: "Website Design" },
-  { img: "/images/advisory/12.jpg", alt: "Arvia brand identity", tag: "Brand Identity", brand: "Arvia", type: "Brand Identity" },
-  { img: "/images/advisory/10.jpg", alt: "Aureva luxury brand identity", tag: "Brand Identity", brand: "Aureva", type: "Brand Identity" },
-  { img: "/images/advisory/8.jpg", alt: "Sarra Hadab personal brand", tag: "Brand Identity", brand: "Sarra Hadab", type: "Personal Brand Identity" },
-  { img: "/images/advisory/19.jpg", alt: "BoldPro logo design", tag: "Logo Design", brand: "BoldPro", type: "Logo Design" },
-  { img: "/images/advisory/11.jpg", alt: "VigorFuel packaging design", tag: "Packaging", brand: "VigorFuel", type: "Packaging Design" },
-  { img: "/images/advisory/7.jpg", alt: "Skin Concept product infographic", tag: "Campaign", brand: "Skin Concept", type: "Product Campaign" },
-  { img: "/images/advisory/1.jpg", alt: "Bounty product concept", tag: "Product Concept", brand: "Bounty", type: "Product Concept" },
-  { img: "/images/advisory/6.jpg", alt: "Coca-Cola Lassi packaging concept", tag: "Packaging", brand: "Coca-Cola Lassi", type: "Packaging Concept" },
-  { img: "/images/advisory/17.jpg", alt: "Beauty e-commerce website", tag: "Website", brand: "Beauty Co.", type: "Website Design" },
-  { img: "/images/advisory/3.jpg", alt: "Bold landing page design", tag: "Landing Page", brand: "Bold", type: "Landing Page Design" },
+  { img: "/images/advisory/13.jpg", alt: "Kidsa website design", tag: "Brand Identity", brand: "Thredloom", type: "Brand Identity" },
+  { img: "/images/advisory/12.jpg", alt: "Arvia brand identity", tag: "Application", brand: "Landa Academy", type: "Application" },
+  { img: "/images/advisory/10.jpg", alt: "Aureva luxury brand identity", tag: "Website Design", brand: "Landa Craft", type: "Website Design" },
+  { img: "/images/advisory/8.jpg", alt: "Sarra Hadab personal brand", tag: "Application", brand: "Verdalyn", type: "Application" },
+  { img: "/images/advisory/19.jpg", alt: "BoldPro logo design", tag: "Brand Identity", brand: "Landa Academy", type: "Brand Identity" },
+  { img: "/images/advisory/11.jpg", alt: "VigorFuel packaging design", tag: "Brand Identity", brand: "Landa Craft", type: "Brand Identity" },
+  { img: "/images/advisory/7.jpg", alt: "Skin Concept product infographic", tag: "Brand Identity", brand: "Autilab", type: "Brand Identity" },
+  { img: "/images/advisory/1.jpg", alt: "Bounty product concept", tag: "Website Design", brand: "PreventiGene", type: "Website Design" },
+  { img: "/images/advisory/6.jpg", alt: "Coca-Cola Lassi packaging concept", tag: "Application", brand: "Autilab", type: "Application" },
+  { img: "/images/advisory/17.jpg", alt: "Beauty e-commerce website", tag: "Brand Identity", brand: "Orbiq", type: "Brand Identity" },
+  { img: "/images/advisory/3.jpg", alt: "Bold landing page design", tag: "Application", brand: "forlu", type: "Application" },
 ];
 
 const CREDITS = SLIDES.map((s) => s.brand);

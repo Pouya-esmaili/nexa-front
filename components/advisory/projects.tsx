@@ -15,15 +15,15 @@ const WORK = [
   { img: "/images/advisory/AutiLab Identity.jpg", alt: "Autilab autism-care brand identity board", brand: "Autilab", type: "Brand Identity", h: "wk-h-xl" },
   { img: "/images/advisory/Lumina.jpg", alt: "Aura Lumière skincare cream product photography", brand: "Aura Lumière", type: "Product Photography", h: "wk-h-sm" },
   { img: "/images/advisory/Identity (2).jpg", alt: "Furlo pet-health brand guidelines", brand: "Furlo", type: "Brand Identity", h: "wk-h-lg" },
-  { img: "/images/advisory/01.jpg", alt: "Mango and passion fruit smoothie product photography", brand: "Mango Passion", type: "Product Photography", h: "wk-h-md" },
-  { img: "/images/advisory/Landa Trip Identity.jpg", alt: "Landa Trip travel-education brand identity", brand: "Landa Trip", type: "Brand Identity", h: "wk-h-xl" },
+  { img: "/images/advisory/pitch deck Furlo.jpg", alt: "Mango and passion fruit smoothie product photography", brand: "Furlo", type: "Pitch Deck", h: "wk-h-md" },
+  { img: "/images/advisory/LandaAcademi (1).jpg", alt: "Landa Trip travel-education brand identity", brand: "Landa Academy", type: "Brand Identity", h: "wk-h-xl" },
   { img: "/images/advisory/12.jpg", alt: "Thredloom luxury resale mobile app UI", brand: "Thredloom", type: "Mobile App Design", h: "wk-h-sm" },
   { img: "/images/advisory/8.jpg", alt: "Verdalyn smart-farming mobile app UI", brand: "Verdalyn", type: "Mobile App Design", h: "wk-h-sm" },
   { img: "/images/advisory/Cream.jpg", alt: "Gourmet fruit and nut spread packaging", brand: "Gourmet Spreads", type: "Packaging Design", h: "wk-h-lg" },
-  { img: "/images/advisory/6.jpg", alt: "Autilab autism-care mobile app UI", brand: "Autilab", type: "Mobile App Design", h: "wk-h-md" },
+  { img: "/images/advisory/pitch deck tPreventiGenee.jpg", alt: "Autilab autism-care mobile app UI", brand: "PreventiGene", type: "Pitch Deck", h: "wk-h-md" },
   { img: "/images/advisory/kamvar (2).jpg", alt: "Kamvar biscuit cream spread packaging", brand: "Kamvar", type: "Packaging Design", h: "wk-h-xl" },
   { img: "/images/advisory/16.jpg", alt: "Orbiq astronomy learning mobile app UI", brand: "Orbiq", type: "Mobile App Design", h: "wk-h-sm" },
-  { img: "/images/advisory/LandaAcademi (1).jpg", alt: "Landa Academy mentoring brand identity", brand: "Landa Academy", type: "Brand Identity", h: "wk-h-lg" },
+  { img: "/images/advisory/Landa Trip Identity.jpg ", alt: "Landa Academy mentoring brand identity", brand: "Landa Trip", type: "Brand Identity", h: "wk-h-lg" },
 ];
 
 export default function Work() {

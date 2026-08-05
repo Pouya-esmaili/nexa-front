@@ -80,24 +80,24 @@ const CARDS: Card[] = [
       <svg className="sc-diag" viewBox="0 0 160 100" fill="none"><rect x="2" y="28" width="62" height="66" rx="8" fill="#8F27FF" opacity=".22" /><rect x="16" y="14" width="62" height="66" rx="8" fill="#FFE600" opacity=".22" /><rect x="30" y="2" width="62" height="66" rx="8" fill="#fff" /><polygon points="48,18 48,46 72,32" fill="#8F27FF" /><line x1="104" y1="14" x2="156" y2="14" stroke="#8F27FF" strokeOpacity=".75" strokeWidth="4" strokeLinecap="round" /><line x1="104" y1="30" x2="148" y2="30" stroke="#FFE600" strokeOpacity=".8" strokeWidth="4" strokeLinecap="round" /><line x1="104" y1="46" x2="140" y2="46" stroke="#8F27FF" strokeOpacity=".45" strokeWidth="4" strokeLinecap="round" /><line x1="104" y1="62" x2="152" y2="62" stroke="#FFE600" strokeOpacity=".75" strokeWidth="4" strokeLinecap="round" /></svg>
     ),
   },
-  {
-    tone: "sc-dark",
-    href: "#contact",
-    title: <>Business<br />Plan</>,
-    desc: "A complete, investor-ready business plan — objectives, roadmap and milestones laid out in one document.",
-    diag: (
-      <svg className="sc-diag" viewBox="0 0 160 100" fill="none"><rect x="20" y="6" width="88" height="88" rx="10" fill="#fff" opacity=".08" /><rect x="20" y="6" width="88" height="88" rx="10" stroke="#fff" strokeOpacity=".25" strokeWidth="2" /><line x1="34" y1="26" x2="94" y2="26" stroke="#FFE600" strokeWidth="4" strokeLinecap="round" /><line x1="34" y1="42" x2="84" y2="42" stroke="#fff" strokeOpacity=".5" strokeWidth="4" strokeLinecap="round" /><line x1="34" y1="58" x2="90" y2="58" stroke="#fff" strokeOpacity=".3" strokeWidth="4" strokeLinecap="round" /><line x1="34" y1="74" x2="70" y2="74" stroke="#8F27FF" strokeWidth="4" strokeLinecap="round" /><circle cx="130" cy="70" r="20" fill="#8F27FF" /><path d="M122 70l6 6 12-14" stroke="#fff" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" fill="none" /></svg>
-    ),
-  },
-  {
-    tone: "sc-light",
-    href: "#contact",
-    title: <>Financial<br />Model</>,
-    desc: "Revenue projections, cost forecasts and cash-flow modeling built to stand up to investor scrutiny.",
-    diag: (
-      <svg className="sc-diag" viewBox="0 0 160 100" fill="none"><line x1="14" y1="10" x2="14" y2="90" stroke="#E2E2E2" strokeWidth="2" /><line x1="14" y1="90" x2="150" y2="90" stroke="#E2E2E2" strokeWidth="2" /><polyline points="14,78 40,66 66,70 92,42 118,48 146,14" fill="none" stroke="#8F27FF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /><circle cx="92" cy="42" r="4" fill="#8F27FF" /><circle cx="40" cy="66" r="4" fill="#8F27FF" opacity=".5" /><circle cx="146" cy="14" r="6" fill="#FFE600" stroke="#8F27FF" strokeWidth="2" /></svg>
-    ),
-  },
+  // {
+  //   tone: "sc-dark",
+  //   href: "#contact",
+  //   title: <>Business<br />Plan</>,
+  //   desc: "A complete, investor-ready business plan — objectives, roadmap and milestones laid out in one document.",
+  //   diag: (
+  //     <svg className="sc-diag" viewBox="0 0 160 100" fill="none"><rect x="20" y="6" width="88" height="88" rx="10" fill="#fff" opacity=".08" /><rect x="20" y="6" width="88" height="88" rx="10" stroke="#fff" strokeOpacity=".25" strokeWidth="2" /><line x1="34" y1="26" x2="94" y2="26" stroke="#FFE600" strokeWidth="4" strokeLinecap="round" /><line x1="34" y1="42" x2="84" y2="42" stroke="#fff" strokeOpacity=".5" strokeWidth="4" strokeLinecap="round" /><line x1="34" y1="58" x2="90" y2="58" stroke="#fff" strokeOpacity=".3" strokeWidth="4" strokeLinecap="round" /><line x1="34" y1="74" x2="70" y2="74" stroke="#8F27FF" strokeWidth="4" strokeLinecap="round" /><circle cx="130" cy="70" r="20" fill="#8F27FF" /><path d="M122 70l6 6 12-14" stroke="#fff" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" fill="none" /></svg>
+  //   ),
+  // },
+  // {
+  //   tone: "sc-light",
+  //   href: "#contact",
+  //   title: <>Financial<br />Model</>,
+  //   desc: "Revenue projections, cost forecasts and cash-flow modeling built to stand up to investor scrutiny.",
+  //   diag: (
+  //     <svg className="sc-diag" viewBox="0 0 160 100" fill="none"><line x1="14" y1="10" x2="14" y2="90" stroke="#E2E2E2" strokeWidth="2" /><line x1="14" y1="90" x2="150" y2="90" stroke="#E2E2E2" strokeWidth="2" /><polyline points="14,78 40,66 66,70 92,42 118,48 146,14" fill="none" stroke="#8F27FF" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /><circle cx="92" cy="42" r="4" fill="#8F27FF" /><circle cx="40" cy="66" r="4" fill="#8F27FF" opacity=".5" /><circle cx="146" cy="14" r="6" fill="#FFE600" stroke="#8F27FF" strokeWidth="2" /></svg>
+  //   ),
+  // },
 ];
 
 /* Persian titles & descriptions, indexed to CARDS */

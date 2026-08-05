@@ -3,37 +3,51 @@
 import { useState } from "react";
 import Image from "next/image";
 import Row from "@/components/global/Row";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const MOBILE_INITIAL_COUNT = 6;
 
 const faqs = [
   {
     q: "Can I still get a Spanish Golden Visa by purchasing a €500,000 property?",
+    qFa: "آیا هنوز می‌توانم با خرید یک ملک ۵۰۰٬۰۰۰ یورویی ویزای طلایی اسپانیا بگیرم؟",
     a: "No. Following the implementation of Organic Law 1/2025, Spain completely abolished the real estate investment route for new applicants. Property purchases no longer grant an automated pathway to residency. You must now use financial instruments (bonds, company shares, bank deposits) or establish an approved innovative business project.",
+    aFa: "خیر. به دنبال اجرای قانون ارگانیک ۱/۲۰۲۵، اسپانیا مسیر سرمایه‌گذاری در املاک را برای متقاضیان جدید به‌طور کامل لغو کرد. خرید ملک دیگر یک مسیر خودکار به سوی اقامت اعطا نمی‌کند. اکنون باید از ابزارهای مالی (اوراق قرضه، سهام شرکت، سپرده‌های بانکی) استفاده کنید یا یک پروژه‌ی کسب‌وکار نوآورانه‌ی تأییدشده تأسیس کنید.",
   },
   {
     q: "Am I required to live in Spain for a minimum number of days?",
+    qFa: "آیا ملزم به زندگی در اسپانیا برای حداقل تعدادی روز هستم؟",
     a: "No. The investor framework does not impose a strict physical presence rule to maintain or renew your temporary residency. You only need to visit Spain at least once during each permit period. However, if your long-term goal is Permanent Residency (year 5) or Citizenship (year 10), you must physically reside for at least 183 days per year to satisfy residency continuity rules.",
+    aFa: "خیر. چارچوب سرمایه‌گذار یک قاعده‌ی حضور فیزیکی سختگیرانه برای حفظ یا تمدید اقامت موقت شما اعمال نمی‌کند. تنها باید در هر دوره‌ی مجوز حداقل یک بار از اسپانیا بازدید کنید. با این حال، اگر هدف بلندمدت شما اقامت دائم (سال ۵) یا تابعیت (سال ۱۰) است، باید حداقل ۱۸۳ روز در سال به‌طور فیزیکی اقامت داشته باشید تا قواعد تداوم اقامت را برآورده کنید.",
   },
   {
     q: "Can I include my family in the same application?",
+    qFa: "آیا می‌توانم خانواده‌ام را در همان درخواست بگنجانم؟",
     a: "Yes. The primary investor can include their spouse or registered civil partner, dependent children of any age (provided adult children are unmarried and financially reliant), and dependent elderly parents. Each family member requires an additional 100% of the IPREM (€7,200/year) in liquid savings or passive income streams.",
+    aFa: "بله. سرمایه‌گذار اصلی می‌تواند همسر یا شریک مدنی ثبت‌شده، فرزندان تحت تکفل در هر سنی (مشروط بر اینکه فرزندان بزرگسال مجرد و از نظر مالی وابسته باشند) و والدین سالمند تحت تکفل را بگنجاند. هر عضو خانواده به ۱۰۰٪ اضافی IPREM (۷٬۲۰۰ یورو در سال) پس‌انداز نقدی یا جریان‌های درآمد منفعل نیاز دارد.",
   },
   {
     q: "What happens if I decide to liquidate my investment before year 5?",
+    qFa: "اگر تصمیم بگیرم سرمایه‌گذاری‌ام را پیش از سال ۵ نقد کنم چه می‌شود؟",
     a: "Your investment capital must remain fully deployed in the qualifying asset class for the entire duration of your temporary residency. If you liquidate prior to reaching year 5, your residency authorization will be revoked upon review. Once you transition to Permanent Residency, you are free to liquidate, transfer, or divest completely without any impact on your legal status.",
+    aFa: "سرمایه‌ی سرمایه‌گذاری شما باید در کل مدت اقامت موقت شما به‌طور کامل در طبقه‌ی دارایی واجد شرایط به‌کار گرفته شود. اگر پیش از رسیدن به سال ۵ نقد کنید، مجوز اقامت شما پس از بررسی لغو خواهد شد. پس از گذار به اقامت دائم، آزادید بدون هیچ تأثیری بر وضعیت قانونی‌تان به‌طور کامل نقد، منتقل یا واگذار کنید.",
   },
   {
     q: "What is the primary path for business relocation now that real estate is closed?",
+    qFa: "اکنون که املاک بسته شده، مسیر اصلی برای جابه‌جایی کسب‌وکار چیست؟",
     a: "The focus has shifted toward financial instruments and the Enterprise and Business Innovation pathway. For business-based residency, Spain evaluates active business development — job creation, socioeconomic impact, and innovation alignment — rather than passive capital placement into property.",
+    aFa: "تمرکز به سمت ابزارهای مالی و مسیر شرکتی و نوآوری کسب‌وکار تغییر کرده است. برای اقامت مبتنی بر کسب‌وکار، اسپانیا توسعه‌ی فعال کسب‌وکار — ایجاد اشتغال، تأثیر اجتماعی-اقتصادی و همسویی با نوآوری — را ارزیابی می‌کند، نه قرار دادن منفعل سرمایه در ملک.",
   },
   {
     q: "Does the Investor Visa automatically grant work rights in Spain?",
+    qFa: "آیا ویزای سرمایه‌گذار به‌طور خودکار حقوق کار در اسپانیا اعطا می‌کند؟",
     a: "Yes. Unlike the Non-Lucrative Visa, the Spain Investor Visa automatically grants the primary applicant and their adult dependents the right to live and work in Spain. This includes both self-employment as an entrepreneur or business owner and standard employment for a Spanish company.",
+    aFa: "بله. برخلاف ویزای غیرانتفاعی، ویزای سرمایه‌گذار اسپانیا به‌طور خودکار به متقاضی اصلی و افراد تحت تکفل بزرگسال او حق زندگی و کار در اسپانیا را اعطا می‌کند. این شامل هم خوداشتغالی به‌عنوان کارآفرین یا صاحب کسب‌وکار و هم اشتغال استاندارد برای یک شرکت اسپانیایی است.",
   },
 ];
 
 export default function FAQs() {
+  const { t } = useLang();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);
 
@@ -47,7 +61,7 @@ export default function FAQs() {
     <div className="py-12 md:py-20">
       {/* Mobile */}
       <div className="md:hidden px-5">
-        <h2 className="text-2xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+        <h2 className="text-2xl font-bold text-center mb-8">{t("Frequently Asked Questions", "پرسش‌های پرتکرار")}</h2>
         <div className="flex flex-col gap-3 rounded-2xl p-5" style={{ background: "#F6F6F6" }}>
           {visibleMobileFaqs.map((item, index) => {
             const isActive = activeIndex === index;
@@ -64,7 +78,7 @@ export default function FAQs() {
                 }}
               >
                 <div className="flex items-start justify-between gap-3">
-                  <h3 className="text-xs font-medium text-black leading-snug">{item.q}</h3>
+                  <h3 className="text-xs font-medium text-black leading-snug">{t(item.q, item.qFa)}</h3>
                   <Image
                     src={isActive ? "/images/Entrepreneurship/close.svg" : "/images/Entrepreneurship/open.svg"}
                     alt={isActive ? "Close" : "Open"}
@@ -73,7 +87,7 @@ export default function FAQs() {
                     className="w-5 h-5 flex-shrink-0 mt-0.5"
                   />
                 </div>
-                {isActive && <p className="mt-3 text-xs text-gray-600 leading-relaxed">{item.a}</p>}
+                {isActive && <p className="mt-3 text-xs text-gray-600 leading-relaxed">{t(item.a, item.aFa)}</p>}
               </div>
             );
           })}
@@ -83,7 +97,7 @@ export default function FAQs() {
               onClick={() => setShowAll(true)}
               className="mt-2 flex items-center justify-center gap-2 text-sm font-semibold text-[#8F27FF]"
             >
-              Show More
+              {t("Show More", "نمایش بیشتر")}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8F27FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="6 9 12 15 18 9" />
               </svg>
@@ -95,7 +109,7 @@ export default function FAQs() {
               onClick={() => setShowAll(false)}
               className="mt-2 flex items-center justify-center gap-2 text-sm font-semibold text-[#8F27FF]"
             >
-              Show Less
+              {t("Show Less", "نمایش کمتر")}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8F27FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="18 15 12 9 6 15" />
               </svg>
@@ -107,7 +121,7 @@ export default function FAQs() {
       {/* Desktop */}
       <div className="hidden md:block">
         <Row>
-          <h2 className="text-center text-3xl md:text-4xl font-bold mb-12">Frequently Asked Questions</h2>
+          <h2 className="text-center text-3xl md:text-4xl font-bold mb-12">{t("Frequently Asked Questions", "پرسش‌های پرتکرار")}</h2>
           <div
             className="mx-auto mt-10 grid grid-cols-2 gap-6 items-start"
             style={{ background: "#F6F6F6", borderRadius: "20px", padding: "48px", width: "100%" }}
@@ -127,7 +141,7 @@ export default function FAQs() {
                   }}
                 >
                   <div className="flex items-start justify-between gap-4">
-                    <h3 className="text-sm font-medium text-black leading-snug">{item.q}</h3>
+                    <h3 className="text-sm font-medium text-black leading-snug">{t(item.q, item.qFa)}</h3>
                     <Image
                       src={isActive ? "/images/Entrepreneurship/close.svg" : "/images/Entrepreneurship/open.svg"}
                       alt={isActive ? "Close" : "Open"}
@@ -137,7 +151,7 @@ export default function FAQs() {
                     />
                   </div>
                   {isActive && (
-                    <p className="mt-3 text-sm text-gray-600 leading-relaxed">{item.a}</p>
+                    <p className="mt-3 text-sm text-gray-600 leading-relaxed">{t(item.a, item.aFa)}</p>
                   )}
                 </div>
               );

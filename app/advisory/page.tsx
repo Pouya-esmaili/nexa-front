@@ -1,25 +1,22 @@
-import Business from "@/components/advisory/business";
+import "./nexa-advisory.css";
+import Showreel from "@/components/advisory/showreel";
 import ServicesSection from "@/components/advisory/servicesSection";
-import Strategy from "@/components/advisory/strategy";
-import Scale from "@/components/advisory/scale";
-import Projects from "@/components/advisory/projects";
 import Process from "@/components/advisory/process";
+import Work from "@/components/advisory/projects";
+import Team from "@/components/advisory/team";
 import Faq from "@/components/advisory/faq";
-import Form from "@/components/home/form";
+import Contact from "@/components/advisory/contact";
 
-export default function advisory() {
-    return (
-        <>
-            <div className="w-full bg-white sm:items-star">
-                <Business />
-                <ServicesSection />
-                <Strategy />
-                <Scale />
-                <Projects />
-                <Process />
-                <Faq />
-                <Form />
-            </div>
-        </>
-    );
+export default function Advisory() {
+  return (
+    <div className="adv w-full bg-white">
+      <Showreel />
+      <ServicesSection />
+      <Process />
+      <Work />
+      <Team />
+      <Faq />
+      <Contact />
+    </div>
+  );
 }

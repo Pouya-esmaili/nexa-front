@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from "react";
 import Row from "@/components/global/Row";
+import { useLang } from "@/components/global/LanguageProvider";
 
 export default function GreeceHero() {
+  const { t } = useLang();
   const [mounted, setMounted] = useState(false);
   useEffect(() => { const t = setTimeout(() => setMounted(true), 80); return () => clearTimeout(t); }, []);
 
@@ -24,27 +26,25 @@ export default function GreeceHero() {
 
             <h1 className={`${base} ${mounted ? show : hidden} text-[36px] md:text-[48px] font-bold leading-[1.08] tracking-[-0.03em] mb-6`}
               style={{ transitionDelay: "80ms" }}>
-              Capital to residency.{" "}
-              <span className="text-[#8F27FF]">No management required.</span>
+              {t("Capital to residency.", "سرمایه به اقامت.")}{" "}
+              <span className="text-[#8F27FF]">{t("No management required.", "بدون نیاز به مدیریت.")}</span>
             </h1>
 
             <p className={`${base} ${mounted ? show : hidden} text-[17px] text-[#474747] leading-[1.65] mb-9 max-w-[520px]`}
               style={{ transitionDelay: "160ms" }}>
-              The Greece Golden Visa is a pure capital-to-residency vehicle — granting immediate EU permanent
-              residency in exchange for strategic real estate or financial investment, with zero physical stay
-              requirements and true three-generation family coverage.
+              {t("The Greece Golden Visa is a pure capital-to-residency vehicle — granting immediate EU permanent residency in exchange for strategic real estate or financial investment, with zero physical stay requirements and true three-generation family coverage.", "ویزای طلایی یونان یک ابزار خالص سرمایه‌به‌اقامت است — در ازای سرمایه‌گذاری راهبردی در املاک یا مالی، اقامت دائم فوری اتحادیه اروپا اعطا می‌کند، بدون هیچ الزام اقامت فیزیکی و با پوشش خانوادگی واقعی سه‌نسلی.")}
             </p>
 
             <div className={`${base} ${mounted ? show : hidden} grid grid-cols-3 gap-6 py-7 mb-9`}
               style={{ borderTop: "1px solid #E2E2E2", borderBottom: "1px solid #E2E2E2", transitionDelay: "240ms" }}>
               {[
-                { num: "5 yr",  label: "Permanent Card" },
-                { num: "0 days", label: "Stay Requirement" },
-                { num: "3 gen", label: "Family Coverage" },
+                { num: "5 yr",  numFa: "۵ سال", label: "Permanent Card", labelFa: "کارت دائم" },
+                { num: "0 days", numFa: "۰ روز", label: "Stay Requirement", labelFa: "الزام اقامت" },
+                { num: "3 gen", numFa: "۳ نسل", label: "Family Coverage", labelFa: "پوشش خانواده" },
               ].map((s) => (
                 <div key={s.label}>
-                  <div className="text-[30px] font-extrabold tracking-[-0.04em] leading-none">{s.num}</div>
-                  <div className="text-[12px] text-[#929292] mt-2 font-medium uppercase tracking-wide">{s.label}</div>
+                  <div className="text-[30px] font-extrabold tracking-[-0.04em] leading-none">{t(s.num, s.numFa)}</div>
+                  <div className="text-[12px] text-[#929292] mt-2 font-medium uppercase tracking-wide">{t(s.label, s.labelFa)}</div>
                 </div>
               ))}
             </div>
@@ -53,7 +53,7 @@ export default function GreeceHero() {
               <a href="#contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[15px] transition-all hover:-translate-y-0.5"
                 style={{ boxShadow: "0 10px 24px rgba(143,39,255,0.28)" }}>
-                Book an Appointment →
+                {t("Book an Appointment →", "رزرو وقت ملاقات →")}
               </a>
             </div>
           </div>

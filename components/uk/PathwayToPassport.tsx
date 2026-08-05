@@ -4,51 +4,69 @@ import { useState } from "react";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
 import IconArrow from '@/components/global/IconArrow';
+import { useLang } from "@/components/global/LanguageProvider";
 
 const stages = [
   {
     num: "01",
     label: "Innovator Founder Visa",
+    labelFa: "ویزای بنیان‌گذار نوآور",
     year: "Years 1–3",
+    yearFa: "سال‌های ۱ تا ۳",
     detail: {
       title: "Innovator Founder Visa",
+      titleFa: "ویزای بنیان‌گذار نوآور",
       desc: "Build and scale your venture in the UK with full work authorization for yourself and your family. Max 180 days outside the UK per rolling 12-month period.",
+      descFa: "کسب‌وکار خود را در انگلستان با مجوز کامل کار برای خود و خانواده‌تان بسازید و توسعه دهید. حداکثر ۱۸۰ روز خارج از انگلستان در هر بازه‌ی ۱۲ ماهه‌ی متحرک.",
     },
     active: true,
   },
   {
     num: "02",
     label: "Checkpoints",
+    labelFa: "نقاط بازبینی",
     year: "Month 12 & 24",
+    yearFa: "ماه ۱۲ و ۲۴",
     detail: {
       title: "Mandatory Checkpoints",
+      titleFa: "نقاط بازبینی اجباری",
       desc: "Your Endorsing Body reviews operational progress at Month 12 and Month 24 — checking active management, progress against plan, and funding legitimacy.",
+      descFa: "نهاد تأییدکننده‌ی شما پیشرفت عملیاتی را در ماه ۱۲ و ماه ۲۴ بازبینی می‌کند — و مدیریت فعال، پیشرفت مطابق برنامه و مشروعیت تأمین مالی را بررسی می‌کند.",
     },
     active: false,
   },
   {
     num: "03",
     label: "ILR Settlement",
+    labelFa: "اقامت دائم",
     year: "Year 3",
+    yearFa: "سال ۳",
     detail: {
       title: "Indefinite Leave to Remain",
+      titleFa: "اقامت دائم (ILR)",
       desc: "After 3 years, satisfy any 2 of the 7 ILR achievement criteria. Your Endorsing Body re-endorses you. Legal status permanently uncouples from your business.",
+      descFa: "پس از ۳ سال، هر ۲ مورد از ۷ معیار دستاورد اقامت دائم را برآورده کنید. نهاد تأییدکننده دوباره شما را تأیید می‌کند. وضعیت حقوقی شما برای همیشه از کسب‌وکارتان مستقل می‌شود.",
     },
     active: false,
   },
   {
     num: "04",
     label: "British Citizenship",
+    labelFa: "تابعیت بریتانیا",
     year: "Year 4",
+    yearFa: "سال ۴",
     detail: {
       title: "British Citizenship",
+      titleFa: "تابعیت بریتانیا",
       desc: "After holding ILR for 12 months (total 4 years in UK), apply for British Citizenship via Naturalization. Pass the Life in the UK examination and meet residency requirements.",
+      descFa: "پس از ۱۲ ماه داشتن اقامت دائم (در مجموع ۴ سال در انگلستان)، از طریق تابعیت‌پذیری برای تابعیت بریتانیا درخواست دهید. آزمون Life in the UK را بگذرانید و شرایط اقامت را برآورده کنید.",
     },
     active: false,
   },
 ];
 
 export default function PathwayToPassport() {
+  const { t } = useLang();
   const [openMobile, setOpenMobile] = useState(0);
   const [selectedDesktop, setSelectedDesktop] = useState(0);
 
@@ -57,7 +75,7 @@ export default function PathwayToPassport() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10 md:mb-14">
-            Long-Term Horizon
+            {t("Long-Term Horizon", "افق بلندمدت")}
           </h2>
         </Reveal>
 
@@ -87,12 +105,12 @@ export default function PathwayToPassport() {
                   >
                     {s.num}
                   </div>
-                  <div className="text-[15px] font-semibold mb-1">{s.label}</div>
+                  <div className="text-[15px] font-semibold mb-1">{t(s.label, s.labelFa)}</div>
                   <span
                     className="text-[12px] font-semibold px-2.5 py-0.5 rounded-full"
                     style={{ background: "#FAF6FF", color: "#8F27FF" }}
                   >
-                    {s.year}
+                    {t(s.year, s.yearFa)}
                   </span>
                 </div>
               </Reveal>
@@ -106,8 +124,8 @@ export default function PathwayToPassport() {
                   className="h-full rounded-[14px] p-5 transition-all hover:border-[rgba(143,39,255,0.3)] hover:bg-[#FAF6FF]"
                   style={{ background: "white", border: "1px solid #E2E2E2" }}
                 >
-                  <h5 className="text-[14px] font-semibold mb-2">{s.detail.title}</h5>
-                  <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{s.detail.desc}</p>
+                  <h5 className="text-[14px] font-semibold mb-2">{t(s.detail.title, s.detail.titleFa)}</h5>
+                  <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{t(s.detail.desc, s.detail.descFa)}</p>
                 </div>
               </Reveal>
             ))}
@@ -132,19 +150,19 @@ export default function PathwayToPassport() {
                   {s.num}
                 </div>
                 <div className="flex-1">
-                  <div className="text-[14px] font-semibold">{s.label}</div>
+                  <div className="text-[14px] font-semibold">{t(s.label, s.labelFa)}</div>
                   <span
                     className="text-[11px] font-semibold px-2 py-0.5 rounded-full inline-block mt-0.5"
                     style={{ background: "#FAF6FF", color: "#8F27FF" }}
                   >
-                    {s.year}
+                    {t(s.year, s.yearFa)}
                   </span>
                 </div>
                 <IconArrow className="w-4 h-4 transition-transform" style={{ transform: openMobile === i ? 'rotate(180deg)' : undefined }} />
               </button>
               {openMobile === i && (
                 <div className="px-5 pb-4 pl-[70px] text-[13.5px] text-[#474747] leading-[1.6]">
-                  {s.detail.desc}
+                  {t(s.detail.desc, s.detail.descFa)}
                 </div>
               )}
             </div>

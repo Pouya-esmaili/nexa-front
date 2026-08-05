@@ -1,10 +1,11 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const values = [
   {
-    title: "Global Mindset",
-    desc: "We think beyond borders and build solutions that scale internationally from day one.",
+    title: { en: "Global Mindset", fa: "نگرش جهانی" },
+    desc: { en: "We think beyond borders and build solutions that scale internationally from day one.", fa: "ما فراتر از مرزها می‌اندیشیم و راهکارهایی می‌سازیم که از روز نخست در سطح بین‌المللی مقیاس‌پذیرند." },
     icon: (
       <svg viewBox="0 0 24 24" className="w-[22px] h-[22px]" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
@@ -13,8 +14,8 @@ const values = [
     ),
   },
   {
-    title: "Fearless Innovation",
-    desc: "Bold ideas are our foundation — we embrace risk to unlock breakthrough growth.",
+    title: { en: "Fearless Innovation", fa: "نوآوری بی‌پروا" },
+    desc: { en: "Bold ideas are our foundation — we embrace risk to unlock breakthrough growth.", fa: "ایده‌های جسورانه بنیان ما هستند — برای گشودن مسیر رشدهای بزرگ، ریسک را می‌پذیریم." },
     icon: (
       <svg viewBox="0 0 24 24" className="w-[22px] h-[22px]" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
@@ -22,8 +23,8 @@ const values = [
     ),
   },
   {
-    title: "Trusted Partnership",
-    desc: "We build long-term relationships based on transparency and measurable results.",
+    title: { en: "Trusted Partnership", fa: "مشارکت قابل‌اعتماد" },
+    desc: { en: "We build long-term relationships based on transparency and measurable results.", fa: "روابط بلندمدت را بر پایه‌ی شفافیت و نتایج قابل‌اندازه‌گیری می‌سازیم." },
     icon: (
       <svg viewBox="0 0 24 24" className="w-[22px] h-[22px]" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -37,6 +38,7 @@ const values = [
 const DELAYS = [60, 130, 200];
 
 export default function ValuesSection() {
+  const { t } = useLang();
   const [headVis, setHeadVis] = useState(false);
   const [gridVis, setGridVis] = useState(false);
   const headRef = useRef<HTMLDivElement>(null);
@@ -67,7 +69,7 @@ export default function ValuesSection() {
           }`}
         >
           <h2 className="text-[26px] sm:text-[32px] lg:text-[40px] font-extrabold tracking-[-1.2px] leading-[1.1]">
-            Our Values
+            {t("Our Values", "ارزش‌های ما")}
           </h2>
         </div>
 
@@ -77,7 +79,7 @@ export default function ValuesSection() {
         >
           {values.map((v, i) => (
             <div
-              key={v.title}
+              key={v.title.en}
               className={`bg-white border border-[#E8E8E8] rounded-[12px] p-8 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-[#DEC8FF] hover:shadow-[0_8px_32px_rgba(143,39,255,0.07)] ${
                 gridVis ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
@@ -86,8 +88,8 @@ export default function ValuesSection() {
               <div className="w-12 h-12 rounded-[13px] bg-[#F3EAFF] border border-[#DEC8FF] flex items-center justify-center mb-[18px] text-[#8F27FF]">
                 {v.icon}
               </div>
-              <h3 className="text-[16px] font-bold mb-[9px] tracking-[-0.2px]">{v.title}</h3>
-              <p className="text-[13px] text-[#5A5A5A] leading-[1.68]">{v.desc}</p>
+              <h3 className="text-[16px] font-bold mb-[9px] tracking-[-0.2px]">{t(v.title.en, v.title.fa)}</h3>
+              <p className="text-[13px] text-[#5A5A5A] leading-[1.68]">{t(v.desc.en, v.desc.fa)}</p>
             </div>
           ))}
         </div>

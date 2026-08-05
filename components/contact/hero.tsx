@@ -1,9 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import Row from "../global/Row";
+import { useLang } from "../global/LanguageProvider";
 
 
 
 const Hero = () => {
+    const { t } = useLang();
     return (
         <div className="w-full">
 
@@ -16,9 +20,9 @@ const Hero = () => {
                     alt="Startup hero"
                     className="w-full h-[240px] object-cover rounded-2xl mt-2"
                 />
-                <h2 className="text-[32px] md:text-[46px] font-extrabold text-black">Let’s Build Beyond Borders</h2>
+                <h2 className="text-[32px] md:text-[46px] font-extrabold text-black">{t("Let’s Build Beyond Borders", "مسیر جهانی شما از اینجا آغاز می‌شود")}</h2>
                 <p className="text-[16px] text-[#929292] leading-[1.68]">
-                    Every global breakthrough starts with a single conversation. Whether you are an ambitious founder ready to scale international heights, an investor seeking high-conviction pathways, or a partner aligned with a borderless future, Nexa is your bridge to global influence.
+                    {t("Every global breakthrough starts with a single conversation. Whether you are an ambitious founder ready to scale international heights, an investor seeking high-conviction pathways, or a partner aligned with a borderless future, Nexa is your bridge to global influence.", "هر دستاورد جهانی، از یک گفت‌وگوی مؤثر آغاز می‌شود. اگر کارآفرینی هستید که برای ورود به بازارهای بین‌المللی آماده‌اید، سرمایه‌گذاری هستید که به دنبال فرصت‌های رشد آینده‌دار می‌گردد، یا شریکی که به قدرت همکاری‌های جهانی باور دارد، نکسا پلی میان شما و فرصت‌های بین‌المللی خواهد بود.")}
                 </p>
             </div>
 
@@ -28,10 +32,10 @@ const Hero = () => {
                     <div className="flex items-center gap-18 mt-10">
                         <div className="w-1/2 text-left flex flex-col justify-between">
                             <h2 className="my-4 text-[32px] md:text-[46px] font-extrabold text-black">
-                                Let’s Build Beyond Borders
+                                {t("Let’s Build Beyond Borders", "مسیر جهانی شما از اینجا آغاز می‌شود")}
                             </h2>
                             <p className="text-[16px] text-[#929292] leading-[1.68] max-w-[520px] mb-9">
-                                Every global breakthrough starts with a single conversation. Whether you are an ambitious founder ready to scale international heights, an investor seeking high-conviction pathways, or a partner aligned with a borderless future, Nexa is your bridge to global influence.
+                                {t("Every global breakthrough starts with a single conversation. Whether you are an ambitious founder ready to scale international heights, an investor seeking high-conviction pathways, or a partner aligned with a borderless future, Nexa is your bridge to global influence.", "هر دستاورد جهانی، از یک گفت‌وگوی مؤثر آغاز می‌شود. اگر کارآفرینی هستید که برای ورود به بازارهای بین‌المللی آماده‌اید، سرمایه‌گذاری هستید که به دنبال فرصت‌های رشد آینده‌دار می‌گردد، یا شریکی که به قدرت همکاری‌های جهانی باور دارد، نکسا پلی میان شما و فرصت‌های بین‌المللی خواهد بود.")}
                             </p>
                             
 

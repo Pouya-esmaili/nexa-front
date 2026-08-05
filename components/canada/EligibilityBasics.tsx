@@ -2,23 +2,25 @@
 
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/LazyReveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const items = [
-  { title: "Scalable Business Plan", desc: "A strong, market-validated, and growth-oriented business plan." },
-  { title: "Net Worth & Capital", desc: "Sufficient personal net worth and investment capacity." },
-  { title: "Active Management", desc: "Day-to-day operational involvement required." },
-  { title: "Language Proficiency", desc: "English or French at the threshold required by stream." },
-  { title: "Management Experience", desc: "Prior business management or ownership history." },
-  { title: "Job Creation Focus", desc: "Many streams emphasize employment over fixed capital." },
+  { title: "Scalable Business Plan", titleFa: "طرح کسب‌وکار مقیاس‌پذیر", desc: "A strong, market-validated, and growth-oriented business plan.", descFa: "یک طرح کسب‌وکار قوی، تأییدشده توسط بازار و رشدمحور." },
+  { title: "Net Worth & Capital", titleFa: "دارایی خالص و سرمایه", desc: "Sufficient personal net worth and investment capacity.", descFa: "دارایی خالص شخصی کافی و ظرفیت سرمایه‌گذاری." },
+  { title: "Active Management", titleFa: "مدیریت فعال", desc: "Day-to-day operational involvement required.", descFa: "مشارکت عملیاتی روزانه الزامی است." },
+  { title: "Language Proficiency", titleFa: "تسلط زبانی", desc: "English or French at the threshold required by stream.", descFa: "انگلیسی یا فرانسوی در سطح موردنیاز جریان." },
+  { title: "Management Experience", titleFa: "تجربه‌ی مدیریتی", desc: "Prior business management or ownership history.", descFa: "سابقه‌ی پیشین مدیریت یا مالکیت کسب‌وکار." },
+  { title: "Job Creation Focus", titleFa: "تمرکز بر ایجاد اشتغال", desc: "Many streams emphasize employment over fixed capital.", descFa: "بسیاری از جریان‌ها بر اشتغال بیش از سرمایه‌ی ثابت تأکید دارند." },
 ];
 
 export default function EligibilityBasics() {
+  const { t } = useLang();
   return (
     <section className="py-20 md:py-24 bg-[#F7F6F9]">
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-12">
-            Eligibility Basics
+            {t("Eligibility Basics", "اصول واجد بودن")}
           </h2>
         </Reveal>
 
@@ -35,8 +37,8 @@ export default function EligibilityBasics() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-[16px] font-semibold tracking-[-0.015em] mb-1">{item.title}</h4>
-                  <p className="text-[13.5px] text-[#929292] leading-[1.55]">{item.desc}</p>
+                  <h4 className="text-[16px] font-semibold tracking-[-0.015em] mb-1">{t(item.title, item.titleFa)}</h4>
+                  <p className="text-[13.5px] text-[#929292] leading-[1.55]">{t(item.desc, item.descFa)}</p>
                 </div>
               </div>
             </Reveal>

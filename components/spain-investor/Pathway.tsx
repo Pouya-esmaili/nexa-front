@@ -4,37 +4,56 @@ import { useState } from "react";
 import Image from "next/image";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const items = [
   {
     num: "01",
     label: "Initial Residency",
+    labelFa: "اقامت اولیه",
     year: "1 or 3 Years",
+    yearFa: "۱ یا ۳ سال",
     title: "Initial Residency",
+    titleFa: "اقامت اولیه",
     desc: "1-year buffer if applied from abroad, or a 3-year authorization if initiated directly within Spain. No minimum days of physical presence required to maintain.",
+    descFa: "در صورت درخواست از خارج، یک بازه‌ی ۱ ساله، یا در صورت آغاز مستقیم در داخل اسپانیا، یک مجوز ۳ ساله. برای حفظ، هیچ حداقل روز حضور فیزیکی لازم نیست.",
     body: "1-year residency buffer if applied from abroad. 3-year authorization if initiated directly within Spain. No minimum days of physical presence required to maintain your investor residency status.",
+    bodyFa: "در صورت درخواست از خارج، یک بازه‌ی اقامت ۱ ساله. در صورت آغاز مستقیم در داخل اسپانیا، یک مجوز ۳ ساله. برای حفظ وضعیت اقامت سرمایه‌گذاری شما، هیچ حداقل روز حضور فیزیکی لازم نیست.",
   },
   {
     num: "02",
     label: "5-Year Renewal",
+    labelFa: "تمدید ۵ ساله",
     year: "Year 1 / 3",
+    yearFa: "سال ۱ / ۳",
     title: "5-Year Renewal",
+    titleFa: "تمدید ۵ ساله",
     desc: "Renewable for 5-year blocks. Must maintain the foundational investment capital and continue to meet financial sustainability criteria throughout the renewal period.",
+    descFa: "قابل‌تمدید برای بازه‌های ۵ ساله. باید سرمایه‌ی سرمایه‌گذاری پایه را حفظ کنید و در طول دوره‌ی تمدید به برآورده کردن معیارهای پایداری مالی ادامه دهید.",
     body: "Renewable for 5-year blocks provided you maintain the foundational investment capital in the qualifying asset class and continue to meet the IPREM financial sustainability thresholds.",
+    bodyFa: "قابل‌تمدید برای بازه‌های ۵ ساله، مشروط بر اینکه سرمایه‌ی سرمایه‌گذاری پایه را در طبقه‌ی دارایی واجد شرایط حفظ کنید و به برآورده کردن آستانه‌های پایداری مالی IPREM ادامه دهید.",
   },
   {
     num: "03",
     label: "Permanent Residency",
+    labelFa: "اقامت دائم",
     year: "Year 5",
+    yearFa: "سال ۵",
     title: "Permanent Residency (EU Long-Term)",
+    titleFa: "اقامت دائم (بلندمدت اتحادیه اروپا)",
     desc: "After 5 years of continuous residence. Must not exceed 6 consecutive months outside the EU per year, or 10 total months outside Spain in the 5-year window. Capital can be liquidated.",
+    descFa: "پس از ۵ سال اقامت پیوسته. نباید بیش از ۶ ماه متوالی در سال خارج از اتحادیه اروپا، یا مجموعاً ۱۰ ماه خارج از اسپانیا در بازه‌ی ۵ ساله باشید. سرمایه می‌تواند نقد شود.",
     body: "After 5 years of continuous, legal residence — not exceeding 6 consecutive months outside the EU in any year, or 10 total months outside Spain. Once permanent status is granted, you may liquidate, transfer, or divest your investment capital without impacting your legal status.",
+    bodyFa: "پس از ۵ سال اقامت قانونی و پیوسته — بدون بیش از ۶ ماه متوالی خارج از اتحادیه اروپا در هر سال، یا مجموعاً ۱۰ ماه خارج از اسپانیا. پس از اعطای وضعیت دائم، می‌توانید سرمایه‌ی سرمایه‌گذاری خود را بدون تأثیر بر وضعیت قانونی‌تان نقد، منتقل یا واگذار کنید.",
   },
   {
     num: "04",
     label: "Spanish Citizenship",
+    labelFa: "تابعیت اسپانیا",
     year: "Year 10 (or 2)",
+    yearFa: "سال ۱۰ (یا ۲)",
     title: "Spanish Citizenship",
+    titleFa: "تابعیت اسپانیا",
     desc: (
       <>
         Standard: <strong className="text-black font-semibold">10 years</strong>. Ibero-Americans, Filipinos, Equatorial
@@ -42,11 +61,20 @@ const items = [
         citizenship permitted for qualifying nationals.
       </>
     ),
+    descFa: (
+      <>
+        استاندارد: <strong className="text-black font-semibold">۱۰ سال</strong>. ایبرو-آمریکایی‌ها، فیلیپینی‌ها، اهالی
+        گینه‌ی استوایی، آندورایی‌ها و یهودیان سفاردی: <strong className="text-black font-semibold">۲ سال</strong>. تابعیت
+        دوگانه برای اتباع واجد شرایط مجاز است.
+      </>
+    ),
     body: "Standard naturalization: 10 years. Expedited 2-year track: nationals of Latin American countries, the Philippines, Equatorial Guinea, Andorra, and individuals of Sephardic Jewish descent. Dual citizenship permitted for qualifying nationals.",
+    bodyFa: "تابعیت‌پذیری استاندارد: ۱۰ سال. مسیر سریع ۲ ساله: اتباع کشورهای آمریکای لاتین، فیلیپین، گینه‌ی استوایی، آندورا و افراد با تبار یهودی سفاردی. تابعیت دوگانه برای اتباع واجد شرایط مجاز است.",
   },
 ];
 
 export default function Pathway() {
+  const { t, lang } = useLang();
   const [activeIndex, setActiveIndex] = useState(0);
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -55,7 +83,7 @@ export default function Pathway() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-center mb-14">
-            Long-Term Horizons
+            {t("Long-Term Horizons", "افق‌های بلندمدت")}
           </h2>
         </Reveal>
 
@@ -92,12 +120,12 @@ export default function Pathway() {
                 >
                   {item.num}
                 </div>
-                <div className="text-[15px] font-semibold text-black mb-1">{item.label}</div>
+                <div className="text-[15px] font-semibold text-black mb-1">{t(item.label, item.labelFa)}</div>
                 <div
                   className="text-[12px] font-semibold px-2.5 py-0.5 rounded-full"
                   style={{ color: "#8F27FF", background: "#FAF6FF" }}
                 >
-                  {item.year}
+                  {t(item.year, item.yearFa)}
                 </div>
               </button>
             ))}
@@ -117,8 +145,8 @@ export default function Pathway() {
                 }}
                 onClick={() => setActiveIndex(i)}
               >
-                <h5 className="text-[14px] font-semibold text-black mb-2">{card.title}</h5>
-                <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{card.desc}</p>
+                <h5 className="text-[14px] font-semibold text-black mb-2">{t(card.title, card.titleFa)}</h5>
+                <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{lang === "fa" ? card.descFa : card.desc}</p>
               </div>
             ))}
           </div>
@@ -148,12 +176,12 @@ export default function Pathway() {
                   {item.num}
                 </div>
                 <div className="flex-1">
-                  <div className="text-[14px] font-semibold text-black mb-0.5">{item.label}</div>
+                  <div className="text-[14px] font-semibold text-black mb-0.5">{t(item.label, item.labelFa)}</div>
                   <span
                     className="text-[11px] font-semibold px-2 py-0.5 rounded-full inline-block"
                     style={{ color: "#8F27FF", background: "#FAF6FF" }}
                   >
-                    {item.year}
+                    {t(item.year, item.yearFa)}
                   </span>
                 </div>
                 <Image
@@ -173,7 +201,7 @@ export default function Pathway() {
                   className="text-[13px] text-[#474747] leading-[1.6] pb-4"
                   style={{ paddingLeft: "62px", paddingRight: "18px" }}
                 >
-                  {item.body}
+                  {t(item.body, item.bodyFa)}
                 </div>
               )}
             </div>

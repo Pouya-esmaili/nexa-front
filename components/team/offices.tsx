@@ -1,31 +1,39 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const offices = [
   {
     flag: "/images/Entrepreneurship/cn.svg",
     country: "Vancouver, Canada",
+    countryFa: "ونکوور، کانادا",
     address: "301-1414 Barclay St, Vancouver,\nBritish Columbia, Canada",
+    addressFa: "۳۰۱-۱۴۱۴ خیابان بارکلی، ونکوور،\nبریتیش کلمبیا، کانادا",
     phone: "+1 (604) 351-5951",
     tel: "+16043515951",
   },
   {
     flag: "/images/about/IR.svg",
     country: "Tehran, Iran",
+    countryFa: "تهران، ایران",
     address: "No. 27, Neom Building,\nTajrish Square, Tehran",
+    addressFa: "تهران، میدان تجریش،\nمجتمع نئوم، پلاک ۲۷",
     phone: "+98 (31) 3131-1914",
     tel: "+983131311914",
   },
   {
     flag: "/images/about/IR.svg",
     country: "Esfahan, Iran",
+    countryFa: "اصفهان، ایران",
     address: "Tala Building, Saadat Abad,\nAzadi Square, Esfahan",
+    addressFa: "اصفهان، میدان آزادی،\nسعادت‌آباد، ساختمان طلا",
     phone: "+98 (31) 3131-1914",
     tel: "+983131311914",
   },
 ];
 export default function OfficesSection() {
+  const { t } = useLang();
   const [headVis, setHeadVis] = useState(false);
   const [gridVis, setGridVis] = useState(false);
   const headRef = useRef<HTMLDivElement>(null);
@@ -54,7 +62,7 @@ export default function OfficesSection() {
           }`}
       >
         <h2 className="text-[26px] sm:text-[32px] lg:text-[40px] font-extrabold tracking-[-1.2px] leading-[1.1]">
-          Our Offices
+          {t("Our Offices", "دفاتر ما")}
         </h2>
       </div>
 
@@ -80,10 +88,10 @@ export default function OfficesSection() {
             </div>
             <div>
               <div className="text-[17px] font-extrabold tracking-[-0.3px] mb-[5px]">
-                {office.country}
+                {t(office.country, office.countryFa)}
               </div>
               <div className="text-[13px] text-[#5A5A5A] leading-[1.65] mb-[7px] whitespace-pre-line">
-                {office.address}
+                {t(office.address, office.addressFa)}
               </div>
               <a
                 href={`tel:${office.tel}`}

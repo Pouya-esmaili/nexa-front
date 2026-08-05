@@ -2,17 +2,27 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { useLang } from '@/components/global/LanguageProvider';
 
 /* ─── Data ─── */
+
+/* Persian for the Gregorian month abbreviations used in the timeline */
+const MONTH_FA: Record<string, string> = {
+  Jan: 'ژانویه', Feb: 'فوریه', Mar: 'مارس', Apr: 'آوریل', May: 'مه', Jun: 'ژوئن',
+  Jul: 'ژوئیه', Aug: 'اوت', Sep: 'سپتامبر', Oct: 'اکتبر', Nov: 'نوامبر', Dec: 'دسامبر',
+};
 
 const timelineItems = [
   {
     year: '2017',
     month: '',
     tag: 'Education',
+    tagFa: 'آموزش',
     title: 'The Spark – Landa Academy is Born',
+    titleFa: 'جرقه — تولد آکادمی لاندا',
     desc: "Hadi established Landa Academy in Isfahan to mentor students – creating fertile ground for Nexa's first ventures.",
-    img: '/images/about/Landa Academy.webp',
+    descFa: 'هادی آکادمی لاندا را در اصفهان برای منتورینگ دانشجویان بنیان گذاشت — و بستری حاصلخیز برای نخستین کسب‌وکارهای نکسا فراهم کرد.',
+    img: '/images/about/Landa Academy.jpg',
     logo: '/images/about/academylanda.svg',
     side: 'left' as const,
   },
@@ -20,9 +30,12 @@ const timelineItems = [
     year: '2021',
     month: 'Jul',
     tag: 'Automation',
+    tagFa: 'اتوماسیون',
     title: 'First Venture – Diaco',
+    titleFa: 'نخستین کسب‌وکار — دیاکو',
     desc: 'Diaco was launched to address factory automation challenges by translating technical expertise into operational solutions.',
-    img: '/images/about/Diacoo.webp',
+    descFa: 'دیاکو برای رفع چالش‌های اتوماسیون کارخانه‌ای راه‌اندازی شد و تخصص فنی را به راهکارهای عملیاتی تبدیل کرد.',
+    img: '/images/about/Diacoo.jpg',
     logo: '/images/landing/diaco.svg',
     side: 'right' as const,
   },
@@ -30,8 +43,11 @@ const timelineItems = [
     year: '2022',
     month: 'Jun',
     tag: 'EdTech & AR',
+    tagFa: 'فناوری آموزش و واقعیت افزوده',
     title: 'Reimagining Education – Vision Raft',
+    titleFa: 'بازتعریف آموزش — ویژن رفت',
     desc: 'Vision Raft brought augmented reality into learning, helping children engage beyond traditional classroom methods.',
+    descFa: 'ویژن رفت واقعیت افزوده را به یادگیری آورد و به کودکان کمک کرد فراتر از روش‌های سنتی کلاس درگیر شوند.',
     img: '/images/about/Vision Raft.jpg',
     logo: '/images/landing/raft.svg',
     side: 'left' as const,
@@ -40,9 +56,12 @@ const timelineItems = [
     year: '2023',
     month: 'Jul',
     tag: 'Travel',
+    tagFa: 'سفر',
     title: 'Learning Without Borders – Landa Trip',
+    titleFa: 'یادگیری بدون مرز — لاندا تریپ',
     desc: 'LandaTrip redefined education beyond traditional settings by integrating learning with purposeful travel.',
-    img: '/images/about/Landa Trip.webp',
+    descFa: 'لاندا تریپ با تلفیق یادگیری و سفر هدفمند، آموزش را فراتر از فضاهای سنتی بازتعریف کرد.',
+    img: '/images/about/Landa Trip.jpg',
     logo: '/images/landing/Landa Trip.svg',
     side: 'right' as const,
   },
@@ -50,9 +69,12 @@ const timelineItems = [
     year: '2023',
     month: 'Nov',
     tag: 'Marketplace',
+    tagFa: 'بازارگاه',
     title: 'The Innovation Hub – Diaco Center',
+    titleFa: 'کانون نوآوری — دیاکو سنتر',
     desc: 'Diaco Center connects technology seekers with validated technology providers.',
-    img: '/images/about/Diaco Center.webp',
+    descFa: 'دیاکو سنتر جویندگان فناوری را به تأمین‌کنندگان معتبر فناوری پیوند می‌دهد.',
+    img: '/images/about/Diaco Center.jpg',
     logo: '/images/about/Diaco.svg',
     side: 'left' as const,
   },
@@ -60,9 +82,12 @@ const timelineItems = [
     year: '2024',
     month: 'Dec',
     tag: 'HealthTech & AI',
+    tagFa: 'فناوری سلامت و هوش مصنوعی',
     title: 'Engineering a Healthier Future – PreventiGene',
+    titleFa: 'مهندسی آینده‌ای سالم‌تر — پریونتی‌ژن',
     desc: 'PreventiGene applies AI and genetic analysis in early breast cancer risk prevention.',
-    img: '/images/about/PreventiGenee.webp',
+    descFa: 'پریونتی‌ژن هوش مصنوعی و تحلیل ژنتیکی را در پیشگیری زودهنگام از خطر سرطان سینه به‌کار می‌گیرد.',
+    img: '/images/about/PreventiGenee.jpg',
     logo: '/images/landing/preventigene.svg',
     side: 'right' as const,
   },
@@ -70,9 +95,12 @@ const timelineItems = [
     year: '2025',
     month: 'May',
     tag: 'AI & Health',
+    tagFa: 'هوش مصنوعی و سلامت',
     title: 'A Platform for Hope – AutiLab',
+    titleFa: 'پلتفرمی برای امید — اوتی‌لب',
     desc: 'AutiLab enables early autism detection combining AI-driven systems with specialist expertise.',
-    img: '/images/about/AutiLabb.webp',
+    descFa: 'اوتی‌لب با ترکیب سیستم‌های مبتنی بر هوش مصنوعی و تخصص متخصصان، تشخیص زودهنگام اوتیسم را ممکن می‌سازد.',
+    img: '/images/about/AutiLabb.jpg',
     logo: '/images/landing/Autilab.svg',
     side: 'left' as const,
   },
@@ -80,8 +108,11 @@ const timelineItems = [
     year: '2025',
     month: 'Oct',
     tag: 'Creative',
+    tagFa: 'خلاقیت',
     title: 'Protecting Artisans – Landa Craft',
+    titleFa: 'حمایت از هنرمندان — لاندا کرافت',
     desc: 'Landa Craft enables secure and transparent exchange within the art and creative economy.',
+    descFa: 'لاندا کرافت تبادل امن و شفاف را در اقتصاد هنر و خلاقیت فراهم می‌کند.',
     img: '/images/about/Landa Craft (2).jpg',
     logo: '/images/landing/craft.svg',
     side: 'right' as const,
@@ -92,28 +123,37 @@ const certificates = [
   {
     img: '/images/about/Small Certificate.webp',
     title: 'Professional Affiliation',
+    titleFa: 'وابستگی حرفه‌ای',
     desc: 'Certified partnership with internationally recognized advisory and investment networks, ensuring credibility across all operational jurisdictions.',
+    descFa: 'همکاری تأییدشده با شبکه‌های مشاوره و سرمایه‌گذاری معتبر بین‌المللی، که اعتبار ما را در تمام حوزه‌های عملیاتی تضمین می‌کند.',
   },
   {
     img: '/images/about/Small Certificate2.webp',
     title: 'Official Registration Certificate',
+    titleFa: 'گواهی ثبت رسمی',
     desc: 'Registered legal entity in Canada – British Columbia Registry. Compliant and active in international business advisory and consulting services.',
+    descFa: 'شخصیت حقوقی ثبت‌شده در کانادا — ثبت بریتیش کلمبیا. منطبق و فعال در خدمات مشاوره و راهبری کسب‌وکار بین‌المللی.',
   },
   {
     img: '/images/about/IMG_6819.webp',
     title: 'Official Entrepreneurship & Consulting Center License',
+    titleFa: 'مجوز رسمی مرکز کارآفرینی و مشاوره',
     desc: 'Officially licensed to provide entrepreneurship consulting, business development services, and support for entrepreneurs and businesses.',
+    descFa: 'دارای مجوز رسمی برای ارائه‌ی مشاوره‌ی کارآفرینی، خدمات توسعه‌ی کسب‌وکار و پشتیبانی از کارآفرینان و کسب‌وکارها.',
   },
   {
     img: '/images/about/IMG_6820.webp',
     title: 'Official Coworking Space License',
+    titleFa: 'مجوز رسمی فضای کار اشتراکی',
     desc: 'Officially licensed to operate a coworking space and collaborative environment for entrepreneurs, startups, and growing businesses.',
+    descFa: 'دارای مجوز رسمی برای راه‌اندازی فضای کار اشتراکی و محیطی همکارانه برای کارآفرینان، استارتاپ‌ها و کسب‌وکارهای در حال رشد.',
   },
 ];
 
 /* ─── Component ─── */
 
 export default function OurStoryPage() {
+  const { t } = useLang();
   const [lightbox, setLightbox] = useState<{ img: string; title: string } | null>(null);
 
   useEffect(() => {
@@ -235,17 +275,19 @@ export default function OurStoryPage() {
             className="os-anim mb-4 font-extrabold text-[#0D0D0D]"
             style={{ fontSize: '30px', letterSpacing: '-0.8px', lineHeight: '1.1' }}
           >
-            Where Bold Founders Come{' '}
+            {t('Where Bold Founders Come', 'جایی که بنیان‌گذاران جسور')}{' '}
             <em
               className="not-italic"
               style={{ background: '#FFE600', color: '#0D0D0D', padding: '2px 10px 4px', borderRadius: '8px', display: 'inline-block', lineHeight: '1.2' }}
             >
-              to Grow
+              {t('to Grow', 'برای رشد می‌آیند')}
             </em>
           </h1>
           <p className="os-anim os-d2 text-[15px] leading-7 text-[#5A5A5A]">
-            Nexa is guided by a team shaped around Hadi Hasanpour, whose multidisciplinary engineering background and
-            analytical expertise established a structured approach to building ventures worldwide.
+            {t(
+              'Nexa is guided by a team shaped around Hadi Hasanpour, whose multidisciplinary engineering background and analytical expertise established a structured approach to building ventures worldwide.',
+              'نکسا با تیمی هدایت می‌شود که حول هادی حسن‌پور شکل گرفته است؛ کسی که پیشینه‌ی مهندسی چندرشته‌ای و تخصص تحلیلی‌اش، رویکردی ساختارمند برای ساختن کسب‌وکارها در سراسر جهان بنا نهاد.'
+            )}
           </p>
         </div>
 
@@ -253,14 +295,16 @@ export default function OurStoryPage() {
         <div className="mx-auto hidden max-w-[1200px] grid-cols-2 items-center gap-14 px-16 py-20 md:grid">
           <div>
             <h1 className="os-anim mb-5 font-extrabold text-[#0D0D0D]" style={{ fontSize: '52px', letterSpacing: '-1.8px', lineHeight: '1.08' }}>
-              Where Bold<br />Founders Come<br />
+              {t('Where Bold', 'جایی که')}<br />{t('Founders Come', 'بنیان‌گذاران جسور')}<br />
               <em className="not-italic" style={{ background: '#FFE600', color: '#0D0D0D', padding: '2px 10px 4px', borderRadius: '8px', display: 'inline-block', lineHeight: '1.2' }}>
-                to Grow
+                {t('to Grow', 'برای رشد می‌آیند')}
               </em>
             </h1>
             <p className="os-anim os-d2 text-base text-[#5A5A5A]" style={{ lineHeight: '1.78', maxWidth: '440px' }}>
-              Nexa is guided by a team shaped around Hadi Hasanpour, whose multidisciplinary engineering background and
-              analytical expertise established a structured approach to building ventures worldwide.
+              {t(
+                'Nexa is guided by a team shaped around Hadi Hasanpour, whose multidisciplinary engineering background and analytical expertise established a structured approach to building ventures worldwide.',
+                'نکسا با تیمی هدایت می‌شود که حول هادی حسن‌پور شکل گرفته است؛ کسی که پیشینه‌ی مهندسی چندرشته‌ای و تخصص تحلیلی‌اش، رویکردی ساختارمند برای ساختن کسب‌وکارها در سراسر جهان بنا نهاد.'
+              )}
             </p>
           </div>
           <div className="os-anim os-d3 overflow-hidden rounded-[20px]" style={{ position: 'relative', width: '100%', paddingBottom: '75%' }}>
@@ -281,7 +325,7 @@ export default function OurStoryPage() {
         <div className="mx-auto max-w-[1200px]">
           <div className="os-anim mb-14 text-center">
             <h2 className="font-extrabold text-[#0D0D0D]" style={{ fontSize: 'clamp(28px, 4vw, 40px)', letterSpacing: '-1.2px' }}>
-              Vision &amp; Mission
+              {t('Vision & Mission', 'چشم‌انداز و مأموریت')}
             </h2>
           </div>
           <div className="os-vmgrid grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -297,9 +341,12 @@ export default function OurStoryPage() {
                     <path d="M2 12h4m12 0h4M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M19.07 4.93l-2.83 2.83M7.76 16.24l-2.83 2.83" /><circle cx="12" cy="12" r="4" />
                   </svg>
                 </div>
-                <h2 className="mb-4 font-extrabold text-white" style={{ fontSize: '24px', letterSpacing: '-0.4px' }}>Vision</h2>
+                <h2 className="mb-4 font-extrabold text-white" style={{ fontSize: '24px', letterSpacing: '-0.4px' }}>{t('Vision', 'چشم‌انداز')}</h2>
                 <p className="text-sm leading-7" style={{ color: 'rgba(255,255,255,.6)' }}>
-                  To build a world without entrepreneurial borders. A world where ideas travel freely, capital follows courage, and founders from every corner of the globe have the power to scale beyond limits. Nexa aims to become the bridge that turns ambition into global influence and vision into international reality.
+                  {t(
+                    'To build a world without entrepreneurial borders. A world where ideas travel freely, capital follows courage, and founders from every corner of the globe have the power to scale beyond limits. Nexa aims to become the bridge that turns ambition into global influence and vision into international reality.',
+                    'ساختن جهانی بدون مرزهای کارآفرینی. جهانی که در آن ایده‌ها آزادانه سفر می‌کنند، سرمایه به دنبال شجاعت می‌رود و بنیان‌گذاران از هر گوشه‌ی جهان قدرت رشد فراتر از محدودیت‌ها را دارند. نکسا می‌خواهد پلی باشد که جاه‌طلبی را به اثرگذاری جهانی و چشم‌انداز را به واقعیت بین‌المللی تبدیل می‌کند.'
+                  )}
                 </p>
               </div>
             </div>
@@ -315,9 +362,12 @@ export default function OurStoryPage() {
                     <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
                   </svg>
                 </div>
-                <h2 className="mb-4 font-extrabold text-white" style={{ fontSize: '24px', letterSpacing: '-0.4px' }}>Mission</h2>
+                <h2 className="mb-4 font-extrabold text-white" style={{ fontSize: '24px', letterSpacing: '-0.4px' }}>{t('Mission', 'مأموریت')}</h2>
                 <p className="text-sm leading-7" style={{ color: 'rgba(255,255,255,.6)' }}>
-                  Nexa&apos;s mission is to build a trusted global hub for capital transfer and business relocation – empowering entrepreneurs and investors to expand across borders through structured advisory, strategic investment pathways, and direct access to international markets.
+                  {t(
+                    "Nexa's mission is to build a trusted global hub for capital transfer and business relocation – empowering entrepreneurs and investors to expand across borders through structured advisory, strategic investment pathways, and direct access to international markets.",
+                    'مأموریت نکسا ساختن یک مرکز جهانی قابل‌اعتماد برای انتقال سرمایه و جابه‌جایی کسب‌وکار است — تا کارآفرینان و سرمایه‌گذاران بتوانند با مشاوره‌ی ساختارمند، مسیرهای سرمایه‌گذاری استراتژیک و دسترسی مستقیم به بازارهای بین‌المللی، فراتر از مرزها گسترش یابند.'
+                  )}
                 </p>
               </div>
             </div>
@@ -330,7 +380,7 @@ export default function OurStoryPage() {
         <div className="mx-auto max-w-[1200px] px-4 md:px-16">
           <div className="os-anim mb-16 text-center">
             <h2 className="font-extrabold text-[#0D0D0D]" style={{ fontSize: 'clamp(28px, 4vw, 40px)', letterSpacing: '-1.2px' }}>
-              NEXA Timeline
+              {t('NEXA Timeline', 'خط زمانی نکسا')}
             </h2>
           </div>
 
@@ -389,13 +439,13 @@ export default function OurStoryPage() {
                     <div className="flex-1">
                       <span className="font-extrabold text-[#8F27FF]" style={{ fontSize: '18px', letterSpacing: '-0.4px' }}>
                         {item.year}
-                        {item.month && <span className="ml-1.5 align-middle text-[10px] font-semibold uppercase tracking-[0.8px] text-[#A0A0A0]">{item.month}</span>}
+                        {item.month && <span className="ml-1.5 align-middle text-[10px] font-semibold uppercase tracking-[0.8px] text-[#A0A0A0]">{t(item.month, MONTH_FA[item.month] ?? item.month)}</span>}
                       </span>
                     </div>
-                    <span className="shrink-0 rounded-full px-3 py-0.5 text-[10px] font-bold" style={{ background: '#F3EAFF', color: '#8F27FF' }}>{item.tag}</span>
+                    <span className="shrink-0 rounded-full px-3 py-0.5 text-[10px] font-bold" style={{ background: '#F3EAFF', color: '#8F27FF' }}>{t(item.tag, item.tagFa)}</span>
                   </div>
-                  <h3 className="mb-2 font-bold text-[#0D0D0D]" style={{ fontSize: '15px', lineHeight: '1.35' }}>{item.title}</h3>
-                  <p className="text-[13px] leading-7 text-[#5A5A5A]">{item.desc}</p>
+                  <h3 className="mb-2 font-bold text-[#0D0D0D]" style={{ fontSize: '15px', lineHeight: '1.35' }}>{t(item.title, item.titleFa)}</h3>
+                  <p className="text-[13px] leading-7 text-[#5A5A5A]">{t(item.desc, item.descFa)}</p>
                 </div>
               </div>
             ))}
@@ -407,10 +457,10 @@ export default function OurStoryPage() {
       <section style={{ background: '#0D0D0D', padding: '88px 0' }}>
         <div className="mx-auto max-w-[1200px] px-4 md:px-16">
           <h2 className="os-anim mb-2 text-center font-extrabold text-white" style={{ fontSize: 'clamp(26px, 4vw, 40px)', letterSpacing: '-1.2px' }}>
-            NEXA <span style={{ color: '#FFE600' }}>Certificate</span>
+            {t('NEXA', 'گواهی‌نامه‌های')} <span style={{ color: '#FFE600' }}>{t('Certificate', 'نکسا')}</span>
           </h2>
           <p className="os-anim os-d2 mb-14 text-center text-sm" style={{ color: 'rgba(255,255,255,.45)' }}>
-            Recognized and certified across multiple international jurisdictions.
+            {t('Recognized and certified across multiple international jurisdictions.', 'شناخته‌شده و دارای گواهی در چندین حوزه‌ی قضایی بین‌المللی.')}
           </p>
 
           <div className="overflow-hidden rounded-[20px]" style={{ border: '1px solid rgba(255,255,255,.07)' }}>
@@ -437,8 +487,8 @@ export default function OurStoryPage() {
                       />
                     </div>
                     <div className="p-6">
-                      <h3 className="mb-2 font-bold text-white" style={{ fontSize: '15px' }}>{cert.title}</h3>
-                      <p className="text-[13px] leading-7" style={{ color: 'rgba(255,255,255,.5)' }}>{cert.desc}</p>
+                      <h3 className="mb-2 font-bold text-white" style={{ fontSize: '15px' }}>{t(cert.title, cert.titleFa)}</h3>
+                      <p className="text-[13px] leading-7" style={{ color: 'rgba(255,255,255,.5)' }}>{t(cert.desc, cert.descFa)}</p>
                     </div>
                   </div>
 
@@ -458,8 +508,8 @@ export default function OurStoryPage() {
                       />
                     </div>
                     <div className="flex-1">
-                      <h3 className="mb-3 font-bold text-white" style={{ fontSize: '16px', letterSpacing: '-0.2px' }}>{cert.title}</h3>
-                      <p className="text-[13px] leading-7" style={{ color: 'rgba(255,255,255,.5)' }}>{cert.desc}</p>
+                      <h3 className="mb-3 font-bold text-white" style={{ fontSize: '16px', letterSpacing: '-0.2px' }}>{t(cert.title, cert.titleFa)}</h3>
+                      <p className="text-[13px] leading-7" style={{ color: 'rgba(255,255,255,.5)' }}>{t(cert.desc, cert.descFa)}</p>
                     </div>
                   </div>
                 </div>
@@ -482,7 +532,7 @@ export default function OurStoryPage() {
         >
           <button
             onClick={() => setLightbox(null)}
-            aria-label="Close"
+            aria-label={t('Close', 'بستن')}
             style={{
               position: 'absolute', top: '24px', right: '24px', width: '44px', height: '44px',
               borderRadius: '999px', border: '1px solid rgba(255,255,255,.25)',
@@ -514,6 +564,7 @@ export default function OurStoryPage() {
 
 /* ── Timeline Card ── */
 function TlCard({ item }: { item: (typeof timelineItems)[0] }) {
+  const { t } = useLang();
   return (
     <div className="os-tlcard overflow-hidden rounded-[20px] bg-white" style={{ border: '1.5px solid #E8E8E8' }}>
       <div style={{ position: 'relative', height: '260px', overflow: 'hidden', background: '#FAF6FF', borderBottom: '1.5px solid #E8E8E8' }}>
@@ -532,15 +583,15 @@ function TlCard({ item }: { item: (typeof timelineItems)[0] }) {
           {item.month && (
             <>
               <span className="inline-block rounded-full bg-[#DEC8FF]" style={{ width: '3px', height: '3px' }} />
-              <span className="font-bold uppercase text-[#A0A0A0]" style={{ fontSize: '10px', letterSpacing: '1px' }}>{item.month}</span>
+              <span className="font-bold uppercase text-[#A0A0A0]" style={{ fontSize: '10px', letterSpacing: '1px' }}>{t(item.month, MONTH_FA[item.month] ?? item.month)}</span>
             </>
           )}
         </div>
         <span className="os-tlcard-tag mb-2.5 inline-block rounded-full px-[11px] py-[3px] font-bold transition-colors duration-200" style={{ background: '#F3EAFF', color: '#8F27FF', fontSize: '11px' }}>
-          {item.tag}
+          {t(item.tag, item.tagFa)}
         </span>
-        <p className="mb-2 font-bold text-[#0D0D0D]" style={{ fontSize: '16px', letterSpacing: '-0.3px', lineHeight: '1.3' }}>{item.title}</p>
-        <p className="text-[13px] leading-7 text-[#5A5A5A]">{item.desc}</p>
+        <p className="mb-2 font-bold text-[#0D0D0D]" style={{ fontSize: '16px', letterSpacing: '-0.3px', lineHeight: '1.3' }}>{t(item.title, item.titleFa)}</p>
+        <p className="text-[13px] leading-7 text-[#5A5A5A]">{t(item.desc, item.descFa)}</p>
       </div>
     </div>
   );

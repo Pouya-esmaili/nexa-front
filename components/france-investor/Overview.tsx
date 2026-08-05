@@ -2,6 +2,7 @@
 
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const cards = [
   {
@@ -11,7 +12,9 @@ const cards = [
       </svg>
     ),
     label: "Initial Visa Validity",
+    labelFa: "اعتبار اولیه‌ی ویزا",
     value: <>Up to <em className="text-[#8F27FF] not-italic font-bold">4 years</em> — renewable multi-year residence card</>,
+    valueFa: <>تا <em className="text-[#8F27FF] not-italic font-bold">۴ سال</em> — کارت اقامت چندساله‌ی قابل‌تمدید</>,
   },
   {
     icon: (
@@ -20,7 +23,9 @@ const cards = [
       </svg>
     ),
     label: "Work Authorization",
+    labelFa: "مجوز کار",
     value: "Complete professional freedom to manage and execute your investment",
+    valueFa: "آزادی حرفه‌ای کامل برای مدیریت و اجرای سرمایه‌گذاری شما",
   },
   {
     icon: (
@@ -29,7 +34,9 @@ const cards = [
       </svg>
     ),
     label: "Family Inclusion",
+    labelFa: "شمول خانواده",
     value: <>Spouse and minor children auto-qualify with <em className="text-[#8F27FF] not-italic font-bold">full work rights</em></>,
+    valueFa: <>همسر و فرزندان صغیر به‌طور خودکار با <em className="text-[#8F27FF] not-italic font-bold">حقوق کامل کار</em> واجد شرایط می‌شوند</>,
   },
   {
     icon: (
@@ -38,7 +45,9 @@ const cards = [
       </svg>
     ),
     label: "Physical Presence",
+    labelFa: "حضور فیزیکی",
     value: <>No minimum for temporary residency — <em className="text-[#8F27FF] not-italic font-bold">183 days/year</em> for PR &amp; Citizenship</>,
+    valueFa: <>بدون حداقل برای اقامت موقت — <em className="text-[#8F27FF] not-italic font-bold">۱۸۳ روز در سال</em> برای اقامت دائم و تابعیت</>,
   },
   {
     icon: (
@@ -47,7 +56,9 @@ const cards = [
       </svg>
     ),
     label: "Path to Citizenship",
+    labelFa: "مسیر تابعیت",
     value: <>Eligible for Permanent Resident card or French Citizenship after <em className="text-[#8F27FF] not-italic font-bold">5 years</em></>,
+    valueFa: <>واجد شرایط کارت اقامت دائم یا تابعیت فرانسه پس از <em className="text-[#8F27FF] not-italic font-bold">۵ سال</em></>,
   },
   {
     icon: (
@@ -56,17 +67,20 @@ const cards = [
       </svg>
     ),
     label: "Investment Type",
+    labelFa: "نوع سرمایه‌گذاری",
     value: "Active capital — no passive real estate, no stock portfolios",
+    valueFa: "سرمایه‌ی فعال — بدون املاک منفعل، بدون پرتفوی سهام",
   },
 ];
 
 export default function Overview() {
+  const { t, lang } = useLang();
   return (
     <section className="py-20 md:py-24" style={{ background: "#FAF6FF" }}>
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-center mb-14">
-            Program Core Values &amp; Parameters
+            {t("Program Core Values & Parameters", "ارزش‌های اصلی و پارامترهای برنامه")}
           </h2>
         </Reveal>
 
@@ -103,8 +117,8 @@ export default function Overview() {
                   <div className="w-5 h-5">{c.icon}</div>
                 </div>
                 <div>
-                  <div className="text-[11px] font-bold text-[#929292] uppercase tracking-[0.08em] mb-1.5">{c.label}</div>
-                  <div className="text-[15px] font-semibold text-black leading-[1.4]">{c.value}</div>
+                  <div className="text-[11px] font-bold text-[#929292] uppercase tracking-[0.08em] mb-1.5">{t(c.label, c.labelFa)}</div>
+                  <div className="text-[15px] font-semibold text-black leading-[1.4]">{lang === "fa" ? c.valueFa : c.value}</div>
                 </div>
               </div>
             </Reveal>

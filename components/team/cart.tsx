@@ -1,6 +1,33 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { useLang } from "@/components/global/LanguageProvider";
+
+/* Persian labels for the finite set of roles & departments */
+const ROLE_FA: Record<string, string> = {
+  "Operations Manager": "مدیر عملیات",
+  "COO": "مدیر ارشد عملیات",
+  "HR & Administrative": "منابع انسانی و اداری",
+  "Sales Officer": "کارشناس فروش",
+  "Business Advisor": "مشاور کسب‌وکار",
+  "Front-End Developer": "توسعه‌دهنده‌ی فرانت‌اند",
+  "AI Engineer": "مهندس هوش مصنوعی",
+  "Accountant": "حسابدار",
+  "UI/UX Designer": "طراح UI/UX",
+  "Back-End Developer": "توسعه‌دهنده‌ی بک‌اند",
+  "Marketing Specialist": "کارشناس بازاریابی",
+  "Content Strategist": "استراتژیست محتوا",
+};
+const DEPT_FA: Record<string, string> = {
+  "Operations": "عملیات",
+  "Leadership": "رهبری",
+  "Sales": "فروش",
+  "Advisory": "مشاوره",
+  "Tech": "فناوری",
+  "Finance": "مالی",
+  "Design": "طراحی",
+  "Marketing": "بازاریابی",
+};
 
 type Member = {
   name: string;
@@ -26,24 +53,25 @@ const team: Member[] = [
   // { name: "Ali Soleimani",       role: "Accountant",           dept: "Finance",    image: "/images/ourteam/ali.svg",          linkedin: "https://www.linkedin.com/in/ali-soleimani-b761b6223" },
   // { name: "Narjes Orouji",       role: "UI/UX Designer",       dept: "Design",     image: "/images/ourteam/narges.svg",       linkedin: "https://www.linkedin.com/in/narges-orouji-7ab846214" },
   // { name: "Amir Esfahanizade",   role: "Back-End Developer",   dept: "Tech",       image: "/images/ourteam/amirmohammad.svg", linkedin: "" },
-  { name: "Mahsa Esmaeili",      role: "Legal Advisor",        dept: "Legal",      image: "/images/ourteam/mahsa.webp" , linkedin: "https://www.linkedin.com/in/mahsa-esmaili" },
-  { name: "Iman Nasr Esfahani",  role: "COO",                  dept: "Leadership", image: "/images/ourteam/iman.webp" , linkedin: "https://www.linkedin.com/in/iman-nasr-esfahani" },
-  { name: "Lida Parvizi",        role: "HR & Administrative",  dept: "Operations", image: "/images/ourteam/lidaa.webp" , linkedin: "https://www.linkedin.com/in/lida-parvizi-ab7b8721a" },
-  { name: "Gelareh Bahrami",     role: "Sales Officer",        dept: "Sales",      image: "/images/ourteam/gelareh.webp" , linkedin: "https://www.linkedin.com/in/gelareh-bahrami-baba59185", pos: "center 20%" },
-  { name: "Parastoo Sanaifar",   role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/parastoo.jpg" , linkedin: "https://www.linkedin.com/in/parastoo-sanaifar" },
-  { name: "Milad Fatemi",        role: "Business Advisor",     dept: "Advisory",   image: "/images/ourteam/milad.webp" , linkedin: "https://www.linkedin.com/in/miladfatemi", pos: "center 20%" },
-  { name: "Mehdi Esmaeili",      role: "Front-End Developer",  dept: "Tech",       image: "/images/ourteam/pouya.jpg" , linkedin: "" },
-  { name: "Sajjad Momeni",       role: "AI Engineer",          dept: "Tech",       image: "/images/ourteam/sajjad.webp" , linkedin: "https://www.linkedin.com/in/sajjad-momeni-17ab4778" },
-  { name: "Ali Soleimani",       role: "Accountant",           dept: "Finance",    image: "/images/ourteam/ali.webp" , linkedin: "https://www.linkedin.com/in/ali-soleimani-b761b6223" },
-  { name: "Narjes Orouji",       role: "UI/UX Designer",       dept: "Design",     image: "/images/ourteam/narges.webp" , linkedin: "https://www.linkedin.com/in/narges-orouji-7ab846214" },
-  { name: "Amir Esfahanizade",   role: "Back-End Developer",   dept: "Tech",       image: "/images/ourteam/amir.webp" , linkedin: "https://www.linkedin.com/in/amir-esfahanizadeh-151522364" },
-  { name: "Pouya Shafaghatiyan", role: "Marketing Specialist", dept: "Marketing",  image: "/images/ourteam/pooya.webp" , linkedin: "https://www.linkedin.com/in/pouya-shafaghatian-a772a82b4", zoom: 1.45 },
-  { name: "Kiyana Mehrasa",      role: "Content Strategist",   dept: "Marketing",  image: "/images/ourteam/kiana.webp" , linkedin: "https://www.linkedin.com/in/kiana-mehrasa-00aa38380" },
+  { name: "Mahsa Esmaeili", role: "Operations Manager", dept: "Operations ", image: "/images/ourteam/mahsa.jpg", linkedin: "https://www.linkedin.com/in/mahsa-esmaili" },
+  { name: "Iman Nasr Esfahani", role: "COO", dept: "Leadership", image: "/images/ourteam/iman.jpg", linkedin: "https://www.linkedin.com/in/iman-nasr-esfahani" },
+  { name: "Lida Parvizi", role: "HR & Administrative", dept: "Operations", image: "/images/ourteam/lidaa.JPG", linkedin: "https://www.linkedin.com/in/lida-parvizi-ab7b8721a" },
+  { name: "Gelareh Bahrami", role: "Sales Officer", dept: "Sales", image: "/images/ourteam/gelareh.jpg", linkedin: "https://www.linkedin.com/in/gelareh-bahrami-baba59185", pos: "center 20%" },
+  { name: "Parastoo Sanaifar", role: "Business Advisor", dept: "Advisory", image: "/images/ourteam/parastoo.jpg", linkedin: "https://www.linkedin.com/in/parastoo-sanaifar" },
+  { name: "Milad Fatemi", role: "Business Advisor", dept: "Advisory", image: "/images/ourteam/milad.jpg", linkedin: "https://www.linkedin.com/in/miladfatemi", pos: "center 20%" },
+  { name: "Mehdi Esmaeili", role: "Front-End Developer", dept: "Tech", image: "/images/ourteam/pouya.jpg", linkedin: "" },
+  { name: "Sajjad Momeni", role: "AI Engineer", dept: "Tech", image: "/images/ourteam/sajjad.jpg", linkedin: "https://www.linkedin.com/in/sajjad-momeni-17ab4778" },
+  { name: "Ali Soleimani", role: "Accountant", dept: "Finance", image: "/images/ourteam/ali.jpg", linkedin: "https://www.linkedin.com/in/ali-soleimani-b761b6223" },
+  { name: "Narjes Orouji", role: "UI/UX Designer", dept: "Design", image: "/images/ourteam/narges.jpg", linkedin: "https://www.linkedin.com/in/narges-orouji-7ab846214" },
+  { name: "Amir Esfahanizade", role: "Back-End Developer", dept: "Tech", image: "/images/ourteam/amir.jpg", linkedin: "https://www.linkedin.com/in/amir-esfahanizadeh-151522364" },
+  { name: "Pouya Shafaghatiyan", role: "Marketing Specialist", dept: "Marketing", image: "/images/ourteam/pooya.JPG", linkedin: "https://www.linkedin.com/in/pouya-shafaghatian-a772a82b4", zoom: 1.45 },
+  { name: "Kiyana Mehrasa", role: "Content Strategist", dept: "Marketing", image: "/images/ourteam/kiana.JPG", linkedin: "https://www.linkedin.com/in/kiana-mehrasa-00aa38380" },
 ];
 
 const DELAYS = [60, 130, 200, 270, 340, 410, 480, 550, 620, 690, 760, 830, 900];
 
 export default function TeamGrid() {
+  const { t } = useLang();
   const [headVis, setHeadVis] = useState(false);
   const [gridVis, setGridVis] = useState(false);
   const headRef = useRef<HTMLDivElement>(null);
@@ -76,12 +104,11 @@ export default function TeamGrid() {
       {/* Header */}
       <div
         ref={headRef}
-        className={`text-center mb-[52px] transition-all duration-700 delay-75 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-          headVis ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-        }`}
+        className={`text-center mb-[52px] transition-all duration-700 delay-75 ease-[cubic-bezier(0.22,1,0.36,1)] ${headVis ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
       >
         <h2 className="text-[26px] sm:text-[32px] lg:text-[40px] font-extrabold tracking-[-1.2px] leading-[1.1]">
-          Full Team
+          {t("Full Team", "تیم کامل")}
         </h2>
       </div>
 
@@ -93,9 +120,8 @@ export default function TeamGrid() {
         {team.map((member, i) => (
           <div
             key={member.name}
-            className={`border border-[#E8E8E8] rounded-[12px] overflow-hidden bg-white transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-[#DEC8FF] hover:shadow-[0_10px_40px_rgba(143,39,255,0.09)] hover:-translate-y-1 group ${
-              gridVis ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
+            className={`border border-[#E8E8E8] rounded-[12px] overflow-hidden bg-white transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-[#DEC8FF] hover:shadow-[0_10px_40px_rgba(143,39,255,0.09)] hover:-translate-y-1 group ${gridVis ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
             style={{ transitionDelay: gridVis ? `${DELAYS[i]}ms` : "0ms" }}
           >
             {/* Photo — padding-bottom trick for reliable SSR height */}
@@ -119,10 +145,10 @@ export default function TeamGrid() {
                 {member.name}
               </div>
               <div className="text-[12px] text-[#8F27FF] font-semibold mb-[9px]">
-                {member.role}
+                {t(member.role, ROLE_FA[member.role.trim()] ?? member.role)}
               </div>
               <div className="inline-block bg-[#F7F7F7] border border-[#E8E8E8] text-[#A0A0A0] text-[11px] px-[9px] py-[3px] rounded-full font-medium mb-[9px]">
-                {member.dept}
+                {t(member.dept, DEPT_FA[member.dept.trim()] ?? member.dept)}
               </div>
               {member.linkedin && (
                 <div className="flex gap-[6px]">

@@ -1,3 +1,7 @@
+"use client";
+
+import { useLang } from "@/components/global/LanguageProvider";
+
 const cards = [
   {
     icon: (
@@ -6,7 +10,9 @@ const cards = [
       </svg>
     ),
     title: "Tri-continental access",
+    titleFa: "دسترسی سه‌قاره‌ای",
     desc: "Direct corridor between Europe, the Gulf, Central Asia and North Africa.",
+    descFa: "کریدور مستقیم میان اروپا، خلیج‌فارس، آسیای مرکزی و شمال آفریقا.",
   },
   {
     icon: (
@@ -15,7 +21,9 @@ const cards = [
       </svg>
     ),
     title: "Real estate upside",
+    titleFa: "پتانسیل رشد املاک",
     desc: "Competitive acquisition costs powered by a dynamic tourism economy.",
+    descFa: "هزینه‌های تملک رقابتی که با یک اقتصاد گردشگری پویا تقویت می‌شود.",
   },
   {
     icon: (
@@ -25,7 +33,9 @@ const cards = [
       </svg>
     ),
     title: "World-class infrastructure",
+    titleFa: "زیرساخت در تراز جهانی",
     desc: "Modern airports, deep-water ports and high-speed rail across major cities.",
+    descFa: "فرودگاه‌های مدرن، بنادر آب‌عمیق و راه‌آهن پرسرعت در سراسر شهرهای بزرگ.",
   },
   {
     icon: (
@@ -34,20 +44,23 @@ const cards = [
       </svg>
     ),
     title: "Tier-1 passport",
+    titleFa: "پاسپورت درجه‌یک",
     desc: "Internationally recognized CBI framework — from residency to passport.",
+    descFa: "چارچوب تابعیت از طریق سرمایه‌گذاری (CBI) با به‌رسمیت‌شناختن بین‌المللی — از اقامت تا پاسپورت.",
   },
 ];
 
 export default function WhyTurkiye() {
+  const { t } = useLang();
   return (
     <section id="why" className="why">
-      <h2 className="section-title">Why Türkiye?</h2>
+      <h2 className="section-title">{t("Why Türkiye?", "چرا ترکیه؟")}</h2>
       <div className="why-grid">
         {cards.map((c) => (
           <article key={c.title} className="why-card">
             <div className="why-ico">{c.icon}</div>
-            <h3>{c.title}</h3>
-            <p>{c.desc}</p>
+            <h3>{t(c.title, c.titleFa)}</h3>
+            <p>{t(c.desc, c.descFa)}</p>
           </article>
         ))}
       </div>

@@ -2,11 +2,14 @@
 
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const cards = [
   {
     title: "Solo Founder",
+    titleFa: "بنیان‌گذار منفرد",
     desc: "Minimum <strong>€21,000</strong> in unencumbered personal liquid savings. Updated semi-annually by the IND based on national minimum wage standards.",
+    descFa: "حداقل <strong>۲۱٬۰۰۰ یورو</strong> پس‌انداز نقدی شخصی بدون قید. هر شش ماه یک‌بار توسط IND بر اساس استانداردهای حداقل دستمزد ملی به‌روزرسانی می‌شود.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" className="w-5 h-5">
         <circle cx="12" cy="12" r="9" />
@@ -16,7 +19,9 @@ const cards = [
   },
   {
     title: "Founder with Family",
+    titleFa: "بنیان‌گذار همراه خانواده",
     desc: "Threshold rises to minimum <strong>€30,000</strong> when relocating with a spouse or dependents to cover full family living capital.",
+    descFa: "هنگام جابه‌جایی با همسر یا افراد تحت تکفل، آستانه برای پوشش کامل سرمایه‌ی زندگی خانواده به حداقل <strong>۳۰٬۰۰۰ یورو</strong> افزایش می‌یابد.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" className="w-5 h-5">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -27,7 +32,9 @@ const cards = [
   },
   {
     title: "Facilitator Can Sponsor",
+    titleFa: "تسهیل‌گر می‌تواند حمایت مالی کند",
     desc: "Your recognized facilitator may cover your living costs directly. This <strong>must be explicitly written</strong> into your signed facilitator agreement — eliminating the need to show personal savings.",
+    descFa: "تسهیل‌گر شناخته‌شده‌ی شما می‌تواند مستقیماً هزینه‌های زندگی شما را پوشش دهد. این موضوع <strong>باید صراحتاً</strong> در توافق‌نامه‌ی امضاشده‌ی تسهیل‌گر نوشته شود — که نیاز به نشان دادن پس‌انداز شخصی را از بین می‌برد.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" className="w-5 h-5">
         <rect x="3" y="6" width="18" height="12" rx="1.5" />
@@ -37,7 +44,15 @@ const cards = [
   },
 ];
 
+const CHIPS: { en: string; fa: string }[] = [
+  { en: "Certified bank statements", fa: "صورت‌حساب‌های بانکی تأییدشده" },
+  { en: "Dutch notary escrow", fa: "امانت‌سپاری نزد دفتر اسناد رسمی هلند" },
+  { en: "VC funding letters", fa: "نامه‌های تأمین مالی سرمایه‌گذاری خطرپذیر" },
+  { en: "Facilitator sponsorship", fa: "حمایت مالی تسهیل‌گر" },
+];
+
 export default function FinancialRequirements() {
+  const { t } = useLang();
   return (
     <section className="py-16 md:py-20 relative overflow-hidden" style={{ background: "#000" }}>
       {/* Glow */}
@@ -49,7 +64,7 @@ export default function FinancialRequirements() {
       <Row>
         <Reveal variant="up" className="relative z-10 mb-10 md:mb-14">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center text-white">
-            Financial Requirements
+            {t("Financial Requirements", "الزامات مالی")}
           </h2>
         </Reveal>
 
@@ -64,28 +79,28 @@ export default function FinancialRequirements() {
                 className="self-start text-[11px] font-bold uppercase tracking-[.12em] px-3.5 py-1.5 rounded-full"
                 style={{ background: "rgba(255,230,0,0.12)", border: "1px solid rgba(255,230,0,0.3)", color: "#FFE600" }}
               >
-                Personal Liquid Funds Threshold
+                {t("Personal Liquid Funds Threshold", "آستانه‌ی دارایی نقدی شخصی")}
               </span>
               <div className="text-[72px] font-bold tracking-[-0.04em] leading-[0.9] text-white">
                 €21K
               </div>
               <p className="text-[14px] leading-[1.65]" style={{ color: "#B5B5BA" }}>
-                Minimum personal liquid funds for a{" "}
-                <strong className="font-semibold" style={{ color: "#FFE600" }}>solo founder</strong>.
-                With family, the threshold rises to{" "}
-                <strong className="font-semibold" style={{ color: "#FFE600" }}>€30,000</strong>.
+                {t("Minimum personal liquid funds for a", "حداقل دارایی نقدی شخصی برای یک")}{" "}
+                <strong className="font-semibold" style={{ color: "#FFE600" }}>{t("solo founder", "بنیان‌گذار منفرد")}</strong>
+                {t(". With family, the threshold rises to", "است. با خانواده، آستانه به")}{" "}
+                <strong className="font-semibold" style={{ color: "#FFE600" }}>{t("€30,000", "۳۰٬۰۰۰ یورو")}</strong>{t(".", " افزایش می‌یابد.")}
               </p>
               <div
                 className="flex flex-wrap gap-2 mt-auto pt-4"
                 style={{ borderTop: "1px solid #1f1f24" }}
               >
-                {["Certified bank statements", "Dutch notary escrow", "VC funding letters", "Facilitator sponsorship"].map((chip) => (
+                {CHIPS.map((chip) => (
                   <span
-                    key={chip}
+                    key={chip.en}
                     className="text-[12px] font-medium text-white px-3 py-1.5 rounded-full transition-all duration-200 hover:border-white/30"
                     style={{ border: "1px solid #2a2a30" }}
                   >
-                    {chip}
+                    {t(chip.en, chip.fa)}
                   </span>
                 ))}
               </div>
@@ -119,11 +134,11 @@ export default function FinancialRequirements() {
                     {c.icon}
                   </div>
                   <div>
-                    <h4 className="text-[15px] font-semibold text-white mb-1.5">{c.title}</h4>
+                    <h4 className="text-[15px] font-semibold text-white mb-1.5">{t(c.title, c.titleFa)}</h4>
                     <p
                       className="text-[13px] leading-[1.6] m-0 [&_strong]:text-white [&_strong]:font-semibold"
                       style={{ color: "#B5B5BA" }}
-                      dangerouslySetInnerHTML={{ __html: c.desc }}
+                      dangerouslySetInnerHTML={{ __html: t(c.desc, c.descFa) }}
                     />
                   </div>
                 </div>

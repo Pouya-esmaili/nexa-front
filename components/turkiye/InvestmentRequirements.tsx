@@ -1,3 +1,7 @@
+"use client";
+
+import { useLang } from "@/components/global/LanguageProvider";
+
 const cards = [
   {
     icon: (
@@ -6,7 +10,9 @@ const cards = [
       </svg>
     ),
     title: "Minimum threshold",
+    titleFa: "حداقل آستانه",
     desc: (<>Purchase qualifying real estate with a minimum value of <strong>USD 600,000</strong>.</>),
+    descFa: (<>ملک واجد شرایط را با حداقل ارزش <strong>۶۰۰٬۰۰۰ دلار آمریکا</strong> خریداری کنید.</>),
   },
   {
     icon: (
@@ -15,7 +21,9 @@ const cards = [
       </svg>
     ),
     title: "3-year holding",
+    titleFa: "نگهداری ۳ ساله",
     desc: (<>Maintain ownership for at least <strong>3 years</strong> from the date of acquisition.</>),
+    descFa: (<>مالکیت را حداقل <strong>۳ سال</strong> از تاریخ تملک حفظ کنید.</>),
   },
   {
     icon: (
@@ -24,7 +32,9 @@ const cards = [
       </svg>
     ),
     title: "Compliant banking",
+    titleFa: "بانکداری منطبق",
     desc: "Complete the transaction through official banking channels and Turkish financial regulations.",
+    descFa: "معامله را از طریق کانال‌های بانکی رسمی و مقررات مالی ترکیه تکمیل کنید.",
   },
   {
     icon: (
@@ -33,29 +43,40 @@ const cards = [
       </svg>
     ),
     title: "Authorized approvals",
+    titleFa: "تأییدیه‌های مجاز",
     desc: "Obtain official valuation and eligibility approvals from government-authorized authorities.",
+    descFa: "ارزش‌گذاری رسمی و تأییدیه‌های واجد شرایط بودن را از مراجع مورد تأیید دولت دریافت کنید.",
   },
 ];
 
-const chips = ["Residential apartments", "Commercial units", "Villas", "Approved developments", "Combined structures"];
+const chips: { en: string; fa: string }[] = [
+  { en: "Residential apartments", fa: "آپارتمان‌های مسکونی" },
+  { en: "Commercial units", fa: "واحدهای تجاری" },
+  { en: "Villas", fa: "ویلاها" },
+  { en: "Approved developments", fa: "پروژه‌های تأییدشده" },
+  { en: "Combined structures", fa: "سازه‌های ترکیبی" },
+];
 
 export default function InvestmentRequirements() {
+  const { t, lang } = useLang();
   return (
     <section className="reqs">
-      <h2 className="section-title light">Investment Requirements, Costs &amp; Financial Structure</h2>
+      <h2 className="section-title light">{t("Investment Requirements, Costs & Financial Structure", "الزامات سرمایه‌گذاری، هزینه‌ها و ساختار مالی")}</h2>
       <div className="reqs-layout">
         <aside className="reqs-hero">
-          <div className="reqs-hero-pill">Minimum threshold</div>
+          <div className="reqs-hero-pill">{t("Minimum threshold", "حداقل آستانه")}</div>
           <div className="reqs-hero-stat">
-            <span className="prefix">USD</span>
-            <span className="figure">600K</span>
+            <span className="prefix">{t("USD", "دلار")}</span>
+            <span className="figure">{t("600K", "۶۰۰ هزار")}</span>
           </div>
           <p className="reqs-hero-meta">
-            Qualifying real estate value established by the Turkish government — held for a minimum of <strong>3 years</strong>.
+            {lang === "fa"
+              ? (<>ارزش ملک واجد شرایط که توسط دولت ترکیه تعیین شده — حداقل برای <strong>۳ سال</strong> نگهداری می‌شود.</>)
+              : (<>Qualifying real estate value established by the Turkish government — held for a minimum of <strong>3 years</strong>.</>)}
           </p>
           <div className="reqs-hero-chips">
             {chips.map((c) => (
-              <span key={c}>{c}</span>
+              <span key={c.en}>{t(c.en, c.fa)}</span>
             ))}
           </div>
         </aside>
@@ -63,8 +84,8 @@ export default function InvestmentRequirements() {
           {cards.map((c) => (
             <article key={c.title} className="req-card">
               <div className="req-ico">{c.icon}</div>
-              <h3>{c.title}</h3>
-              <p>{c.desc}</p>
+              <h3>{t(c.title, c.titleFa)}</h3>
+              <p>{lang === "fa" ? c.descFa : c.desc}</p>
             </article>
           ))}
         </div>

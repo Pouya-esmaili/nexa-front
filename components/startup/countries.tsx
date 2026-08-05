@@ -3,53 +3,65 @@ import Link from "next/link";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/LazyReveal";
 import Image from "next/image";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const countries = [
   {
     name: "Finland",
+    nameFa: "فنلاند",
     flag: "/images/Entrepreneurship/FI.svg",
     desc: "Startup Permit in Europe's leading innovation ecosystem",
+    descFa: "مجوز استارتاپ در یکی از پیشرفته‌ترین اکوسیستم‌های نوآوری اروپا",
     href: "/startup/finland",
     img: "/images/Entrepreneurship/finland.webp",
   },
   {
     name: "Canada",
+    nameFa: "کانادا",
     flag: "/images/Entrepreneurship/cn.svg",
     desc: "Startup Visa with access to world-class accelerator networks",
+    descFa: "ویزای استارتاپ با دسترسی به برترین شتاب‌دهنده‌های بین‌المللی",
     href: "/startup/canada",
     img: "/images/Entrepreneurship/canada.webp",
   },
   {
     name: "UK",
+    nameFa: "انگلستان",
     flag: "/images/startup/england.svg",
     desc: "Innovator Founder Visa for high-growth ventures",
+    descFa: "ویزای Innovator Founder برای استارتاپ‌های نوآور و با ظرفیت رشد بالا",
     href: "/startup/uk",
     img: "/images/startup/uk.webp",
   },
   {
     name: "Netherlands",
+    nameFa: "هلند",
     flag: "/images/Entrepreneurship/netherlands.svg",
     desc: "Startup Visa in Europe's most connected tech hub",
+    descFa: "ویزای استارتاپ در یکی از پویاترین مراکز فناوری و نوآوری اروپا",
     href: "/startup/netherlands",
     img: "/images/Entrepreneurship/netherland.webp",
   },
   {
     name: "France",
+    nameFa: "فرانسه",
     flag: "/images/investment/fr.svg",
     desc: "French Tech Visa for founders backed by a recognized program",
+    descFa: "ویزای French Tech برای استارتاپ‌های مورد تأیید برنامه‌های رسمی نوآوری",
     href: "/startup/france",
     img: "/images/investment/france.webp",
   },
 ];
 
 export default function StartupCountries() {
+  const { t } = useLang();
   return (
     <section className="py-[90px] bg-[#F7F6F9]">
       <Row>
         <Reveal variant="up">
           <div className="text-center max-w-[700px] mx-auto mb-14">
             <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1]">
-              Where We Offer
+              {t("Where We Offer", "مقصد بین‌المللی استارتاپ شما")}
             </h2>
           </div>
         </Reveal>
@@ -101,10 +113,10 @@ export default function StartupCountries() {
 
                 {/* Content bottom */}
                 <div className="absolute bottom-0 left-0 right-0 px-[20px] py-[22px] z-[2]">
-                  <div className="text-white font-bold text-[16px] mb-1 tracking-[-0.01em]">{c.name}</div>
-                  <p className="text-white/65 text-[12px] leading-[1.5] mb-3">{c.desc}</p>
+                  <div className="text-white font-bold text-[16px] mb-1 tracking-[-0.01em]">{t(c.name, c.nameFa)}</div>
+                  <p className="text-white/65 text-[12px] leading-[1.5] mb-3">{t(c.desc, c.descFa)}</p>
                   <span className="inline-flex items-center gap-[7px] text-[13px] font-semibold text-white px-4 py-2 rounded-full backdrop-blur-[8px] border border-white/30 bg-white/15 transition-all duration-[250ms] group-hover:bg-[#8F27FF] group-hover:border-[#8F27FF] group-hover:translate-x-[3px]">
-                    Explore Program
+                    {t("Explore Program", "مشاهده برنامه")}
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-[13px] h-[13px] transition-transform duration-[250ms] group-hover:translate-x-[3px]">
                       <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>

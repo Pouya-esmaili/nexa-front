@@ -1,21 +1,23 @@
 "use client";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const cards = [
-  { badge: "Strategy", name: "Feasibility Analysis",  title: "Business Model & Financial Feasibility Analysis" },
-  { badge: "Legal",    name: "Immigration Legal",     title: "Legal Guidance for Immigration Applications" },
-  { badge: "Setup",    name: "Company Registration",  title: "Company Registration & Post-Launch Support" },
-  { badge: "Capital",  name: "Fundraising",           title: "Capital Access & Fundraising Through Global Networks" },
+  { badge: "Strategy", badgeFa: "تحلیل و ارزیابی", name: "Feasibility Analysis", nameFa: "امکان‌سنجی کسب‌وکار", title: "Business Model & Financial Feasibility Analysis", titleFa: "طراحی مدل کسب‌وکار و ارزیابی مالی" },
+  { badge: "Legal", badgeFa: "امور حقوقی", name: "Immigration Legal", nameFa: "خدمات حقوقی مهاجرت", title: "Legal Guidance for Immigration Applications", titleFa: "مشاوره حقوقی برای پرونده‌های مهاجرتی" },
+  { badge: "Setup", badgeFa: "راه‌اندازی", name: "Company Registration", nameFa: "ثبت شرکت", title: "Company Registration & Post-Launch Support", titleFa: "ثبت شرکت و خدمات پس از راه‌اندازی" },
+  { badge: "Capital", badgeFa: "رشد", name: "Fundraising", nameFa: "مشاوره مستمر", title: "Capital Access & Fundraising Through Global Networks", titleFa: "همراهی مستمر برای رشد و ارزیابی عملکرد" },
 ];
 
 export default function StartupServices() {
+  const { t } = useLang();
   return (
     <section className="py-16 md:py-24 bg-white">
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-12">
-            Our Services
+            {t("Our Services", "خدمات تخصصی ما")}
           </h2>
         </Reveal>
 
@@ -36,15 +38,15 @@ export default function StartupServices() {
 
                 <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[.12em] uppercase text-[#8F27FF] mb-[18px] relative z-10">
                   <span className="w-6 h-[1.5px] bg-[#8F27FF] rounded-full" />
-                  {c.badge}
+                  {t(c.badge, c.badgeFa)}
                 </span>
 
                 <h3 className="text-[18px] font-bold tracking-[-0.02em] text-black leading-[1.3] flex-1 relative z-10">
-                  {c.title}
+                  {t(c.title, c.titleFa)}
                 </h3>
 
                 <div className="flex items-center justify-between mt-auto pt-5 border-t border-[#E2E2E2] group-hover:border-[rgba(143,39,255,0.18)] transition-colors relative z-10">
-                  <span className="text-[14px] font-semibold text-[#474747] group-hover:text-[#8F27FF] transition-colors">{c.name}</span>
+                  <span className="text-[14px] font-semibold text-[#474747] group-hover:text-[#8F27FF] transition-colors">{t(c.name, c.nameFa)}</span>
 
                 </div>
               </div>

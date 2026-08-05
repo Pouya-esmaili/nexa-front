@@ -1,15 +1,18 @@
+"use client";
 import Image from "next/image";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
-const TAGS = [
-  "Startup Investment Advisory",
-  "Project Capital Structuring",
-  "Mergers & Acquisitions",
-  "Business Development",
-  "Risk Management International",
+const TAGS: { en: string; fa: string }[] = [
+  { en: "Startup Investment Advisory", fa: "مشاوره سرمایه‌گذاری برای استارتاپ‌ها" },
+  { en: "Project Capital Structuring", fa: "تأمین و ساختاردهی سرمایه پروژه‌ها" },
+  { en: "Mergers & Acquisitions", fa: "ادغام و تملک کسب‌وکارها (M&A)" },
+  { en: "Business Development", fa: "توسعه‌ی کسب‌وکار" },
+  { en: "Risk Management International", fa: "مدیریت ریسک بین‌المللی" },
 ];
 
 export default function InvestmentWhatIs() {
+  const { t } = useLang();
   return (
     <section className="investment-whatis-section" style={{ padding: "90px 0", background: "#F7F6F9" }}>
       <div className="px-6 mx-auto w-full" style={{ maxWidth: 1240 }}>
@@ -54,9 +57,9 @@ export default function InvestmentWhatIs() {
                 </div>
                 <div>
                   <strong style={{ display: "block", fontSize: 14, fontWeight: 700, color: "#000" }}>
-                    Global Investor Network
+                    {t("Global Investor Network", "شبکه‌ی جهانی سرمایه‌گذاران")}
                   </strong>
-                  <span style={{ fontSize: 12, color: "#929292" }}>Capital + Strategy + Execution</span>
+                  <span style={{ fontSize: 12, color: "#929292" }}>{t("Capital + Strategy + Execution", "سرمایه + استراتژی + اجرا")}</span>
                 </div>
               </div>
             </div>
@@ -74,7 +77,7 @@ export default function InvestmentWhatIs() {
                 color: "#000",
               }}
             >
-              Capital, Strategy &amp;{" "}
+              {t("Capital, Strategy &", "سرمایه، استراتژی و")}{" "}
               <mark
                 style={{
                   display: "inline",
@@ -83,28 +86,31 @@ export default function InvestmentWhatIs() {
                   padding: "0 5px 3px",
                 }}
               >
-                Global Networks
+                {t("Global Networks", "شبکه‌های جهانی")}
               </mark>
             </h2>
 
             <p style={{ fontSize: 16, color: "#929292", lineHeight: 1.72, marginBottom: 16 }}>
-              Nexa is a global investor and business partner, providing specialized investment
-              and advisory services across a wide range of industries and growth-stage ventures.
+              {t(
+                "Nexa is a global investor and business partner, providing specialized investment and advisory services across a wide range of industries and growth-stage ventures.",
+                "نکسا یک سرمایه‌گذار و شریک راهبردی بین‌المللی است که خدمات تخصصی سرمایه‌گذاری و مشاوره کسب‌وکار را برای طیف گسترده‌ای از صنایع و شرکت‌های در حال رشد ارائه می‌دهد."
+              )}
             </p>
             <p style={{ fontSize: 16, color: "#929292", lineHeight: 1.72, marginBottom: 22 }}>
-              We empower entrepreneurs and innovators by combining capital, strategic guidance,
-              and global networks — enabling businesses to scale, innovate, and succeed across
-              markets worldwide.
+              {t(
+                "We empower entrepreneurs and innovators by combining capital, strategic guidance, and global networks — enabling businesses to scale, innovate, and succeed across markets worldwide.",
+             "  ما با تلفیق سرمایه، راهبردهای تخصصی و شبکه‌ای گسترده از ارتباطات بین‌المللی، به کارآفرینان کمک می‌کنیم تا کسب‌وکار خود را توسعه دهند، فرصت‌های جدید را خلق کنند و در بازارهای جهانی به رشد و موفقیت پایدار دست یابند."
+              )}
             </p>
 
             {/* Tags */}
             <div className="flex flex-wrap gap-2">
               {TAGS.map((tag) => (
                 <span
-                  key={tag}
+                  key={tag.en}
                   className="px-[14px] py-[6px] rounded-full text-[14px] font-medium border border-[#E2E2E2] bg-[#F7F6F9] text-[#474747] hover:bg-[#FAF6FF] hover:border-[#8F27FF] hover:text-[#8F27FF] transition-all duration-200 cursor-default"
                 >
-                  {tag}
+                  {t(tag.en, tag.fa)}
                 </span>
               ))}
             </div>

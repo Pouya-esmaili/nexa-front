@@ -1,47 +1,63 @@
+"use client";
+
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/LazyReveal";
 import type { ReactNode } from "react";
+import { useLang } from "@/components/global/LanguageProvider";
 
-const cards: { icon: ReactNode; title: string; desc: ReactNode }[] = [
+const cards: { icon: ReactNode; title: string; titleFa: string; desc: ReactNode; descFa: ReactNode }[] = [
   {
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>,
     title: "Zero Physical Stay Required",
+    titleFa: "بدون نیاز به اقامت فیزیکی",
     desc: "Not a single day in Greece is legally required to secure, maintain, or infinitely renew your permanent residency — investment continuity is the only condition.",
+    descFa: "حتی یک روز اقامت در یونان برای دریافت، حفظ یا تمدید بی‌نهایت اقامت دائم شما از نظر قانونی لازم نیست — تداوم سرمایه‌گذاری تنها شرط است.",
   },
   {
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
     title: "True Three-Generation Coverage",
+    titleFa: "پوشش واقعی سه‌نسلی",
     desc: <>One investment covers you, your spouse, all unmarried children up to age 21 (extendable to 24), and the <strong>biological parents of both spouses</strong> — no dependency proof required.</>,
+    descFa: <>یک سرمایه‌گذاری شما، همسرتان، همه‌ی فرزندان مجرد تا سن ۲۱ سال (قابل‌تمدید تا ۲۴) و <strong>والدین زیستی هر دو همسر</strong> را پوشش می‌دهد — بدون نیاز به اثبات وابستگی.</>,
   },
   {
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>,
     title: "Immediate Permanent Status",
+    titleFa: "وضعیت دائم فوری",
     desc: <>Greece issues a <strong>permanent residence card</strong> valid for 5 years, infinitely renewable — not a temporary visa that escalates to permanent status over time.</>,
+    descFa: <>یونان یک <strong>کارت اقامت دائم</strong> معتبر برای ۵ سال و قابل‌تمدید بی‌نهایت صادر می‌کند — نه یک ویزای موقت که به‌مرور به وضعیت دائم ارتقا می‌یابد.</>,
   },
   {
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>,
     title: "Schengen Zone Integration",
+    titleFa: "یکپارچگی با منطقه‌ی شنگن",
     desc: <>Visa-free travel throughout all <strong>29 Schengen countries</strong> for up to 90 days per 180-day window — across Europe, business and personal.</>,
+    descFa: <>سفر بدون ویزا در سراسر همه‌ی <strong>۲۹ کشور شنگن</strong> تا ۹۰ روز در هر بازه‌ی ۱۸۰ روزه — در سراسر اروپا، کاری و شخصی.</>,
   },
   {
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><circle cx="12" cy="12" r="9"/><path d="M9 8.5h5a2 2 0 0 1 0 4h-4a2 2 0 0 0 0 4h5"/></svg>,
     title: "Zero Language Prerequisites",
+    titleFa: "بدون پیش‌نیاز زبانی",
     desc: "No Greek language test is required to secure, maintain, or infinitely renew your 5-year permanent residency permit — ever.",
+    descFa: "هیچ آزمون زبان یونانی برای دریافت، حفظ یا تمدید بی‌نهایت مجوز اقامت دائم ۵ ساله‌ی شما لازم نیست — هرگز.",
   },
   {
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>,
     title: "Corporate Ownership Eligible",
+    titleFa: "مالکیت شرکتی واجد شرایط",
     desc: <>Investment can be made via a Greek or EU-registered corporate entity, provided the applicant owns <strong>100% of shares</strong> with full voting rights.</>,
+    descFa: <>سرمایه‌گذاری می‌تواند از طریق یک نهاد شرکتی ثبت‌شده در یونان یا اتحادیه اروپا انجام شود، مشروط بر اینکه متقاضی <strong>۱۰۰٪ سهام</strong> را با حق رأی کامل در اختیار داشته باشد.</>,
   },
 ];
 
 export default function Benefits() {
+  const { t, lang } = useLang();
   return (
     <section className="py-20 md:py-24 bg-white">
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-14">
-            Program Advantages & Strategic Benefits
+            {t("Program Advantages & Strategic Benefits", "مزایای برنامه و منافع راهبردی")}
           </h2>
         </Reveal>
 
@@ -59,8 +75,8 @@ export default function Benefits() {
                   <div className="w-12 h-12 rounded-[12px] grid place-items-center bg-[#FAF6FF] text-[#8F27FF] mb-5">
                     {c.icon}
                   </div>
-                  <h3 className="text-[16px] font-semibold tracking-[-0.015em] mb-2">{c.title}</h3>
-                  <p className="text-[13.5px] text-[#929292] leading-[1.6]">{c.desc}</p>
+                  <h3 className="text-[16px] font-semibold tracking-[-0.015em] mb-2">{t(c.title, c.titleFa)}</h3>
+                  <p className="text-[13.5px] text-[#929292] leading-[1.6]">{lang === "fa" ? c.descFa : c.desc}</p>
                 </div>
               </Reveal>
             ))}

@@ -3,8 +3,10 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Row from "@/components/global/Row";
+import { useLang } from "@/components/global/LanguageProvider";
 
 export default function Hero() {
+  const { t } = useLang();
   const [mounted, setMounted] = useState(false);
   useEffect(() => { const t = setTimeout(() => setMounted(true), 80); return () => clearTimeout(t); }, []);
   const base = "transition-[opacity,transform] duration-[650ms] ease-[ease]";
@@ -19,16 +21,19 @@ export default function Hero() {
           {/* LEFT */}
           <div className={`${base} ${left} order-2 md:order-1`}>
             <h1 className="text-[38px] md:text-[52px] font-bold leading-[1.06] tracking-[-0.03em] text-black mb-[20px]">
-              Your Independent Global{" "}
-              <span className="highlight">Startup Partner</span>
+              {t("Your Independent Global", "همراه شما در مسیر توسعه")}{" "}
+              <span className="highlight">{t("Startup Partner", "استارتاپ")}</span>
             </h1>
             <p className="text-[15.5px] text-[#929292] leading-[1.7] max-w-[520px] mb-[36px]">
-              We support startups on their path to global growth — from idea to scale, capital access to immigration — with end-to-end advisory and investor network access.
+              {t(
+                "We support startups on their path to global growth — from idea to scale, capital access to immigration — with end-to-end advisory and investor network access.",
+                "در تمام مراحل رشد استارتاپ، از شکل‌گیری ایده و توسعه کسب‌وکار تا جذب سرمایه، ورود به بازارهای بین‌المللی و مهاجرت از طریق کارآفرینی، در کنار شما هستیم. با ارائه مشاوره جامع و دسترسی به شبکه‌ای از سرمایه‌گذاران بین‌المللی، مسیر رشد جهانی شما را هموار می‌کنیم."
+              )}
             </p>
             <Link href="#contact"
               className="inline-flex items-center gap-2 px-[28px] py-[14px] bg-[#8F27FF] text-white font-semibold text-[14px] rounded-full transition-all duration-[250ms] hover:bg-[#7A1FE0] hover:-translate-y-px"
               style={{ boxShadow: "0 8px 22px rgba(143,39,255,.28)" }}>
-              Book a Free Consultation
+              {t("Book a Free Consultation", "رزرو مشاوره‌ی رایگان")}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}><path d="M5 12h14M12 5l7 7-7 7" /></svg>
             </Link>
           </div>

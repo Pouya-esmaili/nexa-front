@@ -1,11 +1,14 @@
 "use client";
 
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const SECTORS = [
   {
     title: "Healthcare & Medical",
+    titleFa: "سلامت و پزشکی",
     desc: "Investing in transformative healthcare solutions, medical devices, and health-tech innovations with global scalability.",
+    descFa: "سرمایه‌گذاری در راهکارهای نوآورانه حوزه سلامت، تجهیزات پزشکی و فناوری‌های سلامت با ظرفیت رشد و توسعه در بازارهای جهانی.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="26" height="26">
         <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
@@ -14,7 +17,9 @@ const SECTORS = [
   },
   {
     title: "Technology & Innovation",
+    titleFa: "فناوری و نوآوری",
     desc: "Funding innovation-driven technology ventures that disrupt markets and create long-term competitive advantages.",
+    descFa: "حمایت از کسب‌وکارهای نوآور و فناوری‌محور که با خلق راهکارهای جدید، بازارها را متحول کرده و مزیت رقابتی پایدار ایجاد می‌کنند.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="26" height="26">
         <rect x="2" y="3" width="20" height="14" rx="2"/>
@@ -25,7 +30,9 @@ const SECTORS = [
   },
   {
     title: "Real Estate",
+    titleFa: "املاک و مستغلات",
     desc: "Strategic investments in commercial, residential, and mixed-use properties across high-growth global markets.",
+    descFa: "سرمایه‌گذاری راهبردی در پروژه‌های تجاری، مسکونی و چندمنظوره در بازارهای بین‌المللی با ظرفیت رشد بالا.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="26" height="26">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
@@ -35,7 +42,9 @@ const SECTORS = [
   },
   {
     title: "Energy & Renewables",
+    titleFa: "انرژی‌های تجدیدپذیر",
     desc: "Driving the clean energy transition through investments in solar, wind, and sustainable infrastructure projects.",
+    descFa: "سرمایه‌گذاری در پروژه‌های انرژی خورشیدی، بادی و زیرساخت‌های پایدار برای تسریع گذار به انرژی پاک.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="26" height="26">
         <circle cx="12" cy="12" r="5"/>
@@ -45,7 +54,9 @@ const SECTORS = [
   },
   {
     title: "Information Technology",
+    titleFa: "فناوری اطلاعات",
     desc: "Backing software, SaaS, and digital infrastructure companies with proven models and strong growth trajectories.",
+    descFa: "سرمایه‌گذاری در شرکت‌های نرم‌افزاری، SaaS و زیرساخت‌های دیجیتال با مدل کسب‌وکار اثبات‌شده و چشم‌انداز رشد بلندمدت.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="26" height="26">
         <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
@@ -54,7 +65,9 @@ const SECTORS = [
   },
   {
     title: "Tourism & Hospitality",
+    titleFa: "گردشگری و هتلداری",
     desc: "Capturing growth in travel, hospitality, and experiential sectors across key global destinations.",
+    descFa: "سرمایه‌گذاری در پروژه‌های گردشگری، هتلداری و خدمات تجربه‌محور در مقاصد بین‌المللی با ظرفیت رشد بالا.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="26" height="26">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
@@ -65,6 +78,7 @@ const SECTORS = [
 ];
 
 export default function InvestmentSectors() {
+  const { t } = useLang();
   return (
     <section style={{ padding: "90px 0", background: "#F7F6F9" }}>
       <div className="px-6 mx-auto w-full" style={{ maxWidth: 1240 }}>
@@ -80,7 +94,7 @@ export default function InvestmentSectors() {
                 color: "#000",
               }}
             >
-              Where We Invest
+              {t("Where We Invest", "حوزه‌های سرمایه‌گذاری")}
             </h2>
           </div>
         </Reveal>
@@ -98,7 +112,8 @@ export default function InvestmentSectors() {
   );
 }
 
-function SectorCard({ title, desc, icon }: (typeof SECTORS)[0]) {
+function SectorCard({ title, titleFa, desc, descFa, icon }: (typeof SECTORS)[0]) {
+  const { t } = useLang();
   return (
     <div
       className="group flex items-start gap-[18px] relative overflow-hidden cursor-pointer"
@@ -158,9 +173,9 @@ function SectorCard({ title, desc, icon }: (typeof SECTORS)[0]) {
             lineHeight: 1.3,
           }}
         >
-          {title}
+          {t(title, titleFa)}
         </h3>
-        <p style={{ fontSize: 13.5, color: "#929292", lineHeight: 1.6 }}>{desc}</p>
+        <p style={{ fontSize: 13.5, color: "#929292", lineHeight: 1.6 }}>{t(desc, descFa)}</p>
       </div>
     </div>
   );

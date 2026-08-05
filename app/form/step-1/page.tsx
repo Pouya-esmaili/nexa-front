@@ -2,6 +2,32 @@
 
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
+import { useLang } from '@/components/global/LanguageProvider';
+
+// ─── Validation message translations ──────────────────────────────────────────
+
+const ERR_FA: Record<string, string> = {
+  'First name is required.': 'نام الزامی است.',
+  'Last name is required.': 'نام خانوادگی الزامی است.',
+  'Phone number is required.': 'شماره تماس الزامی است.',
+  'Enter a valid phone number.': 'یک شماره تماس معتبر وارد کنید.',
+  'Email is required.': 'ایمیل الزامی است.',
+  'Enter a valid email address.': 'یک آدرس ایمیل معتبر وارد کنید.',
+  'Company name is required.': 'نام شرکت الزامی است.',
+  'Please select an industry.': 'لطفاً یک صنعت انتخاب کنید.',
+  'Website must start with http:// or https://': 'وب‌سایت باید با http:// یا https:// شروع شود',
+  'Street address is required.': 'نشانی خیابان الزامی است.',
+  'City is required.': 'شهر الزامی است.',
+  'State / Province is required.': 'ایالت / استان الزامی است.',
+  'Country is required.': 'کشور الزامی است.',
+  'Business summary is required.': 'خلاصه‌ی کسب‌وکار الزامی است.',
+  'Please describe the problem.': 'لطفاً مشکل را شرح دهید.',
+  'Please describe your solution.': 'لطفاً راه‌حل خود را شرح دهید.',
+  'Please select a stage.': 'لطفاً یک مرحله انتخاب کنید.',
+  'Please upload your pitch deck (PDF).': 'لطفاً ارائه‌ی خود را بارگذاری کنید (PDF).',
+  'Please answer this question.': 'لطفاً به این پرسش پاسخ دهید.',
+  'You must agree to the terms to continue.': 'برای ادامه باید با شرایط موافقت کنید.',
+};
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -36,32 +62,36 @@ const sidebarGroups = [
   {
     id: 1,
     title: 'Personal Information',
+    titleFa: 'اطلاعات شخصی',
     items: [
-      { label: 'Contact Information', step: 1 },
-      { label: 'Company Overview', step: 2 },
-      { label: 'Company Address', step: 3 },
+      { label: 'Contact Information', labelFa: 'اطلاعات تماس', step: 1 },
+      { label: 'Company Overview', labelFa: 'نمای کلی شرکت', step: 2 },
+      { label: 'Company Address', labelFa: 'نشانی شرکت', step: 3 },
     ],
   },
   {
     id: 2,
     title: 'Company Business Model',
+    titleFa: 'مدل کسب‌وکار شرکت',
     items: [
-      { label: 'Business Summary', step: 4 },
-      { label: 'Problem', step: 5 },
-      { label: 'Solution', step: 6 },
+      { label: 'Business Summary', labelFa: 'خلاصه‌ی کسب‌وکار', step: 4 },
+      { label: 'Problem', labelFa: 'مشکل', step: 5 },
+      { label: 'Solution', labelFa: 'راه‌حل', step: 6 },
     ],
   },
   {
     id: 3,
     title: 'Company Stage & Growth',
-    items: [{ label: 'Stage & Growth', step: 7 }],
+    titleFa: 'مرحله و رشد شرکت',
+    items: [{ label: 'Stage & Growth', labelFa: 'مرحله و رشد', step: 7 }],
   },
   {
     id: 4,
     title: 'Documents & Confirmation',
+    titleFa: 'مدارک و تأیید',
     items: [
-      { label: 'Supporting Documents', step: 8 },
-      { label: 'Legal Declarations', step: 9 },
+      { label: 'Supporting Documents', labelFa: 'مدارک پشتیبان', step: 8 },
+      { label: 'Legal Declarations', labelFa: 'اظهارنامه‌های قانونی', step: 9 },
     ],
   },
 ];
@@ -140,8 +170,9 @@ const inputNormal = `${inputBase} border-transparent focus:border-[#8F27FF]`;
 const inputError = `${inputBase} border-red-400 focus:border-red-500`;
 
 function FieldError({ msg }: { msg?: string }) {
+  const { t } = useLang();
   if (!msg) return null;
-  return <p className="text-xs text-red-500 mt-1">{msg}</p>;
+  return <p className="text-xs text-red-500 mt-1">{t(msg, ERR_FA[msg] ?? msg)}</p>;
 }
 
 // ─── Step components ──────────────────────────────────────────────────────────
@@ -155,12 +186,13 @@ function Step1({
   errors: FieldErrors;
   onChange: (field: keyof FormData, value: string) => void;
 }) {
+  const { t } = useLang();
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6">
         <div className="flex flex-col gap-1.5">
           <label className="text-sm font-medium">
-            First Name <span className="text-red-500">*</span>
+            {t('First Name', 'نام')} <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -173,7 +205,7 @@ function Step1({
 
         <div className="flex flex-col gap-1.5">
           <label className="text-sm font-medium">
-            Last Name <span className="text-red-500">*</span>
+            {t('Last Name', 'نام خانوادگی')} <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -186,7 +218,7 @@ function Step1({
 
         <div className="flex flex-col gap-1.5">
           <label className="text-sm font-medium">
-            Phone Number <span className="text-red-500">*</span>
+            {t('Phone Number', 'شماره تماس')} <span className="text-red-500">*</span>
           </label>
           <input
             type="tel"
@@ -200,7 +232,7 @@ function Step1({
 
         <div className="flex flex-col gap-1.5">
           <label className="text-sm font-medium">
-            Email <span className="text-red-500">*</span>
+            {t('Email', 'ایمیل')} <span className="text-red-500">*</span>
           </label>
           <input
             type="email"
@@ -224,12 +256,13 @@ function Step2({
   errors: FieldErrors;
   onChange: (field: keyof FormData, value: string) => void;
 }) {
+  const { t } = useLang();
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6">
         <div className="flex flex-col gap-1.5">
           <label className="text-sm font-medium">
-            Company Name <span className="text-red-500">*</span>
+            {t('Company Name', 'نام شرکت')} <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -242,26 +275,26 @@ function Step2({
 
         <div className="flex flex-col gap-1.5">
           <label className="text-sm font-medium">
-            Industry / Sector <span className="text-red-500">*</span>
+            {t('Industry / Sector', 'صنعت / حوزه')} <span className="text-red-500">*</span>
           </label>
           <select
             value={data.industry}
             onChange={(e) => onChange('industry', e.target.value)}
             className={errors.industry ? inputError : inputNormal}
           >
-            <option value="">Select Industry</option>
-            <option>Fintech</option>
-            <option>Healthtech</option>
-            <option>Edtech</option>
-            <option>Ecommerce</option>
-            <option>SaaS</option>
-            <option>AI</option>
+            <option value="">{t('Select Industry', 'انتخاب صنعت')}</option>
+            <option>{t('Fintech', 'فین‌تک')}</option>
+            <option>{t('Healthtech', 'هلث‌تک')}</option>
+            <option>{t('Edtech', 'اِدتک')}</option>
+            <option>{t('Ecommerce', 'تجارت الکترونیک')}</option>
+            <option>{t('SaaS', 'SaaS')}</option>
+            <option>{t('AI', 'هوش مصنوعی')}</option>
           </select>
           <FieldError msg={errors.industry} />
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <label className="text-sm font-medium">Company Website</label>
+          <label className="text-sm font-medium">{t('Company Website', 'وب‌سایت شرکت')}</label>
           <input
             type="text"
             placeholder="https://"
@@ -285,11 +318,12 @@ function Step3({
   errors: FieldErrors;
   onChange: (field: keyof FormData, value: string) => void;
 }) {
+  const { t } = useLang();
   return (
     <div className="space-y-6">
       <div className="flex flex-col gap-1.5">
         <label className="text-sm font-medium">
-          Street Address <span className="text-red-500">*</span>
+          {t('Street Address', 'نشانی خیابان')} <span className="text-red-500">*</span>
         </label>
         <input
           type="text"
@@ -301,7 +335,7 @@ function Step3({
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <label className="text-sm font-medium">Address Line 2</label>
+        <label className="text-sm font-medium">{t('Address Line 2', 'نشانی خط دوم')}</label>
         <input
           type="text"
           value={data.addressLine2}
@@ -313,7 +347,7 @@ function Step3({
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6">
         <div className="flex flex-col gap-1.5">
           <label className="text-sm font-medium">
-            City <span className="text-red-500">*</span>
+            {t('City', 'شهر')} <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -326,7 +360,7 @@ function Step3({
 
         <div className="flex flex-col gap-1.5">
           <label className="text-sm font-medium">
-            State / Province <span className="text-red-500">*</span>
+            {t('State / Province', 'ایالت / استان')} <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -338,7 +372,7 @@ function Step3({
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <label className="text-sm font-medium">Postal / ZIP Code</label>
+          <label className="text-sm font-medium">{t('Postal / ZIP Code', 'کد پستی')}</label>
           <input
             type="text"
             value={data.postalCode}
@@ -349,7 +383,7 @@ function Step3({
 
         <div className="flex flex-col gap-1.5">
           <label className="text-sm font-medium">
-            Country <span className="text-red-500">*</span>
+            {t('Country', 'کشور')} <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -373,13 +407,14 @@ function Step4({
   errors: FieldErrors;
   onChange: (field: keyof FormData, value: string) => void;
 }) {
+  const { t } = useLang();
   return (
     <div className="flex flex-col gap-2">
       <label className="text-sm font-medium">
-        Short company description <span className="text-red-500">*</span>
+        {t('Short company description', 'توضیح کوتاه شرکت')} <span className="text-red-500">*</span>
       </label>
       <p className="text-xs text-gray-500">
-        A one-line 'elevator pitch' for your company. Maximum 300 characters.
+        {t("A one-line 'elevator pitch' for your company. Maximum 300 characters.", "یک معرفی کوتاه یک‌خطی («elevator pitch») برای شرکت شما. حداکثر ۳۰۰ کاراکتر.")}
       </p>
       <textarea
         maxLength={300}
@@ -410,13 +445,14 @@ function Step5({
   errors: FieldErrors;
   onChange: (field: keyof FormData, value: string) => void;
 }) {
+  const { t } = useLang();
   return (
     <div className="flex flex-col gap-2">
       <label className="text-sm font-medium">
-        What problem are you solving? <span className="text-red-500">*</span>
+        {t('What problem are you solving?', 'چه مشکلی را حل می‌کنید؟')} <span className="text-red-500">*</span>
       </label>
       <p className="text-xs text-gray-500">
-        What is the specific problem that you are aiming to solve? Maximum 600 characters.
+        {t('What is the specific problem that you are aiming to solve? Maximum 600 characters.', 'مشکل خاصی که قصد حل آن را دارید چیست؟ حداکثر ۶۰۰ کاراکتر.')}
       </p>
       <textarea
         maxLength={600}
@@ -445,14 +481,14 @@ function Step6({
   errors: FieldErrors;
   onChange: (field: keyof FormData, value: string) => void;
 }) {
+  const { t } = useLang();
   return (
     <div className="flex flex-col gap-2">
       <label className="text-sm font-medium">
-        What is your solution to the problem? <span className="text-red-500">*</span>
+        {t('What is your solution to the problem?', 'راه‌حل شما برای این مشکل چیست؟')} <span className="text-red-500">*</span>
       </label>
       <p className="text-xs text-gray-500">
-        What is your product/service, and how does it solve the problem? Maximum 600
-        characters.
+        {t('What is your product/service, and how does it solve the problem? Maximum 600 characters.', 'محصول/خدمت شما چیست و چگونه مشکل را حل می‌کند؟ حداکثر ۶۰۰ کاراکتر.')}
       </p>
       <textarea
         maxLength={600}
@@ -473,11 +509,11 @@ function Step6({
 }
 
 const stageOptions = [
-  { value: 'IDEA', label: 'Idea', desc: 'Concept stage, no product yet' },
-  { value: 'TRIAL', label: 'Trial', desc: 'Testing the idea with early users' },
-  { value: 'MVP', label: 'MVP', desc: 'Minimum viable product built' },
-  { value: 'FIRST_SALE', label: 'First Sale', desc: 'First paying customers' },
-  { value: 'SALE_DEVELOPMENT', label: 'Sale Development', desc: 'Growing revenue' },
+  { value: 'IDEA', label: 'Idea', labelFa: 'ایده', desc: 'Concept stage, no product yet', descFa: 'مرحله‌ی مفهومی، هنوز محصولی نیست' },
+  { value: 'TRIAL', label: 'Trial', labelFa: 'آزمایش', desc: 'Testing the idea with early users', descFa: 'آزمودن ایده با کاربران اولیه' },
+  { value: 'MVP', label: 'MVP', labelFa: 'MVP', desc: 'Minimum viable product built', descFa: 'حداقل محصول قابل‌عرضه ساخته شده' },
+  { value: 'FIRST_SALE', label: 'First Sale', labelFa: 'اولین فروش', desc: 'First paying customers', descFa: 'نخستین مشتریان پرداخت‌کننده' },
+  { value: 'SALE_DEVELOPMENT', label: 'Sale Development', labelFa: 'توسعه‌ی فروش', desc: 'Growing revenue', descFa: 'درآمد در حال رشد' },
 ];
 
 function Step7({
@@ -489,10 +525,11 @@ function Step7({
   errors: FieldErrors;
   onChange: (field: keyof FormData, value: string) => void;
 }) {
+  const { t } = useLang();
   return (
     <div className="flex flex-col gap-3">
       <label className="text-sm font-medium mb-1">
-        Current Stage <span className="text-red-500">*</span>
+        {t('Current Stage', 'مرحله‌ی فعلی')} <span className="text-red-500">*</span>
       </label>
       {stageOptions.map((opt) => (
         <label
@@ -512,8 +549,8 @@ function Step7({
             className="w-4 h-4 accent-[#8F27FF]"
           />
           <div>
-            <span className="text-sm font-medium">{opt.label}</span>
-            <span className="text-xs text-gray-400 ml-2">{opt.desc}</span>
+            <span className="text-sm font-medium">{t(opt.label, opt.labelFa)}</span>
+            <span className="text-xs text-gray-400 ml-2">{t(opt.desc, opt.descFa)}</span>
           </div>
         </label>
       ))}
@@ -533,6 +570,7 @@ function Step8({
   onFileChange: (file: File | null) => void;
   onChange: (field: keyof FormData, value: string) => void;
 }) {
+  const { t } = useLang();
   const fileRef = useRef<HTMLInputElement>(null);
 
   const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -549,10 +587,10 @@ function Step8({
       {/* Upload */}
       <div className="flex flex-col gap-2">
         <label className="text-sm font-medium">
-          Upload your investor deck for review <span className="text-red-500">*</span>
+          {t('Upload your investor deck for review', 'ارائه‌ی سرمایه‌گذاری خود را برای بررسی بارگذاری کنید')} <span className="text-red-500">*</span>
         </label>
         <p className="text-xs text-gray-500">
-          Please send us your investor/pitch deck (PDF ONLY – 20MB max).
+          {t('Please send us your investor/pitch deck (PDF ONLY – 20MB max).', 'لطفاً ارائه‌ی سرمایه‌گذاری/پیچ‌دِک خود را برای ما ارسال کنید (فقط PDF – حداکثر ۲۰ مگابایت).')}
         </p>
         <button
           type="button"
@@ -571,7 +609,7 @@ function Step8({
               data.pitchDeck ? 'text-[#8F27FF] font-medium' : 'text-gray-400'
             }`}
           >
-            {data.pitchDeck ? data.pitchDeck.name : 'Click to upload PDF'}
+            {data.pitchDeck ? data.pitchDeck.name : t('Click to upload PDF', 'برای بارگذاری PDF کلیک کنید')}
           </span>
         </button>
         <input
@@ -587,11 +625,11 @@ function Step8({
       {/* Canada question */}
       <div className="flex flex-col gap-3">
         <label className="text-sm font-medium">
-          My company is based in Canada <span className="text-red-500">*</span>
+          {t('My company is based in Canada', 'شرکت من در کانادا مستقر است')} <span className="text-red-500">*</span>
         </label>
         {[
-          { value: 'yes', label: 'YES, My company is based in Canada.' },
-          { value: 'no', label: 'NO, My company is not based in Canada.' },
+          { value: 'yes', label: 'YES, My company is based in Canada.', labelFa: 'بله، شرکت من در کانادا مستقر است.' },
+          { value: 'no', label: 'NO, My company is not based in Canada.', labelFa: 'خیر، شرکت من در کانادا مستقر نیست.' },
         ].map((opt) => (
           <label
             key={opt.value}
@@ -609,7 +647,7 @@ function Step8({
               onChange={() => onChange('basedInCanada', opt.value)}
               className="w-4 h-4 accent-[#8F27FF]"
             />
-            <span className="text-sm">{opt.label}</span>
+            <span className="text-sm">{t(opt.label, opt.labelFa)}</span>
           </label>
         ))}
         <FieldError msg={errors.basedInCanada} />
@@ -627,25 +665,24 @@ function Step9({
   errors: FieldErrors;
   onToggle: () => void;
 }) {
+  const { t } = useLang();
   return (
     <div className="flex flex-col gap-6">
       <div>
         <h2 className="text-base font-bold mb-4 text-black">
-          Acknowledgement – Canadian Companies{' '}
+          {t('Acknowledgement – Canadian Companies', 'تأییدیه – شرکت‌های کانادایی')}{' '}
           <span className="text-red-500">*</span>
         </h2>
         <div className="text-sm text-black leading-7 space-y-3 mb-6">
-          <p>Nexa Venture Inc. is a Canadian Corporation.</p>
+          <p>{t('Nexa Venture Inc. is a Canadian Corporation.', 'Nexa Venture Inc. یک شرکت کانادایی است.')}</p>
           <p>
-            Participation fees may apply only after passing the screening process and
-            agreeing to present.
+            {t('Participation fees may apply only after passing the screening process and agreeing to present.', 'هزینه‌های مشارکت تنها پس از گذراندن فرایند غربالگری و موافقت با ارائه ممکن است اعمال شود.')}
           </p>
           <p>
-            Nexa Venture Inc. does not take equity, success fees, or commissions.
+            {t('Nexa Venture Inc. does not take equity, success fees, or commissions.', 'Nexa Venture Inc. سهام، کارمزد موفقیت یا کمیسیون دریافت نمی‌کند.')}
           </p>
           <p>
-            Investors act in their individual capacity and applicants are responsible
-            for their own due diligence.
+            {t('Investors act in their individual capacity and applicants are responsible for their own due diligence.', 'سرمایه‌گذاران در ظرفیت فردی خود عمل می‌کنند و متقاضیان مسئول بررسی دقیق خود هستند.')}
           </p>
         </div>
         <hr className="border-gray-300 mb-6" />
@@ -681,7 +718,7 @@ function Step9({
             )}
           </button>
           <span className="text-sm font-medium text-gray-800">
-            I have read and agree to the Terms and Legal Declarations{' '}
+            {t('I have read and agree to the Terms and Legal Declarations', 'شرایط و اظهارنامه‌های قانونی را خوانده‌ام و با آن‌ها موافقم')}{' '}
             <span className="text-red-500">*</span>
           </span>
         </div>
@@ -717,13 +754,14 @@ const initialData: FormData = {
 };
 
 export default function MultiStepForm() {
+  const { t } = useLang();
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<FormData>(initialData);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [submitted, setSubmitted] = useState(false);
 
-  const currentLabel =
-    allStepItems.find((s) => s.step === currentStep)?.label ?? '';
+  const currentItem = allStepItems.find((s) => s.step === currentStep);
+  const currentLabel = currentItem ? t(currentItem.label, currentItem.labelFa) : '';
   const progressPercent = (currentStep / TOTAL_STEPS) * 100;
 
   const handleChange = (field: keyof FormData, value: string) => {
@@ -763,10 +801,9 @@ export default function MultiStepForm() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h2 className="text-2xl font-bold text-black">Application Submitted!</h2>
+        <h2 className="text-2xl font-bold text-black">{t('Application Submitted!', 'درخواست ارسال شد!')}</h2>
         <p className="text-gray-500 max-w-md">
-          Thank you for applying. We will review your application and get back to you
-          within 2–3 business days.
+          {t('Thank you for applying. We will review your application and get back to you within 2–3 business days.', 'از درخواست شما سپاسگزاریم. درخواست شما را بررسی می‌کنیم و ظرف ۲ تا ۳ روز کاری با شما تماس می‌گیریم.')}
         </p>
       </div>
     );
@@ -774,12 +811,12 @@ export default function MultiStepForm() {
 
   return (
     <div>
-      <h1 className="text-center text-2xl font-semibold mb-6">Apply For Funding</h1>
+      <h1 className="text-center text-2xl font-semibold mb-6">{t('Apply For Funding', 'درخواست تأمین مالی')}</h1>
 
       {/* Mobile progress */}
       <div className="lg:hidden mb-6 px-1">
         <div className="flex justify-between text-sm text-gray-500 mb-2">
-          <span>Step {currentStep} of {TOTAL_STEPS}</span>
+          <span>{t('Step', 'گام')} {currentStep} {t('of', 'از')} {TOTAL_STEPS}</span>
           <span>{currentLabel}</span>
         </div>
         <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
@@ -827,7 +864,7 @@ export default function MultiStepForm() {
                       fontWeight: isActive ? '600' : '400',
                     }}
                   >
-                    {group.title}
+                    {t(group.title, group.titleFa)}
                   </p>
                   <ul className="pl-3.5 mt-1">
                     {group.items.map((item) => {
@@ -842,7 +879,7 @@ export default function MultiStepForm() {
                             fontWeight: isItemActive ? '600' : '400',
                           }}
                         >
-                          • {item.label}
+                          • {t(item.label, item.labelFa)}
                         </li>
                       );
                     })}
@@ -859,7 +896,7 @@ export default function MultiStepForm() {
           {/* Step title */}
           <div className="mb-6">
             <p className="text-xs font-medium text-[#8F27FF] uppercase tracking-wider mb-1">
-              Step {currentStep} of {TOTAL_STEPS}
+              {t('Step', 'گام')} {currentStep} {t('of', 'از')} {TOTAL_STEPS}
             </p>
             <h2 className="text-lg font-bold text-black">{currentLabel}</h2>
           </div>
@@ -924,7 +961,7 @@ export default function MultiStepForm() {
               <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
                 <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              Prev
+              {t('Prev', 'قبلی')}
             </button>
 
             {currentStep < TOTAL_STEPS ? (
@@ -933,7 +970,7 @@ export default function MultiStepForm() {
                 onClick={handleNext}
                 className="flex items-center gap-2 px-6 h-11 rounded-xl bg-[#8F27FF] text-white text-sm font-medium hover:bg-[#7a1fdb] transition"
               >
-                Next
+                {t('Next', 'بعدی')}
                 <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
                   <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -944,7 +981,7 @@ export default function MultiStepForm() {
                 onClick={handleSubmit}
                 className="flex items-center gap-2 px-8 h-11 rounded-xl bg-[#8F27FF] text-white text-sm font-semibold hover:bg-[#7a1fdb] transition shadow-md"
               >
-                Submit Application
+                {t('Submit Application', 'ارسال درخواست')}
               </button>
             )}
           </div>

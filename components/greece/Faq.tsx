@@ -4,53 +4,75 @@ import Reveal from "@/components/global/LazyReveal";
 import { useState } from "react";
 import Row from "@/components/global/Row";
 import Image from "next/image";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const MOBILE_INITIAL_COUNT = 6;
 
 const faqs = [
   {
     q: "Can I split my investment across two or more properties?",
+    qFa: "آیا می‌توانم سرمایه‌گذاری خود را بین دو یا چند ملک تقسیم کنم؟",
     a: "No. For the €400,000 and €800,000 tiers, the entire capital floor must be invested in a single, individual property unit. Splitting the requirement across a portfolio of multiple apartments is strictly prohibited under Law 5100/2024.",
+    aFa: "خیر. برای سطوح ۴۰۰٬۰۰۰ و ۸۰۰٬۰۰۰ یورویی، کل کف سرمایه باید در یک واحد ملکی واحد و مجزا سرمایه‌گذاری شود. تقسیم این الزام بین پرتفویی از چند آپارتمان طبق قانون ۵۱۰۰/۲۰۲۴ اکیداً ممنوع است.",
   },
   {
     q: "Is the €250,000 conversion option available in Athens?",
+    qFa: "آیا گزینه‌ی تبدیل ۲۵۰٬۰۰۰ یورویی در آتن در دسترس است؟",
     a: "Yes. The commercial-to-residential conversion framework is completely exempt from geographic zoning restrictions. You can identify a qualifying commercial warehouse, office, or industrial space in the absolute center of prime Athens or Piraeus, legally convert it to residential, and secure the Golden Visa at the €250,000 entry point.",
+    aFa: "بله. چارچوب تبدیل تجاری به مسکونی به‌طور کامل از محدودیت‌های منطقه‌بندی جغرافیایی معاف است. می‌توانید یک انبار تجاری، دفتر یا فضای صنعتی واجد شرایط را در قلب مرکز درجه‌یک آتن یا پیرئوس شناسایی کنید، آن را به‌طور قانونی به مسکونی تبدیل کنید و ویزای طلایی را در نقطه‌ی ورود ۲۵۰٬۰۰۰ یورویی دریافت کنید.",
   },
   {
     q: "What happens to my family's residency if I sell the property?",
+    qFa: "اگر ملک را بفروشم چه بر سر اقامت خانواده‌ام می‌آید؟",
     a: "The Golden Visa is completely tied to the underlying asset. If you sell before reaching citizenship, your permanent residence permit — and all family members' permits — will be immediately and legally revoked. You are permitted to sell the asset to a new foreign investor who wishes to use it for their own Golden Visa application.",
+    aFa: "ویزای طلایی به‌طور کامل به دارایی زیربنایی گره خورده است. اگر پیش از رسیدن به تابعیت بفروشید، مجوز اقامت دائم شما — و مجوزهای همه‌ی اعضای خانواده — بلافاصله و به‌طور قانونی لغو می‌شود. شما مجاز هستید دارایی را به یک سرمایه‌گذار خارجی جدید که می‌خواهد از آن برای درخواست ویزای طلایی خود استفاده کند بفروشید.",
   },
   {
     q: "Am I allowed to work or take a job in Greece on a Golden Visa?",
+    qFa: "آیا با ویزای طلایی مجاز به کار یا اشتغال در یونان هستم؟",
     a: "The Golden Visa does not grant access to the Greek labor market — you cannot be hired as an employee by a Greek company. However, you are fully authorized to live in Greece, establish your own Greek company, act as a shareholder or board director, and collect corporate dividends.",
+    aFa: "ویزای طلایی دسترسی به بازار کار یونان را اعطا نمی‌کند — نمی‌توانید به‌عنوان کارمند توسط یک شرکت یونانی استخدام شوید. با این حال، شما کاملاً مجاز هستید در یونان زندگی کنید، شرکت یونانی خود را تأسیس کنید، به‌عنوان سهام‌دار یا عضو هیئت‌مدیره عمل کنید و سود سهام شرکتی دریافت کنید.",
   },
   {
     q: "Can a minor act as the main applicant?",
+    qFa: "آیا یک فرد صغیر می‌تواند به‌عنوان متقاضی اصلی عمل کند؟",
     a: "Yes. Greek administrative regulations permit a minor child to be designated as the main investor and property owner. Parents act as legal guardians to execute the transaction, and the minor acts as the primary applicant — allowing the extended family to secure residency under a unified file.",
+    aFa: "بله. مقررات اداری یونان اجازه می‌دهد یک فرزند صغیر به‌عنوان سرمایه‌گذار اصلی و مالک ملک تعیین شود. والدین به‌عنوان قیم قانونی برای اجرای معامله عمل می‌کنند و فرد صغیر به‌عنوان متقاضی اصلی عمل می‌کند — که به خانواده‌ی گسترده اجازه می‌دهد اقامت را تحت یک پرونده‌ی یکپارچه دریافت کند.",
   },
   {
     q: "What happens to children's visas when they turn 21?",
+    qFa: "وقتی فرزندان به ۲۱ سالگی می‌رسند چه بر سر ویزای آن‌ها می‌آید؟",
     a: "Children receive a permanent residence card valid until their 21st birthday. Upon turning 21, they can secure an independent, automatic 3-year extension valid until they turn 24, with clean records. To secure residency beyond age 24, the property title can be strategically transferred into their name.",
+    aFa: "فرزندان یک کارت اقامت دائم معتبر تا تولد ۲۱ سالگی‌شان دریافت می‌کنند. با رسیدن به ۲۱ سالگی، می‌توانند یک تمدید خودکار و مستقل ۳ ساله معتبر تا ۲۴ سالگی، با سابقه‌ی پاک دریافت کنند. برای تضمین اقامت پس از ۲۴ سالگی، سند ملک می‌تواند به‌صورت راهبردی به نام آن‌ها منتقل شود.",
   },
   {
     q: "Are there annual property taxes in Greece?",
+    qFa: "آیا در یونان مالیات سالانه‌ی ملک وجود دارد؟",
     a: "Yes. All property owners are subject to an annual tax called ENFIA, calculated based on the precise square footage, age, and objective zone valuation of the asset. For a standard residential unit, ENFIA typically ranges between €3.00 and €7.00 per square meter annually.",
+    aFa: "بله. همه‌ی مالکان ملک مشمول یک مالیات سالانه به نام ENFIA هستند که بر اساس متراژ دقیق، قدمت و ارزش‌گذاری عینی منطقه‌ی دارایی محاسبه می‌شود. برای یک واحد مسکونی استاندارد، ENFIA معمولاً بین ۳٫۰۰ تا ۷٫۰۰ یورو در هر مترمربع سالانه است.",
   },
   {
     q: "Can I invest via a corporate entity instead of personally?",
+    qFa: "آیا می‌توانم به‌جای شخصی، از طریق یک نهاد شرکتی سرمایه‌گذاری کنم؟",
     a: "Yes, provided the legal entity is registered within Greece or another EU member state, and the main applicant owns 100% of the corporate shares with total, unencumbered voting rights.",
+    aFa: "بله، مشروط بر اینکه نهاد حقوقی در یونان یا یک کشور عضو دیگر اتحادیه اروپا ثبت شده باشد و متقاضی اصلی ۱۰۰٪ سهام شرکتی را با حق رأی کامل و بدون قید در اختیار داشته باشد.",
   },
   {
     q: "What if my heritage building is not restored within 5 years?",
+    qFa: "اگر ساختمان میراثی من ظرف ۵ سال بازسازی نشود چه می‌شود؟",
     a: "Under the €250,000 heritage restoration track, full restoration according to official architectural guidelines is a statutory prerequisite. If the restoration is incomplete at the 5-year mark, your application for residency renewal will be denied.",
+    aFa: "تحت مسیر بازسازی میراثی ۲۵۰٬۰۰۰ یورویی، بازسازی کامل مطابق با دستورالعمل‌های رسمی معماری یک پیش‌نیاز قانونی است. اگر بازسازی در نقطه‌ی ۵ سالگی ناتمام باشد، درخواست تمدید اقامت شما رد خواهد شد.",
   },
   {
     q: "Do my family or I ever need to speak Greek to keep the Golden Visa?",
+    qFa: "آیا من یا خانواده‌ام هرگز برای حفظ ویزای طلایی نیاز به صحبت به زبان یونانی داریم؟",
     a: "Absolutely not. You, your spouse, your children, and your parents can obtain and fully renew your permanent residence cards every 5 years without ever needing to speak, read, or test in Greek. Language requirements only arise if you voluntarily choose to live in Greece full-time for 7 years and apply to naturalize as a Greek citizen.",
+    aFa: "به‌هیچ‌وجه. شما، همسرتان، فرزندانتان و والدینتان می‌توانید کارت‌های اقامت دائم خود را هر ۵ سال بدون نیاز به صحبت، خواندن یا آزمون به زبان یونانی دریافت و به‌طور کامل تمدید کنید. الزامات زبانی تنها زمانی مطرح می‌شوند که داوطلبانه انتخاب کنید ۷ سال به‌طور تمام‌وقت در یونان زندگی کنید و برای تابعیت‌پذیری به‌عنوان شهروند یونانی درخواست دهید.",
   },
 ];
 
 export default function Faq() {
+  const { t } = useLang();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);
 
@@ -64,7 +86,7 @@ export default function Faq() {
     <div className="py-12 md:py-20">
       {/* Mobile */}
       <div className="md:hidden px-5">
-        <h2 className="text-2xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+        <h2 className="text-2xl font-bold text-center mb-8">{t("Frequently Asked Questions", "پرسش‌های پرتکرار")}</h2>
         <div className="flex flex-col gap-3 rounded-2xl p-5" style={{ background: "#F6F6F6" }}>
           {visibleMobileFaqs.map((item, index) => {
             const isActive = activeIndex === index;
@@ -81,7 +103,7 @@ export default function Faq() {
                 }}
               >
                 <div className="flex items-start justify-between gap-3">
-                  <h3 className="text-xs font-medium text-black leading-snug">{item.q}</h3>
+                  <h3 className="text-xs font-medium text-black leading-snug">{t(item.q, item.qFa)}</h3>
                   <Image
                     src={isActive ? "/images/Entrepreneurship/close.svg" : "/images/Entrepreneurship/open.svg"}
                     alt={isActive ? "Close" : "Open"}
@@ -90,7 +112,7 @@ export default function Faq() {
                     className="w-5 h-5 flex-shrink-0 mt-0.5"
                   />
                 </div>
-                {isActive && <p className="mt-3 text-xs text-gray-600 leading-relaxed">{item.a}</p>}
+                {isActive && <p className="mt-3 text-xs text-gray-600 leading-relaxed">{t(item.a, item.aFa)}</p>}
               </div>
             );
           })}
@@ -100,7 +122,7 @@ export default function Faq() {
               onClick={() => setShowAll(true)}
               className="mt-2 flex items-center justify-center gap-2 text-sm font-semibold text-[#8F27FF]"
             >
-              Show More
+              {t("Show More", "نمایش بیشتر")}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8F27FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="6 9 12 15 18 9" />
               </svg>
@@ -112,7 +134,7 @@ export default function Faq() {
               onClick={() => setShowAll(false)}
               className="mt-2 flex items-center justify-center gap-2 text-sm font-semibold text-[#8F27FF]"
             >
-              Show Less
+              {t("Show Less", "نمایش کمتر")}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8F27FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="18 15 12 9 6 15" />
               </svg>
@@ -124,7 +146,7 @@ export default function Faq() {
       {/* Desktop */}
       <div className="hidden md:block">
         <Row>
-          <h2 className="text-center text-3xl md:text-4xl font-bold mb-12">Frequently Asked Questions</h2>
+          <h2 className="text-center text-3xl md:text-4xl font-bold mb-12">{t("Frequently Asked Questions", "پرسش‌های پرتکرار")}</h2>
           <div
             className="mx-auto mt-10 grid grid-cols-2 gap-6 items-start"
             style={{ background: "#F6F6F6", borderRadius: "20px", padding: "48px", width: "100%" }}
@@ -144,7 +166,7 @@ export default function Faq() {
                   }}
                 >
                   <div className="flex items-start justify-between gap-4">
-                    <h3 className="text-sm font-medium text-black leading-snug">{item.q}</h3>
+                    <h3 className="text-sm font-medium text-black leading-snug">{t(item.q, item.qFa)}</h3>
                     <Image
                       src={isActive ? "/images/Entrepreneurship/close.svg" : "/images/Entrepreneurship/open.svg"}
                       alt={isActive ? "Close" : "Open"}
@@ -154,7 +176,7 @@ export default function Faq() {
                     />
                   </div>
                   {isActive && (
-                    <p className="mt-3 text-sm text-gray-600 leading-relaxed">{item.a}</p>
+                    <p className="mt-3 text-sm text-gray-600 leading-relaxed">{t(item.a, item.aFa)}</p>
                   )}
                 </div>
               );

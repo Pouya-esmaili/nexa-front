@@ -2,11 +2,21 @@
 
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
+
+const CHIPS: { en: string; fa: string }[] = [
+  { en: "Personal savings", fa: "پس‌انداز شخصی" },
+  { en: "Founder salary", fa: "حقوق بنیان‌گذار" },
+  { en: "VC term sheets", fa: "برگه‌های شرایط سرمایه‌گذاری خطرپذیر" },
+  { en: "+€12K per dependent", fa: "+۱۲ هزار یورو به‌ازای هر فرد تحت تکفل" },
+];
 
 const cards = [
   {
     title: "Single Founder Threshold",
+    titleFa: "آستانه‌ی بنیان‌گذار منفرد",
     desc: "Minimum <strong>€21,876.36</strong> in unencumbered liquid savings — equal to the gross annual French SMIC as currently indexed.",
+    descFa: "حداقل <strong>۲۱٬۸۷۶٫۳۶ یورو</strong> پس‌انداز نقدی بدون قید — برابر با حداقل دستمزد ناخالص سالانه‌ی فرانسه طبق شاخص فعلی.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" className="w-5 h-5">
         <circle cx="12" cy="12" r="9" />
@@ -16,7 +26,9 @@ const cards = [
   },
   {
     title: "Family Adjustment",
+    titleFa: "تعدیل خانوادگی",
     desc: "Add approximately <strong>€12,000 per dependent</strong> for smooth consular processing and financial sufficiency demonstration.",
+    descFa: "حدود <strong>۱۲٬۰۰۰ یورو به‌ازای هر فرد تحت تکفل</strong> برای پردازش روان کنسولی و اثبات کفایت مالی اضافه کنید.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" className="w-5 h-5">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -27,7 +39,9 @@ const cards = [
   },
   {
     title: "Acceptable Proof of Funds",
+    titleFa: "مدرک قابل‌قبول دارایی",
     desc: "Certified bank statements, corporate salary certificates, or <strong>VC funding term sheets</strong> explicitly earmarked for your personal subsistence.",
+    descFa: "صورت‌حساب‌های بانکی تأییدشده، گواهی حقوق شرکتی، یا <strong>برگه‌های شرایط سرمایه‌گذاری خطرپذیر</strong> که صراحتاً برای معیشت شخصی شما تخصیص یافته‌اند.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" className="w-5 h-5">
         <rect x="3" y="6" width="18" height="12" rx="1.5" />
@@ -38,6 +52,7 @@ const cards = [
 ];
 
 export default function FinancialRequirements() {
+  const { t } = useLang();
   return (
     <section className="py-16 md:py-20 relative overflow-hidden" style={{ background: "#000" }}>
       {/* Glow */}
@@ -49,7 +64,7 @@ export default function FinancialRequirements() {
       <Row>
         <Reveal variant="up" className="relative z-10 mb-10 md:mb-14">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center text-white">
-            Financial Requirements
+            {t("Financial Requirements", "الزامات مالی")}
           </h2>
         </Reveal>
 
@@ -64,27 +79,27 @@ export default function FinancialRequirements() {
                 className="self-start text-[11px] font-bold uppercase tracking-[.12em] px-3.5 py-1.5 rounded-full"
                 style={{ background: "rgba(255,230,0,0.12)", border: "1px solid rgba(255,230,0,0.3)", color: "#FFE600" }}
               >
-                Annual SMIC Threshold
+                {t("Annual SMIC Threshold", "آستانه‌ی سالانه‌ی SMIC")}
               </span>
               <div className="text-[72px] font-bold tracking-[-0.04em] leading-[0.9] text-white">
                 €21.9K
               </div>
               <p className="text-[14px] leading-[1.65]" style={{ color: "#B5B5BA" }}>
-                Gross annual French minimum wage (SMIC) — the baseline personal liquid funds required for a{" "}
-                <strong className="font-semibold" style={{ color: "#FFE600" }}>single founder</strong>{" "}
-                to qualify at the consulate.
+                {t("Gross annual French minimum wage (SMIC) — the baseline personal liquid funds required for a", "حداقل دستمزد ناخالص سالانه‌ی فرانسه (SMIC) — پایه‌ی دارایی نقدی شخصی موردنیاز برای اینکه یک")}{" "}
+                <strong className="font-semibold" style={{ color: "#FFE600" }}>{t("single founder", "بنیان‌گذار منفرد")}</strong>{" "}
+                {t("to qualify at the consulate.", "در کنسولگری واجد شرایط شود.")}
               </p>
               <div
                 className="flex flex-wrap gap-2 mt-auto pt-4"
                 style={{ borderTop: "1px solid #1f1f24" }}
               >
-                {["Personal savings", "Founder salary", "VC term sheets", "+€12K per dependent"].map((chip) => (
+                {CHIPS.map((chip) => (
                   <span
-                    key={chip}
+                    key={chip.en}
                     className="text-[12px] font-medium text-white px-3 py-1.5 rounded-full transition-all duration-200 hover:border-white/30"
                     style={{ border: "1px solid #2a2a30" }}
                   >
-                    {chip}
+                    {t(chip.en, chip.fa)}
                   </span>
                 ))}
               </div>
@@ -118,11 +133,11 @@ export default function FinancialRequirements() {
                     {c.icon}
                   </div>
                   <div>
-                    <h4 className="text-[15px] font-semibold text-white mb-1.5">{c.title}</h4>
+                    <h4 className="text-[15px] font-semibold text-white mb-1.5">{t(c.title, c.titleFa)}</h4>
                     <p
                       className="text-[13px] leading-[1.6] m-0 [&_strong]:text-white [&_strong]:font-semibold"
                       style={{ color: "#B5B5BA" }}
-                      dangerouslySetInnerHTML={{ __html: c.desc }}
+                      dangerouslySetInnerHTML={{ __html: t(c.desc, c.descFa) }}
                     />
                   </div>
                 </div>

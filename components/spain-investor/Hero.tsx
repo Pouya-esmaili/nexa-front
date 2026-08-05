@@ -2,14 +2,16 @@
 
 import { useEffect, useState } from "react";
 import Row from "@/components/global/Row";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const stats = [
-  { num: "€1M", label: "Entry Threshold" },
-  { num: "5 yr", label: "Path to PR" },
-  { num: "29", label: "Schengen Countries" },
+  { num: "€1M", numFa: "۱ میلیون یورو", label: "Entry Threshold", labelFa: "آستانه‌ی ورود" },
+  { num: "5 yr", numFa: "۵ سال", label: "Path to PR", labelFa: "مسیر اقامت دائم" },
+  { num: "29", numFa: "۲۹", label: "Schengen Countries", labelFa: "کشور شنگن" },
 ];
 
 export default function Hero() {
+  const { t } = useLang();
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     const t = setTimeout(() => setMounted(true), 80);
@@ -39,18 +41,17 @@ export default function Hero() {
           }}
         />
         <h1 className={`text-3xl font-bold leading-tight tracking-tight mb-4 ${base} duration-700 delay-150 ${mounted ? show : hideUp}`}>
-          Capital to residency in Spain —{" "}
-          <span className="text-[#8F27FF]">without real estate.</span>
+          {t("Capital to residency in Spain —", "سرمایه به اقامت در اسپانیا —")}{" "}
+          <span className="text-[#8F27FF]">{t("without real estate.", "بدون املاک.")}</span>
         </h1>
         <p className={`text-sm text-[#474747] leading-relaxed mb-6 ${base} duration-700 delay-200 ${mounted ? show : hideUp}`}>
-          Following Organic Law 1/2025, Spain closed its €500K property Golden Visa. The financial and enterprise
-          pathways remain fully operational — and far more structurally sound for serious investors and founders.
+          {t("Following Organic Law 1/2025, Spain closed its €500K property Golden Visa. The financial and enterprise pathways remain fully operational — and far more structurally sound for serious investors and founders.", "به دنبال قانون ارگانیک ۱/۲۰۲۵، اسپانیا ویزای طلایی املاک ۵۰۰ هزار یورویی خود را بست. مسیرهای مالی و شرکتی همچنان کاملاً فعال باقی می‌مانند — و برای سرمایه‌گذاران و بنیان‌گذاران جدی از نظر ساختاری بسیار مستحکم‌ترند.")}
         </p>
         <div className={`grid grid-cols-3 py-5 border-t border-b border-[#E2E2E2] mb-6 ${base} duration-700 delay-300 ${mounted ? show : hideUp}`}>
           {stats.map((s) => (
             <div key={s.label} className="text-center">
-              <div className="text-xl font-extrabold tracking-tight">{s.num}</div>
-              <div className="text-[10px] text-[#929292] font-medium mt-1 uppercase tracking-wide">{s.label}</div>
+              <div className="text-xl font-extrabold tracking-tight">{t(s.num, s.numFa)}</div>
+              <div className="text-[10px] text-[#929292] font-medium mt-1 uppercase tracking-wide">{t(s.label, s.labelFa)}</div>
             </div>
           ))}
         </div>
@@ -59,7 +60,7 @@ export default function Hero() {
           className={`inline-flex items-center gap-2 px-6 py-3 bg-[#8F27FF] text-white font-semibold rounded-full text-sm ${base} duration-500 delay-[400ms] ${mounted ? show : hideUp}`}
           style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
         >
-          Book an Appointment →
+          {t("Book an Appointment →", "رزرو وقت ملاقات →")}
         </a>
       </div>
 
@@ -69,12 +70,11 @@ export default function Hero() {
           <div className="grid grid-cols-[1.1fr_0.9fr] gap-16 items-center">
             <div>
               <h1 className={`text-[48px] font-bold leading-[1.06] tracking-[-0.03em] mb-6 ${base} duration-700 delay-100 ${mounted ? show : hideLeft}`}>
-                Capital to residency in Spain —{" "}
-                <em className="text-[#8F27FF] not-italic">without real estate.</em>
+                {t("Capital to residency in Spain —", "سرمایه به اقامت در اسپانیا —")}{" "}
+                <em className="text-[#8F27FF] not-italic">{t("without real estate.", "بدون املاک.")}</em>
               </h1>
               <p className={`text-[16px] text-[#474747] leading-[1.65] mb-8 max-w-[520px] ${base} duration-700 delay-200 ${mounted ? show : hideLeft}`}>
-                Following Organic Law 1/2025, Spain closed its €500K property Golden Visa. The financial and enterprise
-                pathways remain fully operational — and far more structurally sound for serious investors and founders.
+                {t("Following Organic Law 1/2025, Spain closed its €500K property Golden Visa. The financial and enterprise pathways remain fully operational — and far more structurally sound for serious investors and founders.", "به دنبال قانون ارگانیک ۱/۲۰۲۵، اسپانیا ویزای طلایی املاک ۵۰۰ هزار یورویی خود را بست. مسیرهای مالی و شرکتی همچنان کاملاً فعال باقی می‌مانند — و برای سرمایه‌گذاران و بنیان‌گذاران جدی از نظر ساختاری بسیار مستحکم‌ترند.")}
               </p>
 
               <div
@@ -83,8 +83,8 @@ export default function Hero() {
               >
                 {stats.map((s) => (
                   <div key={s.label} className="text-center">
-                    <div className="text-[26px] font-bold tracking-[-0.03em] leading-none">{s.num}</div>
-                    <div className="text-[11px] text-[#929292] font-medium mt-2 uppercase tracking-[0.06em]">{s.label}</div>
+                    <div className="text-[26px] font-bold tracking-[-0.03em] leading-none">{t(s.num, s.numFa)}</div>
+                    <div className="text-[11px] text-[#929292] font-medium mt-2 uppercase tracking-[0.06em]">{t(s.label, s.labelFa)}</div>
                   </div>
                 ))}
               </div>
@@ -95,7 +95,7 @@ export default function Hero() {
                   className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"
                   style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
                 >
-                  Book an Appointment →
+                  {t("Book an Appointment →", "رزرو وقت ملاقات →")}
                 </a>
               </div>
             </div>

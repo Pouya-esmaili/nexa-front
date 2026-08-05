@@ -3,46 +3,58 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const COUNTRIES = [
   {
     name: "UAE",
+    nameFa: "امارات",
     flag: "/images/investment/AUE.svg",
     desc: "Investment opportunities in the Middle East's leading financial hub",
+    descFa: "فرصت‌های سرمایه‌گذاری در قطب مالی و تجاری خاورمیانه",
     href: "/investment/uae",
     img: "/images/investment/uae.svg",
   },
   {
     name: "Turkey",
+    nameFa: "ترکیه",
     flag: "/images/investment/TR.svg",
     desc: "Strategic investment gateway between Europe and Asia",
+    descFa: "دروازه‌ای راهبردی برای سرمایه‌گذاری میان اروپا و آسیا",
     href: "/investment/turkiye",
     img: "/images/investment/turkey.webp",
   },
   {
     name: "Greece",
+    nameFa: "یونان",
     flag: "/images/investment/GR.svg",
     desc: "Golden Visa program with EU residency and property investment",
+    descFa: "گلدن ویزا از طریق سرمایه‌گذاری در املاک با مسیر دریافت اقامت اروپا",
     href: "/investment/greece",
     img: "/images/investment/greece.webp",
   },
   {
     name: "Spain",
+    nameFa: "اسپانیا",
     flag: "/images/investment/ES.svg",
     desc: "High-yield property and business investment in Southern Europe",
+    descFa: "فرصت‌های سرمایه‌گذاری در املاک و کسب‌وکار در  جنوب اروپا",
     href: "/investment/spain",
     img: "/images/investment/spain.webp",
   },
   {
     name: "France",
+    nameFa: "فرانسه",
     flag: "/images/investment/fr.svg",
     desc: "Tech and innovation investment in Europe's second-largest economy",
+    descFa: "سرمایه‌گذاری در اکوسیستم فناوری و نوآوری فرانسه، دومین اقتصاد بزرگ اروپا",
     href: "/investment/france",
     img: "/images/investment/france.svg",
   },
 ];
 
 export default function InvestmentCountries() {
+  const { t } = useLang();
   return (
     <section style={{ padding: "90px 0", background: "#F7F6F9" }}>
       <div className="px-6 mx-auto w-full" style={{ maxWidth: 1240 }}>
@@ -58,7 +70,7 @@ export default function InvestmentCountries() {
                 color: "#000",
               }}
             >
-              Where We Offer
+              {t("Where We Offer", "فرصت‌های سرمایه‌گذاری بین‌المللی")}
             </h2>
           </div>
         </Reveal>
@@ -121,7 +133,7 @@ export default function InvestmentCountries() {
                       letterSpacing: "-0.01em",
                     }}
                   >
-                    {country.name}
+                    {t(country.name, country.nameFa)}
                   </div>
                   <div
                     style={{
@@ -131,7 +143,7 @@ export default function InvestmentCountries() {
                       marginBottom: 12,
                     }}
                   >
-                    {country.desc}
+                    {t(country.desc, country.descFa)}
                   </div>
 
                   {/* CTA Button — Tailwind-only so group-hover can override bg */}
@@ -144,7 +156,7 @@ export default function InvestmentCountries() {
                       group-hover:bg-[#8F27FF] group-hover:border-[#8F27FF] group-hover:translate-x-0.5
                     "
                   >
-                    Explore Program
+                    {t("Explore Program", "مشاهده برنامه")}
                     <svg
                       width="13" height="13"
                       viewBox="0 0 24 24"

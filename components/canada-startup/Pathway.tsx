@@ -3,39 +3,57 @@
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/LazyReveal";
 import { useState } from "react";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const items = [
   {
     dot: "01",
     label: "Permanent Residency",
+    labelFa: "اقامت دائم",
     year: "Day One",
+    yearFa: "روز نخست",
     desc: "PR status is granted from landing — completely decoupled from startup performance. If your venture fails, your PR standing is not revoked.",
+    descFa: "وضعیت اقامت دائم از هنگام ورود اعطا می‌شود — کاملاً مستقل از عملکرد استارتاپ. اگر کسب‌وکار شما شکست بخورد، جایگاه اقامت دائم شما لغو نمی‌شود.",
     body: "PR status is granted from landing. Completely decoupled from startup performance — if your venture fails after landing, there are no clawback provisions on your PR status based on corporate performance.",
+    bodyFa: "وضعیت اقامت دائم از هنگام ورود اعطا می‌شود. کاملاً مستقل از عملکرد استارتاپ — اگر کسب‌وکار شما پس از ورود شکست بخورد، هیچ مقرره‌ی بازپس‌گیری بر اساس عملکرد شرکتی روی وضعیت اقامت دائم شما وجود ندارد.",
   },
   {
     dot: "02",
     label: "730-Day Obligation",
+    labelFa: "تعهد ۷۳۰ روزه",
     year: "Per 5 Years",
+    yearFa: "در هر ۵ سال",
     desc: "To maintain PR status, spend a minimum of 730 days physically inside Canada within any rolling 5-year period. No further business evaluations required.",
+    descFa: "برای حفظ وضعیت اقامت دائم، حداقل ۷۳۰ روز را به‌طور فیزیکی در داخل کانادا در هر بازه‌ی ۵ ساله‌ی متحرک بگذرانید. هیچ ارزیابی کسب‌وکار بیشتری لازم نیست.",
     body: "To maintain your PR standing, you must spend a minimum of 730 days physically inside Canada within any rolling 5-year period. No business performance evaluations or revenue requirements apply after landing.",
+    bodyFa: "برای حفظ جایگاه اقامت دائم خود، باید حداقل ۷۳۰ روز را به‌طور فیزیکی در داخل کانادا در هر بازه‌ی ۵ ساله‌ی متحرک بگذرانید. هیچ ارزیابی عملکرد کسب‌وکار یا الزام درآمدی پس از ورود اعمال نمی‌شود.",
   },
   {
     dot: "03",
     label: "Citizenship Eligible",
+    labelFa: "واجد شرایط تابعیت",
     year: "Year 3",
+    yearFa: "سال ۳",
     desc: "After 1,095 days (3 years) of physical presence within the 5 years before your application, plus 3 years of Canadian tax filing and passing the citizenship exam.",
+    descFa: "پس از ۱٬۰۹۵ روز (۳ سال) حضور فیزیکی در ۵ سال پیش از درخواست، به‌علاوه‌ی ۳ سال ثبت مالیات کانادا و قبولی در آزمون تابعیت.",
     body: "After 1,095 days (3 full years) of physical presence in Canada within the 5 years preceding your citizenship application, plus filing Canadian income tax returns for at least 3 tax years and passing the written citizenship exam.",
+    bodyFa: "پس از ۱٬۰۹۵ روز (۳ سال کامل) حضور فیزیکی در کانادا در ۵ سال پیش از درخواست تابعیت شما، به‌علاوه‌ی ثبت اظهارنامه‌های مالیات بر درآمد کانادا برای حداقل ۳ سال مالیاتی و قبولی در آزمون کتبی تابعیت.",
   },
   {
     dot: "04",
     label: "Canadian Passport",
+    labelFa: "پاسپورت کانادا",
     year: "185+ Countries",
+    yearFa: "بیش از ۱۸۵ کشور",
     desc: "Visa-free access to over 185 countries. Canada fully recognizes dual citizenship — your original nationality is retained. Language: CLB 4.",
+    descFa: "دسترسی بدون ویزا به بیش از ۱۸۵ کشور. کانادا تابعیت دوگانه را به‌طور کامل به رسمیت می‌شناسد — تابعیت اصلی شما حفظ می‌شود. زبان: CLB 4.",
     body: "One of the world's premium passports with visa-free access to over 185 countries. Canada fully recognizes dual citizenship — you retain your original nationality. The language requirement (CLB 4) is automatically satisfied by your initial SUV language entry transcripts.",
+    bodyFa: "یکی از پاسپورت‌های ممتاز جهان با دسترسی بدون ویزا به بیش از ۱۸۵ کشور. کانادا تابعیت دوگانه را به‌طور کامل به رسمیت می‌شناسد — شما تابعیت اصلی خود را حفظ می‌کنید. الزام زبانی (CLB 4) به‌طور خودکار با ریزنمرات زبان ورودی اولیه‌ی SUV شما برآورده می‌شود.",
   },
 ];
 
 export default function Pathway() {
+  const { t } = useLang();
   const [open, setOpen] = useState<number>(0);
   const [activeCircle, setActiveCircle] = useState<number>(0);
 
@@ -44,7 +62,7 @@ export default function Pathway() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-14">
-            Long-Term Horizons
+            {t("Long-Term Horizons", "افق‌های بلندمدت")}
           </h2>
         </Reveal>
 
@@ -68,8 +86,8 @@ export default function Pathway() {
                   }}>
                   {item.dot}
                 </div>
-                <div className="text-[15px] font-semibold text-black mb-1">{item.label}</div>
-                <div className="text-[12px] font-semibold text-[#8F27FF] bg-[#FAF6FF] px-[10px] py-[3px] rounded-full">{item.year}</div>
+                <div className="text-[15px] font-semibold text-black mb-1">{t(item.label, item.labelFa)}</div>
+                <div className="text-[12px] font-semibold text-[#8F27FF] bg-[#FAF6FF] px-[10px] py-[3px] rounded-full">{t(item.year, item.yearFa)}</div>
               </div>
             ))}
           </div>
@@ -78,8 +96,8 @@ export default function Pathway() {
           <div className="hidden md:grid grid-cols-4 gap-4">
             {items.map((item) => (
               <div key={item.dot} className="bg-white border border-[#E2E2E2] rounded-[14px] p-[20px_22px] transition-all duration-200 hover:border-[rgba(143,39,255,0.18)] hover:bg-[#FAF6FF]">
-                <h5 className="text-[14px] font-semibold text-black mb-2">{item.label}</h5>
-                <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{item.desc}</p>
+                <h5 className="text-[14px] font-semibold text-black mb-2">{t(item.label, item.labelFa)}</h5>
+                <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{t(item.desc, item.descFa)}</p>
               </div>
             ))}
           </div>
@@ -101,8 +119,8 @@ export default function Pathway() {
                       {item.dot}
                     </div>
                     <div className="flex-1">
-                      <div className="text-[14px] font-semibold text-black mb-0.5">{item.label}</div>
-                      <span className="text-[11px] font-semibold text-[#8F27FF] bg-[#FAF6FF] px-2 py-0.5 rounded-full">{item.year}</span>
+                      <div className="text-[14px] font-semibold text-black mb-0.5">{t(item.label, item.labelFa)}</div>
+                      <span className="text-[11px] font-semibold text-[#8F27FF] bg-[#FAF6FF] px-2 py-0.5 rounded-full">{t(item.year, item.yearFa)}</span>
                     </div>
                     <svg
                       viewBox="0 0 24 24"
@@ -119,7 +137,7 @@ export default function Pathway() {
                   </button>
                   {isOpen && (
                     <div className="px-5 pb-[18px] pl-[70px] text-[13.5px] text-[#474747] leading-[1.6]">
-                      {item.body}
+                      {t(item.body, item.bodyFa)}
                     </div>
                   )}
                 </div>

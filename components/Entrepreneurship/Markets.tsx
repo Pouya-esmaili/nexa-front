@@ -3,53 +3,65 @@ import Link from "next/link";
 import Image from "next/image";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const markets = [
   {
     name: "Canada",
+    nameFa: "کانادا",
     flag: "/images/Entrepreneurship/cn.svg",
     desc: "Entrepreneur Visa with permanent residency pathway",
+    descFa: "ویزای کارآفرینی با مسیر دریافت اقامت دائم",
     href: "/Entrepreneurship/canada",
     img: "/images/Entrepreneurship/canada.webp",
   },
   {
     name: "Spain",
+    nameFa: "اسپانیا",
     flag: "/images/Entrepreneurship/ES.svg",
     desc: "Entrepreneur Visa with 20-day fast-track approval",
+    descFa: "ویزای کارآفرینی با بررسی سریع ۲۰ روزه",
     href: "/Entrepreneurship/spain",
     img: "/images/Entrepreneurship/spain.webp",
   },
   {
     name: "Finland",
+    nameFa: "فنلاند",
     flag: "/images/Entrepreneurship/FI.svg",
     desc: "Entrepreneur Permit for business owners entering EU markets",
+    descFa: "مجوز کارآفرینی برای ورود صاحبان کسب‌وکار به بازارهای اتحادیه اروپا",
     href: "/Entrepreneurship/finland",
     img: "/images/Entrepreneurship/finland.webp",
   },
   {
     name: "Portugal",
+    nameFa: "پرتغال",
     flag: "/images/Entrepreneurship/PT.svg",
     desc: "D2 Entrepreneur Visa with EU residency path",
+    descFa: "ویزای کارآفرینی D2 با مسیر دریافت اقامت اروپا",
     href: "/Entrepreneurship/portugal",
     img: "/images/Entrepreneurship/portugal.webp",
   },
   {
     name: "Netherlands",
+    nameFa: "هلند",
     flag: "/images/Entrepreneurship/NT (1).svg",
     desc: "Entrepreneur Visa in Europe's most connected business hub",
+    descFa: "ویزای کارآفرینی در یکی از پیشرفته‌ترین مراکز کسب‌وکار اروپا",
     href: "/Entrepreneurship/netherlands",
     img: "/images/Entrepreneurship/netherland.webp",
   },
 ];
 
 export default function Markets() {
+  const { t } = useLang();
   return (
     <section className="py-[90px] bg-[#F7F6F9]">
       <Row>
         <Reveal variant="up">
           <div className="text-center max-w-[700px] mx-auto mb-14 ">
             <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1]">
-              Choose Your Market
+              {t("Choose Your Market", "مقصد کسب‌وکار خود را انتخاب کنید")}
             </h2>
           </div>
         </Reveal>
@@ -108,12 +120,12 @@ export default function Markets() {
 
                 {/* Content bottom */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 px-[20px] py-[22px] z-[2]">
-                  <div className="text-white font-bold text-[16px] mb-1 tracking-[-0.01em]">{m.name}</div>
-                  <p className="text-white/65 text-[12px] leading-[1.5] mb-3">{m.desc}</p>
+                  <div className="text-white font-bold text-[16px] mb-1 tracking-[-0.01em]">{t(m.name, m.nameFa)}</div>
+                  <p className="text-white/65 text-[12px] leading-[1.5] mb-3">{t(m.desc, m.descFa)}</p>
                   <span
                     className="inline-flex items-center gap-[7px] text-[13px] font-semibold text-white px-4 py-2 rounded-full backdrop-blur-[8px] border border-white/30 bg-white/15 transition-all duration-[250ms] group-hover:bg-[#8F27FF] group-hover:border-[#8F27FF] group-hover:translate-x-[3px]"
                   >
-                    Explore Program
+                    {t("Explore Program", "مشاهده برنامه")}
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"

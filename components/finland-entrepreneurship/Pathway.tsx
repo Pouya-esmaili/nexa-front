@@ -4,43 +4,65 @@ import { useState } from "react";
 import Image from "next/image";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const items = [
   {
     num: "01",
     label: "A-Permit",
+    labelFa: "مجوز A",
     year: "Years 1–2",
+    yearFa: "سال‌های ۱ تا ۲",
     title: "Initial A-Permit (1–2 Years)",
+    titleFa: "مجوز اولیه‌ی A (۱ تا ۲ سال)",
     desc: "Continuous residence permit for active entrepreneur operations. Renewable. Family sponsored simultaneously via Enter Finland.",
+    descFa: "مجوز اقامت مستمر برای فعالیت‌های فعال کارآفرینی. قابل‌تمدید. خانواده به‌طور هم‌زمان از طریق Enter Finland حمایت می‌شود.",
     body: "Continuous residence permit for active entrepreneur operations. Typically 1–2 years. Renewable. Family members sponsored concurrently via Enter Finland.",
+    bodyFa: "مجوز اقامت مستمر برای فعالیت‌های فعال کارآفرینی. معمولاً ۱ تا ۲ سال. قابل‌تمدید. اعضای خانواده به‌طور هم‌زمان از طریق Enter Finland حمایت می‌شوند.",
   },
   {
     num: "02",
     label: "Extended Permit",
+    labelFa: "مجوز تمدیدشده",
     year: "Up to 4 Years",
+    yearFa: "تا ۴ سال",
     title: "Extended Permit (Up to 4 Years)",
+    titleFa: "مجوز تمدیدشده (تا ۴ سال)",
     desc: "Migri audits tax records, company balance sheets, and personal income to verify the business remains profitable and self-sustaining.",
+    descFa: "Migri سوابق مالیاتی، ترازنامه‌های شرکت و درآمد شخصی را حسابرسی می‌کند تا تأیید کند کسب‌وکار سودآور و خودپایدار باقی می‌ماند.",
     body: "Migri audits tax records, company balance sheets, and personal income payouts to ensure the business remains profitable. Extended permits can be granted for up to 4 years.",
+    bodyFa: "Migri سوابق مالیاتی، ترازنامه‌های شرکت و پرداخت‌های درآمد شخصی را حسابرسی می‌کند تا اطمینان یابد کسب‌وکار سودآور باقی می‌ماند. مجوزهای تمدیدشده می‌توانند تا ۴ سال اعطا شوند.",
   },
   {
     num: "03",
     label: "Permanent Residency",
+    labelFa: "اقامت دائم",
     year: "Year 4",
+    yearFa: "سال ۴",
     title: "Permanent Residency (P-Permit)",
+    titleFa: "اقامت دائم (مجوز P)",
     desc: "After 4 years of continuous, uninterrupted A-permit residence. Must prove consistent income threshold, no extensive absences, and tax compliance.",
+    descFa: "پس از ۴ سال اقامت پیوسته و بدون‌وقفه با مجوز A. باید آستانه‌ی درآمد پایدار، عدم غیبت‌های گسترده و انطباق مالیاتی را اثبات کنید.",
     body: "After 4 years of continuous, uninterrupted residence on an A-permit. Must prove no extensive absences, consistent income at the threshold, and full tax compliance.",
+    bodyFa: "پس از ۴ سال اقامت پیوسته و بدون‌وقفه با مجوز A. باید عدم غیبت‌های گسترده، درآمد پایدار در حد آستانه و انطباق مالیاتی کامل را اثبات کنید.",
   },
   {
     num: "04",
     label: "Finnish Citizenship",
+    labelFa: "تابعیت فنلاند",
     year: "Year 5",
+    yearFa: "سال ۵",
     title: "Finnish Citizenship",
+    titleFa: "تابعیت فنلاند",
     desc: "After 5 years of continuous residence. Requires YKI language test at B1 level (Finnish or Swedish), clean criminal record, and zero outstanding Finnish debts.",
+    descFa: "پس از ۵ سال اقامت پیوسته. نیازمند آزمون زبان YKI در سطح B1 (فنلاندی یا سوئدی)، سوءپیشینه‌ی پاک و صفر بدهی معوقه‌ی فنلاندی است.",
     body: "After 5 years of continuous residence. Requires passing the YKI language test at B1 level in either Finnish or Swedish, a completely clean criminal record, and zero outstanding Finnish public debts or taxes.",
+    bodyFa: "پس از ۵ سال اقامت پیوسته. نیازمند قبولی در آزمون زبان YKI در سطح B1 به فنلاندی یا سوئدی، یک سوءپیشینه‌ی کاملاً پاک و صفر بدهی یا مالیات عمومی معوقه‌ی فنلاندی است.",
   },
 ];
 
 export default function Pathway() {
+  const { t } = useLang();
   const [activeIndex, setActiveIndex] = useState(0);
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -49,7 +71,7 @@ export default function Pathway() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-center mb-14">
-            Long-Term Horizon
+            {t("Long-Term Horizon", "افق بلندمدت")}
           </h2>
         </Reveal>
 
@@ -86,12 +108,12 @@ export default function Pathway() {
                 >
                   {item.num}
                 </div>
-                <div className="text-[15px] font-semibold text-black mb-1">{item.label}</div>
+                <div className="text-[15px] font-semibold text-black mb-1">{t(item.label, item.labelFa)}</div>
                 <div
                   className="text-[12px] font-semibold px-2.5 py-0.5 rounded-full"
                   style={{ color: "#8F27FF", background: "#FAF6FF" }}
                 >
-                  {item.year}
+                  {t(item.year, item.yearFa)}
                 </div>
               </button>
             ))}
@@ -111,8 +133,8 @@ export default function Pathway() {
                 }}
                 onClick={() => setActiveIndex(i)}
               >
-                <h5 className="text-[14px] font-semibold text-black mb-2">{card.title}</h5>
-                <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{card.desc}</p>
+                <h5 className="text-[14px] font-semibold text-black mb-2">{t(card.title, card.titleFa)}</h5>
+                <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{t(card.desc, card.descFa)}</p>
               </div>
             ))}
           </div>
@@ -142,12 +164,12 @@ export default function Pathway() {
                   {item.num}
                 </div>
                 <div className="flex-1">
-                  <div className="text-[14px] font-semibold text-black mb-0.5">{item.label}</div>
+                  <div className="text-[14px] font-semibold text-black mb-0.5">{t(item.label, item.labelFa)}</div>
                   <span
                     className="text-[11px] font-semibold px-2 py-0.5 rounded-full inline-block"
                     style={{ color: "#8F27FF", background: "#FAF6FF" }}
                   >
-                    {item.year}
+                    {t(item.year, item.yearFa)}
                   </span>
                 </div>
                 <Image
@@ -169,7 +191,7 @@ export default function Pathway() {
                   className="text-[13px] text-[#474747] leading-[1.6] pb-4"
                   style={{ paddingLeft: "62px", paddingRight: "18px" }}
                 >
-                  {item.body}
+                  {t(item.body, item.bodyFa)}
                 </div>
               )}
             </div>

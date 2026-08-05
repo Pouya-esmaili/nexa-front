@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from "react";
 import Row from "@/components/global/Row";
+import { useLang } from "@/components/global/LanguageProvider";
 
 export default function Hero() {
+  const { t } = useLang();
   const [mounted, setMounted] = useState(false);
   useEffect(() => { const t = setTimeout(() => setMounted(true), 80); return () => clearTimeout(t); }, []);
 
@@ -32,17 +34,17 @@ export default function Hero() {
             <div className={`${base} ${mounted ? show : hidden} inline-flex items-center gap-2 px-4 py-[7px] rounded-full text-[13px] font-semibold mb-6`}
               style={{ background: "#FAF6FF", border: "1px solid rgba(143,39,255,0.18)", color: "#8F27FF", transitionDelay: "0ms" }}>
               <span className="w-1.5 h-1.5 rounded-full bg-[#8F27FF]" />
-              Canada Entrepreneur Immigration
+              {t("Canada Entrepreneur Immigration", "مهاجرت کارآفرینی کانادا")}
             </div>
 
             <h1 className={`${base} ${mounted ? show : hidden} text-[38px] md:text-[48px] font-bold leading-[1.08] tracking-[-0.03em] mb-6`}
               style={{ transitionDelay: "80ms" }}>
-              Build a <span className="text-[#8F27FF]">scalable</span> company on a high-stability economic platform.
+              {t("Build a", "یک شرکت")} <span className="text-[#8F27FF]">{t("scalable", "مقیاس‌پذیر")}</span> {t("company on a high-stability economic platform.", "بر بستری اقتصادی با ثبات بالا بسازید.")}
             </h1>
 
             <p className={`${base} ${mounted ? show : hidden} text-[17px] text-[#474747] leading-[1.65] mb-9 max-w-[520px]`}
               style={{ transitionDelay: "160ms" }}>
-              At Nexa, we view Canada not as a migration destination, but as a structured, transparent, capital-accessible environment where serious businesses can be launched, positioned, and expanded with long-term certainty.
+              {t("At Nexa, we view Canada not as a migration destination, but as a structured, transparent, capital-accessible environment where serious businesses can be launched, positioned, and expanded with long-term certainty.", "در نکسا، ما کانادا را نه به‌عنوان یک مقصد مهاجرتی، بلکه به‌عنوان محیطی ساختارمند، شفاف و با دسترسی به سرمایه می‌بینیم که در آن کسب‌وکارهای جدی می‌توانند با اطمینان بلندمدت راه‌اندازی، جایگاه‌یابی و گسترش یابند.")}
             </p>
 
             {/* Stats */}
@@ -50,15 +52,15 @@ export default function Hero() {
               style={{ borderTop: "1px solid #E2E2E2", borderBottom: "1px solid #E2E2E2", transitionDelay: "240ms" }}>
               <div>
                 <div className="text-[34px] font-extrabold tracking-[-0.04em] leading-none">G7</div>
-                <div className="text-[13px] text-[#929292] mt-2 font-medium">Nation Stability</div>
+                <div className="text-[13px] text-[#929292] mt-2 font-medium">{t("Nation Stability", "ثبات کشور")}</div>
               </div>
               <div>
-                <div className="text-[34px] font-extrabold tracking-[-0.04em] leading-none">10+</div>
-                <div className="text-[13px] text-[#929292] mt-2 font-medium">Provincial Streams</div>
+                <div className="text-[34px] font-extrabold tracking-[-0.04em] leading-none">{t("10+", "۱۰+")}</div>
+                <div className="text-[13px] text-[#929292] mt-2 font-medium">{t("Provincial Streams", "جریان‌های استانی")}</div>
               </div>
               <div>
-                <div className="text-[34px] font-extrabold tracking-[-0.04em] leading-none">24-36<span className="text-[18px]">mo</span></div>
-                <div className="text-[13px] text-[#929292] mt-2 font-medium">Path to PR</div>
+                <div className="text-[34px] font-extrabold tracking-[-0.04em] leading-none">{t("24-36", "۲۴-۳۶")}<span className="text-[18px]">{t("mo", "ماه")}</span></div>
+                <div className="text-[13px] text-[#929292] mt-2 font-medium">{t("Path to PR", "مسیر تا اقامت دائم")}</div>
               </div>
             </div>
 
@@ -66,7 +68,7 @@ export default function Hero() {
               <a href="#contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[15px] transition-all hover:-translate-y-0.5"
                 style={{ boxShadow: "0 10px 24px rgba(143,39,255,0.28)" }}>
-                Book an Appointment →
+                {t("Book an Appointment →", "رزرو وقت ملاقات →")}
               </a>
             </div>
           </div>
@@ -101,7 +103,7 @@ export default function Hero() {
             <div className="float-badge absolute top-[90px] -right-5 bg-white rounded-[14px] px-4 py-3 flex items-center gap-2.5 z-10"
               style={{ boxShadow: "0 12px 36px rgba(0,0,0,0.07)", border: "1px solid #F4F4F4" }}>
               <span className="pulse-green w-2 h-2 rounded-full bg-[#10B981]" />
-              <span className="text-[13px] font-semibold text-black">PR Pathway Active</span>
+              <span className="text-[13px] font-semibold text-black">{t("PR Pathway Active", "مسیر اقامت دائم فعال")}</span>
             </div>
 
             {/* Yellow accent badge */}
@@ -111,7 +113,7 @@ export default function Hero() {
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                 <polyline points="9 22 9 12 15 12 15 22" />
               </svg>
-              <span className="text-[14px] font-bold text-black tracking-tight">10+ Provincial Streams</span>
+              <span className="text-[14px] font-bold text-black tracking-tight">{t("10+ Provincial Streams", "۱۰+ جریان استانی")}</span>
             </div>
           </div>
         </div>

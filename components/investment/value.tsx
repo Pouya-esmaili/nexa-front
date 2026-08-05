@@ -1,15 +1,17 @@
 "use client";
 
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const SERVICES = [
-  { badge: "Advisory", title: "Strategic Advisory & Expert Guidance",           name: "Strategic Advisory" },
-  { badge: "Access",   title: "Market Access & Business Opportunities",          name: "Market Access" },
-  { badge: "Growth",   title: "Scaling & International Expansion Strategies",    name: "Expansion" },
-  { badge: "Risk",     title: "Governance & Risk Management Solutions",          name: "Risk Management" },
+  { badge: "Advisory", badgeFa: "مشاوره", title: "Strategic Advisory & Expert Guidance", titleFa: "راهبرد سرمایه‌گذاری و مشاوره تخصصی", name: "Strategic Advisory", nameFa: "مشاوره راهبردی" },
+  { badge: "Access",   badgeFa: "دسترسی به بازار", title: "Market Access & Business Opportunities", titleFa: "دسترسی به بازارهای بین‌المللی و فرصت‌های سرمایه‌گذاری", name: "Market Access", nameFa: "دسترسی به بازار" },
+  { badge: "Growth",   badgeFa: "رشد و توسعه", title: "Scaling & International Expansion Strategies", titleFa: "استراتژی‌های رشد و توسعه بین‌المللی", name: "Expansion", nameFa: "توسعه بین‌المللی" },
+  { badge: "Risk",     badgeFa: "ریسک", title: "Governance & Risk Management Solutions", titleFa: "استراتژی‌های حاکمیت و مدیریت ریسک", name: "Risk Management", nameFa: "مدیریت ریسک" },
 ];
 
 export default function InvestmentServices() {
+  const { t } = useLang();
   return (
     <section style={{ padding: "90px 0", background: "#fff" }}>
       <div className="px-6 mx-auto w-full" style={{ maxWidth: 1240 }}>
@@ -25,7 +27,7 @@ export default function InvestmentServices() {
                 color: "#000",
               }}
             >
-              Our Services
+              {t("Our Services", "خدمات تخصصی ما")}
             </h2>
           </div>
         </Reveal>
@@ -43,7 +45,8 @@ export default function InvestmentServices() {
   );
 }
 
-function ServiceCard({ badge, title, name }: (typeof SERVICES)[0]) {
+function ServiceCard({ badge, badgeFa, title, titleFa, name, nameFa }: (typeof SERVICES)[0]) {
+  const { t } = useLang();
   return (
     <div
       className="group flex flex-col relative overflow-hidden cursor-pointer"
@@ -90,7 +93,7 @@ function ServiceCard({ badge, title, name }: (typeof SERVICES)[0]) {
         }}
       >
         <span style={{ width: 24, height: 1.5, background: "#8F27FF", borderRadius: 1, display: "block" }} />
-        {badge}
+        {t(badge, badgeFa)}
       </span>
 
       {/* Title */}
@@ -104,7 +107,7 @@ function ServiceCard({ badge, title, name }: (typeof SERVICES)[0]) {
           lineHeight: 1.3,
         }}
       >
-        {title}
+        {t(title, titleFa)}
       </h3>
 
       {/* Footer — name only, no arrow icon */}
@@ -116,7 +119,7 @@ function ServiceCard({ badge, title, name }: (typeof SERVICES)[0]) {
           className="text-[#474747] group-hover:text-[#8F27FF] transition-colors duration-300"
           style={{ fontSize: 14, fontWeight: 600, letterSpacing: "-0.01em" }}
         >
-          {name}
+          {t(name, nameFa)}
         </span>
       </div>
     </div>

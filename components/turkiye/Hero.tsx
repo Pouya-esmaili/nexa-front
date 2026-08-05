@@ -3,16 +3,18 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Row from "@/components/global/Row";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const stats = [
-  { num: "USD 600K", label: "Min. Investment" },
-  { num: "6–12 mo", label: "Processing" },
-  { num: "3 yrs", label: "Hold Period" },
+  { num: "USD 600K", numFa: "۶۰۰ هزار دلار", label: "Min. Investment", labelFa: "حداقل سرمایه‌گذاری" },
+  { num: "6–12 mo", numFa: "۶ تا ۱۲ ماه", label: "Processing", labelFa: "پردازش" },
+  { num: "3 yrs", numFa: "۳ سال", label: "Hold Period", labelFa: "دوره‌ی نگهداری" },
 ];
 
 const HERO_IMG = "/images/investment/Türkiye.webp";
 
 export default function Hero() {
+  const { t } = useLang();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -47,8 +49,7 @@ export default function Hero() {
           className={`text-3xl font-bold leading-tight tracking-tight mb-4 ${base} duration-700 delay-150 ${mounted ? show : hideUp
             }`}
         >
-          Where <span className="text-[#8F27FF]">three continents</span> meet —
-          your next passport begins here.
+          {t("Where", "جایی که")} <span className="text-[#8F27FF]">{t("three continents", "سه قاره")}</span> {t("meet — your next passport begins here.", "به هم می‌رسند — پاسپورت بعدی شما از اینجا آغاز می‌شود.")}
         </h1>
 
         {/* Description */}
@@ -56,9 +57,7 @@ export default function Hero() {
           className={`text-sm text-gray-600 leading-relaxed mb-6 ${base} duration-700 delay-200 ${mounted ? show : hideUp
             }`}
         >
-          Through structured real estate investment, foreign nationals secure
-          long-term residency and qualify for Turkish Citizenship by Investment
-          — at the crossroads of Europe, Asia and the Middle East.
+          {t("Through structured real estate investment, foreign nationals secure long-term residency and qualify for Turkish Citizenship by Investment — at the crossroads of Europe, Asia and the Middle East.", "از طریق سرمایه‌گذاری ساختارمند در املاک، اتباع خارجی اقامت بلندمدت را تضمین کرده و واجد شرایط تابعیت ترکیه از طریق سرمایه‌گذاری می‌شوند — در تقاطع اروپا، آسیا و خاورمیانه.")}
         </p>
 
         <div
@@ -67,9 +66,9 @@ export default function Hero() {
         >
           {stats.map((item) => (
             <div key={item.label} className="flex-1 text-center">
-              <div className="text-[18px] font-bold">{item.num}</div>
+              <div className="text-[18px] font-bold">{t(item.num, item.numFa)}</div>
               <div className="text-[10px] uppercase tracking-wide text-gray-500 mt-1">
-                {item.label}
+                {t(item.label, item.labelFa)}
               </div>
             </div>
           ))}
@@ -85,7 +84,7 @@ export default function Hero() {
             color: "#fff"
           }}
         >
-          Start your application →
+          {t("Start your application →", "درخواست خود را آغاز کنید →")}
         </Link>
       </div>
 
@@ -102,11 +101,11 @@ export default function Hero() {
               className={`text-[48px] font-bold leading-[1.06] tracking-[-0.03em] mb-6 ${base} duration-700 delay-100 ${mounted ? show : hideLeft
                 }`}
             >
-              Where{" "}
+              {t("Where", "جایی که")}{" "}
               <span className="text-[#8F27FF]">
-                three continents
+                {t("three continents", "سه قاره")}
               </span>{" "}
-              meet — your next passport begins here.
+              {t("meet — your next passport begins here.", "به هم می‌رسند — پاسپورت بعدی شما از اینجا آغاز می‌شود.")}
             </h1>
 
             {/* Description */}
@@ -114,10 +113,7 @@ export default function Hero() {
               className={`text-[16px] text-[#474747] leading-[1.65] mb-8 max-w-[520px] ${base} duration-700 delay-200 ${mounted ? show : hideLeft
                 }`}
             >
-              Through structured real estate investment, foreign nationals
-              secure long-term residency and qualify for Turkish Citizenship
-              by Investment — at the crossroads of Europe, Asia and the Middle
-              East.
+              {t("Through structured real estate investment, foreign nationals secure long-term residency and qualify for Turkish Citizenship by Investment — at the crossroads of Europe, Asia and the Middle East.", "از طریق سرمایه‌گذاری ساختارمند در املاک، اتباع خارجی اقامت بلندمدت را تضمین کرده و واجد شرایط تابعیت ترکیه از طریق سرمایه‌گذاری می‌شوند — در تقاطع اروپا، آسیا و خاورمیانه.")}
             </p>
 
             {/* Stats */}
@@ -128,10 +124,10 @@ export default function Hero() {
               {stats.map((item) => (
                 <div key={item.label} className="text-center">
                   <div className="text-[28px] font-bold leading-none">
-                    {item.num}
+                    {t(item.num, item.numFa)}
                   </div>
                   <div className="text-[11px] uppercase tracking-widest text-gray-500 mt-2">
-                    {item.label}
+                    {t(item.label, item.labelFa)}
                   </div>
                 </div>
               ))}
@@ -146,7 +142,7 @@ export default function Hero() {
                 color: "#fff"
               }}
             >
-              Start your application →
+              {t("Start your application →", "درخواست خود را آغاز کنید →")}
             </Link>
           </div>
 

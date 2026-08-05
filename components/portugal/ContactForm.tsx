@@ -4,8 +4,10 @@ import { useState, FormEvent } from "react";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
 import PhoneField from "@/components/global/PhoneField";
+import { useLang } from "@/components/global/LanguageProvider";
 
 export default function ContactForm() {
+  const { t } = useLang();
   const [sent, setSent] = useState(false);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -40,7 +42,7 @@ export default function ContactForm() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10 md:mb-14">
-            Start Your Portugal D2 Visa Journey
+            {t("Start Your Portugal D2 Visa Journey", "سفر ویزای D2 پرتغال خود را آغاز کنید")}
           </h2>
         </Reveal>
 
@@ -52,8 +54,8 @@ export default function ContactForm() {
                 <path d="M5 12l4 4 10-10" />
               </svg>
             </div>
-            <h3 className="text-[22px] font-bold">Thank you!</h3>
-            <p className="text-gray-500 text-[15px]">A Nexa advisor will reach out within 48 hours.</p>
+            <h3 className="text-[22px] font-bold">{t("Thank you!", "سپاسگزاریم!")}</h3>
+            <p className="text-gray-500 text-[15px]">{t("A Nexa advisor will reach out within 48 hours.", "یک مشاور نکسا ظرف ۴۸ ساعت با شما تماس خواهد گرفت.")}</p>
           </div>
         ) : (
           <Reveal variant="up" delay={100}>
@@ -62,17 +64,17 @@ export default function ContactForm() {
               {/* Row 1 */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="flex items-center gap-1 text-[#474747]">First Name <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
-                  <input name="firstName" type="text" required placeholder="Your first name"
+                  <span className="flex items-center gap-1 text-[#474747]">{t("First Name", "نام")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <input name="firstName" type="text" required placeholder={t("Your first name", "نام شما")}
                     className="h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors" />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="flex items-center gap-1 text-[#474747]">Last Name <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
-                  <input name="lastName" type="text" required placeholder="Your last name"
+                  <span className="flex items-center gap-1 text-[#474747]">{t("Last Name", "نام خانوادگی")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <input name="lastName" type="text" required placeholder={t("Your last name", "نام خانوادگی شما")}
                     className="h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors" />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="flex items-center gap-1 text-[#474747]">Email <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <span className="flex items-center gap-1 text-[#474747]">{t("Email", "ایمیل")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
                   <input name="email" type="email" required placeholder="you@example.com"
                     className="h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors" />
                 </label>
@@ -81,46 +83,46 @@ export default function ContactForm() {
               {/* Row 2 */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="flex items-center gap-1 text-[#474747]">Phone Number <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <span className="flex items-center gap-1 text-[#474747]">{t("Phone Number", "شماره تماس")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
                   <PhoneField name="phone" defaultCountryCode="+351" />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="text-[#474747]">Your Role</span>
+                  <span className="text-[#474747]">{t("Your Role", "نقش شما")}</span>
                   <select className="h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors">
-                    <option>Lead Founder</option>
-                    <option>Co-Founder</option>
-                    <option>Currently in Portugal (EOI)</option>
+                    <option>{t("Lead Founder", "بنیان‌گذار اصلی")}</option>
+                    <option>{t("Co-Founder", "هم‌بنیان‌گذار")}</option>
+                    <option>{t("Currently in Portugal (EOI)", "در حال حاضر در پرتغال (EOI)")}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="text-[#474747]">Business Type</span>
+                  <span className="text-[#474747]">{t("Business Type", "نوع کسب‌وکار")}</span>
                   <select className="h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors">
-                    <option>Technology / SaaS</option>
-                    <option>Consulting / Services</option>
-                    <option>Import-Export</option>
-                    <option>Real Estate</option>
-                    <option>Hospitality</option>
-                    <option>Other</option>
+                    <option>{t("Technology / SaaS", "فناوری / SaaS")}</option>
+                    <option>{t("Consulting / Services", "مشاوره / خدمات")}</option>
+                    <option>{t("Import-Export", "واردات-صادرات")}</option>
+                    <option>{t("Real Estate", "املاک")}</option>
+                    <option>{t("Hospitality", "مهمان‌نوازی")}</option>
+                    <option>{t("Other", "سایر")}</option>
                   </select>
                 </label>
               </div>
 
               {/* Textarea */}
               <label className="flex flex-col gap-2 text-[13px] font-medium">
-                <span className="text-[#474747]">Tell us about your business &amp; goals</span>
-                <textarea name="message" rows={4} placeholder="Describe your business model, target market in Portugal, and what you're looking to achieve…"
+                <span className="text-[#474747]">{t("Tell us about your business & goals", "درباره‌ی کسب‌وکار و اهدافتان به ما بگویید")}</span>
+                <textarea name="message" rows={4} placeholder={t("Describe your business model, target market in Portugal, and what you're looking to achieve…", "مدل کسب‌وکار، بازار هدف در پرتغال و آنچه به دنبال دستیابی به آن هستید را شرح دهید…")}
                   className="px-3.5 py-3 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors resize-y" />
               </label>
 
               {/* Footer */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
                 <small className="text-[12px] text-gray-500 leading-relaxed max-w-[50ch]">
-                  Your information is reviewed confidentially by Nexa&apos;s advisory team. We typically respond within 48 hours.
+                  {t("Your information is reviewed confidentially by Nexa's advisory team. We typically respond within 48 hours.", "اطلاعات شما به‌صورت محرمانه توسط تیم مشاوره‌ی نکسا بررسی می‌شود. ما معمولاً ظرف ۴۸ ساعت پاسخ می‌دهیم.")}
                 </small>
                 <button type="submit"
                   className="w-full sm:w-auto flex-shrink-0 inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"
                   style={{ boxShadow: "0 10px 24px rgba(143,39,255,0.28)" }}>
-                  Submit Application →
+                  {t("Submit Application →", "ارسال درخواست →")}
                 </button>
               </div>
             </form>

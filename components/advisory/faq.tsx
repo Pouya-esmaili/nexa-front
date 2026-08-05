@@ -1,224 +1,76 @@
 "use client";
 
-import { useState } from "react";
-import Row from "../global/Row";
-import IconOpen from '@/components/global/IconOpen';
-import IconClose from '@/components/global/IconClose';
+import { useEffect, useRef, useState } from "react";
+import { useLang } from "@/components/global/LanguageProvider";
 
-const faqData = [
-  {
-    title: "Is this for passive investors or active founders?",
-    content:
-      "Our programs cater to both. We tailor the involvement level—from hands-on operational leadership to strategic capital oversight.",
-  },
-  {
-    title: "How does Nexa ensure business sustainability?",
-    content:
-      "Nexa ensures business sustainability through comprehensive support systems, including strategic planning, financial oversight, and continuous mentorship. We focus on building resilient business models that can adapt to changing market conditions and long-term growth objectives.",
-  },
-  {
-    title: "How does Nexa ensure business sustainability?",
-    content:
-      "Nexa ensures business sustainability through comprehensive support systems, including strategic planning, financial oversight, and continuous mentorship. We focus on building resilient business models that can adapt to changing market conditions and long-term growth objectives.",
-  },
-  {
-    title: "How does Nexa ensure business sustainability?",
-    content:
-      "Nexa ensures business sustainability through comprehensive support systems, including strategic planning, financial oversight, and continuous mentorship. We focus on building resilient business models that can adapt to changing market conditions and long-term growth objectives.",
-  },
-  {
-    title: "What is the difference between active and passive involvement?",
-    content:
-      "Active involvement involves direct participation in business operations, while passive involvement focuses on strategic oversight and capital allocation.",
-  },
-  {
-    title: "How do I get started with Nexa?",
-    content:
-      "To get started, simply reach out to us through our contact form or schedule a consultation. We'll guide you through the next steps.",
-  },
-  {
-    title: "What kind of support does Nexa provide?",
-    content:
-      "Nexa provides comprehensive support including strategic planning, financial management, mentorship, and access to a network of industry experts.",
-  },
-  {
-    title: "Can I participate in multiple programs?",
-    content:
-      "Yes, you can participate in multiple programs based on your interests and availability.",
-  },
+const FAQS = [
+  { q: "How long does a typical project take?", qFa: "یک پروژه‌ی معمول چقدر طول می‌کشد؟", a: "Strategy packages run 4–6 weeks. Full-stack projects (strategy + brand + web) typically take 8–12 weeks. We move fast without cutting corners.", aFa: "بسته‌های استراتژی ۴ تا ۶ هفته طول می‌کشند. پروژه‌های کامل (استراتژی + برند + وب) معمولاً ۸ تا ۱۲ هفته زمان می‌برند. سریع پیش می‌رویم بدون اینکه از کیفیت بزنیم." },
+  { q: "Do you work with startups or established businesses?", qFa: "با استارتاپ‌ها کار می‌کنید یا کسب‌وکارهای جاافتاده؟", a: "Both. We've worked with pre-revenue founders and Series-B companies. What matters is that you're serious about building something with real strategy behind it.", aFa: "هر دو. با بنیان‌گذاران پیش از درآمد و شرکت‌های مرحله‌ی سری B کار کرده‌ایم. آنچه مهم است این است که جدی به دنبال ساختن چیزی با استراتژی واقعی باشید." },
+  { q: "What's the process for getting started?", qFa: "فرایند شروع کار چگونه است؟", a: "Book a 30-minute discovery call — no commitment. We learn about your business, scope the right package, and send a proposal within 48 hours.", aFa: "یک تماس کشف ۳۰ دقیقه‌ای رزرو کنید — بدون هیچ تعهدی. درباره‌ی کسب‌وکارتان می‌آموزیم، بسته‌ی مناسب را تعیین می‌کنیم و ظرف ۴۸ ساعت پیشنهاد می‌فرستیم." },
+  { q: "Can I hire you for just one service?", qFa: "می‌توانم فقط برای یک خدمت شما را استخدام کنم؟", a: "Yes. While our packages are designed to work together, every service is available as a standalone engagement. We'll tell you honestly if we think you need more.", aFa: "بله. اگرچه بسته‌های ما برای هم‌افزایی طراحی شده‌اند، هر خدمت به‌صورت مستقل هم در دسترس است. اگر فکر کنیم به چیزی بیشتر نیاز دارید، صادقانه به شما می‌گوییم." },
+  { q: "Who will I be working with?", qFa: "با چه کسی کار خواهم کرد؟", a: "Every project has a dedicated lead who runs strategy and coordinates execution. You're never handed off to a junior account manager.", aFa: "هر پروژه یک سرپرست اختصاصی دارد که استراتژی را پیش می‌برد و اجرا را هماهنگ می‌کند. هرگز به یک مدیر حساب تازه‌کار واگذار نمی‌شوید." },
+  { q: "What do you need from me to start?", qFa: "برای شروع به چه چیزی از من نیاز دارید؟", a: "A 30-minute conversation and a brief intake form. We handle the rest — research, interviews, and synthesis — before presenting strategy.", aFa: "یک گفت‌وگوی ۳۰ دقیقه‌ای و یک فرم کوتاه اولیه. بقیه را ما انجام می‌دهیم — پژوهش، مصاحبه و جمع‌بندی — پیش از ارائه‌ی استراتژی." },
 ];
 
-const MOBILE_INITIAL_COUNT = 6;
+export default function Faq() {
+  const { t } = useLang();
+  const listRef = useRef<HTMLDivElement>(null);
+  const [open, setOpen] = useState<number | null>(null);
+  // reveal state is kept in React (not imperative classList) so re-renders on
+  // open/close never clobber the .faq-visible class.
+  const [visible, setVisible] = useState<boolean[]>(() => FAQS.map(() => false));
 
-const Faq = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const [showAll, setShowAll] = useState(false);
-
-  const toggle = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-
-  const visibleMobileFaqs = showAll
-    ? faqData
-    : faqData.slice(0, MOBILE_INITIAL_COUNT);
+  useEffect(() => {
+    const root = listRef.current;
+    if (!root) return;
+    const items = Array.from(root.querySelectorAll<HTMLElement>(".faq-item"));
+    if (!("IntersectionObserver" in window)) {
+      setVisible(FAQS.map(() => true));
+      return;
+    }
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            const idx = items.indexOf(e.target as HTMLElement);
+            setTimeout(() => {
+              setVisible((v) => {
+                const n = [...v];
+                n[idx] = true;
+                return n;
+              });
+            }, idx * 70);
+            obs.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    items.forEach((it) => obs.observe(it));
+    return () => obs.disconnect();
+  }, []);
 
   return (
-    <div className="py-12 md:py-20">
-
-      {/* ================= MOBILE ================= */}
-      <div className="md:hidden px-5">
-
-        <h2 className="text-2xl font-bold text-center mb-8">
-          FAQs
-        </h2>
-
-        <div
-          className="flex flex-col gap-3 rounded-2xl p-5"
-          style={{ background: "#F6F6F6" }}
-        >
-          {visibleMobileFaqs.map((item, index) => {
-            const isActive = activeIndex === index;
-
-            return (
-              <div
-                key={index}
-                onClick={() => toggle(index)}
-                className="cursor-pointer bg-white rounded-xl p-4 transition-all duration-300"
-                style={{
-                  boxShadow: isActive
-                    ? "0px 4px 8px 0px #8F27FF40"
-                    : "0px 4px 4px 0px #0000001A",
-                  borderStyle: "solid",
-                  borderWidth: "1px 1px 1px 5px",
-                  borderColor: isActive ? "#8F27FF" : "#D2D2D2",
-                }}
-              >
-                <div className="flex items-center justify-between gap-3">
-                  <h3 className="text-xs font-medium text-black leading-snug">
-                    {item.title}
-                  </h3>
-
-                  {isActive ? (
-                    <IconClose className="w-5 h-5 flex-shrink-0" stroke="#8F27FF" />
-                  ) : (
-                    <IconOpen className="w-5 h-5 flex-shrink-0" stroke="#8F27FF" />
-                  )}
-                </div>
-
-                {isActive && (
-                  <p className="mt-3 text-xs text-gray-600 leading-relaxed">
-                    {item.content}
-                  </p>
-                )}
+    <section className="faq-section">
+      <div className="wrap">
+        <div className="faq-layout">
+          <div className="faq-left">
+            <span className="editorial-label">{t("/ FAQ", "/ سؤالات متداول")}</span>
+            <h2 className="editorial-h2"><span className="eh2-outline">{t("GOT", "سؤالی")}</span><br /><span className="eh2-solid">{t("QUESTIONS?", "دارید؟")}</span></h2>
+            <p className="faq-sub">{t("Everything you need to know before we talk. Still curious?", "هر آنچه پیش از گفت‌وگو لازم است بدانید. هنوز کنجکاوید؟")} <a href="#contact">{t("Drop us a line.", "برای ما پیام بفرستید.")}</a></p>
+          </div>
+          <div className="faq-list" id="faqList" ref={listRef}>
+            {FAQS.map((f, i) => (
+              <div className={`faq-item${visible[i] ? " faq-visible" : ""}${open === i ? " open" : ""}`} key={i}>
+                <button className="faq-q" onClick={() => setOpen(open === i ? null : i)}>
+                  {t(f.q, f.qFa)} <span className="faq-icon">+</span>
+                </button>
+                <div className="faq-a"><p>{t(f.a, f.aFa)}</p></div>
               </div>
-            );
-          })}
-
-          {!showAll && faqData.length > MOBILE_INITIAL_COUNT && (
-            <button
-              onClick={() => setShowAll(true)}
-              className="mt-2 flex items-center justify-center gap-2 text-sm font-semibold text-[#8F27FF]"
-            >
-              Show More
-
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#8F27FF"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </button>
-          )}
-
-          {showAll && (
-            <button
-              onClick={() => setShowAll(false)}
-              className="mt-2 flex items-center justify-center gap-2 text-sm font-semibold text-[#8F27FF]"
-            >
-              Show Less
-
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#8F27FF"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polyline points="18 15 12 9 6 15" />
-              </svg>
-            </button>
-          )}
+            ))}
+          </div>
         </div>
       </div>
-
-      {/* ================= DESKTOP ================= */}
-      <div className="hidden md:block">
-        <Row>
-          <div className="w-full">
-
-            <h2 className="text-center text-3xl md:text-4xl font-bold mb-12">
-              FAQs
-            </h2>
-
-            <div
-              className="mx-auto mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 items-start w-full rounded-[20px] p-6 md:p-12 lg:p-20"
-              style={{ background: "#F6F6F6" }}
-            >
-              {faqData.map((item, index) => {
-                const isActive = activeIndex === index;
-
-                return (
-                  <div
-                    key={index}
-                    onClick={() => toggle(index)}
-                    className="cursor-pointer bg-white rounded-xl p-6 transition-all duration-300"
-                    style={{
-                      boxShadow: isActive
-                        ? "0px 4px 8px 0px #8F27FF40"
-                        : "0px 4px 4px 0px #0000001A",
-                      borderStyle: "solid",
-                      borderWidth: "1px 1px 1px 6px",
-                      borderColor: isActive ? "#8F27FF" : "#D2D2D2",
-                    }}
-                  >
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-md font-medium text-black">
-                        {item.title}
-                      </h3>
-
-                      {isActive ? (
-                        <IconClose className="w-6 h-6" stroke="#8F27FF" />
-                      ) : (
-                        <IconOpen className="w-6 h-6" stroke="#8F27FF" />
-                      )}
-                    </div>
-
-                    {isActive && (
-                      <div className="mt-3">
-                        <p className="text-sm text-gray-600 leading-relaxed">
-                          {item.content}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-
-          </div>
-        </Row>
-      </div>
-    </div>
+    </section>
   );
-};
-
-export default Faq;
+}

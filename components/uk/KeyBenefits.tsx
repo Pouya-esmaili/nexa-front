@@ -1,10 +1,14 @@
+"use client";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const cards = [
   {
     title: "Accelerated Settlement",
+    titleFa: "اقامت دائم سریع",
     desc: "Apply for Indefinite Leave to Remain (ILR) after just 3 years — significantly faster than the standard 5-year route required by most other UK visas.",
+    descFa: "پس از تنها ۳ سال برای اقامت دائم (ILR) درخواست دهید — به‌مراتب سریع‌تر از مسیر استاندارد ۵ ساله که بیشتر ویزاهای دیگر انگلستان نیاز دارند.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} className="w-6 h-6">
         <path d="M13 3L4 14h7l-1 7 9-11h-7l1-7z" />
@@ -13,7 +17,9 @@ const cards = [
   },
   {
     title: "No Minimum Capital Floor",
+    titleFa: "بدون کف حداقلی سرمایه",
     desc: "The previous statutory £50,000 investment requirement has been removed. You only need to demonstrate sufficient funds to execute your specific business plan.",
+    descFa: "الزام قانونی پیشین سرمایه‌گذاری ۵۰٬۰۰۰ پوندی حذف شده است. فقط باید نشان دهید بودجه‌ی کافی برای اجرای طرح کسب‌وکار مشخص خود دارید.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} className="w-6 h-6">
         <circle cx="12" cy="12" r="9" />
@@ -23,7 +29,9 @@ const cards = [
   },
   {
     title: "Flexible Professional Rights",
+    titleFa: "حقوق شغلی منعطف",
     desc: "Legally permitted to take secondary employment alongside your startup — provided the role is skilled at RQF Level 3 or higher (equivalent to A-levels or above).",
+    descFa: "مجاز به اشتغال ثانویه در کنار استارتاپ خود — به‌شرط آنکه شغل در سطح RQF سطح ۳ یا بالاتر (معادل A-level یا بالاتر) تخصصی باشد.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} className="w-6 h-6">
         <rect x="2" y="7" width="20" height="14" rx="2" />
@@ -33,7 +41,9 @@ const cards = [
   },
   {
     title: "Complete Family Unity",
+    titleFa: "همراهی کامل خانواده",
     desc: "Spouse or registered partner receives full UK work and business rights. Minor children can enroll unconditionally in the British education system.",
+    descFa: "همسر یا شریک ثبت‌شده حقوق کامل کار و کسب‌وکار در انگلستان دریافت می‌کند. فرزندان خردسال می‌توانند بدون قید و شرط در نظام آموزشی بریتانیا ثبت‌نام کنند.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} className="w-6 h-6">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -45,12 +55,13 @@ const cards = [
 ];
 
 export default function KeyBenefits() {
+  const { t } = useLang();
   return (
     <section className="py-16 md:py-20 bg-white">
       <Row>
         <Reveal variant="up" className="text-center mb-10 md:mb-14">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em]">
-            Key Benefits &amp; Program Strengths
+            {t("Key Benefits & Program Strengths", "مزایای کلیدی و نقاط قوت برنامه")}
           </h2>
         </Reveal>
 
@@ -69,8 +80,8 @@ export default function KeyBenefits() {
                 <div className="w-12 h-12 rounded-[12px] bg-[#FAF6FF] text-[#8F27FF] flex items-center justify-center mb-5 transition-transform duration-300 hover:scale-110">
                   {c.icon}
                 </div>
-                <h3 className="text-[17px] font-semibold tracking-[-0.015em] mb-2.5">{c.title}</h3>
-                <p className="text-[14px] text-[#929292] leading-[1.6]">{c.desc}</p>
+                <h3 className="text-[17px] font-semibold tracking-[-0.015em] mb-2.5">{t(c.title, c.titleFa)}</h3>
+                <p className="text-[14px] text-[#929292] leading-[1.6]">{t(c.desc, c.descFa)}</p>
               </div>
             </Reveal>
           ))}

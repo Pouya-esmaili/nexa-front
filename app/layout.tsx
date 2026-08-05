@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import "./globals.css";
 import Header from "../components/global/Header";
 import Footer from "../components/global/Footer";
 import NavLoader from "../components/global/NavLoader";
 import LinkPrefetcher from "../components/global/LinkPrefetcher";
+import { LanguageProvider, type Lang } from "../components/global/LanguageProvider";
 
 export const metadata: Metadata = {
   title: "Nexa",
@@ -14,19 +16,27 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  // Read the persisted language from the cookie on the server so the very first
+  // paint is already correct (RTL for Persian) — independent of client JS/cache.
+  const cookieStore = await cookies();
+  const lang: Lang = cookieStore.get("nexa-lang")?.value === "fa" ? "fa" : "en";
+  const dir = lang === "fa" ? "rtl" : "ltr";
+
   return (
-    <html lang="en" dir="ltr">
+    <html lang={lang} dir={dir} suppressHydrationWarning>
       <body className="antialiased">
-        <NavLoader />
-        <LinkPrefetcher />
-        <Header />
-        {children}
-        <Footer />
+        <LanguageProvider initialLang={lang}>
+          <NavLoader />
+          <LinkPrefetcher />
+          <Header />
+          {children}
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

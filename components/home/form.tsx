@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, type FormEvent, type ReactNode } from "react";
 import Reveal from "@/components/global/LazyReveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 /* ── Country codes ── */
 const COUNTRIES = [
@@ -99,6 +100,7 @@ function CountryPicker({
   selected: (typeof COUNTRIES)[0];
   onChange: (c: (typeof COUNTRIES)[0]) => void;
 }) {
+  const { t } = useLang();
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
   const ref = useRef<HTMLDivElement>(null);
@@ -145,7 +147,7 @@ function CountryPicker({
             <input
               autoFocus
               type="text"
-              placeholder="Search country..."
+              placeholder={t("Search country...", "جستجوی کشور...")}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="w-full h-9 px-3 text-[13px] bg-[#F7F6F9] border border-[#E2E2E2] rounded-[8px] outline-none focus:border-[#8F27FF] transition-all"
@@ -154,7 +156,7 @@ function CountryPicker({
           {/* List */}
           <ul className="max-h-[220px] overflow-y-auto py-1">
             {filtered.length === 0 && (
-              <li className="px-4 py-3 text-[13px] text-[#929292]">No results</li>
+              <li className="px-4 py-3 text-[13px] text-[#929292]">{t("No results", "نتیجه‌ای یافت نشد")}</li>
             )}
             {filtered.map((c, i) => (
               <li key={i}>
@@ -181,6 +183,7 @@ function CountryPicker({
 }
 
 export default function ContactForm() {
+  const { t } = useLang();
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState(COUNTRIES[0]);
@@ -230,7 +233,7 @@ export default function ContactForm() {
         <Reveal variant="up">
           <div className="text-center max-w-[600px] mx-auto mb-12">
             <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1]">
-              Start Your Journey
+              {t("Start Your Journey", "آغاز مسیر رشد شما")}
             </h2>
           </div>
         </Reveal>
@@ -249,30 +252,30 @@ export default function ContactForm() {
                 <div className="w-16 h-16 rounded-full bg-[#8F27FF] grid place-items-center">
                   <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round"><path d="M5 12l4 4 10-10" /></svg>
                 </div>
-                <h3 className="text-[22px] font-bold">Message Sent!</h3>
-                <p className="text-[15px] text-[#929292]">A Nexa advisor will reach out within 48 hours.</p>
+                <h3 className="text-[22px] font-bold">{t("Message Sent!", "پیام ارسال شد!")}</h3>
+                <p className="text-[15px] text-[#929292]">{t("A Nexa advisor will reach out within 48 hours.", "یکی از مشاوران نکسا ظرف ۴۸ ساعت با شما تماس می‌گیرد.")}</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-7">
 
                   {/* First Name */}
-                  <FormGroup label="First Name" required>
-                    <input name="firstName" type="text" required placeholder="e.g., John" className={inputCls} />
+                  <FormGroup label={t("First Name", "نام")} required>
+                    <input name="firstName" type="text" required placeholder={t("e.g., John", "مثلاً: علی")} className={inputCls} />
                   </FormGroup>
 
                   {/* Last Name */}
-                  <FormGroup label="Last Name" required>
-                    <input name="lastName" type="text" required placeholder="e.g., Doe" className={inputCls} />
+                  <FormGroup label={t("Last Name", "نام خانوادگی")} required>
+                    <input name="lastName" type="text" required placeholder={t("e.g., Doe", "مثلاً: رضایی")} className={inputCls} />
                   </FormGroup>
 
                   {/* Email */}
-                  <FormGroup label="Email Address" required>
+                  <FormGroup label={t("Email Address", "آدرس ایمیل")} required>
                     <input name="email" type="email" required placeholder="you@example.com" className={inputCls} />
                   </FormGroup>
 
                   {/* Phone */}
-                  <FormGroup label="Phone Number" required>
+                  <FormGroup label={t("Phone Number", "شماره تماس")} required>
                     <div className="flex gap-0">
                       <CountryPicker
                         selected={selectedCountry}
@@ -285,14 +288,14 @@ export default function ContactForm() {
                   </FormGroup>
 
                   {/* Service interest */}
-                  <FormGroup label="Service of Interest">
+                  <FormGroup label={t("Service of Interest", "خدمت موردنظر")}>
                     <div className="relative">
                       <select className={selectCls}>
-                        <option value="">Select a service...</option>
-                        <option>Entrepreneurship</option>
-                        <option>Startup Acceleration</option>
-                        <option>Investment</option>
-                        <option>Business Advisory</option>
+                        <option value="">{t("Select a service...", "یک خدمت را انتخاب کنید...")}</option>
+                        <option>{t("Entrepreneurship", "کارآفرینی")}</option>
+                        <option>{t("Startup Acceleration", "شتاب‌دهی استارتاپ")}</option>
+                        <option>{t("Investment", "سرمایه‌گذاری")}</option>
+                        <option>{t("Business Advisory", "مشاوره‌ی کسب‌وکار")}</option>
                       </select>
                       <span className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
                         <ChevronDown />
@@ -301,17 +304,17 @@ export default function ContactForm() {
                   </FormGroup>
 
                   {/* How did you hear */}
-                  <FormGroup label="How Did You Hear About Us?">
+                  <FormGroup label={t("How Did You Hear About Us?", "چطور با ما آشنا شدید؟")}>
                     <div className="relative">
                       <select className={selectCls}>
-                        <option value="">Select...</option>
-                        <option>Google</option>
-                        <option>Social Media</option>
-                        <option>Friend / Referral</option>
-                        <option>Attorney</option>
-                        <option>Webinar</option>
-                        <option>Tradeshow / Conference</option>
-                        <option>Other</option>
+                        <option value="">{t("Select...", "انتخاب کنید...")}</option>
+                        <option>{t("Google", "گوگل")}</option>
+                        <option>{t("Social Media", "شبکه‌های اجتماعی")}</option>
+                        <option>{t("Friend / Referral", "دوست / معرفی")}</option>
+                        <option>{t("Attorney", "وکیل")}</option>
+                        <option>{t("Webinar", "وبینار")}</option>
+                        <option>{t("Tradeshow / Conference", "نمایشگاه / کنفرانس")}</option>
+                        <option>{t("Other", "سایر")}</option>
                       </select>
                       <span className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
                         <ChevronDown />
@@ -321,10 +324,10 @@ export default function ContactForm() {
 
                   {/* Message — full width */}
                   <div className="md:col-span-2">
-                    <FormGroup label="Tell Us About Your Project">
+                    <FormGroup label={t("Tell Us About Your Project", "درباره‌ی پروژه‌تان بگویید")}>
                       <textarea
                         rows={4}
-                        placeholder="Describe your business goals and what you're looking to achieve…"
+                        placeholder={t("Describe your business goals and what you're looking to achieve…", "اهداف کسب‌وکار و آنچه می‌خواهید به آن برسید را شرح دهید…")}
                         name="message"
                         className={`${inputCls} min-h-[120px] resize-y`}
                       />
@@ -335,12 +338,12 @@ export default function ContactForm() {
                   <div className="md:col-span-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-4 border-t border-[#F4F4F4]">
                     <p className="text-[13px] text-[#929292] flex items-center gap-1.5">
                       <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
-                      Your information is kept strictly confidential.
+                      {t("Your information is kept strictly confidential.", "اطلاعات شما کاملاً محرمانه نگهداری می‌شود.")}
                     </p>
                     <button type="submit" disabled={sending}
                       className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-10 py-3.5 bg-[#8F27FF] text-white font-bold text-[15px] rounded-full hover:bg-[#7A1FE0] hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(143,39,255,0.35)] disabled:opacity-70 transition-all flex-shrink-0">
-                      {sending ? "Sending…" : (
-                        <>Send Message <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M5 12h14M12 5l7 7-7 7" /></svg></>
+                      {sending ? t("Sending…", "در حال ارسال…") : (
+                        <>{t("Send Message", "ارسال پیام")} <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M5 12h14M12 5l7 7-7 7" /></svg></>
                       )}
                     </button>
                   </div>

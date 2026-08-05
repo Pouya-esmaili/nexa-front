@@ -1,11 +1,14 @@
 "use client";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const STEPS = [
   {
     num: 1,
     title: "Opportunity Review",
+    titleFa: "ارزیابی اولیه فرصت",
     desc: "Initial assessment of the proposal and market fit",
+    descFa: "بررسی اولیه طرح پیشنهادی، ظرفیت بازار و میزان تناسب آن با معیارهای سرمایه‌گذاری.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#8F27FF" strokeWidth="1.5" width="28" height="28">
         <circle cx="11" cy="11" r="8"/>
@@ -16,7 +19,9 @@ const STEPS = [
   {
     num: 2,
     title: "Due Diligence",
+    titleFa: "ارزیابی تخصصی",
     desc: "In-depth analysis of financials, team, and scalability",
+    descFa: "تحلیل جامع وضعیت مالی، تیم اجرایی، مدل کسب‌وکار و ظرفیت رشد پروژه.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#8F27FF" strokeWidth="1.5" width="28" height="28">
         <path d="M9 11l3 3L22 4"/>
@@ -27,7 +32,9 @@ const STEPS = [
   {
     num: 3,
     title: "Structuring & Legal",
+    titleFa: "ساختاردهی و امور حقوقی",
     desc: "Deal structuring, term sheets, and legal documentation",
+    descFa: "تنظیم ساختار سرمایه‌گذاری، توافقات تجاری، شرایط همکاری و اسناد حقوقی.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#8F27FF" strokeWidth="1.5" width="28" height="28">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -40,7 +47,9 @@ const STEPS = [
   {
     num: 4,
     title: "Capital Deployment",
+    titleFa: "تخصیص سرمایه",
     desc: "Funds deployed and business operations activated",
+    descFa: "تأمین و تزریق سرمایه و آغاز اجرای برنامه‌های عملیاتی و توسعه کسب‌وکار.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#8F27FF" strokeWidth="1.5" width="28" height="28">
         <line x1="12" y1="1" x2="12" y2="23"/>
@@ -51,7 +60,9 @@ const STEPS = [
   {
     num: 5,
     title: "Ongoing Support",
+    titleFa: "پشتیبانی و همراهی مستمر",
     desc: "Strategic guidance, KPI monitoring, and growth advisory",
+    descFa: "ارائه مشاوره راهبردی، پایش شاخص‌های عملکرد (KPI) و حمایت از رشد و توسعه کسب‌وکار.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#8F27FF" strokeWidth="1.5" width="28" height="28">
         <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
@@ -61,6 +72,7 @@ const STEPS = [
 ];
 
 export default function InvestmentProcess() {
+  const { t } = useLang();
   return (
     <section
       className="relative overflow-hidden"
@@ -90,7 +102,7 @@ export default function InvestmentProcess() {
                 color: "white",
               }}
             >
-              Investment Process
+              {t("Investment Process", "مراحل سرمایه‌گذاری")}
             </h2>
           </div>
         </Reveal>
@@ -123,6 +135,7 @@ export default function InvestmentProcess() {
 }
 
 function ProcessStep({ step }: { step: (typeof STEPS)[0] }) {
+  const { t } = useLang();
   return (
     <div
       className="flex flex-col items-center text-center"
@@ -177,7 +190,7 @@ function ProcessStep({ step }: { step: (typeof STEPS)[0] }) {
           marginBottom: 8,
         }}
       >
-        {step.title}
+        {t(step.title, step.titleFa)}
       </div>
       <div
         style={{
@@ -186,7 +199,7 @@ function ProcessStep({ step }: { step: (typeof STEPS)[0] }) {
           lineHeight: 1.55,
         }}
       >
-        {step.desc}
+        {t(step.desc, step.descFa)}
       </div>
     </div>
   );

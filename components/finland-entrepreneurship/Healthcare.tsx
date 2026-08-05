@@ -2,6 +2,7 @@
 
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/Reveal";
+import { useLang } from "@/components/global/LanguageProvider";
 
 const cards = [
   {
@@ -11,6 +12,7 @@ const cards = [
       </svg>
     ),
     title: "Universal Healthcare Integration",
+    titleFa: "یکپارچگی با خدمات درمانی همگانی",
     desc: (
       <>
         Once your permit is active and you register your municipality of residence (<em>kotikunta</em>) with the DVV,
@@ -19,6 +21,15 @@ const cards = [
           public healthcare on identical terms to Finnish citizens
         </strong>{" "}
         — municipal health centers and hospital districts included.
+      </>
+    ),
+    descFa: (
+      <>
+        پس از فعال شدن مجوز شما و ثبت شهرداری محل اقامتتان (<em>kotikunta</em>) نزد DVV، شما از نظر قانونی مستحق{" "}
+        <strong className="text-white font-semibold">
+          خدمات درمانی عمومی با شرایطی یکسان با شهروندان فنلاندی
+        </strong>{" "}
+        هستید — شامل مراکز بهداشت شهرداری و مناطق بیمارستانی.
       </>
     ),
   },
@@ -31,6 +42,7 @@ const cards = [
       </svg>
     ),
     title: "Family Reunification Rights",
+    titleFa: "حقوق پیوند مجدد خانواده",
     desc: (
       <>
         Sponsor your <strong className="text-white font-semibold">legal spouse or cohabiting partner</strong> (minimum
@@ -39,10 +51,19 @@ const cards = [
         concurrently via Enter Finland — family moves, lives, studies, and works freely in Finland.
       </>
     ),
+    descFa: (
+      <>
+        از <strong className="text-white font-semibold">همسر قانونی یا شریک هم‌خانه‌ی</strong> خود (حداقل
+        ۲ سال با هم) و{" "}
+        <strong className="text-white font-semibold">فرزندان تحت تکفل زیر ۱۸ سال</strong> حمایت کنید. درخواست‌ها
+        به‌طور هم‌زمان از طریق Enter Finland ثبت می‌شوند — خانواده آزادانه در فنلاند جابه‌جا می‌شود، زندگی می‌کند، تحصیل می‌کند و کار می‌کند.
+      </>
+    ),
   },
 ];
 
 export default function Healthcare() {
+  const { t, lang } = useLang();
   return (
     <section className="py-20 md:py-24 bg-black relative overflow-hidden">
       <div
@@ -52,7 +73,7 @@ export default function Healthcare() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-white text-center mb-14">
-            Healthcare, Social Security &amp; Family
+            {t("Healthcare, Social Security & Family", "خدمات درمانی، تأمین اجتماعی و خانواده")}
           </h2>
         </Reveal>
 
@@ -79,9 +100,9 @@ export default function Healthcare() {
                 >
                   <div className="w-6 h-6">{c.icon}</div>
                 </div>
-                <h3 className="text-[17px] font-bold text-white tracking-[-0.015em]">{c.title}</h3>
+                <h3 className="text-[17px] font-bold text-white tracking-[-0.015em]">{t(c.title, c.titleFa)}</h3>
                 <p className="text-[13.5px] leading-[1.65] m-0" style={{ color: "#B5B5BA" }}>
-                  {c.desc}
+                  {lang === "fa" ? c.descFa : c.desc}
                 </p>
               </div>
             </Reveal>

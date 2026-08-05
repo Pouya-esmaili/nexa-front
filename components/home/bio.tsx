@@ -31,7 +31,7 @@ export default function Bio() {
           <Reveal variant="left">
             <div className="relative rounded-[24px] overflow-hidden">
               <Image
-                src="/images/landing/teammate.webp"
+                src="/images/landing/Team.jpg"
                 alt="Who We Are"
                 width={600}
                 height={520}

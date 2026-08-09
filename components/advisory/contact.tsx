@@ -62,14 +62,14 @@ export default function Contact() {
       <div className="wrap">
         <div className="contact-layout">
           <div className="contact-left">
-            <span className="editorial-label">{t("/ BOOK A CALL", "/ رزرو تماس")}</span>
-            <h2 className="editorial-h2" style={{ marginBottom: 24 }}><span className="eh2-outline">{t("30", "۳۰")}</span><br /><span className="eh2-solid">{t("MINUTES.", "دقیقه.")}</span><br /><span className="eh2-purple">{t("THAT'S ALL.", "همین و بس.")}</span></h2>
-            <p className="contact-desc">{t("Tell us about your business. We'll tell you exactly what we'd do and what it costs. No pitch decks, no upsells.", "درباره‌ی کسب‌وکارتان به ما بگویید. ما دقیقاً می‌گوییم چه می‌کنیم و چقدر هزینه دارد. نه ارائه‌ی پرزرق‌وبرق، نه فروش اضافه.")}</p>
+            <span className="editorial-label">{t("/ BOOK A CALL", "/ رزرو یک تماس")}</span>
+            <h2 className="editorial-h2" style={{ marginBottom: 24 }}><span className="eh2-outline">{t("30", "۳۰")}</span><br /><span className="eh2-solid">{t("MINUTES.", "دقیقه.")}</span><br /><span className="eh2-purple">{t("THAT'S ALL.", "کافی است.")}</span></h2>
+            <p className="contact-desc">{t("Tell us about your business. We'll tell you exactly what we'd do and what it costs. No pitch decks, no upsells.", "درباره کسب‌وکار خود با ما صحبت کنید. ما دقیقاً به شما می‌گوییم چه کاری برایتان انجام می‌دهیم. بدون ارائه‌های طولانی، بدون پیشنهادهای اضافی.")}</p>
             <div className="contact-trust">
-              <div className="ct-item"><span className="ct-icon">✓</span>{t("Free discovery call", "تماس کشف رایگان")}</div>
-              <div className="ct-item"><span className="ct-icon">✓</span>{t("Proposal in 48 hours", "پیشنهاد ظرف ۴۸ ساعت")}</div>
-              <div className="ct-item"><span className="ct-icon">✓</span>{t("Fixed price, no surprises", "قیمت ثابت، بدون غافلگیری")}</div>
-              <div className="ct-item"><span className="ct-icon">✓</span>{t("Cancel anytime", "لغو در هر زمان")}</div>
+              <div className="ct-item"><span className="ct-icon">✓</span>{t("Free discovery call", "جلسه آشنایی رایگان")}</div>
+              <div className="ct-item"><span className="ct-icon">✓</span>{t("Proposal in 48 hours", " دریافت پیشنهاد همکاری در کمتر از ۴۸ ساعت")}</div>
+              <div className="ct-item"><span className="ct-icon">✓</span>{t("Fixed price, no surprises", " قیمت‌گذاری شفاف و بدون هزینه‌های پنهان")}</div>
+              <div className="ct-item"><span className="ct-icon">✓</span>{t("Cancel anytime", " امکان لغو در هر زمان")}</div>
             </div>
           </div>
           <div className="contact-right">

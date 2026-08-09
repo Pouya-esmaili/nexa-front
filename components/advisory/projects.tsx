@@ -35,8 +35,8 @@ export default function Work() {
     <section className="work-section" id="work" ref={ref}>
       <div className="wrap">
         <div className="work-title-row">
-          <span className="editorial-label">{t("/ OUR WORK", "/ نمونه‌کارهای ما")}</span>
-          <h2 className="editorial-h2"><span className="eh2-outline">{t("BUILT", "ساخته‌شده")}</span><br /><span className="eh2-solid">{t("TO LAST.", "برای ماندگاری.")}</span></h2>
+          <span className="editorial-label">{t("/ OUR WORK", "/ پروژه‌های ما")}</span>
+          <h2 className="editorial-h2"><span className="eh2-outline">{t("BUILT", "ساخته‌شده")}</span><br /><span className="eh2-solid">{t("TO LAST.", "برای آینده.")}</span></h2>
         </div>
       </div>
 

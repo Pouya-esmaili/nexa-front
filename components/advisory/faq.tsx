@@ -56,8 +56,8 @@ export default function Faq() {
         <div className="faq-layout">
           <div className="faq-left">
             <span className="editorial-label">{t("/ FAQ", "/ سؤالات متداول")}</span>
-            <h2 className="editorial-h2"><span className="eh2-outline">{t("GOT", "سؤالی")}</span><br /><span className="eh2-solid">{t("QUESTIONS?", "دارید؟")}</span></h2>
-            <p className="faq-sub">{t("Everything you need to know before we talk. Still curious?", "هر آنچه پیش از گفت‌وگو لازم است بدانید. هنوز کنجکاوید؟")} <a href="#contact">{t("Drop us a line.", "برای ما پیام بفرستید.")}</a></p>
+            <h2 className="editorial-h2"><span className="eh2-outline">{t("GOT", "هر آنچه")}</span><br /><span className="eh2-solid">{t("QUESTIONS?", "باید بدانید.")}</span></h2>
+            <p className="faq-sub">{t("Everything you need to know before we talk. Still curious?", "هر چیزی که برای شناخت بهتر مسیر همکاری نیاز دارید، اینجاست.")} <a href="#contact">{t("Drop us a line.", "با ما در ارتباط باشید.")}</a></p>
           </div>
           <div className="faq-list" id="faqList" ref={listRef}>
             {FAQS.map((f, i) => (

@@ -29,7 +29,7 @@ const CARDS = [
 const STATS = [
   { target: 12, suf: "+", label: "Team members", labelFa: "عضو تیم" },
   { target: 6, suf: "", label: "Disciplines covered", labelFa: "حوزه‌ی تخصصی" },
-  { target: 9, suf: "+", label: "Years combined experience", labelFa: "سال تجربه‌ی مجموع" },
+  { target: 9, suf: "+", label: "Years combined experience", labelFa: "سال تجربه‌ی ترکیبی" },
 ];
 
 export default function Team() {
@@ -77,8 +77,8 @@ export default function Team() {
       <div className="wrap">
         <div className="team-header">
           <div className="team-header__left">
-            <span className="editorial-label">{t("/ THE TEAM", "/ تیم")}</span>
-            <h2 className="editorial-h2"><span className="eh2-outline">{t("THE PEOPLE", "افرادِ")}</span><br /><span className="eh2-solid">{t("BEHIND", "پشتِ")}</span><br /><span className="eh2-purple">{t("THE WORK.", "این کار.")}</span></h2>
+            <span className="editorial-label">{t("/ THE TEAM", "/ اعضاي تيم")}</span>
+            <h2 className="editorial-h2"><span className="eh2-outline">{t("THE PEOPLE", "اعضای")}</span><br /><span className="eh2-solid">{t("BEHIND", "پشتِ")}</span><br /><span className="eh2-purple">{t("THE WORK.", " صحنه.")}</span></h2>
           </div>
           <div className="team-header__right">
             <svg className="team-deco" viewBox="0 0 80 80" fill="none" aria-hidden="true"><circle cx="40" cy="40" r="36" stroke="#E2E2E2" strokeWidth="2" /><circle cx="40" cy="40" r="24" stroke="#8F27FF" strokeWidth="2" strokeDasharray="6 4" /><circle cx="40" cy="40" r="8" fill="#8F27FF" opacity=".15" /><circle cx="40" cy="40" r="4" fill="#8F27FF" /></svg>

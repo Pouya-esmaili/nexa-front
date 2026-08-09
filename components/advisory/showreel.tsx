@@ -94,18 +94,18 @@ export default function Showreel() {
         <div className="hero-big-text">
           <div className="hbt-line hbt-line1">
             <span className="hbt-outline">{t("WE", "ما")}</span>
-            <span className="hbt-solid">{t("BUILD", "می‌سازیم")}</span>
+            <span className="hbt-solid">{t("BUILD", "به کسب و کار")}</span>
           </div>
           <div className="hbt-line hbt-line2">
             <span className="hbt-solid">{t("THE", "")}</span>
             <span className="hbt-purple"><em ref={wordRef}>{t("brand", "برند")}</em></span>
           </div>
           <div className="hbt-line hbt-line3">
-            <span className="hbt-outline">{t("BEHIND", "پشتِ")}</span>
+            <span className="hbt-outline">{t("BEHIND", "می بخشیم")}</span>
           </div>
           <div className="hbt-line hbt-line4">
             <span className="hbt-solid">{t("THE", "")}</span>
-            <span className="hbt-solid">{t("BUSINESS.", "کسب‌وکار.")}</span>
+            <span className="hbt-solid">{t("BUSINESS.", ".")}</span>
           </div>
         </div>
       </div>

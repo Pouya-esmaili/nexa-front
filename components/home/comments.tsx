@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Reveal from "@/components/global/LazyReveal";
 import { useLang } from "@/components/global/LanguageProvider";
 
@@ -52,39 +52,32 @@ export default function CommentsSection() {
   const { t } = useLang();
   const [active, setActive] = useState(0);
   const [perView, setPerView] = useState(3);
-  const [trackWidth, setTrackWidth] = useState(0);
-  const trackRef = useRef<HTMLDivElement>(null);
 
-  /* ResizeObserver — accurate on first paint and on every resize */
-  useEffect(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    const ro = new ResizeObserver(() => setTrackWidth(el.offsetWidth));
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, []);
+  const maxIndex = Math.max(0, testimonials.length - perView);
 
-  /* responsive perView */
+  /* responsive perView — also keep the active page within the new range */
   useEffect(() => {
     const update = () => {
-      if (window.innerWidth < 640)       setPerView(1);
-      else if (window.innerWidth < 1024) setPerView(2);
-      else                               setPerView(3);
+      const pv = window.innerWidth < 640 ? 1 : window.innerWidth < 1024 ? 2 : 3;
+      setPerView(pv);
+      setActive((a) => Math.min(a, Math.max(0, testimonials.length - pv)));
     };
     update();
     window.addEventListener("resize", update);
     return () => window.removeEventListener("resize", update);
   }, []);
 
-  const lastIndex = testimonials.length - 1;
-  const maxIndex = Math.max(0, testimonials.length - perView);
-  const cardW    = trackWidth > 0 ? (trackWidth - GAP * (perView - 1)) / perView : 0;
-  /* page one card at a time, stopping at the last full view */
-  const index    = Math.min(active, maxIndex);
-  const offsetPx = index * (cardW + GAP);
+  /*
+   * `active` is the current page. Advance one card + gap per step, expressed
+   * purely in CSS so it never depends on a measured width — one card advance
+   * equals (100% + GAP) / perView. Measuring was the real bug: the track lives
+   * inside a LazyReveal that mounts AFTER this component's effects run, so a
+   * ResizeObserver only ever saw a null node and the width stayed 0.
+   */
+  const offset = `translateX(calc((100% + ${GAP}px) / ${perView} * ${active} * -1))`;
 
   const prev = useCallback(() => setActive((a) => Math.max(0, a - 1)), []);
-  const next = useCallback(() => setActive((a) => Math.min(lastIndex, a + 1)), [lastIndex]);
+  const next = useCallback(() => setActive((a) => Math.min(maxIndex, a + 1)), [maxIndex]);
 
   return (
     <section className="py-20 md:py-24 bg-[#F7F6F9]">
@@ -99,10 +92,10 @@ export default function CommentsSection() {
         </Reveal>
 
         <Reveal variant="up" delay={80}>
-          <div className="overflow-hidden" ref={trackRef}>
+          <div className="overflow-hidden">
             <div
               className="flex gap-5 transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${offsetPx}px)` }}
+              style={{ transform: offset }}
             >
               {testimonials.map((item, i) => {
                 const isActive = i === active;
@@ -161,7 +154,7 @@ export default function CommentsSection() {
           </button>
 
           <div className="flex items-center gap-1.5 px-3">
-            {testimonials.map((_, i) => (
+            {Array.from({ length: maxIndex + 1 }).map((_, i) => (
               <button
                 key={i}
                 onClick={() => setActive(i)}
@@ -176,7 +169,7 @@ export default function CommentsSection() {
 
           <button
             onClick={next}
-            disabled={active >= lastIndex}
+            disabled={active >= maxIndex}
             className="w-10 h-10 rounded-full bg-white border-[1.5px] border-[#E2E2E2] grid place-items-center text-[#474747] hover:bg-[#8F27FF] hover:border-[#8F27FF] hover:text-white disabled:opacity-40 disabled:cursor-not-allowed transition-all"
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>

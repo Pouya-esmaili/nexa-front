@@ -148,7 +148,7 @@ export default function CommentsSection() {
           </div>
         </Reveal>
 
-        {/* Nav */}
+        
         <div className="flex items-center justify-center gap-2.5 mt-9">
           <button
             onClick={prev}

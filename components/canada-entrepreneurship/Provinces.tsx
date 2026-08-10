@@ -27,7 +27,7 @@ const NAME_FA: Record<string, string> = {
 const LABEL_FA: Record<string, string> = {
   "Min Net Worth": "حداقل دارایی خالص",
   "Min Investment": "حداقل سرمایه‌گذاری",
-  "Operation": "بهره‌برداری",
+  "Operation": "مدت فعالیت",
 };
 
 const VALUE_FA: Record<string, string> = {
@@ -40,12 +40,12 @@ const VALUE_FA: Record<string, string> = {
   "CAD 150K": "۱۵۰ هزار دلار کانادا",
   "CAD 100K+": "۱۰۰ هزار دلار کانادا به بالا",
   "CAD 250–500K": "۲۵۰ تا ۵۰۰ هزار دلار کانادا",
-  "Flexible": "منعطف",
-  "Verified": "تأییدشده",
-  "18–20 mo": "۱۸ تا ۲۰ ماه",
-  "12–20 mo": "۱۲ تا ۲۰ ماه",
-  "12–18 mo": "۱۲ تا ۱۸ ماه",
-  "6–12 mo": "۶ تا ۱۲ ماه",
+  "Flexible": "متغیر",
+  "Verified": "بر اساس الزامات برنامه",
+  "18–20 mo": "۱۸–۲۰ ماه",
+  "12–20 mo": "۱۲–۲۰ ماه",
+  "12–18 mo": "۱۲–۱۸ ماه",
+  "6–12 mo": "۶–۱۲ ماه",
   "24 mo": "۲۴ ماه",
   "12 mo": "۱۲ ماه",
   "6 mo": "۶ ماه",
@@ -240,9 +240,9 @@ export default function Provinces() {
       {/* ========== MOBILE ========== */}
       <div className="md:hidden px-5">
         <h2 className="text-3xl font-bold text-center tracking-tight mb-8">
-          {t("Key Provinces & Entrepreneur Streams", "استان‌های کلیدی و جریان‌های کارآفرینی")}
+          {t("Key Provinces & Entrepreneur Streams", "استان‌های کلیدی و مسیرهای کارآفرینی")}
         </h2>
-        <SectionLabel text="Key Provinces" textFa="استان‌های کلیدی" />
+        <SectionLabel text="Key Provinces" textFa="استان‌های منتخب" />
         <div className="grid grid-cols-2 gap-3 mb-10">
           {keyProvinces.map((p) => <ProvinceCard key={p.name} province={p} />)}
         </div>
@@ -259,10 +259,10 @@ export default function Provinces() {
       <div className="hidden md:block">
         <Row>
           <h2 className="text-4xl font-bold text-center tracking-tight mb-12">
-            {t("Key Canadian Provinces & Entrepreneur Streams", "استان‌های کلیدی کانادا و جریان‌های کارآفرینی")}
+            {t("Key Canadian Provinces & Entrepreneur Streams", "استان‌های کلیدی کانادا و مسیرهای کارآفرینی")}
           </h2>
 
-          <SectionLabel text="Key Provinces" textFa="استان‌های کلیدی" />
+          <SectionLabel text="Key Provinces" textFa="استان‌های منتخب" />
           <div className="grid grid-cols-4 gap-[18px] mb-14">
             {keyProvinces.map((p) => <ProvinceCard key={p.name} province={p} />)}
           </div>

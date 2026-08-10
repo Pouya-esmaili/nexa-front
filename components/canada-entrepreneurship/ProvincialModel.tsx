@@ -6,33 +6,33 @@ import { useLang } from "@/components/global/LanguageProvider";
 const steps = [
   {
     title: "Submit Business Concept",
-    titleFa: "ارائه‌ی مفهوم کسب‌وکار",
+    titleFa: "ارائه طرح کسب‌وکار",
     desc: "Submit an Expression of Interest (EOI) to your target province. You're scored on investment capacity, experience, and sector fit.",
-    descFa: "یک اعلام علاقه‌مندی (EOI) به استان هدف خود ارسال کنید. بر اساس ظرفیت سرمایه‌گذاری، تجربه و تناسب با حوزه امتیازدهی می‌شوید.",
+    descFa: "ابراز علاقه‌مندی (EOI) خود را به استان موردنظر ارسال کنید. عواملی مانند توانایی سرمایه‌گذاری، سابقه و تجربه مدیریتی و تناسب کسب‌وکار با اولویت‌های استان در ارزیابی شما لحاظ می‌شود.",
   },
   {
     title: "Performance Agreement",
-    titleFa: "توافق‌نامه‌ی عملکرد",
+    titleFa: "توافق‌نامه عملکرد",
     desc: "If invited, sign a performance agreement outlining your investment, job creation, and operational commitments.",
-    descFa: "در صورت دعوت، یک توافق‌نامه‌ی عملکرد امضا کنید که سرمایه‌گذاری، ایجاد اشتغال و تعهدات عملیاتی شما را مشخص می‌کند.",
+    descFa: "در صورت دریافت دعوت‌نامه، توافق‌نامه‌ای را امضا می‌کنید که تعهدات شما در زمینه سرمایه‌گذاری، ایجاد اشتغال و راه‌اندازی و اداره کسب‌وکار را مشخص می‌کند.",
   },
   {
     title: "Work Permit & Entry",
-    titleFa: "مجوز کار و ورود",
+    titleFa: "دریافت مجوز کار و ورود به کانادا",
     desc: "Enter Canada on a province-backed work permit and begin establishing your business.",
-    descFa: "با یک مجوز کار مورد پشتیبانی استان وارد کانادا شوید و شروع به تأسیس کسب‌وکار خود کنید.",
+    descFa: "با دریافت مجوز کار مورد حمایت استان وارد کانادا می‌شوید و فرآیند راه‌اندازی کسب‌وکار خود را آغاز می‌کنید.",
   },
   {
     title: "Operate & Deliver",
-    titleFa: "بهره‌برداری و تحقق",
+    titleFa: "راه‌اندازی و اجرای کسب‌وکار",
     desc: "Run the business actively for 12–20 months, meeting capital, hiring, and milestone requirements.",
-    descFa: "کسب‌وکار را به‌طور فعال برای ۱۲ تا ۲۰ ماه اداره کنید و الزامات سرمایه، استخدام و نقاط عطف را برآورده سازید.",
+    descFa: "برای یک دوره مشخص، کسب‌وکار را به‌صورت فعال اداره می‌کنید و تعهدات مربوط به سرمایه‌گذاری، استخدام نیرو و تحقق اهداف تعیین‌شده را به انجام می‌رسانید.",
   },
   {
     title: "Provincial Nomination → PR",
     titleFa: "نامزدی استانی ← اقامت دائم",
     desc: "Upon meeting all milestones, the province nominates you. Federal PR processing follows.",
-    descFa: "پس از برآورده کردن همه‌ی نقاط عطف، استان شما را نامزد می‌کند. پردازش اقامت دائم فدرال در پی می‌آید.",
+    descFa: "پس از تحقق الزامات و اهداف تعیین‌شده، استان شما را برای اقامت دائم نامزد می‌کند و پس از آن، بررسی درخواست اقامت دائم در سطح فدرال انجام خواهد شد.",
   },
 ];
 
@@ -45,7 +45,7 @@ export default function ProvincialModel() {
       <div className="md:hidden px-5">
         <h2 className="text-3xl font-bold tracking-tight mb-3">{t("The Provincial Model", "مدل استانی")}</h2>
         <p className="text-sm text-gray-500 leading-relaxed mb-8">
-          {t("Canada's entrepreneur pathways are performance-based. Each province sets its own investment thresholds, sector priorities, and operating requirements.", "مسیرهای کارآفرینی کانادا مبتنی بر عملکرد هستند. هر استان آستانه‌های سرمایه‌گذاری، اولویت‌های حوزه و الزامات بهره‌برداری خود را تعیین می‌کند.")}
+          {t("Canada's entrepreneur pathways are performance-based. Each province sets its own investment thresholds, sector priorities, and operating requirements.", "مسیرهای کارآفرینی کانادا عملکردمحور هستند. هر استان الزامات، حداقل سرمایه‌گذاری، اولویت‌های بخش‌های اقتصادی و شرایط عملیاتی خاص خود را تعیین می‌کند؛ بنابراین تمرکز این برنامه‌ها بر کارآفرینانی است که یک کسب‌وکار واقعی ایجاد و اداره می‌کنند.")}
         </p>
         <div className="relative pl-10">
           <div className="absolute top-2 bottom-2 left-4 w-0.5 bg-[#8F27FF]/30" />
@@ -76,12 +76,12 @@ export default function ProvincialModel() {
                 className="text-[21px] italic font-medium leading-[1.5] py-5 pl-6 mb-5 text-black"
                 style={{ borderLeft: "3px solid #8F27FF" }}
               >
-                &ldquo;{t("This model rewards", "این مدل به")}{" "}
-                <span className="text-[#8F27FF] font-semibold not-italic">{t("execution", "اجرا")}</span>
-                {" "}{t("— not just investment.", "پاداش می‌دهد — نه فقط سرمایه‌گذاری.")}&rdquo;
+                &ldquo;{t("This model rewards", "در این مدل، آنچه اهمیت دارد")}{" "}
+                <span className="text-[#8F27FF] font-semibold not-italic">{t("execution", "اجرای واقعی کسب‌وکار")}</span>
+                {" "}{t("— not just investment.", "است، نه صرفاً سرمایه‌گذاری.")}&rdquo;
               </blockquote>
               <p className="text-[15px] text-gray-500 leading-[1.7]">
-                {t("Canada's entrepreneur pathways are performance-based. Each province sets its own investment thresholds, sector priorities, and operating requirements — rewarding entrepreneurs who build real businesses, not just deploy capital.", "مسیرهای کارآفرینی کانادا مبتنی بر عملکرد هستند. هر استان آستانه‌های سرمایه‌گذاری، اولویت‌های حوزه و الزامات بهره‌برداری خود را تعیین می‌کند — و به کارآفرینانی پاداش می‌دهد که کسب‌وکارهای واقعی می‌سازند، نه فقط سرمایه به‌کار می‌گیرند.")}
+                {t("Canada's entrepreneur pathways are performance-based. Each province sets its own investment thresholds, sector priorities, and operating requirements — rewarding entrepreneurs who build real businesses, not just deploy capital.", "مسیرهای کارآفرینی کانادا عملکردمحور هستند. هر استان الزامات، حداقل سرمایه‌گذاری، اولویت‌های بخش‌های اقتصادی و شرایط عملیاتی خاص خود را تعیین می‌کند؛ بنابراین تمرکز این برنامه‌ها بر کارآفرینانی است که یک کسب‌وکار واقعی ایجاد و اداره می‌کنند.")}
               </p>
             </div>
 

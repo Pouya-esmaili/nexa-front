@@ -7,7 +7,7 @@ import { useLang } from "@/components/global/LanguageProvider";
 const services = [
   {
     title: "Strategic Business Modeling",
-    titleFa: "مدل‌سازی راهبردی کسب‌وکار",
+    titleFa: "طراحی استراتژیک کسب‌وکار",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
         <path d="M3 3h18v18H3z" /><path d="M9 3v18M15 3v18M3 9h18M3 15h18" />
@@ -16,7 +16,7 @@ const services = [
   },
   {
     title: "Financial Architecture",
-    titleFa: "معماری مالی",
+    titleFa: "طراحی و ساختاردهی مالی",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
         <line x1="12" y1="1" x2="12" y2="23" />
@@ -26,7 +26,7 @@ const services = [
   },
   {
     title: "Market Entry Strategy",
-    titleFa: "راهبرد ورود به بازار",
+    titleFa: "استراتژی ورود به بازار",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
         <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
@@ -35,7 +35,7 @@ const services = [
   },
   {
     title: "Provincial Alignment",
-    titleFa: "همسویی استانی",
+    titleFa: "انطباق با اولویت‌های استانی",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
@@ -44,7 +44,7 @@ const services = [
   },
   {
     title: "Investor Readiness",
-    titleFa: "آمادگی برای سرمایه‌گذار",
+    titleFa: "آماده‌سازی برای جذب سرمایه",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
         <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
@@ -54,7 +54,7 @@ const services = [
   },
   {
     title: "Long-term Scaling",
-    titleFa: "مقیاس‌دهی بلندمدت",
+    titleFa: "برنامه‌ریزی برای رشد و مقیاس‌پذیری",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
         <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
@@ -64,7 +64,7 @@ const services = [
   },
   {
     title: "Landing Services",
-    titleFa: "خدمات ورود",
+    titleFa: "خدمات استقرار و راه‌اندازی",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -74,7 +74,7 @@ const services = [
   },
   {
     title: "Immigration Services",
-    titleFa: "خدمات مهاجرت",
+    titleFa: "خدمات مهاجرتی",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -95,7 +95,7 @@ export default function NexaRole() {
       <div className="md:hidden px-5">
         <h2 className="text-3xl font-bold tracking-tight mb-3">{t("Nexa's Role", "نقش نکسا")}</h2>
         <p className="text-sm text-gray-500 leading-relaxed mb-6">
-          {t("We work alongside high-potential entrepreneurs to architect ventures structurally aligned with Canada's provincial economic priorities — from strategic modeling to long-term scaling roadmaps.", "ما در کنار کارآفرینان با پتانسیل بالا کار می‌کنیم تا کسب‌وکارهایی را طراحی کنیم که از نظر ساختاری با اولویت‌های اقتصادی استانی کانادا همسو باشند — از مدل‌سازی راهبردی تا نقشه‌های راه مقیاس‌دهی بلندمدت.")}
+          {t("We work alongside high-potential entrepreneurs to architect ventures structurally aligned with Canada's provincial economic priorities — from strategic modeling to long-term scaling roadmaps.", "ما در کنار کارآفرینان توانمند، کسب‌وکارهایی را طراحی و توسعه می‌دهیم که از ابتدا با ساختار اقتصادی و اولویت‌های استانی کانادا هم‌راستا باشند؛ از مدل‌سازی استراتژیک و طراحی ساختار مالی تا ورود به بازار و ترسیم مسیر رشد بلندمدت.")}
         </p>
         <div className="grid grid-cols-2 gap-2.5 mb-6">
           {services.map((s) => (
@@ -111,7 +111,7 @@ export default function NexaRole() {
           ))}
         </div>
         <Link href="#contact" className="inline-flex items-center gap-2 px-6 py-3 bg-[#8F27FF] text-white font-semibold rounded-full text-sm">
-          {t("Start with a Strategy Call →", "با یک تماس راهبردی شروع کنید →")}
+          {t("Start with a Strategy Call →", "شروع با یک جلسه مشاوره ←")}
         </Link>
       </div>
 
@@ -124,14 +124,14 @@ export default function NexaRole() {
             <div className="sticky top-20">
               <h2 className="text-[40px] font-bold tracking-tight mb-4">{t("Nexa's Role", "نقش نکسا")}</h2>
               <p className="text-[15px] text-gray-500 leading-[1.65] mb-8">
-                {t("We work alongside high-potential entrepreneurs to architect ventures structurally aligned with Canada's provincial economic priorities — from strategic modeling to long-term scaling roadmaps.", "ما در کنار کارآفرینان با پتانسیل بالا کار می‌کنیم تا کسب‌وکارهایی را طراحی کنیم که از نظر ساختاری با اولویت‌های اقتصادی استانی کانادا همسو باشند — از مدل‌سازی راهبردی تا نقشه‌های راه مقیاس‌دهی بلندمدت.")}
+                {t("We work alongside high-potential entrepreneurs to architect ventures structurally aligned with Canada's provincial economic priorities — from strategic modeling to long-term scaling roadmaps.", "ما در کنار کارآفرینان توانمند، کسب‌وکارهایی را طراحی و توسعه می‌دهیم که از ابتدا با ساختار اقتصادی و اولویت‌های استانی کانادا هم‌راستا باشند؛ از مدل‌سازی استراتژیک و طراحی ساختار مالی تا ورود به بازار و ترسیم مسیر رشد بلندمدت.")}
               </p>
               <Link
                 href="#contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[15px] transition-all hover:-translate-y-0.5"
                 style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
               >
-                {t("Start with a Strategy Call →", "با یک تماس راهبردی شروع کنید →")}
+                {t("Start with a Strategy Call →", "شروع با یک جلسه مشاوره ←")}
               </Link>
             </div>
 

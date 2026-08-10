@@ -5,9 +5,9 @@ import Row from "@/components/global/Row";
 import { useLang } from "@/components/global/LanguageProvider";
 
 const stats = [
-  { num: "G7", numFa: "G7", label: "Nation Stability", labelFa: "ثبات ملی" },
-  { num: "10+", numFa: "بیش از ۱۰", label: "Provincial Streams", labelFa: "جریان‌های استانی" },
-  { num: "24–36mo", numFa: "۲۴ تا ۳۶ ماه", label: "Path to PR", labelFa: "مسیر اقامت دائم" },
+  { num: "G7", numFa: "G7", label: "Nation Stability", labelFa: "ثبات اقتصادی و نهادی" },
+  { num: "10+", numFa: "بیش از ۱۰", label: "Provincial Streams", labelFa: "مسیر استانی" },
+  { num: "24–36mo", numFa: "۲۴ تا ۳۶ ماه", label: "Path to PR", labelFa: "مسیر تا اقامت دائم" },
 ];
 
 export default function Hero() {
@@ -29,10 +29,10 @@ export default function Hero() {
           }}
         />
         <h1 className="text-3xl font-bold leading-tight tracking-tight mb-4">
-          {t("Build a", "یک شرکت")} <span className="text-[#8F27FF]">{t("scalable", "مقیاس‌پذیر")}</span> {t("company on a high-stability economic platform.", "روی یک بستر اقتصادی با ثبات بالا بسازید.")}
+          {t("Build a", "کسب‌وکارتان را در یکی از")} <span className="text-[#8F27FF]">{t("scalable", "باثبات‌ترین اقتصادهای جهان")}</span> {t("company on a high-stability economic platform.", "توسعه دهید.")}
         </h1>
         <p className="text-sm text-gray-600 leading-relaxed mb-6">
-          {t("At Nexa, we view Canada not as a migration destination, but as a structured, transparent, capital-accessible environment where serious businesses can be launched, positioned, and expanded.", "در نکسا، ما کانادا را نه به‌عنوان یک مقصد مهاجرتی، بلکه به‌عنوان یک محیط ساختارمند، شفاف و با دسترسی به سرمایه می‌بینیم که در آن کسب‌وکارهای جدی می‌توانند راه‌اندازی، جایگذاری و گسترش یابند.")}
+          {t("At Nexa, we view Canada not as a migration destination, but as a structured, transparent, capital-accessible environment where serious businesses can be launched, positioned, and expanded.", "در نکسا، کانادا را صرفاً مقصدی برای مهاجرت نمی‌بینیم؛ بلکه آن را بستری شفاف، ساختاریافته و سرمایه‌پذیر برای راه‌اندازی، توسعه و مقیاس‌پذیری کسب‌وکارهای جدی می‌دانیم؛ جایی برای ساختن آینده‌ای مطمئن و بلندمدت.")}
         </p>
         <div className="grid grid-cols-3 gap-4 py-6 border-t border-b border-gray-200 mb-6">
           {stats.map((s) => (
@@ -46,7 +46,7 @@ export default function Hero() {
           href="#contact"
           className="inline-flex items-center gap-2 px-6 py-3 bg-[#8F27FF] text-white font-semibold rounded-full text-sm"
         >
-          {t("Book an Appointment →", "رزرو وقت ملاقات →")}
+          {t("Book an Appointment →", "رزرو وقت مشاوره ←")}
         </Link>
       </div>
 
@@ -58,10 +58,10 @@ export default function Hero() {
             {/* Content */}
             <div className="flex-[1.1]">
               <h1 className="text-3xl lg:text-[48px] font-bold leading-[1.08] tracking-tight mb-6">
-                {t("Build a", "یک شرکت")} <span className="text-[#8F27FF]">{t("scalable", "مقیاس‌پذیر")}</span> {t("company on a high-stability economic platform.", "روی یک بستر اقتصادی با ثبات بالا بسازید.")}
+                {t("Build a", "کسب‌وکارتان را در یکی از")} <span className="text-[#8F27FF]">{t("scalable", "باثبات‌ترین اقتصادهای جهان")}</span> {t("company on a high-stability economic platform.", "توسعه دهید.")}
               </h1>
               <p className="text-[17px] text-[#474747] leading-[1.65] mb-8 max-w-[520px]">
-                {t("At Nexa, we view Canada not as a migration destination, but as a structured, transparent, capital-accessible environment where serious businesses can be launched, positioned, and expanded with long-term certainty.", "در نکسا، ما کانادا را نه به‌عنوان یک مقصد مهاجرتی، بلکه به‌عنوان یک محیط ساختارمند، شفاف و با دسترسی به سرمایه می‌بینیم که در آن کسب‌وکارهای جدی می‌توانند با اطمینان بلندمدت راه‌اندازی، جایگذاری و گسترش یابند.")}
+                {t("At Nexa, we view Canada not as a migration destination, but as a structured, transparent, capital-accessible environment where serious businesses can be launched, positioned, and expanded with long-term certainty.", "در نکسا، کانادا را صرفاً مقصدی برای مهاجرت نمی‌بینیم؛ بلکه آن را بستری شفاف، ساختاریافته و سرمایه‌پذیر برای راه‌اندازی، توسعه و مقیاس‌پذیری کسب‌وکارهای جدی می‌دانیم؛ جایی برای ساختن آینده‌ای مطمئن و بلندمدت.")}
               </p>
               <div className="grid grid-cols-3 gap-7 py-7 border-t border-b border-gray-200 mb-9">
                 {stats.map((s) => (
@@ -76,7 +76,7 @@ export default function Hero() {
                 className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[15px] transition-all hover:-translate-y-0.5"
                 style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
               >
-                {t("Book an Appointment →", "رزرو وقت ملاقات →")}
+                {t("Book an Appointment →", "رزرو وقت مشاوره ←")}
               </Link>
             </div>
 

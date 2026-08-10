@@ -6,9 +6,9 @@ import { useLang } from "@/components/global/LanguageProvider";
 const reasons = [
   {
     title: "Globally Credible",
-    titleFa: "معتبر در سطح جهانی",
+    titleFa: "اعتبار جهانی",
     desc: "A G7 nation delivering economic stability and worldwide credibility.",
-    descFa: "یک کشور G7 که ثبات اقتصادی و اعتبار جهانی ارائه می‌دهد.",
+    descFa: "عضو گروه G7؛ با اقتصادی باثبات و اعتباری معتبر در عرصه بین‌المللی.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <circle cx="12" cy="12" r="10" />
@@ -19,9 +19,9 @@ const reasons = [
   },
   {
     title: "Innovation-First",
-    titleFa: "نوآوری‌محور",
+    titleFa: "پیشگام در نوآوری",
     desc: "One of the world's most entrepreneurial immigration ecosystems.",
-    descFa: "یکی از کارآفرین‌ترین اکوسیستم‌های مهاجرتی جهان.",
+    descFa: "یکی از پویاترین و کارآفرین‌محورترین اکوسیستم‌های مهاجرتی جهان.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <path d="M12 2L2 7l10 5 10-5-10-5z" />
@@ -32,9 +32,9 @@ const reasons = [
   },
   {
     title: "Strategic Location",
-    titleFa: "موقعیت راهبردی",
+    titleFa: "موقعیتی استراتژیک",
     desc: "A bridge between U.S. capital flows and European trade corridors.",
-    descFa: "پلی میان جریان‌های سرمایه‌ی آمریکا و کریدورهای تجاری اروپا.",
+    descFa: "پل ارتباطی میان جریان سرمایه آمریکا و مسیرهای تجاری اروپا.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
@@ -44,9 +44,9 @@ const reasons = [
   },
   {
     title: "Capital Networks",
-    titleFa: "شبکه‌های سرمایه",
+    titleFa: "شبکه‌های سرمایه‌گذاری",
     desc: "Access to VCs, angels, incubators, and accelerators.",
-    descFa: "دسترسی به سرمایه‌گذاران خطرپذیر، فرشتگان، مراکز رشد و شتاب‌دهنده‌ها.",
+    descFa: "دسترسی به شبکه‌ای گسترده از VCها، سرمایه‌گذاران فرشته، انکوباتورها و شتاب‌دهنده‌ها.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
@@ -57,7 +57,7 @@ const reasons = [
     title: "Quality of Life",
     titleFa: "کیفیت زندگی",
     desc: "A multicultural consumer base with reach into global markets.",
-    descFa: "یک پایگاه مصرف‌کننده‌ی چندفرهنگی با دسترسی به بازارهای جهانی.",
+    descFa: "جامعه‌ای چندفرهنگی با بازار مصرف متنوع و دسترسی به بازارهای جهانی.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
@@ -67,9 +67,9 @@ const reasons = [
   },
   {
     title: "Stage-Aware",
-    titleFa: "آگاه به مرحله",
+    titleFa: "متناسب با مرحله رشد",
     desc: "Programs supporting seed, growth, and scale-up companies alike.",
-    descFa: "برنامه‌هایی که از شرکت‌های مرحله‌ی بذر، رشد و مقیاس‌دهی به‌طور یکسان حمایت می‌کنند.",
+    descFa: "برنامه‌هایی متناسب با نیاز شرکت‌ها در مراحل مختلف؛ از Seed و رشد اولیه تا توسعه و مقیاس‌پذیری.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />

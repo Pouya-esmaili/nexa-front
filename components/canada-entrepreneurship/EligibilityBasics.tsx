@@ -10,52 +10,52 @@ const requirements = [
     title: "Scalable Business Plan",
     titleFa: "طرح کسب‌وکار مقیاس‌پذیر",
     desc: "A strong, market-validated, and growth-oriented business plan demonstrating realistic potential for revenue generation, market expansion, and long-term viability.",
-    descFa: "یک طرح کسب‌وکار قوی، بازارسنجی‌شده و رشدمحور که پتانسیل واقع‌بینانه برای ایجاد درآمد، گسترش بازار و پایداری بلندمدت را نشان دهد.",
+    descFa: "طرح کسب‌وکاری قوی، مبتنی بر شناخت و اعتبارسنجی بازار و دارای چشم‌انداز رشد که ظرفیت واقع‌بینانه‌ای برای درآمدزایی، توسعه بازار و تداوم فعالیت در بلندمدت نشان دهد.",
   },
   {
     num: "02",
     title: "Net Worth & Capital",
     titleFa: "دارایی خالص و سرمایه",
     desc: "Sufficient personal net worth and investment capacity relative to the stream. Authorities verify liquid assets and business capital as part of the financial viability assessment.",
-    descFa: "دارایی خالص شخصی و ظرفیت سرمایه‌گذاری کافی متناسب با جریان. مقامات دارایی‌های نقدی و سرمایه‌ی کسب‌وکار را به‌عنوان بخشی از ارزیابی امکان‌پذیری مالی راستی‌آزمایی می‌کنند.",
+    descFa: "برخورداری از دارایی خالص و توانایی سرمایه‌گذاری متناسب با الزامات برنامه. در فرآیند ارزیابی توان مالی، دارایی‌های نقدشونده و سرمایه کسب‌وکار نیز مورد بررسی و راستی‌آزمایی قرار می‌گیرند.",
   },
   {
     num: "03",
     title: "Active Management",
-    titleFa: "مدیریت فعال",
+    titleFa: "مدیریت فعال کسب‌وکار",
     desc: "Day-to-day operational involvement is required. You must demonstrate hands-on management of the Canadian business entity, not passive investment.",
-    descFa: "دخالت عملیاتی روزمره لازم است. باید مدیریت عملی نهاد تجاری کانادایی را نشان دهید، نه سرمایه‌گذاری منفعل.",
+    descFa: "حضور و مشارکت مستقیم در اداره روزمره کسب‌وکار ضروری است. متقاضی باید نشان دهد که در مدیریت عملیاتی کسب‌وکار کانادایی خود نقش مستقیم دارد و صرفاً یک سرمایه‌گذار منفعل نیست.",
   },
   {
     num: "04",
     title: "Language Proficiency",
-    titleFa: "تسلط زبانی",
+    titleFa: "مهارت زبانی",
     desc: "English or French language ability at the threshold required by your specific stream — typically CLB 5 or higher for federal pathways.",
-    descFa: "توانایی زبان انگلیسی یا فرانسه در آستانه‌ی موردنیاز جریان خاص شما — معمولاً CLB 5 یا بالاتر برای مسیرهای فدرال.",
+    descFa: "داشتن مهارت زبان انگلیسی یا فرانسوی در سطح موردنیاز برنامه موردنظر؛ برای مثال، در برخی مسیرهای فدرال معمولاً حداقل CLB 5 مورد نیاز است.",
   },
   {
     num: "05",
     title: "Management Experience",
-    titleFa: "تجربه‌ی مدیریتی",
+    titleFa: "سابقه مدیریتی",
     desc: "Prior business management or ownership history verified through documentation. Executive experience in relevant sectors strengthens the application significantly.",
-    descFa: "سابقه‌ی پیشین مدیریت یا مالکیت کسب‌وکار که از طریق مستندات تأیید شود. تجربه‌ی اجرایی در حوزه‌های مرتبط، درخواست را به‌طور قابل‌توجهی تقویت می‌کند.",
+    descFa: "داشتن سابقه مستند در مالکیت یا مدیریت کسب‌وکار. تجربه مدیریتی و اجرایی مرتبط، به‌ویژه در حوزه فعالیت موردنظر، می‌تواند پرونده متقاضی را به شکل قابل‌توجهی تقویت کند.",
   },
   {
     num: "06",
     title: "Job Creation Focus",
     titleFa: "تمرکز بر ایجاد اشتغال",
     desc: "Most streams emphasize employment creation over fixed capital thresholds. A credible plan for hiring Canadian residents adds substantial weight to your file.",
-    descFa: "بیشتر جریان‌ها بر ایجاد اشتغال بیش از آستانه‌های سرمایه‌ی ثابت تأکید می‌کنند. یک طرح معتبر برای استخدام مقیمان کانادا وزن قابل‌توجهی به پرونده‌ی شما می‌افزاید.",
+    descFa: "در بسیاری از برنامه‌ها، ایجاد اشتغال یکی از معیارهای اصلی ارزیابی است و صرفاً میزان سرمایه‌گذاری تعیین‌کننده نیست. ارائه یک برنامه معتبر برای استخدام نیروی کار در کانادا می‌تواند تأثیر قابل‌توجهی بر پرونده داشته باشد.",
   },
 ];
 
 const benefits: { en: string; fa: string }[] = [
-  { en: "Permanent residency pathway upon approval", fa: "مسیر اقامت دائم پس از تأیید" },
-  { en: "Full family included with work & study rights", fa: "کل خانواده با حقوق کار و تحصیل گنجانده می‌شوند" },
-  { en: "Multiple provincial streams available", fa: "چند جریان استانی در دسترس" },
-  { en: "No mandatory startup capital minimum in all streams", fa: "بدون حداقل سرمایه‌ی استارتاپ الزامی در همه‌ی جریان‌ها" },
-  { en: "Business assets protected under Canadian law", fa: "دارایی‌های کسب‌وکار تحت قانون کانادا محافظت می‌شوند" },
-  { en: "Dual citizenship recognized after 5 years", fa: "تابعیت دوگانه پس از ۵ سال به رسمیت شناخته می‌شود" },
+  { en: "Permanent residency pathway upon approval", fa: "مسیر دریافت اقامت دائم در صورت تأیید پرونده" },
+  { en: "Full family included with work & study rights", fa: "امکان همراهی اعضای خانواده با امکان کار و تحصیل" },
+  { en: "Multiple provincial streams available", fa: "دسترسی به مسیرهای متنوع استانی" },
+  { en: "No mandatory startup capital minimum in all streams", fa: "نبود حداقل سرمایه‌گذاری ثابت در برخی از برنامه‌ها" },
+  { en: "Business assets protected under Canadian law", fa: "حمایت قانونی از دارایی‌ها و منافع کسب‌وکار در کانادا" },
+  { en: "Dual citizenship recognized after 5 years", fa: "امکان دریافت تابعیت کانادا پس از احراز شرایط قانونی" },
 ];
 
 export default function EligibilityBasics() {
@@ -65,7 +65,7 @@ export default function EligibilityBasics() {
       <Row>
         <Reveal variant="up" className="text-center mb-10 md:mb-14">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em]">
-            {t("Eligibility Basics", "اصول واجد بودن")}
+            {t("Eligibility Basics", "الزامات اولیه این برنامه")}
           </h2>
         </Reveal>
 
@@ -75,7 +75,7 @@ export default function EligibilityBasics() {
           <Reveal variant="left" delay={100}>
             <div className="bg-white border border-[#E2E2E2] rounded-[20px] p-8 md:p-11 flex flex-col">
               <p className="text-[15px] text-[#474747] leading-[1.65] mb-8 pb-8 border-b border-gray-200">
-                {t("Canada's entrepreneur immigration streams assess applicants against a consistent set of business, financial, and management benchmarks. Meeting all six criteria is required for a complete application.", "جریان‌های مهاجرت کارآفرینی کانادا متقاضیان را در برابر مجموعه‌ای یکپارچه از معیارهای کسب‌وکار، مالی و مدیریتی ارزیابی می‌کنند. برآورده کردن هر شش معیار برای یک درخواست کامل لازم است.")}
+                {t("Canada's entrepreneur immigration streams assess applicants against a consistent set of business, financial, and management benchmarks. Meeting all six criteria is required for a complete application.", "مسیرهای مهاجرتی کارآفرینی کانادا، متقاضیان را بر اساس مجموعه‌ای از معیارهای مشخص تجاری، مالی و مدیریتی ارزیابی می‌کنند. برای تکمیل یک درخواست، احراز هر شش معیار ضروری است.")}
               </p>
               {requirements.map((r, i) => (
                 <div
@@ -111,7 +111,7 @@ export default function EligibilityBasics() {
                   </svg>
                   {t("What You Get", "آنچه دریافت می‌کنید")}
                 </div>
-                <h3 className="text-[17px] font-semibold mb-4">{t("Key program benefits", "مزایای کلیدی برنامه")}</h3>
+                <h3 className="text-[17px] font-semibold mb-4">{t("Key program benefits", "مزایای کلیدی برنامه‌ها")}</h3>
                 <ul className="flex flex-col gap-3">
                   {benefits.map((b, i) => (
                     <li
@@ -142,8 +142,8 @@ export default function EligibilityBasics() {
                   <line x1="12" y1="17" x2="12.01" y2="17" />
                 </svg>
                 <p className="text-[13.5px] text-[#92400E] leading-[1.55] m-0">
-                  <strong className="text-[#78350F] font-semibold">{t("Stream requirements vary.", "الزامات جریان‌ها متفاوت است.")}</strong>{" "}
-                  {t("Each provincial and federal entrepreneur stream has its own capital thresholds, net worth requirements, and scoring rubrics. Nexa maps your profile to the optimal stream before file preparation.", "هر جریان کارآفرینی استانی و فدرال آستانه‌های سرمایه، الزامات دارایی خالص و معیارهای امتیازدهی خاص خود را دارد. نکسا پیش از آماده‌سازی پرونده، پروفایل شما را به جریان بهینه نگاشت می‌کند.")}
+                  <strong className="text-[#78350F] font-semibold">{t("Stream requirements vary.", "الزامات هر برنامه متفاوت است.")}</strong>{" "}
+                  {t("Each provincial and federal entrepreneur stream has its own capital thresholds, net worth requirements, and scoring rubrics. Nexa maps your profile to the optimal stream before file preparation.", "هر یک از مسیرهای کارآفرینی استانی و فدرال، معیارهای خاص خود را برای میزان سرمایه، دارایی خالص و امتیازبندی دارند. نکسا پیش از آماده‌سازی پرونده، شرایط و سوابق شما را بررسی می‌کند تا مناسب‌ترین مسیر را برای پروفایل شما مشخص کند.")}
                 </p>
               </div>
             </Reveal>

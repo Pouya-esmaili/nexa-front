@@ -45,7 +45,7 @@ export default function AppointmentForm() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10 md:mb-14">
-            {t("Book an Appointment", "رزرو وقت ملاقات")}
+            {t("Book an Appointment", "ارتباط با ما")}
           </h2>
         </Reveal>
 

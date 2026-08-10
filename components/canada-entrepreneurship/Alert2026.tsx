@@ -27,16 +27,16 @@ export default function Alert2026() {
           </span>
         </div>
         <h3 className="text-xl font-semibold italic text-white leading-snug">
-          {t("The federal SUV program has undergone structural adjustments.", "برنامه‌ی SUV فدرال دستخوش تعدیل‌های ساختاری شده است.")}
+          {t("The federal SUV program has undergone structural adjustments.", "چشم‌انداز مهاجرت کارآفرینی کانادا در حال تغییر است.")}
         </h3>
         <p className="text-sm text-white/70 leading-relaxed">
-          {t("Canada has shifted toward more controlled, region-driven selection mechanisms. The center of gravity has moved decisively to Provincial Nominee Programs (PNPs) and Quebec's independent business immigration streams.", "کانادا به سمت سازوکارهای انتخاب کنترل‌شده‌تر و منطقه‌محورتر حرکت کرده است. مرکز ثقل به‌طور قاطع به برنامه‌های نامزدی استانی (PNP) و جریان‌های مستقل مهاجرت تجاری کبک منتقل شده است.")}
+          {t("Canada has shifted toward more controlled, region-driven selection mechanisms. The center of gravity has moved decisively to Provincial Nominee Programs (PNPs) and Quebec's independent business immigration streams.", "با اعمال تغییرات ساختاری در برنامه فدرال Start-Up Visa، کانادا بیش از گذشته به سمت مدل‌های انتخابی کنترل‌شده و منطقه‌محور حرکت کرده است. در این فضای جدید، برنامه‌های نامزدی استانی (PNP) و مسیرهای مستقل مهاجرت تجاری کبک، جایگاه پررنگ‌تری در نقشه مهاجرت کارآفرینان پیدا کرده‌اند.")}
         </p>
         <Link
           href="#contact"
           className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#8F27FF] text-white font-semibold rounded-full text-sm"
         >
-          {t("Adapt Your Strategy →", "راهبرد خود را وفق دهید →")}
+          {t("Adapt Your Strategy →", "استراتژی خود را با شرایط جدید تطبیق دهید")}
         </Link>
       </div>
 
@@ -54,10 +54,10 @@ export default function Alert2026() {
 
             <div>
               <h3 className="text-[26px] font-semibold italic text-white mb-2 tracking-tight">
-                {t("The federal SUV program has undergone structural adjustments.", "برنامه‌ی SUV فدرال دستخوش تعدیل‌های ساختاری شده است.")}
+                {t("The federal SUV program has undergone structural adjustments.", "چشم‌انداز مهاجرت کارآفرینی کانادا در حال تغییر است.")}
               </h3>
               <p className="text-[15px] text-white/70 leading-relaxed max-w-[700px]">
-                {t("Canada has shifted toward more controlled, region-driven selection mechanisms. The center of gravity has moved decisively to Provincial Nominee Programs (PNPs) and Quebec's independent business immigration streams.", "کانادا به سمت سازوکارهای انتخاب کنترل‌شده‌تر و منطقه‌محورتر حرکت کرده است. مرکز ثقل به‌طور قاطع به برنامه‌های نامزدی استانی (PNP) و جریان‌های مستقل مهاجرت تجاری کبک منتقل شده است.")}
+                {t("Canada has shifted toward more controlled, region-driven selection mechanisms. The center of gravity has moved decisively to Provincial Nominee Programs (PNPs) and Quebec's independent business immigration streams.", "با اعمال تغییرات ساختاری در برنامه فدرال Start-Up Visa، کانادا بیش از گذشته به سمت مدل‌های انتخابی کنترل‌شده و منطقه‌محور حرکت کرده است. در این فضای جدید، برنامه‌های نامزدی استانی (PNP) و مسیرهای مستقل مهاجرت تجاری کبک، جایگاه پررنگ‌تری در نقشه مهاجرت کارآفرینان پیدا کرده‌اند.")}
               </p>
             </div>
 
@@ -66,7 +66,7 @@ export default function Alert2026() {
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[15px] whitespace-nowrap transition-all hover:-translate-y-0.5"
               style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
             >
-              {t("Adapt Your Strategy →", "راهبرد خود را وفق دهید →")}
+              {t("Adapt Your Strategy →", "استراتژی خود را با شرایط جدید تطبیق دهید")}
             </Link>
           </div>
         </Row>

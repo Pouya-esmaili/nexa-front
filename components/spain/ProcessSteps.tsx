@@ -8,38 +8,38 @@ const steps = [
   {
     num: "1",
     meta: "Step 1 · Weeks 1–6",
-    metaFa: "گام ۱ · هفته‌های ۱ تا ۶",
+    metaFa: "مرحله اول · هفته ۱ تا ۶",
     title: "Business Plan Architecture & Digital Certificate Setup",
-    titleFa: "معماری طرح کسب‌وکار و راه‌اندازی گواهی دیجیتال",
+    titleFa: "تدوین بیزنس‌پلن و آماده‌سازی گواهی دیجیتال",
     desc: "Draft an ENISA-compliant business plan with market research, financial projections, and job creation estimates. Concurrently, secure a Spanish NIE number and a digital signature certificate (Clave/Certificado Digital).",
-    descFa: "یک طرح کسب‌وکار منطبق با ENISA همراه با تحقیقات بازار، پیش‌بینی‌های مالی و برآوردهای ایجاد اشتغال تدوین کنید. هم‌زمان، یک شماره‌ی NIE اسپانیایی و یک گواهی امضای دیجیتال (Clave/Certificado Digital) دریافت کنید.",
+    descFa: "بیزنس‌پلنی منطبق با الزامات ENISA تدوین می‌شود که شامل تحقیقات بازار، پیش‌بینی‌های مالی و برآورد ظرفیت ایجاد اشتغال است. هم‌زمان، برای دریافت شماره NIE اسپانیا و گواهی امضای دیجیتال (Clave / Certificado Digital) اقدام می‌شود.",
   },
   {
     num: "2",
     meta: "Step 2 · Weeks 7–9",
-    metaFa: "گام ۲ · هفته‌های ۷ تا ۹",
+    metaFa: "مرحله دوم · هفته ۷ تا ۹",
     title: "ENISA Platform Submission",
-    titleFa: "ثبت در پلتفرم ENISA",
+    titleFa: "ثبت درخواست در سامانه ENISA",
     desc: "Upload your comprehensive business plan and professional profiles to the official Ministry industry portal. ENISA analyzes the project's innovation metrics and issues a formal economic report (30–60 days).",
-    descFa: "طرح کسب‌وکار جامع و پروفایل‌های حرفه‌ای خود را در پورتال رسمی صنعت وزارتخانه بارگذاری کنید. ENISA شاخص‌های نوآوری پروژه را تحلیل کرده و یک گزارش اقتصادی رسمی صادر می‌کند (۳۰ تا ۶۰ روز).",
+    descFa: "بیزنس‌پلن جامع و پروفایل حرفه‌ای متقاضی در پورتال رسمی وزارت صنعت اسپانیا بارگذاری می‌شود. ENISA شاخص‌های نوآوری و ظرفیت اقتصادی پروژه را ارزیابی کرده و گزارش رسمی خود را صادر می‌کند. (معمولاً ۳۰ تا ۶۰ روز)",
   },
   {
     num: "3",
     meta: "Step 3 · Weeks 10–14",
-    metaFa: "گام ۳ · هفته‌های ۱۰ تا ۱۴",
+    metaFa: "مرحله سوم · هفته ۱۰ تا ۱۴",
     title: "UGE Residency Application Filing",
-    titleFa: "ثبت درخواست اقامت UGE",
+    titleFa: "ثبت درخواست اقامت نزد UGE",
     desc: "Submit your residency file to the UGE. Include apostilled criminal background checks (translated into Spanish), €9,000+ bank proof, private insurance contract (no copayments, no deductibles), and the positive ENISA report. UGE rules within 20 working days.",
-    descFa: "پرونده‌ی اقامت خود را به UGE ارسال کنید. شامل بررسی سوءپیشینه‌ی آپوستیل‌شده (ترجمه‌شده به اسپانیایی)، مدرک بانکی ۹٬۰۰۰ یورو به بالا، قرارداد بیمه‌ی خصوصی (بدون پرداخت مشترک، بدون فرانشیز) و گزارش مثبت ENISA. UGE ظرف ۲۰ روز کاری تصمیم می‌گیرد.",
+    descFa: "پرونده اقامت به UGE ارائه می‌شود. مدارک موردنیاز شامل گواهی عدم سوءپیشینه آپوستیل‌شده و ترجمه‌شده به اسپانیایی، مدارک بانکی برای اثبات حداقل ۹ هزار یورو منابع مالی، بیمه درمانی خصوصی بدون فرانشیز و سهم پرداختی و گزارش مثبت ENISA است. UGE طبق مقررات، درخواست را ظرف ۲۰ روز کاری بررسی می‌کند.",
   },
   {
     num: "4",
     meta: "Step 4 · Month 4",
-    metaFa: "گام ۴ · ماه ۴",
+    metaFa: "مرحله چهارم · ماه چهارم",
     title: "Biometric Fingerprinting & TIE Collection",
-    titleFa: "انگشت‌نگاری بیومتریک و دریافت TIE",
+    titleFa: "انگشت‌نگاری و دریافت کارت TIE",
     desc: "Upon receiving the Resolución Favorable, schedule a biometrics appointment at your local National Police station in Spain. Pay the minor stamp duty and collect your physical TIE residence card within 30 days.",
-    descFa: "پس از دریافت Resolución Favorable، یک نوبت بیومتریک در ایستگاه پلیس ملی محلی خود در اسپانیا تنظیم کنید. عوارض تمبر جزئی را بپردازید و کارت فیزیکی اقامت TIE خود را ظرف ۳۰ روز دریافت کنید.",
+    descFa: "پس از دریافت تصمیم مثبت (Resolución Favorable)، برای انجام انگشت‌نگاری در نزدیک‌ترین مرکز پلیس ملی اسپانیا وقت می‌گیرید. پس از پرداخت هزینه اداری مربوطه، کارت اقامت فیزیکی TIE معمولاً ظرف ۳۰ روز آماده دریافت خواهد بود.",
   },
 ];
 
@@ -55,14 +55,14 @@ export default function ProcessSteps() {
           <Reveal variant="left" className="md:sticky md:top-24">
             <div>
               <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] mb-5">
-                {t("Step-by-Step Application Timeline", "زمان‌بندی گام‌به‌گام درخواست")}
+                {t("Step-by-Step Application Timeline", "مراحل درخواست")}
               </h2>
               <blockquote className="text-[18px] font-medium italic leading-[1.5] pl-6 mb-4"
                 style={{ borderLeft: "3px solid #8F27FF" }}>
-                &ldquo;{t("Nexa coordinates your application flow into a clear, linear progression to eliminate processing friction.", "نکسا جریان درخواست شما را در یک روند روشن و خطی هماهنگ می‌کند تا اصطکاک پردازشی را از بین ببرد.")}&rdquo;
+                &ldquo;{t("Nexa coordinates your application flow into a clear, linear progression to eliminate processing friction.", "نکسا کل فرآیند درخواست شما را به مسیری روشن و منظم تبدیل می‌کند تا پیچیدگی‌های اداری و وقفه‌های غیرضروری به حداقل برسد.")}&rdquo;
               </blockquote>
               <p className="text-[14.5px] text-[#929292] leading-[1.7]">
-                {t("From your first business plan draft to collecting your physical TIE card, the full process takes approximately 4 months. The unique advantage of this program: you can file from inside Spain on a tourist entry — receiving a 3-year card directly.", "از نخستین پیش‌نویس طرح کسب‌وکار تا دریافت کارت فیزیکی TIE، کل فرایند حدود ۴ ماه طول می‌کشد. مزیت منحصربه‌فرد این برنامه: می‌توانید از داخل اسپانیا با ورود توریستی درخواست دهید — و مستقیماً یک کارت ۳ ساله دریافت کنید.")}
+                {t("From your first business plan draft to collecting your physical TIE card, the full process takes approximately 4 months. The unique advantage of this program: you can file from inside Spain on a tourist entry — receiving a 3-year card directly.", "از نخستین نسخه بیزنس‌پلن تا دریافت کارت فیزیکی TIE، کل فرآیند تقریباً ۴ ماه زمان می‌برد. یکی از مهم‌ترین مزایای این برنامه این است که می‌توانید از داخل اسپانیا و با ورود توریستی درخواست خود را ثبت کنید و اقامت سه‌ساله را مستقیماً دریافت کنید.")}
               </p>
             </div>
           </Reveal>

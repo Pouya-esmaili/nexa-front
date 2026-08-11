@@ -12,25 +12,25 @@ const stages = [
     label: "Entrepreneur Visa",
     labelFa: "ویزای کارآفرینی",
     year: "Years 1–3",
-    yearFa: "سال‌های ۱ تا ۳",
+    yearFa: "سال‌های اول تا سوم",
     detail: {
       title: "Entrepreneur Visa (3 Years)",
-      titleFa: "ویزای کارآفرینی (۳ سال)",
+      titleFa: "ویزای کارآفرینی — ۳ ساله",
       body: "Build and scale your venture with full TIE residency. Secondary employment and consulting permitted. Family included with unrestricted work rights.",
-      bodyFa: "کسب‌وکار خود را با اقامت کامل TIE بسازید و مقیاس دهید. اشتغال ثانویه و مشاوره مجاز است. خانواده با حقوق کار نامحدود گنجانده می‌شوند.",
+      bodyFa: "با دریافت اقامت TIE، کسب‌وکار خود را در اسپانیا راه‌اندازی و توسعه دهید. در کنار فعالیت اصلی خود، امکان اشتغال در شغل دوم و ارائه خدمات مشاوره‌ای نیز وجود دارد. اعضای خانواده نیز می‌توانند همراه شما اقامت دریافت کنند و از حق کار بدون محدودیت برخوردار باشند.",
     },
   },
   {
     num: "02",
     label: "2-Year Renewal",
-    labelFa: "تمدید ۲ ساله",
+    labelFa: "تمدید دو‌ساله اقامت",
     year: "Year 3",
-    yearFa: "سال ۳",
+    yearFa: "سال سوم",
     detail: {
       title: "2-Year Renewal via UGE",
-      titleFa: "تمدید ۲ ساله از طریق UGE",
+      titleFa: "تمدید دو‌ساله از طریق UGE",
       body: "Apply online before expiry. Must prove active operation, corporate taxes paid, employment forecasts met, continued IPREM funds, valid health insurance, and clean criminal record in Spain.",
-      bodyFa: "پیش از انقضا به‌صورت آنلاین درخواست دهید. باید فعالیت فعال، پرداخت مالیات شرکتی، تحقق پیش‌بینی‌های اشتغال، تداوم دارایی‌های IPREM، بیمه‌ی درمانی معتبر و سوءپیشینه‌ی پاک در اسپانیا را اثبات کنید.",
+      bodyFa: "پیش از پایان اعتبار اقامت، درخواست تمدید به‌صورت آنلاین ثبت می‌شود. برای تمدید، باید ادامه فعالیت واقعی کسب‌وکار، پرداخت مالیات‌های شرکتی، تحقق برنامه‌های پیش‌بینی‌شده برای اشتغال، حفظ منابع مالی موردنیاز بر اساس IPREM، بیمه درمانی معتبر و نداشتن سابقه کیفری در اسپانیا اثبات شود.",
     },
   },
   {
@@ -38,12 +38,12 @@ const stages = [
     label: "Permanent Residency",
     labelFa: "اقامت دائم",
     year: "Year 5",
-    yearFa: "سال ۵",
+    yearFa: "سال پنجم",
     detail: {
       title: "Permanent Residency (Larga Duración)",
-      titleFa: "اقامت دائم (Larga Duración)",
+      titleFa: "اقامت دائم — Larga Duración",
       body: "After 5 continuous legal years, obtain a Long-Term Residence Card. Legal status fully uncouples from your startup — complete professional freedom with no further business evaluations.",
-      bodyFa: "پس از ۵ سال قانونی پیوسته، یک کارت اقامت بلندمدت دریافت کنید. وضعیت قانونی به‌طور کامل از استارتاپ شما مستقل می‌شود — آزادی حرفه‌ای کامل بدون ارزیابی‌های کسب‌وکار بیشتر.",
+      bodyFa: "پس از ۵ سال اقامت قانونی و مستمر، می‌توانید برای اقامت بلندمدت اسپانیا (Larga Duración) اقدام کنید. در این مرحله، اقامت شما دیگر به کسب‌وکار یا استارتاپتان وابسته نخواهد بود و بدون نیاز به ارزیابی‌های بعدی درباره فعالیت تجاری، آزادی کامل برای فعالیت حرفه‌ای خواهید داشت.",
     },
   },
   {
@@ -51,12 +51,12 @@ const stages = [
     label: "Spanish Citizenship",
     labelFa: "تابعیت اسپانیا",
     year: "Year 10 (or Year 2)",
-    yearFa: "سال ۱۰ (یا سال ۲)",
+    yearFa: "سال دهم",
     detail: {
       title: "Spanish Citizenship",
       titleFa: "تابعیت اسپانیا",
       body: "Standard: 10 years. Ibero-Americans fast-track: 2 years. Requires passing the DELE (Spanish A2) and CCSE (civic knowledge) exams. Dual citizenship permitted for qualifying nationals.",
-      bodyFa: "استاندارد: ۱۰ سال. مسیر سریع ایبرو-آمریکایی‌ها: ۲ سال. نیازمند قبولی در آزمون‌های DELE (اسپانیایی A2) و CCSE (دانش مدنی) است. تابعیت دوگانه برای اتباع واجد شرایط مجاز است.",
+      bodyFa: "در حالت معمول، مسیر دریافت تابعیت پس از ۱۰ سال اقامت قانونی امکان‌پذیر است. برای اتباع کشورهای آمریکای لاتین و برخی کشورهای واجد شرایط، این مدت می‌تواند به ۲ سال کاهش یابد. برای دریافت تابعیت، قبولی در آزمون زبان اسپانیایی DELE در سطح A2 و آزمون دانش اجتماعی و مدنی CCSE الزامی است. برای اتباع کشورهای واجد شرایط، امکان حفظ تابعیت قبلی و برخورداری از تابعیت دوگانه نیز وجود دارد.",
     },
   },
 ];
@@ -71,7 +71,7 @@ export default function PathwayToPassport() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-12">
-            {t("Long-Term Horizons", "افق‌های بلندمدت")}
+            {t("Long-Term Horizons", "مسیر اقامت و افق بلندمدت")}
           </h2>
         </Reveal>
 

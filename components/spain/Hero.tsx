@@ -33,21 +33,21 @@ export default function Hero() {
           <div className="order-2 md:order-1">
             <h1 className={`${base} ${mounted ? show : hidden} text-[38px] md:text-[48px] font-bold leading-[1.06] tracking-[-0.03em] mb-5`}
               style={{ transitionDelay: "80ms" }}>
-              {t("Launch your", "")} <span className="text-[#8F27FF]">{t("innovative venture", "کسب‌وکار نوآورانه‌ی")}</span> {t("in the Mediterranean hub of Europe.", "خود را در قطب مدیترانه‌ای اروپا راه‌اندازی کنید.")}
+              {t("Launch your", "")} <span className="text-[#8F27FF]">{t("innovative venture", "کسب‌وکار نوآورانه‌ی")}</span> {t("in the Mediterranean hub of Europe.", "خود را در قلب مدیترانه‌و دروازه اروپا راه‌اندازی کنید.")}
             </h1>
 
             <p className={`${base} ${mounted ? show : hidden} text-[16px] text-[#474747] leading-[1.65] mb-8 max-w-[520px]`}
               style={{ transitionDelay: "160ms" }}>
-               {t("(Visado para Emprendedores) bypasses conventional immigration bottlenecks — with a 20-working-day approval rule, 3-year initial residency, and full family inclusion from day one.", "(Visado para Emprendedores) از گلوگاه‌های متعارف مهاجرت عبور می‌کند — با قاعده‌ی تأیید ۲۰ روز کاری، اقامت اولیه‌ی ۳ ساله و شمول کامل خانواده از روز نخست.")}
+               {t("(Visado para Emprendedores) bypasses conventional immigration bottlenecks — with a 20-working-day approval rule, 3-year initial residency, and full family inclusion from day one.", "ویزای کارآفرینی اسپانیا، مسیری سریع و ساختاریافته برای کارآفرینانی فراهم می‌کند که به‌دنبال راه‌اندازی یک کسب‌وکار نوآورانه در اروپا هستند؛ با اقامت اولیه ۳ ساله، بازه تصمیم‌گیری ۲۰ روز کاری و امکان همراهی خانواده از همان ابتدا.")}
             </p>
 
             {/* Stats */}
             <div className={`${base} ${mounted ? show : hidden} grid grid-cols-3 gap-0 py-6 mb-8`}
               style={{ borderTop: "1px solid #E2E2E2", borderBottom: "1px solid #E2E2E2", transitionDelay: "240ms" }}>
               {[
-                { num: "3 yr", numFa: "۳ سال", label: "Initial Permit", labelFa: "مجوز اولیه" },
-                { num: "20 days", numFa: "۲۰ روز", label: "Decision Window", labelFa: "بازه‌ی تصمیم‌گیری" },
-                { num: "5 yr", numFa: "۵ سال", label: "Path to PR", labelFa: "مسیر اقامت دائم" },
+                { num: "3 yr", numFa: "۳ سال", label: "Initial Permit", labelFa: "اقامت اولیه" },
+                { num: "20 days", numFa: "۲۰ روز کاری", label: "Decision Window", labelFa: "بازه‌ی بررسی درخواست" },
+                { num: "5 yr", numFa: "۵ سال", label: "Path to PR", labelFa: "مسیر تا اقامت دائم" },
               ].map((s) => (
                 <div key={s.label} className="text-center">
                   <div className="text-[26px] font-bold tracking-[-0.03em] leading-none">{t(s.num, s.numFa)}</div>
@@ -60,7 +60,7 @@ export default function Hero() {
               <a href="#contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"
                 style={{ boxShadow: "0 10px 24px rgba(143,39,255,0.28)" }}>
-                {t("Book an Appointment →", "رزرو وقت ملاقات →")}
+                {t("Book an Appointment →", "رزرو وقت مشاوره →")}
               </a>
             </div>
           </div>

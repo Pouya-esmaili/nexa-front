@@ -5,10 +5,10 @@ import Reveal from "@/components/global/Reveal";
 import { useLang } from "@/components/global/LanguageProvider";
 
 const pills: { en: string; fa: string }[] = [
-  { en: "No consulate required", fa: "بدون نیاز به کنسولگری" },
-  { en: "3-year TIE card directly", fa: "کارت TIE سه‌ساله به‌طور مستقیم" },
-  { en: "20-day decision window", fa: "بازه‌ی تصمیم‌گیری ۲۰ روزه" },
-  { en: "Silence = approval", fa: "سکوت = تأیید" },
+  { en: "No consulate required", fa: "بدون نیاز به مراجعه به کنسولگری" },
+  { en: "3-year TIE card directly", fa: "دریافت مستقیم کارت اقامت TIE سه‌ساله" },
+  { en: "20-day decision window", fa: "بازه بررسی ۲۰ روز کاری" },
+  { en: "Silence = approval", fa: "عدم پاسخ در مهلت قانونی = تأیید درخواست" },
 ];
 
 export default function OnshoreCTA() {
@@ -31,10 +31,10 @@ export default function OnshoreCTA() {
               </div>
               <h2 className="text-[36px] font-bold tracking-[-0.03em] leading-[1.1] mb-3.5 text-white">
                 {t("Apply from inside Spain.", "از داخل اسپانیا درخواست دهید.")}<br />
-                <em className="not-italic" style={{ color: "#FFE600" }}>{t("Get 3 years. Not 1.", "۳ سال بگیرید. نه ۱ سال.")}</em>
+                <em className="not-italic" style={{ color: "#FFE600" }}>{t("Get 3 years. Not 1.", "اقامت ۳ ساله دریافت کنید")}</em>
               </h2>
               <p className="text-[15px] leading-[1.65] max-w-[52ch] mb-6" style={{ color: "rgba(255,255,255,0.6)" }}>
-                {t("Enter on a tourist visa, file directly with the UGE — and receive a 3-year residence card without ever visiting a consulate. No other major EU entrepreneur program works this way.", "با ویزای توریستی وارد شوید، مستقیماً نزد UGE ثبت کنید — و یک کارت اقامت ۳ ساله بدون مراجعه به هیچ کنسولگری دریافت کنید. هیچ برنامه‌ی کارآفرینی بزرگ دیگری در اتحادیه اروپا این‌گونه عمل نمی‌کند.")}
+                {t("Enter on a tourist visa, file directly with the UGE — and receive a 3-year residence card without ever visiting a consulate. No other major EU entrepreneur program works this way.", "با ورود به اسپانیا به‌عنوان توریست، می‌توانید درخواست خود را مستقیماً به UGE ارائه دهید و بدون مراجعه به کنسولگری، برای دریافت کارت اقامت سه‌ساله اقدام کنید.")}
               </p>
               <div className="flex flex-wrap gap-2">
                 {pills.map((p) => (
@@ -53,13 +53,13 @@ export default function OnshoreCTA() {
               <div className="rounded-[20px] px-9 py-7 text-center min-w-[180px]" style={{ background: "#FFE600" }}>
                 <div className="text-[52px] font-extrabold tracking-[-0.05em] leading-none text-black">{t("20", "۲۰")}</div>
                 <div className="text-[12px] font-bold uppercase tracking-[0.08em] mt-1.5" style={{ color: "rgba(0,0,0,0.55)" }}>
-                  {t("Working Days", "روز کاری")}<br />{t("to Decision", "تا تصمیم")}
+                  {t("Working Days", "روز")}<br />{t("to Decision", "تا تصمیم‌گیری")}
                 </div>
               </div>
               <a href="#contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 font-bold rounded-full text-[14px] whitespace-nowrap transition-all hover:-translate-y-0.5"
                 style={{ background: "#FFE600", color: "#000", boxShadow: "0 12px 28px rgba(255,230,0,0.3)" }}>
-                {t("Start Now →", "همین حالا شروع کنید →")}
+                {t("Start Now →", "شروع کنید →")}
               </a>
             </div>
           </div>

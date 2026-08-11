@@ -8,20 +8,20 @@ import { useLang } from "@/components/global/LanguageProvider";
 
 const stages = [
   {
-    num: "01", label: "D2 Residence Card", labelFa: "کارت اقامت D2", year: "Years 1–2", yearFa: "سال‌های ۱ تا ۲",
-    detail: { title: "D2 Residence Card (2 Years)", titleFa: "کارت اقامت D2 (۲ سال)", body: "Build and operate your venture in Portugal. Secondary employment and freelance contracts permitted. Family included with unrestricted work rights.", bodyFa: "کسب‌وکار خود را در پرتغال بسازید و اداره کنید. اشتغال ثانویه و قراردادهای آزاد مجاز است. خانواده با حقوق کار نامحدود گنجانده می‌شوند." },
+    num: "01", label: "D2 Residence Card", labelFa: "کارت اقامت D2", year: "Years 1–2", yearFa: "سال‌های اول تا دوم",
+    detail: { title: "D2 Residence Card (2 Years)", titleFa: "کارت اقامت D2 - دو ساله", body: "Build and operate your venture in Portugal. Secondary employment and freelance contracts permitted. Family included with unrestricted work rights.", bodyFa: "در پرتغال کسب‌وکار خود را راه‌اندازی و مدیریت کنید و هم‌زمان از امکان فعالیت حرفه‌ای به‌صورت مستقل یا اشتغال ثانویه برخوردار باشید. اعضای خانواده نیز می‌توانند همراه شما اقامت دریافت کنند و از حق کار بدون محدودیت بهره‌مند شوند." },
   },
   {
-    num: "02", label: "3-Year Renewal", labelFa: "تمدید ۳ ساله", year: "Year 2", yearFa: "سال ۲",
-    detail: { title: "3-Year Renewal", titleFa: "تمدید ۳ ساله", body: "Show active corporate continuity — operational business, tax compliance, clean accounting. Must maintain minimum 6 consecutive or 8 alternate months in Portugal per validity period.", bodyFa: "تداوم شرکتی فعال را نشان دهید — کسب‌وکار عملیاتی، انطباق مالیاتی، حسابداری پاک. باید حداقل ۶ ماه متوالی یا ۸ ماه متناوب در هر دوره‌ی اعتبار در پرتغال بمانید." },
+    num: "02", label: "3-Year Renewal", labelFa: "تمدید سه‌ساله اقامت", year: "Year 2", yearFa: "سال دوم",
+    detail: { title: "3-Year Renewal", titleFa: "تمدید سه‌ساله اقامت", body: "Show active corporate continuity — operational business, tax compliance, clean accounting. Must maintain minimum 6 consecutive or 8 alternate months in Portugal per validity period.", bodyFa: "تداوم واقعی فعالیت شرکت، رعایت الزامات مالیاتی و برخورداری از حسابداری منظم و شفاف، از الزامات اصلی تمدید اقامت است. در هر دوره اعتبار اقامت، باید حداقل ۶ ماه متوالی یا مجموعاً ۸ ماه غیرمتوالی در پرتغال حضور داشته باشید." },
   },
   {
-    num: "03", label: "Permanent Residency", labelFa: "اقامت دائم", year: "Year 5", yearFa: "سال ۵",
-    detail: { title: "Permanent Residency", titleFa: "اقامت دائم", body: "After 5 continuous years, apply for permanent residence. Legal status fully uncouples from your business — complete professional freedom across Portugal and the EU.", bodyFa: "پس از ۵ سال پیوسته، برای اقامت دائم درخواست دهید. وضعیت قانونی به‌طور کامل از کسب‌وکار شما مستقل می‌شود — آزادی حرفه‌ای کامل در سراسر پرتغال و اتحادیه اروپا." },
+    num: "03", label: "Permanent Residency", labelFa: "اقامت دائم", year: "Year 5", yearFa: "سال پنجم",
+    detail: { title: "Permanent Residency", titleFa: "اقامت دائم", body: "After 5 continuous years, apply for permanent residence. Legal status fully uncouples from your business — complete professional freedom across Portugal and the EU.", bodyFa: "پس از ۵ سال اقامت مستمر و قانونی، امکان درخواست اقامت دائم فراهم می‌شود. در این مرحله، وضعیت اقامتی شما دیگر به فعالیت یا مالکیت کسب‌وکارتان وابسته نخواهد بود و آزادی کامل برای فعالیت حرفه‌ای و اشتغال در پرتغال و اتحادیه اروپا خواهید داشت." },
   },
   {
-    num: "04", label: "Portuguese Citizenship", labelFa: "تابعیت پرتغال", year: "Year 5", yearFa: "سال ۵",
-    detail: { title: "Portuguese Citizenship", titleFa: "تابعیت پرتغال", body: "Also eligible at year 5. Requires a clean criminal record and passing the CIPLE exam at A2 Portuguese level. Dual citizenship fully permitted — no renunciation required.", bodyFa: "همچنین در سال ۵ واجد شرایط. نیازمند سوءپیشینه‌ی پاک و قبولی در آزمون CIPLE در سطح A2 پرتغالی است. تابعیت دوگانه کاملاً مجاز است — بدون نیاز به انصراف." },
+    num: "04", label: "Portuguese Citizenship", labelFa: "شهروندی پرتغال", year: "Year 5", yearFa: "سال پنجم",
+    detail: { title: "Portuguese Citizenship", titleFa: "شهروندی پرتغال", body: "Also eligible at year 5. Requires a clean criminal record and passing the CIPLE exam at A2 Portuguese level. Dual citizenship fully permitted — no renunciation required.", bodyFa: "از سال پنجم، امکان درخواست تابعیت پرتغال نیز فراهم می‌شود. برای این مسیر، داشتن سابقه کیفری پاک و قبولی در آزمون زبان پرتغالی CIPLE در سطح A2 الزامی است. پرتغال تابعیت دوگانه را به رسمیت می‌شناسد؛ بنابراین برای دریافت تابعیت پرتغالی، نیازی به ترک تابعیت قبلی خود نخواهید داشت." },
   },
 ];
 
@@ -35,7 +35,7 @@ export default function PathwayToPassport() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-12">
-            {t("Long-Term Horizons", "افق‌های بلندمدت")}
+            {t("Long-Term Horizons", "مسیر اقامت بلندمدت")}
           </h2>
         </Reveal>
 

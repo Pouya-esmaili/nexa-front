@@ -42,7 +42,7 @@ export default function ContactForm() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10 md:mb-14">
-            {t("Start Your Spain Entrepreneur Visa Journey", "سفر ویزای کارآفرینی اسپانیا خود را آغاز کنید")}
+            {t("Start Your Spain Entrepreneur Visa Journey", "یک قدم تا ورود به مسیر دریافت ویزای کارآفرینی اسپانیا")}
           </h2>
         </Reveal>
 

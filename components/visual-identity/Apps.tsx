@@ -1,0 +1,40 @@
+"use client";
+
+import { useLang } from "@/components/global/LanguageProvider";
+
+const SURFACES = [
+  { img: "017-img.jpg", title: "BRAND APPLICATIONS", titleFa: "کاربردهای برند", sub: "Web & Mobile UI", subFa: "رابط وب و موبایل" },
+  { img: "018-img.jpg", title: "STATIONERY", titleFa: "لوازم اداری", sub: "Print Collateral", subFa: "اقلام چاپی" },
+  { img: "019-img.jpg", title: "SOCIAL MEDIA", titleFa: "شبکه‌های اجتماعی", sub: "Campaign Templates", subFa: "قالب‌های کمپین" },
+  { img: "020-img.jpg", title: "ICONOGRAPHY", titleFa: "آیکونوگرافی", sub: "Vector Icon Set", subFa: "مجموعه آیکون وکتور" },
+];
+
+export default function Apps() {
+  const { t } = useLang();
+  return (
+    <section className="vi-section vi-apps">
+      <div className="wrap">
+        <div className="vi-comp-intro">
+          <span className="vi-label">{t("/ IN THE WILD", "/ در دنیای واقعی")}</span>
+          <h2 className="editorial-h2">
+            <span className="eh2-outline">{t("ONE SYSTEM,", "یک سیستم،")}</span> <span className="eh2-purple">{t("EVERY SURFACE.", "روی هر سطح.")}</span>
+          </h2>
+          <p className="vi-intro-p">{t("Explore the unified brand system across digital web applications, executive print stationery, social campaign grids, and vector iconography.", "سیستم یکپارچه‌ی برند را در اپلیکیشن‌های وب، لوازم اداری چاپی مدیریتی، شبکه‌های کمپین اجتماعی و آیکونوگرافی وکتور کاوش کنید.")}</p>
+        </div>
+        <div className="vi-surfaces-grid">
+          {SURFACES.map((s) => (
+            <div className="vi-surface-card" key={s.img}>
+              <div className="vi-surface-card__image-wrap">
+                <img src={`/images/visual-identity/${s.img}`} alt={s.title} className="vi-surface-card__img" />
+              </div>
+              <div className="vi-surface-card__meta">
+                <h3 className="vi-surface-card__title">{t(s.title, s.titleFa)}</h3>
+                <span className="vi-surface-card__sub">{t(s.sub, s.subFa)}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

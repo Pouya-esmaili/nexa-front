@@ -8,33 +8,33 @@ const requirements = [
   {
     num: "01",
     title: "Innovation & Scalability",
-    titleFa: "نوآوری و مقیاس‌پذیری",
+    titleFa: "نوآوری و قابلیت توسعه",
     desc: "The project must possess a unique value proposition, specialized technology, or an original organizational method — with a clear trajectory for generating corporate volume, scalable profits, and local market expansion.",
-    descFa: "پروژه باید یک ارزش پیشنهادی منحصربه‌فرد، فناوری تخصصی یا روش سازمانی اصیل داشته باشد — با مسیری روشن برای ایجاد حجم شرکتی، سود مقیاس‌پذیر و گسترش بازار محلی.",
+    descFa: "پروژه باید دارای ارزش پیشنهادی متمایز، فناوری تخصصی یا یک روش سازمانی نوآورانه باشد و مسیر روشنی برای رشد کسب‌وکار، افزایش سودآوری و توسعه در بازار اسپانیا ارائه دهد.",
   },
   {
     num: "02",
     title: "Job Creation Metrics",
-    titleFa: "شاخص‌های ایجاد اشتغال",
+    titleFa: "ظرفیت ایجاد اشتغال",
     desc: "Your business plan must illustrate a realistic capacity to hire local employees, contract regional suppliers, and actively contribute to the employment landscape of Spain over a 3-year horizon.",
-    descFa: "طرح کسب‌وکار شما باید ظرفیتی واقع‌بینانه برای استخدام کارکنان محلی، عقد قرارداد با تأمین‌کنندگان منطقه‌ای و مشارکت فعال در چشم‌انداز اشتغال اسپانیا در افق ۳ ساله را نشان دهد.",
+    descFa: "بیزنس‌پلن باید نشان دهد که کسب‌وکار شما ظرفیت واقع‌بینانه‌ای برای استخدام نیروی کار محلی، همکاری با تأمین‌کنندگان منطقه‌ای و ایجاد ارزش در بازار اشتغال اسپانیا طی یک دوره سه‌ساله دارد.",
   },
   {
     num: "03",
     title: "Founder Professional Profile",
-    titleFa: "پروفایل حرفه‌ای بنیان‌گذار",
+    titleFa: "سوابق و توانمندی‌های بنیان‌گذار",
     desc: "ENISA analyzes your professional CV, academic credentials, and entrepreneurship history to verify that you possess the technical capabilities and leadership experience required to execute the business plan.",
-    descFa: "ENISA رزومه‌ی حرفه‌ای، مدارک تحصیلی و سابقه‌ی کارآفرینی شما را تحلیل می‌کند تا تأیید کند که قابلیت‌های فنی و تجربه‌ی رهبری لازم برای اجرای طرح کسب‌وکار را دارید.",
+    descFa: "ENISA سوابق حرفه‌ای، مدارک تحصیلی و تجربه کارآفرینی شما را بررسی می‌کند تا اطمینان حاصل شود که از دانش تخصصی، توان اجرایی و تجربه مدیریتی لازم برای عملیاتی کردن طرح کسب‌وکار برخوردار هستید.",
   },
 ];
 
 const benefits: { en: string; fa: string }[] = [
-  { en: "3-year TIE residence card (applied from Spain)", fa: "کارت اقامت TIE سه‌ساله (درخواست از داخل اسپانیا)" },
-  { en: "Apply from inside Spain on tourist entry", fa: "درخواست از داخل اسپانیا با ورود توریستی" },
-  { en: "Secondary employment & consulting permitted", fa: "اشتغال ثانویه و مشاوره مجاز است" },
-  { en: "Full family included with unrestricted work rights", fa: "کل خانواده با حقوق کار نامحدود گنجانده می‌شوند" },
-  { en: "29-country Schengen travel freedom", fa: "آزادی سفر شنگن در ۲۹ کشور" },
-  { en: "2-year fast-track citizenship for Ibero-Americans", fa: "تابعیت سریع ۲ ساله برای ایبرو-آمریکایی‌ها" },
+  { en: "3-year TIE residence card (applied from Spain)", fa: "دریافت کارت اقامت TIE سه‌ساله در صورت درخواست از داخل اسپانیا" },
+  { en: "Apply from inside Spain on tourist entry", fa: "امکان درخواست از داخل اسپانیا با ورود به‌عنوان توریست" },
+  { en: "Secondary employment & consulting permitted", fa: "امکان اشتغال و ارائه خدمات مشاوره‌ای در کنار فعالیت اصلی" },
+  { en: "Full family included with unrestricted work rights", fa: "امکان همراهی کامل خانواده با حق کار بدون محدودیت" },
+  { en: "29-country Schengen travel freedom", fa: "امکان سفر در سراسر ۲۹ کشور حوزه شنگن" },
+  { en: "2-year fast-track citizenship for Ibero-Americans", fa: "مسیر سریع‌تر اخذ تابعیت برای شهروندان کشورهای ایبروآمریکایی، با امکان درخواست پس از ۲ سال در صورت احراز شرایط قانونی" },
 ];
 
 export default function Eligibility() {
@@ -44,7 +44,7 @@ export default function Eligibility() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-12">
-            {t("Core Eligibility & Business Evaluation", "شرایط اصلی واجد بودن و ارزیابی کسب‌وکار")}
+            {t("Core Eligibility & Business Evaluation", "شرایط اصلی و ارزیابی کسب‌وکار")}
           </h2>
         </Reveal>
 
@@ -53,7 +53,7 @@ export default function Eligibility() {
           <Reveal variant="left">
             <div className="bg-white border border-[#E2E2E2] rounded-[20px] p-11 flex flex-col">
               <p className="text-[16px] text-[#474747] leading-[1.65] mb-8 pb-8" style={{ borderBottom: "1px solid #E2E2E2" }}>
-                {t("Your project must be vetted as", "پروژه‌ی شما باید به‌عنوان")} <strong className="text-black font-semibold">{t("innovative and of special economic interest to Spain", "نوآورانه و دارای منافع اقتصادی ویژه برای اسپانیا")}</strong>{t(". The official evaluation is conducted by", " ارزیابی شود. ارزیابی رسمی توسط")} <strong className="text-black font-semibold">ENISA</strong> {t("(Empresa Nacional de Innovación S.A.) against three strict parameters.", "(Empresa Nacional de Innovación S.A.) در برابر سه پارامتر سختگیرانه انجام می‌شود.")}
+                {t("Your project must be vetted as", "پروژه شما باید از نظر نوآورانه بودن و برخورداری از")} <strong className="text-black font-semibold">{t("innovative and of special economic interest to Spain", "اهمیت اقتصادی ویژه برای اسپانیا")}</strong>{t(". The official evaluation is conducted by", " مورد تأیید قرار گیرد. این ارزیابی رسمی توسط")} <strong className="text-black font-semibold">ENISA</strong> {t("(Empresa Nacional de Innovación S.A.) against three strict parameters.", "(Empresa Nacional de Innovación S.A.) و بر اساس سه معیار اصلی انجام می‌شود.")}
               </p>
 
               {requirements.map((r, i) => (
@@ -83,7 +83,7 @@ export default function Eligibility() {
                   </svg>
                   {t("Key Benefits", "مزایای کلیدی")}
                 </div>
-                <h3 className="text-[17px] font-semibold mb-4">{t("What the permit grants you", "این مجوز چه چیزی به شما می‌دهد")}</h3>
+                <h3 className="text-[17px] font-semibold mb-4">{t("What the permit grants you", "این مجوز چه امکاناتی در اختیار شما قرار می‌دهد")}</h3>
                 <ul className="flex flex-col gap-3">
                   {benefits.map((b) => (
                     <li key={b.en} className="flex items-center gap-3 text-[14px] font-medium leading-[1.45]">
@@ -108,7 +108,7 @@ export default function Eligibility() {
                   <line x1="12" y1="17" x2="12.01" y2="17"/>
                 </svg>
                 <p className="text-[13.5px] leading-[1.55] m-0" style={{ color: "#92400E" }}>
-                  <strong className="font-semibold" style={{ color: "#78350F" }}>{t("ENISA evaluation takes 30–60 days.", "ارزیابی ENISA ۳۰ تا ۶۰ روز طول می‌کشد.")}</strong> {t("The UGE decision runs 20 working days, but the preliminary ENISA business review takes an average of 30 to 60 days. Nexa structures your full timeline to account for this window.", "تصمیم UGE ۲۰ روز کاری طول می‌کشد، اما بررسی مقدماتی کسب‌وکار توسط ENISA به‌طور میانگین ۳۰ تا ۶۰ روز طول می‌کشد. نکسا کل زمان‌بندی شما را برای در نظر گرفتن این بازه ساختاردهی می‌کند.")}
+                  <strong className="font-semibold" style={{ color: "#78350F" }}>{t("ENISA evaluation takes 30–60 days.", "ارزیابی ENISA معمولاً ۳۰ تا ۶۰ روز زمان می‌برد.")}</strong> {t("The UGE decision runs 20 working days, but the preliminary ENISA business review takes an average of 30 to 60 days. Nexa structures your full timeline to account for this window.", "اگرچه بررسی درخواست توسط UGE طبق قانون در بازه ۲۰ روز کاری انجام می‌شود، ارزیابی اولیه طرح کسب‌وکار توسط ENISA به‌طور میانگین ۳۰ تا ۶۰ روز زمان می‌برد. NEXA کل مسیر را با در نظر گرفتن این بازه زمانی برنامه‌ریزی و ساختاربندی می‌کند.")}
                 </p>
               </div>
             </Reveal>

@@ -8,30 +8,30 @@ const cards = [
   {
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>,
     title: "No Sector Restrictions",
-    titleFa: "بدون محدودیت حوزه",
+    titleFa: "بدون محدودیت در حوزه فعالیت",
     desc: <span>Valid for <strong className="text-black font-semibold">any legitimate commercial model</strong> — tech, consulting, import-export, services, and more. No tech-only mandate.</span>,
-    descFa: <span>معتبر برای <strong className="text-black font-semibold">هر مدل تجاری مشروع</strong> — فناوری، مشاوره، واردات-صادرات، خدمات و بیشتر. بدون الزام صرفاً فناوری.</span>,
+    descFa: <span>این مسیر برای طیف گسترده‌ای از <strong className="text-black font-semibold">کسب‌وکارهای قانونی و قابل‌اجرا</strong> مناسب است؛ از شرکت‌های فناوری و مشاوره‌ای گرفته تا فعالیت‌های واردات و صادرات، کسب‌وکارهای خدماتی و موارد دیگر. برخلاف برخی برنامه‌ها، فعالیت شما الزاماً نباید در حوزه فناوری باشد.</span>,
   },
   {
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>,
     title: "Direct EU Passport Path",
-    titleFa: "مسیر مستقیم پاسپورت اتحادیه اروپا",
+    titleFa: "مسیر مستقیم به تابعیت پرتغال",
     desc: <span>Unlocks permanent settlement and full <strong className="text-black font-semibold">Portuguese citizenship</strong> after 5 years of legal residence — with dual citizenship fully permitted.</span>,
-    descFa: <span>پس از ۵ سال اقامت قانونی، اسکان دائم و <strong className="text-black font-semibold">تابعیت کامل پرتغال</strong> را باز می‌کند — با تابعیت دوگانه‌ی کاملاً مجاز.</span>,
+    descFa: <span>پس از ۵ سال اقامت قانونی و در صورت احراز شرایط، می‌توانید برای اقامت دائم و <strong className="text-black font-semibold">تابعیت پرتغال</strong> اقدام کنید. پرتغال همچنین تابعیت دوگانه را به رسمیت می‌شناسد.</span>,
   },
   {
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
     title: "Full Family Reunification",
-    titleFa: "پیوند مجدد کامل خانواده",
+    titleFa: "امکان همراهی کامل خانواده",
     desc: <span>Spouse, minor children, and dependent parents included. All family members receive <strong className="text-black font-semibold">immediate, unrestricted rights</strong> to work or study in Portugal.</span>,
-    descFa: <span>همسر، فرزندان صغیر و والدین تحت تکفل گنجانده می‌شوند. همه‌ی اعضای خانواده <strong className="text-black font-semibold">حقوق فوری و نامحدود</strong> برای کار یا تحصیل در پرتغال دریافت می‌کنند.</span>,
+    descFa: <span>همسر، فرزندان زیر سن قانونی و والدین تحت تکفل می‌توانند در چارچوب الحاق خانواده همراه متقاضی باشند. اعضای خانواده پس از دریافت مجوز مربوطه، امکان <strong className="text-black font-semibold">کار یا تحصیل</strong> در پرتغال را خواهند داشت.</span>,
   },
   {
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>,
     title: "Schengen Area Access",
-    titleFa: "دسترسی به منطقه‌ی شنگن",
+    titleFa: "دسترسی به منطقه شنگن",
     desc: <span>Visa-free travel across all <strong className="text-black font-semibold">29 Schengen countries</strong> for up to 90 days within any 180-day window.</span>,
-    descFa: <span>سفر بدون ویزا در سراسر همه‌ی <strong className="text-black font-semibold">۲۹ کشور شنگن</strong> تا ۹۰ روز در هر بازه‌ی ۱۸۰ روزه.</span>,
+    descFa: <span>امکان سفر بدون نیاز به ویزا در سراسر <strong className="text-black font-semibold">۲۹ کشور عضو شنگن</strong>، تا سقف ۹۰ روز در هر دوره ۱۸۰ روزه.</span>,
   },
 ];
 
@@ -42,7 +42,7 @@ export default function Benefits() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-12">
-            {t("Program Advantages & Strategic Benefits", "مزایای برنامه و منافع راهبردی")}
+            {t("Program Advantages & Strategic Benefits", "مزایا و فرصت‌های برنامه")}
           </h2>
         </Reveal>
 

@@ -8,33 +8,33 @@ const requirements = [
   {
     num: "A",
     title: "Corporate Validation & Capitalization",
-    titleFa: "اعتبارسنجی شرکتی و سرمایه‌گذاری",
+    titleFa: "اعتبار تجاری و پشتوانه مالی",
     desc: "You must have already incorporated a Portuguese business entity (Lda) or present a robust plan for imminent launch. The business must be properly capitalized relative to its sector. While there is no statutory minimum, a capital injection of €5,000–€10,000+ establishes baseline commercial viability.",
-    descFa: "باید قبلاً یک نهاد تجاری پرتغالی (Lda) ثبت کرده باشید یا یک طرح مستحکم برای راه‌اندازی قریب‌الوقوع ارائه دهید. کسب‌وکار باید متناسب با حوزه‌ی خود به‌درستی سرمایه‌گذاری شده باشد. اگرچه حداقل قانونی وجود ندارد، تزریق سرمایه‌ای معادل ۵٬۰۰۰ تا ۱۰٬۰۰۰ یورو به بالا، امکان‌پذیری تجاری پایه را ایجاد می‌کند.",
+    descFa: "باید یک شرکت پرتغالی (Lda) را از قبل به ثبت رسانده باشید یا یک برنامه عملی و مستند برای راه‌اندازی قریب‌الوقوع کسب‌وکار ارائه دهید. شرکت باید متناسب با حوزه فعالیت خود از پشتوانه مالی کافی برخوردار باشد. اگرچه قانون حداقل سرمایه مشخصی تعیین نکرده است، تأمین سرمایه در حدود ۵٬۰۰۰ تا ۱۰٬۰۰۰ یورو یا بیشتر می‌تواند پشتوانه مناسبی برای نشان دادن جدیت و قابلیت تجاری پروژه باشد.",
   },
   {
     num: "B",
     title: "Local Economic Impact",
-    titleFa: "تأثیر اقتصادی محلی",
+    titleFa: "تأثیرگذاری اقتصادی در پرتغال",
     desc: "The business plan must demonstrate realistic potential for local job creation, scalability, market differentiation, and clear intent to anchor operational infrastructure — leasing a local office, unit, or commercial facility.",
-    descFa: "طرح کسب‌وکار باید پتانسیل واقع‌بینانه برای ایجاد اشتغال محلی، مقیاس‌پذیری، تمایز در بازار و قصد روشن برای تثبیت زیرساخت عملیاتی — اجاره‌ی دفتر، واحد یا تأسیسات تجاری محلی — را نشان دهد.",
+    descFa: "بیزنس‌پلن باید ظرفیت واقع‌بینانه کسب‌وکار برای ایجاد اشتغال، رشد و مقیاس‌پذیری، ایجاد تمایز در بازار و توسعه فعالیت در پرتغال را نشان دهد. همچنین باید مشخص باشد که کسب‌وکار قصد دارد زیرساخت عملیاتی خود را در پرتغال مستقر کند؛ برای مثال، از طریق اجاره دفتر، واحد کاری یا فضای تجاری.",
   },
   {
     num: "C",
     title: "Founder Credentials",
-    titleFa: "صلاحیت‌های بنیان‌گذار",
+    titleFa: "سوابق و توانمندی‌های بنیان‌گذار",
     desc: "Immigration officials evaluate your professional profile, academic credentials, and managerial background to confirm you possess the direct technical capability and leadership experience required to steer the entity to profitability.",
-    descFa: "مقامات مهاجرتی پروفایل حرفه‌ای، مدارک تحصیلی و پیشینه‌ی مدیریتی شما را ارزیابی می‌کنند تا تأیید کنند که قابلیت فنی مستقیم و تجربه‌ی رهبری لازم برای هدایت نهاد به سوی سودآوری را دارید.",
+    descFa: "مراجع مهاجرتی سوابق حرفه‌ای، تحصیلات و تجربه مدیریتی شما را بررسی می‌کنند تا اطمینان حاصل شود که از دانش تخصصی و توانایی مدیریتی لازم برای هدایت کسب‌وکار و رساندن آن به سودآوری برخوردار هستید.",
   },
 ];
 
 const benefits: { en: string; fa: string }[] = [
-  { en: "2-year initial residence card (renewable for 3 years)", fa: "کارت اقامت اولیه‌ی ۲ ساله (قابل‌تمدید برای ۳ سال)" },
-  { en: "Any commercial business model permitted", fa: "هر مدل کسب‌وکار تجاری مجاز است" },
-  { en: "Secondary employment & freelance contracts allowed", fa: "اشتغال ثانویه و قراردادهای آزاد مجاز است" },
-  { en: "Full family included with immediate work rights", fa: "کل خانواده با حقوق کار فوری گنجانده می‌شوند" },
-  { en: "Multiple co-founders under same entity permitted", fa: "چند هم‌بنیان‌گذار تحت یک نهاد مجاز است" },
-  { en: "Dual citizenship fully permitted at naturalization", fa: "تابعیت دوگانه هنگام تابعیت‌پذیری کاملاً مجاز است" },
+  { en: "2-year initial residence card (renewable for 3 years)", fa: "دریافت کارت اقامت اولیه ۲ ساله با امکان تمدید برای ۳ سال" },
+  { en: "Any commercial business model permitted", fa: "امکان راه‌اندازی و فعالیت در طیف گسترده‌ای از مدل‌های کسب‌وکار" },
+  { en: "Secondary employment & freelance contracts allowed", fa: "امکان اشتغال هم‌زمان و انجام فعالیت‌های فریلنسری" },
+  { en: "Full family included with immediate work rights", fa: "امکان همراهی کامل خانواده با حق کار از ابتدا" },
+  { en: "Multiple co-founders under same entity permitted", fa: "امکان فعالیت چند بنیان‌گذار در قالب یک شرکت" },
+  { en: "Dual citizenship fully permitted at naturalization", fa: "امکان حفظ تابعیت قبلی در کنار تابعیت پرتغال، در صورت احراز شرایط قانونی" },
 ];
 
 export default function Eligibility() {
@@ -44,7 +44,7 @@ export default function Eligibility() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-12">
-            {t("Core Eligibility & Evaluation Criteria", "شرایط اصلی واجد بودن و معیارهای ارزیابی")}
+            {t("Core Eligibility & Evaluation Criteria", "شرایط اصلی و معیارهای ارزیابی")}
           </h2>
         </Reveal>
 
@@ -53,7 +53,7 @@ export default function Eligibility() {
           <Reveal variant="left">
             <div className="bg-white border border-[#E2E2E2] rounded-[20px] p-11 flex flex-col">
               <p className="text-[16px] text-[#474747] leading-[1.65] mb-8 pb-8" style={{ borderBottom: "1px solid #E2E2E2" }}>
-                {t("Your business model must be vetted by Portuguese authorities against the lenses of", "مدل کسب‌وکار شما باید توسط مقامات پرتغالی از منظر")} <strong className="text-black font-semibold">{t("economic, social, scientific, or cultural utility", "فایده‌ی اقتصادی، اجتماعی، علمی یا فرهنگی")}</strong>{t(". The evaluation covers three pillars.", " بررسی شود. ارزیابی سه ستون را پوشش می‌دهد.")}
+                {t("Your business model must be vetted by Portuguese authorities against the lenses of", "مدل کسب‌وکار شما باید از سوی مراجع ذی‌صلاح پرتغال از نظر ارزش و کارکرد")} <strong className="text-black font-semibold">{t("economic, social, scientific, or cultural utility", "اقتصادی، اجتماعی، علمی یا فرهنگی")}</strong>{t(". The evaluation covers three pillars.", " مورد ارزیابی و تأیید قرار گیرد. این ارزیابی بر سه محور اصلی انجام می‌شود.")}
               </p>
 
               {requirements.map((r, i) => (
@@ -83,7 +83,7 @@ export default function Eligibility() {
                   </svg>
                   {t("Key Benefits", "مزایای کلیدی")}
                 </div>
-                <h3 className="text-[17px] font-semibold mb-4">{t("What the permit grants you", "این مجوز چه چیزی به شما می‌دهد")}</h3>
+                <h3 className="text-[17px] font-semibold mb-4">{t("What the permit grants you", "این مجوز چه امکاناتی در اختیار شما قرار می‌دهد")}</h3>
                 <ul className="flex flex-col gap-3">
                   {benefits.map((b) => (
                     <li key={b.en} className="flex items-center gap-3 text-[14px] font-medium leading-[1.45]">
@@ -108,7 +108,7 @@ export default function Eligibility() {
                   <line x1="12" y1="17" x2="12.01" y2="17"/>
                 </svg>
                 <p className="text-[13.5px] leading-[1.55] m-0" style={{ color: "#92400E" }}>
-                  <strong className="font-semibold" style={{ color: "#78350F" }}>{t("Portuguese bank account preferred.", "حساب بانکی پرتغالی ترجیح داده می‌شود.")}</strong> {t("Authorities heavily favor liquid funds held inside a domestic Portuguese bank. Nexa secures your NIF and opens your Portuguese account remotely before file submission.", "مقامات به‌شدت دارایی‌های نقدی نگهداری‌شده در یک بانک داخلی پرتغالی را ترجیح می‌دهند. نکسا شماره‌ی NIF شما را تأمین می‌کند و حساب پرتغالی شما را پیش از ارسال پرونده از راه دور باز می‌کند.")}
+                  <strong className="font-semibold" style={{ color: "#78350F" }}>{t("Portuguese bank account preferred.", "داشتن حساب بانکی در پرتغال یک مزیت مهم محسوب می‌شود.")}</strong> {t("Authorities heavily favor liquid funds held inside a domestic Portuguese bank. Nexa secures your NIF and opens your Portuguese account remotely before file submission.", "مراجع مربوطه معمولاً منابع مالی نقدشونده موجود در حساب بانکی پرتغال را مطلوب‌تر ارزیابی می‌کنند. NEXA پیش از ثبت پرونده، فرآیند دریافت NIF و افتتاح حساب بانکی در پرتغال را نیز برای شما هماهنگ می‌کند.")}
                 </p>
               </div>
             </Reveal>

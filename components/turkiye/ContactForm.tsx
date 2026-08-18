@@ -41,7 +41,7 @@ export default function ContactForm() {
 
   return (
     <section id="contact" className="contact">
-      <h2 className="section-title">{t("Start Your Türkiye Investment Pathway", "مسیر سرمایه‌گذاری ترکیه خود را آغاز کنید")}</h2>
+      <h2 className="section-title">{t("Start Your Türkiye Investment Pathway", "برای شروع این مسیر با ما در ارتباط باشید")}</h2>
 
       <form className="contact-form" onSubmit={handleSubmit}>
         <div className="row">
@@ -68,20 +68,20 @@ export default function ContactForm() {
             </div>
           </label>
           <label>
-            <span className="lbl">{t("Which best describes you?", "کدام‌یک شما را بهتر توصیف می‌کند؟")} <em>*</em></span>
+            <span className="lbl">{t("Which best describes you?", "کدام گزینه بیشتر شما را توصیف می‌کند؟")} <em>*</em></span>
             <select name="profile">
               <option>{t("Investor", "سرمایه‌گذار")}</option>
               <option>{t("Entrepreneur", "کارآفرین")}</option>
-              <option>{t("Family relocation", "جابه‌جایی خانواده")}</option>
+              <option>{t("Family relocation", "متقاضی جابه‌جایی خانوادگی")}</option>
               <option>{t("Digital entrepreneur", "کارآفرین دیجیتال")}</option>
             </select>
           </label>
           <label>
             <span className="lbl">{t("Primary objective", "هدف اصلی")}</span>
             <select name="objective">
-              <option>{t("Citizenship by Investment", "تابعیت از طریق سرمایه‌گذاری")}</option>
+              <option>{t("Citizenship by Investment", "اخذ شهروندی از طریق سرمایه‌گذاری")}</option>
               <option>{t("Long-term residency", "اقامت بلندمدت")}</option>
-              <option>{t("Rental yield", "بازده اجاره")}</option>
+              <option>{t("Rental yield", "درآمد اجاره‌ای")}</option>
               <option>{t("Capital appreciation", "افزایش ارزش سرمایه")}</option>
             </select>
           </label>
@@ -94,7 +94,7 @@ export default function ContactForm() {
               <option>{t("Residential apartment", "آپارتمان مسکونی")}</option>
               <option>{t("Commercial unit", "واحد تجاری")}</option>
               <option>{t("Villa", "ویلا")}</option>
-              <option>{t("Government-approved development", "پروژه‌ی مورد تأیید دولت")}</option>
+              <option>{t("Government-approved development", "پروژه مورد تأیید دولت")}</option>
             </select>
           </label>
           <label>
@@ -108,9 +108,9 @@ export default function ContactForm() {
             </select>
           </label>
           <label>
-            <span className="lbl">{t("Investment size", "حجم سرمایه‌گذاری")}</span>
+            <span className="lbl">{t("Investment size", "میزان سرمایه‌گذاری")}</span>
             <select name="investmentSize">
-              <option>{t("USD 600,000 – 1M", "۶۰۰٬۰۰۰ تا ۱ میلیون دلار")}</option>
+              <option>{t("USD 600,000 – 1M", "۶۰۰,۰۰۰ تا ۱ میلیون دلار")}</option>
               <option>{t("USD 1M – 2M", "۱ تا ۲ میلیون دلار")}</option>
               <option>{t("USD 2M+", "بیش از ۲ میلیون دلار")}</option>
             </select>
@@ -118,13 +118,13 @@ export default function ContactForm() {
         </div>
 
         <label className="full">
-          <span className="lbl">{t("Details", "جزئیات")}</span>
+          <span className="lbl">{t("Details", "توضیحات")}</span>
           <textarea name="message" rows={4} placeholder={t("Tell us about your goals, timeline, and family structure…", "درباره‌ی اهداف، زمان‌بندی و ساختار خانواده‌ی خود به ما بگویید…")} />
         </label>
 
         <div className="form-foot">
-          <small>{t("Your information is reviewed confidentially by Nexa's advisory team.", "اطلاعات شما به‌صورت محرمانه توسط تیم مشاوره‌ی نکسا بررسی می‌شود.")}</small>
-          <button type="submit" className="btn-primary purple">{t("Submit", "ارسال")}</button>
+          <small>{t("Your information is reviewed confidentially by Nexa's advisory team.", "اطلاعات شما توسط تیم مشاوره نکسا به‌صورت محرمانه بررسی می‌شود.")}</small>
+          <button type="submit" className="btn-primary purple">{t("Submit", "ارسال درخواست")}</button>
         </div>
 
         {sent && (

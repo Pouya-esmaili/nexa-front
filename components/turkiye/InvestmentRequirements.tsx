@@ -10,9 +10,9 @@ const cards = [
       </svg>
     ),
     title: "Minimum threshold",
-    titleFa: "حداقل آستانه",
+    titleFa: "حداقل سرمایه‌گذاری",
     desc: (<>Purchase qualifying real estate with a minimum value of <strong>USD 600,000</strong>.</>),
-    descFa: (<>ملک واجد شرایط را با حداقل ارزش <strong>۶۰۰٬۰۰۰ دلار آمریکا</strong> خریداری کنید.</>),
+    descFa: (<>خرید ملک یا مجموعه‌ای از املاک واجد شرایط با ارزش حداقل <strong>۶۰۰ هزار دلار</strong>.</>),
   },
   {
     icon: (
@@ -21,9 +21,9 @@ const cards = [
       </svg>
     ),
     title: "3-year holding",
-    titleFa: "نگهداری ۳ ساله",
+    titleFa: "دوره نگهداری ۳ ساله",
     desc: (<>Maintain ownership for at least <strong>3 years</strong> from the date of acquisition.</>),
-    descFa: (<>مالکیت را حداقل <strong>۳ سال</strong> از تاریخ تملک حفظ کنید.</>),
+    descFa: (<>مالکیت ملک باید حداقل <strong>۳ سال</strong> از تاریخ خرید حفظ شود.</>),
   },
   {
     icon: (
@@ -32,9 +32,9 @@ const cards = [
       </svg>
     ),
     title: "Compliant banking",
-    titleFa: "بانکداری منطبق",
+    titleFa: "انجام تراکنش از مسیرهای رسمی",
     desc: "Complete the transaction through official banking channels and Turkish financial regulations.",
-    descFa: "معامله را از طریق کانال‌های بانکی رسمی و مقررات مالی ترکیه تکمیل کنید.",
+    descFa: "پرداخت و انتقال وجه باید مطابق مقررات بانکی و مالی ترکیه و از طریق کانال‌های رسمی انجام شود.",
   },
   {
     icon: (
@@ -43,9 +43,9 @@ const cards = [
       </svg>
     ),
     title: "Authorized approvals",
-    titleFa: "تأییدیه‌های مجاز",
+    titleFa: "ارزیابی و تأیید رسمی",
     desc: "Obtain official valuation and eligibility approvals from government-authorized authorities.",
-    descFa: "ارزش‌گذاری رسمی و تأییدیه‌های واجد شرایط بودن را از مراجع مورد تأیید دولت دریافت کنید.",
+    descFa: "ارزش ملک و واجد شرایط بودن سرمایه‌گذاری باید توسط مراجع ذی‌صلاح مورد تأیید قرار گیرد.",
   },
 ];
 
@@ -53,8 +53,8 @@ const chips: { en: string; fa: string }[] = [
   { en: "Residential apartments", fa: "آپارتمان‌های مسکونی" },
   { en: "Commercial units", fa: "واحدهای تجاری" },
   { en: "Villas", fa: "ویلاها" },
-  { en: "Approved developments", fa: "پروژه‌های تأییدشده" },
-  { en: "Combined structures", fa: "سازه‌های ترکیبی" },
+  { en: "Approved developments", fa: "پروژه‌های مورد تأیید" },
+  { en: "Combined structures", fa: "ترکیب چند ملک واجد شرایط" },
 ];
 
 export default function InvestmentRequirements() {
@@ -64,14 +64,14 @@ export default function InvestmentRequirements() {
       <h2 className="section-title light">{t("Investment Requirements, Costs & Financial Structure", "الزامات سرمایه‌گذاری، هزینه‌ها و ساختار مالی")}</h2>
       <div className="reqs-layout">
         <aside className="reqs-hero">
-          <div className="reqs-hero-pill">{t("Minimum threshold", "حداقل آستانه")}</div>
+          <div className="reqs-hero-pill">{t("Minimum threshold", "حداقل سرمایه‌گذاری")}</div>
           <div className="reqs-hero-stat">
             <span className="prefix">{t("USD", "دلار")}</span>
             <span className="figure">{t("600K", "۶۰۰ هزار")}</span>
           </div>
           <p className="reqs-hero-meta">
             {lang === "fa"
-              ? (<>ارزش ملک واجد شرایط که توسط دولت ترکیه تعیین شده — حداقل برای <strong>۳ سال</strong> نگهداری می‌شود.</>)
+              ? (<>حداقل ارزش ملک واجد شرایط برای ورود به مسیر شهروندی، مطابق با الزامات فعلی برنامه، با الزام به حفظ سرمایه‌گذاری برای حداقل <strong>۳ سال</strong>.</>)
               : (<>Qualifying real estate value established by the Turkish government — held for a minimum of <strong>3 years</strong>.</>)}
           </p>
           <div className="reqs-hero-chips">

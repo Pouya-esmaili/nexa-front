@@ -11,7 +11,7 @@ const cities = [
     name: "Istanbul",
     nameFa: "استانبول",
     meta: "Financial capital · Bosphorus",
-    metaFa: "پایتخت مالی · بسفر",
+    metaFa: "پایتخت اقتصادی و مالی ترکیه · تنگه بسفر",
     img: "/images/investment/Istanbul.jpg",
     large: true,
   },
@@ -20,7 +20,7 @@ const cities = [
     name: "Ankara",
     nameFa: "آنکارا",
     meta: "Government & diplomacy",
-    metaFa: "دولت و دیپلماسی",
+    metaFa: "مرکز سیاسی، دولتی و دیپلماتیک",
     img: "/images/investment/Ankara.jpg",
   },
   {
@@ -28,7 +28,7 @@ const cities = [
     name: "Antalya",
     nameFa: "آنتالیا",
     meta: "Mediterranean tourism",
-    metaFa: "گردشگری مدیترانه‌ای",
+    metaFa: "قطب گردشگری و سرمایه‌گذاری در سواحل مدیترانه",
     img: "/images/investment/Antalya.jpg",
   },
   {
@@ -36,7 +36,7 @@ const cities = [
     name: "Izmir",
     nameFa: "ازمیر",
     meta: "Aegean trade hub",
-    metaFa: "قطب تجاری اژه",
+    metaFa: "مرکز تجاری و اقتصادی منطقه اژه",
     img: "/images/investment/Izmir.jpg",
   },
   {
@@ -44,7 +44,7 @@ const cities = [
     name: "Bodrum",
     nameFa: "بدروم",
     meta: "Luxury & hospitality",
-    metaFa: "لوکس و مهمان‌نوازی",
+    metaFa: "مقصد لوکس گردشگری و سرمایه‌گذاری در حوزه هتلداری و املاک",
     img: "/images/investment/Bodrum.jpg",
   },
 ];
@@ -56,7 +56,7 @@ export default function Cities() {
       <Row>
         <Reveal variant="up" className="mb-10 md:mb-14">
           <h2 className="text-[28px] md:text-[38px] font-bold tracking-tight">
-            {t("Key Turkish Investment Cities", "شهرهای کلیدی سرمایه‌گذاری ترکیه")}
+            {t("Key Turkish Investment Cities", "شهرهای کلیدی برای سرمایه‌گذاری ملکی در ترکیه")}
           </h2>
         </Reveal>
 

@@ -10,9 +10,9 @@ const cards = [
       </svg>
     ),
     title: "Tri-continental access",
-    titleFa: "دسترسی سه‌قاره‌ای",
+    titleFa: "اتصال سه قاره",
     desc: "Direct corridor between Europe, the Gulf, Central Asia and North Africa.",
-    descFa: "کریدور مستقیم میان اروپا، خلیج‌فارس، آسیای مرکزی و شمال آفریقا.",
+    descFa: "ترکیه در نقطه اتصال اروپا، خلیج فارس، آسیای مرکزی و شمال آفریقا قرار دارد و دسترسی استراتژیک به بازارهای منطقه‌ای و بین‌المللی فراهم می‌کند.",
   },
   {
     icon: (
@@ -21,9 +21,9 @@ const cards = [
       </svg>
     ),
     title: "Real estate upside",
-    titleFa: "پتانسیل رشد املاک",
+    titleFa: "پتانسیل رشد بازار املاک",
     desc: "Competitive acquisition costs powered by a dynamic tourism economy.",
-    descFa: "هزینه‌های تملک رقابتی که با یک اقتصاد گردشگری پویا تقویت می‌شود.",
+    descFa: "هزینه‌های رقابتی خرید ملک، در کنار بازار پویای گردشگری و تقاضای مستمر در شهرهای مهم، ترکیه را به گزینه‌ای جذاب برای سرمایه‌گذاری ملکی تبدیل کرده است.",
   },
   {
     icon: (
@@ -33,9 +33,9 @@ const cards = [
       </svg>
     ),
     title: "World-class infrastructure",
-    titleFa: "زیرساخت در تراز جهانی",
+    titleFa: "زیرساخت‌های در سطح جهانی",
     desc: "Modern airports, deep-water ports and high-speed rail across major cities.",
-    descFa: "فرودگاه‌های مدرن، بنادر آب‌عمیق و راه‌آهن پرسرعت در سراسر شهرهای بزرگ.",
+    descFa: "فرودگاه‌های مدرن، بنادر تجاری، شبکه حمل‌ونقل گسترده و خطوط ریلی سریع، ارتباط ترکیه با بازارهای داخلی و بین‌المللی را تقویت کرده‌اند.",
   },
   {
     icon: (
@@ -44,9 +44,9 @@ const cards = [
       </svg>
     ),
     title: "Tier-1 passport",
-    titleFa: "پاسپورت درجه‌یک",
+    titleFa: "پاسپورتی با اعتبار بین‌المللی",
     desc: "Internationally recognized CBI framework — from residency to passport.",
-    descFa: "چارچوب تابعیت از طریق سرمایه‌گذاری (CBI) با به‌رسمیت‌شناختن بین‌المللی — از اقامت تا پاسپورت.",
+    descFa: "برنامه شهروندی از طریق سرمایه‌گذاری ترکیه، یکی از شناخته‌شده‌ترین مسیرهای CBI در منطقه است و امکان تبدیل یک سرمایه‌گذاری واجد شرایط به مسیر شهروندی را فراهم می‌کند.",
   },
 ];
 

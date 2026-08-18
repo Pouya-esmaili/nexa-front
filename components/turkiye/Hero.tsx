@@ -7,8 +7,8 @@ import { useLang } from "@/components/global/LanguageProvider";
 
 const stats = [
   { num: "USD 600K", numFa: "۶۰۰ هزار دلار", label: "Min. Investment", labelFa: "حداقل سرمایه‌گذاری" },
-  { num: "6–12 mo", numFa: "۶ تا ۱۲ ماه", label: "Processing", labelFa: "پردازش" },
-  { num: "3 yrs", numFa: "۳ سال", label: "Hold Period", labelFa: "دوره‌ی نگهداری" },
+  { num: "6–12 mo", numFa: "۶ تا ۱۲ ماه", label: "Processing", labelFa: "مدت تقریبی فرایند" },
+  { num: "3 yrs", numFa: "۳ سال", label: "Hold Period", labelFa: "حداقل دوره نگهداری سرمایه‌گذاری" },
 ];
 
 const HERO_IMG = "/images/investment/Türkiye.webp";
@@ -49,7 +49,7 @@ export default function Hero() {
           className={`text-3xl font-bold leading-tight tracking-tight mb-4 ${base} duration-700 delay-150 ${mounted ? show : hideUp
             }`}
         >
-          {t("Where", "جایی که")} <span className="text-[#8F27FF]">{t("three continents", "سه قاره")}</span> {t("meet — your next passport begins here.", "به هم می‌رسند — پاسپورت بعدی شما از اینجا آغاز می‌شود.")}
+          {t("Where", "ترکیه؛ پل سرمایه‌گذاری میان")} <span className="text-[#8F27FF]">{t("three continents", "سه قاره")}</span> {t("meet — your next passport begins here.", "و دروازه‌ای به شهروندی.")}
         </h1>
 
         {/* Description */}
@@ -57,7 +57,7 @@ export default function Hero() {
           className={`text-sm text-gray-600 leading-relaxed mb-6 ${base} duration-700 delay-200 ${mounted ? show : hideUp
             }`}
         >
-          {t("Through structured real estate investment, foreign nationals secure long-term residency and qualify for Turkish Citizenship by Investment — at the crossroads of Europe, Asia and the Middle East.", "از طریق سرمایه‌گذاری ساختارمند در املاک، اتباع خارجی اقامت بلندمدت را تضمین کرده و واجد شرایط تابعیت ترکیه از طریق سرمایه‌گذاری می‌شوند — در تقاطع اروپا، آسیا و خاورمیانه.")}
+          {t("Through structured real estate investment, foreign nationals secure long-term residency and qualify for Turkish Citizenship by Investment — at the crossroads of Europe, Asia and the Middle East.", "با سرمایه‌گذاری هدفمند در املاک ترکیه، می‌توانید برای اقامت بلندمدت اقدام کرده و در صورت احراز شرایط سرمایه‌گذاری، از مسیر برنامه شهروندی ترکیه برای دریافت تابعیت و پاسپورت این کشور اقدام کنید؛ آن هم در نقطه اتصال اروپا، آسیا و خاورمیانه.")}
         </p>
 
         <div
@@ -84,7 +84,7 @@ export default function Hero() {
             color: "#fff"
           }}
         >
-          {t("Start your application →", "درخواست خود را آغاز کنید →")}
+          {t("Start your application →", "شروع فرایند درخواست ←")}
         </Link>
       </div>
 
@@ -101,11 +101,11 @@ export default function Hero() {
               className={`text-[48px] font-bold leading-[1.06] tracking-[-0.03em] mb-6 ${base} duration-700 delay-100 ${mounted ? show : hideLeft
                 }`}
             >
-              {t("Where", "جایی که")}{" "}
+              {t("Where", "ترکیه؛ پل سرمایه‌گذاری میان")}{" "}
               <span className="text-[#8F27FF]">
                 {t("three continents", "سه قاره")}
               </span>{" "}
-              {t("meet — your next passport begins here.", "به هم می‌رسند — پاسپورت بعدی شما از اینجا آغاز می‌شود.")}
+              {t("meet — your next passport begins here.", "و دروازه‌ای به شهروندی.")}
             </h1>
 
             {/* Description */}
@@ -113,7 +113,7 @@ export default function Hero() {
               className={`text-[16px] text-[#474747] leading-[1.65] mb-8 max-w-[520px] ${base} duration-700 delay-200 ${mounted ? show : hideLeft
                 }`}
             >
-              {t("Through structured real estate investment, foreign nationals secure long-term residency and qualify for Turkish Citizenship by Investment — at the crossroads of Europe, Asia and the Middle East.", "از طریق سرمایه‌گذاری ساختارمند در املاک، اتباع خارجی اقامت بلندمدت را تضمین کرده و واجد شرایط تابعیت ترکیه از طریق سرمایه‌گذاری می‌شوند — در تقاطع اروپا، آسیا و خاورمیانه.")}
+              {t("Through structured real estate investment, foreign nationals secure long-term residency and qualify for Turkish Citizenship by Investment — at the crossroads of Europe, Asia and the Middle East.", "با سرمایه‌گذاری هدفمند در املاک ترکیه، می‌توانید برای اقامت بلندمدت اقدام کرده و در صورت احراز شرایط سرمایه‌گذاری، از مسیر برنامه شهروندی ترکیه برای دریافت تابعیت و پاسپورت این کشور اقدام کنید؛ آن هم در نقطه اتصال اروپا، آسیا و خاورمیانه.")}
             </p>
 
             {/* Stats */}
@@ -142,7 +142,7 @@ export default function Hero() {
                 color: "#fff"
               }}
             >
-              {t("Start your application →", "درخواست خود را آغاز کنید →")}
+              {t("Start your application →", "شروع فرایند درخواست ←")}
             </Link>
           </div>
 

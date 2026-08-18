@@ -7,61 +7,61 @@ import { useLang } from "@/components/global/LanguageProvider";
 const blocks = [
   {
     title: "Non-Negotiable Entry Requirements",
-    titleFa: "الزامات ورود غیرقابل‌مذاکره",
+    titleFa: "مدارک مورد نیاز برای شروع",
     items: [
       {
         strong: "Valid International Passport",
-        strongFa: "پاسپورت بین‌المللی معتبر",
+        strongFa: "گذرنامه معتبر",
         text: "Minimum 6 months remaining validity at time of submission.",
-        textFa: "حداقل ۶ ماه اعتبار باقی‌مانده در زمان ثبت درخواست.",
+        textFa: "حداقل ۶ ماه اعتبار در زمان ارائه درخواست.",
       },
       {
         strong: "Antecedents Certificate",
-        strongFa: "گواهی سوابق",
+        strongFa: "گواهی سوابق کیفری (Antecedents Certificate)",
         text: "Signed declaration confirming a clean global criminal record; no threat to Dutch public order.",
-        textFa: "اظهارنامه‌ی امضاشده که سوءپیشینه‌ی جهانی پاک را تأیید می‌کند؛ بدون تهدید برای نظم عمومی هلند.",
+        textFa: "اظهارنامه امضاشده مبنی بر نداشتن سابقه کیفری مؤثر و ایجاد نکردن تهدیدی برای نظم عمومی هلند.",
       },
       {
         strong: "TB Medical Screening",
-        strongFa: "غربالگری پزشکی سل",
+        strongFa: "معاینه پزشکی سل (TB)",
         text: "Mandatory chest X-ray at a public health service (GGD) within 3 months of arrival, unless nationality is exempt.",
-        textFa: "رادیوگرافی قفسه‌ی سینه‌ی الزامی در یک مرکز بهداشت عمومی (GGD) ظرف ۳ ماه از ورود، مگر اینکه تابعیت معاف باشد.",
+        textFa: "انجام عکس قفسه سینه در مرکز بهداشت عمومی GGD ظرف ۳ ماه پس از ورود، مگر برای اتباع کشورهای معاف.",
       },
       {
         strong: "Dutch Health Insurance",
-        strongFa: "بیمه‌ی درمانی هلند",
+        strongFa: "بیمه درمانی هلند",
         text: "Immediate enrollment in a compliant policy is required upon establishing residency.",
-        textFa: "ثبت‌نام فوری در یک بیمه‌نامه‌ی منطبق هنگام برقراری اقامت لازم است.",
+        textFa: "پس از استقرار در هلند، ثبت‌نام در یک بیمه درمانی منطبق با الزامات قانونی الزامی است.",
       },
     ],
   },
   {
     title: "Corporate & Sectoral Compliance",
-    titleFa: "انطباق شرکتی و بخشی",
+    titleFa: "مدارک تجاری مورد نیاز",
     items: [
       {
         strong: "KvK Registration",
-        strongFa: "ثبت KvK",
+        strongFa: "ثبت در KvK",
         text: "Immediate registration with the Dutch Chamber of Commerce (Kamer van Koophandel) to secure your corporate identifier.",
-        textFa: "ثبت فوری در اتاق بازرگانی هلند (Kamer van Koophandel) برای دریافت شناسه‌ی شرکتی شما.",
+        textFa: "ثبت کسب‌وکار در اتاق بازرگانی هلند (Kamer van Koophandel) و دریافت شناسه تجاری.",
       },
       {
         strong: "Belastingdienst Alignment",
-        strongFa: "هماهنگی با Belastingdienst",
+        strongFa: "ثبت نزد Belastingdienst",
         text: "Registration with the Dutch Tax Authority for corporate income tax and VAT (BTW) obligations.",
-        textFa: "ثبت‌نام نزد اداره‌ی مالیات هلند برای تعهدات مالیات بر درآمد شرکتی و مالیات بر ارزش افزوده (BTW).",
+        textFa: "ثبت در سازمان مالیاتی هلند برای انجام تعهدات مالیاتی شرکت و مالیات بر ارزش افزوده (BTW).",
       },
       {
         strong: "Professional Licensing",
-        strongFa: "مجوز حرفه‌ای",
+        strongFa: "مجوزهای حرفه‌ای",
         text: "Sector-specific operational licenses, certifications, or regulatory clearances required to trade legally in the Netherlands.",
-        textFa: "مجوزهای عملیاتی خاص هر بخش، گواهی‌ها یا تأییدیه‌های نظارتی لازم برای تجارت قانونی در هلند.",
+        textFa: "دریافت مجوزها، گواهی‌ها یا تأییدیه‌های قانونی موردنیاز برای فعالیت در حوزه مربوطه.",
       },
       {
         strong: "RVO Business Plan",
-        strongFa: "طرح کسب‌وکار RVO",
+        strongFa: "بیزنس‌پلن مورد تأیید RVO",
         text: "A localized, data-backed operational blueprint with signed LOIs, MOUs, or client contracts — no generic templates.",
-        textFa: "یک نقشه‌ی عملیاتی بومی‌شده و مبتنی بر داده با LOIها، تفاهم‌نامه‌ها یا قراردادهای مشتری امضاشده — بدون قالب‌های عمومی.",
+        textFa: "طرح عملیاتی بومی‌سازی‌شده و مبتنی بر داده، همراه با LOI، تفاهم‌نامه یا قراردادهای مشتری؛ طرح‌های عمومی و قالب‌های آماده کافی نیستند.",
       },
     ],
   },
@@ -74,7 +74,7 @@ export default function DocumentRequirements() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-center mb-14">
-            {t("Document Requirements", "الزامات اسناد")}
+            {t("Document Requirements", "مدارک مورد نیاز")}
           </h2>
         </Reveal>
 

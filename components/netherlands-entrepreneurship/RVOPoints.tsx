@@ -7,35 +7,35 @@ import { useLang } from "@/components/global/LanguageProvider";
 const legs = [
   {
     label: "Leg 1",
-    labelFa: "بخش ۱",
+    labelFa: "محور اول",
     title: "Personal Background & Entrepreneurial Readiness",
-    titleFa: "پیشینه‌ی شخصی و آمادگی کارآفرینی",
+    titleFa: "سوابق فردی و آمادگی کارآفرینانه",
     items: [
-      { strong: "Formal Education", strongFa: "تحصیلات رسمی", text: "Master's or Doctorate aligned to your sector.", textFa: "کارشناسی ارشد یا دکتری متناسب با حوزه‌ی شما." },
-      { strong: "Entrepreneurial History", strongFa: "سابقه‌ی کارآفرینی", text: "Experience launching or managing corporate structures.", textFa: "تجربه‌ی راه‌اندازی یا مدیریت ساختارهای شرکتی." },
-      { strong: "Market Familiarity", strongFa: "آشنایی با بازار", text: "Pre-existing business links with European networks.", textFa: "پیوندهای تجاری موجود با شبکه‌های اروپایی." },
+      { strong: "Formal Education", strongFa: "تحصیلات رسمی", text: "Master's or Doctorate aligned to your sector.", textFa: "مدرک کارشناسی ارشد یا دکترا در حوزه مرتبط با فعالیت." },
+      { strong: "Entrepreneurial History", strongFa: "سابقه کارآفرینی", text: "Experience launching or managing corporate structures.", textFa: "تجربه راه‌اندازی یا مدیریت ساختارهای تجاری." },
+      { strong: "Market Familiarity", strongFa: "شناخت بازار", text: "Pre-existing business links with European networks.", textFa: "وجود ارتباطات و سابقه فعالیت تجاری در شبکه‌های اروپایی." },
     ],
   },
   {
     label: "Leg 2",
-    labelFa: "بخش ۲",
+    labelFa: "محور دوم",
     title: "Structural Integrity of the Business Plan",
-    titleFa: "یکپارچگی ساختاری طرح کسب‌وکار",
+    titleFa: "استحکام و انسجام طرح کسب‌وکار",
     items: [
-      { strong: "Market Analysis", strongFa: "تحلیل بازار", text: "Data proving verifiable demand in the Dutch market.", textFa: "داده‌هایی که تقاضای قابل‌تأیید در بازار هلند را اثبات می‌کنند." },
-      { strong: "Financial Projections", strongFa: "پیش‌بینی‌های مالی", text: "1-to-3-year forecasting with revenue, budgets, and tax.", textFa: "پیش‌بینی ۱ تا ۳ ساله با درآمد، بودجه و مالیات." },
-      { strong: "Unique Value Proposition", strongFa: "ارزش پیشنهادی منحصربه‌فرد", text: "Clear differentiation — not overcrowding local sectors.", textFa: "تمایز روشن — بدون اشباع بیش‌ازحد حوزه‌های محلی." },
+      { strong: "Market Analysis", strongFa: "تحلیل بازار", text: "Data proving verifiable demand in the Dutch market.", textFa: "داده‌های معتبر و قابل استناد که تقاضای واقعی در بازار هلند را نشان دهد." },
+      { strong: "Financial Projections", strongFa: "پیش‌بینی‌های مالی", text: "1-to-3-year forecasting with revenue, budgets, and tax.", textFa: "پیش‌بینی ۱ تا ۳ ساله درآمد، بودجه و تعهدات مالیاتی." },
+      { strong: "Unique Value Proposition", strongFa: "ارزش پیشنهادی متمایز", text: "Clear differentiation — not overcrowding local sectors.", textFa: "ارائه مزیت رقابتی روشن و ورود به بازاری که ظرفیت پذیرش کسب‌وکار را داشته باشد." },
     ],
   },
   {
     label: "Leg 3",
-    labelFa: "بخش ۳",
+    labelFa: "محور سوم",
     title: "Verifiable Added Value to the Netherlands",
-    titleFa: "ارزش افزوده‌ی قابل‌تأیید برای هلند",
+    titleFa: "ارزش‌آفرینی قابل اثبات برای هلند",
     items: [
-      { strong: "Innovation", strongFa: "نوآوری", text: "Pioneering tech, clean-energy, or deep-tech applications.", textFa: "کاربردهای پیشگام فناوری، انرژی پاک یا فناوری عمیق." },
-      { strong: "Job Creation", strongFa: "ایجاد اشتغال", text: "Structured plan to employ Dutch or EU citizens.", textFa: "طرح ساختارمند برای استخدام شهروندان هلندی یا اتحادیه اروپا." },
-      { strong: "Supply Chain", strongFa: "زنجیره‌ی تأمین", text: "Trade vectors or partnerships with Dutch vendors.", textFa: "مسیرهای تجاری یا مشارکت با تأمین‌کنندگان هلندی." },
+      { strong: "Innovation", strongFa: "نوآوری", text: "Pioneering tech, clean-energy, or deep-tech applications.", textFa: "استفاده از فناوری‌های نوین، انرژی پاک یا راهکارهای Deep Tech." },
+      { strong: "Job Creation", strongFa: "ایجاد اشتغال", text: "Structured plan to employ Dutch or EU citizens.", textFa: "برنامه مشخص برای استخدام نیروی کار هلندی یا اتحادیه اروپا." },
+      { strong: "Supply Chain", strongFa: "زنجیره تأمین", text: "Trade vectors or partnerships with Dutch vendors.", textFa: "ایجاد روابط تجاری یا همکاری با تأمین‌کنندگان و شرکای هلندی." },
     ],
   },
 ];
@@ -69,8 +69,8 @@ export default function RVOPoints() {
         <Reveal variant="up" delay={80}>
           <p className="text-center text-[15px] leading-[1.65] max-w-[64ch] mx-auto mb-12 relative z-10"
             style={{ color: "rgba(255,255,255,0.6)" }}>
-            {t("A", "یک")} <strong className="text-white font-semibold">{t("300-point scoring matrix", "ماتریس امتیازدهی ۳۰۰ امتیازی")}</strong> {t("administered by the RVO — three legs, each worth 100 points. You need at least", "که توسط RVO اجرا می‌شود — سه بخش، هرکدام ۱۰۰ امتیاز. شما به حداقل")} <strong className="text-white font-semibold">{t("90 points total", "۹۰ امتیاز کل")}</strong>{t(", with a hard minimum of", " نیاز دارید، با حداقل مطلق")}{" "}
-            <strong className="text-white font-semibold">{t("30 points in every single leg.", "۳۰ امتیاز در هر بخش.")}</strong>
+            {t("A", "RVO درخواست‌ها را بر اساس یک")} <strong className="text-white font-semibold">{t("300-point scoring matrix", "سیستم امتیازدهی ۳۰۰ امتیازی")}</strong> {t("administered by the RVO — three legs, each worth 100 points. You need at least", "ارزیابی می‌کند که از سه محور ۱۰۰ امتیازی تشکیل شده است. برای واجد شرایط بودن، کسب حداقل")} <strong className="text-white font-semibold">{t("90 points total", "۹۰ امتیاز")}</strong>{t(", with a hard minimum of", " در مجموع ضروری است؛ با این شرط که در هر سه محور حداقل")}{" "}
+            <strong className="text-white font-semibold">{t("30 points in every single leg.", "۳۰ امتیاز کسب شود.")}</strong>
           </p>
         </Reveal>
 
@@ -83,9 +83,9 @@ export default function RVOPoints() {
               <div className="text-[32px] sm:text-[52px] font-extrabold tracking-[-0.05em] leading-none tabular-nums"
                 style={{ color: "rgba(255,255,255,0.35)" }}>{t("300", "۳۰۰")}</div>
               <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em] mt-2"
-                style={{ color: "rgba(255,255,255,0.35)" }}>{t("Total Points", "کل امتیازها")}</div>
+                style={{ color: "rgba(255,255,255,0.35)" }}>{t("Total Points", "حداکثر امتیاز")}</div>
               <div className="text-[12px] mt-1 hidden sm:block"
-                style={{ color: "rgba(255,255,255,0.2)" }}>{t("distributed across 3 legs", "توزیع‌شده در ۳ بخش")}</div>
+                style={{ color: "rgba(255,255,255,0.2)" }}>{t("distributed across 3 legs", "در سه محور ارزیابی")}</div>
             </div>
 
             {/* Minimum — highlighted */}
@@ -94,9 +94,9 @@ export default function RVOPoints() {
               <div className="text-[32px] sm:text-[52px] font-extrabold tracking-[-0.05em] leading-none tabular-nums"
                 style={{ color: "#FFE600" }}>{t("90", "۹۰")}</div>
               <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em] mt-2"
-                style={{ color: "rgba(255,230,0,0.7)" }}>{t("Minimum to Pass", "حداقل برای قبولی")}</div>
+                style={{ color: "rgba(255,230,0,0.7)" }}>{t("Minimum to Pass", "حداقل امتیاز قبولی")}</div>
               <div className="text-[12px] mt-1 hidden sm:block"
-                style={{ color: "rgba(255,230,0,0.45)" }}>{t("30 per leg minimum", "حداقل ۳۰ در هر بخش")}</div>
+                style={{ color: "rgba(255,230,0,0.45)" }}>{t("30 per leg minimum", "حداقل ۳۰ امتیاز در هر محور")}</div>
             </div>
 
             {/* Gov fee */}
@@ -105,9 +105,9 @@ export default function RVOPoints() {
               <div className="text-[32px] sm:text-[52px] font-extrabold tracking-[-0.05em] leading-none tabular-nums"
                 style={{ color: "rgba(255,255,255,0.35)" }}>{t("€423", "۴۲۳ یورو")}</div>
               <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em] mt-2"
-                style={{ color: "rgba(255,255,255,0.35)" }}>{t("Government Fee", "هزینه‌ی دولتی")}</div>
+                style={{ color: "rgba(255,255,255,0.35)" }}>{t("Government Fee", "هزینه دولتی")}</div>
               <div className="text-[12px] mt-1 hidden sm:block"
-                style={{ color: "rgba(255,255,255,0.2)" }}>{t("non-refundable", "غیرقابل‌استرداد")}</div>
+                style={{ color: "rgba(255,255,255,0.2)" }}>{t("non-refundable", "غیرقابل استرداد")}</div>
             </div>
           </div>
         </Reveal>
@@ -182,8 +182,8 @@ export default function RVOPoints() {
               <line x1="12" y1="17" x2="12.01" y2="17" />
             </svg>
             <span className="text-[13px] leading-[1.6]" style={{ color: "#FCA5A5" }}>
-              {t("Scoring 100 in Legs 1 and 2 but falling below 30 in Leg 3 means", "کسب ۱۰۰ امتیاز در بخش‌های ۱ و ۲ اما افت به زیر ۳۰ در بخش ۳ به معنای")}{" "}
-              <strong className="font-semibold text-white">{t("immediate full rejection", "رد کامل فوری")}</strong> {t("— the 30-point floor per leg has no override.", "است — کف ۳۰ امتیازی هر بخش هیچ استثنایی ندارد.")}
+              {t("Scoring 100 in Legs 1 and 2 but falling below 30 in Leg 3 means", "کسب ۱۰۰ امتیاز در محورهای اول و دوم، در صورتی که امتیاز محور سوم به کمتر از ۳۰ برسد، مانع تأیید پرونده خواهد شد.")}{" "}
+              <strong className="font-semibold text-white">{t("immediate full rejection", "حداقل ۳۰ امتیاز در هر محور")}</strong> {t("— the 30-point floor per leg has no override.", "یک شرط مستقل و الزامی است.")}
             </span>
           </div>
         </Reveal>

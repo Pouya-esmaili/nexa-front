@@ -5,9 +5,9 @@ import Row from "@/components/global/Row";
 import { useLang } from "@/components/global/LanguageProvider";
 
 const stats = [
-  { num: "90", numFa: "۹۰", label: "Points Required", labelFa: "امتیاز موردنیاز" },
-  { num: "2 yr", numFa: "۲ سال", label: "Initial Card", labelFa: "کارت اولیه" },
-  { num: "5 yr", numFa: "۵ سال", label: "Path to PR", labelFa: "مسیر اقامت دائم" },
+  { num: "90", numFa: "۹۰", label: "Points Required", labelFa: "حداقل امتیاز موردنیاز" },
+  { num: "2 yr", numFa: "۲ سال", label: "Initial Card", labelFa: "کارت اقامت اولیه" },
+  { num: "5 yr", numFa: "۵ سال", label: "Path to PR", labelFa: "مسیر تا اقامت دائم" },
 ];
 
 export default function Hero() {
@@ -48,13 +48,13 @@ export default function Hero() {
         <h1
           className={`text-3xl font-bold leading-tight tracking-tight mb-4 ${base} duration-700 delay-150 ${mounted ? show : hideUp}`}
         >
-          {t("Build your European practice inside the", "کسب‌وکار اروپایی خود را در")}{" "}
-          <span className="text-[#8F27FF]">{t("Netherlands.", "هلند بسازید.")}</span>
+          {t("Build your European practice inside the", "کسب‌وکارتان را در قلب اقتصاد اروپا، در")}{" "}
+          <span className="text-[#8F27FF]">{t("Netherlands.", "هلند توسعه دهید.")}</span>
         </h1>
         <p
           className={`text-sm text-[#474747] leading-relaxed mb-6 ${base} duration-700 delay-200 ${mounted ? show : hideUp}`}
         >
-          {t("The Dutch Self-Employed Entrepreneur Visa grants third-country nationals a structured, merit-based pathway to establish an independent corporate presence in one of Europe's most stable economic nodes — evaluated on innovation, viability, and added value.", "ویزای کارآفرینی خوداشتغالی هلند به اتباع کشورهای ثالث یک مسیر ساختارمند و مبتنی بر شایستگی برای ایجاد حضور شرکتی مستقل در یکی از پایدارترین گره‌های اقتصادی اروپا اعطا می‌کند — که بر اساس نوآوری، امکان‌پذیری و ارزش افزوده ارزیابی می‌شود.")}
+          {t("The Dutch Self-Employed Entrepreneur Visa grants third-country nationals a structured, merit-based pathway to establish an independent corporate presence in one of Europe's most stable economic nodes — evaluated on innovation, viability, and added value.", "ویزای کارآفرینی خوداشتغال هلند، مسیری ساختاریافته و مبتنی بر ارزیابی شایستگی برای اتباع کشورهای خارج از اتحادیه اروپا فراهم می‌کند تا حضور تجاری مستقلی در یکی از باثبات‌ترین اقتصادهای اروپا ایجاد کنند. این مسیر بر نوآوری، قابلیت تجاری و ارزش‌آفرینی برای اقتصاد هلند تمرکز دارد.")}
         </p>
         <div
           className={`grid grid-cols-3 gap-4 py-5 border-t border-b border-[#E2E2E2] mb-6 ${base} duration-700 delay-300 ${mounted ? show : hideUp}`}
@@ -73,7 +73,7 @@ export default function Hero() {
           className={`inline-flex items-center gap-2 px-6 py-3 bg-[#8F27FF] text-white font-semibold rounded-full text-sm ${base} duration-500 delay-[400ms] ${mounted ? show : hideUp}`}
           style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
         >
-          {t("Book an Appointment →", "رزرو وقت ملاقات →")}
+          {t("Book an Appointment →", "رزرو وقت مشاوره ←")}
         </a>
       </div>
 
@@ -86,13 +86,13 @@ export default function Hero() {
               <h1
                 className={`text-[48px] font-bold leading-[1.06] tracking-[-0.03em] mb-6 ${base} duration-700 delay-100 ${mounted ? show : hideLeft}`}
               >
-                {t("Build your European practice inside the", "کسب‌وکار اروپایی خود را در")}{" "}
-                <em className="text-[#8F27FF] not-italic">{t("Netherlands.", "هلند بسازید.")}</em>
+                {t("Build your European practice inside the", "کسب‌وکارتان را در قلب اقتصاد اروپا، در")}{" "}
+                <em className="text-[#8F27FF] not-italic">{t("Netherlands.", "هلند توسعه دهید.")}</em>
               </h1>
               <p
                 className={`text-[16px] text-[#474747] leading-[1.65] mb-8 max-w-[520px] ${base} duration-700 delay-200 ${mounted ? show : hideLeft}`}
               >
-                {t("The Dutch Self-Employed Entrepreneur Visa grants third-country nationals a structured, merit-based pathway to establish an independent corporate presence in one of Europe's most stable economic nodes — evaluated on innovation, viability, and added value.", "ویزای کارآفرینی خوداشتغالی هلند به اتباع کشورهای ثالث یک مسیر ساختارمند و مبتنی بر شایستگی برای ایجاد حضور شرکتی مستقل در یکی از پایدارترین گره‌های اقتصادی اروپا اعطا می‌کند — که بر اساس نوآوری، امکان‌پذیری و ارزش افزوده ارزیابی می‌شود.")}
+                {t("The Dutch Self-Employed Entrepreneur Visa grants third-country nationals a structured, merit-based pathway to establish an independent corporate presence in one of Europe's most stable economic nodes — evaluated on innovation, viability, and added value.", "ویزای کارآفرینی خوداشتغال هلند، مسیری ساختاریافته و مبتنی بر ارزیابی شایستگی برای اتباع کشورهای خارج از اتحادیه اروپا فراهم می‌کند تا حضور تجاری مستقلی در یکی از باثبات‌ترین اقتصادهای اروپا ایجاد کنند. این مسیر بر نوآوری، قابلیت تجاری و ارزش‌آفرینی برای اقتصاد هلند تمرکز دارد.")}
               </p>
 
               {/* Stats */}
@@ -120,7 +120,7 @@ export default function Hero() {
                   className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"
                   style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
                 >
-                  {t("Book an Appointment →", "رزرو وقت ملاقات →")}
+                  {t("Book an Appointment →", "رزرو وقت مشاوره ←")}
                 </a>
               </div>
             </div>

@@ -20,7 +20,7 @@ export default function ContactForm() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10 md:mb-14">
-            {t("Start Your Netherlands Self-Employed Visa Journey", "سفر ویزای خوداشتغالی هلند خود را آغاز کنید")}
+            {t("Start Your Netherlands Self-Employed Visa Journey", "مسیر دریافت ویزای خوداشتغالی هلند را آغاز کنید")}
           </h2>
         </Reveal>
 
@@ -90,13 +90,13 @@ export default function ContactForm() {
                   <PhoneField defaultCountryCode="+31" />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="text-[#474747]">{t("Business Type", "نوع کسب‌وکار")}</span>
+                  <span className="text-[#474747]">{t("Business Type", "نوع فعالیت")}</span>
                   <select className="h-11 px-3.5 rounded-[10px] border border-[#E2E2E2] bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors">
                     <option>{t("Tech / SaaS / Software", "فناوری / SaaS / نرم‌افزار")}</option>
-                    <option>{t("Consulting / Advisory", "مشاوره / راهنمایی")}</option>
-                    <option>{t("Creative / Design", "خلاقانه / طراحی")}</option>
+                    <option>{t("Consulting / Advisory", "مشاوره / خدمات تخصصی")}</option>
+                    <option>{t("Creative / Design", "خلاقیت / طراحی")}</option>
                     <option>{t("Deeptech / R&D", "فناوری عمیق / تحقیق و توسعه")}</option>
-                    <option>{t("Healthcare / Medtech", "سلامت / فناوری پزشکی")}</option>
+                    <option>{t("Healthcare / Medtech", "سلامت / مد‌تک")}</option>
                     <option>{t("Other", "سایر")}</option>
                   </select>
                 </label>
@@ -104,16 +104,16 @@ export default function ContactForm() {
                   <span className="text-[#474747]">{t("Estimated RVO Score", "امتیاز تخمینی RVO")}</span>
                   <select className="h-11 px-3.5 rounded-[10px] border border-[#E2E2E2] bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors">
                     <option>{t("Not yet assessed", "هنوز ارزیابی نشده")}</option>
-                    <option>{t("Below 90 — Need guidance", "زیر ۹۰ — نیازمند راهنمایی")}</option>
+                    <option>{t("Below 90 — Need guidance", "کمتر از ۹۰ — نیازمند راهنمایی")}</option>
                     <option>{t("90–150 — Borderline", "۹۰ تا ۱۵۰ — مرزی")}</option>
-                    <option>{t("150+ — Strong profile", "بالای ۱۵۰ — پروفایل قوی")}</option>
+                    <option>{t("150+ — Strong profile", "۱۵۰+ — پروفایل قوی")}</option>
                   </select>
                 </label>
               </div>
 
               {/* Textarea */}
               <label className="flex flex-col gap-2 text-[13px] font-medium">
-                <span className="text-[#474747]">{t("Tell us about your business & goals", "درباره‌ی کسب‌وکار و اهدافتان به ما بگویید")}</span>
+                <span className="text-[#474747]">{t("Tell us about your business & goals", "درباره کسب‌وکار و اهداف خود برای ما بنویسید")}</span>
                 <textarea
                   rows={4}
                   placeholder={t("Describe your business model, client pipeline, Dutch market plans, and what you're looking to achieve…", "مدل کسب‌وکار، خط لوله‌ی مشتری، برنامه‌های بازار هلند و آنچه به دنبال دستیابی به آن هستید را شرح دهید…")}
@@ -124,7 +124,7 @@ export default function ContactForm() {
               {/* Footer */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
                 <small className="text-[12px] text-[#929292] leading-relaxed max-w-[50ch]">
-                  {t("Your information is reviewed confidentially by Nexa's advisory team. We typically respond within 48 hours.", "اطلاعات شما به‌صورت محرمانه توسط تیم مشاوره‌ی نکسا بررسی می‌شود. ما معمولاً ظرف ۴۸ ساعت پاسخ می‌دهیم.")}
+                  {t("Your information is reviewed confidentially by Nexa's advisory team. We typically respond within 48 hours.", "اطلاعات شما به‌صورت محرمانه توسط تیم مشاوره نکسا بررسی می‌شود. معمولاً ظرف ۴۸ ساعت پاسخ خواهیم داد.")}
                 </small>
                 <button
                   type="submit"

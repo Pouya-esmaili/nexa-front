@@ -5,16 +5,16 @@ import Reveal from "@/components/global/Reveal";
 import { useLang } from "@/components/global/LanguageProvider";
 
 const checklist: { en: string; fa: string }[] = [
-  { en: "RVO-compliant business plan with localized market data", fa: "طرح کسب‌وکار منطبق با RVO با داده‌های بومی‌شده‌ی بازار" },
-  { en: "Signed LOIs and B2B contracts for financial proof", fa: "LOIها و قراردادهای B2B امضاشده برای اثبات مالی" },
-  { en: "Innovation and added-value documentation for Leg 3", fa: "مستندسازی نوآوری و ارزش افزوده برای بخش ۳" },
-  { en: "Full TEV pipeline management to the IND", fa: "مدیریت کامل خط لوله‌ی TEV تا IND" },
+  { en: "RVO-compliant business plan with localized market data", fa: "بیزنس‌پلن منطبق با الزامات RVO و مبتنی بر داده‌های واقعی بازار هلند" },
+  { en: "Signed LOIs and B2B contracts for financial proof", fa: "LOIها و قراردادهای B2B برای اثبات ظرفیت مالی و تجاری" },
+  { en: "Innovation and added-value documentation for Leg 3", fa: "مستندات نوآوری و ارزش‌آفرینی برای محور سوم" },
+  { en: "Full TEV pipeline management to the IND", fa: "مدیریت کامل فرآیند TEV و هماهنگی با IND" },
 ];
 
 const breakdown = [
-  { num: "100", numFa: "۱۰۰", label: "Leg 1", labelFa: "بخش ۱", min: "min 30", minFa: "حداقل ۳۰" },
-  { num: "100", numFa: "۱۰۰", label: "Leg 2", labelFa: "بخش ۲", min: "min 30", minFa: "حداقل ۳۰" },
-  { num: "100", numFa: "۱۰۰", label: "Leg 3", labelFa: "بخش ۳", min: "min 30", minFa: "حداقل ۳۰" },
+  { num: "100", numFa: "۱۰۰", label: "Leg 1", labelFa: "محور ۱", min: "min 30", minFa: "حداقل ۳۰" },
+  { num: "100", numFa: "۱۰۰", label: "Leg 2", labelFa: "محور ۲", min: "min 30", minFa: "حداقل ۳۰" },
+  { num: "100", numFa: "۱۰۰", label: "Leg 3", labelFa: "محور ۳", min: "min 30", minFa: "حداقل ۳۰" },
 ];
 
 export default function PointsCTA() {
@@ -33,16 +33,16 @@ export default function PointsCTA() {
               style={{ borderRight: "1px solid #E2E2E2", borderBottom: "none" }}
             >
               <h2 className="text-[24px] sm:text-[30px] font-bold tracking-[-0.03em] leading-[1.15] text-black">
-                {t("Your score determines", "امتیاز شما تعیین می‌کند")}
+                {t("Your score determines", "امتیاز شما،")}
                 <br />
-                {t("your", "که شما")}{" "}
+                {t("your", "تعیین‌کننده")}{" "}
                 <em className="not-italic" style={{ color: "#8F27FF" }}>
-                  {t("eligibility.", "واجد شرایط هستید.")}
+                  {t("eligibility.", "واجد شرایط بودن شماست.")}
                 </em>
               </h2>
 
               <p className="text-[14px] text-[#929292] leading-[1.65]">
-                {t("The RVO doesn't grade on a curve. Three legs, three minimums — all must be cleared. Nexa engineers your application package to maximize points across every assessment dimension.", "RVO نمره‌دهی نسبی نمی‌کند. سه بخش، سه حداقل — همه باید برآورده شوند. نکسا بسته‌ی درخواست شما را طوری مهندسی می‌کند که امتیازها را در هر بُعد ارزیابی به حداکثر برساند.")}
+                {t("The RVO doesn't grade on a curve. Three legs, three minimums — all must be cleared. Nexa engineers your application package to maximize points across every assessment dimension.", "RVO بر اساس یک رقابت نسبی امتیاز نمی‌دهد؛ سه محور مستقل وجود دارد و حداقل هر سه باید تأمین شوند. نکسا پرونده شما را به‌گونه‌ای ساختاربندی می‌کند که در تمام ابعاد ارزیابی، حداکثر امتیاز ممکن را کسب کند.")}
               </p>
 
               <ul className="flex flex-col gap-0">
@@ -75,7 +75,7 @@ export default function PointsCTA() {
             >
               <span className="text-[11px] font-bold uppercase tracking-[0.1em]"
                 style={{ color: "rgba(255,255,255,0.45)" }}>
-                {t("Passing Threshold", "آستانه‌ی قبولی")}
+                {t("Passing Threshold", "حداقل امتیاز قبولی")}
               </span>
 
               <div
@@ -117,7 +117,7 @@ export default function PointsCTA() {
                 className="inline-flex items-center gap-2.5 self-start w-full sm:w-auto justify-center px-6 py-3.5 rounded-full text-[14px] font-bold transition-all hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(255,230,0,0.3)] mt-2"
                 style={{ background: "#FFE600", color: "#000000" }}
               >
-                {t("Assess My Score →", "امتیاز من را ارزیابی کنید →")}
+                {t("Assess My Score →", "ارزیابی امتیاز من ←")}
               </a>
             </div>
           </div>

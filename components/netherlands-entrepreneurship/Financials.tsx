@@ -17,9 +17,9 @@ const cards = [
     ),
     textFa: (
       <>
-        حداقل <strong className="text-white font-semibold">۴٬۵۰۰ یورو</strong> سرمایه‌ی شخصی بدون قید
-        باید مستقیماً به نهاد تجاری هلندی شما تزریق شود. نمی‌تواند از وام‌ها یا خطوط اعتباری
-        تأییدنشده تأمین شود.
+        حداقل <strong className="text-white font-semibold">۴٬۵۰۰ یورو</strong> از سرمایه شخصی و بدون
+        تعهد باید مستقیماً در کسب‌وکار هلندی شما تزریق شود. این سرمایه نباید از وام‌ها یا خطوط اعتباری
+        غیرمجاز تأمین شده باشد.
       </>
     ),
     icon: (
@@ -31,7 +31,7 @@ const cards = [
   },
   {
     title: "Bank Statement Runway",
-    titleFa: "پشتوانه‌ی صورت‌حساب بانکی",
+    titleFa: "پشتوانه مالی از طریق حساب بانکی",
     text: (
       <>
         A <strong className="text-white font-semibold">3 to 6-month bank statement</strong> proving
@@ -41,8 +41,8 @@ const cards = [
     ),
     textFa: (
       <>
-        یک <strong className="text-white font-semibold">صورت‌حساب بانکی ۳ تا ۶ ماهه</strong> که درآمد
-        شخصی پیوسته در حد یا بالاتر از آستانه‌ی حداقل دستمزد هلند را با مسیرهای پاک منشأ سرمایه اثبات کند.
+        ارائه <strong className="text-white font-semibold">گردش حساب ۳ تا ۶ ماهه</strong> برای اثبات
+        استمرار درآمد شخصی در سطح حداقل درآمد موردنیاز هلند، همراه با منبع مالی شفاف و قابل ردیابی.
       </>
     ),
     icon: (
@@ -56,7 +56,7 @@ const cards = [
   },
   {
     title: "No Single-Client Operations",
-    titleFa: "بدون فعالیت تک‌مشتری",
+    titleFa: "فعالیت وابسته به یک مشتری کافی نیست",
     text: (
       <>
         Relying on a <strong className="text-white font-semibold">single primary client mirrors employment</strong>{" "}
@@ -66,9 +66,9 @@ const cards = [
     ),
     textFa: (
       <>
-        اتکا به یک <strong className="text-white font-semibold">مشتری اصلی واحد، شبیه اشتغال است</strong>{" "}
-        و موجب رد شدن از سوی RVO می‌شود. خط لوله‌ی شما باید چند رابطه‌ی B2B، ریسک مستقل و زیرساخت
-        بازاریابی جداگانه را اثبات کند.
+        اتکا به یک <strong className="text-white font-semibold">مشتری اصلی می‌تواند فعالیت شما را شبیه رابطه استخدامی نشان دهد</strong>{" "}
+        و به رد پرونده توسط RVO منجر شود. بنابراین باید مجموعه‌ای از روابط B2B، استقلال تجاری و
+        زیرساخت مستقل بازاریابی و جذب مشتری را نشان دهید.
       </>
     ),
     icon: (
@@ -93,7 +93,7 @@ export default function Financials() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-center text-white mb-14">
-            {t("Financial Self-Sufficiency Requirements", "الزامات خودکفایی مالی")}
+            {t("Financial Self-Sufficiency Requirements", "الزامات مالی")}
           </h2>
         </Reveal>
 
@@ -108,7 +108,7 @@ export default function Financials() {
                 className="self-start text-[11px] font-bold tracking-[0.12em] uppercase px-3.5 py-1.5 rounded-full"
                 style={{ background: "rgba(255,230,0,0.12)", border: "1px solid rgba(255,230,0,0.3)", color: "#FFE600" }}
               >
-                {t("Monthly Income Baseline", "پایه‌ی درآمد ماهانه")}
+                {t("Monthly Income Baseline", "حداقل درآمد ماهانه")}
               </span>
 
               <div>
@@ -120,9 +120,9 @@ export default function Financials() {
               </div>
 
               <p className="text-[14px] leading-[1.65]" style={{ color: "#B5B5BA" }}>
-                {t("Minimum gross monthly personal income required — equal to the Dutch single-person", "حداقل درآمد ناخالص ماهانه‌ی شخصی موردنیاز — برابر با استاندارد")}{" "}
+                {t("Minimum gross monthly personal income required — equal to the Dutch single-person", "حداقل درآمد ناخالص ماهانه موردنیاز برای متقاضی اصلی؛ معادل استاندارد")}{" "}
                 <strong className="font-semibold" style={{ color: "#FFE600" }}>levensonderhoud</strong>{" "}
-                {t("standard for 2026, inclusive of the 8% mandatory holiday allowance.", "تک‌نفره‌ی هلند برای سال ۲۰۲۶، شامل کمک‌هزینه‌ی مرخصی الزامی ۸٪.")}
+                {t("standard for 2026, inclusive of the 8% mandatory holiday allowance.", "برای یک فرد مجرد در سال ۲۰۲۶، با احتساب ۸٪ حق مرخصی سالانه.")}
               </p>
 
               <div
@@ -130,10 +130,10 @@ export default function Financials() {
                 style={{ borderTop: "1px solid #1f1f24" }}
               >
                 {[
-                  { en: "Signed B2B contracts", fa: "قراردادهای B2B امضاشده" },
-                  { en: "Letters of Intent (LOIs)", fa: "نامه‌های اعلام قصد (LOI)" },
-                  { en: "MOUs with Dutch firms", fa: "تفاهم‌نامه‌ها با شرکت‌های هلندی" },
-                  { en: "Audited balance sheets", fa: "ترازنامه‌های حسابرسی‌شده" },
+                  { en: "Signed B2B contracts", fa: "قراردادهای امضاشده B2B" },
+                  { en: "Letters of Intent (LOIs)", fa: "نامه‌های اعلام تمایل به همکاری (LOI)" },
+                  { en: "MOUs with Dutch firms", fa: "تفاهم‌نامه با شرکت‌های هلندی" },
+                  { en: "Audited balance sheets", fa: "صورت‌های مالی حسابرسی‌شده" },
                 ].map((chip) => (
                   <span
                     key={chip.en}

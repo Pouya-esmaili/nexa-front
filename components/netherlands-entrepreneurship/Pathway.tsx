@@ -9,62 +9,62 @@ const pathwayItems = [
   {
     num: "01",
     label: "Initial Card",
-    labelFa: "کارت اولیه",
+    labelFa: "کارت اقامت اولیه",
     year: "2 Years",
     yearFa: "۲ سال",
     detail: {
       title: "2-Year Initial Card",
-      titleFa: "کارت اولیه‌ی ۲ ساله",
+      titleFa: "کارت اقامت اولیه — ۲ سال",
       text: "Operate your Dutch entity with full work authorization. Sponsor spouse and minor children under family reunification channels.",
-      textFa: "نهاد هلندی خود را با مجوز کامل کار اداره کنید. همسر و فرزندان صغیر را تحت کانال‌های پیوند مجدد خانواده حمایت کنید.",
+      textFa: "با این مجوز می‌توانید کسب‌وکار خود را در هلند اداره کنید و از حق کار مرتبط با فعالیت خود برخوردار باشید. همچنین می‌توانید از مسیرهای الحاق خانواده برای همسر و فرزندان زیر سن قانونی اقدام کنید.",
     },
     body: "Operate your Dutch business with full work authorization. Sponsor your spouse and minor children under family reunification channels — they receive a matching residence card.",
-    bodyFa: "کسب‌وکار هلندی خود را با مجوز کامل کار اداره کنید. همسر و فرزندان صغیر خود را تحت کانال‌های پیوند مجدد خانواده حمایت کنید — آن‌ها یک کارت اقامت متناظر دریافت می‌کنند.",
+    bodyFa: "با این مجوز می‌توانید کسب‌وکار خود را در هلند اداره کنید و از حق کار مرتبط با فعالیت خود برخوردار باشید. همچنین می‌توانید از مسیرهای الحاق خانواده برای همسر و فرزندان زیر سن قانونی اقدام کنید.",
   },
   {
     num: "02",
     label: "Renewals",
-    labelFa: "تمدیدها",
+    labelFa: "تمدید اقامت",
     year: "2–5 Year Blocks",
-    yearFa: "بازه‌های ۲ تا ۵ ساله",
+    yearFa: "دوره‌های ۲ تا ۵ ساله",
     detail: {
       title: "Indefinite Renewals",
-      titleFa: "تمدیدهای نامحدود",
+      titleFa: "تمدید اقامت",
       text: "Renewable for subsequent 2-to-5-year blocks as long as the business remains financially viable and yields income at Dutch minimum wage standards.",
-      textFa: "قابل‌تمدید برای بازه‌های بعدی ۲ تا ۵ ساله تا زمانی که کسب‌وکار از نظر مالی پابرجا بماند و درآمدی در حد استانداردهای حداقل دستمزد هلند ایجاد کند.",
+      textFa: "در صورت تداوم فعالیت و حفظ شرایط مالی و تجاری، اقامت شما در دوره‌های بعدی قابل تمدید خواهد بود.",
     },
     body: "Renewable for subsequent 2-to-5-year blocks, provided the business remains financially viable and you continue to earn at or above Dutch minimum wage standards.",
-    bodyFa: "قابل‌تمدید برای بازه‌های بعدی ۲ تا ۵ ساله، مشروط بر اینکه کسب‌وکار از نظر مالی پابرجا بماند و شما به کسب درآمد در حد یا بالاتر از استانداردهای حداقل دستمزد هلند ادامه دهید.",
+    bodyFa: "در صورت تداوم فعالیت و حفظ شرایط مالی و تجاری، اقامت شما در دوره‌های بعدی قابل تمدید خواهد بود.",
   },
   {
     num: "03",
     label: "Permanent Residency",
     labelFa: "اقامت دائم",
     year: "Year 5",
-    yearFa: "سال ۵",
+    yearFa: "سال پنجم",
     detail: {
       title: "Dutch Permanent Residency",
       titleFa: "اقامت دائم هلند",
       text: "After 5 consecutive years of continuous, legal residency, your right to live and work in the Netherlands permanently uncouples from the business.",
-      textFa: "پس از ۵ سال متوالی اقامت قانونی و پیوسته، حق شما برای زندگی و کار در هلند به‌طور دائم از کسب‌وکار مستقل می‌شود.",
+      textFa: "پس از ۵ سال اقامت قانونی و مستمر، در صورت احراز شرایط، می‌توانید برای اقامت دائم اقدام کنید و ادامه اقامت و فعالیت شما دیگر صرفاً به تداوم کسب‌وکار وابسته نخواهد بود.",
     },
     body: "After 5 consecutive years of legal, continuous residency with no unapproved extended absences, your right to live and work in the Netherlands permanently uncouples from your business performance.",
-    bodyFa: "پس از ۵ سال متوالی اقامت قانونی و پیوسته بدون غیبت‌های طولانی تأییدنشده، حق شما برای زندگی و کار در هلند به‌طور دائم از عملکرد کسب‌وکارتان مستقل می‌شود.",
+    bodyFa: "پس از ۵ سال اقامت قانونی و مستمر، در صورت احراز شرایط، می‌توانید برای اقامت دائم اقدام کنید و ادامه اقامت و فعالیت شما دیگر صرفاً به تداوم کسب‌وکار وابسته نخواهد بود.",
   },
   {
     num: "04",
     label: "Dutch Citizenship",
     labelFa: "تابعیت هلند",
     year: "Year 5+",
-    yearFa: "سال ۵ به بعد",
+    yearFa: "سال پنجم به بعد",
     detail: {
       title: "Dutch Citizenship",
       titleFa: "تابعیت هلند",
       text: "Requires passing civic integration exams (Inburgering) at A2 Dutch level. Note: the Netherlands enforces a strict renunciation policy — exceptions apply only in specific circumstances.",
-      textFa: "نیازمند قبولی در آزمون‌های ادغام مدنی (Inburgering) در سطح A2 هلندی است. توجه: هلند یک سیاست انصراف سختگیرانه اعمال می‌کند — استثناها فقط در شرایط خاص اعمال می‌شوند.",
+      textFa: "برای دریافت تابعیت، از جمله باید الزامات ادغام مدنی (Inburgering) و سطح زبان هلندی موردنیاز را احراز کنید. هلند همچنین در برخی شرایط محدود، حفظ تابعیت قبلی را می‌پذیرد و در موارد دیگر ممکن است متقاضی ملزم به ترک تابعیت پیشین خود باشد.",
     },
     body: "Requires passing the civic integration exams (Inburgering) at A2 Dutch proficiency. The Netherlands enforces a strict renunciation policy — you must legally give up your original nationality, unless you qualify for specific exemptions such as being married to a Dutch citizen.",
-    bodyFa: "نیازمند قبولی در آزمون‌های ادغام مدنی (Inburgering) در سطح تسلط A2 هلندی است. هلند یک سیاست انصراف سختگیرانه اعمال می‌کند — باید به‌طور قانونی از تابعیت اصلی خود صرف‌نظر کنید، مگر اینکه واجد شرایط معافیت‌های خاصی مانند ازدواج با یک شهروند هلندی باشید.",
+    bodyFa: "برای دریافت تابعیت، از جمله باید الزامات ادغام مدنی (Inburgering) و سطح زبان هلندی موردنیاز را احراز کنید. هلند همچنین در برخی شرایط محدود، حفظ تابعیت قبلی را می‌پذیرد و در موارد دیگر ممکن است متقاضی ملزم به ترک تابعیت پیشین خود باشد.",
   },
 ];
 
@@ -77,7 +77,7 @@ export default function Pathway() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-center mb-14">
-            {t("Long-Term Horizon", "افق بلندمدت")}
+            {t("Long-Term Horizon", "مسیر بلندمدت اقامت")}
           </h2>
         </Reveal>
 

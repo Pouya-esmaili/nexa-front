@@ -103,13 +103,13 @@ export default function ContactForm() {
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="text-[#474747]">{t("Industry / Sector", "صنعت / حوزه")}</span>
+                  <span className="text-[#474747]">{t("Industry / Sector", "حوزه / صنعت فعالیت")}</span>
                   <select className="h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors">
                     <option>{t("Technology / SaaS", "فناوری / SaaS")}</option>
                     <option>{t("Fintech", "فین‌تک")}</option>
                     <option>{t("Healthtech", "هلث‌تک")}</option>
-                    <option>{t("Cleantech", "کلین‌تک")}</option>
-                    <option>{t("Tourism & Hospitality", "گردشگری و مهمان‌نوازی")}</option>
+                    <option>{t("Cleantech", "فناوری‌های پاک")}</option>
+                    <option>{t("Tourism & Hospitality", "گردشگری و هتلداری")}</option>
                     <option>{t("Other", "سایر")}</option>
                   </select>
                 </label>
@@ -117,7 +117,7 @@ export default function ContactForm() {
 
               {/* Textarea */}
               <label className="flex flex-col gap-2 text-[13px] font-medium">
-                <span className="text-[#474747]">{t("Tell us about your startup & goals", "درباره‌ی استارتاپ و اهدافتان به ما بگویید")}</span>
+                <span className="text-[#474747]">{t("Tell us about your startup & goals", "درباره استارتاپ و اهداف خود برای ما بنویسید")}</span>
                 <textarea
                   rows={4}
                   placeholder={t("Describe your business idea, innovation credentials, and what you're looking to achieve in Spain…", "ایده‌ی کسب‌وکار، مدارک نوآوری و آنچه در اسپانیا به دنبال دستیابی به آن هستید را شرح دهید…")}
@@ -129,7 +129,7 @@ export default function ContactForm() {
               {/* Footer */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
                 <small className="text-[12px] text-gray-500 leading-relaxed max-w-[50ch]">
-                  {t("Your information is reviewed confidentially by Nexa's advisory team. We typically respond within 48 hours.", "اطلاعات شما به‌صورت محرمانه توسط تیم مشاوره‌ی نکسا بررسی می‌شود. ما معمولاً ظرف ۴۸ ساعت پاسخ می‌دهیم.")}
+                  {t("Your information is reviewed confidentially by Nexa's advisory team. We typically respond within 48 hours.", "اطلاعات شما به‌صورت محرمانه توسط تیم مشاوره نکسا بررسی می‌شود. معمولاً ظرف ۴۸ ساعت پاسخ خواهیم داد.")}
                 </small>
                 <button
                   type="submit"

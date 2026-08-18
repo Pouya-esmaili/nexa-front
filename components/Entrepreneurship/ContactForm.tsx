@@ -118,49 +118,49 @@ export default function ContactForm() {
                     <option value="">{t("Select a country…", "یک کشور را انتخاب کنید…")}</option>
                     <option>{t("Canada — Start-Up Visa", "کانادا — ویزای استارتاپ")}</option>
                     <option>{t("Spain — Entrepreneur Visa", "اسپانیا — ویزای کارآفرینی")}</option>
-                    <option>{t("Finland — Startup Permit", "فنلاند — مجوز استارتاپ")}</option>
+                    <option>{t("Finland — Startup Permit", "فنلاند — اقامت استارتاپی")}</option>
                     <option>{t("Portugal — D2 Visa", "پرتغال — ویزای D2")}</option>
                     <option>{t("Netherlands — Startup Visa", "هلند — ویزای استارتاپ")}</option>
-                    <option>{t("Not sure yet", "هنوز مطمئن نیستم")}</option>
+                    <option>{t("Not sure yet", "هنوز تصمیم نگرفته‌ام")}</option>
                   </select>
                 </div>
 
                 <div className="flex flex-col gap-[7px]">
-                  <label className={labelCls}>{t("Industry / Business Type", "صنعت / نوع کسب‌وکار")} <span className="text-[#8F27FF]">*</span></label>
+                  <label className={labelCls}>{t("Industry / Business Type", "حوزه فعالیت / نوع کسب‌وکار")} <span className="text-[#8F27FF]">*</span></label>
                   <select required className={selectCls} style={selectStyle}>
-                    <option value="">{t("Select your industry…", "صنعت خود را انتخاب کنید…")}</option>
+                    <option value="">{t("Select your industry…", "حوزه فعالیت خود را انتخاب کنید...")}</option>
                     <option>{t("Technology / SaaS", "فناوری / SaaS")}</option>
                     <option>{t("E-commerce / Retail", "تجارت الکترونیک / خرده‌فروشی")}</option>
                     <option>{t("Healthcare / Medical", "سلامت / پزشکی")}</option>
                     <option>{t("Food & Beverage", "غذا و نوشیدنی")}</option>
-                    <option>{t("Education / EdTech", "آموزش / فناوری آموزش")}</option>
-                    <option>{t("Finance / FinTech", "مالی / فین‌تک")}</option>
+                    <option>{t("Education / EdTech", "آموزش / EdTech")}</option>
+                    <option>{t("Finance / FinTech", "مالی / FinTech")}</option>
                     <option>{t("Manufacturing", "تولید")}</option>
-                    <option>{t("Creative / Media", "خلاقیت / رسانه")}</option>
+                    <option>{t("Creative / Media", "صنایع خلاق / رسانه")}</option>
                     <option>{t("Other", "سایر")}</option>
                   </select>
                 </div>
 
                 <div className="flex flex-col gap-[7px]">
-                  <label className={labelCls}>{t("Current Business Stage", "مرحله‌ی فعلی کسب‌وکار")}</label>
+                  <label className={labelCls}>{t("Current Business Stage", "مرحله فعلی کسب‌وکار")}</label>
                   <select className={selectCls} style={selectStyle}>
-                    <option value="">{t("Select stage…", "مرحله را انتخاب کنید…")}</option>
-                    <option>{t("Idea / Pre-revenue", "ایده / پیش از درآمد")}</option>
-                    <option>{t("MVP / Early Traction", "MVP / جذب اولیه")}</option>
-                    <option>{t("Established (1–3 years)", "تثبیت‌شده (۱ تا ۳ سال)")}</option>
-                    <option>{t("Scaling / Growth Stage", "مرحله‌ی مقیاس‌دهی / رشد")}</option>
+                    <option value="">{t("Select stage…", "مرحله فعالیت را انتخاب کنید...")}</option>
+                    <option>{t("Idea / Pre-revenue", "ایده / پیش از درآمدزایی")}</option>
+                    <option>{t("MVP / Early Traction", "MVP / شروع جذب مشتری")}</option>
+                    <option>{t("Established (1–3 years)", "کسب‌وکار فعال (۱ تا ۳ سال)")}</option>
+                    <option>{t("Scaling / Growth Stage", "مرحله رشد و توسعه")}</option>
                   </select>
                 </div>
 
                 <div className="flex flex-col gap-[7px]">
-                  <label className={labelCls}>{t("Estimated Available Capital", "سرمایه‌ی در دسترس تخمینی")}</label>
+                  <label className={labelCls}>{t("Estimated Available Capital", "سرمایه در دسترس")}</label>
                   <select className={selectCls} style={selectStyle}>
-                    <option value="">{t("Select range…", "بازه را انتخاب کنید…")}</option>
-                    <option>{t("Under $50,000", "زیر ۵۰٬۰۰۰ دلار")}</option>
-                    <option>{t("$50,000 – $100,000", "۵۰٬۰۰۰ تا ۱۰۰٬۰۰۰ دلار")}</option>
-                    <option>{t("$100,000 – $250,000", "۱۰۰٬۰۰۰ تا ۲۵۰٬۰۰۰ دلار")}</option>
-                    <option>{t("$250,000 – $500,000", "۲۵۰٬۰۰۰ تا ۵۰۰٬۰۰۰ دلار")}</option>
-                    <option>{t("$500,000+", "بیش از ۵۰۰٬۰۰۰ دلار")}</option>
+                    <option value="">{t("Select range…", "بازه موردنظر را انتخاب کنید...")}</option>
+                    <option>{t("Under $50,000", "کمتر از ۵۰,۰۰۰ دلار")}</option>
+                    <option>{t("$50,000 – $100,000", "۵۰,۰۰۰ تا ۱۰۰,۰۰۰ دلار")}</option>
+                    <option>{t("$100,000 – $250,000", "۱۰۰,۰۰۰ تا ۲۵۰,۰۰۰ دلار")}</option>
+                    <option>{t("$250,000 – $500,000", "۲۵۰,۰۰۰ تا ۵۰۰,۰۰۰ دلار")}</option>
+                    <option>{t("$500,000+", "بیش از ۵۰۰,۰۰۰ دلار")}</option>
                   </select>
                 </div>
 
@@ -170,7 +170,7 @@ export default function ContactForm() {
                     <option value="">{t("Select…", "انتخاب کنید…")}</option>
                     <option>{t("Google", "گوگل")}</option>
                     <option>{t("Social Media", "شبکه‌های اجتماعی")}</option>
-                    <option>{t("Friend / Referral", "دوست / معرفی")}</option>
+                    <option>{t("Friend / Referral", "معرفی دوستان / آشنایان")}</option>
                     <option>{t("Attorney", "وکیل")}</option>
                     <option>{t("Webinar", "وبینار")}</option>
                     <option>{t("Tradeshow / Conference", "نمایشگاه / کنفرانس")}</option>
@@ -182,7 +182,7 @@ export default function ContactForm() {
                 <div className="hidden sm:block" />
 
                 <div className="flex flex-col gap-[7px] col-span-1 sm:col-span-2">
-                  <label className={labelCls}>{t("Tell Us About Your Project", "درباره‌ی پروژه‌تان بگویید")}</label>
+                  <label className={labelCls}>{t("Tell Us About Your Project", "درباره پروژه‌تان برای ما بنویسید")}</label>
                   <textarea
                     rows={5}
                     placeholder={t("Briefly describe your business, goals, and what you're looking to achieve through international expansion…", "به‌طور خلاصه کسب‌وکار، اهداف و آنچه از طریق گسترش بین‌المللی می‌خواهید به آن برسید را شرح دهید…")}

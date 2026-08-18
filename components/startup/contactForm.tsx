@@ -97,25 +97,25 @@ export default function StartupContactForm() {
                     <option value="">{t("Select a country…", "یک کشور را انتخاب کنید…")}</option>
                     <option>{t("Finland — Startup Permit", "فنلاند — مجوز استارتاپ")}</option>
                     <option>{t("Canada — Startup Visa", "کانادا — ویزای استارتاپ")}</option>
-                    <option>{t("United Kingdom — Innovator Founder Visa", "انگلستان — ویزای بنیان‌گذار نوآور")}</option>
+                    <option>{t("United Kingdom — Innovator Founder Visa", "بریتانیا — ویزای Innovator Founder")}</option>
                     <option>{t("Netherlands — Startup Visa", "هلند — ویزای استارتاپ")}</option>
-                    <option>{t("France — French Tech Visa", "فرانسه — ویزای فرنچ‌تک")}</option>
-                    <option>{t("Not sure yet", "هنوز مطمئن نیستم")}</option>
+                    <option>{t("France — French Tech Visa", "فرانسه — French Tech Visa")}</option>
+                    <option>{t("Not sure yet", "هنوز تصمیم نگرفته‌ام")}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="flex items-center gap-1 text-[#474747]">{t("Industry / Business Type", "صنعت / نوع کسب‌وکار")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
+                  <span className="flex items-center gap-1 text-[#474747]">{t("Industry / Business Type", "حوزه فعالیت / نوع کسب‌وکار")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
                   <select required className={selectCls}>
-                    <option value="">{t("Select your industry…", "صنعت خود را انتخاب کنید…")}</option>
+                    <option value="">{t("Select your industry…", "انتخاب حوزه فعالیت…")}</option>
                     <option>{t("Technology / SaaS", "فناوری / SaaS")}</option>
                     <option>{t("E-commerce / Retail", "تجارت الکترونیک / خرده‌فروشی")}</option>
                     <option>{t("Healthcare / Medical", "سلامت / پزشکی")}</option>
                     <option>{t("Food & Beverage", "غذا و نوشیدنی")}</option>
                     <option>{t("Real Estate", "املاک")}</option>
-                    <option>{t("Education / EdTech", "آموزش / فناوری آموزش")}</option>
-                    <option>{t("Finance / FinTech", "مالی / فین‌تک")}</option>
+                    <option>{t("Education / EdTech", "آموزش / EdTech")}</option>
+                    <option>{t("Finance / FinTech", "مالی / FinTech")}</option>
                     <option>{t("Manufacturing", "تولید")}</option>
-                    <option>{t("Creative / Media", "خلاقیت / رسانه")}</option>
+                    <option>{t("Creative / Media", "صنایع خلاق / رسانه")}</option>
                     <option>{t("Other", "سایر")}</option>
                   </select>
                 </label>
@@ -124,24 +124,24 @@ export default function StartupContactForm() {
               {/* Row 3 */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="text-[#474747]">{t("Current Business Stage", "مرحله‌ی فعلی کسب‌وکار")}</span>
+                  <span className="text-[#474747]">{t("Current Business Stage", "مرحله فعلی کسب‌وکار")}</span>
                   <select className={selectCls}>
-                    <option value="">{t("Select stage…", "مرحله را انتخاب کنید…")}</option>
-                    <option>{t("Idea / Pre-revenue", "ایده / پیش از درآمد")}</option>
-                    <option>{t("MVP / Early Traction", "MVP / جذب اولیه")}</option>
-                    <option>{t("Established (1–3 years)", "تثبیت‌شده (۱ تا ۳ سال)")}</option>
-                    <option>{t("Scaling / Growth Stage", "مرحله‌ی مقیاس‌دهی / رشد")}</option>
+                    <option value="">{t("Select stage…", "انتخاب مرحله…")}</option>
+                    <option>{t("Idea / Pre-revenue", "ایده / پیش از درآمدزایی")}</option>
+                    <option>{t("MVP / Early Traction", "MVP / شروع جذب مشتری")}</option>
+                    <option>{t("Established (1–3 years)", "کسب‌وکار فعال (۱ تا ۳ سال)")}</option>
+                    <option>{t("Scaling / Growth Stage", "مرحله رشد و توسعه")}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="text-[#474747]">{t("Estimated Available Capital", "سرمایه‌ی در دسترس تخمینی")}</span>
+                  <span className="text-[#474747]">{t("Estimated Available Capital", "سرمایه در دسترس تقریبی")}</span>
                   <select className={selectCls}>
-                    <option value="">{t("Select range…", "بازه را انتخاب کنید…")}</option>
-                    <option>{t("Under $50,000", "زیر ۵۰٬۰۰۰ دلار")}</option>
-                    <option>{t("$50,000 – $100,000", "۵۰٬۰۰۰ تا ۱۰۰٬۰۰۰ دلار")}</option>
-                    <option>{t("$100,000 – $250,000", "۱۰۰٬۰۰۰ تا ۲۵۰٬۰۰۰ دلار")}</option>
-                    <option>{t("$250,000 – $500,000", "۲۵۰٬۰۰۰ تا ۵۰۰٬۰۰۰ دلار")}</option>
-                    <option>{t("$500,000+", "بیش از ۵۰۰٬۰۰۰ دلار")}</option>
+                    <option value="">{t("Select range…", "انتخاب بازه…")}</option>
+                    <option>{t("Under $50,000", "کمتر از ۵۰,۰۰۰ دلار")}</option>
+                    <option>{t("$50,000 – $100,000", "۵۰,۰۰۰ تا ۱۰۰,۰۰۰ دلار")}</option>
+                    <option>{t("$100,000 – $250,000", "۱۰۰,۰۰۰ تا ۲۵۰,۰۰۰ دلار")}</option>
+                    <option>{t("$250,000 – $500,000", "۲۵۰,۰۰۰ تا ۵۰۰,۰۰۰ دلار")}</option>
+                    <option>{t("$500,000+", "بیش از ۵۰۰,۰۰۰ دلار")}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
@@ -150,7 +150,7 @@ export default function StartupContactForm() {
                     <option value="">{t("Select…", "انتخاب کنید…")}</option>
                     <option>{t("Google", "گوگل")}</option>
                     <option>{t("Social Media", "شبکه‌های اجتماعی")}</option>
-                    <option>{t("Friend / Referral", "دوست / معرفی")}</option>
+                    <option>{t("Friend / Referral", "معرفی دوستان / آشنایان")}</option>
                     <option>{t("Attorney", "وکیل")}</option>
                     <option>{t("Webinar", "وبینار")}</option>
                     <option>{t("Tradeshow / Conference", "نمایشگاه / کنفرانس")}</option>
@@ -161,7 +161,7 @@ export default function StartupContactForm() {
 
               {/* Textarea */}
               <label className="flex flex-col gap-2 text-[13px] font-medium">
-                <span className="text-[#474747]">{t("Tell Us About Your Project", "درباره‌ی پروژه‌تان بگویید")}</span>
+                <span className="text-[#474747]">{t("Tell Us About Your Project", "درباره پروژه‌تان برای ما بنویسید")}</span>
                 <textarea
                   rows={4}
                   placeholder={t("Tell us about your startup idea, target country, current stage, and what kind of support you're looking for…", "درباره‌ی ایده‌ی استارتاپ، کشور هدف، مرحله‌ی فعلی و نوع پشتیبانی موردنظرتان برای ما بنویسید…")}
@@ -176,7 +176,7 @@ export default function StartupContactForm() {
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="flex-shrink-0">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                   </svg>
-                  {t("Your information is kept strictly confidential. We respond within 48 hours.", "اطلاعات شما کاملاً محرمانه نگهداری می‌شود. ظرف ۴۸ ساعت پاسخ می‌دهیم.")}
+                  {t("Your information is kept strictly confidential. We respond within 48 hours.", "اطلاعات شما کاملاً محرمانه خواهد ماند. حداکثر ظرف ۴۸ ساعت پاسخ خواهیم داد.")}
                 </small>
                 <button
                   type="submit"

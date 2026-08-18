@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { useLang } from "@/components/global/LanguageProvider";
+import { countries } from "@/components/global/PhoneField";
 
 const NEEDS = [
   "Business Model Design", "Brand Strategy", "Go‑To‑Market Strategy", "Marketing Plan",
@@ -11,14 +12,14 @@ const NEEDS = [
 const NEEDS_FA: Record<string, string> = {
   "Business Model Design": "طراحی مدل کسب‌وکار",
   "Brand Strategy": "استراتژی برند",
-  "Go‑To‑Market Strategy": "استراتژی ورود به بازار",
-  "Marketing Plan": "برنامه‌ی بازاریابی",
+  "Go‑To‑Market Strategy": "استراتژی ورود به بازار (Go-to-Market)",
+  "Marketing Plan": "برنامه بازاریابی",
   "Market Analysis": "تحلیل بازار",
-  "Visual Identity": "هویت بصری",
-  "Web Design": "طراحی وب",
+  "Visual Identity": "طراحی هویت بصری",
+  "Web Design": "طراحی وب‌سایت",
   "Content Creation": "تولید محتوا",
-  "Business Plan": "طرح کسب‌وکار",
-  "Financial Model": "مدل مالی",
+  "Business Plan": "تدوین بیزنس پلن",
+  "Financial Model": "مدل‌سازی مالی",
 };
 
 export default function Contact() {
@@ -103,18 +104,11 @@ export default function Contact() {
                       <label>{t("Phone Number", "شماره تماس")}</label>
                       <div className="cf-phone">
                         <select name="countryCode" className="cf-phone__code" aria-label={t("Country code", "کد کشور")} defaultValue="+1">
-                          <option value="+1">🇨🇦 +1</option>
-                          <option value="+98">🇮🇷 +98</option>
-                          <option value="+1us">🇺🇸 +1</option>
-                          <option value="+44">🇬🇧 +44</option>
-                          <option value="+33">🇫🇷 +33</option>
-                          <option value="+34">🇪🇸 +34</option>
-                          <option value="+351">🇵🇹 +351</option>
-                          <option value="+358">🇫🇮 +358</option>
-                          <option value="+31">🇳🇱 +31</option>
-                          <option value="+90">🇹🇷 +90</option>
-                          <option value="+30">🇬🇷 +30</option>
-                          <option value="+971">🇦🇪 +971</option>
+                          {countries.map((c) => (
+                            <option key={c.name} value={c.code}>
+                              {c.flag} {c.code}
+                            </option>
+                          ))}
                         </select>
                         <input name="phone" type="tel" className="cf-phone__input" placeholder="(555) 000-0000" />
                       </div>
@@ -125,7 +119,7 @@ export default function Contact() {
                     <input name="company" type="text" placeholder={t("What are you building?", "چه چیزی می‌سازید؟")} />
                   </div>
                   <div className="cf-field">
-                    <label>{t("What do you need?", "به چه چیزی نیاز دارید؟")}</label>
+                    <label>{t("What do you need?", "به چه خدماتی نیاز دارید؟")}</label>
                     <div className="cf-checks">
                       {NEEDS.map((n) => (
                         <label className="cf-check" key={n}><input type="checkbox" name="needs" value={n} />{t(n, NEEDS_FA[n] ?? n)}</label>
@@ -137,7 +131,7 @@ export default function Contact() {
                     <textarea name="message" rows={4} placeholder={t("Stage of business, timeline, budget range...", "مرحله‌ی کسب‌وکار، بازه‌ی زمانی، محدوده‌ی بودجه...")}></textarea>
                   </div>
                   <button type="submit" disabled={sending} className="btn-primary cf-submit" style={{ width: "100%", justifyContent: "center", padding: 18 }}>
-                    {sending ? t("Sending…", "در حال ارسال…") : t("Send & Book a Call →", "ارسال و رزرو تماس →")}
+                    {sending ? t("Sending…", "در حال ارسال…") : t("Send & Book a Call →", "ارسال و رزرو جلسه →")}
                   </button>
                 </form>
               )}

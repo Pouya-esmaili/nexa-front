@@ -19,9 +19,9 @@ const timelineItems = [
     tag: 'Education',
     tagFa: 'آموزش',
     title: 'The Spark – Landa Academy is Born',
-    titleFa: 'جرقه — تولد آکادمی لاندا',
+    titleFa: 'جرقه‌ای برای شروع — تولد آکادمی لاندا',
     desc: "Hadi established Landa Academy in Isfahan to mentor students – creating fertile ground for Nexa's first ventures.",
-    descFa: 'هادی آکادمی لاندا را در اصفهان برای منتورینگ دانشجویان بنیان گذاشت — و بستری حاصلخیز برای نخستین کسب‌وکارهای نکسا فراهم کرد.',
+    descFa: 'هادی فعالیت خود را با راه‌اندازی آکادمی لاندا در اصفهان و با هدف آموزش و همراهی دانش‌آموزان آغاز کرد؛ تجربه‌ای که بستری مناسب برای شکل‌گیری نخستین کسب‌وکارهای نکسا فراهم کرد.',
     img: '/images/about/Landa Academy.jpg',
     logo: '/images/about/academylanda.svg',
     side: 'left' as const,
@@ -32,9 +32,9 @@ const timelineItems = [
     tag: 'Automation',
     tagFa: 'اتوماسیون',
     title: 'First Venture – Diaco',
-    titleFa: 'نخستین کسب‌وکار — دیاکو',
+    titleFa: 'نخستین کسب‌وکار — Diaco',
     desc: 'Diaco was launched to address factory automation challenges by translating technical expertise into operational solutions.',
-    descFa: 'دیاکو برای رفع چالش‌های اتوماسیون کارخانه‌ای راه‌اندازی شد و تخصص فنی را به راهکارهای عملیاتی تبدیل کرد.',
+    descFa: 'دیاکو با هدف پاسخ به چالش‌های اتوماسیون صنعتی شکل گرفت و دانش تخصصی مهندسی را به راهکارهای عملیاتی برای کارخانه‌ها تبدیل کرد.',
     img: '/images/about/Diacoo.jpg',
     logo: '/images/landing/diaco.svg',
     side: 'right' as const,
@@ -43,11 +43,11 @@ const timelineItems = [
     year: '2022',
     month: 'Jun',
     tag: 'EdTech & AR',
-    tagFa: 'فناوری آموزش و واقعیت افزوده',
+    tagFa: 'EdTech و واقعیت افزوده',
     title: 'Reimagining Education – Vision Raft',
-    titleFa: 'بازتعریف آموزش — ویژن رفت',
+    titleFa: 'بازتعریف آموزش — Vision Raft',
     desc: 'Vision Raft brought augmented reality into learning, helping children engage beyond traditional classroom methods.',
-    descFa: 'ویژن رفت واقعیت افزوده را به یادگیری آورد و به کودکان کمک کرد فراتر از روش‌های سنتی کلاس درگیر شوند.',
+    descFa: 'ویژن‌رفت با وارد کردن فناوری واقعیت افزوده به فرآیند آموزش، به کودکان کمک کرد تجربه‌ای فراتر از روش‌های سنتی کلاس درس داشته باشند.',
     img: '/images/about/Vision Raft.jpg',
     logo: '/images/landing/raft.svg',
     side: 'left' as const,
@@ -58,9 +58,9 @@ const timelineItems = [
     tag: 'Travel',
     tagFa: 'سفر',
     title: 'Learning Without Borders – Landa Trip',
-    titleFa: 'یادگیری بدون مرز — لاندا تریپ',
+    titleFa: 'یادگیری بدون مرز — Landa Trip',
     desc: 'LandaTrip redefined education beyond traditional settings by integrating learning with purposeful travel.',
-    descFa: 'لاندا تریپ با تلفیق یادگیری و سفر هدفمند، آموزش را فراتر از فضاهای سنتی بازتعریف کرد.',
+    descFa: 'لاندا تریپ مرزهای آموزش سنتی را جابه‌جا کرد و با پیوند دادن یادگیری و سفرهای هدفمند، تجربه‌ای متفاوت از آموزش ایجاد کرد.',
     img: '/images/about/Landa Trip.jpg',
     logo: '/images/landing/Landa Trip.svg',
     side: 'right' as const,
@@ -69,11 +69,11 @@ const timelineItems = [
     year: '2023',
     month: 'Nov',
     tag: 'Marketplace',
-    tagFa: 'بازارگاه',
+    tagFa: 'مارکت‌پلیس',
     title: 'The Innovation Hub – Diaco Center',
-    titleFa: 'کانون نوآوری — دیاکو سنتر',
+    titleFa: 'هاب نوآوری — Diaco Center',
     desc: 'Diaco Center connects technology seekers with validated technology providers.',
-    descFa: 'دیاکو سنتر جویندگان فناوری را به تأمین‌کنندگان معتبر فناوری پیوند می‌دهد.',
+    descFa: 'دیاکو سنتر، متقاضیان فناوری را به ارائه‌دهندگان فناوری معتبر و ارزیابی‌شده متصل می‌کند.',
     img: '/images/about/Diaco Center.jpg',
     logo: '/images/about/Diaco.svg',
     side: 'left' as const,
@@ -82,11 +82,11 @@ const timelineItems = [
     year: '2024',
     month: 'Dec',
     tag: 'HealthTech & AI',
-    tagFa: 'فناوری سلامت و هوش مصنوعی',
+    tagFa: 'HealthTech و هوش مصنوعی',
     title: 'Engineering a Healthier Future – PreventiGene',
-    titleFa: 'مهندسی آینده‌ای سالم‌تر — پریونتی‌ژن',
+    titleFa: 'مهندسی آینده‌ای سالم‌تر — PreventiGene',
     desc: 'PreventiGene applies AI and genetic analysis in early breast cancer risk prevention.',
-    descFa: 'پریونتی‌ژن هوش مصنوعی و تحلیل ژنتیکی را در پیشگیری زودهنگام از خطر سرطان سینه به‌کار می‌گیرد.',
+    descFa: 'پریونتی‌ژن با بهره‌گیری از هوش مصنوعی و تحلیل‌های ژنتیکی، بر پیشگیری و شناسایی زودهنگام ریسک ابتلا به سرطان پستان تمرکز دارد.',
     img: '/images/about/PreventiGenee.jpg',
     logo: '/images/landing/preventigene.svg',
     side: 'right' as const,
@@ -97,9 +97,9 @@ const timelineItems = [
     tag: 'AI & Health',
     tagFa: 'هوش مصنوعی و سلامت',
     title: 'A Platform for Hope – AutiLab',
-    titleFa: 'پلتفرمی برای امید — اوتی‌لب',
+    titleFa: 'پلتفرمی برای امید — AutiLab',
     desc: 'AutiLab enables early autism detection combining AI-driven systems with specialist expertise.',
-    descFa: 'اوتی‌لب با ترکیب سیستم‌های مبتنی بر هوش مصنوعی و تخصص متخصصان، تشخیص زودهنگام اوتیسم را ممکن می‌سازد.',
+    descFa: 'اوتی‌لب با ترکیب سیستم‌های مبتنی بر هوش مصنوعی و تخصص متخصصان، به شناسایی زودهنگام اوتیسم کمک می‌کند.',
     img: '/images/about/AutiLabb.jpg',
     logo: '/images/landing/Autilab.svg',
     side: 'left' as const,
@@ -110,9 +110,9 @@ const timelineItems = [
     tag: 'Creative',
     tagFa: 'خلاقیت',
     title: 'Protecting Artisans – Landa Craft',
-    titleFa: 'حمایت از هنرمندان — لاندا کرافت',
+    titleFa: 'حمایت از هنرمندان — Landa Craft',
     desc: 'Landa Craft enables secure and transparent exchange within the art and creative economy.',
-    descFa: 'لاندا کرافت تبادل امن و شفاف را در اقتصاد هنر و خلاقیت فراهم می‌کند.',
+    descFa: 'لانداکرفت بستری امن و شفاف برای مبادله و تعامل در اقتصاد هنر و صنایع خلاق فراهم می‌کند.',
     img: '/images/about/Landa Craft (2).jpg',
     logo: '/images/landing/craft.svg',
     side: 'right' as const,
@@ -123,30 +123,30 @@ const certificates = [
   {
     img: '/images/about/Small Certificate.webp',
     title: 'Professional Affiliation',
-    titleFa: 'وابستگی حرفه‌ای',
+    titleFa: 'عضویت و همکاری حرفه‌ای',
     desc: 'Certified partnership with internationally recognized advisory and investment networks, ensuring credibility across all operational jurisdictions.',
-    descFa: 'همکاری تأییدشده با شبکه‌های مشاوره و سرمایه‌گذاری معتبر بین‌المللی، که اعتبار ما را در تمام حوزه‌های عملیاتی تضمین می‌کند.',
+    descFa: 'همکاری و مشارکت رسمی با شبکه‌های بین‌المللی معتبر در حوزه مشاوره و سرمایه‌گذاری که اعتبار و استانداردهای حرفه‌ای نکسا را در بازارهای مختلف تقویت می‌کند.',
   },
   {
     img: '/images/about/Small Certificate2.webp',
     title: 'Official Registration Certificate',
     titleFa: 'گواهی ثبت رسمی',
     desc: 'Registered legal entity in Canada – British Columbia Registry. Compliant and active in international business advisory and consulting services.',
-    descFa: 'شخصیت حقوقی ثبت‌شده در کانادا — ثبت بریتیش کلمبیا. منطبق و فعال در خدمات مشاوره و راهبری کسب‌وکار بین‌المللی.',
+    descFa: 'نکسا به‌عنوان یک شخصیت حقوقی در استان بریتیش کلمبیا، کانادا به ثبت رسیده و در حوزه مشاوره و خدمات کسب‌وکار بین‌المللی، به‌صورت قانونی و فعال فعالیت می‌کند.',
   },
   {
     img: '/images/about/IMG_6819.webp',
     title: 'Official Entrepreneurship & Consulting Center License',
     titleFa: 'مجوز رسمی مرکز کارآفرینی و مشاوره',
     desc: 'Officially licensed to provide entrepreneurship consulting, business development services, and support for entrepreneurs and businesses.',
-    descFa: 'دارای مجوز رسمی برای ارائه‌ی مشاوره‌ی کارآفرینی، خدمات توسعه‌ی کسب‌وکار و پشتیبانی از کارآفرینان و کسب‌وکارها.',
+    descFa: 'دارای مجوز رسمی برای ارائه خدمات مشاوره کارآفرینی، توسعه کسب‌وکار و پشتیبانی از کارآفرینان و شرکت‌ها.',
   },
   {
     img: '/images/about/IMG_6820.webp',
     title: 'Official Coworking Space License',
     titleFa: 'مجوز رسمی فضای کار اشتراکی',
     desc: 'Officially licensed to operate a coworking space and collaborative environment for entrepreneurs, startups, and growing businesses.',
-    descFa: 'دارای مجوز رسمی برای راه‌اندازی فضای کار اشتراکی و محیطی همکارانه برای کارآفرینان، استارتاپ‌ها و کسب‌وکارهای در حال رشد.',
+    descFa: 'دارای مجوز رسمی برای راه‌اندازی و مدیریت فضای کار اشتراکی و محیط‌های همکاری برای کارآفرینان، استارتاپ‌ها و کسب‌وکارهای در حال رشد.',
   },
 ];
 
@@ -275,18 +275,18 @@ export default function OurStoryPage() {
             className="os-anim mb-4 font-extrabold text-[#0D0D0D]"
             style={{ fontSize: '30px', letterSpacing: '-0.8px', lineHeight: '1.1' }}
           >
-            {t('Where Bold Founders Come', 'جایی که بنیان‌گذاران جسور')}{' '}
+            {t('Where Bold Founders Come', 'اینجا، ایده‌های جسورانه')}{' '}
             <em
               className="not-italic"
               style={{ background: '#FFE600', color: '#0D0D0D', padding: '2px 10px 4px', borderRadius: '8px', display: 'inline-block', lineHeight: '1.2' }}
             >
-              {t('to Grow', 'برای رشد می‌آیند')}
+              {t('to Grow', 'جهانی می‌شوند')}
             </em>
           </h1>
           <p className="os-anim os-d2 text-[15px] leading-7 text-[#5A5A5A]">
             {t(
               'Nexa is guided by a team shaped around Hadi Hasanpour, whose multidisciplinary engineering background and analytical expertise established a structured approach to building ventures worldwide.',
-              'نکسا با تیمی هدایت می‌شود که حول هادی حسن‌پور شکل گرفته است؛ کسی که پیشینه‌ی مهندسی چندرشته‌ای و تخصص تحلیلی‌اش، رویکردی ساختارمند برای ساختن کسب‌وکارها در سراسر جهان بنا نهاد.'
+              'نکسا با هدایت تیمی شکل گرفته که رویکرد آن بر پایه تجربه چندرشته‌ای و دانش مهندسی هادی حسن‌پور بنا شده است؛ ترکیبی از تفکر تحلیلی و تخصص فنی که مسیر نکسا را برای ساخت و توسعه کسب‌وکارها در سراسر جهان شکل داده است.'
             )}
           </p>
         </div>
@@ -295,15 +295,15 @@ export default function OurStoryPage() {
         <div className="mx-auto hidden max-w-[1200px] grid-cols-2 items-center gap-14 px-16 py-20 md:grid">
           <div>
             <h1 className="os-anim mb-5 font-extrabold text-[#0D0D0D]" style={{ fontSize: '52px', letterSpacing: '-1.8px', lineHeight: '1.08' }}>
-              {t('Where Bold', 'جایی که')}<br />{t('Founders Come', 'بنیان‌گذاران جسور')}<br />
+              {t('Where Bold', 'اینجا،')}<br />{t('Founders Come', 'ایده‌های جسورانه')}<br />
               <em className="not-italic" style={{ background: '#FFE600', color: '#0D0D0D', padding: '2px 10px 4px', borderRadius: '8px', display: 'inline-block', lineHeight: '1.2' }}>
-                {t('to Grow', 'برای رشد می‌آیند')}
+                {t('to Grow', 'جهانی می‌شوند')}
               </em>
             </h1>
             <p className="os-anim os-d2 text-base text-[#5A5A5A]" style={{ lineHeight: '1.78', maxWidth: '440px' }}>
               {t(
                 'Nexa is guided by a team shaped around Hadi Hasanpour, whose multidisciplinary engineering background and analytical expertise established a structured approach to building ventures worldwide.',
-                'نکسا با تیمی هدایت می‌شود که حول هادی حسن‌پور شکل گرفته است؛ کسی که پیشینه‌ی مهندسی چندرشته‌ای و تخصص تحلیلی‌اش، رویکردی ساختارمند برای ساختن کسب‌وکارها در سراسر جهان بنا نهاد.'
+                'نکسا با هدایت تیمی شکل گرفته که رویکرد آن بر پایه تجربه چندرشته‌ای و دانش مهندسی هادی حسن‌پور بنا شده است؛ ترکیبی از تفکر تحلیلی و تخصص فنی که مسیر نکسا را برای ساخت و توسعه کسب‌وکارها در سراسر جهان شکل داده است.'
               )}
             </p>
           </div>
@@ -345,7 +345,7 @@ export default function OurStoryPage() {
                 <p className="text-sm leading-7" style={{ color: 'rgba(255,255,255,.6)' }}>
                   {t(
                     'To build a world without entrepreneurial borders. A world where ideas travel freely, capital follows courage, and founders from every corner of the globe have the power to scale beyond limits. Nexa aims to become the bridge that turns ambition into global influence and vision into international reality.',
-                    'ساختن جهانی بدون مرزهای کارآفرینی. جهانی که در آن ایده‌ها آزادانه سفر می‌کنند، سرمایه به دنبال شجاعت می‌رود و بنیان‌گذاران از هر گوشه‌ی جهان قدرت رشد فراتر از محدودیت‌ها را دارند. نکسا می‌خواهد پلی باشد که جاه‌طلبی را به اثرگذاری جهانی و چشم‌انداز را به واقعیت بین‌المللی تبدیل می‌کند.'
+                    'ساختن جهانی بدون مرز برای کارآفرینی؛ جهانی که در آن ایده‌ها آزادانه از مرزها عبور می‌کنند، سرمایه به دنبال جسارت حرکت می‌کند و بنیان‌گذاران از هر نقطه جهان می‌توانند ایده‌های خود را فراتر از محدودیت‌ها توسعه دهند. نکسا پلی خواهد بود میان جاه‌طلبی و اثرگذاری جهانی؛ پلی که چشم‌اندازهای بزرگ را به واقعیتی بین‌المللی تبدیل می‌کند.'
                   )}
                 </p>
               </div>
@@ -366,7 +366,7 @@ export default function OurStoryPage() {
                 <p className="text-sm leading-7" style={{ color: 'rgba(255,255,255,.6)' }}>
                   {t(
                     "Nexa's mission is to build a trusted global hub for capital transfer and business relocation – empowering entrepreneurs and investors to expand across borders through structured advisory, strategic investment pathways, and direct access to international markets.",
-                    'مأموریت نکسا ساختن یک مرکز جهانی قابل‌اعتماد برای انتقال سرمایه و جابه‌جایی کسب‌وکار است — تا کارآفرینان و سرمایه‌گذاران بتوانند با مشاوره‌ی ساختارمند، مسیرهای سرمایه‌گذاری استراتژیک و دسترسی مستقیم به بازارهای بین‌المللی، فراتر از مرزها گسترش یابند.'
+                    'مأموریت نکسا ایجاد یک هاب جهانی قابل‌اعتماد برای انتقال سرمایه و توسعه کسب‌وکار در بازارهای بین‌المللی است؛ بستری که به کارآفرینان و سرمایه‌گذاران کمک می‌کند با تکیه بر مشاوره تخصصی، مسیرهای استراتژیک سرمایه‌گذاری و دسترسی مستقیم به بازارهای بین‌المللی، کسب‌وکار خود را فراتر از مرزها گسترش دهند.'
                   )}
                 </p>
               </div>
@@ -380,7 +380,7 @@ export default function OurStoryPage() {
         <div className="mx-auto max-w-[1200px] px-4 md:px-16">
           <div className="os-anim mb-16 text-center">
             <h2 className="font-extrabold text-[#0D0D0D]" style={{ fontSize: 'clamp(28px, 4vw, 40px)', letterSpacing: '-1.2px' }}>
-              {t('NEXA Timeline', 'خط زمانی نکسا')}
+              {t('NEXA Timeline', 'مسیر رشد نکسا')}
             </h2>
           </div>
 
@@ -457,10 +457,10 @@ export default function OurStoryPage() {
       <section style={{ background: '#0D0D0D', padding: '88px 0' }}>
         <div className="mx-auto max-w-[1200px] px-4 md:px-16">
           <h2 className="os-anim mb-2 text-center font-extrabold text-white" style={{ fontSize: 'clamp(26px, 4vw, 40px)', letterSpacing: '-1.2px' }}>
-            {t('NEXA', 'گواهی‌نامه‌های')} <span style={{ color: '#FFE600' }}>{t('Certificate', 'نکسا')}</span>
+            {t('NEXA', 'گواهی‌ها و مجوزهای')} <span style={{ color: '#FFE600' }}>{t('Certificate', 'نکسا')}</span>
           </h2>
           <p className="os-anim os-d2 mb-14 text-center text-sm" style={{ color: 'rgba(255,255,255,.45)' }}>
-            {t('Recognized and certified across multiple international jurisdictions.', 'شناخته‌شده و دارای گواهی در چندین حوزه‌ی قضایی بین‌المللی.')}
+            {t('Recognized and certified across multiple international jurisdictions.', 'نکسا در چندین حوزه قضایی بین‌المللی، دارای ثبت، مجوز و گواهی‌های حرفه‌ای است.')}
           </p>
 
           <div className="overflow-hidden rounded-[20px]" style={{ border: '1px solid rgba(255,255,255,.07)' }}>

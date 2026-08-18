@@ -88,20 +88,20 @@ export default function Contact() {
                   <PhoneField name="phone" defaultCountryCode="+1" />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium text-black">
-                  <span>{t("Do you have a 2025 Certificate?", "آیا یک گواهی ۲۰۲۵ دارید؟")}</span>
+                  <span>{t("Do you have a 2025 Certificate?", "آیا گواهی ۲۰۲۵ را در اختیار دارید؟")}</span>
                   <select className={inputCls}>
-                    <option>{t("Yes — 2025 Commitment Certificate", "بله — گواهی تعهد ۲۰۲۵")}</option>
-                    <option>{t("No — Interested in Next Pilot", "خیر — علاقه‌مند به برنامه‌ی آزمایشی بعدی")}</option>
+                    <option>{t("Yes — 2025 Commitment Certificate", "بله — گواهی تعهد (Commitment Certificate) سال ۲۰۲۵")}</option>
+                    <option>{t("No — Interested in Next Pilot", "خیر — مایل به بررسی پایلوت بعدی هستم")}</option>
                     <option>{t("Not Sure", "مطمئن نیستم")}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium text-black">
                   <span>{t("Organization Type", "نوع سازمان")}</span>
                   <select className={inputCls}>
-                    <option>{t("VC Fund ($200K+)", "صندوق VC (۲۰۰ هزار دلار به بالا)")}</option>
-                    <option>{t("Angel Investor Group ($75K+)", "گروه سرمایه‌گذار فرشته (۷۵ هزار دلار به بالا)")}</option>
-                    <option>{t("Business Incubator ($0)", "مرکز رشد کسب‌وکار (۰ دلار)")}</option>
-                    <option>{t("Not Yet Determined", "هنوز تعیین نشده")}</option>
+                    <option>{t("VC Fund ($200K+)", "صندوق سرمایه‌گذاری خطرپذیر — حداقل ۲۰۰,۰۰۰ دلار")}</option>
+                    <option>{t("Angel Investor Group ($75K+)", "گروه سرمایه‌گذاران فرشته — حداقل ۷۵,۰۰۰ دلار")}</option>
+                    <option>{t("Business Incubator ($0)", "مرکز رشد / انکوباتور — بدون حداقل سرمایه‌گذاری")}</option>
+                    <option>{t("Not Yet Determined", "هنوز مشخص نیست")}</option>
                   </select>
                 </label>
               </div>
@@ -109,7 +109,7 @@ export default function Contact() {
               {/* Textarea */}
               <div className="mb-5">
                 <label className="flex flex-col gap-2 text-[13px] font-medium text-black">
-                  <span>{t("Tell us about your startup & team", "درباره‌ی استارتاپ و تیم خود به ما بگویید")}</span>
+                  <span>{t("Tell us about your startup & team", "درباره استارتاپ و تیم خود برای ما بنویسید")}</span>
                   <textarea
                     rows={4}
                     placeholder={t("Describe your venture, team size, current stage, and your 2026 filing timeline…", "کسب‌وکار، اندازه‌ی تیم، مرحله‌ی فعلی و زمان‌بندی ثبت ۲۰۲۶ خود را شرح دهید…")}
@@ -122,7 +122,7 @@ export default function Contact() {
               {/* Footer */}
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mt-2">
                 <small className="text-[12px] text-[#929292] leading-[1.5]">
-                  {t("Your information is reviewed confidentially by Nexa's advisory team. We typically respond within 48 hours.", "اطلاعات شما به‌صورت محرمانه توسط تیم مشاوره‌ی نکسا بررسی می‌شود. ما معمولاً ظرف ۴۸ ساعت پاسخ می‌دهیم.")}
+                  {t("Your information is reviewed confidentially by Nexa's advisory team. We typically respond within 48 hours.", "اطلاعات شما توسط تیم مشاوره نکسا به‌صورت محرمانه بررسی می‌شود. حداکثر ظرف ۴۸ ساعت پاسخ خواهیم داد.")}
                 </small>
                 <button type="submit"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-[10px] px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5 flex-shrink-0"

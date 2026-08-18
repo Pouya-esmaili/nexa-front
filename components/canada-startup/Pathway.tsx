@@ -11,44 +11,44 @@ const items = [
     label: "Permanent Residency",
     labelFa: "اقامت دائم",
     year: "Day One",
-    yearFa: "روز نخست",
+    yearFa: "از روز اول",
     desc: "PR status is granted from landing — completely decoupled from startup performance. If your venture fails, your PR standing is not revoked.",
-    descFa: "وضعیت اقامت دائم از هنگام ورود اعطا می‌شود — کاملاً مستقل از عملکرد استارتاپ. اگر کسب‌وکار شما شکست بخورد، جایگاه اقامت دائم شما لغو نمی‌شود.",
+    descFa: "وضعیت PR از زمان ورود به کانادا برقرار می‌شود و از عملکرد استارتاپ مستقل است. حتی در صورت شکست کسب‌وکار، اقامت دائم شما صرفاً به دلیل عملکرد استارتاپ لغو نمی‌شود.",
     body: "PR status is granted from landing. Completely decoupled from startup performance — if your venture fails after landing, there are no clawback provisions on your PR status based on corporate performance.",
-    bodyFa: "وضعیت اقامت دائم از هنگام ورود اعطا می‌شود. کاملاً مستقل از عملکرد استارتاپ — اگر کسب‌وکار شما پس از ورود شکست بخورد، هیچ مقرره‌ی بازپس‌گیری بر اساس عملکرد شرکتی روی وضعیت اقامت دائم شما وجود ندارد.",
+    bodyFa: "وضعیت PR از زمان ورود به کانادا برقرار می‌شود و از عملکرد استارتاپ مستقل است. حتی در صورت شکست کسب‌وکار، اقامت دائم شما صرفاً به دلیل عملکرد استارتاپ لغو نمی‌شود.",
   },
   {
     dot: "02",
     label: "730-Day Obligation",
-    labelFa: "تعهد ۷۳۰ روزه",
+    labelFa: "الزام حضور ۷۳۰ روزه",
     year: "Per 5 Years",
     yearFa: "در هر ۵ سال",
     desc: "To maintain PR status, spend a minimum of 730 days physically inside Canada within any rolling 5-year period. No further business evaluations required.",
-    descFa: "برای حفظ وضعیت اقامت دائم، حداقل ۷۳۰ روز را به‌طور فیزیکی در داخل کانادا در هر بازه‌ی ۵ ساله‌ی متحرک بگذرانید. هیچ ارزیابی کسب‌وکار بیشتری لازم نیست.",
+    descFa: "برای حفظ وضعیت اقامت دائم، باید در هر دوره ۵ ساله، حداقل ۷۳۰ روز حضور فیزیکی در کانادا داشته باشید. پس از دریافت PR، ارزیابی عملکرد کسب‌وکار برای حفظ اقامت دائم الزامی نیست.",
     body: "To maintain your PR standing, you must spend a minimum of 730 days physically inside Canada within any rolling 5-year period. No business performance evaluations or revenue requirements apply after landing.",
-    bodyFa: "برای حفظ جایگاه اقامت دائم خود، باید حداقل ۷۳۰ روز را به‌طور فیزیکی در داخل کانادا در هر بازه‌ی ۵ ساله‌ی متحرک بگذرانید. هیچ ارزیابی عملکرد کسب‌وکار یا الزام درآمدی پس از ورود اعمال نمی‌شود.",
+    bodyFa: "برای حفظ وضعیت اقامت دائم، باید در هر دوره ۵ ساله، حداقل ۷۳۰ روز حضور فیزیکی در کانادا داشته باشید. پس از دریافت PR، ارزیابی عملکرد کسب‌وکار برای حفظ اقامت دائم الزامی نیست.",
   },
   {
     dot: "03",
     label: "Citizenship Eligible",
-    labelFa: "واجد شرایط تابعیت",
+    labelFa: "امکان اقدام برای تابعیت",
     year: "Year 3",
-    yearFa: "سال ۳",
+    yearFa: "پس از ۳ سال",
     desc: "After 1,095 days (3 years) of physical presence within the 5 years before your application, plus 3 years of Canadian tax filing and passing the citizenship exam.",
-    descFa: "پس از ۱٬۰۹۵ روز (۳ سال) حضور فیزیکی در ۵ سال پیش از درخواست، به‌علاوه‌ی ۳ سال ثبت مالیات کانادا و قبولی در آزمون تابعیت.",
+    descFa: "پس از حداقل ۱٬۰۹۵ روز (۳ سال) حضور فیزیکی در کانادا طی ۵ سال پیش از درخواست و در صورت احراز سایر شرایط، از جمله الزامات مالیاتی و قبولی در آزمون شهروندی، می‌توانید برای تابعیت اقدام کنید.",
     body: "After 1,095 days (3 full years) of physical presence in Canada within the 5 years preceding your citizenship application, plus filing Canadian income tax returns for at least 3 tax years and passing the written citizenship exam.",
-    bodyFa: "پس از ۱٬۰۹۵ روز (۳ سال کامل) حضور فیزیکی در کانادا در ۵ سال پیش از درخواست تابعیت شما، به‌علاوه‌ی ثبت اظهارنامه‌های مالیات بر درآمد کانادا برای حداقل ۳ سال مالیاتی و قبولی در آزمون کتبی تابعیت.",
+    bodyFa: "پس از حداقل ۱٬۰۹۵ روز (۳ سال) حضور فیزیکی در کانادا طی ۵ سال پیش از درخواست و در صورت احراز سایر شرایط، از جمله الزامات مالیاتی و قبولی در آزمون شهروندی، می‌توانید برای تابعیت اقدام کنید.",
   },
   {
     dot: "04",
     label: "Canadian Passport",
     labelFa: "پاسپورت کانادا",
     year: "185+ Countries",
-    yearFa: "بیش از ۱۸۵ کشور",
+    yearFa: "دسترسی به بیش از ۱۸۵ کشور",
     desc: "Visa-free access to over 185 countries. Canada fully recognizes dual citizenship — your original nationality is retained. Language: CLB 4.",
-    descFa: "دسترسی بدون ویزا به بیش از ۱۸۵ کشور. کانادا تابعیت دوگانه را به‌طور کامل به رسمیت می‌شناسد — تابعیت اصلی شما حفظ می‌شود. زبان: CLB 4.",
+    descFa: "تابعیت کانادا امکان سفر بدون ویزا یا با تسهیلات ویزایی به بیش از ۱۸۵ کشور را فراهم می‌کند. کانادا تابعیت دوگانه را به رسمیت می‌شناسد؛ بنابراین در صورت مجاز بودن طبق قوانین کشور مبدأ، امکان حفظ تابعیت قبلی نیز وجود دارد.",
     body: "One of the world's premium passports with visa-free access to over 185 countries. Canada fully recognizes dual citizenship — you retain your original nationality. The language requirement (CLB 4) is automatically satisfied by your initial SUV language entry transcripts.",
-    bodyFa: "یکی از پاسپورت‌های ممتاز جهان با دسترسی بدون ویزا به بیش از ۱۸۵ کشور. کانادا تابعیت دوگانه را به‌طور کامل به رسمیت می‌شناسد — شما تابعیت اصلی خود را حفظ می‌کنید. الزام زبانی (CLB 4) به‌طور خودکار با ریزنمرات زبان ورودی اولیه‌ی SUV شما برآورده می‌شود.",
+    bodyFa: "تابعیت کانادا امکان سفر بدون ویزا یا با تسهیلات ویزایی به بیش از ۱۸۵ کشور را فراهم می‌کند. کانادا تابعیت دوگانه را به رسمیت می‌شناسد؛ بنابراین در صورت مجاز بودن طبق قوانین کشور مبدأ، امکان حفظ تابعیت قبلی نیز وجود دارد.",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function Pathway() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-14">
-            {t("Long-Term Horizons", "افق‌های بلندمدت")}
+            {t("Long-Term Horizons", "افق بلندمدت")}
           </h2>
         </Reveal>
 

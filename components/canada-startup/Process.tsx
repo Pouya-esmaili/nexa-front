@@ -9,41 +9,41 @@ const steps = [
   {
     num: "1",
     meta: "Step 1 · Completed in 2025",
-    metaFa: "گام ۱ · تکمیل‌شده در ۲۰۲۵",
+    metaFa: "۰۱ — انجام‌شده در سال ۲۰۲۵",
     title: "Venture Architecture & Support Letter Issuance",
-    titleFa: "معماری کسب‌وکار و صدور نامه‌ی پشتیبانی",
+    titleFa: "طراحی ساختار استارتاپ و دریافت Letter of Support",
     desc: "The startup was pitched to a designated organization (VC, Angel, or Incubator). The entity issued an official Letter of Support and transmitted the matching Commitment Certificate directly to IRCC.",
-    descFa: "استارتاپ به یک سازمان تعیین‌شده (VC، فرشته یا مرکز رشد) ارائه شد. آن نهاد یک نامه‌ی پشتیبانی رسمی صادر کرد و گواهی تعهد متناظر را مستقیماً به IRCC ارسال کرد.",
+    descFa: "استارتاپ به یک سازمان تعیین‌شده شامل VC، سرمایه‌گذار فرشته یا انکوباتور ارائه شده است. پس از تأیید، سازمان مربوطه Letter of Support را صادر کرده و Commitment Certificate مربوطه را مستقیماً برای IRCC ارسال می‌کند.",
     urgent: false,
   },
   {
     num: "2",
     meta: "Step 2 · Deadline: June 30, 2026",
-    metaFa: "گام ۲ · مهلت: ۳۰ ژوئن ۲۰۲۶",
+    metaFa: "۰۲ — مهلت: ۳۰ ژوئن ۲۰۲۶",
     title: "PR Portal Compilation & Complete Group Submission",
-    titleFa: "گردآوری پورتال اقامت دائم و ثبت گروهی کامل",
+    titleFa: "تکمیل پرونده PR و ثبت هم‌زمان اعضای گروه",
     desc: "All co-founders compile civil documents, police clearances, CLB 5 language transcripts, and settlement fund statements. Every team member submits their PR file simultaneously via the online Permanent Residence Portal. One missing submission invalidates the entire group file.",
-    descFa: "همه‌ی هم‌بنیان‌گذاران اسناد مدنی، گواهی‌های عدم سوءپیشینه، ریزنمرات زبان CLB 5 و صورت‌حساب‌های وجوه استقرار را گردآوری می‌کنند. هر عضو تیم پرونده‌ی اقامت دائم خود را به‌طور هم‌زمان از طریق پورتال آنلاین اقامت دائم ثبت می‌کند. یک ثبت انجام‌نشده، کل پرونده‌ی گروه را باطل می‌کند.",
+    descFa: "تمام هم‌بنیان‌گذاران مدارک هویتی، گواهی‌های عدم سوءپیشینه، نتایج زبان در سطح CLB 5 و مدارک تمکن مالی را آماده می‌کنند. سپس هر عضو، پرونده اقامت دائم خود را به‌صورت هم‌زمان از طریق Permanent Residence Portal ثبت می‌کند. ثبت نشدن پرونده حتی یکی از اعضا می‌تواند کل پرونده گروه را تحت تأثیر قرار دهد.",
     urgent: false,
   },
   {
     num: "3",
     meta: "Step 3 · Post-Submission",
-    metaFa: "گام ۳ · پس از ثبت",
+    metaFa: "۰۳ — پس از ثبت درخواست",
     title: "Triage, Backlog Management & Biometrics",
-    titleFa: "غربالگری، مدیریت صف و بیومتریک",
+    titleFa: "بررسی اولیه، مدیریت پرونده و انگشت‌نگاری",
     desc: "IRCC assesses for completeness. Priority processing is applied to founders holding active SUV work permits onshore in Canada. Applicants complete biometric screening and mandatory medical examinations upon notice.",
-    descFa: "IRCC از نظر کامل بودن ارزیابی می‌کند. پردازش اولویت‌دار برای بنیان‌گذارانی که مجوز کار فعال SUV در داخل کانادا دارند اعمال می‌شود. متقاضیان غربالگری بیومتریک و معاینات پزشکی الزامی را پس از اطلاع تکمیل می‌کنند.",
+    descFa: "IRCC کامل بودن پرونده را بررسی می‌کند. برای بنیان‌گذارانی که در کانادا حضور دارند و دارای مجوز کار معتبر Start-Up Visa هستند، اولویت‌های پردازشی مربوط اعمال می‌شود. پس از اعلام IRCC، متقاضیان مراحل بیومتریک و معاینات پزشکی را انجام می‌دهند.",
     urgent: false,
   },
   {
     num: "4",
     meta: "Step 4 · Final Approval",
-    metaFa: "گام ۴ · تأیید نهایی",
+    metaFa: "۰۴ — تأیید نهایی",
     title: "PR Confirmation & Canadian Settlement",
-    titleFa: "تأیید اقامت دائم و استقرار در کانادا",
+    titleFa: "دریافت تأییدیه اقامت دائم و استقرار در کانادا",
     desc: "Upon successful vetting, IRCC issues the Confirmation of Permanent Residence (COPR). Founders land in Canada as full permanent residents and immediately begin scaling their ventures within the North American market.",
-    descFa: "پس از بررسی موفق، IRCC تأییدیه‌ی اقامت دائم (COPR) را صادر می‌کند. بنیان‌گذاران به‌عنوان مقیمان دائم کامل وارد کانادا می‌شوند و بلافاصله شروع به مقیاس‌دهی کسب‌وکارهای خود در بازار آمریکای شمالی می‌کنند.",
+    descFa: "پس از تکمیل بررسی‌ها، IRCC Confirmation of Permanent Residence (COPR) را صادر می‌کند. بنیان‌گذاران سپس به‌عنوان مقیم دائم وارد کانادا می‌شوند و می‌توانند توسعه کسب‌وکار خود را در بازار آمریکای شمالی آغاز کنند.",
     urgent: false,
   },
 ];
@@ -61,18 +61,18 @@ export default function Process() {
           <div className="md:sticky md:top-[100px]">
             <Reveal variant="up">
               <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] mb-5">
-                {t("2026 Application Workflow", "گردش‌کار درخواست ۲۰۲۶")}
+                {t("2026 Application Workflow", "فرآیند درخواست در سال ۲۰۲۶")}
               </h2>
             </Reveal>
             <Reveal variant="up" delay={120}>
               <blockquote className="text-[18px] italic font-medium leading-[1.5] text-black py-5 pl-6 mb-4"
                 style={{ borderLeft: "3px solid #8F27FF" }}>
-                &ldquo;{t("Nexa structures your deployment pipeline into clear chronological checkpoints, aligned to the strict June 2026 regulatory timeline.", "نکسا خط لوله‌ی استقرار شما را در نقاط بازبینی زمانی روشن ساختاردهی می‌کند که با زمان‌بندی نظارتی سختگیرانه‌ی ژوئن ۲۰۲۶ همسو است.")}&rdquo;
+                &ldquo;{t("Nexa structures your deployment pipeline into clear chronological checkpoints, aligned to the strict June 2026 regulatory timeline.", "نکسا کل فرآیند را به نقاط عطف مشخص و زمان‌بندی‌شده تبدیل می‌کند تا هر مرحله مطابق الزامات و مهلت‌های قانونی پیش برود.")}&rdquo;
               </blockquote>
             </Reveal>
             <Reveal variant="up" delay={240}>
               <p className="text-[14.5px] text-[#929292] leading-[1.7]">
-                {t("The current intake window is open exclusively to founders holding a valid 2025 Commitment Certificate. Every step must be completed before the hard June 30, 2026 deadline.", "بازه‌ی پذیرش فعلی منحصراً برای بنیان‌گذاران دارای گواهی تعهد معتبر ۲۰۲۵ باز است. هر گام باید پیش از مهلت قطعی ۳۰ ژوئن ۲۰۲۶ تکمیل شود.")}
+                {t("The current intake window is open exclusively to founders holding a valid 2025 Commitment Certificate. Every step must be completed before the hard June 30, 2026 deadline.", "در شرایط فعلی، این مسیر فقط برای بنیان‌گذارانی باز است که Commitment Certificate معتبر سال ۲۰۲۵ در اختیار دارند. تمام مراحل باید پیش از مهلت نهایی ۳۰ ژوئن ۲۰۲۶ تکمیل و ثبت شوند.")}
               </p>
             </Reveal>
           </div>

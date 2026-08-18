@@ -32,7 +32,7 @@ export default function ProjectsSection() {
         <Reveal variant="up">
           <div className="text-center mb-14">
             <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em]">
-              {t("Our Successful Projects", "پروژه‌های موفق ما")}
+              {t("Our Successful Projects", "استارتاپ‌های موفق نکسا")}
             </h2>
           </div>
         </Reveal>

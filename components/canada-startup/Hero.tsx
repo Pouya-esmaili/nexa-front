@@ -25,22 +25,22 @@ export default function StartupHero() {
           <div className="order-2 md:order-1">
             <h1 className={`${base} ${mounted ? show : hidden} text-[32px] md:text-[48px] font-bold leading-[1.06] tracking-[-0.03em] mb-5`}
               style={{ transitionDelay: "0ms" }}>
-              {t("Direct permanent residency for", "اقامت دائم مستقیم برای")}{" "}
+              {t("Direct permanent residency for", "اقامت دائم کانادا؛ از همان ابتدای مسیر، برای")}{" "}
               <em className="text-[#8F27FF] not-italic">{t("innovative founders", "بنیان‌گذاران نوآور")}</em>{" "}
-              {t("in North America.", "در آمریکای شمالی.")}
+              {t("in North America.", "")}
             </h1>
 
             <p className={`${base} ${mounted ? show : hidden} text-[16px] text-[#474747] leading-[1.65] mb-8 max-w-[520px]`}
               style={{ transitionDelay: "80ms" }}>
-              {t("The Canada Start-Up Visa grants — not a temporary visa. If your venture fails after landing, your permanent residency stands. Build in one of the world's most business-friendly economies from day one.", "ویزای استارتاپ کانادا اقامت دائم اعطا می‌کند — نه یک ویزای موقت. اگر کسب‌وکار شما پس از ورود شکست بخورد، اقامت دائم شما پابرجا می‌ماند. از روز نخست در یکی از دوستدارترین اقتصادهای جهان برای کسب‌وکار بسازید.")}
+              {t("The Canada Start-Up Visa grants — not a temporary visa. If your venture fails after landing, your permanent residency stands. Build in one of the world's most business-friendly economies from day one.", "برنامه ویزای استارتاپ کانادا مستقیماً به اقامت دائم منتهی می‌شود، نه یک ویزای موقت. حتی اگر پس از ورود به کانادا استارتاپ شما به نتیجه نرسد، وضعیت اقامت دائم شما از بین نمی‌رود. از همان ابتدا، کسب‌وکارتان را در یکی از اقتصادهای قدرتمند و مناسب برای فعالیت‌های تجاری در جهان توسعه دهید.")}
             </p>
 
             <div className={`${base} ${mounted ? show : hidden} grid grid-cols-3 gap-6 py-6 mb-8`}
               style={{ borderTop: "1px solid #E2E2E2", borderBottom: "1px solid #E2E2E2", transitionDelay: "160ms" }}>
               {[
-                { num: "Direct", numFa: "مستقیم", label: "PR — Not a Visa", labelFa: "اقامت دائم — نه ویزا" },
-                { num: "5", numFa: "۵", label: "Max Co-Founders", labelFa: "حداکثر هم‌بنیان‌گذاران" },
-                { num: "3 yr", numFa: "۳ سال", label: "Path to Citizenship", labelFa: "مسیر تابعیت" },
+                { num: "Direct", numFa: "مستقیم", label: "PR — Not a Visa", labelFa: "اقامت دائم — نه ویزای موقت" },
+                { num: "5", numFa: "حداکثر ۵ نفر", label: "Max Co-Founders", labelFa: "هم‌بنیان‌گذار" },
+                { num: "3 yr", numFa: "۳ سال", label: "Path to Citizenship", labelFa: "مسیر تا تابعیت" },
               ].map((s) => (
                 <div key={s.label} className="text-center">
                   <div className="text-[26px] font-bold tracking-[-0.03em] leading-none">{t(s.num, s.numFa)}</div>
@@ -53,7 +53,7 @@ export default function StartupHero() {
               <a href="#contact"
                 className="inline-flex items-center gap-[10px] px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"
                 style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}>
-                {t("Book an Appointment →", "رزرو وقت ملاقات →")}
+                {t("Book an Appointment →", "رزرو وقت مشاوره ←")}
               </a>
             </div>
           </div>

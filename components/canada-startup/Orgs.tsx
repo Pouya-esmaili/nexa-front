@@ -7,48 +7,48 @@ import { useLang } from "@/components/global/LanguageProvider";
 const orgs = [
   {
     type: "Venture Capital Fund",
-    typeFa: "صندوق سرمایه‌ی خطرپذیر",
+    typeFa: "صندوق سرمایه‌گذاری خطرپذیر (VC)",
     typeColor: "text-[#8F27FF]",
     topBar: "bg-[#8F27FF]",
     amount: "$200K",
-    amountFa: "۲۰۰ هزار دلار",
+    amountFa: "۲۰۰ هزار دلار کانادا",
     amountColor: "text-black",
     floor: "CAD Minimum Investment",
-    floorFa: "حداقل سرمایه‌گذاری (دلار کانادا)",
+    floorFa: "حداقل سرمایه‌گذاری",
     title: "Designated VC Fund",
-    titleFa: "صندوق VC تعیین‌شده",
+    titleFa: "Designated VC Fund",
     desc: <>Must secure a legally binding, full <strong>equity investment commitment</strong> from one or more approved Canadian VC funds listed on the official IRCC designated organization registry.</>,
-    descFa: <>باید یک <strong>تعهد سرمایه‌گذاری سهام</strong> کامل و از نظر قانونی الزام‌آور را از یک یا چند صندوق VC کانادایی تأییدشده که در دفتر ثبت رسمی سازمان‌های تعیین‌شده‌ی IRCC فهرست شده‌اند، تأمین کند.</>,
+    descFa: <>باید یک یا چند صندوق سرمایه‌گذاری خطرپذیر کانادایی مورد تأیید، <strong>تعهد رسمی و الزام‌آور برای سرمایه‌گذاری سهامی</strong> در استارتاپ شما ارائه کنند.</>,
   },
   {
     type: "Angel Investor Group",
-    typeFa: "گروه سرمایه‌گذار فرشته",
+    typeFa: "گروه سرمایه‌گذاران فرشته",
     typeColor: "text-[#10B981]",
     topBar: "bg-[#10B981]",
     amount: "$75K",
-    amountFa: "۷۵ هزار دلار",
+    amountFa: "۷۵ هزار دلار کانادا",
     amountColor: "text-black",
     floor: "CAD Minimum Investment",
-    floorFa: "حداقل سرمایه‌گذاری (دلار کانادا)",
+    floorFa: "حداقل سرمایه‌گذاری",
     title: "Designated Angel Network",
-    titleFa: "شبکه‌ی فرشته‌ی تعیین‌شده",
+    titleFa: "Designated Angel Network",
     desc: "Must secure a minimum capital allocation vetted and committed by an approved Canadian angel investor group or network through their formal evaluation process.",
-    descFa: "باید یک تخصیص سرمایه‌ی حداقلی را که توسط یک گروه یا شبکه‌ی سرمایه‌گذار فرشته‌ی کانادایی تأییدشده از طریق فرایند ارزیابی رسمی‌شان بررسی و تعهد شده، تأمین کند.",
+    descFa: "باید حداقل میزان سرمایه موردنیاز را از یک گروه یا شبکه سرمایه‌گذار فرشته مورد تأیید دریافت کنید؛ سرمایه‌ای که پس از ارزیابی رسمی آن سازمان متعهد می‌شود.",
   },
   {
     type: "Business Incubator",
-    typeFa: "مرکز رشد کسب‌وکار",
+    typeFa: "انکوباتور کسب‌وکار",
     typeColor: "text-[#7A6800]",
     topBar: "bg-[#FFE600]",
     amount: "$0",
-    amountFa: "۰ دلار",
+    amountFa: "بدون حداقل سرمایه‌گذاری",
     amountColor: "text-[#7A6800]",
     floor: "No Financial Floor Required",
-    floorFa: "بدون نیاز به کف مالی",
+    floorFa: "",
     title: "Designated Incubator Program",
-    titleFa: "برنامه‌ی مرکز رشد تعیین‌شده",
+    titleFa: "Designated Incubator Program",
     desc: <>No direct cash injection required. Instead, the founder must be <strong>formally accepted into an elite, structured Canadian incubator</strong> acceleration curriculum — the acceptance itself is the qualifying credential.</>,
-    descFa: <>هیچ تزریق نقدی مستقیمی لازم نیست. در عوض، بنیان‌گذار باید <strong>به‌طور رسمی در یک برنامه‌ی شتاب‌دهی مرکز رشد کانادایی نخبه و ساختارمند پذیرفته شود</strong> — خود این پذیرش، اعتبارنامه‌ی واجد شرایط بودن است.</>,
+    descFa: <>تزریق مستقیم سرمایه الزامی نیست. در عوض، بنیان‌گذار باید <strong>به‌صورت رسمی در یک برنامه ساختاریافته و معتبر انکوبیشن یا شتاب‌دهی در کانادا پذیرفته شود</strong>. همین پذیرش، مبنای احراز این مسیر خواهد بود.</>,
   },
 ];
 
@@ -59,7 +59,7 @@ export default function Orgs() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-14">
-            {t("Designated Organization Types & Capital Floors", "انواع سازمان‌های تعیین‌شده و کف‌های سرمایه")}
+            {t("Designated Organization Types & Capital Floors", "انواع سازمان‌های تعیین‌شده و حداقل سرمایه")}
           </h2>
         </Reveal>
 
@@ -83,7 +83,7 @@ export default function Orgs() {
         <Reveal variant="up" delay={80}>
           <div className="rounded-[14px] px-6 py-[18px] text-[13.5px] text-[#8F27FF] font-medium"
             style={{ background: "#FAF6FF", border: "1px solid rgba(143,39,255,0.18)" }}>
-            {t("Each organization type issues an official", "هر نوع سازمان یک")} <strong className="font-bold">{t("Letter of Support", "نامه‌ی پشتیبانی")}</strong> {t("to the founder group and transmits a matching", "رسمی به گروه بنیان‌گذار صادر می‌کند و یک")} <strong className="font-bold">{t("Commitment Certificate directly to IRCC", "گواهی تعهد متناظر را مستقیماً به IRCC")}</strong>{t(". Both documents are mandatory for filing.", " ارسال می‌کند. هر دو سند برای ثبت الزامی هستند.")}
+            {t("Each organization type issues an official", "هر نوع سازمان تعیین‌شده، رسمی")} <strong className="font-bold">{t("Letter of Support", "Letter of Support")}</strong> {t("to the founder group and transmits a matching", "را برای گروه بنیان‌گذاران صادر می‌کند و")} <strong className="font-bold">{t("Commitment Certificate directly to IRCC", "Commitment Certificate مربوطه را مستقیماً برای IRCC")}</strong>{t(". Both documents are mandatory for filing.", " ارسال می‌کند. هر دو مدرک برای ارائه پرونده ضروری هستند.")}
           </div>
         </Reveal>
       </Row>

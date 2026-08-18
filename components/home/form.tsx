@@ -291,11 +291,11 @@ export default function ContactForm() {
                   <FormGroup label={t("Service of Interest", "خدمت موردنظر")}>
                     <div className="relative">
                       <select className={selectCls}>
-                        <option value="">{t("Select a service...", "یک خدمت را انتخاب کنید...")}</option>
-                        <option>{t("Entrepreneurship", "کارآفرینی")}</option>
+                        <option value="">{t("Select a service...", "انتخاب خدمت...")}</option>
+                        <option>{t("Entrepreneurship", "خدمات کارآفرینی")}</option>
                         <option>{t("Startup Acceleration", "شتاب‌دهی استارتاپ")}</option>
                         <option>{t("Investment", "سرمایه‌گذاری")}</option>
-                        <option>{t("Business Advisory", "مشاوره‌ی کسب‌وکار")}</option>
+                        <option>{t("Business Advisory", "مشاوره کسب‌وکار")}</option>
                       </select>
                       <span className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
                         <ChevronDown />
@@ -310,7 +310,7 @@ export default function ContactForm() {
                         <option value="">{t("Select...", "انتخاب کنید...")}</option>
                         <option>{t("Google", "گوگل")}</option>
                         <option>{t("Social Media", "شبکه‌های اجتماعی")}</option>
-                        <option>{t("Friend / Referral", "دوست / معرفی")}</option>
+                        <option>{t("Friend / Referral", "معرفی دوستان / آشنایان")}</option>
                         <option>{t("Attorney", "وکیل")}</option>
                         <option>{t("Webinar", "وبینار")}</option>
                         <option>{t("Tradeshow / Conference", "نمایشگاه / کنفرانس")}</option>
@@ -324,7 +324,7 @@ export default function ContactForm() {
 
                   {/* Message — full width */}
                   <div className="md:col-span-2">
-                    <FormGroup label={t("Tell Us About Your Project", "درباره‌ی پروژه‌تان بگویید")}>
+                    <FormGroup label={t("Tell Us About Your Project", "درباره پروژه‌تان برای ما بنویسید")}>
                       <textarea
                         rows={4}
                         placeholder={t("Describe your business goals and what you're looking to achieve…", "اهداف کسب‌وکار و آنچه می‌خواهید به آن برسید را شرح دهید…")}

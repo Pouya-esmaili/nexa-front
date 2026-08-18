@@ -105,7 +105,9 @@ export default function Results() {
               </g>
 
               {/* ── Stat cards (desktop) ── */}
-              <g id="result-stat-cards">
+              {/* Fixed-pixel layout: force LTR so RTL (Persian) page direction never
+                  reflows/re-anchors the numbers outside their card boxes. */}
+              <g id="result-stat-cards" direction="ltr" style={{ unicodeBidi: "bidi-override" }}>
                 <g transform="translate(270,535)" filter="url(#cs2)">
                   <rect width="210" height="100" rx="16" fill="rgba(22,4,50,0.95)" stroke="rgba(143,39,255,0.5)" strokeWidth="1.5"/>
                   <rect width="6" height="100" rx="3" fill="#8F27FF"/>

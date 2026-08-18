@@ -10,42 +10,42 @@ const stages = [
   {
     num: "01",
     label: "Innovator Founder Visa",
-    labelFa: "ویزای بنیان‌گذار نوآور",
+    labelFa: "Innovator Founder Visa",
     year: "Years 1–3",
-    yearFa: "سال‌های ۱ تا ۳",
+    yearFa: "سال‌های اول تا سوم",
     detail: {
       title: "Innovator Founder Visa",
-      titleFa: "ویزای بنیان‌گذار نوآور",
+      titleFa: "Innovator Founder Visa",
       desc: "Build and scale your venture in the UK with full work authorization for yourself and your family. Max 180 days outside the UK per rolling 12-month period.",
-      descFa: "کسب‌وکار خود را در انگلستان با مجوز کامل کار برای خود و خانواده‌تان بسازید و توسعه دهید. حداکثر ۱۸۰ روز خارج از انگلستان در هر بازه‌ی ۱۲ ماهه‌ی متحرک.",
+      descFa: "در سه سال نخست، کسب‌وکار خود را در بریتانیا راه‌اندازی و توسعه می‌دهید و از حق کار کامل برای خود و خانواده برخوردار هستید. برای حفظ شرایط مسیر، معمولاً نباید بیش از ۱۸۰ روز در هر دوره ۱۲ماهه خارج از بریتانیا باشید.",
     },
     active: true,
   },
   {
     num: "02",
     label: "Checkpoints",
-    labelFa: "نقاط بازبینی",
+    labelFa: "ارزیابی‌های دوره‌ای",
     year: "Month 12 & 24",
-    yearFa: "ماه ۱۲ و ۲۴",
+    yearFa: "ماه‌های ۱۲ و ۲۴",
     detail: {
       title: "Mandatory Checkpoints",
-      titleFa: "نقاط بازبینی اجباری",
+      titleFa: "ارزیابی‌های دوره‌ای",
       desc: "Your Endorsing Body reviews operational progress at Month 12 and Month 24 — checking active management, progress against plan, and funding legitimacy.",
-      descFa: "نهاد تأییدکننده‌ی شما پیشرفت عملیاتی را در ماه ۱۲ و ماه ۲۴ بازبینی می‌کند — و مدیریت فعال، پیشرفت مطابق برنامه و مشروعیت تأمین مالی را بررسی می‌کند.",
+      descFa: "Endorsing Body در ماه‌های ۱۲ و ۲۴ عملکرد کسب‌وکار را بررسی می‌کند؛ از جمله میزان پیشرفت نسبت به بیزنس‌پلن، نقش فعال بنیان‌گذار و اعتبار منابع مالی.",
     },
     active: false,
   },
   {
     num: "03",
     label: "ILR Settlement",
-    labelFa: "اقامت دائم",
+    labelFa: "اقامت دائم (ILR)",
     year: "Year 3",
-    yearFa: "سال ۳",
+    yearFa: "سال سوم",
     detail: {
       title: "Indefinite Leave to Remain",
-      titleFa: "اقامت دائم (ILR)",
+      titleFa: "اقامت دائم",
       desc: "After 3 years, satisfy any 2 of the 7 ILR achievement criteria. Your Endorsing Body re-endorses you. Legal status permanently uncouples from your business.",
-      descFa: "پس از ۳ سال، هر ۲ مورد از ۷ معیار دستاورد اقامت دائم را برآورده کنید. نهاد تأییدکننده دوباره شما را تأیید می‌کند. وضعیت حقوقی شما برای همیشه از کسب‌وکارتان مستقل می‌شود.",
+      descFa: "پس از ۳ سال، در صورت تحقق حداقل ۲ مورد از ۷ معیار تعیین‌شده برای ILR و دریافت تأیید مجدد از Endorsing Body، می‌توانید برای اقامت دائم بریتانیا اقدام کنید.",
     },
     active: false,
   },
@@ -54,12 +54,12 @@ const stages = [
     label: "British Citizenship",
     labelFa: "تابعیت بریتانیا",
     year: "Year 4",
-    yearFa: "سال ۴",
+    yearFa: "سال چهارم",
     detail: {
       title: "British Citizenship",
       titleFa: "تابعیت بریتانیا",
       desc: "After holding ILR for 12 months (total 4 years in UK), apply for British Citizenship via Naturalization. Pass the Life in the UK examination and meet residency requirements.",
-      descFa: "پس از ۱۲ ماه داشتن اقامت دائم (در مجموع ۴ سال در انگلستان)، از طریق تابعیت‌پذیری برای تابعیت بریتانیا درخواست دهید. آزمون Life in the UK را بگذرانید و شرایط اقامت را برآورده کنید.",
+      descFa: "پس از گذشت ۱۲ ماه از دریافت ILR و در مجموع حدود ۴ سال اقامت واجد شرایط، می‌توانید برای تابعیت بریتانیا اقدام کنید؛ مشروط به رعایت الزامات اقامت، قبولی در آزمون Life in the UK و سایر شرایط قانونی تابعیت.",
     },
     active: false,
   },
@@ -75,7 +75,7 @@ export default function PathwayToPassport() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10 md:mb-14">
-            {t("Long-Term Horizon", "افق بلندمدت")}
+            {t("Long-Term Horizon", "مسیر بلندمدت")}
           </h2>
         </Reveal>
 

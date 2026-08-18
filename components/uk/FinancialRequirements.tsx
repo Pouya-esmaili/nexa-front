@@ -7,38 +7,42 @@ import { useLang } from "@/components/global/LanguageProvider";
 const cards = [
   {
     title: "Main Applicant (Founder)",
-    titleFa: "متقاضی اصلی (بنیان‌گذار)",
+    titleFa: "متقاضی اصلی — بنیان‌گذار",
     sub: "Required personal savings threshold",
-    subFa: "آستانه‌ی پس‌انداز شخصی موردنیاز",
+    subFa: "حداقل تمکن مالی موردنیاز",
     amount: "£1,270",
+    amountFa: "۱,۲۷۰ پوند",
   },
   {
     title: "Dependent Partner / Spouse",
-    titleFa: "شریک / همسر تحت تکفل",
+    titleFa: "همسر / پارتنر وابسته",
     sub: "Additional maintenance per dependent partner",
-    subFa: "تأمین مالی اضافی به‌ازای هر شریک تحت تکفل",
+    subFa: "تمکن اضافه برای همسر",
     amount: "+£285",
+    amountFa: "+۲۸۵ پوند",
   },
   {
     title: "First Dependent Child",
-    titleFa: "نخستین فرزند تحت تکفل",
+    titleFa: "فرزند اول",
     sub: "Additional maintenance for first child",
-    subFa: "تأمین مالی اضافی برای نخستین فرزند",
+    subFa: "تمکن اضافه برای فرزند اول",
     amount: "+£315",
+    amountFa: "+۳۱۵ پوند",
   },
   {
     title: "Each Additional Child",
-    titleFa: "هر فرزند اضافی",
+    titleFa: "هر فرزند دیگر",
     sub: "Additional maintenance per subsequent child",
-    subFa: "تأمین مالی اضافی به‌ازای هر فرزند بعدی",
+    subFa: "تمکن اضافه برای هر فرزند بعدی",
     amount: "+£200",
+    amountFa: "+۲۰۰ پوند",
   },
 ];
 
 const CHIPS: { en: string; fa: string }[] = [
   { en: "Personal bank account", fa: "حساب بانکی شخصی" },
-  { en: "28 continuous days", fa: "۲۸ روز پیوسته" },
-  { en: "Separate from business capital", fa: "جدا از سرمایه‌ی کسب‌وکار" },
+  { en: "28 continuous days", fa: "حداقل ۲۸ روز متوالی" },
+  { en: "Separate from business capital", fa: "جدا از سرمایه کسب‌وکار" },
 ];
 
 export default function FinancialRequirements() {
@@ -54,7 +58,7 @@ export default function FinancialRequirements() {
       <Row>
         <Reveal variant="up" className="relative z-10 mb-10 md:mb-14">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center text-white">
-            {t("Personal Financial Maintenance", "تأمین مالی شخصی")}
+            {t("Personal Financial Maintenance", "تمکن مالی شخصی")}
           </h2>
         </Reveal>
 
@@ -72,14 +76,14 @@ export default function FinancialRequirements() {
                 {t("28-Day Holding Requirement", "الزام نگهداری ۲۸ روزه")}
               </span>
               <div className="text-[72px] font-bold tracking-[-0.04em] leading-[0.9] text-white">
-                £1,270
+                {t("£1,270", "۱,۲۷۰ پوند")}
               </div>
               <p className="text-[14px] leading-[1.65]" style={{ color: "#B5B5BA" }}>
-                {t("Minimum personal savings for the", "حداقل پس‌انداز شخصی برای")}{" "}
+                {t("Minimum personal savings for the", "حداقل میزان پس‌انداز موردنیاز برای")}{" "}
                 <strong className="font-semibold" style={{ color: "#FFE600" }}>{t("main applicant", "متقاضی اصلی")}</strong>
-                {t(", held in your personal bank account for", "، که در حساب بانکی شخصی شما به‌مدت")}{" "}
+                {t(", held in your personal bank account for", "که باید به مدت")}{" "}
                 <strong className="font-semibold" style={{ color: "#FFE600" }}>{t("28 consecutive days", "۲۸ روز متوالی")}</strong>{" "}
-                {t("before submission.", "پیش از ارسال نگهداری شده باشد.")}
+                {t("before submission.", "پیش از ارائه درخواست در حساب بانکی شخصی او نگهداری شده باشد.")}
               </p>
               <div
                 className="flex flex-wrap gap-2 mt-auto pt-4"
@@ -126,7 +130,7 @@ export default function FinancialRequirements() {
                     className="text-[28px] font-bold tracking-[-0.03em] whitespace-nowrap flex-shrink-0"
                     style={{ color: "#FFE600" }}
                   >
-                    {c.amount}
+                    {t(c.amount, c.amountFa)}
                   </div>
                 </div>
               </Reveal>

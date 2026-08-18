@@ -6,9 +6,9 @@ import { useEffect, useState } from "react";
 import { useLang } from "@/components/global/LanguageProvider";
 
 const stats = [
-  { num: "3 yr", numFa: "۳ سال", label: "Path to ILR", labelFa: "مسیر اقامت دائم" },
-  { num: "£1,270", numFa: "۱٬۲۷۰£", label: "Maintenance Floor", labelFa: "کف تأمین مالی" },
-  { num: "3 wk", numFa: "۳ هفته", label: "Decision Time", labelFa: "زمان تصمیم" },
+  { num: "3 yr", numFa: "۳ سال", label: "Path to ILR", labelFa: "مسیر تا اقامت دائم" },
+  { num: "£1,270", numFa: "۱,۲۷۰ پوند", label: "Maintenance Floor", labelFa: "حداقل تمکن مالی" },
+  { num: "3 wk", numFa: "۳ هفته", label: "Decision Time", labelFa: "زمان تصمیم‌گیری" },
 ];
 
 export default function Hero() {
@@ -39,10 +39,10 @@ export default function Hero() {
           style={{ background: "#0f1520 url('/images/photos/1513635269975-59663e0ac1ad-w900.webp') center/cover" }}
         />
         <h1 className={`text-3xl font-bold leading-tight tracking-tight mb-4 ${base} duration-600 delay-150 ${mounted ? show : hideUp}`}>
-          {t("Build global scale from inside the", "در مقیاس جهانی رشد کنید، از دلِ")} <span className="text-[#8F27FF]">{t("United Kingdom.", "انگلستان.")}</span>
+          {t("Build global scale from inside the", "از بریتانیا، کسب‌وکارتان را به بازارهای جهانی برسانید.")} <span className="text-[#8F27FF]">{t("United Kingdom.", "")}</span>
         </h1>
         <p className={`text-sm text-gray-600 leading-relaxed mb-6 ${base} duration-600 delay-200 ${mounted ? show : hideUp}`}>
-          {t("The UK Innovator Founder Visa replaces the old Start-up Visa — no £50,000 capital floor, accelerated settlement after just 3 years, and full family unity from day one.", "ویزای بنیان‌گذار نوآور انگلستان جایگزین ویزای استارتاپ قدیمی شده است — بدون کف سرمایه‌ی ۵۰٬۰۰۰ پوندی، اقامت دائم سریع پس از تنها ۳ سال، و همراهی کامل خانواده از روز نخست.")}
+          {t("The UK Innovator Founder Visa replaces the old Start-up Visa — no £50,000 capital floor, accelerated settlement after just 3 years, and full family unity from day one.", "ویزای Innovator Founder بریتانیا جایگزین مسیر قدیمی Start-up Visa شده و یک مسیر یکپارچه برای بنیان‌گذاران نوآور است؛ بدون الزام به سرمایه‌گذاری ثابت ۵۰,۰۰۰ پوند، با امکان دریافت اقامت دائم پس از تنها ۳ سال و امکان همراهی کامل خانواده از همان ابتدا.")}
         </p>
         <div className={`grid grid-cols-3 gap-4 py-6 border-t border-b border-gray-200 mb-6 ${base} duration-600 delay-300 ${mounted ? show : hideUp}`}>
           {stats.map((s) => (
@@ -56,7 +56,7 @@ export default function Hero() {
           href="#contact"
           className={`inline-flex items-center gap-2 px-6 py-3 bg-[#8F27FF] text-white font-semibold rounded-full text-sm ${base} duration-500 delay-[400ms] ${mounted ? show : hideUp}`}
         >
-          {t("Book an Appointment →", "رزرو وقت ملاقات →")}
+          {t("Book an Appointment →", "رزرو وقت مشاوره ←")}
         </Link>
       </div>
 
@@ -67,11 +67,11 @@ export default function Hero() {
             <div>
 
               <h1 className={`text-[48px] font-bold leading-[1.06] tracking-[-0.03em] mb-6 ${base} duration-700 delay-100 ${mounted ? show : hideLeft}`}>
-                {t("Build global scale from inside the", "در مقیاس جهانی رشد کنید، از دلِ")}{" "}
-                <span className="text-[#8F27FF]">{t("United Kingdom.", "انگلستان.")}</span>
+                {t("Build global scale from inside the", "از بریتانیا، کسب‌وکارتان را به بازارهای جهانی برسانید.")}{" "}
+                <span className="text-[#8F27FF]">{t("United Kingdom.", "")}</span>
               </h1>
               <p className={`text-[16px] text-[#474747] leading-[1.65] mb-8 max-w-[520px] ${base} duration-700 delay-200 ${mounted ? show : hideLeft}`}>
-                {t("The UK Innovator Founder Visa replaces the old Start-up Visa with a single, premium route — no £50,000 capital floor, accelerated settlement after just 3 years, and full family unity from day one.", "ویزای بنیان‌گذار نوآور انگلستان با یک مسیر یکپارچه و ممتاز جایگزین ویزای استارتاپ قدیمی شده است — بدون کف سرمایه‌ی ۵۰٬۰۰۰ پوندی، اقامت دائم سریع پس از تنها ۳ سال، و همراهی کامل خانواده از روز نخست.")}
+                {t("The UK Innovator Founder Visa replaces the old Start-up Visa with a single, premium route — no £50,000 capital floor, accelerated settlement after just 3 years, and full family unity from day one.", "ویزای Innovator Founder بریتانیا جایگزین مسیر قدیمی Start-up Visa شده و یک مسیر یکپارچه برای بنیان‌گذاران نوآور است؛ بدون الزام به سرمایه‌گذاری ثابت ۵۰,۰۰۰ پوند، با امکان دریافت اقامت دائم پس از تنها ۳ سال و امکان همراهی کامل خانواده از همان ابتدا.")}
               </p>
               <div className={`grid grid-cols-3 py-6 border-t border-b border-gray-200 mb-9 ${base} duration-700 delay-300 ${mounted ? show : hideLeft}`}>
                 {stats.map((s) => (
@@ -86,7 +86,7 @@ export default function Hero() {
                 className={`inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5 ${base} duration-500 delay-[400ms] ${mounted ? show : hideLeft}`}
                 style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
               >
-                {t("Book an Appointment →", "رزرو وقت ملاقات →")}
+                {t("Book an Appointment →", "رزرو وقت مشاوره ←")}
               </Link>
             </div>
 

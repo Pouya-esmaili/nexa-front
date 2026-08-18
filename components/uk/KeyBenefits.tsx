@@ -6,9 +6,9 @@ import { useLang } from "@/components/global/LanguageProvider";
 const cards = [
   {
     title: "Accelerated Settlement",
-    titleFa: "اقامت دائم سریع",
+    titleFa: "مسیر سریع‌تر به اقامت دائم",
     desc: "Apply for Indefinite Leave to Remain (ILR) after just 3 years — significantly faster than the standard 5-year route required by most other UK visas.",
-    descFa: "پس از تنها ۳ سال برای اقامت دائم (ILR) درخواست دهید — به‌مراتب سریع‌تر از مسیر استاندارد ۵ ساله که بیشتر ویزاهای دیگر انگلستان نیاز دارند.",
+    descFa: "پس از تنها ۳ سال می‌توانید برای Indefinite Leave to Remain (ILR) اقدام کنید؛ مسیری کوتاه‌تر از دوره استاندارد ۵ ساله در بسیاری از مسیرهای اقامتی بریتانیا.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} className="w-6 h-6">
         <path d="M13 3L4 14h7l-1 7 9-11h-7l1-7z" />
@@ -17,9 +17,9 @@ const cards = [
   },
   {
     title: "No Minimum Capital Floor",
-    titleFa: "بدون کف حداقلی سرمایه",
+    titleFa: "بدون الزام به سرمایه ثابت",
     desc: "The previous statutory £50,000 investment requirement has been removed. You only need to demonstrate sufficient funds to execute your specific business plan.",
-    descFa: "الزام قانونی پیشین سرمایه‌گذاری ۵۰٬۰۰۰ پوندی حذف شده است. فقط باید نشان دهید بودجه‌ی کافی برای اجرای طرح کسب‌وکار مشخص خود دارید.",
+    descFa: "الزام قانونی قبلی برای سرمایه‌گذاری ۵۰,۰۰۰ پوند حذف شده است. در عوض، باید نشان دهید منابع مالی کافی برای اجرای مدل کسب‌وکار و برنامه توسعه خود را در اختیار دارید.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} className="w-6 h-6">
         <circle cx="12" cy="12" r="9" />
@@ -29,9 +29,9 @@ const cards = [
   },
   {
     title: "Flexible Professional Rights",
-    titleFa: "حقوق شغلی منعطف",
+    titleFa: "آزادی بیشتر در فعالیت حرفه‌ای",
     desc: "Legally permitted to take secondary employment alongside your startup — provided the role is skilled at RQF Level 3 or higher (equivalent to A-levels or above).",
-    descFa: "مجاز به اشتغال ثانویه در کنار استارتاپ خود — به‌شرط آنکه شغل در سطح RQF سطح ۳ یا بالاتر (معادل A-level یا بالاتر) تخصصی باشد.",
+    descFa: "در کنار راه‌اندازی و مدیریت استارتاپ، امکان اشتغال در یک شغل دیگر نیز وجود دارد؛ مشروط بر اینکه شغل دوم در سطح مهارتی RQF Level 3 یا بالاتر باشد.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} className="w-6 h-6">
         <rect x="2" y="7" width="20" height="14" rx="2" />
@@ -43,7 +43,7 @@ const cards = [
     title: "Complete Family Unity",
     titleFa: "همراهی کامل خانواده",
     desc: "Spouse or registered partner receives full UK work and business rights. Minor children can enroll unconditionally in the British education system.",
-    descFa: "همسر یا شریک ثبت‌شده حقوق کامل کار و کسب‌وکار در انگلستان دریافت می‌کند. فرزندان خردسال می‌توانند بدون قید و شرط در نظام آموزشی بریتانیا ثبت‌نام کنند.",
+    descFa: "همسر یا پارتنر رسمی شما از حق کامل کار و فعالیت اقتصادی در بریتانیا برخوردار خواهد بود و فرزندان زیر ۱۸ سال نیز می‌توانند بدون محدودیت در مدارس بریتانیا تحصیل کنند.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} className="w-6 h-6">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -61,7 +61,7 @@ export default function KeyBenefits() {
       <Row>
         <Reveal variant="up" className="text-center mb-10 md:mb-14">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em]">
-            {t("Key Benefits & Program Strengths", "مزایای کلیدی و نقاط قوت برنامه")}
+            {t("Key Benefits & Program Strengths", "مزایا و نقاط قوت برنامه")}
           </h2>
         </Reveal>
 

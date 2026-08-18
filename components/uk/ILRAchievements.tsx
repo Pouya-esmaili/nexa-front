@@ -6,13 +6,13 @@ import Reveal from "@/components/global/Reveal";
 import { useLang } from "@/components/global/LanguageProvider";
 
 const achievements = [
-  { num: "1", text: 'At least <strong>£50,000</strong> has been actively invested into the business and spent on developing its operations.', textFa: 'حداقل <strong>۵۰٬۰۰۰ پوند</strong> فعالانه در کسب‌وکار سرمایه‌گذاری و صرف توسعه‌ی عملیات آن شده است.' },
-  { num: "2", text: 'The number of customers has <strong>at least doubled</strong> within 3 years and is higher than the average for similar UK businesses.', textFa: 'تعداد مشتریان ظرف ۳ سال <strong>حداقل دو برابر</strong> شده و بالاتر از میانگین کسب‌وکارهای مشابه بریتانیایی است.' },
-  { num: "3", text: 'Significant R&D activity and has <strong>applied for intellectual property protection</strong> in the UK.', textFa: 'فعالیت پژوهش‌وتوسعه‌ی چشمگیر داشته و <strong>برای حمایت از مالکیت فکری</strong> در انگلستان درخواست داده است.' },
-  { num: "4", text: 'Generated a <strong>minimum annual gross revenue of £1 million</strong> in the last full year.', textFa: 'در آخرین سال کامل، <strong>حداقل درآمد ناخالص سالانه‌ی ۱ میلیون پوند</strong> ایجاد کرده است.' },
-  { num: "5", text: 'Generated a minimum of <strong>£500,000 in revenue</strong>, with at least <strong>£100,000 from international export sales</strong>.', textFa: 'حداقل <strong>۵۰۰٬۰۰۰ پوند درآمد</strong> ایجاد کرده که دست‌کم <strong>۱۰۰٬۰۰۰ پوند آن از فروش صادراتی بین‌المللی</strong> است.' },
-  { num: "6", text: 'Created the equivalent of <strong>at least 10 full-time jobs</strong> for settled workers in the UK.', textFa: 'معادل <strong>حداقل ۱۰ شغل تمام‌وقت</strong> برای کارگران مقیم انگلستان ایجاد کرده است.' },
-  { num: "7", text: 'Created at least <strong>5 full-time jobs</strong> for settled workers with an average salary of at least <strong>£25,000 per year</strong>.', textFa: 'حداقل <strong>۵ شغل تمام‌وقت</strong> برای کارگران مقیم با میانگین حقوق دست‌کم <strong>۲۵٬۰۰۰ پوند در سال</strong> ایجاد کرده است.' },
+  { num: "1", text: 'At least <strong>£50,000</strong> has been actively invested into the business and spent on developing its operations.', textFa: 'حداقل <strong>۵۰,۰۰۰ پوند</strong> در کسب‌وکار سرمایه‌گذاری و برای توسعه فعالیت‌های آن هزینه شده باشد.' },
+  { num: "2", text: 'The number of customers has <strong>at least doubled</strong> within 3 years and is higher than the average for similar UK businesses.', textFa: 'تعداد مشتریان طی ۳ سال <strong>حداقل دو برابر</strong> شده باشد و از میانگین کسب‌وکارهای مشابه در بریتانیا بیشتر باشد.' },
+  { num: "3", text: 'Significant R&D activity and has <strong>applied for intellectual property protection</strong> in the UK.', textFa: 'فعالیت قابل‌توجه تحقیق و توسعه انجام شده و <strong>برای حفاظت از مالکیت فکری</strong> در بریتانیا اقدام شده باشد.' },
+  { num: "4", text: 'Generated a <strong>minimum annual gross revenue of £1 million</strong> in the last full year.', textFa: 'در آخرین سال مالی کامل، <strong>حداقل ۱ میلیون پوند درآمد ناخالص سالانه</strong> ایجاد شده باشد.' },
+  { num: "5", text: 'Generated a minimum of <strong>£500,000 in revenue</strong>, with at least <strong>£100,000 from international export sales</strong>.', textFa: 'حداقل <strong>۵۰۰,۰۰۰ پوند درآمد</strong> ایجاد شده باشد که دست‌کم <strong>۱۰۰,۰۰۰ پوند آن از صادرات بین‌المللی</strong> حاصل شده باشد.' },
+  { num: "6", text: 'Created the equivalent of <strong>at least 10 full-time jobs</strong> for settled workers in the UK.', textFa: '<strong>حداقل ۱۰ شغل تمام‌وقت</strong> برای افراد دارای حق اقامت و کار در بریتانیا ایجاد شده باشد.' },
+  { num: "7", text: 'Created at least <strong>5 full-time jobs</strong> for settled workers with an average salary of at least <strong>£25,000 per year</strong>.', textFa: '<strong>حداقل ۵ شغل تمام‌وقت</strong> برای افراد دارای حق اقامت و کار ایجاد شده باشد، با میانگین حقوق سالانه حداقل <strong>۲۵,۰۰۰ پوند</strong>.' },
 ];
 
 export default function ILRAchievements() {
@@ -22,14 +22,14 @@ export default function ILRAchievements() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-6">
-            {t("ILR at Year 3: Required Achievements", "اقامت دائم در سال سوم: دستاوردهای لازم")}
+            {t("ILR at Year 3: Required Achievements", "اقامت دائم در سال سوم")}
           </h2>
         </Reveal>
 
         <Reveal variant="up" delay={100}>
           <p className="text-[16px] text-[#474747] leading-[1.65] max-w-[72ch] mx-auto text-center mb-12">
-            {t("To qualify for Indefinite Leave to Remain after 3 years, your Endorsing Body must re-evaluate your business. Your venture must satisfy", "برای واجد شرایط شدن اقامت دائم پس از ۳ سال، نهاد تأییدکننده‌ی شما باید کسب‌وکارتان را دوباره ارزیابی کند. کسب‌وکار شما باید")}{" "}
-            <strong className="text-black font-semibold">{t("at least two (2) of the following seven achievements", "حداقل دو (۲) مورد از هفت دستاورد زیر")}</strong>{t(".", " را برآورده کند.")}
+            {t("To qualify for Indefinite Leave to Remain after 3 years, your Endorsing Body must re-evaluate your business. Your venture must satisfy", "برای دریافت ILR پس از ۳ سال، کسب‌وکار شما مجدداً توسط Endorsing Body ارزیابی می‌شود و باید")}{" "}
+            <strong className="text-black font-semibold">{t("at least two (2) of the following seven achievements", "حداقل ۲ مورد از ۷ دستاورد زیر")}</strong>{t(".", " را محقق کرده باشید.")}
           </p>
         </Reveal>
 
@@ -76,7 +76,7 @@ export default function ILRAchievements() {
             className="rounded-[12px] px-5 py-4 text-[14px] font-semibold text-center"
             style={{ background: "#FAF6FF", border: "1px solid rgba(143,39,255,0.18)", color: "#8F27FF" }}
           >
-            {t("Your venture must satisfy any 2 of the 7 criteria above — assessed and verified by your Endorsing Body at the 3-year mark.", "کسب‌وکار شما باید هر ۲ مورد از ۷ معیار بالا را برآورده کند — که در نقطه‌ی ۳ سالگی توسط نهاد تأییدکننده‌ی شما ارزیابی و تأیید می‌شود.")}
+            {t("Your venture must satisfy any 2 of the 7 criteria above — assessed and verified by your Endorsing Body at the 3-year mark.", "برای دریافت ILR، تحقق ۲ مورد از این ۷ معیار کافی است و Endorsing Body در سال سوم دستاوردهای کسب‌وکار را بررسی و تأیید می‌کند.")}
           </div>
         </Reveal>
       </Row>

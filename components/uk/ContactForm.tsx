@@ -42,7 +42,7 @@ export default function ContactForm() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10 md:mb-14">
-            {t("Start Your UK Innovator Founder Visa Journey", "سفر ویزای بنیان‌گذار نوآور انگلستان خود را آغاز کنید")}
+            {t("Start Your UK Innovator Founder Visa Journey", "مسیر توسعه یک ایده نوآورانه به یک کسب‌وکار بین‌المللی را شروع کنید")}
           </h2>
         </Reveal>
 
@@ -99,17 +99,17 @@ export default function ContactForm() {
                   <select className="h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors">
                     <option>{t("Lead Founder", "بنیان‌گذار اصلی")}</option>
                     <option>{t("Co-Founder", "هم‌بنیان‌گذار")}</option>
-                    <option>{t("Currently in UK (Switch)", "در حال حاضر در انگلستان (تغییر وضعیت)")}</option>
+                    <option>{t("Currently in UK (Switch)", "در حال حاضر در بریتانیا هستم (تغییر وضعیت)")}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="text-[#474747]">{t("Industry / Sector", "صنعت / بخش")}</span>
+                  <span className="text-[#474747]">{t("Industry / Sector", "حوزه فعالیت")}</span>
                   <select className="h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors">
                     <option>{t("Technology / SaaS", "فناوری / SaaS")}</option>
                     <option>{t("Fintech", "فین‌تک")}</option>
                     <option>{t("Healthtech", "هلث‌تک")}</option>
-                    <option>{t("Deep Tech / AI", "دیپ‌تک / هوش مصنوعی")}</option>
-                    <option>{t("Cleantech", "کلین‌تک")}</option>
+                    <option>{t("Deep Tech / AI", "فناوری‌های پیشرفته / هوش مصنوعی")}</option>
+                    <option>{t("Cleantech", "فناوری‌های پاک")}</option>
                     <option>{t("Other", "سایر")}</option>
                   </select>
                 </label>
@@ -117,7 +117,7 @@ export default function ContactForm() {
 
               {/* Textarea */}
               <label className="flex flex-col gap-2 text-[13px] font-medium">
-                <span className="text-[#474747]">{t("Tell us about your startup & goals", "درباره‌ی استارتاپ و اهدافتان بگویید")}</span>
+                <span className="text-[#474747]">{t("Tell us about your startup & goals", "درباره استارتاپ و اهداف خود برای ما بنویسید")}</span>
                 <textarea
                   rows={4}
                   placeholder={t("Describe your business idea, innovation credentials, and what you're looking to achieve in the UK…", "ایده‌ی کسب‌وکار، شواهد نوآوری و آنچه می‌خواهید در انگلستان به آن برسید را شرح دهید…")}
@@ -129,7 +129,7 @@ export default function ContactForm() {
               {/* Footer */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
                 <small className="text-[12px] text-gray-500 leading-relaxed max-w-[50ch]">
-                  {t("Your information is reviewed confidentially by Nexa's advisory team. We typically respond within 48 hours.", "اطلاعات شما به‌صورت محرمانه توسط تیم مشاوره‌ی نکسا بررسی می‌شود. معمولاً ظرف ۴۸ ساعت پاسخ می‌دهیم.")}
+                  {t("Your information is reviewed confidentially by Nexa's advisory team. We typically respond within 48 hours.", "اطلاعات شما توسط تیم مشاوره نکسا به‌صورت محرمانه بررسی می‌شود. حداکثر ظرف ۴۸ ساعت پاسخ خواهیم داد.")}
                 </small>
                 <button
                   type="submit"

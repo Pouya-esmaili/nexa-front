@@ -9,18 +9,18 @@ const steps = [
   {
     num: 1,
     phase: "Weeks 1–6",
-    phaseFa: "هفته‌های ۱ تا ۶",
+    phaseFa: "۰۱ | هفته‌های ۱ تا ۶",
     title: "Capital Deployment & Certification",
-    titleFa: "به‌کارگیری سرمایه و صدور گواهی",
+    titleFa: "انجام سرمایه‌گذاری و دریافت مدارک مالکیت",
     desc: "Execute your chosen investment (bank deposit, fund subscription, bond purchase, or favorable business plan report from the Economic and Commercial Office). Obtain your official ownership certificate.",
-    descFa: "سرمایه‌گذاری منتخب خود را انجام دهید (سپرده‌ی بانکی، پذیره‌نویسی صندوق، خرید اوراق قرضه، یا گزارش مثبت طرح کسب‌وکار از دفتر اقتصادی و بازرگانی). گواهی رسمی مالکیت خود را دریافت کنید.",
+    descFa: "انتخاب مسیر سرمایه‌گذاری مناسب؛ شامل سپرده بانکی، صندوق سرمایه‌گذاری، اوراق دولتی، سهام شرکت یا پروژه تجاری. پس از انجام سرمایه‌گذاری، مدارک رسمی مالکیت یا سرمایه‌گذاری دریافت می‌شود.",
   },
   {
     num: 2,
     phase: "Weeks 7–10",
-    phaseFa: "هفته‌های ۷ تا ۱۰",
+    phaseFa: "۰۲ | هفته‌های ۷ تا ۱۰",
     title: "Document Legalization & Sworn Translation",
-    titleFa: "قانونی‌سازی اسناد و ترجمه‌ی رسمی",
+    titleFa: "قانونی‌سازی و ترجمه رسمی مدارک",
     desc: (
       <>
         Apostille all foreign civil documents and criminal records. Every non-Spanish document must be translated by an
@@ -29,17 +29,17 @@ const steps = [
     ),
     descFa: (
       <>
-        همه‌ی اسناد مدنی و سوابق کیفری خارجی را آپوستیل کنید. هر سند غیراسپانیایی باید توسط یک مترجم رسمی سوگندخورده
-        (<em>Traductor Jurado</em>) ترجمه شود.
+        مدارک هویتی و گواهی‌های صادرشده در خارج از اسپانیا باید در صورت نیاز آپوستیل یا قانونی‌سازی شوند. تمامی مدارک
+        غیر اسپانیایی نیز باید توسط مترجم رسمی (<em>Traductor Jurado</em>) ترجمه شوند.
       </>
     ),
   },
   {
     num: 3,
     phase: "Weeks 11–14",
-    phaseFa: "هفته‌های ۱۱ تا ۱۴",
+    phaseFa: "۰۳ | هفته‌های ۱۱ تا ۱۴",
     title: "Visa Submission at the Consulate",
-    titleFa: "ثبت ویزا در کنسولگری",
+    titleFa: "ثبت درخواست در کنسولگری اسپانیا",
     desc: (
       <>
         Submit the complete file with National Visa Application forms and administrative fees to the Spanish Consulate.
@@ -48,17 +48,18 @@ const steps = [
     ),
     descFa: (
       <>
-        پرونده‌ی کامل را همراه با فرم‌های درخواست ویزای ملی و هزینه‌های اداری به کنسولگری اسپانیا ارسال کنید.
-        کنسولگری یک <strong className="text-black font-semibold">بازه‌ی بررسی قانونی ۹۰ روزه</strong> دارد.
+        پرونده کامل به همراه فرم‌های درخواست ویزای ملی و هزینه‌های مربوطه به کنسولگری اسپانیا ارائه می‌شود. کنسولگری پس
+        از دریافت پرونده، <strong className="text-black font-semibold">حداکثر ۹۰ روز</strong> برای بررسی قانونی آن زمان
+        دارد.
       </>
     ),
   },
   {
     num: 4,
     phase: "Within 30 Days of Arrival",
-    phaseFa: "ظرف ۳۰ روز از ورود",
+    phaseFa: "۰۴ | حداکثر ۳۰ روز پس از ورود",
     title: "Landing in Spain & TIE Registration",
-    titleFa: "ورود به اسپانیا و ثبت TIE",
+    titleFa: "ورود به اسپانیا و دریافت کارت TIE",
     desc: (
       <>
         Travel to Spain. Register your local address at the town hall (<em>Empadronamiento</em>) and book your National
@@ -67,8 +68,8 @@ const steps = [
     ),
     descFa: (
       <>
-        به اسپانیا سفر کنید. آدرس محلی خود را در شهرداری (<em>Empadronamiento</em>) ثبت کنید و نوبت پلیس ملی خود را برای
-        ارائه‌ی اثر انگشت برای کارت هویت خارجی TIE رزرو کنید.
+        پس از ورود، آدرس محل سکونت در شهرداری ثبت می‌شود (<em>Empadronamiento</em>) و برای مراجعه به پلیس و ثبت اثر
+        انگشت جهت صدور کارت شناسایی اتباع خارجی (TIE) وقت گرفته می‌شود.
       </>
     ),
   },
@@ -132,7 +133,7 @@ export default function ProcessSteps() {
           <div className="md:sticky md:top-[100px]">
             <Reveal variant="left">
               <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] mb-5">
-                {t("Step-by-Step Application Process", "فرایند گام‌به‌گام درخواست")}
+                {t("Step-by-Step Application Process", "مراحل دریافت اقامت اسپانیا")}
               </h2>
             </Reveal>
             <Reveal variant="left" delay={120}>
@@ -140,12 +141,12 @@ export default function ProcessSteps() {
                 className="text-[17px] italic font-medium leading-[1.5] text-black py-5 mb-4"
                 style={{ paddingLeft: "24px", borderLeft: "3px solid #8F27FF" }}
               >
-                &ldquo;{t("Misordering these steps leads to immediate administrative rejection — Nexa sequences every milestone precisely.", "بی‌ترتیبی این گام‌ها به رد اداری فوری منجر می‌شود — نکسا هر نقطه‌ی عطف را به‌دقت توالی‌بندی می‌کند.")}&rdquo;
+                &ldquo;{t("Misordering these steps leads to immediate administrative rejection — Nexa sequences every milestone precisely.", "ترتیب مراحل اهمیت زیادی دارد؛ نکسا فرآیند را از ابتدا تا دریافت کارت اقامت به‌صورت مرحله‌به‌مرحله و منظم مدیریت می‌کند.")}&rdquo;
               </blockquote>
             </Reveal>
             <Reveal variant="left" delay={240}>
               <p className="text-[14.5px] text-[#929292] leading-[1.7]">
-                {t("From capital deployment to TIE card in hand — the full process takes approximately 4 to 5 months. The consulate holds a statutory 90-day review window after submission.", "از به‌کارگیری سرمایه تا در دست داشتن کارت TIE — کل فرایند حدود ۴ تا ۵ ماه طول می‌کشد. کنسولگری پس از ثبت، یک بازه‌ی بررسی قانونی ۹۰ روزه دارد.")}
+                {t("From capital deployment to TIE card in hand — the full process takes approximately 4 to 5 months. The consulate holds a statutory 90-day review window after submission.", "از انجام سرمایه‌گذاری تا دریافت کارت TIE، کل فرآیند معمولاً حدود ۴ تا ۵ ماه زمان می‌برد. پس از ثبت درخواست، کنسولگری یک بازه قانونی ۹۰ روزه برای بررسی پرونده دارد.")}
               </p>
             </Reveal>
           </div>

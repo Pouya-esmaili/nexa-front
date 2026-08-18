@@ -5,9 +5,9 @@ import Row from "@/components/global/Row";
 import { useLang } from "@/components/global/LanguageProvider";
 
 const stats = [
-  { num: "€1M", numFa: "۱ میلیون یورو", label: "Entry Threshold", labelFa: "آستانه‌ی ورود" },
-  { num: "5 yr", numFa: "۵ سال", label: "Path to PR", labelFa: "مسیر اقامت دائم" },
-  { num: "29", numFa: "۲۹", label: "Schengen Countries", labelFa: "کشور شنگن" },
+  { num: "€1M", numFa: "۱ میلیون یورو", label: "Entry Threshold", labelFa: "حداقل سرمایه‌گذاری" },
+  { num: "5 yr", numFa: "۵ سال", label: "Path to PR", labelFa: "مسیر دریافت اقامت دائم" },
+  { num: "29", numFa: "۲۹ کشور", label: "Schengen Countries", labelFa: "دسترسی به شنگن" },
 ];
 
 export default function Hero() {
@@ -41,11 +41,11 @@ export default function Hero() {
           }}
         />
         <h1 className={`text-3xl font-bold leading-tight tracking-tight mb-4 ${base} duration-700 delay-150 ${mounted ? show : hideUp}`}>
-          {t("Capital to residency in Spain —", "سرمایه به اقامت در اسپانیا —")}{" "}
-          <span className="text-[#8F27FF]">{t("without real estate.", "بدون املاک.")}</span>
+          {t("Capital to residency in Spain —", "اقامت اسپانیا از مسیر سرمایه‌گذاری؛")}{" "}
+          <span className="text-[#8F27FF]">{t("without real estate.", "بدون خرید ملک")}</span>
         </h1>
         <p className={`text-sm text-[#474747] leading-relaxed mb-6 ${base} duration-700 delay-200 ${mounted ? show : hideUp}`}>
-          {t("Following Organic Law 1/2025, Spain closed its €500K property Golden Visa. The financial and enterprise pathways remain fully operational — and far more structurally sound for serious investors and founders.", "به دنبال قانون ارگانیک ۱/۲۰۲۵، اسپانیا ویزای طلایی املاک ۵۰۰ هزار یورویی خود را بست. مسیرهای مالی و شرکتی همچنان کاملاً فعال باقی می‌مانند — و برای سرمایه‌گذاران و بنیان‌گذاران جدی از نظر ساختاری بسیار مستحکم‌ترند.")}
+          {t("Following Organic Law 1/2025, Spain closed its €500K property Golden Visa. The financial and enterprise pathways remain fully operational — and far more structurally sound for serious investors and founders.", "با اجرای قانون ارگانیک ۱/۲۰۲۵، مسیر گلدن ویزای اسپانیا از طریق خرید ملک ۵۰۰ هزار یورویی بسته شده است. با این حال، مسیرهای مبتنی بر سرمایه‌گذاری مالی و توسعه کسب‌وکار همچنان فعال هستند و برای سرمایه‌گذاران و کارآفرینانی که به‌دنبال حضور جدی در بازار اسپانیا هستند، گزینه‌های جذاب‌تری محسوب می‌شوند.")}
         </p>
         <div className={`grid grid-cols-3 py-5 border-t border-b border-[#E2E2E2] mb-6 ${base} duration-700 delay-300 ${mounted ? show : hideUp}`}>
           {stats.map((s) => (
@@ -60,7 +60,7 @@ export default function Hero() {
           className={`inline-flex items-center gap-2 px-6 py-3 bg-[#8F27FF] text-white font-semibold rounded-full text-sm ${base} duration-500 delay-[400ms] ${mounted ? show : hideUp}`}
           style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
         >
-          {t("Book an Appointment →", "رزرو وقت ملاقات →")}
+          {t("Book an Appointment →", "مشاوره و ارزیابی پرونده →")}
         </a>
       </div>
 
@@ -70,11 +70,11 @@ export default function Hero() {
           <div className="grid grid-cols-[1.1fr_0.9fr] gap-16 items-center">
             <div>
               <h1 className={`text-[48px] font-bold leading-[1.06] tracking-[-0.03em] mb-6 ${base} duration-700 delay-100 ${mounted ? show : hideLeft}`}>
-                {t("Capital to residency in Spain —", "سرمایه به اقامت در اسپانیا —")}{" "}
-                <em className="text-[#8F27FF] not-italic">{t("without real estate.", "بدون املاک.")}</em>
+                {t("Capital to residency in Spain —", "اقامت اسپانیا از مسیر سرمایه‌گذاری؛")}{" "}
+                <em className="text-[#8F27FF] not-italic">{t("without real estate.", "بدون خرید ملک")}</em>
               </h1>
               <p className={`text-[16px] text-[#474747] leading-[1.65] mb-8 max-w-[520px] ${base} duration-700 delay-200 ${mounted ? show : hideLeft}`}>
-                {t("Following Organic Law 1/2025, Spain closed its €500K property Golden Visa. The financial and enterprise pathways remain fully operational — and far more structurally sound for serious investors and founders.", "به دنبال قانون ارگانیک ۱/۲۰۲۵، اسپانیا ویزای طلایی املاک ۵۰۰ هزار یورویی خود را بست. مسیرهای مالی و شرکتی همچنان کاملاً فعال باقی می‌مانند — و برای سرمایه‌گذاران و بنیان‌گذاران جدی از نظر ساختاری بسیار مستحکم‌ترند.")}
+                {t("Following Organic Law 1/2025, Spain closed its €500K property Golden Visa. The financial and enterprise pathways remain fully operational — and far more structurally sound for serious investors and founders.", "با اجرای قانون ارگانیک ۱/۲۰۲۵، مسیر گلدن ویزای اسپانیا از طریق خرید ملک ۵۰۰ هزار یورویی بسته شده است. با این حال، مسیرهای مبتنی بر سرمایه‌گذاری مالی و توسعه کسب‌وکار همچنان فعال هستند و برای سرمایه‌گذاران و کارآفرینانی که به‌دنبال حضور جدی در بازار اسپانیا هستند، گزینه‌های جذاب‌تری محسوب می‌شوند.")}
               </p>
 
               <div
@@ -95,7 +95,7 @@ export default function Hero() {
                   className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"
                   style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
                 >
-                  {t("Book an Appointment →", "رزرو وقت ملاقات →")}
+                  {t("Book an Appointment →", "مشاوره و ارزیابی پرونده →")}
                 </a>
               </div>
             </div>

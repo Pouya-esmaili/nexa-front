@@ -11,19 +11,19 @@ const rows = [
     detail: "400% IPREM",
     detailFa: "۴۰۰٪ IPREM",
     monthly: "€2,400",
-    monthlyFa: "۲٬۴۰۰ یورو",
+    monthlyFa: "€۲,۴۰۰",
     annual: "€28,800",
-    annualFa: "۲۸٬۸۰۰ یورو",
+    annualFa: "€۲۸,۸۰۰",
   },
   {
     profile: "Per Dependent Member",
-    profileFa: "به‌ازای هر عضو تحت تکفل",
+    profileFa: "هر عضو خانواده",
     detail: "+100% IPREM each",
-    detailFa: "+۱۰۰٪ IPREM برای هرکدام",
+    detailFa: "۱۰۰٪ IPREM",
     monthly: "+€600",
-    monthlyFa: "+۶۰۰ یورو",
+    monthlyFa: "+€۶۰۰",
     annual: "+€7,200",
-    annualFa: "+۷٬۲۰۰ یورو",
+    annualFa: "€۷,۲۰۰",
   },
 ];
 
@@ -38,7 +38,7 @@ export default function IPREM() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-white text-center mb-14">
-            {t("Financial Sustainability Standard", "استاندارد پایداری مالی")}
+            {t("Financial Sustainability Standard", "الزامات مالی و اثبات توانایی تأمین هزینه‌ها")}
           </h2>
         </Reveal>
 
@@ -53,17 +53,17 @@ export default function IPREM() {
                 className="self-start text-[11px] font-bold uppercase tracking-[0.12em] px-3.5 py-1.5 rounded-full"
                 style={{ background: "rgba(255,230,0,0.12)", border: "1px solid rgba(255,230,0,0.3)", color: "#FFE600" }}
               >
-                {t("IPREM-Based Calculation", "محاسبه‌ی مبتنی بر IPREM")}
+                {t("IPREM-Based Calculation", "مبنای محاسبه بر اساس IPREM")}
               </div>
               <div
                 className="font-extrabold text-white leading-[0.9] tabular-nums"
                 style={{ fontSize: "64px", letterSpacing: "-0.04em" }}
               >
-                {t("€600", "۶۰۰ یورو")}
+                {t("€600", "۶۰۰ یورو در ماه")}
               </div>
               <p className="text-[14px] leading-[1.6] m-0" style={{ color: "#B5B5BA" }}>
-                {t("Monthly IPREM index (€7,200 annually). Your liquid reserves must cover", "شاخص ماهانه‌ی IPREM (۷٬۲۰۰ یورو سالانه). ذخایر نقدی شما باید")}{" "}
-                <strong style={{ color: "#FFE600", fontWeight: 600 }}>{t("400% IPREM", "۴۰۰٪ IPREM")}</strong> {t("for the main applicant plus", "برای متقاضی اصلی به‌علاوه‌ی")} <strong style={{ color: "#FFE600", fontWeight: 600 }}>{t("100% per dependent", "۱۰۰٪ به‌ازای هر فرد تحت تکفل")}</strong>{t(".", " را پوشش دهد.")}
+                {t("Monthly IPREM index (€7,200 annually). Your liquid reserves must cover", "معادل €۷,۲۰۰ در سال برای هر واحد IPREM. متقاضی اصلی باید منابع مالی معادل")}{" "}
+                <strong style={{ color: "#FFE600", fontWeight: 600 }}>{t("400% IPREM", "۴۰۰٪ IPREM")}</strong> {t("for the main applicant plus", "و برای هر عضو خانواده نیز")} <strong style={{ color: "#FFE600", fontWeight: 600 }}>{t("100% per dependent", "۱۰۰٪ IPREM")}</strong>{t(".", " در اختیار داشته باشد.")}
               </p>
             </div>
           </Reveal>
@@ -76,13 +76,13 @@ export default function IPREM() {
                   <thead>
                     <tr style={{ background: "rgba(143,39,255,0.15)" }}>
                       <th className="text-left px-6 py-4 text-[11px] font-bold uppercase tracking-[0.08em] border-b border-[#1f1f24]" style={{ color: "rgba(255,255,255,0.6)" }}>
-                        {t("Applicant Profile", "پروفایل متقاضی")}
+                        {t("Applicant Profile", "ترکیب خانوادگی")}
                       </th>
                       <th className="text-left px-6 py-4 text-[11px] font-bold uppercase tracking-[0.08em] border-b border-[#1f1f24]" style={{ color: "rgba(255,255,255,0.6)" }}>
-                        {t("Monthly", "ماهانه")}
+                        {t("Monthly", "نیاز ماهانه")}
                       </th>
                       <th className="text-left px-6 py-4 text-[11px] font-bold uppercase tracking-[0.08em] border-b border-[#1f1f24]" style={{ color: "rgba(255,255,255,0.6)" }}>
-                        {t("Annual Requirement", "الزام سالانه")}
+                        {t("Annual Requirement", "نیاز سالانه")}
                       </th>
                     </tr>
                   </thead>
@@ -112,7 +112,7 @@ export default function IPREM() {
                 className="rounded-[14px] px-6 py-5 text-[13px] leading-[1.6]"
                 style={{ background: "rgba(255,255,255,0.04)", border: "1px solid #1f1f24", color: "rgba(255,255,255,0.45)" }}
               >
-                {t("Consulates require 3 consecutive monthly bank statements with letterhead, clear account numbers, and stable end-of-period balances. Unexplained sudden cash injections will trigger additional scrutiny.", "کنسولگری‌ها ۳ صورت‌حساب بانکی ماهانه‌ی متوالی با سربرگ، شماره‌حساب‌های روشن و مانده‌های پایان‌دوره‌ی پایدار می‌خواهند. تزریق‌های نقدی ناگهانی و توضیح‌داده‌نشده موجب بررسی بیشتر می‌شوند.")}
+                {t("Consulates require 3 consecutive monthly bank statements with letterhead, clear account numbers, and stable end-of-period balances. Unexplained sudden cash injections will trigger additional scrutiny.", "کنسولگری معمولاً سه ماه گردش حساب متوالی را بررسی می‌کند. صورت‌حساب‌ها باید دارای مشخصات رسمی بانک، شماره حساب و مانده مشخص باشند. واریزهای ناگهانی و بدون منشأ قابل توضیح ممکن است باعث بررسی‌های بیشتر شود.")}
               </div>
             </div>
           </Reveal>

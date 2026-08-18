@@ -16,7 +16,7 @@ const criteria = [
     title: "Job Creation",
     titleFa: "ایجاد اشتغال",
     desc: "A clear, structured plan for generating direct, sustainable employment positions inside Spain.",
-    descFa: "یک طرح روشن و ساختارمند برای ایجاد موقعیت‌های شغلی مستقیم و پایدار در داخل اسپانیا.",
+    descFa: "ارائه برنامه‌ای مشخص و عملی برای ایجاد فرصت‌های شغلی مستقیم و پایدار در اسپانیا.",
   },
   {
     icon: (
@@ -26,9 +26,9 @@ const criteria = [
       </svg>
     ),
     title: "Socioeconomic Impact",
-    titleFa: "تأثیر اجتماعی-اقتصادی",
+    titleFa: "اثرگذاری اقتصادی و اجتماعی",
     desc: "A demonstrable positive contribution to the geographical area where the venture will operate.",
-    descFa: "یک مشارکت مثبت قابل‌اثبات در منطقه‌ی جغرافیایی که کسب‌وکار در آن فعالیت خواهد کرد.",
+    descFa: "اثبات اینکه فعالیت کسب‌وکار شما تأثیر مثبتی بر منطقه‌ای که در آن مستقر می‌شود خواهد داشت.",
   },
   {
     icon: (
@@ -37,9 +37,9 @@ const criteria = [
       </svg>
     ),
     title: "Innovation Alignment",
-    titleFa: "همسویی با نوآوری",
+    titleFa: "نوآوری و توسعه اقتصادی",
     desc: "Strong alignment with scientific, technological, or industrial innovation that advances Spain's economic interests.",
-    descFa: "همسویی قوی با نوآوری علمی، فناورانه یا صنعتی که منافع اقتصادی اسپانیا را پیش می‌برد.",
+    descFa: "همسویی پروژه با حوزه‌های علمی، فناوری یا صنعتی که بتواند به توسعه و منافع اقتصادی اسپانیا کمک کند.",
   },
 ];
 
@@ -54,7 +54,7 @@ export default function Enterprise() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-white text-center mb-14">
-            {t("The Enterprise Pathway", "مسیر شرکتی")}
+            {t("The Enterprise Pathway", "مسیر کارآفرینی و توسعه کسب‌وکار")}
           </h2>
         </Reveal>
 
@@ -69,15 +69,15 @@ export default function Enterprise() {
                 className="self-start text-[11px] font-bold uppercase tracking-[0.12em] px-3.5 py-1.5 rounded-full"
                 style={{ background: "rgba(143,39,255,0.15)", border: "1px solid rgba(143,39,255,0.3)", color: "#8F27FF" }}
               >
-                {t("No Statutory Capital Floor", "بدون کف سرمایه‌ی قانونی")}
+                {t("No Statutory Capital Floor", "بدون حداقل سرمایه قانونی")}
               </div>
               <p className="text-[15px] leading-[1.7] m-0" style={{ color: "#B5B5BA" }}>
-                {t("For founders expanding their corporate footprint, Spain allows residency via a", "برای بنیان‌گذارانی که ردپای شرکتی خود را گسترش می‌دهند، اسپانیا اقامت را از طریق یک")}{" "}
-                <strong className="text-white font-semibold">{t("significant business project", "پروژه‌ی تجاری قابل‌توجه")}</strong>{t(". There is no fixed minimum investment threshold. Instead, the project is evaluated by the relevant", " مجاز می‌داند. هیچ آستانه‌ی حداقل سرمایه‌گذاری ثابتی وجود ندارد. در عوض، پروژه توسط")}{" "}
-                <strong className="text-white font-semibold">{t("Economic and Commercial Office", "دفتر اقتصادی و بازرگانی")}</strong> {t("of the consular district on qualitative economic metrics.", "مربوطه‌ی حوزه‌ی کنسولی بر اساس شاخص‌های اقتصادی کیفی ارزیابی می‌شود.")}
+                {t("For founders expanding their corporate footprint, Spain allows residency via a", "برای کارآفرینانی که قصد دارند فعالیت تجاری خود را به اسپانیا منتقل یا در این کشور توسعه دهند، امکان دریافت اقامت از طریق یک")}{" "}
+                <strong className="text-white font-semibold">{t("significant business project", "پروژه تجاری با اهمیت اقتصادی")}</strong>{t(". There is no fixed minimum investment threshold. Instead, the project is evaluated by the relevant", " وجود دارد. در این مسیر، حداقل سرمایه‌گذاری مشخصی در قانون تعیین نشده است. در عوض، پروژه بر اساس شاخص‌های اقتصادی و کیفی توسط")}{" "}
+                <strong className="text-white font-semibold">{t("Economic and Commercial Office", "دفتر اقتصادی و تجاری")}</strong> {t("of the consular district on qualitative economic metrics.", "حوزه کنسولی بررسی می‌شود.")}
               </p>
               <p className="text-[15px] leading-[1.7] m-0" style={{ color: "#B5B5BA" }}>
-                {t("Unlike the Entrepreneur Visa (which requires an ENISA certificate), the Enterprise Pathway is assessed directly by the consular authority — making it a distinct, separate route for high-impact corporate expansions.", "برخلاف ویزای کارآفرینی (که به گواهی ENISA نیاز دارد)، مسیر شرکتی مستقیماً توسط مرجع کنسولی ارزیابی می‌شود — که آن را به یک مسیر متمایز و جداگانه برای گسترش‌های شرکتی پرتأثیر تبدیل می‌کند.")}
+                {t("Unlike the Entrepreneur Visa (which requires an ENISA certificate), the Enterprise Pathway is assessed directly by the consular authority — making it a distinct, separate route for high-impact corporate expansions.", "این مسیر با Entrepreneur Visa که نیازمند دریافت گواهی ENISA است تفاوت دارد و به‌عنوان یک مسیر مستقل برای پروژه‌های تجاری با اثرگذاری اقتصادی قابل توجه ارزیابی می‌شود.")}
               </p>
             </div>
           </Reveal>

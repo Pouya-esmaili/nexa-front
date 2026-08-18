@@ -7,54 +7,54 @@ import { useLang } from "@/components/global/LanguageProvider";
 const statutory = [
   {
     title: "Non-EU/EEA/Swiss Citizenship",
-    titleFa: "تابعیت غیراتحادیه اروپا/EEA/سوئیس",
+    titleFa: "تابعیت خارج از اتحادیه اروپا",
     desc: "The program applies exclusively to non-European citizens.",
-    descFa: "این برنامه منحصراً برای شهروندان غیراروپایی اعمال می‌شود.",
+    descFa: "این برنامه برای اتباع کشورهای غیراروپایی طراحی شده است.",
   },
   {
     title: "Clean Criminal Record",
-    titleFa: "سوءپیشینه‌ی پاک",
+    titleFa: "سابقه کیفری پاک",
     desc: "Certified check from country of origin and any nation of residence over the past 5 years. US applicants: FBI check. Canadian applicants: RCMP fingerprint check.",
-    descFa: "بررسی تأییدشده از کشور مبدأ و هر کشور محل اقامت در ۵ سال گذشته. متقاضیان آمریکایی: بررسی FBI. متقاضیان کانادایی: بررسی انگشت‌نگاری RCMP.",
+    descFa: "ارائه گواهی عدم سوءپیشینه از کشور تابعیت و کشورهایی که طی ۵ سال گذشته در آن‌ها اقامت داشته‌اید.",
   },
   {
     title: "Private Health Insurance",
-    titleFa: "بیمه‌ی درمانی خصوصی",
+    titleFa: "بیمه درمانی خصوصی",
     desc: "Full-coverage policy authorized in Spain — zero copayments (sin copagos) and no waiting periods.",
-    descFa: "بیمه‌نامه‌ی پوشش کامل مجاز در اسپانیا — بدون پرداخت مشترک (sin copagos) و بدون دوره‌ی انتظار.",
+    descFa: "بیمه کامل و مورد تأیید اسپانیا، بدون فرانشیز و دوره انتظار.",
   },
   {
     title: "Valid Passport",
     titleFa: "پاسپورت معتبر",
     desc: "Minimum 1 year remaining validity and at least 2 blank pages.",
-    descFa: "حداقل ۱ سال اعتبار باقی‌مانده و حداقل ۲ صفحه‌ی خالی.",
+    descFa: "حداقل یک سال اعتبار باقی‌مانده و دست‌کم دو صفحه خالی.",
   },
 ];
 
 const family = [
   {
     title: "Spouse / Civil Partner",
-    titleFa: "همسر / شریک مدنی",
+    titleFa: "همسر یا شریک قانونی",
     desc: "Included in the main application — full work and residence rights.",
-    descFa: "در درخواست اصلی گنجانده می‌شود — حقوق کامل کار و اقامت.",
+    descFa: "امکان دریافت اقامت و برخورداری از حق کار.",
   },
   {
     title: "Dependent Children (Any Age)",
-    titleFa: "فرزندان تحت تکفل (هر سنی)",
+    titleFa: "فرزندان وابسته در هر سنی",
     desc: "Adult children must be unmarried and financially reliant on the primary applicant.",
-    descFa: "فرزندان بزرگسال باید مجرد و از نظر مالی وابسته به متقاضی اصلی باشند.",
+    descFa: "فرزندان بزرگسال در صورت مجرد بودن و وابستگی مالی به متقاضی اصلی می‌توانند مشمول شوند.",
   },
   {
     title: "Dependent Elderly Parents",
-    titleFa: "والدین سالمند تحت تکفل",
+    titleFa: "والدین وابسته",
     desc: "Eligible for family reunification under the investor framework.",
-    descFa: "واجد شرایط پیوند مجدد خانواده تحت چارچوب سرمایه‌گذار.",
+    descFa: "والدین وابسته نیز می‌توانند در چارچوب مقررات مربوط به خانواده سرمایه‌گذار همراه شوند.",
   },
   {
     title: "Per Dependent Requirement",
-    titleFa: "الزام به‌ازای هر فرد تحت تکفل",
+    titleFa: "شرایط مالی اعضای خانواده",
     desc: "Each additional family member requires +100% IPREM (€7,200/year) in liquid savings or passive income.",
-    descFa: "هر عضو اضافی خانواده به +۱۰۰٪ IPREM (۷٬۲۰۰ یورو در سال) پس‌انداز نقدی یا درآمد منفعل نیاز دارد.",
+    descFa: "برای هر عضو خانواده، علاوه بر سرمایه اصلی، باید منابع مالی معادل ۱۰۰٪ IPREM اثبات شود.",
   },
 ];
 
@@ -95,16 +95,16 @@ export default function Requirements() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-center mb-14">
-            {t("Core Legal & Personal Requirements", "الزامات اصلی قانونی و شخصی")}
+            {t("Core Legal & Personal Requirements", "شرایط قانونی و الزامات متقاضی")}
           </h2>
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
           <Reveal variant="left" delay={60} className="flex">
-            <ReqBlock title="Statutory Checklist" titleFa="چک‌لیست قانونی" items={statutory} />
+            <ReqBlock title="Statutory Checklist" titleFa="الزامات اصلی" items={statutory} />
           </Reveal>
           <Reveal variant="right" delay={60} className="flex">
-            <ReqBlock title="Family Inclusion" titleFa="شمول خانواده" items={family} />
+            <ReqBlock title="Family Inclusion" titleFa="امکان همراهی خانواده" items={family} />
           </Reveal>
         </div>
       </Row>

@@ -8,19 +8,19 @@ import { useLang } from "@/components/global/LanguageProvider";
 const tiers = [
   {
     badge: "Spanish Government Bonds",
-    badgeFa: "اوراق قرضه‌ی دولتی اسپانیا",
+    badgeFa: "اوراق قرضه دولتی اسپانیا",
     badgeStyle: { background: "#E8F5E9", color: "#2E7D32", border: "1px solid #A5D6A7" },
     amount: "€2M",
     amountFa: "۲ میلیون یورو",
     sub: "Minimum Investment",
     subFa: "حداقل سرمایه‌گذاری",
     desc: "Spanish public debt instruments maintained for a minimum of 5 years. Highest capital threshold — lowest operational complexity.",
-    descFa: "ابزارهای بدهی عمومی اسپانیا که حداقل ۵ سال نگهداری می‌شوند. بالاترین آستانه‌ی سرمایه — کم‌ترین پیچیدگی عملیاتی.",
+    descFa: "سرمایه‌گذاری در اوراق بدهی دولت اسپانیا با حداقل دوره نگهداری ۵ ساله. این مسیر به سرمایه بیشتری نیاز دارد، اما از نظر مدیریت سرمایه، ساختار ساده‌تری دارد.",
     featured: false,
   },
   {
     badge: "Investment Funds / VC",
-    badgeFa: "صندوق‌های سرمایه‌گذاری / سرمایه‌ی خطرپذیر",
+    badgeFa: "صندوق‌های سرمایه‌گذاری و VC",
     badgeStyle: { background: "#FAF6FF", color: "#8F27FF", border: "1px solid rgba(143,39,255,0.18)" },
     amount: "€1M",
     amountFa: "۱ میلیون یورو",
@@ -34,15 +34,15 @@ const tiers = [
     ),
     descFa: (
       <>
-        سهام <strong className="text-black font-semibold">صندوق‌های سرمایه‌گذاری با سرمایه‌ی ثابت یا صندوق‌های سرمایه‌ی خطرپذیر</strong>{" "}
-        (<em>Fondos de Capital Riesgo</em>) که در اسپانیا تأسیس و به‌طور فعال ثبت شده‌اند.
+        خرید سهام یا واحدهای <strong className="text-black font-semibold">صندوق‌های سرمایه‌گذاری بسته یا صندوق‌های سرمایه‌گذاری خطرپذیر</strong>{" "}
+        (<em>Fondos de Capital Riesgo</em>) ثبت‌شده و فعال در اسپانیا.
       </>
     ),
     featured: true,
   },
   {
     badge: "Corporate Equity",
-    badgeFa: "سهام شرکتی",
+    badgeFa: "سهام شرکت‌های اسپانیایی",
     badgeStyle: { background: "#E3F2FD", color: "#1565C0", border: "1px solid #90CAF9" },
     amount: "€1M",
     amountFa: "۱ میلیون یورو",
@@ -56,15 +56,15 @@ const tiers = [
     ),
     descFa: (
       <>
-        سهام یا سهم <strong className="text-black font-semibold">شرکت‌های فعال اسپانیایی</strong> با حضور تجاری واقعی و
-        قابل‌تأیید و فعالیت عملیاتی در داخل اسپانیا.
+        سرمایه‌گذاری در سهام یا سهم‌الشرکه <strong className="text-black font-semibold">شرکت‌های فعال اسپانیایی</strong> که
+        حضور اقتصادی واقعی و فعالیت عملیاتی در این کشور داشته باشند.
       </>
     ),
     featured: false,
   },
   {
     badge: "Bank Deposits",
-    badgeFa: "سپرده‌های بانکی",
+    badgeFa: "سپرده بانکی",
     badgeStyle: { background: "#FFF3E0", color: "#E65100", border: "1px solid #FFCC80" },
     amount: "€1M",
     amountFa: "۱ میلیون یورو",
@@ -78,8 +78,8 @@ const tiers = [
     ),
     descFa: (
       <>
-        سپرده‌های بانکی پایدار در <strong className="text-black font-semibold">مؤسسات مالی مجاز اسپانیایی</strong>.
-        نقدشونده‌ترین و ساده‌ترین گزینه‌ی به‌کارگیری سرمایه.
+        نگهداری سرمایه در قالب سپرده بانکی نزد <strong className="text-black font-semibold">مؤسسات مالی مجاز اسپانیا</strong>؛
+        یکی از ساده‌ترین و نقدشونده‌ترین روش‌های ورود سرمایه به این برنامه.
       </>
     ),
     featured: false,
@@ -106,13 +106,13 @@ export default function InvestmentTiers() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-center mb-6">
-            {t("Qualifying Financial Pathways & Thresholds", "مسیرهای مالی واجد شرایط و آستانه‌ها")}
+            {t("Qualifying Financial Pathways & Thresholds", "مسیرهای سرمایه‌گذاری و حداقل سرمایه موردنیاز")}
           </h2>
         </Reveal>
 
         <Reveal variant="up" delay={60}>
           <p className="text-[16px] text-[#474747] leading-[1.65] max-w-[68ch] mx-auto text-center mb-12">
-            {t("Real estate is", "املاک")} <strong className="text-black font-semibold">{t("no longer an eligible asset class", "دیگر یک طبقه‌ی دارایی واجد شرایط نیست")}</strong> {t("for new residency applications. The current framework welcomes capital into Spain's financial and corporate ecosystems across four qualifying channels.", "برای درخواست‌های اقامت جدید. چارچوب فعلی سرمایه را در چهار کانال واجد شرایط به اکوسیستم‌های مالی و شرکتی اسپانیا می‌پذیرد.")}
+            {t("Real estate is", "خرید ملک دیگر جزو گزینه‌های")} <strong className="text-black font-semibold">{t("no longer an eligible asset class", "واجد شرایط برای درخواست‌های جدید اقامت سرمایه‌گذاری نیست")}</strong> {t("for new residency applications. The current framework welcomes capital into Spain's financial and corporate ecosystems across four qualifying channels.", ". در چارچوب فعلی، سرمایه‌گذاران می‌توانند سرمایه خود را از طریق چهار مسیر اصلی وارد بازار مالی و اقتصادی اسپانیا کنند.")}
           </p>
         </Reveal>
 

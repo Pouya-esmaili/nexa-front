@@ -16,42 +16,42 @@ const items = [
     title: "Initial Residency",
     titleFa: "اقامت اولیه",
     desc: "1-year buffer if applied from abroad, or a 3-year authorization if initiated directly within Spain. No minimum days of physical presence required to maintain.",
-    descFa: "در صورت درخواست از خارج، یک بازه‌ی ۱ ساله، یا در صورت آغاز مستقیم در داخل اسپانیا، یک مجوز ۳ ساله. برای حفظ، هیچ حداقل روز حضور فیزیکی لازم نیست.",
+    descFa: "اگر درخواست از خارج اسپانیا ارائه شود، مجوز اولیه معمولاً یک‌ساله خواهد بود؛ در حالی که در صورت آغاز فرآیند از داخل اسپانیا، امکان دریافت مجوز سه‌ساله وجود دارد. برای حفظ این نوع اقامت، حداقل تعداد روز مشخصی برای حضور فیزیکی تعیین نشده است.",
     body: "1-year residency buffer if applied from abroad. 3-year authorization if initiated directly within Spain. No minimum days of physical presence required to maintain your investor residency status.",
-    bodyFa: "در صورت درخواست از خارج، یک بازه‌ی اقامت ۱ ساله. در صورت آغاز مستقیم در داخل اسپانیا، یک مجوز ۳ ساله. برای حفظ وضعیت اقامت سرمایه‌گذاری شما، هیچ حداقل روز حضور فیزیکی لازم نیست.",
+    bodyFa: "اگر درخواست از خارج اسپانیا ارائه شود، مجوز اولیه معمولاً یک‌ساله خواهد بود؛ در حالی که در صورت آغاز فرآیند از داخل اسپانیا، امکان دریافت مجوز سه‌ساله وجود دارد. برای حفظ این نوع اقامت، حداقل تعداد روز مشخصی برای حضور فیزیکی تعیین نشده است.",
   },
   {
     num: "02",
     label: "5-Year Renewal",
-    labelFa: "تمدید ۵ ساله",
+    labelFa: "تمدید اقامت",
     year: "Year 1 / 3",
-    yearFa: "سال ۱ / ۳",
+    yearFa: "سال اول / سوم",
     title: "5-Year Renewal",
-    titleFa: "تمدید ۵ ساله",
+    titleFa: "تمدید اقامت",
     desc: "Renewable for 5-year blocks. Must maintain the foundational investment capital and continue to meet financial sustainability criteria throughout the renewal period.",
-    descFa: "قابل‌تمدید برای بازه‌های ۵ ساله. باید سرمایه‌ی سرمایه‌گذاری پایه را حفظ کنید و در طول دوره‌ی تمدید به برآورده کردن معیارهای پایداری مالی ادامه دهید.",
+    descFa: "اقامت در دوره‌های ۵ ساله قابل تمدید است؛ مشروط بر اینکه سرمایه‌گذاری اصلی حفظ شده و متقاضی همچنان شرایط مالی برنامه را داشته باشد.",
     body: "Renewable for 5-year blocks provided you maintain the foundational investment capital in the qualifying asset class and continue to meet the IPREM financial sustainability thresholds.",
-    bodyFa: "قابل‌تمدید برای بازه‌های ۵ ساله، مشروط بر اینکه سرمایه‌ی سرمایه‌گذاری پایه را در طبقه‌ی دارایی واجد شرایط حفظ کنید و به برآورده کردن آستانه‌های پایداری مالی IPREM ادامه دهید.",
+    bodyFa: "اقامت در دوره‌های ۵ ساله قابل تمدید است؛ مشروط بر اینکه سرمایه‌گذاری اصلی حفظ شده و متقاضی همچنان شرایط مالی برنامه را داشته باشد.",
   },
   {
     num: "03",
     label: "Permanent Residency",
     labelFa: "اقامت دائم",
     year: "Year 5",
-    yearFa: "سال ۵",
+    yearFa: "سال پنجم",
     title: "Permanent Residency (EU Long-Term)",
-    titleFa: "اقامت دائم (بلندمدت اتحادیه اروپا)",
+    titleFa: "اقامت دائم",
     desc: "After 5 years of continuous residence. Must not exceed 6 consecutive months outside the EU per year, or 10 total months outside Spain in the 5-year window. Capital can be liquidated.",
-    descFa: "پس از ۵ سال اقامت پیوسته. نباید بیش از ۶ ماه متوالی در سال خارج از اتحادیه اروپا، یا مجموعاً ۱۰ ماه خارج از اسپانیا در بازه‌ی ۵ ساله باشید. سرمایه می‌تواند نقد شود.",
+    descFa: "پس از ۵ سال اقامت مستمر، امکان درخواست اقامت دائم وجود دارد. برای این منظور، محدودیت‌های مربوط به مدت خروج از اسپانیا و اتحادیه اروپا باید رعایت شود. پس از دریافت اقامت دائم، سرمایه‌گذار دیگر الزام به حفظ سرمایه‌گذاری اولیه ندارد و می‌تواند سرمایه خود را آزاد کند.",
     body: "After 5 years of continuous, legal residence — not exceeding 6 consecutive months outside the EU in any year, or 10 total months outside Spain. Once permanent status is granted, you may liquidate, transfer, or divest your investment capital without impacting your legal status.",
-    bodyFa: "پس از ۵ سال اقامت قانونی و پیوسته — بدون بیش از ۶ ماه متوالی خارج از اتحادیه اروپا در هر سال، یا مجموعاً ۱۰ ماه خارج از اسپانیا. پس از اعطای وضعیت دائم، می‌توانید سرمایه‌ی سرمایه‌گذاری خود را بدون تأثیر بر وضعیت قانونی‌تان نقد، منتقل یا واگذار کنید.",
+    bodyFa: "پس از ۵ سال اقامت مستمر، امکان درخواست اقامت دائم وجود دارد. برای این منظور، محدودیت‌های مربوط به مدت خروج از اسپانیا و اتحادیه اروپا باید رعایت شود. پس از دریافت اقامت دائم، سرمایه‌گذار دیگر الزام به حفظ سرمایه‌گذاری اولیه ندارد و می‌تواند سرمایه خود را آزاد کند.",
   },
   {
     num: "04",
     label: "Spanish Citizenship",
     labelFa: "تابعیت اسپانیا",
     year: "Year 10 (or 2)",
-    yearFa: "سال ۱۰ (یا ۲)",
+    yearFa: "سال دهم یا دوم",
     title: "Spanish Citizenship",
     titleFa: "تابعیت اسپانیا",
     desc: (
@@ -63,13 +63,13 @@ const items = [
     ),
     descFa: (
       <>
-        استاندارد: <strong className="text-black font-semibold">۱۰ سال</strong>. ایبرو-آمریکایی‌ها، فیلیپینی‌ها، اهالی
-        گینه‌ی استوایی، آندورایی‌ها و یهودیان سفاردی: <strong className="text-black font-semibold">۲ سال</strong>. تابعیت
-        دوگانه برای اتباع واجد شرایط مجاز است.
+        برای اکثر متقاضیان، مسیر استاندارد تابعیت <strong className="text-black font-semibold">۱۰ سال</strong> اقامت
+        است. برای اتباع برخی کشورها از جمله کشورهای آمریکای لاتین، فیلیپین، گینه استوایی، آندورا و برخی گروه‌های واجد
+        شرایط، این دوره می‌تواند به <strong className="text-black font-semibold">۲ سال</strong> کاهش یابد.
       </>
     ),
     body: "Standard naturalization: 10 years. Expedited 2-year track: nationals of Latin American countries, the Philippines, Equatorial Guinea, Andorra, and individuals of Sephardic Jewish descent. Dual citizenship permitted for qualifying nationals.",
-    bodyFa: "تابعیت‌پذیری استاندارد: ۱۰ سال. مسیر سریع ۲ ساله: اتباع کشورهای آمریکای لاتین، فیلیپین، گینه‌ی استوایی، آندورا و افراد با تبار یهودی سفاردی. تابعیت دوگانه برای اتباع واجد شرایط مجاز است.",
+    bodyFa: "برای اکثر متقاضیان، مسیر استاندارد تابعیت ۱۰ سال اقامت است. برای اتباع برخی کشورها از جمله کشورهای آمریکای لاتین، فیلیپین، گینه استوایی، آندورا و برخی گروه‌های واجد شرایط، این دوره می‌تواند به ۲ سال کاهش یابد.",
   },
 ];
 
@@ -83,7 +83,7 @@ export default function Pathway() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-center mb-14">
-            {t("Long-Term Horizons", "افق‌های بلندمدت")}
+            {t("Long-Term Horizons", "مسیر بلندمدت اقامت در اسپانیا")}
           </h2>
         </Reveal>
 

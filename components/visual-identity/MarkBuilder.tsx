@@ -78,17 +78,17 @@ export default function MarkBuilder() {
             </div>
           </div>
           <div className="vi-mark__copy">
-            <span className="vi-label">{t("/ THE MARK", "/ نشان")}</span>
+            <span className="vi-label">{t("/ THE MARK", "/ لوگو")}</span>
             <h2 className="editorial-h2">
-              <span className="eh2-outline" style={{ WebkitTextStrokeColor: "#fff" }}>{t("A MARK BUILT", "نشانی ساخته‌شده")}</span>
+              <span className="eh2-outline" style={{ WebkitTextStrokeColor: "#fff" }}>{t("A MARK BUILT", "لوگویی که بر پایه")}</span>
               <br />
-              <span className="eh2-purple" style={{ color: "var(--yellow)" }}>{t("ON A GRID.", "روی یک شبکه.")}</span>
+              <span className="eh2-purple" style={{ color: "var(--yellow)" }}>{t("ON A GRID.", "یک گرید طراحی شده است.")}</span>
             </h2>
-            <p>{t("Every logo we design sits on a geometric grid — proportion, clear space and a minimum size are decided before a single curve is drawn. That's why it still reads at 16px and still holds up at three stories tall.", "هر لوگویی که طراحی می‌کنیم روی یک شبکه‌ی هندسی می‌نشیند — تناسب، فضای خالی و حداقل اندازه پیش از کشیدن اولین منحنی مشخص می‌شوند. به همین دلیل است که هم در ۱۶ پیکسل خوانا می‌ماند و هم در ابعاد یک تابلوی سه‌طبقه.")}</p>
+            <p>{t("Every logo we design sits on a geometric grid — proportion, clear space and a minimum size are decided before a single curve is drawn. That's why it still reads at 16px and still holds up at three stories tall.", "تمام لوگوهایی که طراحی می‌کنیم بر اساس یک گرید هندسی شکل می‌گیرند. تناسبات، فضای تنفس و حداقل اندازه لوگو، پیش از طراحی حتی یک منحنی مشخص می‌شوند. به همین دلیل، لوگو هم در اندازه ۱۶ پیکسل خوانا باقی می‌ماند و هم در ابعاد بسیار بزرگ، مانند یک سازه چندطبقه، استحکام بصری خود را حفظ می‌کند.")}</p>
             <div className="vi-mark__rules">
-              <div className="vi-mark__rule"><b>{t("Clear space", "فضای خالی")}</b> {t("Never crowded by other elements", "هرگز توسط عناصر دیگر شلوغ نمی‌شود")}</div>
-              <div className="vi-mark__rule"><b>{t("Minimum size", "حداقل اندازه")}</b> {t("Tested down to favicon scale", "تا مقیاس فاویکون آزموده شده")}</div>
-              <div className="vi-mark__rule"><b>{t("Construction", "ساختار")}</b> {t("Built on a reusable proportion grid", "ساخته‌شده روی یک شبکه‌ی تناسب قابل‌استفاده‌ی مجدد")}</div>
+              <div className="vi-mark__rule"><b>{t("Clear space", "فضای تنفس")}</b> {t("Never crowded by other elements", "بدون ازدحام و تداخل با سایر عناصر")}</div>
+              <div className="vi-mark__rule"><b>{t("Minimum size", "حداقل اندازه")}</b> {t("Tested down to favicon scale", "آزمایش‌شده تا ابعاد Favicon")}</div>
+              <div className="vi-mark__rule"><b>{t("Construction", "ساختار")}</b> {t("Built on a reusable proportion grid", "طراحی‌شده بر پایه یک گرید تناسبات قابل استفاده مجدد")}</div>
             </div>
             <div className="vi-mark__variants">
               <div className="vi-mark__variant"><img src={m.color} alt={`${m.name} mark on white`} style={{ maxWidth: 40, maxHeight: 40, width: "auto", height: "auto", display: "block" }} /></div>

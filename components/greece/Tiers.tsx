@@ -6,39 +6,39 @@ import { useLang } from "@/components/global/LanguageProvider";
 
 const tiers = [
   {
-    badge: "Prime Markets", badgeFa: "بازارهای درجه‌یک", badgeStyle: "bg-[#F4F4F4] text-[#474747]",
-    amount: "€800K", amountFa: "۸۰۰ هزار یورو", label: "Single Property — Prime Zones", labelFa: "ملک واحد — مناطق درجه‌یک",
+    badge: "Prime Markets", badgeFa: "مناطق ممتاز", badgeStyle: "bg-[#F4F4F4] text-[#474747]",
+    amount: "€800K", amountFa: "€۸۰۰,۰۰۰", label: "Single Property — Prime Zones", labelFa: "خرید یک ملک در مناطق منتخب",
     featured: false,
-    geo: "Geographic Allocation", geoFa: "تخصیص جغرافیایی",
+    geo: "Geographic Allocation", geoFa: "مناطق مشمول:",
     zones: "Entire Region of Attica (Greater Athens & Piraeus), Thessaloniki, Mykonos, Santorini, all islands with population over 3,100 (Crete, Rhodes, Corfu, Paros).",
-    zonesFa: "کل منطقه‌ی آتیکا (آتن بزرگ و پیرئوس)، تسالونیکی، میکونوس، سانتورینی، همه‌ی جزایر با جمعیت بیش از ۳٬۱۰۰ نفر (کرت، رودس، کورفو، پاروس).",
+    zonesFa: "کل منطقه آتیکا، شامل آتن بزرگ و پیرائوس، تسالونیکی، میکونوس، سانتورینی و جزایری با جمعیت بیش از ۳۱۰۰ نفر مانند کرت، رودس، کورفو و پاروس.",
     rules: [
-      { en: "Single, discrete property — no portfolio bundling", fa: "ملک واحد و مجزا — بدون تجمیع پرتفوی" },
-      { en: "Minimum living area of 120 m²", fa: "حداقل مساحت مسکونی ۱۲۰ مترمربع" },
+      { en: "Single, discrete property — no portfolio bundling", fa: "سرمایه‌گذاری باید روی یک ملک واحد انجام شود و امکان تجمیع چند ملک وجود ندارد." },
+      { en: "Minimum living area of 120 m²", fa: "حداقل مساحت ملک باید ۱۲۰ مترمربع باشد." },
     ],
   },
   {
-    badge: "Regional Emerging", badgeFa: "نوظهور منطقه‌ای", badgeStyle: "bg-[#8F27FF] text-white",
-    amount: "€400K", amountFa: "۴۰۰ هزار یورو", label: "Single Property — Regional Zones", labelFa: "ملک واحد — مناطق منطقه‌ای",
+    badge: "Regional Emerging", badgeFa: "مناطق در حال توسعه", badgeStyle: "bg-[#8F27FF] text-white",
+    amount: "€400K", amountFa: "€۴۰۰,۰۰۰", label: "Single Property — Regional Zones", labelFa: "خرید یک ملک در مناطق واجد شرایط",
     featured: true,
-    geo: "Geographic Allocation", geoFa: "تخصیص جغرافیایی",
+    geo: "Geographic Allocation", geoFa: "مناطق مشمول:",
     zones: "Mainland Greece outside Attica/Thessaloniki. Regional coastal areas and secondary municipal markets. Minor islands with population under 3,100.",
-    zonesFa: "سرزمین اصلی یونان خارج از آتیکا/تسالونیکی. مناطق ساحلی منطقه‌ای و بازارهای شهری ثانویه. جزایر کوچک با جمعیت کمتر از ۳٬۱۰۰ نفر.",
+    zonesFa: "این دسته شامل مناطق سرزمین اصلی یونان خارج از آتیکا و تسالونیکی، مناطق ساحلی و بازارهای منطقه‌ای و همچنین جزایر کوچک با جمعیت کمتر از ۳۱۰۰ نفر است.",
     rules: [
-      { en: "Single, discrete property — no portfolio bundling", fa: "ملک واحد و مجزا — بدون تجمیع پرتفوی" },
-      { en: "Minimum living area of 120 m²", fa: "حداقل مساحت مسکونی ۱۲۰ مترمربع" },
+      { en: "Single, discrete property — no portfolio bundling", fa: "سرمایه‌گذاری باید روی یک ملک واحد انجام شود." },
+      { en: "Minimum living area of 120 m²", fa: "حداقل مساحت ملک ۱۲۰ مترمربع است." },
     ],
   },
   {
-    badge: "Special Category", badgeFa: "دسته‌ی ویژه", badgeStyle: "bg-[#FFFBE6] text-[#7A6800] border border-[#F0D800]",
-    amount: "€250K", amountFa: "۲۵۰ هزار یورو", label: "Conversion or Heritage — Nationwide", labelFa: "تبدیل کاربری یا میراثی — سراسری",
+    badge: "Special Category", badgeFa: "دسته ویژه", badgeStyle: "bg-[#FFFBE6] text-[#7A6800] border border-[#F0D800]",
+    amount: "€250K", amountFa: "€۲۵۰,۰۰۰", label: "Conversion or Heritage — Nationwide", labelFa: "تبدیل ملک یا ساختمان‌های میراثی",
     featured: false,
-    geo: "Available Anywhere in Greece", geoFa: "در هر نقطه‌ی یونان در دسترس",
+    geo: "Available Anywhere in Greece", geoFa: "در دسترس در سراسر یونان",
     zones: "Valid in prime central Athens, Piraeus, or elite islands. Two qualifying asset types only.",
-    zonesFa: "معتبر در مرکز درجه‌یک آتن، پیرئوس یا جزایر برجسته. تنها دو نوع دارایی واجد شرایط.",
+    zonesFa: "این مسیر در سراسر یونان قابل استفاده است و برای دو نوع دارایی تعریف شده است:",
     rules: [
-      { en: "Asset Rule A: Commercial-to-residential conversion — completed before filing", fa: "قاعده‌ی دارایی A: تبدیل تجاری به مسکونی — تکمیل‌شده پیش از ثبت درخواست" },
-      { en: "Asset Rule B: Heritage/monument building with full restoration before first renewal", fa: "قاعده‌ی دارایی B: ساختمان میراثی/تاریخی با بازسازی کامل پیش از نخستین تمدید" },
+      { en: "Asset Rule A: Commercial-to-residential conversion — completed before filing", fa: "تبدیل ملک تجاری به مسکونی: فرآیند تبدیل باید پیش از ثبت درخواست اقامت تکمیل شده باشد." },
+      { en: "Asset Rule B: Heritage/monument building with full restoration before first renewal", fa: "ساختمان‌های تاریخی یا میراثی: ساختمان باید پیش از نخستین تمدید اقامت، به‌طور کامل مرمت شود." },
     ],
   },
 ];
@@ -50,10 +50,10 @@ export default function Tiers() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-5">
-            {tr("Investment Architecture & Tier System", "معماری سرمایه‌گذاری و نظام سطح‌بندی")}
+            {tr("Investment Architecture & Tier System", "ساختار سرمایه‌گذاری و سطوح مختلف برنامه")}
           </h2>
           <p className="text-[16px] text-[#474747] leading-[1.65] max-w-[68ch] mx-auto text-center mb-12">
-            {tr("Following", "بر اساس")} <strong className="text-black">{tr("Law 5100/2024", "قانون ۵۱۰۰/۲۰۲۴")}</strong>{tr(", the program operates under a geographic and asset-class tiered framework. Each tier carries strict structural requirements — not just a capital floor.", "، این برنامه تحت یک چارچوب سطح‌بندی‌شده‌ی جغرافیایی و طبقه‌ی دارایی عمل می‌کند. هر سطح الزامات ساختاری سختگیرانه‌ای دارد — نه فقط یک کف سرمایه.")}
+            {tr("Following", "بر اساس")} <strong className="text-black">{tr("Law 5100/2024", "قانون ۵۱۰۰/۲۰۲۴")}</strong>{tr(", the program operates under a geographic and asset-class tiered framework. Each tier carries strict structural requirements — not just a capital floor.", "، حداقل سرمایه موردنیاز بسته به موقعیت جغرافیایی و نوع دارایی متفاوت است. بنابراین صرف تأمین مبلغ سرمایه کافی نیست و نوع و محل سرمایه‌گذاری نیز باید با الزامات قانونی مطابقت داشته باشد.")}
           </p>
         </Reveal>
 
@@ -102,13 +102,13 @@ export default function Tiers() {
               </svg>
             </div>
             <div className="flex-1">
-              <div className="text-[11px] font-bold text-white/50 uppercase tracking-widest mb-2">{tr("Alternative Route — Financial Instruments", "مسیر جایگزین — ابزارهای مالی")}</div>
-              <div className="text-[20px] font-bold text-white tracking-tight mb-1">{tr("Fixed-Term Deposit or Greek Government Bonds", "سپرده‌ی مدت‌دار یا اوراق قرضه‌ی دولتی یونان")}</div>
+              <div className="text-[11px] font-bold text-white/50 uppercase tracking-widest mb-2">{tr("Alternative Route — Financial Instruments", "مسیر جایگزین؛ سرمایه‌گذاری مالی")}</div>
+              <div className="text-[20px] font-bold text-white tracking-tight mb-1">{tr("Fixed-Term Deposit or Greek Government Bonds", "سپرده مدت‌دار یا اوراق قرضه دولتی یونان")}</div>
               <p className="text-[13.5px] text-white/60 leading-[1.6]">
-                {tr("For investors preferring an asset class free of property maintenance. Capital must be placed in a Greek credit institution for minimum 1 year (auto-renewing), or in Greek government bonds with at least 3 years remaining maturity.", "برای سرمایه‌گذارانی که یک طبقه‌ی دارایی عاری از نگهداری ملک را ترجیح می‌دهند. سرمایه باید حداقل ۱ سال (با تمدید خودکار) در یک مؤسسه‌ی اعتباری یونانی قرار گیرد، یا در اوراق قرضه‌ی دولتی یونان با حداقل ۳ سال سررسید باقی‌مانده.")}
+                {tr("For investors preferring an asset class free of property maintenance. Capital must be placed in a Greek credit institution for minimum 1 year (auto-renewing), or in Greek government bonds with at least 3 years remaining maturity.", "سرمایه‌گذارانی که تمایلی به خرید و نگهداری ملک ندارند، می‌توانند از برخی ابزارهای مالی واجد شرایط استفاده کنند. امکان سرمایه‌گذاری از طریق سپرده مدت‌دار در یک مؤسسه اعتباری یونانی با حداقل دوره یک‌ساله یا اوراق قرضه دولتی یونان با حداقل سه سال زمان باقی‌مانده وجود دارد.")}
               </p>
             </div>
-            <div className="text-[36px] font-extrabold text-[#FFE600] tracking-[-0.04em] whitespace-nowrap">{tr("€500K", "۵۰۰ هزار یورو")}</div>
+            <div className="text-[36px] font-extrabold text-[#FFE600] tracking-[-0.04em] whitespace-nowrap">{tr("€500K", "€۵۰۰,۰۰۰")}</div>
           </div>
         </Reveal>
       </Row>

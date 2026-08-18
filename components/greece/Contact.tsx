@@ -44,7 +44,7 @@ export default function Contact() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10">
-            {t("Start Your Greece Golden Visa Journey", "سفر ویزای طلایی یونان خود را آغاز کنید")}
+            {t("Start Your Greece Golden Visa Journey", "مسیر خود را برای دریافت گلدن ویزای یونان آغاز کنید")}
           </h2>
         </Reveal>
 
@@ -106,22 +106,22 @@ export default function Contact() {
                   <PhoneField name="phone" defaultCountryCode="+30" bg="white" />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium text-black">
-                  <span>{t("Investment Tier", "سطح سرمایه‌گذاری")}</span>
+                  <span>{t("Investment Tier", "نوع سرمایه‌گذاری")}</span>
                   <select className={inputCls}>
-                    <option>{t("€800,000 — Prime Markets", "۸۰۰٬۰۰۰ یورو — بازارهای درجه‌یک")}</option>
-                    <option>{t("€400,000 — Regional Zones", "۴۰۰٬۰۰۰ یورو — مناطق منطقه‌ای")}</option>
-                    <option>{t("€250,000 — Special Category", "۲۵۰٬۰۰۰ یورو — دسته‌ی ویژه")}</option>
-                    <option>{t("€500,000 — Financial Instruments", "۵۰۰٬۰۰۰ یورو — ابزارهای مالی")}</option>
+                    <option>{t("€800,000 — Prime Markets", "۸۰۰,۰۰۰ یورو — مناطق ممتاز")}</option>
+                    <option>{t("€400,000 — Regional Zones", "۴۰۰,۰۰۰ یورو — مناطق منتخب")}</option>
+                    <option>{t("€250,000 — Special Category", "۲۵۰,۰۰۰ یورو — مسیر ویژه")}</option>
+                    <option>{t("€500,000 — Financial Instruments", "۵۰۰,۰۰۰ یورو — ابزارهای مالی")}</option>
                     <option>{t("Exploring Options", "در حال بررسی گزینه‌ها")}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium text-black">
-                  <span>{t("Family Composition", "ترکیب خانواده")}</span>
+                  <span>{t("Family Composition", "ترکیب خانوادگی")}</span>
                   <select className={inputCls}>
                     <option>{t("Main applicant only", "فقط متقاضی اصلی")}</option>
                     <option>{t("Main applicant + spouse", "متقاضی اصلی + همسر")}</option>
-                    <option>{t("Full family (children included)", "خانواده‌ی کامل (شامل فرزندان)")}</option>
-                    <option>{t("Three-generation (parents included)", "سه‌نسلی (شامل والدین)")}</option>
+                    <option>{t("Full family (children included)", "خانواده کامل (شامل فرزندان)")}</option>
+                    <option>{t("Three-generation (parents included)", "سه نسل (شامل والدین)")}</option>
                   </select>
                 </label>
               </div>
@@ -129,7 +129,7 @@ export default function Contact() {
               {/* Textarea */}
               <div className="mb-5">
                 <label className="flex flex-col gap-2 text-[13px] font-medium text-black">
-                  <span>{t("Tell us about your goals & investment profile", "درباره‌ی اهداف و پروفایل سرمایه‌گذاری خود به ما بگویید")}</span>
+                  <span>{t("Tell us about your goals & investment profile", "درباره اهداف و پروفایل سرمایه‌گذاری خود برای ما بنویسید")}</span>
                   <textarea
                     rows={4}
                     placeholder={t("Describe your investment interests, preferred region in Greece, family situation, and long-term residency goals…", "علایق سرمایه‌گذاری، منطقه‌ی موردنظر در یونان، وضعیت خانوادگی و اهداف بلندمدت اقامتی خود را شرح دهید…")}
@@ -142,7 +142,7 @@ export default function Contact() {
               {/* Footer */}
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mt-2">
                 <small className="text-[12px] text-[#929292] leading-[1.5]">
-                  {t("Your information is reviewed confidentially by Nexa's advisory team. We typically respond within 48 hours.", "اطلاعات شما به‌صورت محرمانه توسط تیم مشاوره‌ی نکسا بررسی می‌شود. ما معمولاً ظرف ۴۸ ساعت پاسخ می‌دهیم.")}
+                  {t("Your information is reviewed confidentially by Nexa's advisory team. We typically respond within 48 hours.", "اطلاعات شما توسط تیم مشاوره نکسا به‌صورت محرمانه بررسی می‌شود. حداکثر ظرف ۴۸ ساعت پاسخ خواهیم داد.")}
                 </small>
                 <button
                   type="submit"

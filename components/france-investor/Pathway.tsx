@@ -10,41 +10,41 @@ const items = [
   {
     num: "01",
     label: "Talent Passport",
-    labelFa: "پاسپورت استعداد",
+    labelFa: "Talent Passport",
     year: "Years 1–4",
     yearFa: "سال‌های ۱ تا ۴",
     title: "Talent Passport (Years 1–4)",
-    titleFa: "پاسپورت استعداد (سال‌های ۱ تا ۴)",
+    titleFa: "Talent Passport | سال‌های ۱ تا ۴",
     desc: "Operate your enterprise under the 4-year card. Renewals require proof that the €300K investment remains deployed and job-creation trajectory is actively maintained.",
-    descFa: "بنگاه خود را با کارت ۴ ساله اداره کنید. تمدیدها نیازمند اثبات این هستند که سرمایه‌گذاری ۳۰۰ هزار یورویی همچنان به‌کار گرفته شده و مسیر ایجاد اشتغال فعالانه حفظ می‌شود.",
+    descFa: "در طول اعتبار کارت، کسب‌وکار خود را در فرانسه مدیریت می‌کنید. برای تمدید، باید نشان دهید که سرمایه‌گذاری ۳۰۰ هزار یورویی همچنان در فعالیت اقتصادی قرار دارد و برنامه ایجاد یا حفظ اشتغال در مسیر تعیین‌شده پیش می‌رود.",
     body: "Operate your enterprise under the renewable 4-year Talent Passport card. Renewals require proof the €300K remains deployed and the job-creation trajectory is actively maintained.",
-    bodyFa: "بنگاه خود را با کارت پاسپورت استعداد ۴ ساله‌ی قابل‌تمدید اداره کنید. تمدیدها نیازمند اثبات این هستند که ۳۰۰ هزار یورو همچنان به‌کار گرفته شده و مسیر ایجاد اشتغال فعالانه حفظ می‌شود.",
+    bodyFa: "در طول اعتبار کارت، کسب‌وکار خود را در فرانسه مدیریت می‌کنید. برای تمدید، باید نشان دهید که سرمایه‌گذاری ۳۰۰ هزار یورویی همچنان در فعالیت اقتصادی قرار دارد و برنامه ایجاد یا حفظ اشتغال در مسیر تعیین‌شده پیش می‌رود.",
   },
   {
     num: "02",
     label: "Permanent Residency",
     labelFa: "اقامت دائم",
     year: "Year 5",
-    yearFa: "سال ۵",
+    yearFa: "سال پنجم",
     title: "Permanent Residency (Year 5)",
-    titleFa: "اقامت دائم (سال ۵)",
+    titleFa: "اقامت دائم | سال پنجم",
     desc: "Transition to a 10-year Permanent Residence Card (Carte de Résident). At this stage, you are no longer legally required to maintain or run the original investment enterprise.",
-    descFa: "به یک کارت اقامت دائم ۱۰ ساله (Carte de Résident) گذار کنید. در این مرحله، دیگر از نظر قانونی ملزم به حفظ یا اداره‌ی بنگاه سرمایه‌گذاری اولیه نیستید.",
+    descFa: "پس از ۵ سال، در صورت احراز شرایط، امکان دریافت کارت اقامت دائم ۱۰ ساله (Carte de Résident) وجود دارد. از این مرحله، اقامت شما دیگر الزاماً به ادامه فعالیت همان کسب‌وکار اولیه وابسته نیست.",
     body: "After 5 years of continuous legal residence, transition to a 10-year Permanent Residence Card. You are no longer required to maintain or operate the original investment enterprise.",
-    bodyFa: "پس از ۵ سال اقامت قانونی پیوسته، به یک کارت اقامت دائم ۱۰ ساله گذار کنید. دیگر ملزم به حفظ یا اداره‌ی بنگاه سرمایه‌گذاری اولیه نیستید.",
+    bodyFa: "پس از ۵ سال، در صورت احراز شرایط، امکان دریافت کارت اقامت دائم ۱۰ ساله (Carte de Résident) وجود دارد. از این مرحله، اقامت شما دیگر الزاماً به ادامه فعالیت همان کسب‌وکار اولیه وابسته نیست.",
   },
   {
     num: "03",
     label: "French Citizenship",
     labelFa: "تابعیت فرانسه",
     year: "Year 5+",
-    yearFa: "سال ۵ به بعد",
+    yearFa: "سال پنجم به بعد",
     title: "French Citizenship (Year 5+)",
-    titleFa: "تابعیت فرانسه (سال ۵ به بعد)",
+    titleFa: "تابعیت فرانسه | سال پنجم به بعد",
     desc: "Requires 183 days/year physical presence, B1 French language proficiency, and a civic integration interview on French history, culture, and constitutional values.",
-    descFa: "نیازمند ۱۸۳ روز در سال حضور فیزیکی، تسلط به زبان فرانسه در سطح B1 و یک مصاحبه‌ی ادغام مدنی درباره‌ی تاریخ، فرهنگ و ارزش‌های قانون اساسی فرانسه است.",
+    descFa: "برای دریافت تابعیت، رعایت الزامات حضور فیزیکی، از جمله حدود ۱۸۳ روز در سال، برخورداری از سطح زبان فرانسه B1 و موفقیت در فرآیند ادغام و مصاحبه مدنی موردنیاز است.",
     body: "Apply for full French citizenship by naturalization. Requires 183 days/year physical presence, B1 oral and written French (language assessment), and a civic integration interview covering French history, culture, and constitutional values.",
-    bodyFa: "برای تابعیت کامل فرانسه از طریق تابعیت‌پذیری درخواست دهید. نیازمند ۱۸۳ روز در سال حضور فیزیکی، فرانسه‌ی شفاهی و کتبی در سطح B1 (ارزیابی زبان) و یک مصاحبه‌ی ادغام مدنی شامل تاریخ، فرهنگ و ارزش‌های قانون اساسی فرانسه است.",
+    bodyFa: "برای دریافت تابعیت، رعایت الزامات حضور فیزیکی، از جمله حدود ۱۸۳ روز در سال، برخورداری از سطح زبان فرانسه B1 و موفقیت در فرآیند ادغام و مصاحبه مدنی موردنیاز است.",
   },
 ];
 
@@ -58,7 +58,7 @@ export default function Pathway() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-center mb-14">
-            {t("Long-Term Horizon", "افق بلندمدت")}
+            {t("Long-Term Horizon", "مسیر بلندمدت اقامت")}
           </h2>
         </Reveal>
 

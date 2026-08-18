@@ -76,29 +76,29 @@ export default function ContactForm() {
                   <PhoneField defaultCountryCode="+33" />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="text-[#474747]">{t("Investment Form", "شکل سرمایه‌گذاری")}</span>
+                  <span className="text-[#474747]">{t("Investment Form", "نوع سرمایه‌گذاری")}</span>
                   <select className="h-11 px-3.5 rounded-[10px] border border-[#E2E2E2] bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors">
-                    <option>{t("Direct Equity (≥10%)", "سهام مستقیم (≥۱۰٪)")}</option>
-                    <option>{t("Reinvested Earnings", "درآمد سرمایه‌گذاری‌مجدد")}</option>
-                    <option>{t("Inter-Affiliate Loans", "وام‌های بین‌شرکتی")}</option>
-                    <option>{t("Not yet decided", "هنوز تصمیم‌گیری نشده")}</option>
+                    <option>{t("Direct Equity (≥10%)", "سرمایه‌گذاری مستقیم در سهام (حداقل ۱۰٪)")}</option>
+                    <option>{t("Reinvested Earnings", "سرمایه‌گذاری مجدد سود")}</option>
+                    <option>{t("Inter-Affiliate Loans", "وام بین شرکت‌های وابسته")}</option>
+                    <option>{t("Not yet decided", "هنوز تصمیم نگرفته‌ام")}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="text-[#474747]">{t("Business Sector", "حوزه‌ی کسب‌وکار")}</span>
+                  <span className="text-[#474747]">{t("Business Sector", "حوزه فعالیت")}</span>
                   <select className="h-11 px-3.5 rounded-[10px] border border-[#E2E2E2] bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors">
                     <option>{t("Technology / SaaS", "فناوری / SaaS")}</option>
-                    <option>{t("Industrial / Manufacturing", "صنعتی / تولیدی")}</option>
-                    <option>{t("Agri-food / Agriculture", "کشاورزی و غذا / کشاورزی")}</option>
-                    <option>{t("Artisanal / Craft", "صنایع‌دستی / پیشه‌وری")}</option>
-                    <option>{t("Healthcare / Medtech", "سلامت / فناوری پزشکی")}</option>
+                    <option>{t("Industrial / Manufacturing", "صنعتی / تولید")}</option>
+                    <option>{t("Agri-food / Agriculture", "کشاورزی و صنایع غذایی")}</option>
+                    <option>{t("Artisanal / Craft", "صنایع دستی")}</option>
+                    <option>{t("Healthcare / Medtech", "سلامت / مد‌تک")}</option>
                     <option>{t("Other", "سایر")}</option>
                   </select>
                 </label>
               </div>
 
               <label className="flex flex-col gap-2 text-[13px] font-medium">
-                <span className="text-[#474747]">{t("Tell us about your investment & goals", "درباره‌ی سرمایه‌گذاری و اهدافتان به ما بگویید")}</span>
+                <span className="text-[#474747]">{t("Tell us about your investment & goals", "درباره سرمایه‌گذاری و اهداف خود برای ما بنویسید")}</span>
                 <textarea rows={4}
                   placeholder={t("Describe your investment capacity, target enterprise, job creation plan, and long-term France goals…", "ظرفیت سرمایه‌گذاری، بنگاه هدف، طرح ایجاد اشتغال و اهداف بلندمدت خود در فرانسه را شرح دهید…")}
                   className="px-3.5 py-3 rounded-[10px] border border-[#E2E2E2] bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors resize-y" />
@@ -106,7 +106,7 @@ export default function ContactForm() {
 
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
                 <small className="text-[12px] text-[#929292] leading-relaxed max-w-[50ch]">
-                  {t("Your information is reviewed confidentially by Nexa's advisory team. We typically respond within 24 hours.", "اطلاعات شما به‌صورت محرمانه توسط تیم مشاوره‌ی نکسا بررسی می‌شود. ما معمولاً ظرف ۲۴ ساعت پاسخ می‌دهیم.")}
+                  {t("Your information is reviewed confidentially by Nexa's advisory team. We typically respond within 24 hours.", "اطلاعات شما توسط تیم مشاوره نکسا به‌صورت محرمانه بررسی می‌شود. حداکثر ظرف ۲۴ ساعت پاسخ خواهیم داد.")}
                 </small>
                 <button type="submit"
                   className="w-full sm:w-auto flex-shrink-0 inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"

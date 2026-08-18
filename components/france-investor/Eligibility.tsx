@@ -8,40 +8,41 @@ const reqs = [
   {
     num: "A",
     title: "Minimum Capital Deployment",
-    titleFa: "حداقل به‌کارگیری سرمایه",
+    titleFa: "حداقل سرمایه‌گذاری",
     desc: <>A baseline investment of <strong className="text-black font-semibold">€300,000</strong> in tangible or intangible fixed assets within a qualifying French commercial, industrial, artisanal, or agricultural enterprise.</>,
-    descFa: <>یک سرمایه‌گذاری پایه‌ی <strong className="text-black font-semibold">۳۰۰٬۰۰۰ یورو</strong> در دارایی‌های ثابت مشهود یا نامشهود در یک بنگاه تجاری، صنعتی، صنایع‌دستی یا کشاورزی فرانسوی واجد شرایط.</>,
+    descFa: <>حداقل <strong className="text-black font-semibold">۳۰۰ هزار یورو</strong> در دارایی‌های ثابت مشهود یا نامشهود یک شرکت تجاری، صنعتی، صنایع‌دستی یا کشاورزی واجد شرایط در فرانسه.</>,
   },
   {
     num: "B",
     title: "Job Creation or Preservation Commitment",
     titleFa: "تعهد به ایجاد یا حفظ اشتغال",
     desc: <>The investor must explicitly commit to <strong className="text-black font-semibold">creating or maintaining permanent jobs</strong> within 4 years following the initial capital deployment.</>,
-    descFa: <>سرمایه‌گذار باید صراحتاً متعهد به <strong className="text-black font-semibold">ایجاد یا حفظ مشاغل دائمی</strong> ظرف ۴ سال پس از به‌کارگیری اولیه‌ی سرمایه شود.</>,
+    descFa: <>سرمایه‌گذار باید متعهد شود که طی ۴ سال پس از سرمایه‌گذاری، <strong className="text-black font-semibold">فرصت‌های شغلی دائمی ایجاد یا مشاغل موجود را حفظ</strong> خواهد کرد.</>,
   },
   {
     num: "C",
     title: "Active Corporate Position",
-    titleFa: "سمت شرکتی فعال",
+    titleFa: "نقش فعال در شرکت",
     desc: <>The applicant must either <strong className="text-black font-semibold">manage the enterprise personally</strong> or hold a director / legal representative status within the recipient entity — passive shareholders do not qualify.</>,
-    descFa: <>متقاضی باید یا <strong className="text-black font-semibold">شخصاً بنگاه را مدیریت کند</strong> یا در نهاد دریافت‌کننده سمت مدیر / نماینده‌ی قانونی داشته باشد — سهام‌داران منفعل واجد شرایط نیستند.</>,
+    descFa: <>متقاضی باید شخصاً <strong className="text-black font-semibold">در مدیریت کسب‌وکار نقش داشته باشد</strong> یا به‌عنوان مدیر یا نماینده قانونی شرکت فعالیت کند. صرفاً سهامدار بودن برای استفاده از این مسیر کافی نیست.</>,
   },
   {
     num: "D",
     title: "Personal Financial Liquidity",
-    titleFa: "نقدینگی مالی شخصی",
+    titleFa: "توانایی مالی شخصی",
     desc: <>Separate from the €300K investment capital, personal resources must equal or exceed the French minimum wage (SMIC): <strong className="text-black font-semibold">€21,621.60 gross per year</strong> in accessible personal bank accounts.</>,
-    descFa: <>جدا از سرمایه‌ی سرمایه‌گذاری ۳۰۰ هزار یورویی، منابع شخصی باید برابر یا بیش از حداقل دستمزد فرانسه (SMIC) باشد: <strong className="text-black font-semibold">۲۱٬۶۲۱٫۶۰ یورو ناخالص در سال</strong> در حساب‌های بانکی شخصی قابل‌دسترس.</>,
+    descFa: <>علاوه بر سرمایه‌گذاری ۳۰۰ هزار یورویی، متقاضی باید <strong className="text-black font-semibold">منابع مالی شخصی کافی</strong> برای تأمین هزینه‌های زندگی خود داشته باشد.</>,
   },
 ];
 
 const rights: { en: string; fa: string }[] = [
-  { en: "4-year Talent Passport card, renewable", fa: "کارت پاسپورت استعداد ۴ ساله، قابل‌تمدید" },
-  { en: "Full work authorization — no separate permit", fa: "مجوز کامل کار — بدون مجوز جداگانه" },
-  { en: "Spouse receives Talent (Family) permit with full work rights", fa: "همسر مجوز استعداد (خانواده) با حقوق کامل کار دریافت می‌کند" },
-  { en: "Minor children included without separate docs", fa: "فرزندان صغیر بدون اسناد جداگانه گنجانده می‌شوند" },
-  { en: "No language requirement at initial stage", fa: "بدون الزام زبانی در مرحله‌ی اولیه" },
-  { en: "Schengen travel across 29 countries", fa: "سفر شنگن در ۲۹ کشور" },
+  { en: "4-year Talent Passport card, renewable", fa: "کارت اقامت ۴ ساله Talent Passport با امکان تمدید" },
+  { en: "Full work authorization — no separate permit", fa: "حق کامل کار و فعالیت حرفه‌ای بدون نیاز به مجوز کار جداگانه" },
+  { en: "Spouse receives Talent (Family) permit with full work rights", fa: "امکان دریافت اقامت Talent – Family برای همسر" },
+  { en: "Spouse full work rights", fa: "حق کار کامل برای همسر" },
+  { en: "Minor children included without separate docs", fa: "امکان همراهی فرزندان زیر ۱۸ سال" },
+  { en: "No language requirement at initial stage", fa: "بدون الزام به ارائه مدرک زبان در مرحله اولیه" },
+  { en: "Schengen travel across 29 countries", fa: "امکان سفر در سراسر ۲۹ کشور حوزه شنگن" },
 ];
 
 const CheckIcon = () => (
@@ -62,7 +63,7 @@ export default function Eligibility() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-center mb-14">
-            {t("Core Eligibility Requirements", "الزامات اصلی واجد بودن")}
+            {t("Core Eligibility Requirements", "شرایط اصلی دریافت اقامت")}
           </h2>
         </Reveal>
 
@@ -73,7 +74,7 @@ export default function Eligibility() {
               style={{ border: "1px solid #E2E2E2" }}
             >
               <p className="text-[15px] text-[#474747] leading-[1.65] mb-7 pb-7" style={{ borderBottom: "1px solid #E2E2E2" }}>
-                {t("To qualify under the", "برای واجد شرایط شدن تحت جریان")} <strong className="text-black font-semibold">{t("Talent – Economic Investor", "استعداد – سرمایه‌گذار اقتصادی")}</strong> {t("stream, your application must satisfy three statutory conditions — beyond the €300K capital deployment.", "، درخواست شما باید سه شرط قانونی را — فراتر از به‌کارگیری سرمایه‌ی ۳۰۰ هزار یورویی — برآورده کند.")}
+                {t("To qualify under the", "برای استفاده از مسیر")} <strong className="text-black font-semibold">{t("Talent – Economic Investor", "Talent – Economic Investor")}</strong> {t("stream, your application must satisfy three statutory conditions — beyond the €300K capital deployment.", "، علاوه بر سرمایه‌گذاری ۳۰۰ هزار یورویی، باید چند شرط اصلی نیز احراز شود.")}
               </p>
 
               {reqs.slice(0, 3).map((r, i) => (
@@ -135,7 +136,7 @@ export default function Eligibility() {
                   </svg>
                   {t("What You Get", "آنچه دریافت می‌کنید")}
                 </div>
-                <h3 className="text-[17px] font-semibold text-black mb-4">{t("Key permit rights", "حقوق کلیدی مجوز")}</h3>
+                <h3 className="text-[17px] font-semibold text-black mb-4">{t("Key permit rights", "آنچه این اقامت در اختیار شما قرار می‌دهد")}</h3>
                 <ul className="flex flex-col gap-3">
                   {rights.map((r, i) => (
                     <li key={i} className="flex items-center gap-3 text-[14px] font-medium text-black leading-[1.45]">
@@ -151,16 +152,16 @@ export default function Eligibility() {
                 style={{ background: "white", border: "1.5px solid #E2E2E2" }}
               >
                 <div className="text-[11px] font-bold text-[#929292] uppercase tracking-[0.08em] mb-2">
-                  {t("Personal Liquidity Minimum", "حداقل نقدینگی شخصی")}
+                  {t("Personal Liquidity Minimum", "حداقل منابع مالی شخصی")}
                 </div>
                 <div
                   className="font-extrabold tabular-nums leading-none mb-2"
                   style={{ fontSize: "32px", color: "#8F27FF", letterSpacing: "-0.04em" }}
                 >
-                  {t("€21,621", "۲۱٬۶۲۱ یورو")}
+                  {t("€21,621", "€۲۱,۶۲۱")}
                 </div>
                 <p className="text-[13px] text-[#929292] leading-[1.55] m-0">
-                  {t("Gross annual SMIC baseline — required in accessible personal bank accounts, separate from the €300K investment capital.", "پایه‌ی سالانه‌ی ناخالص SMIC — که در حساب‌های بانکی شخصی قابل‌دسترس، جدا از سرمایه‌ی سرمایه‌گذاری ۳۰۰ هزار یورویی، لازم است.")}
+                  {t("Gross annual SMIC baseline — required in accessible personal bank accounts, separate from the €300K investment capital.", "حداقل منابع مالی شخصی معادل درآمد ناخالص سالانه SMIC که باید جدا از سرمایه‌گذاری ۳۰۰ هزار یورویی در اختیار متقاضی باشد.")}
                 </p>
               </div>
             </div>

@@ -7,20 +7,20 @@ import { useLang } from "@/components/global/LanguageProvider";
 const groups = [
   {
     title: "Mandatory Corporate Evidence",
-    titleFa: "مدارک شرکتی الزامی",
+    titleFa: "مدارک مربوط به کسب‌وکار و سرمایه‌گذاری",
     items: [
-      { strong: "Strategic Business Plan", strongFa: "طرح کسب‌وکار راهبردی", desc: "Multi-year model with capital allocation schedules and explicit job-creation milestones over a 4-year horizon.", descFa: "مدل چندساله با برنامه‌های تخصیص سرمایه و نقاط عطف صریح ایجاد اشتغال در افق ۴ ساله." },
-      { strong: "Corporate Structure Documentation", strongFa: "مستندسازی ساختار شرکتی", desc: "Signed letters of intent, articles of incorporation (Statuts), or Kbis extracts showing equity share greater than 10%.", descFa: "نامه‌های اعلام قصد امضاشده، اساسنامه‌ی شرکت (Statuts)، یا استخراج‌های Kbis که سهم سهام بیش از ۱۰٪ را نشان می‌دهند." },
-      { strong: "Investment Proof", strongFa: "اثبات سرمایه‌گذاری", desc: "Escrow receipt, capital deposit certificate from a French financial institution, or authenticated corporate loan agreement.", descFa: "رسید امانت‌سپاری، گواهی سپرده‌ی سرمایه از یک مؤسسه‌ی مالی فرانسوی، یا توافق‌نامه‌ی وام شرکتی تأییدشده." },
+      { strong: "Strategic Business Plan", strongFa: "طرح تجاری جامع", desc: "Multi-year model with capital allocation schedules and explicit job-creation milestones over a 4-year horizon.", descFa: "مدل کسب‌وکار چندساله، نحوه تخصیص سرمایه و برنامه مشخص برای ایجاد یا حفظ مشاغل در یک دوره چهار ساله." },
+      { strong: "Corporate Structure Documentation", strongFa: "اسناد ساختار شرکت", desc: "Signed letters of intent, articles of incorporation (Statuts), or Kbis extracts showing equity share greater than 10%.", descFa: "اساسنامه، نامه‌های رسمی یا اسناد ثبت شرکت مانند Statuts و Kbis که ساختار مالکیت و سهم حداقل ۱۰ درصدی متقاضی را نشان دهد." },
+      { strong: "Investment Proof", strongFa: "اثبات سرمایه‌گذاری", desc: "Escrow receipt, capital deposit certificate from a French financial institution, or authenticated corporate loan agreement.", descFa: "مدارکی مانند رسید حساب امانی، گواهی واریز سرمایه از یک مؤسسه مالی فرانسوی یا قرارداد رسمی وام شرکتی." },
     ],
   },
   {
     title: "Personal Financial Proofs",
     titleFa: "مدارک مالی شخصی",
     items: [
-      { strong: "6 Months of Bank Statements", strongFa: "۶ ماه صورت‌حساب بانکی", desc: "Personal statements demonstrating clean, unencumbered liquid savings at or above the annual SMIC baseline.", descFa: "صورت‌حساب‌های شخصی که پس‌انداز نقدی پاک و بدون قید در حد یا بالاتر از پایه‌ی سالانه‌ی SMIC را نشان می‌دهند." },
-      { strong: "Origin of Funds Declaration", strongFa: "اظهارنامه‌ی منشأ وجوه", desc: "Audited tax returns, property sale receipts, or corporate dividend records validating the lawful accumulation of the €300K capital.", descFa: "اظهارنامه‌های مالیاتی حسابرسی‌شده، رسیدهای فروش ملک، یا سوابق سود سهام شرکتی که انباشت قانونی سرمایه‌ی ۳۰۰ هزار یورویی را تأیید می‌کنند." },
-      { strong: "Valid Passport", strongFa: "پاسپورت معتبر", desc: "Sufficient remaining validity for the full permit duration. French DRIEETS enforce zero-tolerance for incomplete financial trails.", descFa: "اعتبار باقی‌مانده‌ی کافی برای کل مدت مجوز. DRIEETS فرانسه برای مسیرهای مالی ناقص هیچ اغماضی ندارند." },
+      { strong: "6 Months of Bank Statements", strongFa: "گردش حساب ۶ ماهه", desc: "Personal statements demonstrating clean, unencumbered liquid savings at or above the annual SMIC baseline.", descFa: "ارائه صورت‌حساب‌های بانکی شخصی که وجود منابع مالی نقد و بدون محدودیت را حداقل در سطح SMIC نشان دهد." },
+      { strong: "Origin of Funds Declaration", strongFa: "اثبات منشأ سرمایه", desc: "Audited tax returns, property sale receipts, or corporate dividend records validating the lawful accumulation of the €300K capital.", descFa: "اظهارنامه‌های مالیاتی، اسناد فروش ملک، مدارک دریافت سود سهام یا سایر اسناد معتبر برای اثبات منشأ قانونی سرمایه ۳۰۰ هزار یورویی." },
+      { strong: "Valid Passport", strongFa: "پاسپورت معتبر", desc: "Sufficient remaining validity for the full permit duration. French DRIEETS enforce zero-tolerance for incomplete financial trails.", descFa: "پاسپورت باید برای مدت کافی معتبر باشد تا کل دوره اقامت مورد درخواست را پوشش دهد." },
     ],
   },
 ];
@@ -36,7 +36,7 @@ export default function Documents() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-white text-center mb-14">
-            {t("Document Checklist & Verification", "چک‌لیست اسناد و راستی‌آزمایی")}
+            {t("Document Checklist & Verification", "مدارک و مستندات موردنیاز")}
           </h2>
         </Reveal>
 

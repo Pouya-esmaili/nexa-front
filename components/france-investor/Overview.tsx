@@ -12,9 +12,9 @@ const cards = [
       </svg>
     ),
     label: "Initial Visa Validity",
-    labelFa: "اعتبار اولیه‌ی ویزا",
+    labelFa: "اعتبار اقامت اولیه",
     value: <>Up to <em className="text-[#8F27FF] not-italic font-bold">4 years</em> — renewable multi-year residence card</>,
-    valueFa: <>تا <em className="text-[#8F27FF] not-italic font-bold">۴ سال</em> — کارت اقامت چندساله‌ی قابل‌تمدید</>,
+    valueFa: <>تا <em className="text-[#8F27FF] not-italic font-bold">۴ سال</em> — کارت اقامت چندساله و قابل تمدید</>,
   },
   {
     icon: (
@@ -23,9 +23,9 @@ const cards = [
       </svg>
     ),
     label: "Work Authorization",
-    labelFa: "مجوز کار",
+    labelFa: "حق کار و فعالیت اقتصادی",
     value: "Complete professional freedom to manage and execute your investment",
-    valueFa: "آزادی حرفه‌ای کامل برای مدیریت و اجرای سرمایه‌گذاری شما",
+    valueFa: "آزادی کامل برای مدیریت و اجرای سرمایه‌گذاری و فعالیت حرفه‌ای مرتبط با آن",
   },
   {
     icon: (
@@ -34,9 +34,9 @@ const cards = [
       </svg>
     ),
     label: "Family Inclusion",
-    labelFa: "شمول خانواده",
+    labelFa: "همراهی خانواده",
     value: <>Spouse and minor children auto-qualify with <em className="text-[#8F27FF] not-italic font-bold">full work rights</em></>,
-    valueFa: <>همسر و فرزندان صغیر به‌طور خودکار با <em className="text-[#8F27FF] not-italic font-bold">حقوق کامل کار</em> واجد شرایط می‌شوند</>,
+    valueFa: <>همسر و فرزندان زیر ۱۸ سال می‌توانند همراه متقاضی اقامت بگیرند و از <em className="text-[#8F27FF] not-italic font-bold">حق کار کامل</em> برخوردار شوند</>,
   },
   {
     icon: (
@@ -45,9 +45,9 @@ const cards = [
       </svg>
     ),
     label: "Physical Presence",
-    labelFa: "حضور فیزیکی",
+    labelFa: "الزام حضور فیزیکی",
     value: <>No minimum for temporary residency — <em className="text-[#8F27FF] not-italic font-bold">183 days/year</em> for PR &amp; Citizenship</>,
-    valueFa: <>بدون حداقل برای اقامت موقت — <em className="text-[#8F27FF] not-italic font-bold">۱۸۳ روز در سال</em> برای اقامت دائم و تابعیت</>,
+    valueFa: <>برای اقامت موقت حداقل حضور مشخصی وجود ندارد؛ اما برای اقامت دائم و تابعیت، معمولاً <em className="text-[#8F27FF] not-italic font-bold">۱۸۳ روز حضور در سال</em> اهمیت دارد</>,
   },
   {
     icon: (
@@ -58,7 +58,7 @@ const cards = [
     label: "Path to Citizenship",
     labelFa: "مسیر تابعیت",
     value: <>Eligible for Permanent Resident card or French Citizenship after <em className="text-[#8F27FF] not-italic font-bold">5 years</em></>,
-    valueFa: <>واجد شرایط کارت اقامت دائم یا تابعیت فرانسه پس از <em className="text-[#8F27FF] not-italic font-bold">۵ سال</em></>,
+    valueFa: <>پس از <em className="text-[#8F27FF] not-italic font-bold">۵ سال</em> امکان درخواست اقامت دائم یا در صورت احراز شرایط، تابعیت فرانسه وجود دارد</>,
   },
   {
     icon: (
@@ -69,7 +69,7 @@ const cards = [
     label: "Investment Type",
     labelFa: "نوع سرمایه‌گذاری",
     value: "Active capital — no passive real estate, no stock portfolios",
-    valueFa: "سرمایه‌ی فعال — بدون املاک منفعل، بدون پرتفوی سهام",
+    valueFa: "سرمایه‌گذاری باید فعال و مولد باشد؛ خرید ملک مسکونی یا سرمایه‌گذاری صرفاً در سبد سهام، مشمول این مسیر نیست",
   },
 ];
 
@@ -80,7 +80,7 @@ export default function Overview() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-center mb-14">
-            {t("Program Core Values & Parameters", "ارزش‌های اصلی و پارامترهای برنامه")}
+            {t("Program Core Values & Parameters", "چارچوب و ویژگی‌های اصلی برنامه")}
           </h2>
         </Reveal>
 

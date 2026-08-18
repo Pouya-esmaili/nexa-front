@@ -23,12 +23,12 @@ export default function Hero() {
             style={{ opacity: mounted ? 1 : 0, transform: mounted ? "none" : "translateY(24px)" }}
           >
             <h1 className="text-[32px] md:text-[48px] font-bold tracking-[-0.03em] leading-[1.06] mb-[22px]">
-              {t("Europe's premier", "برترین")}{" "}
-              <em className="text-[#8F27FF] not-italic">{t("active residency", "اقامت فعال")}</em>{" "}
-              {t("for investors and founders.", "اروپا برای سرمایه‌گذاران و بنیان‌گذاران.")}
+              {t("Europe's premier", "با سرمایه‌گذاری فعال،")}{" "}
+              <em className="text-[#8F27FF] not-italic">{t("active residency", "اقامت فرانسه")}</em>{" "}
+              {t("for investors and founders.", "را به دست آورید")}
             </h1>
             <p className="text-[16px] text-[#474747] mb-8 leading-[1.65] max-w-[520px]">
-              {t("The France Talent Passport – Economic Investor embeds you directly into the EU's largest tech and industrial ecosystem. A 4-year renewable card, full family inclusion, and a clear 5-year path to permanent residency.", "پاسپورت استعداد فرانسه – سرمایه‌گذار اقتصادی شما را مستقیماً در بزرگ‌ترین اکوسیستم فناوری و صنعتی اتحادیه اروپا جای می‌دهد. یک کارت ۴ ساله‌ی قابل‌تمدید، شمول کامل خانواده و یک مسیر روشن ۵ ساله به اقامت دائم.")}
+              {t("The France Talent Passport – Economic Investor embeds you directly into the EU's largest tech and industrial ecosystem. A 4-year renewable card, full family inclusion, and a clear 5-year path to permanent residency.", "Talent Passport – Economic Investor فرانسه، شما را مستقیماً وارد یکی از بزرگ‌ترین اکوسیستم‌های فناوری و صنعت اروپا می‌کند. با یک کارت اقامت چندساله، امکان همراهی خانواده، حق کار کامل و مسیری روشن برای دریافت اقامت دائم، می‌توانید کسب‌وکار خود را در فرانسه توسعه دهید و هم‌زمان جایگاه خود را در بازار اروپا تثبیت کنید.")}
             </p>
 
             <div
@@ -37,7 +37,7 @@ export default function Hero() {
             >
               {[
                 { num: "€300K", numFa: "۳۰۰ هزار یورو", label: "Min Investment", labelFa: "حداقل سرمایه‌گذاری" },
-                { num: "4 yr", numFa: "۴ سال", label: "Residence Card", labelFa: "کارت اقامت" },
+                { num: "4 yr", numFa: "۴ سال", label: "Residence Card", labelFa: "اعتبار کارت اقامت" },
                 { num: "5 yr", numFa: "۵ سال", label: "Path to PR", labelFa: "مسیر اقامت دائم" },
               ].map((s, i) => (
                 <div key={i} className="text-center">
@@ -52,7 +52,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"
               style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
             >
-              {t("Book an Appointment →", "رزرو وقت ملاقات →")}
+              {t("Book an Appointment →", "مشاوره و ارزیابی پرونده →")}
             </a>
           </div>
 

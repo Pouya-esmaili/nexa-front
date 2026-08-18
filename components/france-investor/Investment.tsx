@@ -12,9 +12,9 @@ const forms = [
       </svg>
     ),
     title: "Direct Equity Investment",
-    titleFa: "سرمایه‌گذاری مستقیم سهام",
+    titleFa: "سرمایه‌گذاری مستقیم در سهام",
     desc: <>Acquiring a personal stake of at least <strong className="text-white font-semibold">10%</strong> in a French enterprise with a real business presence.</>,
-    descFa: <>کسب سهم شخصی حداقل <strong className="text-white font-semibold">۱۰٪</strong> در یک بنگاه فرانسوی با حضور تجاری واقعی.</>,
+    descFa: <>خرید حداقل <strong className="text-white font-semibold">۱۰٪</strong> از سهام یک شرکت فرانسوی که فعالیت اقتصادی واقعی و حضور عملیاتی در فرانسه داشته باشد.</>,
   },
   {
     icon: (
@@ -23,9 +23,9 @@ const forms = [
       </svg>
     ),
     title: "Reinvested Earnings",
-    titleFa: "درآمد سرمایه‌گذاری‌مجدد",
+    titleFa: "سرمایه‌گذاری مجدد سود",
     desc: <>Deploying <strong className="text-white font-semibold">undistributed operating income</strong> from an existing French subsidiary into local development.</>,
-    descFa: <>به‌کارگیری <strong className="text-white font-semibold">درآمد عملیاتی توزیع‌نشده</strong> از یک شرکت تابعه‌ی فرانسوی موجود در توسعه‌ی محلی.</>,
+    descFa: <>اختصاص <strong className="text-white font-semibold">سود عملیاتی توزیع‌نشده</strong> یک شرکت تابعه موجود در فرانسه به توسعه و گسترش فعالیت‌های آن در این کشور.</>,
   },
   {
     icon: (
@@ -34,9 +34,9 @@ const forms = [
       </svg>
     ),
     title: "Inter-Affiliate Group Loans",
-    titleFa: "وام‌های گروهی بین‌شرکتی",
+    titleFa: "تأمین مالی درون‌گروهی",
     desc: <>Direct loans between a <strong className="text-white font-semibold">foreign parent company</strong> and a French entity in which you hold a lasting interest.</>,
-    descFa: <>وام‌های مستقیم بین یک <strong className="text-white font-semibold">شرکت مادر خارجی</strong> و یک نهاد فرانسوی که شما در آن منافع پایدار دارید.</>,
+    descFa: <>اعطای وام مستقیم میان <strong className="text-white font-semibold">شرکت مادر خارجی</strong> و یک شرکت فرانسوی که سرمایه‌گذار در آن دارای منافع و مالکیت پایدار است.</>,
   },
 ];
 
@@ -51,7 +51,7 @@ export default function Investment() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-white text-center mb-14">
-            {t("Investment Thresholds & Capital Forms", "آستانه‌های سرمایه‌گذاری و اشکال سرمایه")}
+            {t("Investment Thresholds & Capital Forms", "حداقل سرمایه و روش‌های سرمایه‌گذاری")}
           </h2>
         </Reveal>
 
@@ -65,7 +65,7 @@ export default function Investment() {
                 className="self-start text-[11px] font-bold uppercase tracking-[0.12em] px-3.5 py-1.5 rounded-full"
                 style={{ background: "rgba(255,230,0,0.12)", border: "1px solid rgba(255,230,0,0.3)", color: "#FFE600" }}
               >
-                {t("Minimum Capital Deployment", "حداقل به‌کارگیری سرمایه")}
+                {t("Minimum Capital Deployment", "حداقل سرمایه‌گذاری")}
               </div>
               <div
                 className="font-extrabold text-white leading-[0.9] tabular-nums"
@@ -74,17 +74,17 @@ export default function Investment() {
                 {t("€300K", "۳۰۰ هزار یورو")}
               </div>
               <p className="text-[14px] leading-[1.65] m-0" style={{ color: "#B5B5BA" }}>
-                {t("In tangible or intangible", "در")} <strong style={{ color: "#FFE600", fontWeight: 600 }}>{t("fixed assets", "دارایی‌های ثابت")}</strong> {t("— plus a commitment to create or maintain permanent jobs within", "مشهود یا نامشهود — به‌علاوه‌ی تعهد به ایجاد یا حفظ مشاغل دائمی ظرف")} <strong style={{ color: "#FFE600", fontWeight: 600 }}>{t("4 years", "۴ سال")}</strong>{t(".", ".")}
+                {t("In tangible or intangible", "این مبلغ باید در")} <strong style={{ color: "#FFE600", fontWeight: 600 }}>{t("fixed assets", "دارایی‌های ثابت مشهود یا نامشهود")}</strong> {t("— plus a commitment to create or maintain permanent jobs within", "یک کسب‌وکار واجد شرایط در فرانسه سرمایه‌گذاری شود و در کنار آن، متقاضی باید متعهد به ایجاد یا حفظ مشاغل دائمی طی")} <strong style={{ color: "#FFE600", fontWeight: 600 }}>{t("4 years", "۴ سال")}</strong>{t(".", " باشد.")}
               </p>
               <div
                 className="flex flex-wrap gap-2 mt-auto pt-[18px]"
                 style={{ borderTop: "1px solid #1f1f24" }}
               >
                 {[
-                  { en: "Direct equity ≥10%", fa: "سهام مستقیم ≥۱۰٪" },
-                  { en: "Reinvested earnings", fa: "درآمد سرمایه‌گذاری‌مجدد" },
-                  { en: "Inter-affiliate loans", fa: "وام‌های بین‌شرکتی" },
-                  { en: "Job creation required", fa: "ایجاد اشتغال الزامی" },
+                  { en: "Direct equity ≥10%", fa: "حداقل ۱۰٪ سهام مستقیم" },
+                  { en: "Reinvested earnings", fa: "سودهای مجدداً سرمایه‌گذاری‌شده" },
+                  { en: "Inter-affiliate loans", fa: "وام بین شرکت‌های یک گروه" },
+                  { en: "Job creation required", fa: "تعهد ایجاد شغل" },
                 ].map((chip, i) => (
                   <span
                     key={i}

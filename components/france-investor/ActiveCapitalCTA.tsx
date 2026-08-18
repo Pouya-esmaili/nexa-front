@@ -5,9 +5,9 @@ import Reveal from "@/components/global/Reveal";
 import { useLang } from "@/components/global/LanguageProvider";
 
 const checkItems: { en: string; fa: string }[] = [
-  { en: "Commercial, industrial, artisanal, or agricultural enterprise", fa: "بنگاه تجاری، صنعتی، صنایع‌دستی یا کشاورزی" },
-  { en: "Direct equity, reinvested earnings, or inter-affiliate loans", fa: "سهام مستقیم، درآمد سرمایه‌گذاری‌مجدد، یا وام‌های بین‌شرکتی" },
-  { en: "Permanent job creation or preservation within 4 years", fa: "ایجاد یا حفظ اشتغال دائمی ظرف ۴ سال" },
+  { en: "Commercial, industrial, artisanal, or agricultural enterprise", fa: "شرکت تجاری، صنعتی، صنایع‌دستی یا کشاورزی" },
+  { en: "Direct equity, reinvested earnings, or inter-affiliate loans", fa: "سرمایه‌گذاری مستقیم، سرمایه‌گذاری مجدد سود یا وام درون‌گروهی" },
+  { en: "Permanent job creation or preservation within 4 years", fa: "ایجاد یا حفظ مشاغل دائمی طی ۴ سال" },
 ];
 
 const CheckIcon = () => (
@@ -36,11 +36,11 @@ export default function ActiveCapitalCTA() {
               style={{ background: "white", borderRight: "1px solid #E2E2E2" }}
             >
               <h2 className="text-[30px] font-bold tracking-[-0.03em] leading-[1.15] text-black">
-                {t("Not real estate.", "نه املاک.")}<br />
-                <em className="text-[#8F27FF] not-italic">{t("Active capital", "سرمایه‌ی فعال")}</em> {t("that builds France.", "که فرانسه را می‌سازد.")}
+                {t("Not real estate.", "اینجا صحبت از خرید ملک نیست؛")}<br />
+                <em className="text-[#8F27FF] not-italic">{t("Active capital", "سرمایه‌ای")}</em> {t("that builds France.", "است که اقتصاد فرانسه را می‌سازد")}
               </h2>
               <p className="text-[14px] text-[#929292] leading-[1.65] m-0">
-                {t("Unlike traditional European Golden Visa programs, France does not grant residency for passive residential real estate. Your €300K must work — inside a commercial enterprise, creating real jobs.", "برخلاف برنامه‌های سنتی ویزای طلایی اروپا، فرانسه برای املاک مسکونی منفعل اقامت اعطا نمی‌کند. ۳۰۰ هزار یورو شما باید کار کند — در داخل یک بنگاه تجاری، با ایجاد مشاغل واقعی.")}
+                {t("Unlike traditional European Golden Visa programs, France does not grant residency for passive residential real estate. Your €300K must work — inside a commercial enterprise, creating real jobs.", "برخلاف بسیاری از برنامه‌های گلدن ویزای اروپایی، فرانسه برای خرید ملک مسکونی و سرمایه‌گذاری غیرفعال اقامت اعطا نمی‌کند. در این مسیر، سرمایه ۳۰۰ هزار یورویی باید واقعاً وارد فعالیت اقتصادی شود و در توسعه یک کسب‌وکار و ایجاد اشتغال در فرانسه نقش داشته باشد.")}
               </p>
               <ul className="flex flex-col">
                 {checkItems.map((item, i) => (
@@ -65,7 +65,7 @@ export default function ActiveCapitalCTA() {
                 style={{ background: "radial-gradient(circle, rgba(255,230,0,0.1), transparent 70%)" }}
               />
               <div className="text-[11px] font-bold uppercase tracking-[0.1em] relative z-10" style={{ color: "rgba(255,255,255,0.45)" }}>
-                {t("Minimum Threshold", "حداقل آستانه")}
+                {t("Minimum Threshold", "حداقل سرمایه‌گذاری")}
               </div>
               <div
                 className="font-black tabular-nums leading-[0.9] relative z-10"
@@ -74,10 +74,10 @@ export default function ActiveCapitalCTA() {
                 {t("€300K", "۳۰۰ هزار یورو")}
               </div>
               <div className="text-[15px] font-semibold text-white relative z-10">
-                {t("In fixed assets — tangible or intangible", "در دارایی‌های ثابت — مشهود یا نامشهود")}
+                {t("In fixed assets — tangible or intangible", "در دارایی‌های ثابت مشهود یا نامشهود")}
               </div>
               <p className="text-[13px] leading-[1.55] m-0 relative z-10" style={{ color: "rgba(255,255,255,0.5)" }}>
-                {t("No passive stock portfolios. No residential property. Active capital deployed into France's economic fabric.", "بدون پرتفوی سهام منفعل. بدون ملک مسکونی. سرمایه‌ی فعال که در بافت اقتصادی فرانسه به‌کار گرفته می‌شود.")}
+                {t("No passive stock portfolios. No residential property. Active capital deployed into France's economic fabric.", "بدون سرمایه‌گذاری صرفاً بورسی. بدون خرید ملک مسکونی. سرمایه شما باید به‌صورت فعال در اقتصاد فرانسه به کار گرفته شود و در توسعه یک کسب‌وکار واقعی نقش داشته باشد.")}
               </p>
               <a
                 href="#contact"
@@ -88,7 +88,7 @@ export default function ActiveCapitalCTA() {
                   boxShadow: "0 12px 28px rgba(255,230,0,0.25)",
                 }}
               >
-                {t("Assess My Eligibility →", "واجد شرایط بودنم را ارزیابی کنید →")}
+                {t("Assess My Eligibility →", "ارزیابی شرایط شما →")}
               </a>
             </div>
           </div>

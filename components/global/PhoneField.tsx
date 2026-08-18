@@ -1,6 +1,6 @@
 "use client";
 
-const countries = [
+export const countries = [
   { code: "+93",  flag: "🇦🇫", name: "Afghanistan" },
   { code: "+355", flag: "🇦🇱", name: "Albania" },
   { code: "+213", flag: "🇩🇿", name: "Algeria" },

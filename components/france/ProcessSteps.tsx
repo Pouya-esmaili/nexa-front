@@ -8,38 +8,38 @@ const steps = [
   {
     num: "1",
     meta: "Stage 1 · Weeks 1–6",
-    metaFa: "مرحله ۱ · هفته‌های ۱ تا ۶",
+    metaFa: "۰۱ — هفته‌های ۱ تا ۶",
     title: "Ecosystem Vetting & Incubation Selection",
-    titleFa: "بررسی اکوسیستم و انتخاب شتاب‌دهنده",
+    titleFa: "ارزیابی اکوسیستم و پذیرش در انکوباتور",
     desc: "Submit your business model, market research, and technology roadmap to a recognized French Tech incubator or ecosystem stakeholder. Secure their official endorsement letter.",
-    descFa: "مدل کسب‌وکار، پژوهش بازار و نقشه‌ی راه فناوری خود را به یک شتاب‌دهنده‌ی فرنچ‌تک یا ذی‌نفع اکوسیستمی شناخته‌شده ارائه دهید. نامه‌ی تأییدیه‌ی رسمی آن‌ها را بگیرید.",
+    descFa: "مدل کسب‌وکار، تحقیقات بازار و نقشه توسعه فناوری برای یک انکوباتور یا نهاد معتبر فرانسوی ارائه می‌شود و تأییدیه رسمی اکوسیستم دریافت می‌گردد.",
   },
   {
     num: "2",
     meta: "Stage 2 · Weeks 7–10",
-    metaFa: "مرحله ۲ · هفته‌های ۷ تا ۱۰",
+    metaFa: "۰۲ — هفته‌های ۷ تا ۱۰",
     title: "DRIEETS Innovation Review",
-    titleFa: "بازبینی نوآوری DRIEETS",
+    titleFa: "ارزیابی نوآوری توسط DRIEETS",
     desc: "Upload your business framework, financials, and endorsement letters to the Ministry of Economy platform. DRIEETS issues your 12-month Innovation Certificate upon approval.",
-    descFa: "چارچوب کسب‌وکار، اسناد مالی و نامه‌های تأییدیه را در پلتفرم وزارت اقتصاد بارگذاری کنید. DRIEETS پس از تأیید، گواهی نوآوری ۱۲ ماهه‌ی شما را صادر می‌کند.",
+    descFa: "ساختار کسب‌وکار، مدارک مالی و نامه‌های حمایتی در پلتفرم وزارت اقتصاد بارگذاری می‌شود. در صورت تأیید، DRIEETS گواهی نوآوری ۱۲ماهه صادر می‌کند.",
   },
   {
     num: "3",
     meta: "Stage 3 · Weeks 11–14",
-    metaFa: "مرحله ۳ · هفته‌های ۱۱ تا ۱۴",
+    metaFa: "۰۳ — هفته‌های ۱۱ تا ۱۴",
     title: "Consular Visa Application (VLS-TS)",
-    titleFa: "درخواست ویزای کنسولی (VLS-TS)",
+    titleFa: "درخواست ویزای بلندمدت VLS-TS",
     desc: "File via the France-Visas portal. Attend your biometric appointment at the French Consulate with your Innovation Certificate, proof of accommodation, passport, and bank statements.",
-    descFa: "از طریق پرتال France-Visas ثبت کنید. با گواهی نوآوری، مدرک اقامتگاه، پاسپورت و صورت‌حساب‌های بانکی، در جلسه‌ی بیومتریک کنسولگری فرانسه حاضر شوید.",
+    descFa: "درخواست از طریق پورتال France-Visas ثبت می‌شود. سپس در کنسولگری فرانسه، مدارکی از جمله گواهی نوآوری، مدرک محل اقامت، پاسپورت و مدارک مالی ارائه و مراحل بیومتریک انجام می‌شود.",
   },
   {
     num: "4",
     meta: "Stage 4 · Within 3 Months of Entry",
-    metaFa: "مرحله ۴ · ظرف ۳ ماه پس از ورود",
+    metaFa: "۰۴ — حداکثر ۳ ماه پس از ورود",
     title: "Arrival, Company Registration & ANEF Filing",
-    titleFa: "ورود، ثبت شرکت و ثبت ANEF",
+    titleFa: "ورود به فرانسه، ثبت شرکت و درخواست کارت اقامت",
     desc: 'Land in France. Validate VLS-TS and incorporate your business (K-bis). Submit your "Talent" residence card via the ANEF digital portal to receive your electronic protection certificate.',
-    descFa: 'به فرانسه وارد شوید. VLS-TS را اعتبارسنجی کنید و کسب‌وکارتان را ثبت کنید (K-bis). کارت اقامت «استعداد» خود را از طریق پرتال دیجیتال ANEF ثبت کنید تا گواهی حفاظت الکترونیکی خود را دریافت کنید.',
+    descFa: 'پس از ورود، VLS-TS اعتبارسنجی شده و شرکت در فرانسه ثبت می‌شود. سپس درخواست کارت اقامت Talent از طریق پورتال دیجیتال ANEF ثبت خواهد شد.',
   },
 ];
 
@@ -53,14 +53,14 @@ export default function ProcessSteps() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
           <Reveal variant="left" delay={0} className="md:sticky md:top-24">
             <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] mb-5">
-              {t("The 4-Stage Application Roadmap", "نقشه‌ی راه ۴ مرحله‌ای درخواست")}
+              {t("The 4-Stage Application Roadmap", "مسیر چهارمرحله‌ای دریافت اقامت")}
             </h2>
             <blockquote className="text-[18px] italic font-medium leading-[1.5] py-5 pl-6 mb-4"
               style={{ borderLeft: "3px solid #8F27FF" }}>
-              &ldquo;{t("Missing a step or mixing up the order can lead to long delays or immediate refusal.", "جا انداختن یک مرحله یا اشتباه در ترتیب می‌تواند به تأخیرهای طولانی یا رد فوری منجر شود.")}&rdquo;
+              &ldquo;{t("Missing a step or mixing up the order can lead to long delays or immediate refusal.", "در این مسیر، ترتیب مراحل اهمیت زیادی دارد؛ یک مرحله ناقص یا جابه‌جایی در فرآیند می‌تواند باعث تأخیر طولانی یا حتی رد پرونده شود.")}&rdquo;
             </blockquote>
             <p className="text-[14.5px] text-[#929292] leading-[1.7]">
-              {t("Nexa structures this process into a clear, four-stage lifecycle. From your first ecosystem submission to landing in France and registering your company, the full journey takes approximately 3–4 months when properly prepared.", "نکسا این فرایند را در یک چرخه‌ی روشن چهارمرحله‌ای سامان می‌دهد. از نخستین ثبت در اکوسیستم تا ورود به فرانسه و ثبت شرکت، کل مسیر با آماده‌سازی درست حدود ۳ تا ۴ ماه طول می‌کشد.")}
+              {t("Nexa structures this process into a clear, four-stage lifecycle. From your first ecosystem submission to landing in France and registering your company, the full journey takes approximately 3–4 months when properly prepared.", "نکسا کل فرآیند را در قالب یک مسیر چهارمرحله‌ای و منظم مدیریت می‌کند. در صورت آماده بودن مدارک، از دریافت تأییدیه اکوسیستم تا ورود به فرانسه و ثبت شرکت، این فرآیند حدود ۳ تا ۴ ماه زمان می‌برد.")}
             </p>
           </Reveal>
 

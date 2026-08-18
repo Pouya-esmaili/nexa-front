@@ -6,30 +6,33 @@ import { useLang } from "@/components/global/LanguageProvider";
 const fees = [
   {
     stage: "Stage 1 · Consular Entry",
-    stageFa: "مرحله ۱ · ورود کنسولی",
+    stageFa: "مرحله ۱ — دریافت ویزای بلندمدت",
     amount: "€99",
+    amountFa: "۹۹ یورو",
     label: "Long-Stay Visa (VLS-TS)",
-    labelFa: "ویزای اقامت بلندمدت (VLS-TS)",
+    labelFa: "ویزای بلندمدت VLS-TS",
     desc: "Initial long-stay visa fee paid at the French Consulate or visa application center in your country of residence.",
-    descFa: "هزینه‌ی اولیه‌ی ویزای اقامت بلندمدت که در کنسولگری فرانسه یا مرکز درخواست ویزا در کشور محل اقامت شما پرداخت می‌شود.",
+    descFa: "هزینه ویزای بلندمدت VLS-TS که هنگام درخواست در کنسولگری فرانسه یا مرکز درخواست ویزا پرداخت می‌شود.",
   },
   {
     stage: "Stage 2 · Prefecture Onshore",
-    stageFa: "مرحله ۲ · فرمانداری داخل کشور",
+    stageFa: "مرحله ۲ — دریافت کارت اقامت در فرانسه",
     amount: "€350",
+    amountFa: "۳۵۰ یورو",
     label: "Physical 4-Year Talent Card",
     labelFa: "کارت فیزیکی استعداد ۴ ساله",
     desc: "€300 administrative fee + €50 stamp duty. Paid via ANEF portal after arrival in France to issue your physical residence card.",
-    descFa: "۳۰۰ یورو هزینه‌ی اداری + ۵۰ یورو حق تمبر. پس از ورود به فرانسه از طریق پرتال ANEF برای صدور کارت اقامت فیزیکی شما پرداخت می‌شود.",
+    descFa: "شامل €300 هزینه اداری و €50 هزینه تمبر که پس از ورود و از طریق پورتال ANEF پرداخت می‌شود.",
   },
   {
     stage: "Stage 3 · Renewal",
-    stageFa: "مرحله ۳ · تمدید",
+    stageFa: "مرحله ۳ — تمدید اقامت",
     amount: "€250",
+    amountFa: "۲۵۰ یورو",
     label: "Card Extension",
     labelFa: "تمدید کارت",
     desc: "Standard fee for subsequent permit renewals via ANEF. Does not include certified translations, apostilles, or corporate setup costs.",
-    descFa: "هزینه‌ی استاندارد برای تمدیدهای بعدی مجوز از طریق ANEF. شامل ترجمه‌های رسمی، آپوستیل یا هزینه‌های راه‌اندازی شرکت نمی‌شود.",
+    descFa: "هزینه استاندارد تمدید کارت اقامت از طریق ANEF.",
   },
 ];
 
@@ -61,7 +64,7 @@ export default function GovernmentFees() {
               >
                 {t(f.stage, f.stageFa)}
               </span>
-              <div className="text-[52px] font-bold tracking-[-0.04em] leading-none">{f.amount}</div>
+              <div className="text-[52px] font-bold tracking-[-0.04em] leading-none">{t(f.amount, f.amountFa)}</div>
               <div className="text-[14px] font-semibold">{t(f.label, f.labelFa)}</div>
               <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{t(f.desc, f.descFa)}</p>
             </div>
@@ -74,7 +77,7 @@ export default function GovernmentFees() {
           className="rounded-[8px] px-4 py-3.5 text-[13px] leading-[1.6]"
           style={{ background: "#FFFBE6", border: "1px solid #F0D800", color: "#7A6800" }}
         >
-          {t("Note: These are standard government fees only. Additional costs include certified document translations, apostilles, incubation fees (~€800/month), and corporate setup fees.", "توجه: این‌ها فقط هزینه‌های استاندارد دولتی هستند. هزینه‌های اضافی شامل ترجمه‌ی رسمی اسناد، آپوستیل، هزینه‌های شتاب‌دهنده (حدود ۸۰۰ یورو در ماه) و هزینه‌های راه‌اندازی شرکت است.")}
+          {t("Note: These are standard government fees only. Additional costs include certified document translations, apostilles, incubation fees (~€800/month), and corporate setup fees.", "هزینه‌های فوق صرفاً هزینه‌های دولتی هستند. هزینه ترجمه رسمی، آپوستیل، خدمات انکوباتور (حدود €۸۰۰ در ماه) و راه‌اندازی شرکت جداگانه محاسبه می‌شوند.")}
         </div>
         </Reveal>
       </Row>

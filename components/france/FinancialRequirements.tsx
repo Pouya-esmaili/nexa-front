@@ -7,16 +7,16 @@ import { useLang } from "@/components/global/LanguageProvider";
 const CHIPS: { en: string; fa: string }[] = [
   { en: "Personal savings", fa: "پس‌انداز شخصی" },
   { en: "Founder salary", fa: "حقوق بنیان‌گذار" },
-  { en: "VC term sheets", fa: "برگه‌های شرایط سرمایه‌گذاری خطرپذیر" },
-  { en: "+€12K per dependent", fa: "+۱۲ هزار یورو به‌ازای هر فرد تحت تکفل" },
+  { en: "VC term sheets", fa: "Term Sheet سرمایه‌گذاری" },
+  { en: "+€12K per dependent", fa: "+€۱۲,۰۰۰ برای هر فرد وابسته" },
 ];
 
 const cards = [
   {
     title: "Single Founder Threshold",
-    titleFa: "آستانه‌ی بنیان‌گذار منفرد",
+    titleFa: "بنیان‌گذار مجرد",
     desc: "Minimum <strong>€21,876.36</strong> in unencumbered liquid savings — equal to the gross annual French SMIC as currently indexed.",
-    descFa: "حداقل <strong>۲۱٬۸۷۶٫۳۶ یورو</strong> پس‌انداز نقدی بدون قید — برابر با حداقل دستمزد ناخالص سالانه‌ی فرانسه طبق شاخص فعلی.",
+    descFa: "حداقل <strong>€۲۱,۸۷۶.۳۶</strong> منابع مالی نقدشونده و بدون تعهد که در اختیار شخص متقاضی باشد.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" className="w-5 h-5">
         <circle cx="12" cy="12" r="9" />
@@ -26,9 +26,9 @@ const cards = [
   },
   {
     title: "Family Adjustment",
-    titleFa: "تعدیل خانوادگی",
+    titleFa: "متقاضی همراه با خانواده",
     desc: "Add approximately <strong>€12,000 per dependent</strong> for smooth consular processing and financial sufficiency demonstration.",
-    descFa: "حدود <strong>۱۲٬۰۰۰ یورو به‌ازای هر فرد تحت تکفل</strong> برای پردازش روان کنسولی و اثبات کفایت مالی اضافه کنید.",
+    descFa: "برای هر فرد وابسته، حدود <strong>€۱۲,۰۰۰</strong> به میزان تمکن موردنیاز اضافه می‌شود تا توانایی مالی خانواده برای دوره اقامت به‌طور کامل اثبات شود.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" className="w-5 h-5">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -39,9 +39,9 @@ const cards = [
   },
   {
     title: "Acceptable Proof of Funds",
-    titleFa: "مدرک قابل‌قبول دارایی",
+    titleFa: "مدارک قابل قبول برای اثبات منابع مالی",
     desc: "Certified bank statements, corporate salary certificates, or <strong>VC funding term sheets</strong> explicitly earmarked for your personal subsistence.",
-    descFa: "صورت‌حساب‌های بانکی تأییدشده، گواهی حقوق شرکتی، یا <strong>برگه‌های شرایط سرمایه‌گذاری خطرپذیر</strong> که صراحتاً برای معیشت شخصی شما تخصیص یافته‌اند.",
+    descFa: "صورت‌حساب بانکی معتبر، گواهی حقوق بنیان‌گذار یا <strong>VC Term Sheet</strong> با ذکر اختصاص منابع برای تأمین هزینه‌های زندگی.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" className="w-5 h-5">
         <rect x="3" y="6" width="18" height="12" rx="1.5" />
@@ -79,15 +79,15 @@ export default function FinancialRequirements() {
                 className="self-start text-[11px] font-bold uppercase tracking-[.12em] px-3.5 py-1.5 rounded-full"
                 style={{ background: "rgba(255,230,0,0.12)", border: "1px solid rgba(255,230,0,0.3)", color: "#FFE600" }}
               >
-                {t("Annual SMIC Threshold", "آستانه‌ی سالانه‌ی SMIC")}
+                {t("Annual SMIC Threshold", "حداقل تمکن بر مبنای SMIC سالانه")}
               </span>
               <div className="text-[72px] font-bold tracking-[-0.04em] leading-[0.9] text-white">
-                €21.9K
+                {t("€21.9K", "€۲۱.۹K")}
               </div>
               <p className="text-[14px] leading-[1.65]" style={{ color: "#B5B5BA" }}>
-                {t("Gross annual French minimum wage (SMIC) — the baseline personal liquid funds required for a", "حداقل دستمزد ناخالص سالانه‌ی فرانسه (SMIC) — پایه‌ی دارایی نقدی شخصی موردنیاز برای اینکه یک")}{" "}
-                <strong className="font-semibold" style={{ color: "#FFE600" }}>{t("single founder", "بنیان‌گذار منفرد")}</strong>{" "}
-                {t("to qualify at the consulate.", "در کنسولگری واجد شرایط شود.")}
+                {t("Gross annual French minimum wage (SMIC) — the baseline personal liquid funds required for a", "حداقل منابع مالی شخصی برای یک")}{" "}
+                <strong className="font-semibold" style={{ color: "#FFE600" }}>{t("single founder", "بنیان‌گذار مجرد")}</strong>{" "}
+                {t("to qualify at the consulate.", "؛ معادل حداقل دستمزد ناخالص سالانه فرانسه (SMIC).")}
               </p>
               <div
                 className="flex flex-wrap gap-2 mt-auto pt-4"

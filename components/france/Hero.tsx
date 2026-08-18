@@ -6,9 +6,9 @@ import { useEffect, useState } from "react";
 import { useLang } from "@/components/global/LanguageProvider";
 
 const stats = [
-  { num: "4 yr", numFa: "۴ سال", label: "Initial Permit", labelFa: "مجوز اولیه" },
-  { num: "€21.9K", numFa: "۲۱٫۹ هزار یورو", label: "Financial Threshold", labelFa: "آستانه‌ی مالی" },
-  { num: "5 yr", numFa: "۵ سال", label: "Path to Residency", labelFa: "مسیر اقامت" },
+  { num: "4 yr", numFa: "۴ سال", label: "Initial Permit", labelFa: "اقامت اولیه" },
+  { num: "€21.9K", numFa: "€۲۱.۹K", label: "Financial Threshold", labelFa: "حداقل تمکن مالی" },
+  { num: "5 yr", numFa: "۵ سال", label: "Path to Residency", labelFa: "مسیر تا اقامت دائم" },
 ];
 
 export default function Hero() {
@@ -40,10 +40,10 @@ export default function Hero() {
           style={{ background: "#1a1a2e url('/images/photos/1502602898657-3e91760cbb34-w900.webp') center/cover" }}
         />
         <h1 className={`text-3xl font-bold leading-tight tracking-tight mb-4 ${base} duration-600 delay-150 ${mounted ? show : hideUp}`}>
-          {t("Launch your", "")} <span className="text-[#8F27FF]">{t("innovative venture", "کسب‌وکار نوآورانه‌ی")}</span> {t("at the heart of Europe.", "خود را در قلب اروپا راه‌اندازی کنید.")}
+          {t("Launch your", "")} <span className="text-[#8F27FF]">{t("innovative venture", "کسب‌وکار نوآورانه‌تان")}</span> {t("at the heart of Europe.", "را در قلب اروپا راه‌اندازی کنید.")}
         </h1>
         <p className={`text-sm text-gray-600 leading-relaxed mb-6 ${base} duration-600 delay-200 ${mounted ? show : hideUp}`}>
-          {t("No minimum capital. No rigid degree requirements. France evaluates your idea, your ecosystem backing, and your ability to execute — then grants you a 4-year runway inside the EU.", "بدون حداقل سرمایه. بدون الزامات سختگیرانه‌ی مدرک. فرانسه ایده، پشتوانه‌ی اکوسیستمی و توانایی اجرای شما را ارزیابی می‌کند — و سپس یک بازه‌ی ۴ ساله در دل اتحادیه اروپا به شما می‌دهد.")}
+          {t("No minimum capital. No rigid degree requirements. France evaluates your idea, your ecosystem backing, and your ability to execute — then grants you a 4-year runway inside the EU.", "در فرانسه خبری از حداقل سرمایه‌گذاری اجباری یا الزام‌های سخت‌گیرانه مدرک تحصیلی نیست. معیار اصلی، نوآوری ایده، پشتوانه اکوسیستم و توانایی شما برای اجرای آن است؛ مسیری که می‌تواند تا ۴ سال فرصت حضور و توسعه کسب‌وکارتان را در اتحادیه اروپا فراهم کند.")}
         </p>
         <div className={`grid grid-cols-3 gap-4 py-6 border-t border-b border-gray-200 mb-6 ${base} duration-600 delay-300 ${mounted ? show : hideUp}`}>
           {stats.map((s) => (
@@ -57,7 +57,7 @@ export default function Hero() {
           href="#contact"
           className={`inline-flex items-center gap-2 px-6 py-3 bg-[#8F27FF] text-white font-semibold rounded-full text-sm ${base} duration-500 delay-[400ms] ${mounted ? show : hideUp}`}
         >
-          {t("Book an Appointment →", "رزرو وقت ملاقات →")}
+          {t("Book an Appointment →", "رزرو وقت مشاوره ←")}
         </Link>
       </div>
 
@@ -67,10 +67,10 @@ export default function Hero() {
           <div className="grid grid-cols-[1.1fr_0.9fr] gap-16 items-center">
             <div>
               <h1 className={`text-[48px] font-bold leading-[1.06] tracking-[-0.03em] mb-6 ${base} duration-700 delay-100 ${mounted ? show : hideLeft}`}>
-                {t("Launch your", "")} <span className="text-[#8F27FF]">{t("innovative venture", "کسب‌وکار نوآورانه‌ی")}</span> {t("at the heart of Europe.", "خود را در قلب اروپا راه‌اندازی کنید.")}
+                {t("Launch your", "")} <span className="text-[#8F27FF]">{t("innovative venture", "کسب‌وکار نوآورانه‌تان")}</span> {t("at the heart of Europe.", "را در قلب اروپا راه‌اندازی کنید.")}
               </h1>
               <p className={`text-[16px] text-[#474747] leading-[1.65] mb-8 max-w-[520px] ${base} duration-700 delay-200 ${mounted ? show : hideLeft}`}>
-                {t("No minimum capital. No rigid degree requirements. France evaluates your idea, your ecosystem backing, and your ability to execute — then grants you a 4-year runway inside the EU.", "بدون حداقل سرمایه. بدون الزامات سختگیرانه‌ی مدرک. فرانسه ایده، پشتوانه‌ی اکوسیستمی و توانایی اجرای شما را ارزیابی می‌کند — و سپس یک بازه‌ی ۴ ساله در دل اتحادیه اروپا به شما می‌دهد.")}
+                {t("No minimum capital. No rigid degree requirements. France evaluates your idea, your ecosystem backing, and your ability to execute — then grants you a 4-year runway inside the EU.", "در فرانسه خبری از حداقل سرمایه‌گذاری اجباری یا الزام‌های سخت‌گیرانه مدرک تحصیلی نیست. معیار اصلی، نوآوری ایده، پشتوانه اکوسیستم و توانایی شما برای اجرای آن است؛ مسیری که می‌تواند تا ۴ سال فرصت حضور و توسعه کسب‌وکارتان را در اتحادیه اروپا فراهم کند.")}
               </p>
               <div className={`grid grid-cols-3 py-6 border-t border-b border-gray-200 mb-9 ${base} duration-700 delay-300 ${mounted ? show : hideLeft}`}>
                 {stats.map((s) => (
@@ -85,7 +85,7 @@ export default function Hero() {
                 className={`inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5 ${base} duration-500 delay-[400ms] ${mounted ? show : hideLeft}`}
                 style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
               >
-                {t("Book an Appointment →", "رزرو وقت ملاقات →")}
+                {t("Book an Appointment →", "رزرو وقت مشاوره ←")}
               </Link>
             </div>
 

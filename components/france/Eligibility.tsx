@@ -7,40 +7,40 @@ const requirements = [
   {
     num: "A",
     title: "Professional Profile & Background",
-    titleFa: "پروفایل و پیشینه‌ی حرفه‌ای",
+    titleFa: "سابقه حرفه‌ای و توانایی اجرایی",
     desc: "No rigid master's degree and no fixed capital floor. Authorities evaluate your <strong>capability to execute the project</strong>. Higher education credentials or <strong>5+ years of verifiable professional experience</strong> significantly reinforce your profile during the innovation review.",
-    descFa: "بدون الزام سختگیرانه‌ی مدرک کارشناسی ارشد و بدون کف ثابت سرمایه. مقامات <strong>توانایی شما در اجرای پروژه</strong> را ارزیابی می‌کنند. مدارک تحصیلات عالی یا <strong>بیش از ۵ سال تجربه‌ی حرفه‌ای قابل‌تأیید</strong> پروفایل شما را در بازبینی نوآوری به‌طور چشمگیری تقویت می‌کند.",
+    descFa: "داشتن مدرک کارشناسی ارشد الزامی نیست و حداقل سرمایه ثابتی نیز تعیین نشده است. تمرکز اصلی بر <strong>توانایی شما برای اجرای موفق پروژه</strong> است. مدارک تحصیلی مرتبط یا <strong>حداقل ۵ سال سابقه حرفه‌ای قابل اثبات</strong> می‌تواند در ارزیابی توانمندی شما امتیاز مهمی محسوب شود.",
   },
   {
     num: "B",
     title: "Verification of Project Innovation",
-    titleFa: "تأیید نوآوری پروژه",
+    titleFa: "اثبات نوآورانه بودن پروژه",
     desc: "Secure formal endorsement via one of two tracks: <strong>official selection by an approved incubator</strong> (Station F, Paris-Saclay — typically ~€800/month) or <strong>letters of support from two recognized stakeholders</strong> (Bpifrance, research institutes, deep-tech labs). DRIEETS then issues your 12-month Innovation Certificate.",
-    descFa: "تأییدیه‌ی رسمی را از یکی از دو مسیر بگیرید: <strong>انتخاب رسمی توسط یک شتاب‌دهنده‌ی تأییدشده</strong> (استیشن F، پاریس‌ساکله — معمولاً حدود ۸۰۰ یورو در ماه) یا <strong>نامه‌های حمایت از دو ذی‌نفع شناخته‌شده</strong> (Bpifrance، مؤسسات پژوهشی، آزمایشگاه‌های دیپ‌تک). سپس DRIEETS گواهی نوآوری ۱۲ ماهه‌ی شما را صادر می‌کند.",
+    descFa: "برای پروژه باید از یکی از دو مسیر، پشتوانه رسمی دریافت کنید: <strong>پذیرش از یک انکوباتور مورد تأیید</strong> مانند Station F یا Paris-Saclay یا <strong>دریافت نامه حمایت از دو نهاد معتبر</strong> مانند Bpifrance، مؤسسات تحقیقاتی یا آزمایشگاه‌های Deep Tech. پس از تأیید، DRIEETS گواهی نوآوری ۱۲ماهه پروژه را صادر می‌کند.",
   },
   {
     num: "C",
     title: "Personal Financial Self-Sufficiency",
-    titleFa: "خودکفایی مالی شخصی",
+    titleFa: "توانایی مالی شخصی",
     desc: "Liquid funds must equal or exceed the gross annual SMIC: <strong>€21,876.36</strong>. For families, add approximately <strong>€12,000 per dependent</strong>. Acceptable proofs: certified bank statements, founder salary certificates, or VC term sheets earmarked for subsistence.",
-    descFa: "دارایی نقدی باید برابر یا بیشتر از حداقل دستمزد ناخالص سالانه‌ی فرانسه (SMIC) باشد: <strong>۲۱٬۸۷۶٫۳۶ یورو</strong>. برای خانواده‌ها، حدود <strong>۱۲٬۰۰۰ یورو به‌ازای هر فرد تحت تکفل</strong> اضافه کنید. مدارک قابل‌قبول: صورت‌حساب‌های بانکی تأییدشده، گواهی حقوق بنیان‌گذار، یا برگه‌های شرایط سرمایه‌گذاری خطرپذیر تخصیص‌یافته برای معیشت.",
+    descFa: "باید منابع مالی نقدشونده‌ای معادل حداقل <strong>€۲۱,۸۷۶.۳۶</strong>، برابر با حداقل دستمزد سالانه ناخالص فرانسه (SMIC)، در اختیار داشته باشید. برای اعضای خانواده نیز حدود <strong>€۱۲,۰۰۰ به ازای هر فرد وابسته</strong> به این میزان اضافه می‌شود. مدارک قابل قبول می‌تواند شامل صورت‌حساب بانکی معتبر، گواهی حقوق بنیان‌گذار یا Term Sheet سرمایه‌گذاری باشد که بخشی از آن برای هزینه‌های زندگی در نظر گرفته شده است.",
   },
   {
     num: "+",
     title: "Co-Founders: Up to 3 Per Project",
-    titleFa: "هم‌بنیان‌گذاران: حداکثر ۳ نفر در هر پروژه",
+    titleFa: "امکان اقدام برای هم‌بنیان‌گذاران",
     desc: "Multiple co-founders can apply under the same startup, but <strong>each must independently</strong> secure their own incubator endorsement and demonstrate the full €21,876.36 threshold. Ecosystems generally limit backing to <strong>3 co-founders per project</strong>.",
-    descFa: "چند هم‌بنیان‌گذار می‌توانند تحت یک استارتاپ درخواست دهند، اما <strong>هر کدام باید مستقلاً</strong> تأییدیه‌ی شتاب‌دهنده‌ی خود را بگیرند و کل آستانه‌ی ۲۱٬۸۷۶٫۳۶ یورویی را نشان دهند. اکوسیستم‌ها معمولاً حمایت را به <strong>۳ هم‌بنیان‌گذار در هر پروژه</strong> محدود می‌کنند.",
+    descFa: "چند بنیان‌گذار می‌توانند تحت یک استارتاپ اقدام کنند؛ اما <strong>هر نفر باید به‌صورت مستقل</strong> تأییدیه انکوباتور خود را دریافت کرده و حداقل تمکن مالی €۲۱,۸۷۶.۳۶ را نشان دهد. اکوسیستم‌های مورد تأیید معمولاً حداکثر از <strong>۳ هم‌بنیان‌گذار</strong> برای هر پروژه پشتیبانی می‌کنند.",
   },
 ];
 
 const benefits: { en: string; fa: string }[] = [
-  { en: "Up to 4-year continuous residence permit", fa: "مجوز اقامت پیوسته تا ۴ سال" },
-  { en: "Autonomous work authorization — no licensing barriers", fa: "مجوز کار مستقل — بدون موانع صدور پروانه" },
-  { en: 'Spouse receives matching "Talent – Family" permit', fa: "همسر مجوز متناظر «استعداد – خانواده» دریافت می‌کند" },
-  { en: "Spouse has unrestricted French work rights", fa: "همسر حق کار نامحدود در فرانسه دارد" },
-  { en: "Children study in France without separate documentation", fa: "فرزندان بدون مدارک جداگانه در فرانسه تحصیل می‌کنند" },
-  { en: "Schengen travel — 90 days per 180-day period", fa: "سفر شنگن — ۹۰ روز در هر بازه‌ی ۱۸۰ روزه" },
+  { en: "Up to 4-year continuous residence permit", fa: "اقامت مستمر تا ۴ سال" },
+  { en: "Autonomous work authorization — no licensing barriers", fa: "اجازه کار مستقل برای راه‌اندازی و مدیریت کسب‌وکار" },
+  { en: 'Spouse receives matching "Talent – Family" permit', fa: "مجوز اقامت مشابه Talent – Family برای همسر" },
+  { en: "Spouse has unrestricted French work rights", fa: "حق کار نامحدود برای همسر در فرانسه" },
+  { en: "Children study in France without separate documentation", fa: "امکان تحصیل فرزندان بدون تشکیل پرونده جداگانه" },
+  { en: "Schengen travel — 90 days per 180-day period", fa: "امکان سفر در منطقه شنگن تا ۹۰ روز در هر دوره ۱۸۰ روزه" },
 ];
 
 export default function Eligibility() {
@@ -50,7 +50,7 @@ export default function Eligibility() {
       <Row>
         <Reveal variant="up" className="text-center mb-10 md:mb-14">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em]">
-            {t("Eligibility & Regulatory Criteria", "شرایط واجد بودن و معیارهای قانونی")}
+            {t("Eligibility & Regulatory Criteria", "شرایط و معیارهای اصلی")}
           </h2>
         </Reveal>
 
@@ -62,12 +62,12 @@ export default function Eligibility() {
               style={{ border: "1px solid #E2E2E2" }}
             >
               <p className="text-[15px] text-[#474747] leading-[1.65] mb-8 pb-8 border-b border-gray-200">
-                {t("To qualify under the", "برای واجد شرایط شدن تحت طبقه‌بندی")}{" "}
+                {t("To qualify under the", "برای استفاده از مسیر")}{" "}
                 <strong className="text-black font-semibold">
-                  {t("“Talent – Innovative Economic Project”", "«استعداد – پروژه‌ی اقتصادی نوآورانه»")}
+                  {t("“Talent – Innovative Economic Project”", "Talent – Innovative Economic Project")}
                 </strong>{" "}
-                {t("classification, your application must satisfy three core conditions. Standard trading firms or localized service businesses", "، درخواست شما باید سه شرط اصلی را برآورده کند. شرکت‌های تجاری معمولی یا کسب‌وکارهای خدماتی محلی")}{" "}
-                <strong className="text-black font-semibold">{t("do not qualify", "واجد شرایط نیستند")}</strong> {t("— your venture must introduce genuine innovation to the French market.", "— کسب‌وکار شما باید نوآوری واقعی به بازار فرانسه بیاورد.")}
+                {t("classification, your application must satisfy three core conditions. Standard trading firms or localized service businesses", "، پروژه شما باید سه شرط اصلی را برآورده کند. کسب‌وکارهای تجاری معمولی یا خدمات محلی در این مسیر")}{" "}
+                <strong className="text-black font-semibold">{t("do not qualify", "واجد شرایط نیستند")}</strong>{t("— your venture must introduce genuine innovation to the French market.", "؛ پروژه باید نوآوری واقعی و قابل اثباتی برای بازار فرانسه داشته باشد.")}
               </p>
               {requirements.map((r, i) => (
                 <div
@@ -104,9 +104,9 @@ export default function Eligibility() {
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M5 12l4 4 10-10" />
                   </svg>
-                  {t("Key Benefits", "مزایای کلیدی")}
+                  {t("Key Benefits", "مزایای اصلی مجوز")}
                 </div>
-                <h3 className="text-[17px] font-semibold mb-4">{t("What the permit grants you", "این مجوز چه چیزی به شما می‌دهد")}</h3>
+                <h3 className="text-[17px] font-semibold mb-4">{t("What the permit grants you", "این مجوز چه امکاناتی در اختیار شما قرار می‌دهد؟")}</h3>
                 <ul className="flex flex-col gap-3">
                   {benefits.map((b, i) => (
                     <li
@@ -137,8 +137,8 @@ export default function Eligibility() {
                   <line x1="12" y1="17" x2="12.01" y2="17" />
                 </svg>
                 <p className="text-[13.5px] text-[#92400E] leading-[1.55] m-0">
-                  <strong className="text-[#78350F] font-semibold">{t("Innovation is mandatory.", "نوآوری الزامی است.")}</strong>{" "}
-                  {t("Your project must introduce a novel product, service, process, or organizational method to the French market — verified by DRIEETS via a formal 12-month Innovation Certificate.", "پروژه‌ی شما باید محصول، خدمت، فرایند یا روش سازمانی نوینی به بازار فرانسه معرفی کند — که توسط DRIEETS از طریق گواهی نوآوری رسمی ۱۲ ماهه تأیید می‌شود.")}
+                  <strong className="text-[#78350F] font-semibold">{t("Innovation is mandatory.", "نوآوری شرط اصلی این مسیر است.")}</strong>{" "}
+                  {t("Your project must introduce a novel product, service, process, or organizational method to the French market — verified by DRIEETS via a formal 12-month Innovation Certificate.", "پروژه باید محصول، خدمت، فرآیند یا روش سازمانی جدید و متمایزی را به بازار فرانسه معرفی کند و این نوآوری باید از طریق ارزیابی رسمی DRIEETS و صدور گواهی ۱۲ماهه تأیید شود.")}
                 </p>
               </div>
             </Reveal>

@@ -6,9 +6,9 @@ import { useLang } from "@/components/global/LanguageProvider";
 const cards = [
   {
     title: "4-Year Initial Runway",
-    titleFa: "بازه‌ی اولیه‌ی ۴ ساله",
+    titleFa: "۴ سال فرصت برای ساخت و توسعه",
     desc: "One of the longest initial permits in the EU — calibrated to your startup's scope and growth projections, with no annual renewal stress.",
-    descFa: "یکی از طولانی‌ترین مجوزهای اولیه در اتحادیه اروپا — متناسب با دامنه و پیش‌بینی‌های رشد استارتاپ شما، بدون استرس تمدید سالانه.",
+    descFa: "یکی از طولانی‌ترین مجوزهای اقامت اولیه در میان مسیرهای کارآفرینی اروپا؛ فرصتی برای اینکه متناسب با ابعاد و چشم‌انداز رشد استارتاپتان، بدون دغدغه تمدیدهای سالانه روی توسعه کسب‌وکار تمرکز کنید.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} className="w-6 h-6">
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
@@ -17,9 +17,9 @@ const cards = [
   },
   {
     title: "Zero Minimum Capital",
-    titleFa: "بدون حداقل سرمایه",
+    titleFa: "بدون حداقل سرمایه‌گذاری",
     desc: "No €30,000 corporate deposit. The program focuses on innovation and execution capability — not your balance sheet.",
-    descFa: "بدون سپرده‌ی شرکتی ۳۰٬۰۰۰ یورویی. این برنامه بر نوآوری و توان اجرا تمرکز دارد — نه ترازنامه‌ی شما.",
+    descFa: "نیازی به سپرده شرکتی €۳۰,۰۰۰ نیست. این مسیر بیشتر از اینکه به حجم سرمایه شما وابسته باشد، بر نوآوری و توانایی اجرای پروژه تمرکز دارد.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} className="w-6 h-6">
         <circle cx="12" cy="12" r="9" />
@@ -29,9 +29,9 @@ const cards = [
   },
   {
     title: "Full Family Inclusion",
-    titleFa: "شمول کامل خانواده",
+    titleFa: "خانواده، همراه شما",
     desc: 'Spouse receives a matching “Talent – Family” permit with unrestricted work rights. Children are covered without separate documentation.',
-    descFa: 'همسر یک مجوز متناظر «استعداد – خانواده» با حق کار نامحدود دریافت می‌کند. فرزندان بدون مدارک جداگانه پوشش داده می‌شوند.',
+    descFa: 'همسر شما می‌تواند هم‌زمان مجوز Talent – Family دریافت کند و از حق کامل کار در فرانسه برخوردار شود. فرزندان نیز بدون نیاز به تشکیل پرونده‌ای جداگانه تحت پوشش قرار می‌گیرند.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} className="w-6 h-6">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -42,9 +42,9 @@ const cards = [
   },
   {
     title: "Schengen Mobility",
-    titleFa: "تحرک شنگن",
+    titleFa: "دسترسی به منطقه شنگن",
     desc: "Travel freely across all Schengen states — 90 days per 180-day period. Seamless pan-European business development from day one.",
-    descFa: "آزادانه در تمام کشورهای شنگن سفر کنید — ۹۰ روز در هر بازه‌ی ۱۸۰ روزه. توسعه‌ی کسب‌وکار سراسر اروپا بدون دردسر از روز نخست.",
+    descFa: "امکان سفر آزادانه در سراسر کشورهای شنگن تا ۹۰ روز در هر دوره ۱۸۰ روزه؛ فرصتی برای توسعه فعالیت‌های تجاری در سراسر اروپا از همان ابتدای مسیر.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} className="w-6 h-6">
         <rect x="3" y="3" width="18" height="18" rx="2" />
@@ -54,9 +54,9 @@ const cards = [
   },
   {
     title: "World-Class Ecosystem",
-    titleFa: "اکوسیستم درجه‌یک جهانی",
+    titleFa: "اکوسیستم قدرتمند استارتاپی",
     desc: "Station F, Paris-Saclay, Bpifrance — France's startup infrastructure is among the most developed in Europe, with deep capital and research networks.",
-    descFa: "استیشن F، پاریس‌ساکله، Bpifrance — زیرساخت استارتاپی فرانسه از توسعه‌یافته‌ترین‌ها در اروپاست، با شبکه‌های عمیق سرمایه و پژوهش.",
+    descFa: "از Station F و Paris-Saclay گرفته تا Bpifrance، فرانسه یکی از توسعه‌یافته‌ترین زیرساخت‌های استارتاپی اروپا را در اختیار دارد؛ با دسترسی گسترده به سرمایه، شبکه‌های تحقیقاتی و شرکای تجاری.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} className="w-6 h-6">
         <path d="M13 3L4 14h7l-1 7 9-11h-7l1-7z" />
@@ -65,9 +65,9 @@ const cards = [
   },
   {
     title: "Pathway to French Citizenship",
-    titleFa: "مسیر تابعیت فرانسه",
+    titleFa: "مسیر روشن تا تابعیت فرانسه",
     desc: "5 years of continuous residence unlocks a 10-year permanent card and eligibility for French naturalization — one of the world's strongest passports.",
-    descFa: "۵ سال اقامت پیوسته، کارت دائم ۱۰ ساله و واجد شرایط بودن برای تابعیت‌پذیری فرانسه را باز می‌کند — یکی از قوی‌ترین پاسپورت‌های جهان.",
+    descFa: "پس از ۵ سال اقامت مستمر، می‌توانید برای کارت اقامت دائم ۱۰ ساله و در صورت احراز شرایط، برای تابعیت فرانسه اقدام کنید؛ تابعیتی با یکی از معتبرترین پاسپورت‌های جهان.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} className="w-6 h-6">
         <path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z" />

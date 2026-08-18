@@ -10,46 +10,46 @@ const stages = [
   {
     num: "01",
     label: "Initial Permit",
-    labelFa: "مجوز اولیه",
+    labelFa: "مجوز اقامت اولیه",
     year: "Years 1–2",
-    yearFa: "سال‌های ۱ تا ۲",
+    yearFa: "سال‌های اول تا دوم",
     detail: "Initial Startup Permit",
-    detailFa: "مجوز اولیه‌ی استارتاپ",
+    detailFa: "مجوز اولیه استارتاپ",
     desc: "Live in Finland and actively develop your company under your initial 2-year residence permit. Travel across Schengen freely.",
-    descFa: "با مجوز اقامت اولیه‌ی ۲ ساله در فنلاند زندگی کنید و فعالانه شرکتتان را توسعه دهید. آزادانه در سراسر شنگن سفر کنید.",
+    descFa: "در فنلاند مستقر می‌شوید و طی دوره اقامت اولیه دو ساله، به‌صورت فعال استارتاپ خود را توسعه می‌دهید. در این مدت امکان تردد آزادانه در منطقه شنگن را نیز خواهید داشت.",
   },
   {
     num: "02",
     label: "Extended Permit",
-    labelFa: "مجوز تمدیدشده",
+    labelFa: "تمدید اقامت",
     year: "Up to Year 4",
-    yearFa: "تا سال ۴",
+    yearFa: "تا سال چهارم",
     detail: "Extended Permit",
-    detailFa: "مجوز تمدیدشده",
+    detailFa: "تمدید اقامت",
     desc: "Before expiry, apply for extension. Immigration verifies your company is in the Finnish Trade Register and actively operating.",
-    descFa: "پیش از انقضا، برای تمدید درخواست دهید. اداره‌ی مهاجرت تأیید می‌کند که شرکت شما در دفتر ثبت تجاری فنلاند ثبت شده و فعالانه در حال فعالیت است.",
+    descFa: "پیش از پایان اعتبار مجوز، برای تمدید آن اقدام می‌کنید. مراجع مهاجرتی بررسی می‌کنند که شرکت شما در ثبت تجاری فنلاند ثبت شده و فعالیت واقعی و مستمر دارد.",
   },
   {
     num: "03",
     label: "Permanent Residency",
     labelFa: "اقامت دائم",
     year: "Year 4",
-    yearFa: "سال ۴",
+    yearFa: "سال چهارم",
     detail: "Permanent Residency",
     detailFa: "اقامت دائم",
     desc: "After 4 consecutive years on continuous permits, your right to live and work in Europe is permanently yours — startup or not.",
-    descFa: "پس از ۴ سال متوالی با مجوزهای پیوسته، حق زندگی و کار شما در اروپا برای همیشه از آنِ شماست — با استارتاپ یا بدون آن.",
+    descFa: "پس از ۴ سال اقامت مستمر با مجوزهای اقامت متوالی، در صورت احراز شرایط، می‌توانید برای اقامت دائم اقدام کنید و ادامه اقامت شما دیگر صرفاً به فعالیت استارتاپ وابسته نخواهد بود.",
   },
   {
     num: "04",
     label: "Finnish Passport",
-    labelFa: "پاسپورت فنلاند",
+    labelFa: "تابعیت فنلاند",
     year: "Year 6",
-    yearFa: "سال ۶",
+    yearFa: "سال ششم",
     detail: "Finnish Citizenship",
     detailFa: "تابعیت فنلاند",
     desc: "After ~6 years of continuous residence plus a basic Finnish or Swedish language test — full EU voting rights and a top-tier passport.",
-    descFa: "پس از حدود ۶ سال اقامت پیوسته به‌علاوه‌ی یک آزمون پایه‌ی زبان فنلاندی یا سوئدی — حق کامل رأی در اتحادیه اروپا و یک پاسپورت درجه‌یک.",
+    descFa: "پس از حدود ۶ سال اقامت مستمر و در صورت احراز سایر شرایط، از جمله قبولی در آزمون زبان پایه فنلاندی یا سوئدی، می‌توانید برای تابعیت اقدام کنید و از حقوق کامل شهروندی اتحادیه اروپا برخوردار شوید.",
   },
 ];
 
@@ -63,7 +63,7 @@ export default function PathwayToPassport() {
       <Row>
         <Reveal variant="up" className="text-center mb-10 md:mb-14">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em]">
-            {t("Path to Permanent Residency & Passport", "مسیر اقامت دائم و پاسپورت")}
+            {t("Path to Permanent Residency & Passport", "مسیر اقامت دائم و تابعیت")}
           </h2>
         </Reveal>
 

@@ -7,40 +7,40 @@ const requirements = [
   {
     num: "01",
     title: "A Team of At Least 2 Founders",
-    titleFa: "تیمی متشکل از حداقل ۲ بنیان‌گذار",
+    titleFa: "حداقل ۲ بنیان‌گذار",
     desc: "You cannot apply as a solo entrepreneur. Your founding team must have at least two people moving to Finland who together hold <strong>at least 60% ownership</strong> of the company.",
-    descFa: "نمی‌توانید به‌عنوان کارآفرین منفرد درخواست دهید. تیم مؤسس شما باید حداقل دو نفر داشته باشد که به فنلاند مهاجرت می‌کنند و روی‌هم <strong>حداقل ۶۰٪ مالکیت</strong> شرکت را در اختیار دارند.",
+    descFa: "امکان درخواست به‌عنوان کارآفرین انفرادی وجود ندارد. تیم مؤسس باید حداقل ۲ نفر داشته باشد که قصد انتقال به فنلاند را دارند و مجموعاً <strong>حداقل ۶۰٪ سهام</strong> شرکت را در اختیار داشته باشند.",
   },
   {
     num: "02",
     title: "An Innovative Global Idea",
-    titleFa: "ایده‌ای جهانی و نوآورانه",
+    titleFa: "ایده نوآورانه با ظرفیت رشد جهانی",
     desc: "Your product or service must have a clear competitive advantage in <strong>international markets</strong> — capable of rapid scaling to global reach and high revenue. Not a local replica.",
-    descFa: "محصول یا خدمت شما باید مزیت رقابتی روشنی در <strong>بازارهای بین‌المللی</strong> داشته باشد — قادر به مقیاس‌پذیری سریع تا گستره‌ی جهانی و درآمد بالا. نه یک نسخه‌ی محلی.",
+    descFa: "محصول یا خدمت شما باید در <strong>بازارهای بین‌المللی</strong> مزیت رقابتی مشخصی داشته باشد و از ظرفیت رشد سریع، توسعه جهانی و ایجاد درآمد قابل‌توجه برخوردار باشد؛ صرفاً یک نسخه محلی از کسب‌وکارهای موجود کافی نیست.",
   },
   {
     num: "03",
     title: "Business Finland \"Green Light\"",
-    titleFa: "«چراغ سبز» Business Finland",
+    titleFa: "تأیید Business Finland",
     desc: "Before any visa application, the official government agency <strong>Business Finland</strong> must evaluate and approve your business plan, issuing an Eligibility Statement valid for 4 months.",
-    descFa: "پیش از هر درخواست ویزا، آژانس رسمی دولتی <strong>Business Finland</strong> باید طرح کسب‌وکار شما را ارزیابی و تأیید کند و بیانیه‌ی واجد بودن معتبر برای ۴ ماه صادر کند.",
+    descFa: "پیش از ارائه درخواست اقامت، <strong>Business Finland</strong> باید بیزنس‌پلن شما را بررسی و تأیید کند. پس از تأیید، Eligibility Statement صادر می‌شود که ۴ ماه اعتبار دارد.",
   },
   {
     num: "04",
     title: "Proven Financial Self-Sufficiency",
-    titleFa: "خودکفایی مالی اثبات‌شده",
+    titleFa: "اثبات توانایی مالی",
     desc: "You must demonstrate liquid personal savings sufficient to cover your cost of living for at least your <strong>first year in Finland</strong>. No public financial aid is provided to founders.",
-    descFa: "باید پس‌انداز نقدی شخصی کافی برای پوشش هزینه‌ی زندگی خود دست‌کم در <strong>سال نخست در فنلاند</strong> نشان دهید. هیچ کمک مالی دولتی به بنیان‌گذاران ارائه نمی‌شود.",
+    descFa: "باید نشان دهید که منابع مالی شخصی و نقدشونده کافی برای تأمین هزینه‌های زندگی خود در <strong>سال اول اقامت در فنلاند</strong> را در اختیار دارید. برای بنیان‌گذاران، کمک مالی عمومی در نظر گرفته نمی‌شود.",
   },
 ];
 
 const benefits: { en: string; fa: string }[] = [
-  { en: "2-year continuous residence permit", fa: "مجوز اقامت پیوسته‌ی ۲ ساله" },
-  { en: "Legal right to incorporate a company in Finland", fa: "حق قانونی ثبت شرکت در فنلاند" },
-  { en: "Freedom to travel across all 27 Schengen countries", fa: "آزادی سفر در تمام ۲۷ کشور شنگن" },
-  { en: "Spouse gets unrestricted Finnish work rights", fa: "همسر حق کار نامحدود فنلاند را دریافت می‌کند" },
-  { en: "Optional side employment to supplement income", fa: "اشتغال جانبی اختیاری برای تکمیل درآمد" },
-  { en: "Direct pathway to EU Permanent Residency & Passport", fa: "مسیر مستقیم به اقامت دائم و پاسپورت اتحادیه اروپا" },
+  { en: "2-year continuous residence permit", fa: "دریافت مجوز اقامت مستمر ۲ ساله" },
+  { en: "Legal right to incorporate a company in Finland", fa: "امکان ثبت و راه‌اندازی شرکت در فنلاند" },
+  { en: "Freedom to travel across all 27 Schengen countries", fa: "امکان تردد آزادانه در سراسر ۲۷ کشور شنگن" },
+  { en: "Spouse gets unrestricted Finnish work rights", fa: "برخورداری همسر از حق کار بدون محدودیت در فنلاند" },
+  { en: "Optional side employment to supplement income", fa: "امکان اشتغال جانبی برای تأمین درآمد" },
+  { en: "Direct pathway to EU Permanent Residency & Passport", fa: "مسیر مستقیم به سمت اقامت دائم و تابعیت اتحادیه اروپا" },
 ];
 
 export default function Eligibility() {
@@ -50,7 +50,7 @@ export default function Eligibility() {
       <Row>
         <Reveal variant="up" className="mb-10 md:mb-14">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em]">
-            {t("The 4 Strict Eligibility Requirements", "۴ شرط سختگیرانه‌ی واجد بودن")}
+            {t("The 4 Strict Eligibility Requirements", "۴ شرط اصلی برای واجد شرایط بودن")}
           </h2>
         </Reveal>
 
@@ -60,8 +60,8 @@ export default function Eligibility() {
           <Reveal variant="left" delay={100}>
             <div className="bg-white border border-gray-200 rounded-[20px] p-10 flex flex-col">
               <p className="text-[16px] text-[#474747] leading-[1.65] mb-8 pb-8 border-b border-gray-200">
-                {t("Finland has a highly specific definition of what constitutes a “startup.” Traditional lifestyle businesses — a local restaurant, consulting firm, retail shop, or import/export agency —", "فنلاند تعریفی بسیار مشخص از آنچه یک «استارتاپ» را می‌سازد دارد. کسب‌وکارهای سبک زندگی سنتی — یک رستوران محلی، شرکت مشاوره، فروشگاه خرده‌فروشی یا آژانس واردات/صادرات —")}{" "}
-                <strong className="text-black font-semibold">{t("do not qualify.", "واجد شرایط نیستند.")}</strong>
+                {t("Finland has a highly specific definition of what constitutes a “startup.” Traditional lifestyle businesses — a local restaurant, consulting firm, retail shop, or import/export agency —", "فنلاند تعریف مشخصی از «استارتاپ» دارد. کسب‌وکارهای سنتی و محلی مانند رستوران، شرکت مشاوره، فروشگاه یا کسب‌وکار واردات و صادرات")}{" "}
+                <strong className="text-black font-semibold">{t("do not qualify.", "در این مسیر واجد شرایط نیستند.")}</strong>
               </p>
               <div className="flex flex-col">
                 {requirements.map((r, i) => (
@@ -104,7 +104,7 @@ export default function Eligibility() {
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M5 12l4 4 10-10"/></svg>
                   {t("Key Benefits", "مزایای کلیدی")}
                 </div>
-                <h3 className="font-semibold text-[17px] mb-4 tracking-[-0.02em]">{t("What you get with the permit", "با این مجوز چه چیزی به دست می‌آورید")}</h3>
+                <h3 className="font-semibold text-[17px] mb-4 tracking-[-0.02em]">{t("What you get with the permit", "این مجوز چه امکاناتی در اختیار شما قرار می‌دهد؟")}</h3>
                 <ul className="flex flex-col gap-3">
                   {benefits.map((b, i) => (
                     <li
@@ -139,7 +139,7 @@ export default function Eligibility() {
                   <line x1="12" y1="17" x2="12.01" y2="17"/>
                 </svg>
                 <p className="text-[13.5px] leading-[1.55] m-0" style={{ color: "#92400E" }}>
-                  <strong style={{ color: "#78350F", fontWeight: 600 }}>{t("Important:", "مهم:")}</strong> {t("Traditional lifestyle businesses do not qualify. Your venture must demonstrate clear international scalability — not just local viability.", "کسب‌وکارهای سبک زندگی سنتی واجد شرایط نیستند. کسب‌وکار شما باید مقیاس‌پذیری بین‌المللی روشنی نشان دهد — نه فقط دوام محلی.")}
+                  <strong style={{ color: "#78350F", fontWeight: 600 }}>{t("Important:", "نکته مهم:")}</strong> {t("Traditional lifestyle businesses do not qualify. Your venture must demonstrate clear international scalability — not just local viability.", "کسب‌وکارهای سنتی و محلی در این مسیر واجد شرایط نیستند. استارتاپ شما باید ظرفیت روشن و قابل اثباتی برای مقیاس‌پذیری بین‌المللی داشته باشد، نه صرفاً قابلیت فعالیت در بازار محلی.")}
                 </p>
               </div>
             </Reveal>

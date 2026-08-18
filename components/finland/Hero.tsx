@@ -6,9 +6,9 @@ import { useEffect, useState } from "react";
 import { useLang } from "@/components/global/LanguageProvider";
 
 const stats = [
-  { num: "€0", numFa: "۰ یورو", label: "Min. Capital", labelFa: "حداقل سرمایه" },
-  { num: "2 yr", numFa: "۲ سال", label: "Initial Permit", labelFa: "مجوز اولیه" },
-  { num: "6 yr", numFa: "۶ سال", label: "Path to Passport", labelFa: "مسیر پاسپورت" },
+  { num: "€0", numFa: "۰ یورو", label: "Min. Capital", labelFa: "حداقل سرمایه‌گذاری" },
+  { num: "2 yr", numFa: "۲ سال", label: "Initial Permit", labelFa: "مجوز اقامت اولیه" },
+  { num: "6 yr", numFa: "۶ سال", label: "Path to Passport", labelFa: "مسیر تا تابعیت" },
 ];
 
 export default function Hero() {
@@ -40,10 +40,10 @@ export default function Hero() {
           style={{ background: "#0d1f2d url('/images/photos/1578054320988-a2ac16f42591-w900.webp') center/cover" }}
         />
         <h1 className={`text-3xl font-bold leading-tight tracking-tight mb-4 ${base} duration-600 delay-150 ${mounted ? show : hideUp}`}>
-          {t("Build a", "یک")} <span className="text-[#8F27FF]">{t("global company", "شرکت جهانی")}</span> {t("from inside the European Union.", "از دلِ اتحادیه اروپا بسازید.")}
+          {t("Build a", "")} <span className="text-[#8F27FF]">{t("global company", "شرکت بین‌المللی")}</span> {t("from inside the European Union.", "خود را از قلب اتحادیه اروپا بسازید.")}
         </h1>
         <p className={`text-sm text-gray-600 leading-relaxed mb-6 ${base} duration-600 delay-200 ${mounted ? show : hideUp}`}>
-          {t("Finland doesn't ask for massive capital. It values your intellectual power, your innovative idea, and your potential to scale globally — rewarding builders, not just investors.", "فنلاند سرمایه‌ی کلان نمی‌خواهد. به توان فکری، ایده‌ی نوآورانه و پتانسیل شما برای رشد جهانی ارزش می‌دهد — و سازندگان را پاداش می‌دهد، نه فقط سرمایه‌گذاران را.")}
+          {t("Finland doesn't ask for massive capital. It values your intellectual power, your innovative idea, and your potential to scale globally — rewarding builders, not just investors.", "فنلاند برای راه‌اندازی یک استارتاپ الزاماً به سرمایه هنگفت نیاز ندارد. آنچه اهمیت دارد، توانمندی فکری تیم، ایده نوآورانه و ظرفیت رشد در بازارهای جهانی است؛ مسیری برای کارآفرینانی که می‌خواهند چیزی بسازند، نه صرفاً سرمایه‌گذاری کنند.")}
         </p>
         <div className={`grid grid-cols-3 gap-4 py-6 border-t border-b border-gray-200 mb-6 ${base} duration-600 delay-300 ${mounted ? show : hideUp}`}>
           {stats.map((s) => (
@@ -57,7 +57,7 @@ export default function Hero() {
           href="#contact"
           className={`inline-flex items-center gap-2 px-6 py-3 bg-[#8F27FF] text-white font-semibold rounded-full text-sm ${base} duration-500 delay-[400ms] ${mounted ? show : hideUp}`}
         >
-          {t("Book an Appointment →", "رزرو وقت ملاقات →")}
+          {t("Book an Appointment →", "رزرو وقت مشاوره ←")}
         </Link>
       </div>
 
@@ -69,10 +69,10 @@ export default function Hero() {
             {/* Content */}
             <div>
               <h1 className={`text-[48px] font-bold leading-[1.06] tracking-[-0.03em] mb-6 ${base} duration-700 delay-100 ${mounted ? show : hideLeft}`}>
-                {t("Build a", "یک")} <span className="text-[#8F27FF]">{t("global company", "شرکت جهانی")}</span> {t("from inside the European Union.", "از دلِ اتحادیه اروپا بسازید.")}
+                {t("Build a", "")} <span className="text-[#8F27FF]">{t("global company", "شرکت بین‌المللی")}</span> {t("from inside the European Union.", "خود را از قلب اتحادیه اروپا بسازید.")}
               </h1>
               <p className={`text-[16px] text-[#474747] leading-[1.65] mb-8 max-w-[520px] ${base} duration-700 delay-200 ${mounted ? show : hideLeft}`}>
-                {t("Finland doesn't ask for massive capital. It values your intellectual power, your innovative idea, and your potential to scale globally — rewarding builders, not just investors.", "فنلاند سرمایه‌ی کلان نمی‌خواهد. به توان فکری، ایده‌ی نوآورانه و پتانسیل شما برای رشد جهانی ارزش می‌دهد — و سازندگان را پاداش می‌دهد، نه فقط سرمایه‌گذاران را.")}
+                {t("Finland doesn't ask for massive capital. It values your intellectual power, your innovative idea, and your potential to scale globally — rewarding builders, not just investors.", "فنلاند برای راه‌اندازی یک استارتاپ الزاماً به سرمایه هنگفت نیاز ندارد. آنچه اهمیت دارد، توانمندی فکری تیم، ایده نوآورانه و ظرفیت رشد در بازارهای جهانی است؛ مسیری برای کارآفرینانی که می‌خواهند چیزی بسازند، نه صرفاً سرمایه‌گذاری کنند.")}
               </p>
               <div className={`grid grid-cols-3 py-6 border-t border-b border-gray-200 mb-9 ${base} duration-700 delay-300 ${mounted ? show : hideLeft}`}>
                 {stats.map((s) => (
@@ -87,7 +87,7 @@ export default function Hero() {
                 className={`inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5 ${base} duration-500 delay-[400ms] ${mounted ? show : hideLeft}`}
                 style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
               >
-                {t("Book an Appointment →", "رزرو وقت ملاقات →")}
+                {t("Book an Appointment →", "رزرو وقت مشاوره ←")}
               </Link>
             </div>
 

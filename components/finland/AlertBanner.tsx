@@ -18,10 +18,10 @@ export default function AlertBanner() {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="flex-1">
               <h3 className="text-[22px] font-bold text-black tracking-[-0.02em] mb-2">
-                {t("2026 Program Update — Applications Now Open", "به‌روزرسانی برنامه‌ی ۲۰۲۶ — درخواست‌ها اکنون باز است")}
+                {t("2026 Program Update — Applications Now Open", "به‌روزرسانی برنامه ۲۰۲۶ — پذیرش درخواست‌ها فعال است")}
               </h3>
               <p className="text-[14.5px] text-[#333] leading-relaxed max-w-[56ch]">
-                {t("Business Finland is actively evaluating applications for the Finland Startup Permit. Financial thresholds and program criteria are current as of 2026. Our team can assess your eligibility within 48 hours.", "Business Finland فعالانه در حال ارزیابی درخواست‌ها برای مجوز استارتاپ فنلاند است. آستانه‌های مالی و معیارهای برنامه تا سال ۲۰۲۶ به‌روز هستند. تیم ما می‌تواند واجد شرایط بودن شما را ظرف ۴۸ ساعت بررسی کند.")}
+                {t("Business Finland is actively evaluating applications for the Finland Startup Permit. Financial thresholds and program criteria are current as of 2026. Our team can assess your eligibility within 48 hours.", "Business Finland در حال حاضر درخواست‌های مربوط به Finland Startup Permit را بررسی می‌کند. الزامات مالی و معیارهای برنامه در این صفحه بر اساس شرایط سال ۲۰۲۶ تنظیم شده‌اند. تیم نکسا می‌تواند ظرف ۴۸ ساعت شرایط اولیه شما را ارزیابی کند.")}
               </p>
             </div>
             <a

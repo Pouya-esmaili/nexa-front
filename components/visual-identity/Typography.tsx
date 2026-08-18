@@ -5,18 +5,18 @@ import { useLang } from "@/components/global/LanguageProvider";
 import { useStaggerReveal } from "@/components/advisory/useStaggerReveal";
 
 const WEIGHTS = [
-  { w: 400, label: "Regular", labelFa: "رگولار" },
-  { w: 500, label: "Medium", labelFa: "مدیوم" },
-  { w: 700, label: "Bold", labelFa: "بولد" },
-  { w: 900, label: "Black", labelFa: "بلک" },
+  { w: 400, label: "Regular", labelFa: "Regular" },
+  { w: 500, label: "Medium", labelFa: "Medium" },
+  { w: 700, label: "Bold", labelFa: "Bold" },
+  { w: 900, label: "Black", labelFa: "Black" },
 ];
 
 const ROWS = [
-  { label: "H1", size: 40, weight: undefined as number | undefined, spec: "64 / 900", text: "The quick brand fox.", caption: false },
-  { label: "H2", size: 30, weight: undefined as number | undefined, spec: "40 / 800", text: "The quick brand fox.", caption: false },
-  { label: "H3", size: 22, weight: undefined as number | undefined, spec: "24 / 700", text: "The quick brand fox.", caption: false },
-  { label: "Body", size: 16, weight: 500, spec: "16 / 500", text: "The quick brand fox jumps over the lazy layout.", caption: false },
-  { label: "Caption", size: 12, weight: 600, spec: "12 / 600", text: "The quick brand fox", caption: true },
+  { label: "H1", labelFa: "H1", size: 40, weight: undefined as number | undefined, spec: "64 / 900", specFa: "۶۴ / ۹۰۰", text: "The quick brand fox.", caption: false },
+  { label: "H2", labelFa: "H2", size: 30, weight: undefined as number | undefined, spec: "40 / 800", specFa: "۴۰ / ۸۰۰", text: "The quick brand fox.", caption: false },
+  { label: "H3", labelFa: "H3", size: 22, weight: undefined as number | undefined, spec: "24 / 700", specFa: "۲۴ / ۷۰۰", text: "The quick brand fox.", caption: false },
+  { label: "Body", labelFa: "متن اصلی", size: 16, weight: 500, spec: "16 / 500", specFa: "۱۶ / ۵۰۰", text: "The quick brand fox jumps over the lazy layout.", caption: false },
+  { label: "Caption", labelFa: "کپشن", size: 12, weight: 600, spec: "12 / 600", specFa: "۱۲ / ۶۰۰", text: "The quick brand fox", caption: true },
 ];
 
 export default function Typography() {
@@ -40,9 +40,9 @@ export default function Typography() {
         <div className="vi-comp-intro">
           <span className="vi-label">{t("/ TYPOGRAPHY", "/ تایپوگرافی")}</span>
           <h2 className="editorial-h2">
-            <span className="eh2-outline">{t("TYPE THAT", "تایپی که")}</span> <span className="eh2-solid">{t("CARRIES", "وزن")}</span>
+            <span className="eh2-outline">{t("TYPE THAT", "تایپوگرافی‌ای که")}</span> <span className="eh2-solid">{t("CARRIES", "")}</span>
             <br />
-            <span className="eh2-purple">{t("ITS OWN WEIGHT.", "خودش را به دوش می‌کشد.")}</span>
+            <span className="eh2-purple">{t("ITS OWN WEIGHT.", "به‌تنهایی شخصیت دارد.")}</span>
           </h2>
         </div>
         <div className="vi-type__layout">
@@ -64,7 +64,7 @@ export default function Typography() {
           <div className="vi-type__scale" ref={scaleRef}>
             {ROWS.map((r) => (
               <div className="vi-type__row" key={r.label}>
-                <span className="vi-type__row-label">{r.label}</span>
+                <span className="vi-type__row-label">{t(r.label, r.labelFa)}</span>
                 <span
                   className="vi-type__row-sample"
                   style={{
@@ -76,7 +76,7 @@ export default function Typography() {
                 >
                   {r.text}
                 </span>
-                <span className="vi-type__row-px">{r.spec}</span>
+                <span className="vi-type__row-px">{t(r.spec, r.specFa)}</span>
               </div>
             ))}
           </div>

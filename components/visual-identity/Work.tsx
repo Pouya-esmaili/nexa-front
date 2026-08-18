@@ -5,16 +5,16 @@ import { useLang } from "@/components/global/LanguageProvider";
 import { useCarousel } from "./useCarousel";
 
 const CARDS = [
-  { img: "002-img.jpg", brand: "PreventiGene", type: "HealthTech / Genetics Identity", typeFa: "هویت سلامت دیجیتال / ژنتیک" },
-  { img: "003-img.jpg", brand: "Landa Trip", type: "Travel & Education Identity", typeFa: "هویت گردشگری و آموزش" },
-  { img: "004-img.jpg", brand: "Diaco", type: "AI Platform Identity", typeFa: "هویت پلتفرم هوش مصنوعی" },
-  { img: "005-img.jpg", brand: "AutiLab", type: "Family Health Identity", typeFa: "هویت سلامت خانواده" },
-  { img: "006-img.jpg", brand: "Furlo", type: "Pet Health Identity", typeFa: "هویت سلامت حیوانات خانگی" },
-  { img: "007-img.jpg", brand: "Landa Craft", type: "Marketplace Identity", typeFa: "هویت بازارگاه" },
-  { img: "008-img.jpg", brand: "Thredloom", type: "Luxury Resale Identity", typeFa: "هویت فروش لوکس دست‌دوم" },
-  { img: "009-img.jpg", brand: "Landa Academy", type: "Education / Mentorship Identity", typeFa: "هویت آموزش / منتورینگ" },
-  { img: "010-img.jpg", brand: "Verdalyn", type: "AgTech Identity", typeFa: "هویت فناوری کشاورزی" },
-  { img: "011-img.jpg", brand: "Orbiq", type: "EdTech Identity", typeFa: "هویت فناوری آموزش" },
+  { img: "002-img.jpg", brand: "PreventiGene", type: "HealthTech / Genetics Identity", typeFa: "هویت بصری / HealthTech و ژنتیک" },
+  { img: "003-img.jpg", brand: "Landa Trip", type: "Travel & Education Identity", typeFa: "هویت بصری / سفر و آموزش" },
+  { img: "004-img.jpg", brand: "Diaco", type: "AI Platform Identity", typeFa: "هویت بصری / پلتفرم هوش مصنوعی" },
+  { img: "005-img.jpg", brand: "AutiLab", type: "Family Health Identity", typeFa: "هویت بصری / سلامت خانواده" },
+  { img: "006-img.jpg", brand: "FurloPet", type: "Pet Health Identity", typeFa: "هویت بصری / سلامت و حیوانات خانگی" },
+  { img: "007-img.jpg", brand: "Landa Craft", type: "Marketplace Identity", typeFa: "هویت بصری / مارکت‌پلیس" },
+  { img: "008-img.jpg", brand: "Thredloom", type: "Luxury Resale Identity", typeFa: "هویت بصری / فروش مجدد کالاهای لوکس" },
+  { img: "009-img.jpg", brand: "Landa Academy", type: "Education / Mentorship Identity", typeFa: "هویت بصری / آموزش و منتورینگ" },
+  { img: "010-img.jpg", brand: "Verdalyn", type: "AgTech Identity", typeFa: "هویت بصری / فناوری کشاورزی" },
+  { img: "011-img.jpg", brand: "Orbiq", type: "EdTech Identity", typeFa: "هویت بصری / آموزش و فناوری" },
 ];
 
 export default function Work() {
@@ -34,7 +34,7 @@ export default function Work() {
               <span className="eh2-solid">{t("WE'VE", "که")}</span> <span className="eh2-purple">{t("BUILT.", "ساخته‌ایم.")}</span>
             </h2>
           </div>
-          <p>{t("A curated collection of 9 identity systems — logo designs, brand systems, typography and application mockups. Click any card to inspect full details.", "مجموعه‌ای منتخب از ۹ سیستم هویت بصری — طراحی لوگو، سیستم برند، تایپوگرافی و ماکاپ‌های کاربردی. برای مشاهده‌ی جزئیات کامل، روی هر کارت کلیک کنید.")}</p>
+          <p>{t("A curated collection of 9 identity systems — logo designs, brand systems, typography and application mockups. Click any card to inspect full details.", "مجموعه‌ای منتخب از ۹ هویت بصری کامل؛ شامل طراحی لوگو، سیستم برند، تایپوگرافی و نمونه‌های کاربردی. برای مشاهده جزئیات، روی هر پروژه کلیک کنید.")}</p>
         </div>
         <div className="vi-work__grid-4col" ref={gridRef}>
           {CARDS.map((c, i) => (

@@ -5,33 +5,33 @@ import { useLang } from "@/components/global/LanguageProvider";
 import { useCarousel } from "./useCarousel";
 
 const PINS = [
-  { num: "01", left: "17%", top: "30%", label: "About the Brand", labelFa: "درباره‌ی برند" },
-  { num: "02", left: "50%", top: "30%", label: "Logo Suite", labelFa: "مجموعه‌ی لوگو" },
+  { num: "01", left: "17%", top: "30%", label: "About the Brand", labelFa: "درباره برند" },
+  { num: "02", left: "50%", top: "30%", label: "Logo Suite", labelFa: "مجموعه لوگو" },
   { num: "03", left: "83%", top: "30%", label: "Logo on Color", labelFa: "لوگو روی رنگ", edge: true },
   { num: "04", left: "16%", top: "49.5%", label: "Corporate Colors", labelFa: "رنگ‌های سازمانی" },
   { num: "05", left: "48%", top: "49.5%", label: "Typography", labelFa: "تایپوگرافی" },
-  { num: "06", left: "83%", top: "49.5%", label: "Patterns & Textures", labelFa: "الگو و بافت", edge: true },
+  { num: "06", left: "83%", top: "49.5%", label: "Patterns & Textures", labelFa: "الگوها و بافت‌ها", edge: true },
   { num: "07", left: "33%", top: "65.5%", label: "Brand Applications", labelFa: "کاربردهای برند" },
-  { num: "08", left: "83%", top: "65.5%", label: "Stationery", labelFa: "لوازم اداری", edge: true },
-  { num: "09", left: "22%", top: "81%", label: "Merchandise", labelFa: "کالاهای برندی" },
+  { num: "08", left: "83%", top: "65.5%", label: "Stationery", labelFa: "ست اداری", edge: true },
+  { num: "09", left: "22%", top: "81%", label: "Merchandise", labelFa: "محصولات تبلیغاتی" },
   { num: "10", left: "55%", top: "81%", label: "Social Media", labelFa: "شبکه‌های اجتماعی" },
-  { num: "11", left: "83%", top: "81%", label: "Iconography", labelFa: "آیکونوگرافی", edge: true },
-  { num: "12", left: "35%", top: "95.5%", label: "Thank You", labelFa: "تشکر" },
+  { num: "11", left: "83%", top: "81%", label: "Iconography", labelFa: "آیکون‌ها", edge: true },
+  { num: "12", left: "35%", top: "95.5%", label: "Thank You", labelFa: "پیام پایانی" },
 ];
 
 const CARDS = [
-  { num: "01", title: "About the Brand", titleFa: "درباره‌ی برند", desc: "The mission, distilled into one clear paragraph.", descFa: "مأموریت برند، در یک پاراگراف شفاف." },
-  { num: "02", title: "Logo Suite", titleFa: "مجموعه‌ی لوگو", desc: "Color variations of the mark for every background.", descFa: "نسخه‌های رنگی نشان برای هر پس‌زمینه." },
-  { num: "03", title: "Logo on Color", titleFa: "لوگو روی رنگ", desc: "A stress-test of the logo on the brand's own palette.", descFa: "آزمون لوگو روی پالت رنگی خود برند." },
-  { num: "04", title: "Corporate Colors", titleFa: "رنگ‌های سازمانی", desc: "The exact palette, locked to hex and RGB values.", descFa: "پالت دقیق، قفل‌شده روی مقادیر hex و RGB." },
-  { num: "05", title: "Typography", titleFa: "تایپوگرافی", desc: "The typeface that carries the brand's voice.", descFa: "فونتی که صدای برند را حمل می‌کند." },
-  { num: "06", title: "Patterns & Textures", titleFa: "الگو و بافت", desc: "Reusable motifs that extend the identity beyond the logo.", descFa: "الگوهای قابل‌استفاده‌ی مجدد که هویت را فراتر از لوگو می‌برند." },
-  { num: "07", title: "Brand Applications", titleFa: "کاربردهای برند", desc: "The system in action, inside a real product UI.", descFa: "سیستم در عمل، درون یک رابط کاربری واقعی." },
-  { num: "08", title: "Stationery", titleFa: "لوازم اداری", desc: "Everyday collateral, scaled to functional formats.", descFa: "اقلام روزمره، در قالب‌های کاربردی." },
-  { num: "09", title: "Merchandise", titleFa: "کالاهای برندی", desc: "Apparel and print goods, testing the mark off-screen.", descFa: "پوشاک و اقلام چاپی، آزمون نشان بیرون از صفحه‌نمایش." },
-  { num: "10", title: "Social Media", titleFa: "شبکه‌های اجتماعی", desc: "Ready-made post templates with a consistent voice.", descFa: "قالب‌های آماده‌ی پست با لحنی یکدست." },
-  { num: "11", title: "Iconography", titleFa: "آیکونوگرافی", desc: "A unified icon set for a coherent interface.", descFa: "مجموعه‌ای یکپارچه از آیکون برای رابطی منسجم." },
-  { num: "12", title: "Thank You", titleFa: "تشکر", desc: "The closing note — where the system signs off with warmth.", descFa: "یادداشت پایانی — جایی که سیستم با گرمی خداحافظی می‌کند." },
+  { num: "01", title: "About the Brand", titleFa: "درباره برند", desc: "The mission, distilled into one clear paragraph.", descFa: "مأموریت برند، در قالب یک توضیح کوتاه و شفاف." },
+  { num: "02", title: "Logo Suite", titleFa: "مجموعه لوگو", desc: "Color variations of the mark for every background.", descFa: "نسخه‌های مختلف لوگو برای استفاده روی پس‌زمینه‌های گوناگون." },
+  { num: "03", title: "Logo on Color", titleFa: "لوگو روی رنگ", desc: "A stress-test of the logo on the brand's own palette.", descFa: "بررسی عملکرد لوگو روی پالت رنگی اختصاصی برند." },
+  { num: "04", title: "Corporate Colors", titleFa: "رنگ‌های سازمانی", desc: "The exact palette, locked to hex and RGB values.", descFa: "پالت رنگی دقیق برند، با مقادیر استاندارد HEX و RGB." },
+  { num: "05", title: "Typography", titleFa: "تایپوگرافی", desc: "The typeface that carries the brand's voice.", descFa: "فونت‌هایی که لحن و شخصیت برند را منتقل می‌کنند." },
+  { num: "06", title: "Patterns & Textures", titleFa: "الگوها و بافت‌ها", desc: "Reusable motifs that extend the identity beyond the logo.", descFa: "المان‌های بصری قابل استفاده مجدد برای گسترش هویت برند فراتر از لوگو." },
+  { num: "07", title: "Brand Applications", titleFa: "کاربردهای برند", desc: "The system in action, inside a real product UI.", descFa: "نمایش هویت بصری در یک محصول واقعی و رابط کاربری آن." },
+  { num: "08", title: "Stationery", titleFa: "ست اداری", desc: "Everyday collateral, scaled to functional formats.", descFa: "کاربرد هویت برند در اقلام اداری و ارتباطات روزمره." },
+  { num: "09", title: "Merchandise", titleFa: "محصولات تبلیغاتی", desc: "Apparel and print goods, testing the mark off-screen.", descFa: "اجرای هویت روی پوشاک و محصولات چاپی برای سنجش عملکرد آن خارج از فضای دیجیتال." },
+  { num: "10", title: "Social Media", titleFa: "شبکه‌های اجتماعی", desc: "Ready-made post templates with a consistent voice.", descFa: "قالب‌های آماده انتشار با لحن و ظاهر یکپارچه." },
+  { num: "11", title: "Iconography", titleFa: "آیکون‌ها", desc: "A unified icon set for a coherent interface.", descFa: "مجموعه‌ای هماهنگ از آیکون‌ها برای ایجاد یک رابط کاربری منسجم." },
+  { num: "12", title: "Thank You", titleFa: "پیام پایانی", desc: "The closing note — where the system signs off with warmth.", descFa: "آخرین نقطه تماس با مخاطب؛ جایی که سیستم برند با لحنی گرم و به‌یادماندنی به پایان می‌رسد." },
 ];
 
 export default function DeepDive() {
@@ -55,14 +55,14 @@ export default function DeepDive() {
       <div className="wrap">
         <div className="vi-deep__header vi-work__head">
           <div>
-            <span className="vi-label">{t("/ SYSTEM DEEPDIVE", "/ کالبدشکافی سیستم")}</span>
+            <span className="vi-label">{t("/ SYSTEM DEEPDIVE", "/ بررسی عمیق سیستم برند")}</span>
             <h2 className="editorial-h2">
-              <span className="eh2-outline">{t("INSIDE", "درون")}</span> <span className="eh2-solid">{t("ONE", "یک")}</span>
+              <span className="eh2-outline">{t("INSIDE", "نگاهی به")}</span> <span className="eh2-solid">{t("ONE", "یک")}</span>
               <br />
-              <span className="eh2-purple">{t("IDENTITY.", "هویت.")}</span>
+              <span className="eh2-purple">{t("IDENTITY.", "هویت بصری کامل.")}</span>
             </h2>
           </div>
-          <p>{t("A complete identity is a system, not just a logo. Here's every component that makes the AutiLab brand work — mapped and explained.", "یک هویت کامل، یک سیستم است، نه فقط یک لوگو. این‌جا همه‌ی اجزایی که برند AutiLab را می‌سازند، نقشه‌برداری و توضیح داده شده‌اند.")}</p>
+          <p>{t("A complete identity is a system, not just a logo. Here's every component that makes the AutiLab brand work — mapped and explained.", "هویت بصری کامل، فقط یک لوگو نیست؛ یک سیستم منسجم است. در ادامه، تمام اجزایی را می‌بینید که هویت برند AutiLab را شکل داده‌اند.")}</p>
         </div>
         <div className="ab-breakdown">
           <div className="ab-board">

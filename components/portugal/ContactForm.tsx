@@ -99,9 +99,9 @@ export default function ContactForm() {
                   <select className="h-11 px-3.5 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors">
                     <option>{t("Technology / SaaS", "فناوری / SaaS")}</option>
                     <option>{t("Consulting / Services", "مشاوره / خدمات")}</option>
-                    <option>{t("Import-Export", "واردات-صادرات")}</option>
-                    <option>{t("Real Estate", "املاک")}</option>
-                    <option>{t("Hospitality", "مهمان‌نوازی")}</option>
+                    <option>{t("Import-Export", "واردات و صادرات")}</option>
+                    <option>{t("Real Estate", "املاک و مستغلات")}</option>
+                    <option>{t("Hospitality", "هتلداری")}</option>
                     <option>{t("Other", "سایر")}</option>
                   </select>
                 </label>
@@ -109,7 +109,7 @@ export default function ContactForm() {
 
               {/* Textarea */}
               <label className="flex flex-col gap-2 text-[13px] font-medium">
-                <span className="text-[#474747]">{t("Tell us about your business & goals", "درباره‌ی کسب‌وکار و اهدافتان به ما بگویید")}</span>
+                <span className="text-[#474747]">{t("Tell us about your business & goals", "درباره کسب‌وکار و اهداف خود برای ما بنویسید")}</span>
                 <textarea name="message" rows={4} placeholder={t("Describe your business model, target market in Portugal, and what you're looking to achieve…", "مدل کسب‌وکار، بازار هدف در پرتغال و آنچه به دنبال دستیابی به آن هستید را شرح دهید…")}
                   className="px-3.5 py-3 rounded-[10px] border border-gray-200 bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors resize-y" />
               </label>
@@ -117,7 +117,7 @@ export default function ContactForm() {
               {/* Footer */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
                 <small className="text-[12px] text-gray-500 leading-relaxed max-w-[50ch]">
-                  {t("Your information is reviewed confidentially by Nexa's advisory team. We typically respond within 48 hours.", "اطلاعات شما به‌صورت محرمانه توسط تیم مشاوره‌ی نکسا بررسی می‌شود. ما معمولاً ظرف ۴۸ ساعت پاسخ می‌دهیم.")}
+                  {t("Your information is reviewed confidentially by Nexa's advisory team. We typically respond within 48 hours.", "اطلاعات شما به‌صورت محرمانه توسط تیم مشاوره نکسا بررسی می‌شود. معمولاً ظرف ۴۸ ساعت پاسخ خواهیم داد.")}
                 </small>
                 <button type="submit"
                   className="w-full sm:w-auto flex-shrink-0 inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"

@@ -43,13 +43,13 @@ export default function Hero() {
         <h1
           className={`text-3xl font-bold leading-tight tracking-tight mb-4 ${base} duration-700 delay-150 ${mounted ? show : hideUp}`}
         >
-          {t("Run your business from inside the", "کسب‌وکار خود را از داخل")}{" "}
-          <span className="text-[#8F27FF]">{t("Nordic EU gateway.", "دروازه‌ی نوردیک اتحادیه اروپا اداره کنید.")}</span>
+          {t("Run your business from inside the", "کسب‌وکارتان را از")}{" "}
+          <span className="text-[#8F27FF]">{t("Nordic EU gateway.", "دروازه شمال اروپا مدیریت کنید.")}</span>
         </h1>
         <p
           className={`text-sm text-[#474747] leading-relaxed mb-6 ${base} duration-700 delay-200 ${mounted ? show : hideUp}`}
         >
-          {t("Finland's Residence Permit for Entrepreneurs is the Nordics' most structured self-employment pathway — evaluated on commercial viability, not innovation mandates. Open to consultants, traders, freelancers, and operational shareholders.", "مجوز اقامت کارآفرینان فنلاند ساختارمندترین مسیر خوداشتغالی نوردیک است — که بر اساس امکان‌پذیری تجاری ارزیابی می‌شود، نه الزامات نوآوری. باز برای مشاوران، بازرگانان، فریلنسرها و سهام‌داران عملیاتی.")}
+          {t("Finland's Residence Permit for Entrepreneurs is the Nordics' most structured self-employment pathway — evaluated on commercial viability, not innovation mandates. Open to consultants, traders, freelancers, and operational shareholders.", "مجوز اقامت کارآفرینی فنلاند یکی از ساختاریافته‌ترین مسیرهای خوداشتغالی در منطقه نوردیک است و ارزیابی آن بر قابلیت تجاری و اقتصادی کسب‌وکار متمرکز است، نه الزاماً نوآوری. این مسیر برای مشاوران، فعالان تجاری، فریلنسرها و سهام‌داران فعال در مدیریت شرکت قابل استفاده است.")}
         </p>
         <div
           className={`grid grid-cols-3 py-5 border-t border-b border-[#E2E2E2] mb-6 ${base} duration-700 delay-300 ${mounted ? show : hideUp}`}
@@ -80,13 +80,13 @@ export default function Hero() {
               <h1
                 className={`text-[48px] font-bold leading-[1.06] tracking-[-0.03em] mb-6 ${base} duration-700 delay-100 ${mounted ? show : hideLeft}`}
               >
-                {t("Run your business from inside the", "کسب‌وکار خود را از داخل")}{" "}
-                <em className="text-[#8F27FF] not-italic">{t("Nordic EU gateway.", "دروازه‌ی نوردیک اتحادیه اروپا اداره کنید.")}</em>
+                {t("Run your business from inside the", "کسب‌وکارتان را از داخل")}{" "}
+                <em className="text-[#8F27FF] not-italic">{t("Nordic EU gateway.", "دروازه شمال اروپا مدیریت کنید.")}</em>
               </h1>
               <p
                 className={`text-[16px] text-[#474747] leading-[1.65] mb-8 max-w-[520px] ${base} duration-700 delay-200 ${mounted ? show : hideLeft}`}
               >
-                {t("Finland's Residence Permit for Entrepreneurs is the Nordics' most structured self-employment pathway — evaluated on commercial viability, not innovation mandates. Open to consultants, traders, freelancers, and operational shareholders.", "مجوز اقامت کارآفرینان فنلاند ساختارمندترین مسیر خوداشتغالی نوردیک است — که بر اساس امکان‌پذیری تجاری ارزیابی می‌شود، نه الزامات نوآوری. باز برای مشاوران، بازرگانان، فریلنسرها و سهام‌داران عملیاتی.")}
+                {t("Finland's Residence Permit for Entrepreneurs is the Nordics' most structured self-employment pathway — evaluated on commercial viability, not innovation mandates. Open to consultants, traders, freelancers, and operational shareholders.", "مجوز اقامت کارآفرینی فنلاند یکی از ساختاریافته‌ترین مسیرهای خوداشتغالی در منطقه نوردیک است و ارزیابی آن بر قابلیت تجاری و اقتصادی کسب‌وکار متمرکز است، نه الزاماً نوآوری. این مسیر برای مشاوران، فعالان تجاری، فریلنسرها و سهام‌داران فعال در مدیریت شرکت قابل استفاده است.")}
               </p>
 
               <div
@@ -109,7 +109,7 @@ export default function Hero() {
                   className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"
                   style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
                 >
-                  {t("Book an Appointment →", "رزرو وقت ملاقات →")}
+                  {t("Book an Appointment →", "رزرو وقت مشاوره ←")}
                 </a>
               </div>
             </div>

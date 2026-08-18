@@ -13,7 +13,7 @@ const cards = [
       </svg>
     ),
     title: "Minimum Net Income",
-    titleFa: "حداقل درآمد خالص",
+    titleFa: "حداقل درآمد موردنیاز",
     desc: (
       <>
         <strong className="text-white font-semibold">€1,030–€1,210/month</strong> — fluctuates by municipality. Your
@@ -22,8 +22,9 @@ const cards = [
     ),
     descFa: (
       <>
-        <strong className="text-white font-semibold">۱٬۰۳۰ تا ۱٬۲۱۰ یورو در ماه</strong> — بسته به شهرداری متغیر است.
-        کسب‌وکار شما باید به‌راحتی هزینه‌های عملیاتی و هزینه‌های زندگی شخصی را پوشش دهد.
+        <strong className="text-white font-semibold">۱٬۰۳۰ تا ۱٬۲۱۰ یورو در ماه</strong> — این مبلغ بسته به شهرداری محل
+        فعالیت متفاوت است. کسب‌وکار باید توانایی کافی برای پوشش هزینه‌های عملیاتی و مخارج زندگی شخصی شما را داشته
+        باشد.
       </>
     ),
   },
@@ -37,7 +38,7 @@ const cards = [
       </svg>
     ),
     title: "ELY Centre Business Assessment",
-    titleFa: "ارزیابی کسب‌وکار مرکز ELY",
+    titleFa: "ارزیابی کسب‌وکار توسط ELY Centre",
     desc: (
       <>
         Before Migri reviews your file, the{" "}
@@ -47,9 +48,9 @@ const cards = [
     ),
     descFa: (
       <>
-        پیش از اینکه Migri پرونده‌ی شما را بررسی کند، {" "}
-        <strong className="text-white font-semibold">مرکز ELY</strong> یک ارزیابی مستقل از امکان‌پذیری تجاری و
-        سودآوری انجام می‌دهد — نخستین دروازه‌ی حیاتی.
+        پیش از بررسی پرونده توسط Migri،{" "}
+        <strong className="text-white font-semibold">مرکز ELY</strong> یک ارزیابی مستقل از قابلیت تجاری و سودآوری
+        کسب‌وکار انجام می‌دهد؛ مرحله‌ای که یکی از مهم‌ترین نقاط تصمیم‌گیری در مسیر دریافت مجوز اقامت محسوب می‌شود.
       </>
     ),
   },
@@ -61,7 +62,7 @@ const cards = [
       </svg>
     ),
     title: "Processing Fee",
-    titleFa: "هزینه‌ی پردازش",
+    titleFa: "هزینه بررسی پرونده",
     desc: (
       <>
         Electronic application via Enter Finland:{" "}
@@ -71,9 +72,10 @@ const cards = [
     ),
     descFa: (
       <>
-        درخواست الکترونیکی از طریق Enter Finland:{" "}
-        <strong className="text-white font-semibold">۷۵۰ یورو</strong>. درخواست‌های کاغذی:{" "}
-        <strong className="text-white font-semibold">۹۰۰ یورو</strong>. هزینه صرف‌نظر از نتیجه‌ی تصمیم غیرقابل‌استرداد است.
+        هزینه درخواست الکترونیکی از طریق Enter Finland برابر با{" "}
+        <strong className="text-white font-semibold">۷۵۰ یورو</strong> و هزینه درخواست کاغذی{" "}
+        <strong className="text-white font-semibold">۹۰۰ یورو</strong> است. این هزینه، صرف‌نظر از نتیجه پرونده،
+        قابل استرداد نیست.
       </>
     ),
   },
@@ -109,29 +111,29 @@ export default function Financials() {
                   color: "#FFE600",
                 }}
               >
-                {t("12-Month Runway Required", "پشتوانه‌ی ۱۲ ماهه لازم است")}
+                {t("12-Month Runway Required", "ذخیره مالی برای ۱۲ ماه")}
               </div>
               <div>
                 <div
                   className="font-bold leading-[0.9] tabular-nums text-white"
                   style={{ fontSize: "64px", letterSpacing: "-0.04em" }}
                 >
-                  {t("€12", "۱۲")}<span style={{ fontSize: "32px" }}>{t("–14K", "–۱۴ هزار یورو")}</span>
+                  {t("€12", "۱۲")}<span style={{ fontSize: "32px" }}>{t("–14K", " تا ۱۴ هزار یورو")}</span>
                 </div>
               </div>
               <p className="text-[14px] leading-[1.65]" style={{ color: "#B5B5BA" }}>
-                {t("Minimum personal cash reserve upfront — covering", "حداقل ذخیره‌ی نقدی شخصی اولیه — که")}{" "}
-                <strong style={{ color: "#FFE600", fontWeight: 600 }}>{t("12 months", "۱۲ ماه")}</strong> {t("at the €1,030–1,210/month threshold. Exact amount varies by municipality.", "را در آستانه‌ی ۱٬۰۳۰ تا ۱٬۲۱۰ یورو در ماه پوشش می‌دهد. مبلغ دقیق بسته به شهرداری متفاوت است.")}
+                {t("Minimum personal cash reserve upfront — covering", "حداقل پشتوانه مالی شخصی موردنیاز در ابتدای مسیر، برای پوشش هزینه‌های")}{" "}
+                <strong style={{ color: "#FFE600", fontWeight: 600 }}>{t("12 months", "۱۲ ماه")}</strong> {t("at the €1,030–1,210/month threshold. Exact amount varies by municipality.", "زندگی بر اساس حداقل درآمد ماهانه ۱٬۰۳۰ تا ۱٬۲۱۰ یورو. مبلغ دقیق بسته به شهرداری محل فعالیت متفاوت است.")}
               </p>
               <div
                 className="flex flex-wrap gap-2 mt-auto pt-[18px]"
                 style={{ borderTop: "1px solid #1f1f24" }}
               >
                 {[
-                  { en: "Bank statements (3 months)", fa: "صورت‌حساب‌های بانکی (۳ ماه)" },
-                  { en: "B2B contracts / LOIs", fa: "قراردادهای B2B / LOIها" },
-                  { en: "Capital commitments", fa: "تعهدات سرمایه" },
-                  { en: "Interim balance sheets", fa: "ترازنامه‌های موقت" },
+                  { en: "Bank statements (3 months)", fa: "صورت‌حساب‌های بانکی ۳ ماه اخیر" },
+                  { en: "B2B contracts / LOIs", fa: "قراردادهای B2B یا نامه‌های اعلام تمایل به همکاری (LOI)" },
+                  { en: "Capital commitments", fa: "تعهدات و منابع مالی اختصاص‌یافته به کسب‌وکار" },
+                  { en: "Interim balance sheets", fa: "صورت‌های مالی میان‌دوره‌ای" },
                 ].map(
                   (chip) => (
                     <span

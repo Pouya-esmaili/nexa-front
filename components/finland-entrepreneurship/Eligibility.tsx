@@ -8,7 +8,7 @@ const structures = [
   {
     num: "01",
     title: "Private Trader / Sole Proprietor",
-    titleFa: "بازرگان خصوصی / مالک انحصاری",
+    titleFa: "تاجر یا مالک کسب‌وکار شخصی",
     desc: (
       <>
         <em>Yksityinen elinkeinonharjoittaja</em> or <em>Toiminimi</em> — the most straightforward entry
@@ -17,15 +17,15 @@ const structures = [
     ),
     descFa: (
       <>
-        <em>Yksityinen elinkeinonharjoittaja</em> یا <em>Toiminimi</em> — ساده‌ترین ساختار ورود برای
-        فریلنسرها و مشاوران فردی.
+        <em>Yksityinen elinkeinonharjoittaja</em> یا <em>Toiminimi</em> — ساده‌ترین ساختار برای ورود
+        فریلنسرها و مشاورانی که قصد دارند فعالیت حرفه‌ای خود را به‌صورت مستقل در فنلاند دنبال کنند.
       </>
     ),
   },
   {
     num: "02",
     title: "Partner in a General Partnership",
-    titleFa: "شریک در یک شراکت عمومی",
+    titleFa: "شریک در شرکت تضامنی",
     desc: (
       <>
         <em>Avoin yhtiö</em> — full active partnership with shared liability and operational
@@ -34,15 +34,15 @@ const structures = [
     ),
     descFa: (
       <>
-        <em>Avoin yhtiö</em> — شراکت فعال کامل با مسئولیت مشترک و مسئولیت عملیاتی در یک نهاد فنلاندی
-        ثبت‌شده.
+        <em>Avoin yhtiö</em> — ساختاری مبتنی بر مشارکت فعال که در آن شریک، علاوه بر سهم در کسب‌وکار،
+        مسئولیت و نقش عملیاتی مشخصی در شرکت ثبت‌شده فنلاندی دارد.
       </>
     ),
   },
   {
     num: "03",
     title: "General Partner in a Limited Partnership",
-    titleFa: "شریک عمومی در یک شراکت محدود",
+    titleFa: "شریک ضامن در شرکت مختلط",
     desc: (
       <>
         <em>Kommandiittiyhtiö</em> — active management role in a Finnish limited partnership structure.
@@ -50,14 +50,15 @@ const structures = [
     ),
     descFa: (
       <>
-        <em>Kommandiittiyhtiö</em> — نقش مدیریتی فعال در یک ساختار شراکت محدود فنلاندی.
+        <em>Kommandiittiyhtiö</em> — امکان فعالیت در نقش شریک فعال و مدیریتی در ساختار شرکت مختلط
+        فنلاندی.
       </>
     ),
   },
   {
     num: "04",
     title: "Shareholder in a Managerial Position (Oy)",
-    titleFa: "سهام‌دار در یک سمت مدیریتی (Oy)",
+    titleFa: "سهام‌دار دارای سمت مدیریتی در شرکت Oy",
     desc: (
       <>
         Operative shareholder in a <strong className="text-black font-semibold">Finnish Limited Liability Company</strong>{" "}
@@ -68,22 +69,21 @@ const structures = [
     ),
     descFa: (
       <>
-        سهام‌دار عملیاتی در یک <strong className="text-black font-semibold">شرکت با مسئولیت محدود فنلاندی</strong>{" "}
-        (<em>Osakeyhtiö</em>). باید شخصاً حداقل{" "}
-        <strong className="text-black font-semibold">۳۰٪ سرمایه‌ی سهام</strong> را در اختیار داشته باشید یا حداقل{" "}
-        <strong className="text-black font-semibold">۳۰٪ حق رأی</strong> را داشته باشید.
+        در صورتی که در یک شرکت فنلاندی (<em>Osakeyhtiö</em>) نقش اجرایی داشته باشید، باید شخصاً حداقل{" "}
+        <strong className="text-black font-semibold">۳۰٪ از سرمایه شرکت</strong> را در اختیار داشته باشید یا
+        حداقل <strong className="text-black font-semibold">۳۰٪ از حق رأی</strong> را کنترل کنید.
       </>
     ),
   },
 ];
 
 const benefits: { en: string; fa: string }[] = [
-  { en: "Continuous A-permit valid 1–2 years, renewable to 4", fa: "مجوز مستمر A معتبر ۱ تا ۲ سال، قابل‌تمدید تا ۴ سال" },
-  { en: "Full EU Schengen zone travel rights", fa: "حقوق کامل سفر منطقه‌ی شنگن اتحادیه اروپا" },
-  { en: "Universal public healthcare access", fa: "دسترسی همگانی به خدمات درمانی عمومی" },
-  { en: "Spouse + children under 18 sponsored simultaneously", fa: "همسر + فرزندان زیر ۱۸ سال به‌طور هم‌زمان حمایت می‌شوند" },
-  { en: "PR eligible after 4 continuous years", fa: "واجد شرایط اقامت دائم پس از ۴ سال پیوسته" },
-  { en: "Citizenship eligible after 5 years", fa: "واجد شرایط تابعیت پس از ۵ سال" },
+  { en: "Continuous A-permit valid 1–2 years, renewable to 4", fa: "دریافت مجوز اقامت A با اعتبار اولیه ۱ تا ۲ سال و امکان تمدید تا ۴ سال" },
+  { en: "Full EU Schengen zone travel rights", fa: "امکان تردد آزاد در سراسر منطقه شنگن" },
+  { en: "Universal public healthcare access", fa: "دسترسی به خدمات عمومی سلامت در فنلاند" },
+  { en: "Spouse + children under 18 sponsored simultaneously", fa: "امکان همراهی همسر و فرزندان زیر ۱۸ سال" },
+  { en: "PR eligible after 4 continuous years", fa: "امکان درخواست اقامت دائم پس از ۴ سال اقامت مستمر" },
+  { en: "Citizenship eligible after 5 years", fa: "امکان درخواست تابعیت پس از ۵ سال، در صورت احراز شرایط قانونی" },
 ];
 
 export default function Eligibility() {
@@ -94,7 +94,7 @@ export default function Eligibility() {
         <Reveal variant="up">
           <div className="text-center mb-14">
             <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1]">
-              {t("Core Eligibility & Business Structures", "شرایط اصلی واجد بودن و ساختارهای کسب‌وکار")}
+              {t("Core Eligibility & Business Structures", "شرایط اصلی و ساختارهای قابل قبول کسب‌وکار")}
             </h2>
           </div>
         </Reveal>
@@ -110,13 +110,13 @@ export default function Eligibility() {
                 className="text-[16px] text-[#474747] leading-[1.65] mb-8 pb-8"
                 style={{ borderBottom: "1px solid #E2E2E2" }}
               >
-                {t("Migri categorizes self-employed individuals under the", "Migri افراد خوداشتغال را تحت")}{" "}
-                <strong className="text-black font-semibold">{t("Residence Permit for an Entrepreneur", "مجوز اقامت کارآفرین")}</strong>{t(". You must actively operate your business", " طبقه‌بندی می‌کند. باید کسب‌وکار خود را فعالانه")}{" "}
-                <strong className="text-black font-semibold">{t("within Finland", "در داخل فنلاند")}</strong> {t("— owning shares or property remotely does not qualify.", "اداره کنید — مالکیت سهام یا ملک از راه دور واجد شرایط نیست.")}
+                {t("Migri categorizes self-employed individuals under the", "اداره مهاجرت فنلاند (Migri) افراد خوداشتغال را تحت عنوان")}{" "}
+                <strong className="text-black font-semibold">{t("Residence Permit for an Entrepreneur", "مجوز اقامت کارآفرینی")}</strong>{t(". You must actively operate your business", " ارزیابی می‌کند. برای واجد شرایط بودن، باید کسب‌وکار خود را")}{" "}
+                <strong className="text-black font-semibold">{t("within Finland", "به‌صورت فعال در فنلاند")}</strong> {t("— owning shares or property remotely does not qualify.", "اداره کنید؛ صرفاً مالکیت سهام یا املاک در فنلاند، بدون فعالیت عملیاتی، برای دریافت این مجوز کافی نیست.")}
               </p>
 
               <div className="text-[11px] font-bold text-[#929292] uppercase tracking-[0.1em] mb-4">
-                {t("Eligible Business Structures (via PRH / YTJ)", "ساختارهای کسب‌وکار واجد شرایط (از طریق PRH / YTJ)")}
+                {t("Eligible Business Structures (via PRH / YTJ)", "ساختارهای واجد شرایط کسب‌وکار (از طریق PRH / YTJ)")}
               </div>
 
               <div className="flex flex-col">
@@ -159,9 +159,9 @@ export default function Eligibility() {
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M5 12l4 4 10-10" />
                   </svg>
-                  {t("What You Get", "آنچه دریافت می‌کنید")}
+                  {t("What You Get", "آنچه به دست می‌آورید")}
                 </div>
-                <h3 className="text-[17px] font-semibold text-black mb-4">{t("Key permit benefits", "مزایای کلیدی مجوز")}</h3>
+                <h3 className="text-[17px] font-semibold text-black mb-4">{t("Key permit benefits", "مزایای کلیدی مجوز اقامت")}</h3>
                 <ul className="flex flex-col gap-3">
                   {benefits.map((b, i) => (
                     <li key={i} className="flex items-start gap-3 text-[14px] font-medium text-black leading-[1.45]">
@@ -204,10 +204,11 @@ export default function Eligibility() {
                   {lang === "fa" ? (
                     <>
                       <strong className="font-semibold" style={{ color: "#991B1B" }}>
-                        &laquo;کارآفرینان سبک&raquo; مستثنا هستند.
+                        «کارآفرینی سبک» مشمول این مسیر نیست.
                       </strong>{" "}
-                      استفاده از خدمات صدور صورت‌حساب شخص ثالث (<em>kevytyrittäjä</em>) بدون شناسه‌ی کسب‌وکار خودتان
-                      (<em>Y-tunnus</em>) واجد شرایط نیست. باید یک شرکت اختصاصی تأسیس کنید.
+                      استفاده از خدمات شرکت‌های واسط برای صدور فاکتور (<em>kevytyrittäjä</em>)، بدون داشتن شماره ثبت
+                      کسب‌وکار شخصی (<em>Y-tunnus</em>)، برای این مجوز کافی نیست. برای واجد شرایط بودن، باید
+                      کسب‌وکار مستقل خود را در فنلاند ایجاد و ثبت کنید.
                     </>
                   ) : (
                     <>

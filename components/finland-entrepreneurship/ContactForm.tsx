@@ -20,7 +20,7 @@ export default function ContactForm() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10 md:mb-14">
-            {t("Start Your Finland Entrepreneur Visa Journey", "سفر ویزای کارآفرینی فنلاند خود را آغاز کنید")}
+            {t("Start Your Finland Entrepreneur Visa Journey", "مسیر دریافت اقامت کارآفرینی فنلاند را آغاز کنید")}
           </h2>
         </Reveal>
 
@@ -90,23 +90,23 @@ export default function ContactForm() {
                   <PhoneField defaultCountryCode="+358" />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="text-[#474747]">{t("Business Structure", "ساختار کسب‌وکار")}</span>
+                  <span className="text-[#474747]">{t("Business Structure", "ساختار حقوقی کسب‌وکار")}</span>
                   <select className="h-11 px-3.5 rounded-[10px] border border-[#E2E2E2] bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors">
-                    <option>{t("Sole Proprietor (Toiminimi)", "مالک انحصاری (Toiminimi)")}</option>
-                    <option>{t("General Partnership (Avoin yhtiö)", "شراکت عمومی (Avoin yhtiö)")}</option>
-                    <option>{t("Limited Partnership (Ky)", "شراکت محدود (Ky)")}</option>
+                    <option>{t("Sole Proprietor (Toiminimi)", "مالکیت انفرادی (Toiminimi)")}</option>
+                    <option>{t("General Partnership (Avoin yhtiö)", "شرکت تضامنی (Avoin yhtiö)")}</option>
+                    <option>{t("Limited Partnership (Ky)", "شرکت با مسئولیت محدود مشارکتی (Ky)")}</option>
                     <option>{t("Limited Company (Oy)", "شرکت با مسئولیت محدود (Oy)")}</option>
-                    <option>{t("Not yet decided", "هنوز تصمیم‌گیری نشده")}</option>
+                    <option>{t("Not yet decided", "هنوز تصمیم نگرفته‌ام")}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="text-[#474747]">{t("Industry / Sector", "صنعت / حوزه")}</span>
+                  <span className="text-[#474747]">{t("Industry / Sector", "حوزه / صنعت فعالیت")}</span>
                   <select className="h-11 px-3.5 rounded-[10px] border border-[#E2E2E2] bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors">
-                    <option>{t("Consulting / Advisory", "مشاوره / راهنمایی")}</option>
+                    <option>{t("Consulting / Advisory", "مشاوره / خدمات تخصصی")}</option>
                     <option>{t("Tech / Software", "فناوری / نرم‌افزار")}</option>
-                    <option>{t("Design / Creative", "طراحی / خلاقانه")}</option>
+                    <option>{t("Design / Creative", "طراحی / صنایع خلاق")}</option>
                     <option>{t("Healthcare / Wellness", "سلامت / تندرستی")}</option>
-                    <option>{t("Trade / Import-Export", "تجارت / واردات-صادرات")}</option>
+                    <option>{t("Trade / Import-Export", "تجارت / واردات و صادرات")}</option>
                     <option>{t("Other", "سایر")}</option>
                   </select>
                 </label>
@@ -114,7 +114,7 @@ export default function ContactForm() {
 
               {/* Textarea */}
               <label className="flex flex-col gap-2 text-[13px] font-medium">
-                <span className="text-[#474747]">{t("Tell us about your business & goals", "درباره‌ی کسب‌وکار و اهدافتان به ما بگویید")}</span>
+                <span className="text-[#474747]">{t("Tell us about your business & goals", "درباره کسب‌وکار و اهداف خود برای ما بنویسید")}</span>
                 <textarea
                   rows={4}
                   placeholder={t("Describe your business model, client pipeline, and what you're looking to achieve in Finland…", "مدل کسب‌وکار، خط لوله‌ی مشتری و آنچه در فنلاند به دنبال دستیابی به آن هستید را شرح دهید…")}
@@ -125,7 +125,7 @@ export default function ContactForm() {
               {/* Footer */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
                 <small className="text-[12px] text-[#929292] leading-relaxed max-w-[50ch]">
-                  {t("Your information is reviewed confidentially by Nexa's advisory team. We typically respond within 48 hours.", "اطلاعات شما به‌صورت محرمانه توسط تیم مشاوره‌ی نکسا بررسی می‌شود. ما معمولاً ظرف ۴۸ ساعت پاسخ می‌دهیم.")}
+                  {t("Your information is reviewed confidentially by Nexa's advisory team. We typically respond within 48 hours.", "اطلاعات شما به‌صورت محرمانه توسط تیم مشاوره نکسا بررسی می‌شود. معمولاً ظرف ۴۸ ساعت پاسخ خواهیم داد.")}
                 </small>
                 <button
                   type="submit"

@@ -5,10 +5,10 @@ import Reveal from "@/components/global/Reveal";
 import { useLang } from "@/components/global/LanguageProvider";
 
 const items: { en: string; fa: string }[] = [
-  { en: "ELY Centre assesses commercial viability first", fa: "ابتدا مرکز ELY امکان‌پذیری تجاری را ارزیابی می‌کند" },
-  { en: "Migri issues your physical residence card", fa: "Migri کارت فیزیکی اقامت شما را صادر می‌کند" },
-  { en: "3–4 month average processing time", fa: "زمان پردازش میانگین ۳ تا ۴ ماه" },
-  { en: "Family moves with you from day one", fa: "خانواده از روز نخست همراه شما جابه‌جا می‌شود" },
+  { en: "ELY Centre assesses commercial viability first", fa: "ارزیابی قابلیت تجاری کسب‌وکار توسط ELY Centre" },
+  { en: "Migri issues your physical residence card", fa: "صدور کارت اقامت توسط Migri" },
+  { en: "3–4 month average processing time", fa: "میانگین زمان بررسی: ۳ تا ۴ ماه" },
+  { en: "Family moves with you from day one", fa: "امکان همراهی خانواده از ابتدای مسیر" },
 ];
 
 export default function GatewayCTA() {
@@ -33,7 +33,7 @@ export default function GatewayCTA() {
                 className="inline-flex items-center gap-1.5 self-start text-[11px] font-bold uppercase tracking-[0.1em] px-3.5 py-1.5 rounded-full text-black"
                 style={{ background: "#FFE600" }}
               >
-                {t("Nordic EU Gateway", "دروازه‌ی نوردیک اتحادیه اروپا")}
+                {t("Nordic EU Gateway", "دروازه ورود به اروپای شمالی")}
               </div>
               <h2
                 className="text-[26px] md:text-[32px] font-bold text-white leading-[1.15] tracking-[-0.03em] relative z-10"
@@ -45,7 +45,7 @@ export default function GatewayCTA() {
                 </em>
               </h2>
               <p className="text-[14px] leading-[1.65] relative z-10" style={{ color: "rgba(255,255,255,0.6)" }}>
-                {t("The Finland Entrepreneur Permit runs a two-stage evaluation — ELY Centre for business viability, then Migri for immigration. Nexa engineers your file to clear both gates cleanly.", "مجوز کارآفرینی فنلاند یک ارزیابی دومرحله‌ای دارد — مرکز ELY برای امکان‌پذیری کسب‌وکار، سپس Migri برای مهاجرت. نکسا پرونده‌ی شما را طوری مهندسی می‌کند که هر دو دروازه را به‌درستی بگذراند.")}
+                {t("The Finland Entrepreneur Permit runs a two-stage evaluation — ELY Centre for business viability, then Migri for immigration. Nexa engineers your file to clear both gates cleanly.", "مسیر اقامت کارآفرینی فنلاند در دو مرحله ارزیابی می‌شود: ابتدا ELY Centre قابلیت تجاری و اقتصادی کسب‌وکار را بررسی می‌کند و سپس Migri پرونده را از منظر مهاجرتی ارزیابی می‌کند. NEXA پرونده شما را از ابتدا به‌گونه‌ای ساختاربندی می‌کند که الزامات هر دو مرحله را به‌صورت منسجم پوشش دهد.")}
               </p>
             </div>
 
@@ -72,7 +72,7 @@ export default function GatewayCTA() {
                 href="#contact"
                 className="inline-flex items-center gap-2.5 self-start px-6 py-3.5 bg-black text-white font-bold rounded-full text-[14px] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#8F27FF] sm:self-stretch sm:justify-center"
               >
-                {t("Start My Application →", "درخواستم را آغاز کنید →")}
+                {t("Start My Application →", "شروع فرآیند درخواست ←")}
               </a>
             </div>
           </div>

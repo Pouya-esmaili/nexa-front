@@ -8,44 +8,44 @@ const docs = [
   {
     num: "1",
     title: "Valid Passport",
-    titleFa: "پاسپورت معتبر",
+    titleFa: "گذرنامه معتبر",
     desc: "Must remain valid for the entire duration of the requested permit period.",
-    descFa: "باید برای کل مدت دوره‌ی مجوز درخواستی معتبر باقی بماند.",
+    descFa: "گذرنامه باید در تمام مدت دوره اقامتی مورد درخواست، اعتبار داشته باشد.",
   },
   {
     num: "2",
     title: "Business ID (Y-tunnus)",
-    titleFa: "شناسه‌ی کسب‌وکار (Y-tunnus)",
+    titleFa: "شماره ثبت کسب‌وکار (Y-tunnus)",
     desc: "Obtained via YTJ registration with the Finnish Patent and Registration Office (PRH).",
-    descFa: "از طریق ثبت YTJ نزد اداره‌ی ثبت اختراع و ثبت فنلاند (PRH) دریافت می‌شود.",
+    descFa: "شماره ثبت کسب‌وکار از طریق سامانه YTJ و ثبت نزد اداره ثبت اختراعات و ثبت تجاری فنلاند (PRH) دریافت می‌شود.",
   },
   {
     num: "3",
     title: "Comprehensive Business Plan",
-    titleFa: "طرح کسب‌وکار جامع",
+    titleFa: "بیزنس‌پلن جامع",
     desc: "Operations, target demographics, marketing strategies, and value proposition — no generic templates.",
-    descFa: "عملیات، جمعیت هدف، راهبردهای بازاریابی و ارزش پیشنهادی — بدون قالب‌های عمومی.",
+    descFa: "شامل ساختار و نحوه فعالیت کسب‌وکار، جامعه هدف، استراتژی‌های بازاریابی و ارزش پیشنهادی؛ طرح‌های عمومی و قالب‌های آماده قابل اتکا نیستند.",
   },
   {
     num: "4",
     title: "2-Year Financial Forecast",
-    titleFa: "پیش‌بینی مالی ۲ ساله",
+    titleFa: "پیش‌بینی مالی دوساله",
     desc: "Month-by-month profit-and-loss projection and cash flow statement for the next 24 months.",
-    descFa: "پیش‌بینی سود و زیان ماه‌به‌ماه و صورت جریان نقدی برای ۲۴ ماه آینده.",
+    descFa: "پیش‌بینی ماه‌به‌ماه سود و زیان و صورت جریان نقدی برای ۲۴ ماه آینده.",
   },
   {
     num: "5",
     title: "Proof of Qualifications",
-    titleFa: "اثبات صلاحیت‌ها",
+    titleFa: "مدارک اثبات صلاحیت",
     desc: "Academic degrees, professional certifications, and employment references validating your sector expertise.",
-    descFa: "مدارک تحصیلی، گواهی‌های حرفه‌ای و مراجع شغلی که تخصص شما در حوزه را تأیید می‌کنند.",
+    descFa: "مدارک تحصیلی، گواهینامه‌های حرفه‌ای و سوابق شغلی که تخصص و تجربه شما در حوزه فعالیت موردنظر را اثبات می‌کنند.",
   },
   {
     num: "6",
     title: "Regulatory Documentation",
-    titleFa: "مستندسازی نظارتی",
+    titleFa: "مدارک و الزامات قانونی",
     desc: "All non-English, non-Finnish, or non-Swedish documents must be legalized and translated into English or Finnish.",
-    descFa: "همه‌ی اسناد غیرانگلیسی، غیرفنلاندی یا غیرسوئدی باید قانونی‌سازی و به انگلیسی یا فنلاندی ترجمه شوند.",
+    descFa: "تمام مدارکی که به زبان‌های انگلیسی، فنلاندی یا سوئدی نیستند، باید قانونی‌سازی و به انگلیسی یا فنلاندی ترجمه شوند.",
   },
 ];
 
@@ -56,7 +56,7 @@ export default function Documents() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-center mb-14">
-            {t("Mandatory Document Checklist", "چک‌لیست اسناد الزامی")}
+            {t("Mandatory Document Checklist", "چک‌لیست مدارک")}
           </h2>
         </Reveal>
 

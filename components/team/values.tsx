@@ -4,8 +4,8 @@ import { useLang } from "@/components/global/LanguageProvider";
 
 const values = [
   {
-    title: { en: "Global Mindset", fa: "نگرش جهانی" },
-    desc: { en: "We think beyond borders and build solutions that scale internationally from day one.", fa: "ما فراتر از مرزها می‌اندیشیم و راهکارهایی می‌سازیم که از روز نخست در سطح بین‌المللی مقیاس‌پذیرند." },
+    title: { en: "Global Mindset", fa: "نگاه جهانی" },
+    desc: { en: "We think beyond borders and build solutions that scale internationally from day one.", fa: "فراتر از مرزها فکر می‌کنیم و از همان ابتدا، راهکارهایی می‌سازیم که قابلیت توسعه و رقابت در بازارهای بین‌المللی را داشته باشند." },
     icon: (
       <svg viewBox="0 0 24 24" className="w-[22px] h-[22px]" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
@@ -14,8 +14,8 @@ const values = [
     ),
   },
   {
-    title: { en: "Fearless Innovation", fa: "نوآوری بی‌پروا" },
-    desc: { en: "Bold ideas are our foundation — we embrace risk to unlock breakthrough growth.", fa: "ایده‌های جسورانه بنیان ما هستند — برای گشودن مسیر رشدهای بزرگ، ریسک را می‌پذیریم." },
+    title: { en: "Fearless Innovation", fa: "نوآوری جسورانه" },
+    desc: { en: "Bold ideas are our foundation — we embrace risk to unlock breakthrough growth.", fa: "ایده‌های جسورانه، نقطه شروع ما هستند. از ریسک‌های حساب‌شده استقبال می‌کنیم تا مسیر رشدهای بزرگ و تحول‌آفرین را هموار کنیم." },
     icon: (
       <svg viewBox="0 0 24 24" className="w-[22px] h-[22px]" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
@@ -23,8 +23,8 @@ const values = [
     ),
   },
   {
-    title: { en: "Trusted Partnership", fa: "مشارکت قابل‌اعتماد" },
-    desc: { en: "We build long-term relationships based on transparency and measurable results.", fa: "روابط بلندمدت را بر پایه‌ی شفافیت و نتایج قابل‌اندازه‌گیری می‌سازیم." },
+    title: { en: "Trusted Partnership", fa: "شراکت مبتنی بر اعتماد" },
+    desc: { en: "We build long-term relationships based on transparency and measurable results.", fa: "روابط بلندمدت را بر پایه شفافیت، تعهد و نتایج قابل‌اندازه‌گیری بنا می‌کنیم." },
     icon: (
       <svg viewBox="0 0 24 24" className="w-[22px] h-[22px]" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />

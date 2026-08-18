@@ -33,18 +33,18 @@ export default function CtaDark() {
         }`}
       >
         <h2 className="text-[28px] sm:text-[32px] lg:text-[42px] font-extrabold text-white tracking-[-1.5px] mb-4 leading-[1.1]">
-          {t("Ready to Work With", "آماده‌ی همکاری با")}{" "}
-          <span className="text-[#FFE600]">{t("the Best?", "بهترین‌ها؟")}</span>
+          {t("Ready to Work With", "آماده‌اید با")}{" "}
+          <span className="text-[#FFE600]">{t("the Best?", "بهترین‌ها همکاری کنید؟")}</span>
         </h2>
         <p className="text-[16px] text-white/50 mb-10">
-          {t("Every great company starts with the right team. We're ready to build yours.", "هر شرکت بزرگ با تیم مناسب آغاز می‌شود. ما آماده‌ایم تیم شما را بسازیم.")}
+          {t("Every great company starts with the right team. We're ready to build yours.", "هر کسب‌وکار بزرگی با یک تیم درست شروع می‌شود. ما آماده‌ایم تیمی درخور اهداف بزرگ شما بسازیم.")}
         </p>
         <div className="flex gap-3 justify-center flex-wrap">
           <button className="bg-[#FFE600] text-[#0D0D0D] border-none px-8 py-[14px] rounded-full text-[14px] font-extrabold cursor-pointer font-[inherit] transition-[opacity,transform] duration-200 hover:opacity-90 hover:-translate-y-[1px]">
-            {t("Start Your Journey", "سفر خود را آغاز کنید")}
+            {t("Start Your Journey", "شروع مسیر شما →")}
           </button>
           <button className="bg-transparent text-white border border-white/20 px-8 py-[14px] rounded-full text-[14px] font-semibold cursor-pointer font-[inherit] transition-colors duration-200 hover:border-white/55">
-            {t("Learn About Us", "درباره‌ی ما بیشتر بدانید")}
+            {t("Learn About Us", "آشنایی بیشتر با ما →")}
           </button>
         </div>
       </div>

@@ -20,7 +20,7 @@ export default function ContactForm() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10 md:mb-14">
-            {t("Start Your UAE Golden Visa Journey", "سفر ویزای طلایی امارات خود را آغاز کنید")}
+            {t("Start Your UAE Golden Visa Journey", "برای دریافت گلدن ویزای امارات با ما در ارتباط باشید")}
           </h2>
         </Reveal>
 
@@ -78,29 +78,29 @@ export default function ContactForm() {
                   <PhoneField defaultCountryCode="+971" />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="text-[#474747]">{t("Investment Vector", "مسیر سرمایه‌گذاری")}</span>
+                  <span className="text-[#474747]">{t("Investment Vector", "نوع سرمایه‌گذاری")}</span>
                   <select className="h-11 px-3.5 rounded-[10px] border border-[#E2E2E2] bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors">
-                    <option>{t("Real Estate (AED 2M+)", "املاک (۲ میلیون درهم به بالا)")}</option>
+                    <option>{t("Real Estate (AED 2M+)", "املاک و مستغلات (حداقل ۲ میلیون درهم)")}</option>
                     <option>{t("Investment Fund (AED 2M)", "صندوق سرمایه‌گذاری (۲ میلیون درهم)")}</option>
-                    <option>{t("Corporate Capital (AED 2M)", "سرمایه‌ی شرکتی (۲ میلیون درهم)")}</option>
+                    <option>{t("Corporate Capital (AED 2M)", "سرمایه‌گذاری شرکتی (۲ میلیون درهم)")}</option>
                     <option>{t("Fiscal Contribution (AED 250K/yr)", "مشارکت مالیاتی (۲۵۰ هزار درهم در سال)")}</option>
                     <option>{t("Exploring Options", "در حال بررسی گزینه‌ها")}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
-                  <span className="text-[#474747]">{t("Family Composition", "ترکیب خانواده")}</span>
+                  <span className="text-[#474747]">{t("Family Composition", "ترکیب خانوادگی")}</span>
                   <select className="h-11 px-3.5 rounded-[10px] border border-[#E2E2E2] bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors">
                     <option>{t("Main applicant only", "فقط متقاضی اصلی")}</option>
                     <option>{t("Applicant + spouse", "متقاضی + همسر")}</option>
-                    <option>{t("Full family (children)", "خانواده‌ی کامل (فرزندان)")}</option>
-                    <option>{t("Three-generation", "سه‌نسلی")}</option>
+                    <option>{t("Full family (children)", "خانواده کامل (با فرزندان)")}</option>
+                    <option>{t("Three-generation", "سه نسل")}</option>
                   </select>
                 </label>
               </div>
 
               {/* Textarea */}
               <label className="flex flex-col gap-2 text-[13px] font-medium">
-                <span className="text-[#474747]">{t("Tell us about your investment profile & goals", "درباره‌ی پروفایل سرمایه‌گذاری و اهدافتان به ما بگویید")}</span>
+                <span className="text-[#474747]">{t("Tell us about your investment profile & goals", "درباره وضعیت سرمایه‌گذاری و اهداف خود برای ما بنویسید")}</span>
                 <textarea rows={4}
                   placeholder={t("Describe your asset class preference, investment capacity, family situation, and long-term UAE goals…", "ترجیح طبقه‌ی دارایی، ظرفیت سرمایه‌گذاری، وضعیت خانوادگی و اهداف بلندمدت خود در امارات را شرح دهید…")}
                   className="px-3.5 py-3 rounded-[10px] border border-[#E2E2E2] bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors resize-y" />
@@ -109,7 +109,7 @@ export default function ContactForm() {
               {/* Footer */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
                 <small className="text-[12px] text-[#929292] leading-relaxed max-w-[50ch]">
-                  {t("Your information is reviewed confidentially by Nexa's advisory team. We typically respond within 48 hours.", "اطلاعات شما به‌صورت محرمانه توسط تیم مشاوره‌ی نکسا بررسی می‌شود. ما معمولاً ظرف ۴۸ ساعت پاسخ می‌دهیم.")}
+                  {t("Your information is reviewed confidentially by Nexa's advisory team. We typically respond within 48 hours.", "اطلاعات شما توسط تیم مشاوره نکسا به‌صورت محرمانه بررسی می‌شود. حداکثر ظرف ۴۸ ساعت پاسخ خواهیم داد.")}
                 </small>
                 <button type="submit"
                   className="w-full sm:w-auto flex-shrink-0 inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"

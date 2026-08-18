@@ -7,20 +7,20 @@ import { useLang } from "@/components/global/LanguageProvider";
 const docGroups = [
   {
     title: "Asset & Corporate Documents",
-    titleFa: "اسناد دارایی و شرکتی",
+    titleFa: "مدارک دارایی و شرکت",
     items: [
-      { strong: "DLD Title Deed", strongFa: "سند مالکیت DLD", text: "Proving unencumbered asset value of AED 2,000,000+.", textFa: "اثبات ارزش دارایی بدون قید ۲٬۰۰۰٬۰۰۰ درهم به بالا." },
-      { strong: "Audited Balance Sheets / Fund Letters", strongFa: "ترازنامه‌های حسابرسی‌شده / نامه‌های صندوق", text: "For public investment channels.", textFa: "برای مسیرهای سرمایه‌گذاری عمومی." },
-      { strong: "Trade License & Articles of Incorporation", strongFa: "پروانه‌ی کسب و اساسنامه‌ی شرکت", text: "For corporate capital channel.", textFa: "برای مسیر سرمایه‌ی شرکتی." },
+      { strong: "DLD Title Deed", strongFa: "سند مالکیت ملک (DLD Title Deed)", text: "Proving unencumbered asset value of AED 2,000,000+.", textFa: "اثبات ارزش حداقل ۲ میلیون درهم برای دارایی ملکی." },
+      { strong: "Audited Balance Sheets / Fund Letters", strongFa: "صورت‌های مالی حسابرسی‌شده / نامه صندوق", text: "For public investment channels.", textFa: "برای مسیرهای سرمایه‌گذاری عمومی." },
+      { strong: "Trade License & Articles of Incorporation", strongFa: "مجوز تجاری و اساسنامه شرکت", text: "For corporate capital channel.", textFa: "برای مسیر سرمایه‌گذاری شرکتی." },
     ],
   },
   {
     title: "Admissibility Requirements",
-    titleFa: "الزامات پذیرش",
+    titleFa: "الزامات عمومی",
     items: [
-      { strong: "Medical Screening", strongFa: "غربالگری پزشکی", text: "Blood tests & chest X-ray inside UAE for all adults.", textFa: "آزمایش خون و رادیوگرافی قفسه‌ی سینه در داخل امارات برای همه‌ی بزرگسالان." },
+      { strong: "Medical Screening", strongFa: "معاینات پزشکی", text: "Blood tests & chest X-ray inside UAE for all adults.", textFa: "آزمایش خون و عکس قفسه سینه در داخل امارات برای بزرگسالان." },
       { strong: "Police Clearance Certificate (PCC)", strongFa: "گواهی عدم سوءپیشینه (PCC)", text: "From country of origin.", textFa: "از کشور مبدأ." },
-      { strong: "UAE-Compliant Health Insurance", strongFa: "بیمه‌ی درمانی منطبق با امارات", text: "Mandatory for residency activation.", textFa: "برای فعال‌سازی اقامت الزامی است." },
+      { strong: "UAE-Compliant Health Insurance", strongFa: "بیمه درمانی مورد تأیید امارات", text: "Mandatory for residency activation.", textFa: "برای فعال‌سازی اقامت." },
     ],
   },
 ];
@@ -28,52 +28,52 @@ const docGroups = [
 const tableRows = [
   {
     vector: "Real Estate (Mortgaged)",
-    vectorFa: "املاک (رهنی)",
+    vectorFa: "املاک",
     sub: "NOC from financing bank required",
     subFa: "نامه‌ی عدم‌اعتراض از بانک تأمین‌کننده لازم است",
     threshold: "AED 2,000,000",
-    thresholdFa: "۲٬۰۰۰٬۰۰۰ درهم",
+    thresholdFa: "۲,۰۰۰,۰۰۰ درهم",
     thresholdSub: "Paid equity",
-    thresholdSubFa: "سهام پرداخت‌شده",
+    thresholdSubFa: "اثبات ارزش/سرمایه پرداخت‌شده",
     tag: "6 Months",
     tagFa: "۶ ماه",
     tagColor: "purple",
   },
   {
     vector: "Public Investments",
-    vectorFa: "سرمایه‌گذاری‌های عمومی",
+    vectorFa: "سرمایه‌گذاری عمومی",
     sub: "Fund deposit channel",
     subFa: "مسیر سپرده‌ی صندوق",
     threshold: "AED 2,000,000",
-    thresholdFa: "۲٬۰۰۰٬۰۰۰ درهم",
+    thresholdFa: "۲,۰۰۰,۰۰۰ درهم",
     thresholdSub: "Fixed deposit",
-    thresholdSubFa: "سپرده‌ی ثابت",
+    thresholdSubFa: "سپرده یا سرمایه‌گذاری واجد شرایط",
     tag: "2-Year Lock-in",
     tagFa: "قفل ۲ ساله",
     tagColor: "yellow",
   },
   {
     vector: "Corporate Establishments",
-    vectorFa: "تأسیس شرکتی",
+    vectorFa: "سرمایه‌گذاری شرکتی",
     sub: "Paid-up share capital",
     subFa: "سرمایه‌ی سهام پرداخت‌شده",
     threshold: "AED 2,000,000",
-    thresholdFa: "۲٬۰۰۰٬۰۰۰ درهم",
+    thresholdFa: "۲,۰۰۰,۰۰۰ درهم",
     thresholdSub: "Audited corporate",
-    thresholdSubFa: "شرکتی حسابرسی‌شده",
+    thresholdSubFa: "سرمایه پرداخت‌شده شرکت",
     tag: "6 Months",
     tagFa: "۶ ماه",
     tagColor: "purple",
   },
   {
     vector: "Dependent Sponsorship",
-    vectorFa: "حمایت از افراد تحت تکفل",
+    vectorFa: "اسپانسر خانواده",
     sub: "Variable liquidity buffers",
     subFa: "ذخایر نقدینگی متغیر",
     threshold: "Variable",
     thresholdFa: "متغیر",
     thresholdSub: "Disposable income path",
-    thresholdSubFa: "مسیر درآمد قابل‌تصرف",
+    thresholdSubFa: "متناسب با تعداد افراد تحت تکفل",
     tag: "3 Months",
     tagFa: "۳ ماه",
     tagColor: "yellow",
@@ -87,7 +87,7 @@ export default function Documents() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-center mb-14">
-            {t("Required Documents & Financial Compliance", "اسناد موردنیاز و انطباق مالی")}
+            {t("Required Documents & Financial Compliance", "مدارک مورد نیاز و الزامات مالی")}
           </h2>
         </Reveal>
 
@@ -189,7 +189,7 @@ export default function Documents() {
                 className="mt-3.5 p-4 sm:p-5 rounded-lg text-[13px] text-[#929292] leading-[1.6]"
                 style={{ background: "#F7F6F9", border: "1px solid #E2E2E2" }}
               >
-                {t("UAE financial institutions (ADCB, Emirates NBD) must issue formal, standardized letters verifying that capital allocation meets non-leverage constraints before the file is routed for final ICP vetting.", "مؤسسات مالی امارات (ADCB، Emirates NBD) باید نامه‌های رسمی و استانداردی صادر کنند که تأیید کند تخصیص سرمایه پیش از ارجاع پرونده برای بررسی نهایی ICP، محدودیت‌های عدم‌اهرم را برآورده می‌کند.")}
+                {t("UAE financial institutions (ADCB, Emirates NBD) must issue formal, standardized letters verifying that capital allocation meets non-leverage constraints before the file is routed for final ICP vetting.", "مؤسسات مالی اماراتی ممکن است ملزم به صدور نامه‌های رسمی برای تأیید منشأ و ساختار سرمایه‌گذاری باشند تا پرونده برای بررسی نهایی به مراجع ذی‌صلاح ارائه شود.")}
               </div>
             </div>
           </Reveal>

@@ -5,9 +5,9 @@ import Reveal from "@/components/global/Reveal";
 import { useLang } from "@/components/global/LanguageProvider";
 
 const items: { en: string; fa: string }[] = [
-  { en: "Spouse, children (any age), and domestic staff included", fa: "همسر، فرزندان (در هر سنی) و کارکنان خانگی شامل می‌شوند" },
-  { en: "No age caps on sons or unmarried daughters", fa: "بدون محدودیت سنی برای پسران یا دختران مجرد" },
-  { en: "Family residency survives investor's death until permit expiry", fa: "اقامت خانواده پس از فوت سرمایه‌گذار تا انقضای مجوز باقی می‌ماند" },
+  { en: "Spouse, children (any age), and domestic staff included", fa: "امکان پوشش همسر و فرزندان واجد شرایط" },
+  { en: "No age caps on sons or unmarried daughters", fa: "امکان پوشش کارکنان خانگی در شرایط مقرر" },
+  { en: "Family residency survives investor's death until permit expiry", fa: "تداوم اقامت اعضای خانواده تا پایان مدت اعتبار، مشروط به رعایت مقررات" },
 ];
 
 export default function MobilityCTA() {
@@ -28,15 +28,15 @@ export default function MobilityCTA() {
               <h2
                 className="text-[26px] sm:text-[32px] font-bold tracking-[-0.03em] leading-[1.15] text-black"
               >
-                {t("Family security that", "امنیت خانوادگی‌ای که")}
+                {t("Family security that", "امنیت خانواده؛")}
                 <br />
                 <em className="not-italic" style={{ color: "#8F27FF" }}>
-                  {t("outlives the investor.", "فراتر از عمر سرمایه‌گذار دوام می‌آورد.")}
+                  {t("outlives the investor.", "حتی پس از سرمایه‌گذار")}
                 </em>
               </h2>
 
               <p className="text-[14.5px] text-[#929292] leading-[1.65]">
-                {t("If the primary investor passes away during the 10-year term, dependents maintain UAE residency until the permit's natural expiration.", "اگر سرمایه‌گذار اصلی در طول دوره‌ی ۱۰ ساله فوت کند، افراد تحت تکفل تا انقضای طبیعی مجوز، اقامت امارات خود را حفظ می‌کنند.")}
+                {t("If the primary investor passes away during the 10-year term, dependents maintain UAE residency until the permit's natural expiration.", "در صورت فوت دارنده اصلی Golden Visa در طول اعتبار اقامت، اعضای خانواده واجد شرایط می‌توانند مطابق مقررات جاری، اقامت خود را تا پایان اعتبار مجوز حفظ کنند.")}
               </p>
 
               <ul className="flex flex-col gap-0">
@@ -76,7 +76,7 @@ export default function MobilityCTA() {
                   className="text-[11px] font-bold uppercase tracking-[0.1em] mb-2.5"
                   style={{ color: "rgba(255,255,255,0.45)" }}
                 >
-                  {t("Travel Restriction Waived", "محدودیت سفر لغو شد")}
+                  {t("Travel Restriction Waived", "بدون محدودیت معمول ۱۸۰ روزه خروج")}
                 </div>
                 <div
                   className="text-[80px] sm:text-[90px] font-extrabold leading-[0.9] tracking-[-0.05em] tabular-nums"
@@ -93,7 +93,7 @@ export default function MobilityCTA() {
                 className="text-[13.5px] leading-[1.65] max-w-[34ch] relative z-10"
                 style={{ color: "rgba(255,255,255,0.55)" }}
               >
-                {t("Standard UAE residency visas void after 180 days abroad. The Golden Visa explicitly waives this restriction — maintain active global operations with no residency risk.", "ویزاهای اقامت استاندارد امارات پس از ۱۸۰ روز اقامت در خارج باطل می‌شوند. ویزای طلایی صراحتاً این محدودیت را لغو می‌کند — عملیات جهانی فعال خود را بدون خطر اقامت حفظ کنید.")}
+                {t("Standard UAE residency visas void after 180 days abroad. The Golden Visa explicitly waives this restriction — maintain active global operations with no residency risk.", "برخلاف بسیاری از اقامت‌های عادی، Golden Visa مشمول محدودیت استاندارد ۱۸۰ روزه برای حضور خارج از امارات نیست. بنابراین می‌توانید کسب‌وکار و فعالیت‌های بین‌المللی خود را مدیریت کنید، بدون اینکه صرفاً به دلیل اقامت طولانی‌مدت خارج از امارات، وضعیت اقامتتان از بین برود.")}
               </p>
 
               <a
@@ -101,7 +101,7 @@ export default function MobilityCTA() {
                 className="self-start inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full text-[14px] font-bold transition-all hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(255,230,0,0.3)] relative z-10"
                 style={{ background: "#FFE600", color: "#000000" }}
               >
-                {t("Book a Consultation →", "رزرو مشاوره →")}
+                {t("Book a Consultation →", "رزرو مشاوره ←")}
               </a>
             </div>
           </div>

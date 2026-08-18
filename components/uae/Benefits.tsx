@@ -7,9 +7,9 @@ import { useLang } from "@/components/global/LanguageProvider";
 const benefits = [
   {
     title: "Zero Personal Income Tax",
-    titleFa: "مالیات بر درآمد شخصی صفر",
+    titleFa: "مالیات صفر بر درآمد شخصی",
     desc: "The UAE operates a zero-bracket personal income tax regime. Salaries, dividends, capital gains, and investment returns are entirely untaxed at the individual level.",
-    descFa: "امارات یک نظام مالیات بر درآمد شخصی با نرخ صفر دارد. حقوق، سود سهام، عایدی سرمایه و بازده سرمایه‌گذاری در سطح فردی به‌طور کامل بدون مالیات هستند.",
+    descFa: "امارات مالیات بر درآمد اشخاص را در نظر نمی‌گیرد؛ بنابراین حقوق، سود سهام، عایدی سرمایه و درآمدهای حاصل از سرمایه‌گذاری در سطح شخصی مشمول مالیات بر درآمد نیستند.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="9" />
@@ -19,9 +19,9 @@ const benefits = [
   },
   {
     title: "No Local Sponsor Required",
-    titleFa: "بدون نیاز به حامی محلی",
+    titleFa: "بدون نیاز به اسپانسر محلی",
     desc: "The Golden Visa eliminates the historical Emirati sponsor requirement — providing complete operational autonomy and legal independence from day one.",
-    descFa: "ویزای طلایی الزام تاریخی حامی اماراتی را حذف می‌کند — و از روز نخست استقلال عملیاتی کامل و استقلال حقوقی فراهم می‌کند.",
+    descFa: "ویزای طلایی، نیاز سنتی به اسپانسر اماراتی را حذف کرده و به شما امکان می‌دهد از همان ابتدا با استقلال کامل اقامتی و عملیاتی فعالیت کنید.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3z" />
@@ -31,9 +31,9 @@ const benefits = [
   },
   {
     title: "100% Corporate Ownership",
-    titleFa: "مالکیت ۱۰۰٪ شرکتی",
+    titleFa: "مالکیت ۱۰۰٪ کسب‌وکار",
     desc: "Full foreign ownership of UAE business entities is permitted. Establish or acquire domestic corporate structures with complete shareholding control and profit repatriation rights.",
-    descFa: "مالکیت کامل خارجی نهادهای تجاری امارات مجاز است. ساختارهای شرکتی داخلی را با کنترل کامل سهام و حق بازگرداندن سود ایجاد یا تملک کنید.",
+    descFa: "سرمایه‌گذاران خارجی می‌توانند در بسیاری از ساختارهای تجاری امارات، مالکیت کامل داشته باشند و کنترل کامل سهام، سود و عملیات شرکت را در اختیار بگیرند.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2" />
@@ -43,9 +43,9 @@ const benefits = [
   },
   {
     title: "Three-Generation Family Coverage",
-    titleFa: "پوشش خانوادگی سه‌نسلی",
+    titleFa: "پوشش خانوادگی",
     desc: "Sponsor spouse, children of any age (unmarried daughters, sons with no age caps), domestic staff, and executive support personnel — all under one application.",
-    descFa: "همسر، فرزندان در هر سنی (دختران مجرد، پسران بدون محدودیت سنی)، کارکنان خانگی و پرسنل پشتیبانی اجرایی را حمایت کنید — همه تحت یک درخواست.",
+    descFa: "امکان اسپانسر کردن همسر، فرزندان، کارکنان خانگی و برخی نیروهای پشتیبان وجود دارد؛ شرایط سنی فرزندان نیز بسته به نوع وابستگی و مقررات جاری متفاوت است.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -56,9 +56,9 @@ const benefits = [
   },
   {
     title: "Unrestricted Global Mobility",
-    titleFa: "تحرک جهانی نامحدود",
+    titleFa: "آزادی جابه‌جایی بین‌المللی",
     desc: "The Golden Visa explicitly waives the standard 6-month travel restriction. Remain outside the UAE indefinitely without risking your legal status, Emirates ID, or asset linkages.",
-    descFa: "ویزای طلایی صراحتاً محدودیت سفر استاندارد ۶ ماهه را لغو می‌کند. بدون به‌خطر انداختن وضعیت قانونی، شناسه‌ی اماراتی یا پیوندهای دارایی خود، به‌طور نامحدود بیرون از امارات بمانید.",
+    descFa: "دارندگان Golden Visa مشمول محدودیت معمول ۶ ماهه خروج از امارات نیستند و می‌توانند برای دوره‌های طولانی خارج از کشور اقامت داشته باشند، بدون اینکه صرفاً به دلیل این غیبت اقامتشان باطل شود.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
@@ -68,9 +68,9 @@ const benefits = [
   },
   {
     title: "Seamless Capital Mobility",
-    titleFa: "تحرک بی‌وقفه‌ی سرمایه",
+    titleFa: "آزادی انتقال سرمایه",
     desc: "The UAE enforces no restrictions on capital repatriation, profit transfers, or cross-border fund movements — full financial integration with international markets.",
-    descFa: "امارات هیچ محدودیتی بر بازگرداندن سرمایه، انتقال سود یا جابه‌جایی وجوه فرامرزی اعمال نمی‌کند — یکپارچگی مالی کامل با بازارهای بین‌المللی.",
+    descFa: "امارات محدودیت عمومی برای انتقال سود و سرمایه به خارج از کشور ندارد و امکان مدیریت سرمایه و جریان‌های مالی بین‌المللی را فراهم می‌کند.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M13 3L4 14h7l-1 7 9-11h-7l1-7z" />
@@ -86,7 +86,7 @@ export default function Benefits() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] leading-[1.1] text-center mb-14">
-            {t("Program Advantages & Strategic Benefits", "مزایای برنامه و منافع راهبردی")}
+            {t("Program Advantages & Strategic Benefits", "مزایای کلیدی برنامه")}
           </h2>
         </Reveal>
 

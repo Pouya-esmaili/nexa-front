@@ -5,8 +5,8 @@ import Row from "@/components/global/Row";
 import { useLang } from "@/components/global/LanguageProvider";
 
 const stats = [
-  { num: "10 yr", numFa: "۱۰ سال", label: "Renewable Permit", labelFa: "مجوز قابل‌تمدید" },
-  { num: "AED 2M", numFa: "۲ میلیون درهم", label: "Entry Threshold", labelFa: "آستانه‌ی ورود" },
+  { num: "10 yr", numFa: "۱۰ سال", label: "Renewable Permit", labelFa: "اقامت قابل تمدید" },
+  { num: "AED 2M", numFa: "۲ میلیون درهم", label: "Entry Threshold", labelFa: "حداقل سرمایه‌گذاری" },
   { num: "0%", numFa: "۰٪", label: "Personal Income Tax", labelFa: "مالیات بر درآمد شخصی" },
 ];
 
@@ -43,13 +43,13 @@ export default function Hero() {
         <h1
           className={`text-3xl font-bold leading-tight tracking-tight mb-4 ${base} duration-700 delay-150 ${mounted ? show : hideUp}`}
         >
-          {t("Zero tax. Full ownership.", "مالیات صفر. مالکیت کامل.")}{" "}
-          <span className="text-[#8F27FF]">{t("10-year residency", "اقامت ۱۰ ساله")}</span> {t("in the UAE.", "در امارات.")}
+          {t("Zero tax. Full ownership.", "دروازه ورود به")}{" "}
+          <span className="text-[#8F27FF]">{t("10-year residency", "اقامت ۱۰ ساله")}</span> {t("in the UAE.", "و سرمایه‌گذاری آزاد در امارات.")}
         </h1>
         <p
           className={`text-sm text-[#474747] leading-relaxed mb-6 ${base} duration-700 delay-200 ${mounted ? show : hideUp}`}
         >
-          {t("The UAE Golden Visa is a self-sponsored, premium residency framework — no local sponsor required. Deploy capital into real estate or public markets and receive a 10-year renewable residency with complete operational autonomy.", "ویزای طلایی امارات یک چارچوب اقامتی ممتاز و خودحمایتی است — بدون نیاز به حامی محلی. سرمایه را در املاک یا بازارهای عمومی به‌کار گیرید و یک اقامت ۱۰ ساله‌ی قابل‌تمدید با استقلال عملیاتی کامل دریافت کنید.")}
+          {t("The UAE Golden Visa is a self-sponsored, premium residency framework — no local sponsor required. Deploy capital into real estate or public markets and receive a 10-year renewable residency with complete operational autonomy.", "ویزای طلایی امارات یک چارچوب اقامتی خودحمایتی و ممتاز است که به اسپانسر محلی نیازی ندارد. با سرمایه‌گذاری در املاک یا بازارهای مالی، می‌توانید اقامت ۱۰ ساله و قابل تمدید امارات را با آزادی کامل در مدیریت کسب‌وکار و سرمایه خود به دست آورید.")}
         </p>
         <div
           className={`grid grid-cols-3 py-5 border-t border-b border-[#E2E2E2] mb-6 ${base} duration-700 delay-300 ${mounted ? show : hideUp}`}
@@ -68,7 +68,7 @@ export default function Hero() {
           className={`inline-flex items-center gap-2 px-6 py-3 bg-[#8F27FF] text-white font-semibold rounded-full text-sm ${base} duration-500 delay-[400ms] ${mounted ? show : hideUp}`}
           style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
         >
-          {t("Book an Appointment →", "رزرو وقت ملاقات →")}
+          {t("Book an Appointment →", "رزرو مشاوره ←")}
         </a>
       </div>
 
@@ -81,13 +81,13 @@ export default function Hero() {
               <h1
                 className={`text-[48px] font-bold leading-[1.06] tracking-[-0.03em] mb-6 ${base} duration-700 delay-100 ${mounted ? show : hideLeft}`}
               >
-                {t("Zero tax. Full ownership.", "مالیات صفر. مالکیت کامل.")}{" "}
-                <em className="text-[#8F27FF] not-italic">{t("10-year residency", "اقامت ۱۰ ساله")}</em> {t("in the UAE.", "در امارات.")}
+                {t("Zero tax. Full ownership.", "دروازه ورود به")}{" "}
+                <em className="text-[#8F27FF] not-italic">{t("10-year residency", "اقامت ۱۰ ساله")}</em> {t("in the UAE.", "و سرمایه‌گذاری آزاد در امارات.")}
               </h1>
               <p
                 className={`text-[16px] text-[#474747] leading-[1.65] mb-8 max-w-[520px] ${base} duration-700 delay-200 ${mounted ? show : hideLeft}`}
               >
-                {t("The UAE Golden Visa is a self-sponsored, premium residency framework — no local sponsor required. Deploy capital into real estate or public markets and receive a 10-year renewable residency with complete operational autonomy.", "ویزای طلایی امارات یک چارچوب اقامتی ممتاز و خودحمایتی است — بدون نیاز به حامی محلی. سرمایه را در املاک یا بازارهای عمومی به‌کار گیرید و یک اقامت ۱۰ ساله‌ی قابل‌تمدید با استقلال عملیاتی کامل دریافت کنید.")}
+                {t("The UAE Golden Visa is a self-sponsored, premium residency framework — no local sponsor required. Deploy capital into real estate or public markets and receive a 10-year renewable residency with complete operational autonomy.", "ویزای طلایی امارات یک چارچوب اقامتی خودحمایتی و ممتاز است که به اسپانسر محلی نیازی ندارد. با سرمایه‌گذاری در املاک یا بازارهای مالی، می‌توانید اقامت ۱۰ ساله و قابل تمدید امارات را با آزادی کامل در مدیریت کسب‌وکار و سرمایه خود به دست آورید.")}
               </p>
 
               {/* Stats */}
@@ -111,7 +111,7 @@ export default function Hero() {
                   className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"
                   style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
                 >
-                  {t("Book an Appointment →", "رزرو وقت ملاقات →")}
+                  {t("Book an Appointment →", "رزرو مشاوره ←")}
                 </a>
               </div>
             </div>

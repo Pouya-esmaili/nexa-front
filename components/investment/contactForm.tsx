@@ -157,51 +157,51 @@ export default function InvestmentContactForm() {
               </FormGroup>
 
               {/* I Am A */}
-              <FormGroup label={t("I Am a", "من هستم")} required>
+              <FormGroup label={t("I Am a", "من در جایگاهِ")} required>
                 <select className="nform-input nform-select" required>
-                  <option value="">{t("Select your role…", "نقش خود را انتخاب کنید…")}</option>
-                  <option>{t("Entrepreneur / Founder seeking investment", "کارآفرین / بنیان‌گذار در جست‌وجوی سرمایه")}</option>
-                  <option>{t("Investor looking for opportunities", "سرمایه‌گذار در جست‌وجوی فرصت")}</option>
-                  <option>{t("Company seeking strategic partnership", "شرکت در جست‌وجوی مشارکت استراتژیک")}</option>
-                  <option>{t("Project owner seeking capital structuring", "صاحب پروژه در جست‌وجوی ساختاردهی سرمایه")}</option>
+                  <option value="">{t("Select your role…", "انتخاب کنید…")}</option>
+                  <option>{t("Entrepreneur / Founder seeking investment", "کارآفرین / بنیان‌گذار، متقاضی جذب سرمایه")}</option>
+                  <option>{t("Investor looking for opportunities", "سرمایه‌گذار، به‌دنبال فرصت‌های سرمایه‌گذاری")}</option>
+                  <option>{t("Company seeking strategic partnership", "شرکت، متقاضی همکاری استراتژیک")}</option>
+                  <option>{t("Project owner seeking capital structuring", "مالک پروژه، متقاضی ساختاردهی سرمایه")}</option>
                   <option>{t("Other", "سایر")}</option>
                 </select>
               </FormGroup>
 
               {/* Investment Sector */}
-              <FormGroup label={t("Investment Sector", "بخش سرمایه‌گذاری")} required>
+              <FormGroup label={t("Investment Sector", "حوزه سرمایه‌گذاری")} required>
                 <select className="nform-input nform-select" required>
-                  <option value="">{t("Select sector…", "بخش را انتخاب کنید…")}</option>
-                  <option>{t("Real Estate", "املاک")}</option>
-                  <option>{t("Energy & Renewables", "انرژی و تجدیدپذیرها")}</option>
+                  <option value="">{t("Select sector…", "انتخاب حوزه…")}</option>
+                  <option>{t("Real Estate", "املاک و مستغلات")}</option>
+                  <option>{t("Energy & Renewables", "انرژی و انرژی‌های تجدیدپذیر")}</option>
                   <option>{t("Information Technology", "فناوری اطلاعات")}</option>
                   <option>{t("Technology & Innovation", "فناوری و نوآوری")}</option>
                   <option>{t("Healthcare & Medical", "سلامت و پزشکی")}</option>
-                  <option>{t("Tourism & Hospitality", "گردشگری و مهمان‌نوازی")}</option>
+                  <option>{t("Tourism & Hospitality", "گردشگری و هتلداری")}</option>
                   <option>{t("Other", "سایر")}</option>
                 </select>
               </FormGroup>
 
               {/* Business Stage */}
-              <FormGroup label={t("Project / Business Stage", "مرحله‌ی پروژه / کسب‌وکار")}>
+              <FormGroup label={t("Project / Business Stage", "مرحله پروژه / کسب‌وکار")}>
                 <select className="nform-input nform-select">
-                  <option value="">{t("Select stage…", "مرحله را انتخاب کنید…")}</option>
-                  <option>{t("Idea / Pre-revenue", "ایده / پیش از درآمد")}</option>
-                  <option>{t("Growth Stage (Seed / Series A)", "مرحله‌ی رشد (سید / سری A)")}</option>
-                  <option>{t("Expansion Phase", "فاز گسترش")}</option>
-                  <option>{t("Established — Seeking M&A or Restructuring", "تثبیت‌شده — در جست‌وجوی ادغام و تملیک یا بازساختاردهی")}</option>
+                  <option value="">{t("Select stage…", "انتخاب مرحله…")}</option>
+                  <option>{t("Idea / Pre-revenue", "ایده / پیش از درآمدزایی")}</option>
+                  <option>{t("Growth Stage (Seed / Series A)", "مرحله رشد (Seed / Series A)")}</option>
+                  <option>{t("Expansion Phase", "مرحله توسعه و گسترش")}</option>
+                  <option>{t("Established — Seeking M&A or Restructuring", "کسب‌وکار فعال — متقاضی ادغام، تملک یا بازسازی")}</option>
                 </select>
               </FormGroup>
 
               {/* Capital Range */}
-              <FormGroup label={t("Capital Range", "بازه‌ی سرمایه")}>
+              <FormGroup label={t("Capital Range", "محدوده سرمایه")}>
                 <select className="nform-input nform-select">
-                  <option value="">{t("Select range…", "بازه را انتخاب کنید…")}</option>
-                  <option>{t("Under $100,000", "زیر ۱۰۰٬۰۰۰ دلار")}</option>
-                  <option>{t("$100,000 – $500,000", "۱۰۰٬۰۰۰ تا ۵۰۰٬۰۰۰ دلار")}</option>
-                  <option>{t("$500,000 – $1,000,000", "۵۰۰٬۰۰۰ تا ۱٬۰۰۰٬۰۰۰ دلار")}</option>
-                  <option>{t("$1,000,000 – $5,000,000", "۱٬۰۰۰٬۰۰۰ تا ۵٬۰۰۰٬۰۰۰ دلار")}</option>
-                  <option>{t("$5,000,000+", "بیش از ۵٬۰۰۰٬۰۰۰ دلار")}</option>
+                  <option value="">{t("Select range…", "انتخاب بازه…")}</option>
+                  <option>{t("Under $100,000", "کمتر از ۱۰۰,۰۰۰ دلار")}</option>
+                  <option>{t("$100,000 – $500,000", "۱۰۰,۰۰۰ تا ۵۰۰,۰۰۰ دلار")}</option>
+                  <option>{t("$500,000 – $1,000,000", "۵۰۰,۰۰۰ تا ۱,۰۰۰,۰۰۰ دلار")}</option>
+                  <option>{t("$1,000,000 – $5,000,000", "۱,۰۰۰,۰۰۰ تا ۵,۰۰۰,۰۰۰ دلار")}</option>
+                  <option>{t("$5,000,000+", "بیش از ۵,۰۰۰,۰۰۰ دلار")}</option>
                 </select>
               </FormGroup>
 
@@ -211,7 +211,7 @@ export default function InvestmentContactForm() {
                   <option value="">{t("Select…", "انتخاب کنید…")}</option>
                   <option>{t("Google", "گوگل")}</option>
                   <option>{t("Social Media", "شبکه‌های اجتماعی")}</option>
-                  <option>{t("Friend / Referral", "دوست / معرفی")}</option>
+                  <option>{t("Friend / Referral", "معرفی دوستان / آشنایان")}</option>
                   <option>{t("Attorney", "وکیل")}</option>
                   <option>{t("Webinar", "وبینار")}</option>
                   <option>{t("Tradeshow / Conference", "نمایشگاه / کنفرانس")}</option>
@@ -220,7 +220,7 @@ export default function InvestmentContactForm() {
               </FormGroup>
 
               {/* Tell Us (full width) */}
-              <FormGroup label={t("Tell Us About Your Project", "درباره‌ی پروژه‌تان بگویید")} fullWidth>
+              <FormGroup label={t("Tell Us About Your Project", "درباره پروژه‌تان برای ما بنویسید")} fullWidth>
                 <textarea
                   name="message"
                   className="nform-input"
@@ -246,7 +246,7 @@ export default function InvestmentContactForm() {
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                   </svg>
-                  {t("Your information is kept strictly confidential.", "اطلاعات شما کاملاً محرمانه نگهداری می‌شود.")}
+                  {t("Your information is kept strictly confidential.", "اطلاعات شما کاملاً محرمانه خواهد ماند.")}
                 </span>
                 <button
                   type="submit"

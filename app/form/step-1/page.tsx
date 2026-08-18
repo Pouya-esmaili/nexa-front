@@ -65,8 +65,8 @@ const sidebarGroups = [
     titleFa: 'اطلاعات شخصی',
     items: [
       { label: 'Contact Information', labelFa: 'اطلاعات تماس', step: 1 },
-      { label: 'Company Overview', labelFa: 'نمای کلی شرکت', step: 2 },
-      { label: 'Company Address', labelFa: 'نشانی شرکت', step: 3 },
+      { label: 'Company Overview', labelFa: 'معرفی شرکت', step: 2 },
+      { label: 'Company Address', labelFa: 'آدرس شرکت', step: 3 },
     ],
   },
   {
@@ -74,24 +74,24 @@ const sidebarGroups = [
     title: 'Company Business Model',
     titleFa: 'مدل کسب‌وکار شرکت',
     items: [
-      { label: 'Business Summary', labelFa: 'خلاصه‌ی کسب‌وکار', step: 4 },
-      { label: 'Problem', labelFa: 'مشکل', step: 5 },
-      { label: 'Solution', labelFa: 'راه‌حل', step: 6 },
+      { label: 'Business Summary', labelFa: 'معرفی کسب‌وکار', step: 4 },
+      { label: 'Problem', labelFa: 'مسئله', step: 5 },
+      { label: 'Solution', labelFa: 'راهکار', step: 6 },
     ],
   },
   {
     id: 3,
     title: 'Company Stage & Growth',
     titleFa: 'مرحله و رشد شرکت',
-    items: [{ label: 'Stage & Growth', labelFa: 'مرحله و رشد', step: 7 }],
+    items: [{ label: 'Stage & Growth', labelFa: 'مرحله و روند رشد', step: 7 }],
   },
   {
     id: 4,
     title: 'Documents & Confirmation',
-    titleFa: 'مدارک و تأیید',
+    titleFa: 'مدارک و تأییدیه‌ها',
     items: [
       { label: 'Supporting Documents', labelFa: 'مدارک پشتیبان', step: 8 },
-      { label: 'Legal Declarations', labelFa: 'اظهارنامه‌های قانونی', step: 9 },
+      { label: 'Legal Declarations', labelFa: 'اظهارات و تأییدیه‌های قانونی', step: 9 },
     ],
   },
 ];
@@ -275,14 +275,14 @@ function Step2({
 
         <div className="flex flex-col gap-1.5">
           <label className="text-sm font-medium">
-            {t('Industry / Sector', 'صنعت / حوزه')} <span className="text-red-500">*</span>
+            {t('Industry / Sector', 'حوزه فعالیت / صنعت')} <span className="text-red-500">*</span>
           </label>
           <select
             value={data.industry}
             onChange={(e) => onChange('industry', e.target.value)}
             className={errors.industry ? inputError : inputNormal}
           >
-            <option value="">{t('Select Industry', 'انتخاب صنعت')}</option>
+            <option value="">{t('Select Industry', 'انتخاب حوزه')}</option>
             <option>{t('Fintech', 'فین‌تک')}</option>
             <option>{t('Healthtech', 'هلث‌تک')}</option>
             <option>{t('Edtech', 'اِدتک')}</option>
@@ -323,7 +323,7 @@ function Step3({
     <div className="space-y-6">
       <div className="flex flex-col gap-1.5">
         <label className="text-sm font-medium">
-          {t('Street Address', 'نشانی خیابان')} <span className="text-red-500">*</span>
+          {t('Street Address', 'آدرس')} <span className="text-red-500">*</span>
         </label>
         <input
           type="text"
@@ -335,7 +335,7 @@ function Step3({
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <label className="text-sm font-medium">{t('Address Line 2', 'نشانی خط دوم')}</label>
+        <label className="text-sm font-medium">{t('Address Line 2', 'آدرس، خط ۲')}</label>
         <input
           type="text"
           value={data.addressLine2}
@@ -360,7 +360,7 @@ function Step3({
 
         <div className="flex flex-col gap-1.5">
           <label className="text-sm font-medium">
-            {t('State / Province', 'ایالت / استان')} <span className="text-red-500">*</span>
+            {t('State / Province', 'استان / ایالت')} <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -411,10 +411,10 @@ function Step4({
   return (
     <div className="flex flex-col gap-2">
       <label className="text-sm font-medium">
-        {t('Short company description', 'توضیح کوتاه شرکت')} <span className="text-red-500">*</span>
+        {t('Short company description', 'توضیح کوتاه درباره شرکت')} <span className="text-red-500">*</span>
       </label>
       <p className="text-xs text-gray-500">
-        {t("A one-line 'elevator pitch' for your company. Maximum 300 characters.", "یک معرفی کوتاه یک‌خطی («elevator pitch») برای شرکت شما. حداکثر ۳۰۰ کاراکتر.")}
+        {t("A one-line 'elevator pitch' for your company. Maximum 300 characters.", "یک معرفی یک‌خطی و مختصر از شرکت شما؛ در قالب یک Elevator Pitch. حداکثر ۳۰۰ کاراکتر.")}
       </p>
       <textarea
         maxLength={300}
@@ -449,10 +449,10 @@ function Step5({
   return (
     <div className="flex flex-col gap-2">
       <label className="text-sm font-medium">
-        {t('What problem are you solving?', 'چه مشکلی را حل می‌کنید؟')} <span className="text-red-500">*</span>
+        {t('What problem are you solving?', 'چه مسئله‌ای را حل می‌کنید؟')} <span className="text-red-500">*</span>
       </label>
       <p className="text-xs text-gray-500">
-        {t('What is the specific problem that you are aiming to solve? Maximum 600 characters.', 'مشکل خاصی که قصد حل آن را دارید چیست؟ حداکثر ۶۰۰ کاراکتر.')}
+        {t('What is the specific problem that you are aiming to solve? Maximum 600 characters.', 'مشخصاً توضیح دهید کسب‌وکار شما برای حل چه مسئله‌ای شکل گرفته است. حداکثر ۶۰۰ کاراکتر.')}
       </p>
       <textarea
         maxLength={600}
@@ -485,10 +485,10 @@ function Step6({
   return (
     <div className="flex flex-col gap-2">
       <label className="text-sm font-medium">
-        {t('What is your solution to the problem?', 'راه‌حل شما برای این مشکل چیست؟')} <span className="text-red-500">*</span>
+        {t('What is your solution to the problem?', 'راهکار شما برای حل این مسئله چیست؟')} <span className="text-red-500">*</span>
       </label>
       <p className="text-xs text-gray-500">
-        {t('What is your product/service, and how does it solve the problem? Maximum 600 characters.', 'محصول/خدمت شما چیست و چگونه مشکل را حل می‌کند؟ حداکثر ۶۰۰ کاراکتر.')}
+        {t('What is your product/service, and how does it solve the problem? Maximum 600 characters.', 'محصول یا خدمت شما چیست و چگونه این مسئله را حل می‌کند؟ حداکثر ۶۰۰ کاراکتر.')}
       </p>
       <textarea
         maxLength={600}
@@ -509,11 +509,11 @@ function Step6({
 }
 
 const stageOptions = [
-  { value: 'IDEA', label: 'Idea', labelFa: 'ایده', desc: 'Concept stage, no product yet', descFa: 'مرحله‌ی مفهومی، هنوز محصولی نیست' },
-  { value: 'TRIAL', label: 'Trial', labelFa: 'آزمایش', desc: 'Testing the idea with early users', descFa: 'آزمودن ایده با کاربران اولیه' },
-  { value: 'MVP', label: 'MVP', labelFa: 'MVP', desc: 'Minimum viable product built', descFa: 'حداقل محصول قابل‌عرضه ساخته شده' },
-  { value: 'FIRST_SALE', label: 'First Sale', labelFa: 'اولین فروش', desc: 'First paying customers', descFa: 'نخستین مشتریان پرداخت‌کننده' },
-  { value: 'SALE_DEVELOPMENT', label: 'Sale Development', labelFa: 'توسعه‌ی فروش', desc: 'Growing revenue', descFa: 'درآمد در حال رشد' },
+  { value: 'IDEA', label: 'Idea', labelFa: 'ایده', desc: 'Concept stage, no product yet', descFa: 'در مرحله ایده هستید و هنوز محصولی ندارید.' },
+  { value: 'TRIAL', label: 'Trial', labelFa: 'آزمایشی', desc: 'Testing the idea with early users', descFa: 'در حال آزمودن ایده با کاربران اولیه هستید.' },
+  { value: 'MVP', label: 'MVP', labelFa: 'MVP', desc: 'Minimum viable product built', descFa: 'حداقل محصول قابل ارائه (MVP) ساخته شده است.' },
+  { value: 'FIRST_SALE', label: 'First Sale', labelFa: 'اولین فروش', desc: 'First paying customers', descFa: 'اولین مشتریان پرداخت‌کننده خود را جذب کرده‌اید.' },
+  { value: 'SALE_DEVELOPMENT', label: 'Sale Development', labelFa: 'مرحله توسعه فروش', desc: 'Growing revenue', descFa: 'درآمد شرکت در حال رشد است.' },
 ];
 
 function Step7({
@@ -529,7 +529,7 @@ function Step7({
   return (
     <div className="flex flex-col gap-3">
       <label className="text-sm font-medium mb-1">
-        {t('Current Stage', 'مرحله‌ی فعلی')} <span className="text-red-500">*</span>
+        {t('Current Stage', 'مرحله فعلی')} <span className="text-red-500">*</span>
       </label>
       {stageOptions.map((opt) => (
         <label
@@ -587,10 +587,10 @@ function Step8({
       {/* Upload */}
       <div className="flex flex-col gap-2">
         <label className="text-sm font-medium">
-          {t('Upload your investor deck for review', 'ارائه‌ی سرمایه‌گذاری خود را برای بررسی بارگذاری کنید')} <span className="text-red-500">*</span>
+          {t('Upload your investor deck for review', 'آپلود فایل معرفی سرمایه‌گذاری')} <span className="text-red-500">*</span>
         </label>
         <p className="text-xs text-gray-500">
-          {t('Please send us your investor/pitch deck (PDF ONLY – 20MB max).', 'لطفاً ارائه‌ی سرمایه‌گذاری/پیچ‌دِک خود را برای ما ارسال کنید (فقط PDF – حداکثر ۲۰ مگابایت).')}
+          {t('Please send us your investor/pitch deck (PDF ONLY – 20MB max).', 'لطفاً فایل معرفی شرکت یا Pitch Deck خود را برای بررسی ارسال کنید. فقط PDF — حداکثر حجم ۲۰ مگابایت')}
         </p>
         <button
           type="button"
@@ -609,7 +609,7 @@ function Step8({
               data.pitchDeck ? 'text-[#8F27FF] font-medium' : 'text-gray-400'
             }`}
           >
-            {data.pitchDeck ? data.pitchDeck.name : t('Click to upload PDF', 'برای بارگذاری PDF کلیک کنید')}
+            {data.pitchDeck ? data.pitchDeck.name : t('Click to upload PDF', 'برای آپلود PDF کلیک کنید')}
           </span>
         </button>
         <input
@@ -670,19 +670,19 @@ function Step9({
     <div className="flex flex-col gap-6">
       <div>
         <h2 className="text-base font-bold mb-4 text-black">
-          {t('Acknowledgement – Canadian Companies', 'تأییدیه – شرکت‌های کانادایی')}{' '}
+          {t('Acknowledgement – Canadian Companies', 'تأییدیه — شرکت‌های کانادایی')}{' '}
           <span className="text-red-500">*</span>
         </h2>
         <div className="text-sm text-black leading-7 space-y-3 mb-6">
-          <p>{t('Nexa Venture Inc. is a Canadian Corporation.', 'Nexa Venture Inc. یک شرکت کانادایی است.')}</p>
+          <p>{t('Nexa Venture Inc. is a Canadian Corporation.', 'Nexa Venture Inc. یک شرکت ثبت‌شده در کانادا است.')}</p>
           <p>
-            {t('Participation fees may apply only after passing the screening process and agreeing to present.', 'هزینه‌های مشارکت تنها پس از گذراندن فرایند غربالگری و موافقت با ارائه ممکن است اعمال شود.')}
+            {t('Participation fees may apply only after passing the screening process and agreeing to present.', 'هزینه مشارکت تنها پس از عبور از مرحله ارزیابی اولیه و موافقت با ارائه پروژه ممکن است اعمال شود.')}
           </p>
           <p>
-            {t('Nexa Venture Inc. does not take equity, success fees, or commissions.', 'Nexa Venture Inc. سهام، کارمزد موفقیت یا کمیسیون دریافت نمی‌کند.')}
+            {t('Nexa Venture Inc. does not take equity, success fees, or commissions.', 'Nexa Venture Inc. هیچ‌گونه سهام، کارمزد موفقیت یا کمیسیون دریافت نمی‌کند.')}
           </p>
           <p>
-            {t('Investors act in their individual capacity and applicants are responsible for their own due diligence.', 'سرمایه‌گذاران در ظرفیت فردی خود عمل می‌کنند و متقاضیان مسئول بررسی دقیق خود هستند.')}
+            {t('Investors act in their individual capacity and applicants are responsible for their own due diligence.', 'سرمایه‌گذاران به‌صورت مستقل و شخصی تصمیم‌گیری می‌کنند و مسئولیت انجام بررسی‌های لازم (Due Diligence) بر عهده متقاضیان است.')}
           </p>
         </div>
         <hr className="border-gray-300 mb-6" />
@@ -718,7 +718,7 @@ function Step9({
             )}
           </button>
           <span className="text-sm font-medium text-gray-800">
-            {t('I have read and agree to the Terms and Legal Declarations', 'شرایط و اظهارنامه‌های قانونی را خوانده‌ام و با آن‌ها موافقم')}{' '}
+            {t('I have read and agree to the Terms and Legal Declarations', 'با مطالعه و پذیرش شرایط و اظهارات قانونی موافقم.')}{' '}
             <span className="text-red-500">*</span>
           </span>
         </div>
@@ -811,7 +811,7 @@ export default function MultiStepForm() {
 
   return (
     <div>
-      <h1 className="text-center text-2xl font-semibold mb-6">{t('Apply For Funding', 'درخواست تأمین مالی')}</h1>
+      <h1 className="text-center text-2xl font-semibold mb-6">{t('Apply For Funding', 'درخواست جذب سرمایه')}</h1>
 
       {/* Mobile progress */}
       <div className="lg:hidden mb-6 px-1">

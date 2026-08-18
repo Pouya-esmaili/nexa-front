@@ -12,26 +12,26 @@ const stages = [
     label: "Startup Visa",
     labelFa: "ویزای استارتاپ",
     year: "Year 1",
-    yearFa: "سال ۱",
+    yearFa: "سال اول",
     detail: {
       title: "Startup Visa (1 Year)",
-      titleFa: "ویزای استارتاپ (۱ سال)",
+      titleFa: "ویزای استارتاپ — ۱ سال",
       desc: "Build your venture under a 1-year residence permit. Side employment is permitted. Permit stays valid until expiry even if the startup closes.",
-      descFa: "کسب‌وکار خود را با مجوز اقامت ۱ ساله بسازید. اشتغال جانبی مجاز است. حتی اگر استارتاپ تعطیل شود، مجوز تا انقضا معتبر می‌ماند.",
+      descFa: "با مجوز اقامت یک‌ساله، استارتاپ خود را راه‌اندازی و توسعه می‌دهید. در کنار آن، امکان اشتغال جانبی نیز وجود دارد. حتی در صورت توقف فعالیت استارتاپ، مجوز تا پایان اعتبار خود معتبر باقی می‌ماند.",
     },
     active: true,
   },
   {
     num: "02",
     label: "Self-Employed Permit",
-    labelFa: "مجوز خوداشتغالی",
+    labelFa: "اقامت خوداشتغالی",
     year: "Year 1–5",
-    yearFa: "سال ۱ تا ۵",
+    yearFa: "سال‌های اول تا پنجم",
     detail: {
       title: "Self-Employed Transition",
-      titleFa: "گذار به خوداشتغالی",
+      titleFa: "انتقال به اقامت خوداشتغالی",
       desc: "At year-end, transition to a Self-Employed Residence Permit. Your facilitator issues a formal positive assessment verifying your startup's evolution into an active, operational business.",
-      descFa: "در پایان سال، به یک مجوز اقامت خوداشتغالی گذار کنید. تسهیل‌گر شما یک ارزیابی مثبت رسمی صادر می‌کند که تبدیل استارتاپ شما به یک کسب‌وکار فعال و عملیاتی را تأیید می‌کند.",
+      descFa: "در پایان سال اول، می‌توانید از مسیر اقامت خوداشتغالی ادامه دهید. تسهیل‌گر نیز ارزیابی رسمی و مثبتی از پیشرفت استارتاپ ارائه می‌کند و نشان می‌دهد که کسب‌وکار از مرحله اولیه عبور کرده و به یک فعالیت واقعی و عملیاتی تبدیل شده است.",
     },
     active: false,
   },
@@ -40,12 +40,12 @@ const stages = [
     label: "Permanent Residency",
     labelFa: "اقامت دائم",
     year: "Year 5",
-    yearFa: "سال ۵",
+    yearFa: "سال پنجم",
     detail: {
       title: "Permanent Residency",
       titleFa: "اقامت دائم",
       desc: "After 5 years of continuous legal residence, apply for an EU Long-Term Resident Permit or Dutch Permanent Residence Card. Your legal right to stay fully uncouples from your business.",
-      descFa: "پس از ۵ سال اقامت قانونی پیوسته، برای مجوز اقامت بلندمدت اتحادیه اروپا یا کارت اقامت دائم هلند درخواست دهید. حق قانونی اقامت شما به‌طور کامل از کسب‌وکارتان مستقل می‌شود.",
+      descFa: "پس از ۵ سال اقامت قانونی و مستمر، می‌توانید برای اقامت دائم اتحادیه اروپا یا اقامت دائم هلند اقدام کنید. در این مرحله، حق اقامت شما دیگر به ادامه فعالیت استارتاپ وابسته نخواهد بود.",
     },
     active: false,
   },
@@ -54,12 +54,12 @@ const stages = [
     label: "Dutch Citizenship",
     labelFa: "تابعیت هلند",
     year: "Year 5+",
-    yearFa: "سال ۵ به بعد",
+    yearFa: "سال پنجم به بعد",
     detail: {
       title: "Dutch Citizenship",
       titleFa: "تابعیت هلند",
       desc: "At 5 years, apply for naturalization. Requires civic integration exam (Inburgering), Dutch language at A2 level, and renunciation of original nationality (with limited statutory exemptions).",
-      descFa: "در ۵ سالگی برای تابعیت‌پذیری درخواست دهید. نیازمند آزمون ادغام مدنی (Inburgering)، زبان هلندی در سطح A2 و انصراف از تابعیت اصلی (با معافیت‌های قانونی محدود) است.",
+      descFa: "پس از ۵ سال، در صورت احراز شرایط، امکان درخواست تابعیت وجود دارد. از جمله الزامات، قبولی در آزمون ادغام مدنی (Inburgering)، داشتن سطح زبان هلندی A2 و در برخی موارد ترک تابعیت قبلی است؛ البته استثناهای قانونی محدودی وجود دارد.",
     },
     active: false,
   },
@@ -75,7 +75,7 @@ export default function PathwayToPassport() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10 md:mb-14">
-            {t("Long-Term Pathways", "مسیرهای بلندمدت")}
+            {t("Long-Term Pathways", "مسیرهای بلندمدت اقامت")}
           </h2>
         </Reveal>
 

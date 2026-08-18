@@ -6,9 +6,9 @@ import { useLang } from "@/components/global/LanguageProvider";
 const cards = [
   {
     title: "Direct Eurozone Access",
-    titleFa: "دسترسی مستقیم به منطقه‌ی یورو",
+    titleFa: "دسترسی مستقیم به بازار یورو",
     desc: "Amsterdam, Rotterdam, Eindhoven — embed your company in Europe's primary logistics and digital pathways from day one.",
-    descFa: "آمستردام، روتردام، ایندهوون — شرکتتان را از روز نخست در مسیرهای اصلی لجستیک و دیجیتال اروپا جای دهید.",
+    descFa: "از آمستردام و روتردام تا آیندهوون، کسب‌وکار خود را از همان ابتدا در یکی از مهم‌ترین مراکز لجستیک، فناوری و تجارت دیجیتال اروپا مستقر کنید.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} className="w-6 h-6">
         <circle cx="12" cy="12" r="9" />
@@ -18,9 +18,9 @@ const cards = [
   },
   {
     title: "Co-Founder Launch",
-    titleFa: "راه‌اندازی با هم‌بنیان‌گذار",
+    titleFa: "راه‌اندازی با هم‌بنیان‌گذاران",
     desc: "Up to 3 co-founders can apply under a single startup project, each holding an active management role.",
-    descFa: "تا ۳ هم‌بنیان‌گذار می‌توانند تحت یک پروژه‌ی استارتاپی واحد درخواست دهند و هرکدام نقش مدیریتی فعال داشته باشند.",
+    descFa: "تا ۳ هم‌بنیان‌گذار می‌توانند در قالب یک پروژه استارتاپی مشترک اقدام کنند؛ مشروط بر اینکه هرکدام نقش مدیریتی و اجرایی فعال داشته باشند.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} className="w-6 h-6">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -31,9 +31,9 @@ const cards = [
   },
   {
     title: "Accelerated Onboarding",
-    titleFa: "پذیرش شتاب‌یافته",
+    titleFa: "ورود سریع‌تر و ساختاریافته‌تر",
     desc: "Replaces complex capital scoring with a trusted facilitator partnership system — faster, cleaner, and more founder-friendly.",
-    descFa: "امتیازدهی پیچیده‌ی سرمایه را با یک سیستم مشارکت تسهیل‌گر معتبر جایگزین می‌کند — سریع‌تر، تمیزتر و دوستدارتر با بنیان‌گذار.",
+    descFa: "به‌جای سیستم‌های پیچیده ارزیابی سرمایه، این مسیر بر همکاری با یک تسهیل‌گر مورد تأیید دولت متکی است؛ فرآیندی شفاف‌تر، سریع‌تر و متناسب‌تر با نیاز بنیان‌گذاران.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} className="w-6 h-6">
         <path d="M13 3L4 14h7l-1 7 9-11h-7l1-7z" />
@@ -42,9 +42,9 @@ const cards = [
   },
   {
     title: "Full Family Relocation",
-    titleFa: "جابه‌جایی کامل خانواده",
+    titleFa: "انتقال کامل خانواده",
     desc: "Spouse and minor children relocate with you. Your partner gets unrestricted Dutch labor market access — no separate work permit needed.",
-    descFa: "همسر و فرزندان خردسال همراه شما جابه‌جا می‌شوند. همسر شما دسترسی نامحدود به بازار کار هلند دارد — بدون نیاز به مجوز کار جداگانه.",
+    descFa: "همسر و فرزندان زیر سن قانونی می‌توانند همراه شما به هلند نقل‌مکان کنند. همسر شما نیز بدون نیاز به مجوز کار جداگانه، از حق کار نامحدود در بازار کار هلند برخوردار خواهد بود.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} className="w-6 h-6">
         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -60,7 +60,7 @@ export default function WhyNetherlands() {
       <Row>
         <Reveal variant="up" className="text-center mb-10 md:mb-14">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em]">
-            {t("The Benefits of the Dutch Ecosystem", "مزایای اکوسیستم هلند")}
+            {t("The Benefits of the Dutch Ecosystem", "مزایای اکوسیستم استارتاپی هلند")}
           </h2>
         </Reveal>
 

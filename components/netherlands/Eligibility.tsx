@@ -7,47 +7,47 @@ const requirements = [
   {
     num: "A",
     title: "Collaboration with a Recognized Facilitator",
-    titleFa: "همکاری با یک تسهیل‌گر شناخته‌شده",
+    titleFa: "همکاری با یک تسهیل‌گر مورد تأیید",
     desc: 'You must enter into a formal, signed agreement with a <strong>government-approved startup facilitator</strong> listed on the official RVO register. The facilitator provides mentorship and operational support but cannot hold a majority stake in your firm or be a close relative.',
-    descFa: 'باید یک توافق‌نامه‌ی رسمی و امضاشده با یک <strong>تسهیل‌گر استارتاپ مورد تأیید دولت</strong> که در دفتر ثبت رسمی RVO فهرست شده منعقد کنید. تسهیل‌گر منتورشیپ و پشتیبانی عملیاتی ارائه می‌دهد اما نمی‌تواند سهم اکثریت در شرکت شما داشته باشد یا از بستگان نزدیک باشد.',
+    descFa: 'باید با یکی از <strong>تسهیل‌گران استارتاپی مورد تأیید دولت</strong> که در فهرست رسمی RVO قرار دارد، قرارداد همکاری رسمی و امضاشده منعقد کنید. تسهیل‌گر در زمینه منتورینگ و توسعه عملیاتی از شما حمایت می‌کند، اما نمی‌تواند مالک اکثریت شرکت شما یا از بستگان نزدیکتان باشد.',
   },
   {
     num: "B",
     title: "Proof of Innovation",
     titleFa: "اثبات نوآوری",
     desc: 'Your product, service, or methodology must satisfy at least one criterion: <strong>new to the Dutch market</strong>, applies <strong>novel technology</strong>, or uses a <strong>unique organizational setup</strong>. Evaluated directly by the RVO against your submitted business plan.',
-    descFa: 'محصول، خدمت یا روش شما باید حداقل یک معیار را برآورده کند: <strong>جدید برای بازار هلند</strong>، به‌کارگیری <strong>فناوری نوین</strong>، یا استفاده از یک <strong>ساختار سازمانی منحصربه‌فرد</strong>. مستقیماً توسط RVO در برابر طرح کسب‌وکار ارسالی شما ارزیابی می‌شود.',
+    descFa: 'محصول، خدمت یا روش کسب‌وکار شما باید حداقل یکی از این معیارها را داشته باشد: <strong>ارائه یک راهکار جدید در بازار هلند</strong>، <strong>استفاده از فناوری نوین</strong> یا <strong>بهره‌گیری از یک ساختار سازمانی منحصربه‌فرد</strong>. RVO این معیارها را مستقیماً بر اساس بیزنس‌پلن ارائه‌شده ارزیابی می‌کند.',
   },
   {
     num: "C",
     title: "Active Entrepreneurial Role",
-    titleFa: "نقش کارآفرینی فعال",
+    titleFa: "نقش فعال بنیان‌گذار",
     desc: 'The visa is built for operational founders only. You cannot be a passive shareholder or silent partner. Your business plan must prove an active executive role — CEO, CTO, or lead developer — responsible for daily execution and operational scaling.',
-    descFa: 'این ویزا فقط برای بنیان‌گذاران عملیاتی طراحی شده است. نمی‌توانید سهام‌دار منفعل یا شریک خاموش باشید. طرح کسب‌وکار شما باید یک نقش اجرایی فعال — مدیرعامل، مدیر ارشد فناوری یا توسعه‌دهنده‌ی اصلی — مسئول اجرای روزانه و مقیاس‌دهی عملیاتی را اثبات کند.',
+    descFa: 'این مسیر برای بنیان‌گذاران فعال و اجرایی طراحی شده است، نه سرمایه‌گذاران منفعل. نمی‌توانید صرفاً سهامدار یا شریک خاموش باشید. بیزنس‌پلن باید نقش مدیریتی و اجرایی شما را به‌روشنی نشان دهد؛ برای مثال به‌عنوان <strong>CEO</strong>، <strong>CTO</strong> یا مدیر توسعه محصول.',
   },
   {
     num: "D",
     title: "Comprehensive Business Plan",
-    titleFa: "طرح کسب‌وکار جامع",
+    titleFa: "بیزنس‌پلن جامع",
     desc: 'A full 12-month step plan covering organizational structure, innovation analysis, operational milestones (MVP, market entry), financial projections, startup budget, liquidity forecast, and capital source mapping.',
-    descFa: 'یک برنامه‌ی گام‌به‌گام کامل ۱۲ ماهه شامل ساختار سازمانی، تحلیل نوآوری، نقاط عطف عملیاتی (MVP، ورود به بازار)، پیش‌بینی‌های مالی، بودجه‌ی استارتاپ، پیش‌بینی نقدینگی و نقشه‌ی منابع سرمایه.',
+    descFa: 'یک برنامه اجرایی ۱۲ماهه که ساختار سازمانی، تحلیل نوآوری، نقاط عطف عملیاتی مانند MVP و ورود به بازار، پیش‌بینی‌های مالی، بودجه استارتاپ، جریان نقدی و منابع تأمین سرمایه را پوشش دهد.',
   },
   {
     num: "E",
     title: "Sufficient Personal Financial Runway",
-    titleFa: "پشتوانه‌ی مالی شخصی کافی",
+    titleFa: "پشتوانه مالی کافی",
     desc: '<strong>Solo founder:</strong> minimum <strong>€21,000</strong> in personal liquid funds. <strong>With family:</strong> minimum <strong>€30,000</strong>. Acceptable proofs: certified bank statements, Dutch notary escrow, VC funding letters, or facilitator financial sponsorship.',
-    descFa: '<strong>بنیان‌گذار منفرد:</strong> حداقل <strong>۲۱٬۰۰۰ یورو</strong> دارایی نقدی شخصی. <strong>با خانواده:</strong> حداقل <strong>۳۰٬۰۰۰ یورو</strong>. مدارک قابل‌قبول: صورت‌حساب‌های بانکی تأییدشده، امانت‌سپاری نزد دفتر اسناد رسمی هلند، نامه‌های تأمین مالی سرمایه‌گذاری خطرپذیر، یا حمایت مالی تسهیل‌گر.',
+    descFa: '<strong>بنیان‌گذار مجرد:</strong> حداقل <strong>۲۱٬۰۰۰ یورو</strong> منابع مالی شخصی و نقدشونده. <strong>بنیان‌گذار همراه خانواده:</strong> حداقل <strong>۳۰٬۰۰۰ یورو</strong>. مدارک قابل قبول شامل صورت‌حساب بانکی معتبر، حساب امانی نزد دفتر اسناد رسمی هلند، نامه تأمین مالی VC یا تعهد مالی تسهیل‌گر است.',
   },
 ];
 
 const benefits: { en: string; fa: string }[] = [
-  { en: "1-year residence permit to build your startup", fa: "مجوز اقامت ۱ ساله برای ساختن استارتاپتان" },
-  { en: "Side employment permitted alongside your venture", fa: "اشتغال جانبی در کنار کسب‌وکارتان مجاز است" },
-  { en: "Up to 3 co-founders under one project", fa: "تا ۳ هم‌بنیان‌گذار تحت یک پروژه" },
-  { en: "Spouse receives matching residency permit", fa: "همسر مجوز اقامت متناظر دریافت می‌کند" },
-  { en: "Spouse has full, unrestricted Dutch work rights", fa: "همسر حق کار کامل و نامحدود هلند دارد" },
-  { en: "Permit remains valid until expiry if startup closes", fa: "در صورت تعطیلی استارتاپ، مجوز تا انقضا معتبر می‌ماند" },
+  { en: "1-year residence permit to build your startup", fa: "مجوز اقامت یک‌ساله برای راه‌اندازی و توسعه استارتاپ" },
+  { en: "Side employment permitted alongside your venture", fa: "امکان اشتغال جانبی در کنار فعالیت استارتاپی" },
+  { en: "Up to 3 co-founders under one project", fa: "امکان اقدام حداکثر ۳ هم‌بنیان‌گذار در قالب یک پروژه" },
+  { en: "Spouse receives matching residency permit", fa: "دریافت مجوز اقامت مشابه برای همسر" },
+  { en: "Spouse has full, unrestricted Dutch work rights", fa: "برخورداری همسر از حق کار نامحدود در هلند" },
+  { en: "Permit remains valid until expiry if startup closes", fa: "معتبر ماندن مجوز تا پایان اعتبار حتی در صورت توقف فعالیت استارتاپ" },
 ];
 
 export default function Eligibility() {
@@ -57,7 +57,7 @@ export default function Eligibility() {
       <Row>
         <Reveal variant="up" className="text-center mb-10 md:mb-14">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em]">
-            {t("Eligibility Requirements", "شرایط واجد بودن")}
+            {t("Eligibility Requirements", "شرایط اصلی واجد شرایط بودن")}
           </h2>
         </Reveal>
 
@@ -69,11 +69,11 @@ export default function Eligibility() {
               style={{ border: "1px solid #E2E2E2" }}
             >
               <p className="text-[15px] text-[#474747] leading-[1.65] mb-8 pb-8 border-b border-gray-200">
-                {t("To qualify for the", "برای واجد شرایط شدنِ")}{" "}
-                <strong className="text-black font-semibold">{t("Dutch Startup Residence Permit", "مجوز اقامت استارتاپ هلند")}</strong>
-                {t(", your application must meet five specific statutory conditions enforced by the", "، درخواست شما باید پنج شرط قانونی مشخص را برآورده کند که")}{" "}
-                <strong className="text-black font-semibold">IND</strong> {t("and evaluated by the", "آن‌ها را اجرا و")}{" "}
-                <strong className="text-black font-semibold">{t("Netherlands Enterprise Agency (RVO)", "آژانس تجاری هلند (RVO)")}</strong>{t(".", " ارزیابی می‌کند.")}
+                {t("To qualify for the", "برای دریافت")}{" "}
+                <strong className="text-black font-semibold">{t("Dutch Startup Residence Permit", "مجوز اقامت استارتاپی هلند")}</strong>
+                {t(", your application must meet five specific statutory conditions enforced by the", "، پرونده شما باید پنج شرط قانونی مشخص را که توسط")}{" "}
+                <strong className="text-black font-semibold">IND</strong> {t("and evaluated by the", "اعمال و توسط")}{" "}
+                <strong className="text-black font-semibold">{t("Netherlands Enterprise Agency (RVO)", "RVO")}</strong>{t(".", " ارزیابی می‌شوند، برآورده کند.")}
               </p>
               {requirements.map((r, i) => (
                 <div
@@ -112,7 +112,7 @@ export default function Eligibility() {
                   </svg>
                   {t("Key Benefits", "مزایای کلیدی")}
                 </div>
-                <h3 className="text-[17px] font-semibold mb-4">{t("What the permit grants you", "این مجوز چه چیزی به شما می‌دهد")}</h3>
+                <h3 className="text-[17px] font-semibold mb-4">{t("What the permit grants you", "این مجوز چه امکاناتی در اختیار شما قرار می‌دهد؟")}</h3>
                 <ul className="flex flex-col gap-3">
                   {benefits.map((b, i) => (
                     <li
@@ -144,7 +144,7 @@ export default function Eligibility() {
                 </svg>
                 <p className="text-[13.5px] text-[#92400E] leading-[1.55] m-0">
                   <strong className="text-[#78350F] font-semibold">{t("Facilitator is mandatory.", "تسهیل‌گر الزامی است.")}</strong>{" "}
-                  {t("You cannot apply independently. Your RVO-approved facilitator is the anchor of the entire application — their endorsement triggers the IND review process.", "نمی‌توانید مستقلاً درخواست دهید. تسهیل‌گر مورد تأیید RVO لنگرگاه کل درخواست است — تأییدیه‌ی او فرایند بررسی IND را آغاز می‌کند.")}
+                  {t("You cannot apply independently. Your RVO-approved facilitator is the anchor of the entire application — their endorsement triggers the IND review process.", "امکان درخواست مستقل وجود ندارد. تسهیل‌گر مورد تأیید RVO، محور اصلی این مسیر است و تأیید او فرآیند بررسی پرونده توسط IND را فعال می‌کند.")}
                 </p>
               </div>
             </Reveal>

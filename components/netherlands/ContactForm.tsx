@@ -42,7 +42,7 @@ export default function ContactForm() {
       <Row>
         <Reveal variant="up">
           <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] text-center mb-10 md:mb-14">
-            {t("Start Your Netherlands Startup Visa Journey", "سفر ویزای استارتاپ هلند خود را آغاز کنید")}
+            {t("Start Your Netherlands Startup Visa Journey", "مسیر دریافت ویزای استارتاپ هلند را آغاز کنید")}
           </h2>
         </Reveal>
 

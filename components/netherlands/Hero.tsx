@@ -6,9 +6,9 @@ import { useEffect, useState } from "react";
 import { useLang } from "@/components/global/LanguageProvider";
 
 const stats = [
-  { num: "1 yr", numFa: "۱ سال", label: "Initial Permit", labelFa: "مجوز اولیه" },
-  { num: "€21K", numFa: "۲۱ هزار یورو", label: "Solo Threshold", labelFa: "آستانه‌ی انفرادی" },
-  { num: "5 yr", numFa: "۵ سال", label: "Path to PR", labelFa: "مسیر اقامت دائم" },
+  { num: "1 yr", numFa: "۱ سال", label: "Initial Permit", labelFa: "مجوز اقامت اولیه" },
+  { num: "€21K", numFa: "۲۱ هزار یورو", label: "Solo Threshold", labelFa: "حداقل پشتوانه مالی" },
+  { num: "5 yr", numFa: "۵ سال", label: "Path to PR", labelFa: "مسیر تا اقامت دائم" },
 ];
 
 export default function Hero() {
@@ -39,10 +39,10 @@ export default function Hero() {
           style={{ background: "#0f1f2e url('/images/photos/1512470876302-972faa2aa9a4-w900.webp') center/cover" }}
         />
         <h1 className={`text-3xl font-bold leading-tight tracking-tight mb-4 ${base} duration-600 delay-150 ${mounted ? show : hideUp}`}>
-          {t("Scale your", "")} <span className="text-[#8F27FF]">{t("innovative venture", "کسب‌وکار نوآورانه‌ی")}</span> {t("inside the European Union.", "خود را در دل اتحادیه اروپا مقیاس دهید.")}
+          {t("Scale your", "")} <span className="text-[#8F27FF]">{t("innovative venture", "کسب‌وکارتان")}</span> {t("inside the European Union.", "را در قلب تجارت دیجیتال اروپا توسعه دهید.")}
         </h1>
         <p className={`text-sm text-gray-600 leading-relaxed mb-6 ${base} duration-600 delay-200 ${mounted ? show : hideUp}`}>
-          {t("The Netherlands Startup Visa gives non-EU founders a structured, institutionally supported entry into one of Europe's most competitive digital economies — no complex capital scoring, no minimum investment floor.", "ویزای استارتاپ هلند به بنیان‌گذاران خارج از اتحادیه اروپا ورودی ساختارمند و مورد حمایت نهادی به یکی از رقابتی‌ترین اقتصادهای دیجیتال اروپا می‌دهد — بدون امتیازدهی پیچیده‌ی سرمایه و بدون کف حداقلی سرمایه‌گذاری.")}
+          {t("The Netherlands Startup Visa gives non-EU founders a structured, institutionally supported entry into one of Europe's most competitive digital economies — no complex capital scoring, no minimum investment floor.", "ویزای استارتاپ هلند، مسیری ساختاریافته و تحت حمایت نهادهای رسمی برای ورود بنیان‌گذاران غیراروپایی به یکی از رقابتی‌ترین اقتصادهای دیجیتال اروپا فراهم می‌کند؛ بدون سیستم‌های پیچیده امتیازدهی سرمایه و بدون الزام به حداقل سرمایه‌گذاری.")}
         </p>
         <div className={`grid grid-cols-3 gap-4 py-6 border-t border-b border-gray-200 mb-6 ${base} duration-600 delay-300 ${mounted ? show : hideUp}`}>
           {stats.map((s) => (
@@ -56,7 +56,7 @@ export default function Hero() {
           href="#contact"
           className={`inline-flex items-center gap-2 px-6 py-3 bg-[#8F27FF] text-white font-semibold rounded-full text-sm ${base} duration-500 delay-[400ms] ${mounted ? show : hideUp}`}
         >
-          {t("Book an Appointment →", "رزرو وقت ملاقات →")}
+          {t("Book an Appointment →", "رزرو وقت مشاوره ←")}
         </Link>
       </div>
 
@@ -66,10 +66,10 @@ export default function Hero() {
           <div className="grid grid-cols-[1.1fr_0.9fr] gap-16 items-center">
             <div>
               <h1 className={`text-[48px] font-bold leading-[1.06] tracking-[-0.03em] mb-6 ${base} duration-700 delay-100 ${mounted ? show : hideLeft}`}>
-                {t("Scale your", "")} <span className="text-[#8F27FF]">{t("innovative venture", "کسب‌وکار نوآورانه‌ی")}</span> {t("inside the European Union.", "خود را در دل اتحادیه اروپا مقیاس دهید.")}
+                {t("Scale your", "")} <span className="text-[#8F27FF]">{t("innovative venture", "کسب‌وکارتان")}</span> {t("inside the European Union.", "را در قلب تجارت دیجیتال اروپا توسعه دهید.")}
               </h1>
               <p className={`text-[16px] text-[#474747] leading-[1.65] mb-8 max-w-[520px] ${base} duration-700 delay-200 ${mounted ? show : hideLeft}`}>
-                {t("The Netherlands Startup Visa gives non-EU founders a structured, institutionally supported entry into one of Europe's most competitive digital economies — no complex capital scoring, no minimum investment floor.", "ویزای استارتاپ هلند به بنیان‌گذاران خارج از اتحادیه اروپا ورودی ساختارمند و مورد حمایت نهادی به یکی از رقابتی‌ترین اقتصادهای دیجیتال اروپا می‌دهد — بدون امتیازدهی پیچیده‌ی سرمایه و بدون کف حداقلی سرمایه‌گذاری.")}
+                {t("The Netherlands Startup Visa gives non-EU founders a structured, institutionally supported entry into one of Europe's most competitive digital economies — no complex capital scoring, no minimum investment floor.", "ویزای استارتاپ هلند، مسیری ساختاریافته و تحت حمایت نهادهای رسمی برای ورود بنیان‌گذاران غیراروپایی به یکی از رقابتی‌ترین اقتصادهای دیجیتال اروپا فراهم می‌کند؛ بدون سیستم‌های پیچیده امتیازدهی سرمایه و بدون الزام به حداقل سرمایه‌گذاری.")}
               </p>
               <div className={`grid grid-cols-3 py-6 border-t border-b border-gray-200 mb-9 ${base} duration-700 delay-300 ${mounted ? show : hideLeft}`}>
                 {stats.map((s) => (
@@ -84,7 +84,7 @@ export default function Hero() {
                 className={`inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5 ${base} duration-500 delay-[400ms] ${mounted ? show : hideLeft}`}
                 style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
               >
-                {t("Book an Appointment →", "رزرو وقت ملاقات →")}
+                {t("Book an Appointment →", "رزرو وقت مشاوره ←")}
               </Link>
             </div>
 

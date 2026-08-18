@@ -8,19 +8,21 @@ const fees = [
     stage: "Initial Application",
     stageFa: "درخواست اولیه",
     amount: "€192",
+    amountFa: "۱۹۲ یورو",
     label: "IND Startup Visa Application Fee",
     labelFa: "هزینه‌ی درخواست ویزای استارتاپ IND",
     desc: "Standard IND processing fee for the initial Startup Residence Permit application. Submitted digitally by your facilitator on your behalf.",
-    descFa: "هزینه‌ی استاندارد پردازش IND برای درخواست اولیه‌ی مجوز اقامت استارتاپ. به‌صورت دیجیتال توسط تسهیل‌گر شما از طرف شما ثبت می‌شود.",
+    descFa: "هزینه درخواست ویزای استارتاپ نزد IND که توسط تسهیل‌گر به‌صورت دیجیتال از طرف شما ثبت می‌شود.",
   },
   {
     stage: "Self-Employed Transition",
-    stageFa: "گذار به خوداشتغالی",
+    stageFa: "انتقال به اقامت خوداشتغالی",
     amount: "€192",
+    amountFa: "۱۹۲ یورو",
     label: "Change of Status Application",
     labelFa: "درخواست تغییر وضعیت",
     desc: "Fee to transition from your Startup Visa into a standard Self-Employed Residence Permit at the end of your first year, based on your facilitator's positive progress assessment.",
-    descFa: "هزینه‌ی گذار از ویزای استارتاپ به یک مجوز اقامت خوداشتغالی استاندارد در پایان سال نخست، بر اساس ارزیابی مثبت پیشرفت توسط تسهیل‌گر شما.",
+    descFa: "هزینه درخواست تغییر وضعیت از ویزای استارتاپ به مجوز اقامت خوداشتغالی در پایان سال اول، بر اساس ارزیابی مثبت تسهیل‌گر از روند پیشرفت کسب‌وکار.",
   },
 ];
 
@@ -50,7 +52,7 @@ export default function GovernmentFees() {
                 >
                   {t(f.stage, f.stageFa)}
                 </span>
-                <div className="text-[52px] font-bold tracking-[-0.04em] leading-none">{f.amount}</div>
+                <div className="text-[52px] font-bold tracking-[-0.04em] leading-none">{t(f.amount, f.amountFa)}</div>
                 <div className="text-[14px] font-semibold">{t(f.label, f.labelFa)}</div>
                 <p className="text-[13px] text-[#929292] leading-[1.6] m-0">{t(f.desc, f.descFa)}</p>
               </div>
@@ -63,7 +65,7 @@ export default function GovernmentFees() {
             className="rounded-[8px] px-4 py-3.5 text-[13px] leading-[1.6]"
             style={{ background: "#FFFBE6", border: "1px solid #F0D800", color: "#7A6800" }}
           >
-            {t("Note: Government fees are subject to IND annual updates. Additional costs include certified document translations, apostilles, facilitator fees, and KVK business registration (~€50).", "توجه: هزینه‌های دولتی مشمول به‌روزرسانی‌های سالانه‌ی IND هستند. هزینه‌های اضافی شامل ترجمه‌ی رسمی اسناد، آپوستیل، هزینه‌های تسهیل‌گر و ثبت کسب‌وکار KVK (حدود ۵۰ یورو) است.")}
+            {t("Note: Government fees are subject to IND annual updates. Additional costs include certified document translations, apostilles, facilitator fees, and KVK business registration (~€50).", "توجه: هزینه‌های دولتی ممکن است هر سال توسط IND به‌روزرسانی شوند. هزینه‌های جانبی شامل ترجمه رسمی مدارک، آپوستیل، هزینه تسهیل‌گر و ثبت کسب‌وکار در KVK (حدود ۵۰ یورو) است.")}
           </div>
         </Reveal>
       </Row>

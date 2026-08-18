@@ -8,38 +8,38 @@ const steps = [
   {
     num: "1",
     meta: "Step 1 · Weeks 1–6",
-    metaFa: "گام ۱ · هفته‌های ۱ تا ۶",
+    metaFa: "۰۱ — هفته اول تا ششم",
     title: "Secure a Vetted Facilitator",
-    titleFa: "گرفتن یک تسهیل‌گر تأییدشده",
+    titleFa: "انتخاب تسهیل‌گر مناسب",
     desc: "Pitch your business model, prototype, or MVP to an RVO-approved incubator or accelerator. Negotiate terms and secure a signed collaboration agreement with your chosen facilitator.",
-    descFa: "مدل کسب‌وکار، نمونه‌ی اولیه یا MVP خود را به یک شتاب‌دهنده یا مرکز رشد مورد تأیید RVO ارائه دهید. شرایط را مذاکره کنید و یک توافق‌نامه‌ی همکاری امضاشده با تسهیل‌گر منتخب خود بگیرید.",
+    descFa: "مدل کسب‌وکار، نمونه اولیه یا MVP خود را به یک انکوباتور یا شتاب‌دهنده مورد تأیید RVO ارائه می‌کنید. پس از توافق بر سر شرایط همکاری، قرارداد رسمی و امضاشده با تسهیل‌گر منتخب منعقد می‌شود.",
   },
   {
     num: "2",
     meta: "Step 2 · Weeks 7–9",
-    metaFa: "گام ۲ · هفته‌های ۷ تا ۹",
+    metaFa: "۰۲ — هفته هفتم تا نهم",
     title: "Prepare the Legal File",
-    titleFa: "آماده‌سازی پرونده‌ی حقوقی",
+    titleFa: "آماده‌سازی پرونده حقوقی",
     desc: "Finalize your 12-month step plan, obtain certified bank statements (€21,000+ floor), and have all civil documents professionally translated and apostilled.",
-    descFa: "برنامه‌ی گام‌به‌گام ۱۲ ماهه‌ی خود را نهایی کنید، صورت‌حساب‌های بانکی تأییدشده (کف ۲۱٬۰۰۰ یورو به بالا) دریافت کنید و همه‌ی اسناد مدنی را به‌صورت حرفه‌ای ترجمه و آپوستیل کنید.",
+    descFa: "برنامه اجرایی ۱۲ماهه را نهایی می‌کنید، صورت‌حساب‌های بانکی معتبر با حداقل ۲۱٬۰۰۰ یورو منابع مالی آماده می‌شود و تمام مدارک مدنی موردنیاز به‌صورت رسمی ترجمه و آپوستیل می‌شوند.",
   },
   {
     num: "3",
     meta: "Step 3 · Weeks 10–16",
-    metaFa: "گام ۳ · هفته‌های ۱۰ تا ۱۶",
+    metaFa: "۰۳ — هفته دهم تا شانزدهم",
     title: "IND Filing & RVO Evaluation",
-    titleFa: "ثبت در IND و ارزیابی RVO",
+    titleFa: "ثبت درخواست نزد IND و ارزیابی RVO",
     desc: "Your facilitator submits the application digitally to the IND. The RVO evaluates your plan's innovation. The official government decision takes up to 90 days.",
-    descFa: "تسهیل‌گر شما درخواست را به‌صورت دیجیتال به IND ثبت می‌کند. RVO نوآوری طرح شما را ارزیابی می‌کند. تصمیم رسمی دولت تا ۹۰ روز طول می‌کشد.",
+    descFa: "تسهیل‌گر درخواست را به‌صورت دیجیتال نزد IND ثبت می‌کند. سپس RVO نوآوری و قابلیت کسب‌وکار را ارزیابی می‌کند. تصمیم رسمی دولت ممکن است تا ۹۰ روز زمان ببرد.",
   },
   {
     num: "4",
     meta: "Step 4 · Month 5",
-    metaFa: "گام ۴ · ماه ۵",
+    metaFa: "۰۴ — ماه پنجم",
     title: "Arrival & Business Onboarding",
-    titleFa: "ورود و راه‌اندازی کسب‌وکار",
+    titleFa: "ورود به هلند و راه‌اندازی کسب‌وکار",
     desc: "Collect your MVV entry visa from your local embassy if required. Land in the Netherlands, register at city hall (BRP) for your BSN, register your business at the Chamber of Commerce (KVK), and collect your residence card.",
-    descFa: "در صورت نیاز، ویزای ورود MVV خود را از سفارت محلی دریافت کنید. به هلند وارد شوید، در شهرداری (BRP) برای شماره‌ی BSN ثبت‌نام کنید، کسب‌وکارتان را در اتاق بازرگانی (KVK) ثبت کنید و کارت اقامت خود را دریافت کنید.",
+    descFa: "در صورت نیاز، ویزای ورود MVV را از سفارت هلند دریافت می‌کنید. پس از ورود، آدرس خود را در شهرداری ثبت کرده و BSN دریافت می‌کنید، کسب‌وکار را در اتاق بازرگانی (KVK) به ثبت می‌رسانید و کارت اقامت خود را دریافت می‌کنید.",
   },
 ];
 
@@ -57,18 +57,18 @@ export default function ProcessSteps() {
           <div className="md:sticky md:top-24">
             <Reveal variant="left">
               <h2 className="text-[28px] md:text-[40px] font-bold tracking-[-0.03em] mb-5">
-                {t("Step-by-Step Application Timeline", "زمان‌بندی گام‌به‌گام درخواست")}
+                {t("Step-by-Step Application Timeline", "مراحل دریافت ویزای استارتاپ هلند")}
               </h2>
             </Reveal>
             <Reveal variant="left" delay={120}>
               <blockquote className="text-[18px] italic font-medium leading-[1.5] py-5 pl-6 mb-4"
                 style={{ borderLeft: "3px solid #8F27FF" }}>
-                &ldquo;{t("Nexa coordinates your application flow into a clear, linear progression to avoid processing rejections.", "نکسا جریان درخواست شما را در یک روند روشن و خطی هماهنگ می‌کند تا از ردهای پردازشی جلوگیری شود.")}&rdquo;
+                &ldquo;{t("Nexa coordinates your application flow into a clear, linear progression to avoid processing rejections.", "نکسا کل فرآیند را به یک مسیر شفاف و مرحله‌به‌مرحله تبدیل می‌کند تا هر بخش در زمان درست و با آمادگی کامل انجام شود.")}&rdquo;
               </blockquote>
             </Reveal>
             <Reveal variant="left" delay={240}>
               <p className="text-[14.5px] text-[#929292] leading-[1.7]">
-                {t("From securing your facilitator to landing in the Netherlands and registering your business, the full process takes approximately 4 to 5 months when properly prepared.", "از گرفتن تسهیل‌گر تا ورود به هلند و ثبت کسب‌وکار، کل فرایند با آماده‌سازی درست حدود ۴ تا ۵ ماه طول می‌کشد.")}
+                {t("From securing your facilitator to landing in the Netherlands and registering your business, the full process takes approximately 4 to 5 months when properly prepared.", "از انتخاب تسهیل‌گر تا ورود به هلند و ثبت رسمی کسب‌وکار، در صورت آماده بودن کامل پرونده، کل فرآیند معمولاً حدود ۴ تا ۵ ماه زمان می‌برد.")}
               </p>
             </Reveal>
           </div>

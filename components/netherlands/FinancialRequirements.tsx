@@ -7,9 +7,9 @@ import { useLang } from "@/components/global/LanguageProvider";
 const cards = [
   {
     title: "Solo Founder",
-    titleFa: "بنیان‌گذار منفرد",
+    titleFa: "بنیان‌گذار مجرد",
     desc: "Minimum <strong>€21,000</strong> in unencumbered personal liquid savings. Updated semi-annually by the IND based on national minimum wage standards.",
-    descFa: "حداقل <strong>۲۱٬۰۰۰ یورو</strong> پس‌انداز نقدی شخصی بدون قید. هر شش ماه یک‌بار توسط IND بر اساس استانداردهای حداقل دستمزد ملی به‌روزرسانی می‌شود.",
+    descFa: "حداقل <strong>۲۱٬۰۰۰ یورو</strong> پس‌انداز شخصی و نقدشونده، بدون تعهد یا محدودیت. این مبلغ توسط IND و بر اساس استانداردهای حداقل دستمزد ملی، به‌صورت دوره‌ای به‌روزرسانی می‌شود.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" className="w-5 h-5">
         <circle cx="12" cy="12" r="9" />
@@ -21,7 +21,7 @@ const cards = [
     title: "Founder with Family",
     titleFa: "بنیان‌گذار همراه خانواده",
     desc: "Threshold rises to minimum <strong>€30,000</strong> when relocating with a spouse or dependents to cover full family living capital.",
-    descFa: "هنگام جابه‌جایی با همسر یا افراد تحت تکفل، آستانه برای پوشش کامل سرمایه‌ی زندگی خانواده به حداقل <strong>۳۰٬۰۰۰ یورو</strong> افزایش می‌یابد.",
+    descFa: "در صورت انتقال همسر یا افراد تحت تکفل، حداقل پشتوانه مالی به <strong>۳۰٬۰۰۰ یورو</strong> افزایش می‌یابد تا هزینه‌های زندگی خانواده را پوشش دهد.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" className="w-5 h-5">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -32,9 +32,9 @@ const cards = [
   },
   {
     title: "Facilitator Can Sponsor",
-    titleFa: "تسهیل‌گر می‌تواند حمایت مالی کند",
+    titleFa: "امکان تأمین هزینه‌ها توسط تسهیل‌گر",
     desc: "Your recognized facilitator may cover your living costs directly. This <strong>must be explicitly written</strong> into your signed facilitator agreement — eliminating the need to show personal savings.",
-    descFa: "تسهیل‌گر شناخته‌شده‌ی شما می‌تواند مستقیماً هزینه‌های زندگی شما را پوشش دهد. این موضوع <strong>باید صراحتاً</strong> در توافق‌نامه‌ی امضاشده‌ی تسهیل‌گر نوشته شود — که نیاز به نشان دادن پس‌انداز شخصی را از بین می‌برد.",
+    descFa: "تسهیل‌گر مورد تأیید می‌تواند مستقیماً هزینه‌های زندگی شما را تقبل کند. این موضوع <strong>باید به‌صراحت</strong> در قرارداد همکاری امضاشده درج شود و در این صورت، لزوماً نیازی به اثبات پس‌انداز شخصی نخواهید داشت.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" className="w-5 h-5">
         <rect x="3" y="6" width="18" height="12" rx="1.5" />
@@ -45,10 +45,10 @@ const cards = [
 ];
 
 const CHIPS: { en: string; fa: string }[] = [
-  { en: "Certified bank statements", fa: "صورت‌حساب‌های بانکی تأییدشده" },
-  { en: "Dutch notary escrow", fa: "امانت‌سپاری نزد دفتر اسناد رسمی هلند" },
-  { en: "VC funding letters", fa: "نامه‌های تأمین مالی سرمایه‌گذاری خطرپذیر" },
-  { en: "Facilitator sponsorship", fa: "حمایت مالی تسهیل‌گر" },
+  { en: "Certified bank statements", fa: "صورت‌حساب‌های بانکی معتبر" },
+  { en: "Dutch notary escrow", fa: "حساب امانی نزد دفتر اسناد رسمی هلند" },
+  { en: "VC funding letters", fa: "نامه‌های تأمین مالی VC" },
+  { en: "Facilitator sponsorship", fa: "تعهد مالی تسهیل‌گر" },
 ];
 
 export default function FinancialRequirements() {
@@ -79,16 +79,16 @@ export default function FinancialRequirements() {
                 className="self-start text-[11px] font-bold uppercase tracking-[.12em] px-3.5 py-1.5 rounded-full"
                 style={{ background: "rgba(255,230,0,0.12)", border: "1px solid rgba(255,230,0,0.3)", color: "#FFE600" }}
               >
-                {t("Personal Liquid Funds Threshold", "آستانه‌ی دارایی نقدی شخصی")}
+                {t("Personal Liquid Funds Threshold", "حداقل پشتوانه مالی شخصی")}
               </span>
               <div className="text-[72px] font-bold tracking-[-0.04em] leading-[0.9] text-white">
-                €21K
+                {t("€21K", "۲۱ هزار یورو")}
               </div>
               <p className="text-[14px] leading-[1.65]" style={{ color: "#B5B5BA" }}>
-                {t("Minimum personal liquid funds for a", "حداقل دارایی نقدی شخصی برای یک")}{" "}
-                <strong className="font-semibold" style={{ color: "#FFE600" }}>{t("solo founder", "بنیان‌گذار منفرد")}</strong>
-                {t(". With family, the threshold rises to", "است. با خانواده، آستانه به")}{" "}
-                <strong className="font-semibold" style={{ color: "#FFE600" }}>{t("€30,000", "۳۰٬۰۰۰ یورو")}</strong>{t(".", " افزایش می‌یابد.")}
+                {t("Minimum personal liquid funds for a", "حداقل منابع مالی شخصی و نقدشونده برای یک")}{" "}
+                <strong className="font-semibold" style={{ color: "#FFE600" }}>{t("solo founder", "بنیان‌گذار مجرد")}</strong>
+                {t(". With family, the threshold rises to", ". در صورت همراهی خانواده، این میزان به")}{" "}
+                <strong className="font-semibold" style={{ color: "#FFE600" }}>{t("€30,000", "۳۰ هزار یورو")}</strong>{t(".", " افزایش می‌یابد.")}
               </p>
               <div
                 className="flex flex-wrap gap-2 mt-auto pt-4"

@@ -26,7 +26,7 @@ export default function LangSwitch({ className = "" }: { className?: string }) {
         <line x1="2" y1="12" x2="22" y2="12" />
         <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
       </svg>
-      <span>{lang === "en" ? "فارسی" : "EN"}</span>
+      <span lang={lang === "en" ? "fa" : "en"}>{lang === "en" ? "فارسی" : "EN"}</span>
     </button>
   );
 }

@@ -28,6 +28,30 @@
 
 .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
 
+/* This page hardcodes --font to Inter, which has no Persian glyphs and
+   would otherwise override the sitewide IRANSansX swap in globals.css. */
+html[lang="fa"] { --font: "IRANSansX", 'Inter', system-ui, sans-serif; }
+
+/* Transparent + text-stroke "outline" text doesn't render legibly for
+   Persian's joined letterforms (thin connecting strokes get lost/merged),
+   so Persian falls back to a solid fill instead. Most of these sit on a
+   light background (ink fill); .vi-mark/.vi-cta are dark sections (white
+   fill), including the two spots that set an inline WebkitTextStrokeColor
+   for the same reason. */
+html[lang="fa"] .vi-hero__title .vi-o,
+html[lang="fa"] .eh2-outline{
+  -webkit-text-stroke:0 !important;
+  color:var(--ink) !important;
+}
+html[lang="fa"] .vi-mark .eh2-outline,
+html[lang="fa"] .vi-cta .eh2-outline{color:#fff !important;}
+
+/* Persian line-height fix (letter-spacing is reset globally in globals.css):
+   Latin-tuned tight line-heights clip IRANSansX ascenders, descenders
+   and diacritics. */
+html[lang="fa"] .vi-hero__title,
+html[lang="fa"] .editorial-h2{line-height: 1.5 !important;}
+
 .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: var(--purple); color: #fff; font-weight: 600; border-radius: 999px; font-size: 14px; transition: all .25s; font-family: var(--font); text-decoration: none; cursor: pointer; }
 .btn-primary:hover { background: var(--purple-deep); transform: translateY(-1px); box-shadow: 0 8px 22px rgba(143,39,255,.28); }
 
@@ -2729,6 +2753,10 @@
   color: var(--ab-ink);
   margin-top: 8px;
 }
+
+/* This block hardcodes Inter, which has no Persian glyphs and would
+   otherwise override the sitewide IRANSansX swap in globals.css. */
+html[lang="fa"] .ab-breakdown{font-family:"IRANSansX", "Inter", sans-serif;}
 .ab-top-row{
   display:flex;justify-content:space-between;align-items:flex-end;
   gap:24px;flex-wrap:wrap;

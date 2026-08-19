@@ -95,6 +95,7 @@ export default function OfficesSection() {
               </div>
               <a
                 href={`tel:${office.tel}`}
+                dir="ltr"
                 className="text-[13px] text-[#8F27FF] font-bold hover:underline transition-colors"
               >
                 {office.phone}

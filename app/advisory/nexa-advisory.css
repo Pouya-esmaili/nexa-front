@@ -26,6 +26,40 @@
 }
 .adv *{box-sizing:border-box;}
 
+/* .adv hardcodes --font to Inter, which has no Persian glyphs and would
+   otherwise override the sitewide IRANSansX swap in globals.css. */
+html[lang="fa"] .adv{--font:"IRANSansX",'Inter',system-ui,sans-serif;}
+
+/* Persian line-height fix (letter-spacing is reset globally in globals.css):
+   Latin-tuned tight line-heights/negative margins clip Persian ascenders,
+   descenders and diacritics. */
+html[lang="fa"] .adv .hbt-outline,
+html[lang="fa"] .adv .hbt-solid,
+html[lang="fa"] .adv .hbt-purple{line-height:1.4 !important;}
+html[lang="fa"] .adv .hbt-line + .hbt-line{margin-top:4px;}
+html[lang="fa"] .adv .editorial-h2,
+html[lang="fa"] .adv .svc-card h3,
+html[lang="fa"] .adv .hc-card h4{line-height:1.5 !important;}
+
+/* These marquees are infinite-loop flex tracks driven by a physical
+   translateX keyframe (see teamScroll / srCredits below). Under RTL the
+   flex items reorder but the keyframe math doesn't, so the loop runs out
+   and jumps/stops. Force LTR so the animation always matches the layout,
+   regardless of page language. */
+html[lang="fa"] .adv .team-cards__track,
+html[lang="fa"] .adv .showreel__credits-track{direction:ltr;}
+
+/* Transparent + text-stroke "outline" text doesn't render legibly for
+   Persian's joined letterforms (thin connecting strokes get lost/merged),
+   so Persian falls back to a solid fill instead. */
+html[lang="fa"] .adv .eh2-outline,
+html[lang="fa"] .adv .hbt-outline{
+  -webkit-text-stroke:0 !important;
+  color:var(--ink) !important;
+}
+html[lang="fa"] .adv .showreel__content .hbt-outline{color:#fff !important;}
+html[lang="fa"] .adv .contact-section .eh2-outline{color:#fff !important;}
+
 @media (prefers-reduced-motion: reduce){
   .adv *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
 }

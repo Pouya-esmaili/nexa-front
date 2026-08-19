@@ -5,7 +5,7 @@ import { useStaggerReveal } from "./useStaggerReveal";
 import { useLang } from "@/components/global/LanguageProvider";
 
 export default function Process() {
-  const { t } = useLang();
+  const { t, n } = useLang();
   const ref = useRef<HTMLElement>(null);
   useStaggerReveal(ref, ".hc-card", "hc-visible", (i) => i * 100, 0.15);
 
@@ -17,7 +17,7 @@ export default function Process() {
           <div className="how-cards">
             <div className="hc-card hc-card--01">
               <div className="hc-dot"></div>
-              <div className="hc-num">01</div>
+              <div className="hc-num">{n("01")}</div>
               <div>
                 <div className="hc-tag">{t("DIAGNOSE", "تحلیل")}</div>
                 <h4>{t("Discovery", "مرحله")}<br />{t("Sprint", "شناخت و تحلیل")}</h4>
@@ -27,7 +27,7 @@ export default function Process() {
 
             <div className="hc-card hc-card--02">
               <div className="hc-dot"></div>
-              <div className="hc-num">02</div>
+              <div className="hc-num">{n("02")}</div>
               <div>
                 <div className="hc-tag">{t("DESIGN", "طراحی")}</div>
                 <h4>{t("Strategy", "استراتژی")}<br />{t("& System", "و سیستم")}</h4>
@@ -37,7 +37,7 @@ export default function Process() {
 
             <div className="hc-card hc-card--03">
               <div className="hc-dot"></div>
-              <div className="hc-num">03</div>
+              <div className="hc-num">{n("03")}</div>
               <div>
                 <div className="hc-tag">{t("BUILD", "ساخت")}</div>
                 <h4>{t("Identity", "هویت برند")}<br />{t("& Web", "و وب سایت")}</h4>
@@ -47,7 +47,7 @@ export default function Process() {
 
             <div className="hc-card hc-card--04">
               <div className="hc-dot"></div>
-              <div className="hc-num">04</div>
+              <div className="hc-num">{n("04")}</div>
               <div>
                 <div className="hc-tag">{t("LAUNCH", "عرضه")}</div>
                 <h4>{t("Content", "محتوا")}<br />{t("& Rollout", "و اجرای نهایی")}</h4>

@@ -113,7 +113,7 @@ function StepItem({
   step: (typeof steps)[0];
   isLast: boolean;
 }) {
-  const { t } = useLang();
+  const { t, n } = useLang();
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -135,7 +135,7 @@ function StepItem({
           transform: hovered ? "scale(1.1)" : "scale(1)",
         }}
       >
-        {step.num}
+        {n(step.num)}
       </div>
 
       {/* Card */}

@@ -180,6 +180,7 @@ export default function PhoneField({ defaultCountryCode = "+1", bg = "#F7F6F9", 
   const { t } = useLang();
   return (
     <div
+      dir="ltr"
       className="h-11 flex items-center border border-gray-200 rounded-[10px] overflow-hidden focus-within:border-[#8F27FF] transition-colors"
       style={{ background: bg }}
     >

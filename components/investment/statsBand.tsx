@@ -16,7 +16,7 @@ function easeOut(p: number) {
 }
 
 export default function InvestmentStatsBand() {
-  const { t } = useLang();
+  const { t, n } = useLang();
   const bandRef = useRef<HTMLDivElement>(null);
   const [counts, setCounts] = useState([0, 0, 0]);
   const triggered = useRef(false);
@@ -109,7 +109,7 @@ export default function InvestmentStatsBand() {
                   fontVariantNumeric: "tabular-nums",
                 }}
               >
-                {counts[i]}
+                {n(counts[i])}
                 <span style={{ color: "#8F27FF" }}>{stat.suffix}</span>
               </div>
 

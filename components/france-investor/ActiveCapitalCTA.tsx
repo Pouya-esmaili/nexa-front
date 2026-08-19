@@ -88,7 +88,7 @@ export default function ActiveCapitalCTA() {
                   boxShadow: "0 12px 28px rgba(255,230,0,0.25)",
                 }}
               >
-                {t("Assess My Eligibility →", "ارزیابی شرایط شما →")}
+                {t("Assess My Eligibility →", "ارزیابی شرایط شما ←")}
               </a>
             </div>
           </div>

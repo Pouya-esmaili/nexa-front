@@ -15,7 +15,7 @@ import { useLang } from "@/components/global/LanguageProvider";
 ─────────────────────────────────────────────────────────────── */
 
 export default function Results() {
-  const { t, lang } = useLang();
+  const { t, lang, n } = useLang();
   const labelFont = lang === "fa" ? "IRANSansX, Inter, sans-serif" : "Inter, sans-serif";
   return (
     <section style={{ background: "#000", padding: "72px 0 60px" }}>
@@ -112,21 +112,21 @@ export default function Results() {
                 <g transform="translate(270,535)" filter="url(#cs2)">
                   <rect width="210" height="100" rx="16" fill="rgba(22,4,50,0.95)" stroke="rgba(143,39,255,0.5)" strokeWidth="1.5"/>
                   <rect width="6" height="100" rx="3" fill="#8F27FF"/>
-                  <text x="26" y="48" fontSize="40" fontWeight="800" fill="white" fontFamily="Inter,sans-serif">89</text>
+                  <text x="26" y="48" fontSize="40" fontWeight="800" fill="white" fontFamily={labelFont}>{n(89)}</text>
                   <text x="96" y="48" fontSize="26" fontWeight="700" fill="#8F27FF" fontFamily="Inter,sans-serif">%</text>
                   <text x="26" y="76" fontSize="13" fontWeight="500" fill="rgba(255,255,255,0.65)" fontFamily={labelFont}>{t("Successful Cases", "پرونده‌های موفق")}</text>
                 </g>
                 <g transform="translate(600,535)" filter="url(#cs2)">
                   <rect width="210" height="100" rx="16" fill="rgba(22,4,50,0.95)" stroke="rgba(143,39,255,0.5)" strokeWidth="1.5"/>
                   <rect width="6" height="100" rx="3" fill="#8F27FF"/>
-                  <text x="26" y="48" fontSize="40" fontWeight="800" fill="white" fontFamily="Inter,sans-serif">400</text>
+                  <text x="26" y="48" fontSize="40" fontWeight="800" fill="white" fontFamily={labelFont}>{n(400)}</text>
                   <text x="118" y="48" fontSize="26" fontWeight="700" fill="#8F27FF" fontFamily="Inter,sans-serif">+</text>
                   <text x="26" y="76" fontSize="13" fontWeight="500" fill="rgba(255,255,255,0.65)" fontFamily={labelFont}>{t("Clients Worldwide", "مشتری در سراسر جهان")}</text>
                 </g>
                 <g transform="translate(960,535)" filter="url(#cs2)">
                   <rect width="210" height="100" rx="16" fill="rgba(22,4,50,0.95)" stroke="rgba(143,39,255,0.5)" strokeWidth="1.5"/>
                   <rect width="6" height="100" rx="3" fill="#8F27FF"/>
-                  <text x="26" y="48" fontSize="40" fontWeight="800" fill="white" fontFamily="Inter,sans-serif">10</text>
+                  <text x="26" y="48" fontSize="40" fontWeight="800" fill="white" fontFamily={labelFont}>{n(10)}</text>
                   <text x="68" y="48" fontSize="26" fontWeight="700" fill="#8F27FF" fontFamily={labelFont}>{t("+ Yrs", "+ سال")}</text>
                   <text x="26" y="76" fontSize="13" fontWeight="500" fill="rgba(255,255,255,0.65)" fontFamily={labelFont}>{t("Years of Expertise", "سال تجربه")}</text>
                 </g>

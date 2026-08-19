@@ -9,7 +9,7 @@ const STEPS = [
 ];
 
 export default function Process() {
-  const { t } = useLang();
+  const { t, n } = useLang();
   return (
     <section className="vi-section vi-process">
       <div className="wrap">
@@ -22,7 +22,7 @@ export default function Process() {
         <div className="vi-proc__grid">
           {STEPS.map((s) => (
             <div className="vi-proc__card" key={s.num}>
-              <div className="vi-proc__num">{s.num}</div>
+              <div className="vi-proc__num">{n(s.num)}</div>
               <h4>{t(s.title, s.titleFa)}</h4>
               <p>{t(s.desc, s.descFa)}</p>
             </div>

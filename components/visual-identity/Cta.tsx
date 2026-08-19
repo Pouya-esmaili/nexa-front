@@ -14,7 +14,7 @@ export default function Cta() {
           <span className="eh2-purple" style={{ color: "var(--yellow)" }}>{t("THAT LOOKS THE PART?", "که درخور کسب‌وکارتان باشد.")}</span>
         </h2>
         <p>{t("Tell us about your business. We'll tell you exactly what we'd design and what it costs — no pitch decks, no upsells.", "درباره کسب‌وکارتان با ما صحبت کنید. دقیقاً به شما می‌گوییم چه هویتی برای آن طراحی می‌کنیم و هزینه آن چقدر خواهد بود؛ بدون ارائه‌های تبلیغاتی، بدون فروش خدمات اضافه.")}</p>
-        <a href="#cta" className="btn-primary">{t("Book Discovery Call", "رزرو جلسه آشنایی →")}</a>
+        <a href="#cta" className="btn-primary">{t("Book Discovery Call", "رزرو جلسه آشنایی ←")}</a>
         <div className="vi-cta__note">{t("Fixed price · Proposal in 48 hours · Cancel anytime", "قیمت ثابت · ارائه پیشنهاد ظرف ۴۸ ساعت · امکان لغو در هر زمان")}</div>
       </div>
     </section>

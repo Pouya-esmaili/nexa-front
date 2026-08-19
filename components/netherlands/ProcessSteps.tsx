@@ -44,7 +44,7 @@ const steps = [
 ];
 
 export default function ProcessSteps() {
-  const { t } = useLang();
+  const { t, n } = useLang();
   const [active, setActive] = useState<number | null>(null);
   const [hoveredCircle, setHoveredCircle] = useState<number | null>(null);
 
@@ -79,7 +79,7 @@ export default function ProcessSteps() {
               style={{ background: "linear-gradient(180deg, #8F27FF 0%, rgba(143,39,255,0.15) 100%)" }} />
 
             {steps.map((s, i) => (
-              <Reveal key={s.num} variant="up" delay={i * 100 + 100}>
+              <Reveal key={n(s.num)} variant="up" delay={i * 100 + 100}>
                 <div
                   className="relative mb-5 last:mb-0 transition-transform hover:translate-x-1 cursor-pointer"
                   onClick={() => setActive(active === i ? null : i)}
@@ -95,7 +95,7 @@ export default function ProcessSteps() {
                       color: active === i || hoveredCircle === i ? "white" : "#8F27FF",
                     }}
                   >
-                    {s.num}
+                    {n(s.num)}
                   </div>
                   <div
                     className="bg-white rounded-[14px] p-[18px_22px] transition-colors duration-200"

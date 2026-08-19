@@ -276,7 +276,7 @@ export default function ContactForm() {
 
                   {/* Phone */}
                   <FormGroup label={t("Phone Number", "شماره تماس")} required>
-                    <div className="flex gap-0">
+                    <div className="flex gap-0" dir="ltr">
                       <CountryPicker
                         selected={selectedCountry}
                         onChange={setSelectedCountry}

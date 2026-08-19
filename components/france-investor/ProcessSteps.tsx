@@ -15,7 +15,7 @@ const steps = [
 ];
 
 function StepItem({ step, isLast }: { step: (typeof steps)[0]; isLast: boolean }) {
-  const { t } = useLang();
+  const { t, n } = useLang();
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -41,7 +41,7 @@ function StepItem({ step, isLast }: { step: (typeof steps)[0]; isLast: boolean }
           zIndex: 10,
         }}
       >
-        {step.num}
+        {n(step.num)}
       </div>
 
       <div

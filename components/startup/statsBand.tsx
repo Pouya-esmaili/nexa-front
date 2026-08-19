@@ -26,7 +26,7 @@ function useCountUp(target: number, inView: boolean, duration = 1200) {
 }
 
 function StatItem({ pill, pillFa, num, suf, label, labelFa, idx }: { pill: string; pillFa: string; num: number; suf: string; label: string; labelFa: string; idx: number }) {
-  const { t } = useLang();
+  const { t, n } = useLang();
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
   useEffect(() => {
@@ -43,7 +43,7 @@ function StatItem({ pill, pillFa, num, suf, label, labelFa, idx }: { pill: strin
         {t(pill, pillFa)}
       </span>
       <div className="text-[48px] font-extrabold text-white tracking-[-0.04em] leading-none">
-        {inView ? val : 0}<span className="text-[#8F27FF]">{suf}</span>
+        {n(inView ? val : 0)}<span className="text-[#8F27FF]">{suf}</span>
       </div>
       <div className="text-[12.5px] text-white/40 mt-2 font-medium text-center leading-snug max-w-[18ch]">{t(label, labelFa)}</div>
     </div>

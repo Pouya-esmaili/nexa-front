@@ -127,7 +127,7 @@ export default function Contact() {
                 <button type="submit"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-[10px] px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5 flex-shrink-0"
                   style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}>
-                  {t("Submit Application →", "ارسال درخواست →")}
+                  {t("Submit Application →", "ارسال درخواست ←")}
                 </button>
               </div>
             </form>

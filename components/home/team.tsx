@@ -35,7 +35,7 @@ export default function Team() {
               <Link
                 href="/our-team"
                 className="self-start mt-2 inline-flex items-center gap-2 px-7 py-3.5 border-[1.5px] border-[#8F27FF] text-[#8F27FF] font-semibold rounded-full text-[14px] hover:bg-[#8F27FF] hover:text-white hover:-translate-y-px transition-all">
-                {t("Meet Our Team →", "با تیم ما آشنا شوید →")}
+                {t("Meet Our Team →", "با تیم ما آشنا شوید ←")}
               </Link>
             </div>
           </Reveal>
@@ -44,7 +44,7 @@ export default function Team() {
           <Reveal variant="right" className="order-1 md:order-2">
             <div className="rounded-[24px] overflow-hidden">
               <Image
-                src="/images/landing/behind.webp"
+                src="/images/landing/behind.jpg"
                 alt="Behind Nexa"
                 width={600}
                 height={500}

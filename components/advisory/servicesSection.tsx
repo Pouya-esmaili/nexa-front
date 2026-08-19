@@ -123,7 +123,7 @@ const DESCS_FA: string[] = [
 ];
 
 export default function ServicesSection() {
-  const { t, lang } = useLang();
+  const { t, lang, n } = useLang();
   const ref = useRef<HTMLElement>(null);
   useStaggerReveal(ref, ".svc-card", "sc-visible", (i) => (i % 4) * 80, 0.12);
 
@@ -140,7 +140,7 @@ export default function ServicesSection() {
         <div className="svcs-grid">
           {CARDS.map((c, i) => (
             <Link className={`svc-card ${c.tone}`} id={`detail-${i + 1}`} href={c.href} key={i}>
-              <div className="sc-num">{String(i + 1).padStart(2, "0")}</div>
+              <div className="sc-num">{n(String(i + 1).padStart(2, "0"))}</div>
               <div className="sc-body">
                 {c.diag}
                 <h3>{lang === "fa" ? TITLES_FA[i] : c.title}</h3>

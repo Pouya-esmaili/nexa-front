@@ -102,7 +102,7 @@ export default function Contact() {
                     </div>
                     <div className="cf-field">
                       <label>{t("Phone Number", "شماره تماس")}</label>
-                      <div className="cf-phone">
+                      <div className="cf-phone" dir="ltr">
                         <select name="countryCode" className="cf-phone__code" aria-label={t("Country code", "کد کشور")} defaultValue="+1">
                           {countries.map((c) => (
                             <option key={c.name} value={c.code}>
@@ -131,7 +131,7 @@ export default function Contact() {
                     <textarea name="message" rows={4} placeholder={t("Stage of business, timeline, budget range...", "مرحله‌ی کسب‌وکار، بازه‌ی زمانی، محدوده‌ی بودجه...")}></textarea>
                   </div>
                   <button type="submit" disabled={sending} className="btn-primary cf-submit" style={{ width: "100%", justifyContent: "center", padding: 18 }}>
-                    {sending ? t("Sending…", "در حال ارسال…") : t("Send & Book a Call →", "ارسال و رزرو جلسه →")}
+                    {sending ? t("Sending…", "در حال ارسال…") : t("Send & Book a Call →", "ارسال و رزرو جلسه ←")}
                   </button>
                 </form>
               )}

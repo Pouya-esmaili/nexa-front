@@ -29,7 +29,7 @@ export default function AlertBanner() {
               onClick={scrollToContact}
               className="flex-shrink-0 inline-flex items-center gap-2.5 px-6 py-3.5 bg-black text-white font-semibold rounded-full text-[14px] transition-all hover:bg-[#8F27FF] hover:-translate-y-0.5 whitespace-nowrap cursor-pointer"
             >
-              {t("Check My Eligibility →", "واجد شرایط بودنم را بررسی کنید →")}
+              {t("Check My Eligibility →", "واجد شرایط بودنم را بررسی کنید ←")}
             </a>
           </div>
         </Reveal>

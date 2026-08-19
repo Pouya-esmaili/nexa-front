@@ -383,7 +383,7 @@ function PhoneField({ name }: { name?: string }) {
   }, []);
 
   return (
-    <div className="relative flex" ref={dropRef}>
+    <div className="relative flex" dir="ltr" ref={dropRef}>
       {/* Flag button */}
       <button
         type="button"

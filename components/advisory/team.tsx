@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { useLang } from "@/components/global/LanguageProvider";
+import { useLang, toFaDigits } from "@/components/global/LanguageProvider";
 
 const ROLE_FA: Record<string, string> = {
   "Brand Strategist": "استراتژیست برند",
@@ -33,17 +33,18 @@ const STATS = [
 ];
 
 export default function Team() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const ref = useRef<HTMLElement>(null);
 
   /* stat counters — same easing/duration as the original */
   useEffect(() => {
     const root = ref.current;
     if (!root) return;
+    const fmt = (v: number) => (lang === "fa" ? toFaDigits(v) : String(v));
     const nums = Array.from(root.querySelectorAll<HTMLElement>(".hs-num[data-target]"));
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) {
-      nums.forEach((n) => (n.textContent = n.dataset.target ?? "0"));
+      nums.forEach((el) => (el.textContent = fmt(parseInt(el.dataset.target ?? "0", 10))));
       return;
     }
     const obs = new IntersectionObserver(
@@ -58,9 +59,9 @@ export default function Team() {
             if (startTime === null) startTime = ts;
             const progress = Math.min((ts - startTime) / dur, 1);
             const ease = 1 - Math.pow(1 - progress, 3);
-            el.textContent = String(Math.round(ease * target));
+            el.textContent = fmt(Math.round(ease * target));
             if (progress < 1) requestAnimationFrame(step);
-            else el.textContent = String(target);
+            else el.textContent = fmt(target);
           };
           requestAnimationFrame(step);
           obs.unobserve(el);
@@ -68,9 +69,9 @@ export default function Team() {
       },
       { threshold: 0.5 }
     );
-    nums.forEach((n) => obs.observe(n));
+    nums.forEach((el) => obs.observe(el));
     return () => obs.disconnect();
-  }, []);
+  }, [lang]);
 
   return (
     <section className="team-section" ref={ref}>

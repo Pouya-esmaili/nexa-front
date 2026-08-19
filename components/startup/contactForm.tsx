@@ -183,7 +183,7 @@ export default function StartupContactForm() {
                   className="w-full sm:w-auto flex-shrink-0 inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"
                   style={{ boxShadow: "0 10px 24px rgba(143,39,255,0.28)" }}
                 >
-                  {t("Send Message →", "ارسال پیام →")}
+                  {t("Send Message →", "ارسال پیام ←")}
                 </button>
               </div>
             </form>

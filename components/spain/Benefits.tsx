@@ -10,28 +10,28 @@ const cards = [
     title: "3-Year Initial Runway",
     titleFa: "اقامت اولیه‌ ۳ ساله",
     desc: <span>Immediate residency issued for up to <strong className="text-black font-semibold">3 years</strong> when applied from inside Spain — or 1 year if processed via an overseas consulate.</span>,
-    descFa: <span>در صورت درخواست از داخل اسپانیا، اقامت اولیه تا<strong className="text-black font-semibold">۳ سال</strong>صادر می‌شود؛ در حالی که درخواست‌های ارائه‌شده از طریق کنسولگری‌های خارج از اسپانیا، معمولاً اقامت اولیه یک‌ساله خواهند داشت.</span>,
+    descFa: <span>در صورت درخواست از داخل اسپانیا، اقامت اولیه تا <strong className="text-black font-semibold">۳ سال</strong> صادر می‌شود؛ در حالی که درخواست‌های ارائه‌شده از طریق کنسولگری‌های خارج از اسپانیا، معمولاً اقامت اولیه یک‌ساله خواهند داشت.</span>,
   },
   {
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M13 3L4 14h7l-1 7 9-11h-7l1-7z"/></svg>,
     title: "20-Day Fast-Track",
     titleFa: "بررسی سریع ۲۰ روزه",
     desc: <span>By law, a strict <strong className="text-black font-semibold">silence-is-consent</strong> rule applies. If the UGE does not reply within 20 working days, the application is legally deemed approved.</span>,
-    descFa: <span>طبق قانون، این مسیر مشمول اصل<strong className="text-black font-semibold">«تأیید در صورت عدم پاسخ»</strong>است. اگر واحد UGE ظرف ۲۰ روز کاری پاسخی به درخواست ندهد، درخواست از نظر قانونی تأییدشده تلقی می‌شود.</span>,
+    descFa: <span>طبق قانون، این مسیر مشمول اصل <strong className="text-black font-semibold">«تأیید در صورت عدم پاسخ»</strong> است. اگر واحد UGE ظرف ۲۰ روز کاری پاسخی به درخواست ندهد، درخواست از نظر قانونی تأییدشده تلقی می‌شود.</span>,
   },
   {
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
     title: "Unified Family Inclusion",
     titleFa: "همراهی هم‌زمان خانواده",
     desc: <span>Spouses, civil partners, minor children, and financially dependent adult children included simultaneously with <strong className="text-black font-semibold">full work and business rights</strong>.</span>,
-    descFa: <span>همسر، شریک زندگی، فرزندان زیر سن قانونی و فرزندان بزرگسالِ وابسته مالی می‌توانند هم‌زمان با متقاضی اصلی اقامت دریافت کنند و از<strong className="text-black font-semibold">حق کامل کار و فعالیت تجاری</strong>برخوردار باشند.</span>,
+    descFa: <span>همسر، شریک زندگی، فرزندان زیر سن قانونی و فرزندان بزرگسالِ وابسته مالی می‌توانند هم‌زمان با متقاضی اصلی اقامت دریافت کنند و از <strong className="text-black font-semibold">حق کامل کار و فعالیت تجاری</strong> برخوردار باشند.</span>,
   },
   {
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>,
     title: "Schengen Mobility",
     titleFa: "آزادی تردد در شنگن",
     desc: <span>Travel freely throughout all <strong className="text-black font-semibold">29 Schengen countries</strong> for up to 90 days within any 180-day window.</span>,
-    descFa: <span>امکان سفر آزادانه در سراسر<strong className="text-black font-semibold">۲۹ کشور عضو شنگن</strong>تا سقف ۹۰ روز در هر دوره ۱۸۰ روزه.</span>,
+    descFa: <span>امکان سفر آزادانه در سراسر <strong className="text-black font-semibold">۲۹ کشور عضو شنگن</strong> تا سقف ۹۰ روز در هر دوره ۱۸۰ روزه.</span>,
   },
 ];
 

@@ -101,7 +101,7 @@ export default function Benefits() {
                 key={i}
                 className="p-9 transition-colors duration-200 hover:bg-[#F7F6F9]"
                 style={{
-                  borderRight: (i + 1) % 3 !== 0 ? "1px solid #E2E2E2" : "none",
+                  borderInlineEnd: (i + 1) % 3 !== 0 ? "1px solid #E2E2E2" : "none",
                   borderBottom: i < 3 ? "1px solid #E2E2E2" : "none",
                 }}
               >

@@ -70,7 +70,7 @@ export default function Choose() {
                 className={[
                   "group p-6 md:p-[30px] hover:bg-[#FAF6FF] transition-colors h-full",
                   i < 5 ? "border-b border-[#E2E2E2]" : "",
-                  i % 3 !== 2 ? "md:border-r md:border-[#E2E2E2]" : "md:border-r-0",
+                  i % 3 !== 2 ? "md:border-e md:border-[#E2E2E2]" : "md:border-e-0",
                   i < 3 ? "md:border-b md:border-[#E2E2E2]" : "md:border-b-0",
                 ].join(" ")}
               >

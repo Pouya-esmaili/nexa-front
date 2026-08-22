@@ -7,7 +7,7 @@ import { useLang } from "../global/LanguageProvider";
 
 
 const Hero = () => {
-    const { t } = useLang();
+    const { t, lang } = useLang();
     return (
         <div className="w-full">
 
@@ -30,7 +30,7 @@ const Hero = () => {
             <div className="hidden md:block">
                 <Row>
                     <div className="flex items-center gap-18 mt-10">
-                        <div className="w-1/2 text-left flex flex-col justify-between">
+                        <div className={`w-1/2 flex flex-col justify-between ${lang === "fa" ? "text-right" : "text-left"}`}>
                             <h2 className="my-4 text-[32px] md:text-[46px] font-extrabold text-black">
                                 {t("Let’s Build Beyond Borders", "مسیر جهانی شما از اینجا آغاز می‌شود")}
                             </h2>

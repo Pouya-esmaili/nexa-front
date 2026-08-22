@@ -114,7 +114,7 @@ export default function WhyCanada() {
                 key={r.title}
                 className="p-9 hover:bg-[#F7F6F9] transition-colors"
                 style={{
-                  borderRight: (i + 1) % 3 !== 0 ? "1px solid #E2E2E2" : undefined,
+                  borderInlineEnd: (i + 1) % 3 !== 0 ? "1px solid #E2E2E2" : undefined,
                   borderBottom: i < 3 ? "1px solid #E2E2E2" : undefined,
                 }}
               >

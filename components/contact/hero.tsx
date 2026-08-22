@@ -12,7 +12,7 @@ const Hero = () => {
         <div className="w-full">
 
             {/* Mobile */}
-            <div className="flex flex-col gap-5 px-5 mt-8 md:hidden">
+            <div className={`flex flex-col gap-5 px-5 mt-8 md:hidden ${lang === "fa" ? "text-right" : "text-left"}`}>
                 <Image
                     width={800}
                     height={500}
@@ -41,13 +41,13 @@ const Hero = () => {
 
                         </div>
 
-                        <div className="w-1/2">
+                        <div className="relative w-1/2 h-[240px] md:h-[380px] overflow-hidden rounded-2xl">
                             <Image
-                                width={1500}
-                                height={1500}
                                 src="/images/advisory/IMG_1328 1 (1).webp"
                                 alt="Startup hero"
-                                className="w-full object-cover rounded-2xl"
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 100vw, 50vw"
                             />
                         </div>
                     </div>

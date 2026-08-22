@@ -67,7 +67,7 @@ export default function Renewal() {
                 </p>
                 <a href="#contact"
                   className="inline-flex items-center gap-[10px] px-6 py-3.5 bg-black text-white font-bold rounded-full text-[14px] transition-all duration-200 hover:bg-[#8F27FF] hover:-translate-y-0.5 self-start">
-                  {t("Start Your Application →", "شروع درخواست →")}
+                  {t("Start Your Application →", "شروع درخواست ←")}
                 </a>
               </div>
 

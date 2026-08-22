@@ -41,10 +41,10 @@ export default function CtaDark() {
         </p>
         <div className="flex gap-3 justify-center flex-wrap">
           <button className="bg-[#FFE600] text-[#0D0D0D] border-none px-8 py-[14px] rounded-full text-[14px] font-extrabold cursor-pointer font-[inherit] transition-[opacity,transform] duration-200 hover:opacity-90 hover:-translate-y-[1px]">
-            {t("Start Your Journey", "شروع مسیر شما →")}
+            {t("Start Your Journey", "شروع مسیر شما ←")}
           </button>
           <button className="bg-transparent text-white border border-white/20 px-8 py-[14px] rounded-full text-[14px] font-semibold cursor-pointer font-[inherit] transition-colors duration-200 hover:border-white/55">
-            {t("Learn About Us", "آشنایی بیشتر با ما →")}
+            {t("Learn About Us", "آشنایی بیشتر با ما ←")}
           </button>
         </div>
       </div>

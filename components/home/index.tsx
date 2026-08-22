@@ -52,7 +52,7 @@ export default function Hero() {
               <button
                 onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:bg-[#7A1FE0] hover:-translate-y-px hover:shadow-[0_8px_22px_rgba(143,39,255,0.28)]">
-                {t("Explore Services →", "مشاهده خدمات →")}
+                {t("Explore Services →", "مشاهده خدمات ←")}
               </button>
               <Link href="#contact"
                 className="inline-flex items-center gap-2 px-[22px] py-[10px] border-[1.5px] border-[#1a1a1a] text-[#1a1a1a] font-semibold rounded-full text-[13px] transition-all hover:border-[#8F27FF] hover:text-[#8F27FF]">

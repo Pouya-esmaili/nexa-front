@@ -126,6 +126,47 @@ html[lang="fa"] body {
   font-family: "IRANSansX", var(--font-primary), sans-serif;
 }
 
+/* Any element explicitly marked lang="fa" gets the Persian font too — this
+   matters when Persian text appears while the document root is still
+   lang="en" (e.g. the "فارسی" label on the language-switch button). */
+[lang="fa"] {
+  font-family: "IRANSansX", var(--font-primary), sans-serif;
+}
+
+/* ====== Persian typography fixes ======
+   Negative/tight letter-spacing is tuned for Inter/Latin text; on Persian
+   it breaks the natural joining between letters, so it's reset everywhere. */
+html[lang="fa"] * {
+  letter-spacing: normal !important;
+}
+
+/* Headings across the site use tight Latin line-heights (0.9–1.3) that clip
+   IRANSansX ascenders/descenders and leave too little room between wrapped
+   lines. These are the exact Tailwind arbitrary-value classes in use. */
+html[lang="fa"] [class~="leading-[0.9]"],
+html[lang="fa"] [class~="leading-[1.06]"],
+html[lang="fa"] [class~="leading-[1.08]"],
+html[lang="fa"] [class~="leading-[1.1]"],
+html[lang="fa"] [class~="leading-[1.15]"],
+html[lang="fa"] [class~="leading-[1.2]"],
+html[lang="fa"] [class~="leading-[1.3]"] {
+  line-height: 1.5 !important;
+}
+
+/* Safety net for any semantic heading that isn't covered above. */
+html[lang="fa"] h1,
+html[lang="fa"] h2,
+html[lang="fa"] h3,
+html[lang="fa"] h4 {
+  line-height: 1.5;
+}
+
+/* Phone numbers, and any other explicitly-LTR content, must not be
+   reordered by the RTL bidi algorithm. */
+html[lang="fa"] [dir="ltr"] {
+  unicode-bidi: isolate;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }

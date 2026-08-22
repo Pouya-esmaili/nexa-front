@@ -103,7 +103,7 @@ function ProvinceCard({ p, delay }: { p: Province; delay: number }) {
             </div>
           ))}
           <a href="#" className="mt-3 text-[13px] font-semibold text-[#8F27FF] inline-flex items-center gap-1.5 transition-all hover:gap-2.5">
-            {t("Read More →", "بیشتر بخوانید →")}
+            {t("Read More →", "بیشتر بخوانید ←")}
           </a>
         </div>
       </div>

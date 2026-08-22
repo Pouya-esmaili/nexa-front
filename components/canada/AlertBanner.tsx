@@ -37,7 +37,7 @@ export default function AlertBanner() {
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[15px] whitespace-nowrap transition-all hover:-translate-y-0.5 self-start md:self-center"
               style={{ boxShadow: "0 10px 24px rgba(143,39,255,0.28)" }}
             >
-              {t("Adapt Your Strategy →", "راهبرد خود را وفق دهید →")}
+              {t("Adapt Your Strategy →", "راهبرد خود را وفق دهید ←")}
             </a>
           </div>
         </Reveal>

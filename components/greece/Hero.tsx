@@ -53,7 +53,7 @@ export default function GreeceHero() {
               <a href="#contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[15px] transition-all hover:-translate-y-0.5"
                 style={{ boxShadow: "0 10px 24px rgba(143,39,255,0.28)" }}>
-                {t("Book an Appointment →", "شروع درخواست →")}
+                {t("Book an Appointment →", "شروع درخواست ←")}
               </a>
             </div>
           </div>

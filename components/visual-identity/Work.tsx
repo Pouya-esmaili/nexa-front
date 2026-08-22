@@ -18,7 +18,7 @@ const CARDS = [
 ];
 
 export default function Work() {
-  const { t } = useLang();
+  const { t, n } = useLang();
   const gridRef = useRef<HTMLDivElement>(null);
   const { activeIdx, atStart, atEnd, scroll } = useCarousel(gridRef, CARDS.length, "vi-card--active");
 
@@ -50,7 +50,7 @@ export default function Work() {
           ))}
         </div>
         <p className="vi-work-swipe-hint">
-          <span className="vi-swipe-counter">{String(activeIdx + 1).padStart(2, "0")}/{CARDS.length}</span>
+          <span className="vi-swipe-counter">{n(String(activeIdx + 1).padStart(2, "0"))}/{n(CARDS.length)}</span>
           <span className="vi-nav-btns">
             <button className="vi-nav-btn" aria-label="Previous" disabled={atStart} onClick={() => scroll(-1)}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 6l-6 6 6 6" /></svg>

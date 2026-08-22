@@ -23,7 +23,7 @@ export default function Hero() {
               )}
             </p>
             <div className="vi-hero__actions">
-              <a href="#work" className="btn-primary">{t("See The Work", "مشاهده نمونه‌کارها →")}</a>
+              <a href="#work" className="btn-primary">{t("See The Work", "مشاهده نمونه‌کارها ←")}</a>
               <span className="vi-hero__note">{t("Fixed price · Proposal in 48 hours", "قیمت ثابت · ارائه پیشنهاد ظرف ۴۸ ساعت")}</span>
             </div>
           </div>

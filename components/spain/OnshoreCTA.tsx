@@ -59,7 +59,7 @@ export default function OnshoreCTA() {
               <a href="#contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 font-bold rounded-full text-[14px] whitespace-nowrap transition-all hover:-translate-y-0.5"
                 style={{ background: "#FFE600", color: "#000", boxShadow: "0 12px 28px rgba(255,230,0,0.3)" }}>
-                {t("Start Now →", "شروع کنید →")}
+                {t("Start Now →", "شروع کنید ←")}
               </a>
             </div>
           </div>

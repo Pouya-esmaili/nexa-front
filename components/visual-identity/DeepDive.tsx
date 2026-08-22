@@ -35,7 +35,7 @@ const CARDS = [
 ];
 
 export default function DeepDive() {
-  const { t } = useLang();
+  const { t, n } = useLang();
   const legendRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const { activeIdx, atStart, atEnd, scroll } = useCarousel(legendRef, CARDS.length, "ab-card--active");
@@ -77,7 +77,7 @@ export default function DeepDive() {
                     style={{ left: p.left, top: p.top }}
                     onClick={() => goToCard(p.num)}
                   >
-                    <span className="ab-pin-num">{p.num}</span>
+                    <span className="ab-pin-num">{n(p.num)}</span>
                     <span className="ab-pin-label">{t(p.label, p.labelFa)}</span>
                   </div>
                 ))}
@@ -86,13 +86,13 @@ export default function DeepDive() {
             <div className="ab-legend" ref={legendRef}>
               {CARDS.map((c) => (
                 <div className="ab-card" key={c.num} ref={(el) => { cardRefs.current[c.num] = el; }}>
-                  <div className="ab-card-head"><div className="ab-tag">{c.num}</div><h3>{t(c.title, c.titleFa)}</h3></div>
+                  <div className="ab-card-head"><div className="ab-tag">{n(c.num)}</div><h3>{t(c.title, c.titleFa)}</h3></div>
                   <p>{t(c.desc, c.descFa)}</p>
                 </div>
               ))}
             </div>
             <p className="ab-swipe-hint">
-              <span className="ab-swipe-counter">{String(activeIdx + 1).padStart(2, "0")} / {CARDS.length}</span>
+              <span className="ab-swipe-counter">{n(String(activeIdx + 1).padStart(2, "0"))} / {n(CARDS.length)}</span>
               <span className="ab-nav-btns">
                 <button className="ab-nav-btn" aria-label="Previous" disabled={atStart} onClick={() => scroll(-1)}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 6l-6 6 6 6" /></svg>

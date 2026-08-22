@@ -165,7 +165,7 @@ export default function ContactForm() {
                       className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-10 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[15px] tracking-[-0.01em] transition-all hover:-translate-y-0.5"
                       style={{ boxShadow: "0 10px 24px rgba(143,39,255,0.3)" }}
                     >
-                      {t("Submit Application →", "ارسال درخواست →")}
+                      {t("Submit Application →", "ارسال درخواست ←")}
                     </button>
                   </div>
                 </form>

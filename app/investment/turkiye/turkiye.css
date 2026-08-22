@@ -31,7 +31,23 @@
   overflow-x:hidden;
 }
 
+/* This page hardcodes Inter, which has no Persian glyphs and would
+   otherwise override the sitewide IRANSansX swap in globals.css. */
+html[lang="fa"] .tk-root{font-family:"IRANSansX", "Inter", sans-serif;}
+
 .tk-root *{box-sizing:border-box}
+
+/* Persian line-height fix (letter-spacing is reset globally in globals.css):
+   Latin-tuned tight line-heights clip IRANSansX ascenders/descenders and
+   leave wrapped heading lines too cramped. */
+html[lang="fa"] .tk-root .section-title,
+html[lang="fa"] .tk-root .display,
+html[lang="fa"] .tk-root .why-card h3,
+html[lang="fa"] .tk-root .benefit h3,
+html[lang="fa"] .tk-root .partner-purple h3,
+html[lang="fa"] .tk-root .req-card h3,
+html[lang="fa"] .tk-root .vt-card h4,
+html[lang="fa"] .tk-root .faq-q{line-height:1.5 !important}
 .tk-root img{max-width:100%;display:block;height:auto}
 .tk-root a{color:inherit;text-decoration:none}
 .tk-root button{font:inherit;cursor:pointer}

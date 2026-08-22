@@ -126,6 +126,7 @@ export default function ContactSection() {
 
                   <a
                     href={`tel:${office.tel}`}
+                    dir="ltr"
                     className="text-[13px] text-[#8F27FF] font-bold hover:underline"
                   >
                     {office.phone}

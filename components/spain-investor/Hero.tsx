@@ -60,7 +60,7 @@ export default function Hero() {
           className={`inline-flex items-center gap-2 px-6 py-3 bg-[#8F27FF] text-white font-semibold rounded-full text-sm ${base} duration-500 delay-[400ms] ${mounted ? show : hideUp}`}
           style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
         >
-          {t("Book an Appointment →", "مشاوره و ارزیابی پرونده →")}
+          {t("Book an Appointment →", "مشاوره و ارزیابی پرونده ←")}
         </a>
       </div>
 
@@ -95,7 +95,7 @@ export default function Hero() {
                   className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#8F27FF] text-white font-semibold rounded-full text-[14px] transition-all hover:-translate-y-0.5"
                   style={{ boxShadow: "0 12px 28px rgba(143,39,255,0.28)" }}
                 >
-                  {t("Book an Appointment →", "مشاوره و ارزیابی پرونده →")}
+                  {t("Book an Appointment →", "مشاوره و ارزیابی پرونده ←")}
                 </a>
               </div>
             </div>

@@ -56,7 +56,7 @@ export default function CitizenshipCTA() {
               {/* CTA */}
               <a href="#contact"
                 className="self-start inline-flex items-center gap-2 px-7 py-3.5 bg-black text-white font-bold rounded-full text-[14px] transition-all hover:-translate-y-0.5 hover:bg-[#8F27FF] mt-2">
-                {t("Check My Eligibility →", "بررسی شرایط من برای این مسیر →")}
+                {t("Check My Eligibility →", "بررسی شرایط من برای این مسیر ←")}
               </a>
             </div>
           </div>

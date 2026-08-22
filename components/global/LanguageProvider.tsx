@@ -18,9 +18,17 @@ type LangCtx = {
   toggle: () => void;
   /** Return the English or Persian string based on the active language. */
   t: (en: string, fa: string) => string;
+  /** Render a number/digit-string with Persian numerals when the active language is Persian. */
+  n: (value: number | string) => string;
 };
 
 const STORAGE_KEY = "nexa-lang";
+
+const FA_DIGITS = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
+/** Convert ASCII 0-9 to Persian digits. Leaves everything else (already-Persian digits, punctuation) untouched. */
+export function toFaDigits(value: number | string): string {
+  return String(value).replace(/[0-9]/g, (d) => FA_DIGITS[+d]);
+}
 
 const LanguageContext = createContext<LangCtx | null>(null);
 
@@ -74,9 +82,13 @@ export function LanguageProvider({
     (en: string, fa: string) => (lang === "fa" ? fa : en),
     [lang]
   );
+  const n = useCallback(
+    (value: number | string) => (lang === "fa" ? toFaDigits(value) : String(value)),
+    [lang]
+  );
 
   return (
-    <LanguageContext.Provider value={{ lang, setLang, toggle, t }}>
+    <LanguageContext.Provider value={{ lang, setLang, toggle, t, n }}>
       {children}
     </LanguageContext.Provider>
   );
@@ -94,6 +106,7 @@ export function useLang(): LangCtx {
       setLang: () => {},
       toggle: () => {},
       t: (en: string) => en,
+      n: (value: number | string) => String(value),
     };
   }
   return ctx;

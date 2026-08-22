@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { useLang } from "@/components/global/LanguageProvider";
 
 export default function CtaDark() {
@@ -40,12 +41,18 @@ export default function CtaDark() {
           {t("Every great company starts with the right team. We're ready to build yours.", "هر کسب‌وکار بزرگی با یک تیم درست شروع می‌شود. ما آماده‌ایم تیمی درخور اهداف بزرگ شما بسازیم.")}
         </p>
         <div className="flex gap-3 justify-center flex-wrap">
-          <button className="bg-[#FFE600] text-[#0D0D0D] border-none px-8 py-[14px] rounded-full text-[14px] font-extrabold cursor-pointer font-[inherit] transition-[opacity,transform] duration-200 hover:opacity-90 hover:-translate-y-[1px]">
+          <Link
+            href="/#contact"
+            className="bg-[#FFE600] text-[#0D0D0D] border-none px-8 py-[14px] rounded-full text-[14px] font-extrabold cursor-pointer font-[inherit] transition-[opacity,transform] duration-200 hover:opacity-90 hover:-translate-y-[1px]"
+          >
             {t("Start Your Journey", "شروع مسیر شما ←")}
-          </button>
-          <button className="bg-transparent text-white border border-white/20 px-8 py-[14px] rounded-full text-[14px] font-semibold cursor-pointer font-[inherit] transition-colors duration-200 hover:border-white/55">
+          </Link>
+          <Link
+            href="/our-story"
+            className="bg-transparent text-white border border-white/20 px-8 py-[14px] rounded-full text-[14px] font-semibold cursor-pointer font-[inherit] transition-colors duration-200 hover:border-white/55"
+          >
             {t("Learn About Us", "آشنایی بیشتر با ما ←")}
-          </button>
+          </Link>
         </div>
       </div>
     </section>

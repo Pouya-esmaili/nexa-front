@@ -534,7 +534,7 @@ function Step7({
       {stageOptions.map((opt) => (
         <label
           key={opt.value}
-          className={`flex items-center gap-4 rounded-xl px-5 h-14 bg-white cursor-pointer transition border ${
+          className={`flex items-center gap-4 rounded-xl px-5 py-3 min-h-14 bg-white cursor-pointer transition border ${
             data.stage === opt.value
               ? 'border-[#8F27FF] shadow-[0_0_0_1px_#8F27FF]'
               : 'border-gray-200 hover:border-gray-300'
@@ -546,11 +546,11 @@ function Step7({
             value={opt.value}
             checked={data.stage === opt.value}
             onChange={() => onChange('stage', opt.value)}
-            className="w-4 h-4 accent-[#8F27FF]"
+            className="w-4 h-4 shrink-0 accent-[#8F27FF]"
           />
-          <div>
+          <div className="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-2">
             <span className="text-sm font-medium">{t(opt.label, opt.labelFa)}</span>
-            <span className="text-xs text-gray-400 ml-2">{t(opt.desc, opt.descFa)}</span>
+            <span className="text-xs text-gray-400">{t(opt.desc, opt.descFa)}</span>
           </div>
         </label>
       ))}

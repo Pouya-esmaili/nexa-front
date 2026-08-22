@@ -47,7 +47,7 @@ export default function Pillars() {
                   key={p.num}
                   className="p-9 flex flex-col gap-4 transition-colors duration-200 hover:bg-[#F7F6F9]"
                   style={{
-                    borderRight: i < 2 ? "1px solid #E2E2E2" : undefined,
+                    borderInlineEnd: i < 2 ? "1px solid #E2E2E2" : undefined,
                     borderBottom: i < pillars.length ? undefined : "1px solid #E2E2E2",
                   }}
                 >

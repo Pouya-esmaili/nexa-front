@@ -9,6 +9,7 @@ import Apps from "@/components/visual-identity/Apps";
 import Process from "@/components/visual-identity/Process";
 import Faq from "@/components/visual-identity/Faq";
 import Cta from "@/components/visual-identity/Cta";
+import Brief from "@/components/visual-identity/Brief";
 
 export default function VisualIdentity() {
   return (
@@ -22,7 +23,8 @@ export default function VisualIdentity() {
       <Apps />
       <Process />
       <Faq />
-      <Cta />
+      {/* <Cta /> */}
+      <Brief />
     </div>
   );
 }

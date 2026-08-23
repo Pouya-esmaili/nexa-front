@@ -2928,3 +2928,50 @@ html[lang="fa"] .ab-breakdown{font-family:"IRANSansX", "Inter", sans-serif;}
 @media (max-width:480px){
   .ab-card{ width:80%; }
 }
+
+/* ============ BRIEF (visual identity intake form) ============ */
+.vi-brief{ background:var(--near-black); color:#fff; padding:80px 0; }
+.vi-brief .wrap{ display:grid; grid-template-columns:.86fr 1.14fr; gap:64px; align-items:start; }
+.vi-brief__label{ display:flex; align-items:center; gap:9px; color:var(--yellow); font-size:12px; font-weight:800; letter-spacing:.13em; text-transform:uppercase; margin-bottom:0; }
+.vi-brief__label:before{ content:''; width:7px; height:7px; border-radius:50%; background:var(--yellow); }
+.vi-brief__intro h2{ font-size:clamp(36px,5.5vw,72px); font-weight:900; letter-spacing:-.03em; line-height:1; margin:12px 0 20px; }
+.vi-brief__intro h2 span{ display:block; }
+.vi-brief__intro .vi-brief-outline{ color:transparent; -webkit-text-stroke:2px #fff; }
+.vi-brief__intro .vi-brief-accent{ color:var(--yellow); }
+.vi-brief__intro p{ max-width:430px; margin:0; color:rgba(255,255,255,.58); font-size:15.5px; line-height:1.7; }
+
+.vi-brief__form{ background:#fff; color:var(--ink); border-radius:20px; padding:30px; box-shadow:0 28px 70px -30px #000; }
+.vi-brief__form-head{ padding-bottom:19px; margin-bottom:22px; border-bottom:1px solid var(--line); }
+.vi-brief__form-head strong{ display:block; font-size:20px; font-weight:800; letter-spacing:-.025em; }
+.vi-brief__form-head p{ margin:6px 0 0; color:var(--grey); font-size:12px; line-height:1.55; }
+.vi-brief__row{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.vi-brief__field{ margin-bottom:15px; }
+.vi-brief__field label,.vi-brief__legend{ display:block; margin-bottom:8px; font-size:10px; font-weight:800; letter-spacing:.09em; text-transform:uppercase; }
+.vi-brief__field input,.vi-brief__field select,.vi-brief__field textarea{ width:100%; border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--ink); padding:12px 13px; font:14px var(--font); transition:.2s; }
+.vi-brief__field textarea{ height:92px; resize:vertical; line-height:1.55; }
+.vi-brief__field input:focus,.vi-brief__field select:focus,.vi-brief__field textarea:focus{ outline:0; border-color:var(--purple); box-shadow:0 0 0 3px rgba(143,39,255,.1); }
+.vi-brief__options{ display:grid; grid-template-columns:repeat(3,1fr); gap:7px; margin-bottom:17px; }
+.vi-brief__option{ position:relative; }
+.vi-brief__option input{ position:absolute; opacity:0; pointer-events:none; }
+.vi-brief__option span{ display:block; padding:9px 7px; border:1px solid var(--line); border-radius:999px; text-align:center; font-size:11px; font-weight:700; color:#666; cursor:pointer; transition:.2s; }
+.vi-brief__option input:checked+span{ border-color:var(--purple); background:var(--lav); color:var(--purple-deep); }
+.vi-brief__button{ width:100%; border:0; border-radius:999px; background:var(--purple); color:#fff; padding:15px 24px; font:700 14px var(--font); cursor:pointer; transition:.25s; }
+.vi-brief__button:hover{ background:var(--purple-deep); transform:translateY(-1px); box-shadow:0 8px 22px rgba(143,39,255,.28); }
+.vi-brief__button:disabled{ opacity:.6; cursor:default; transform:none; }
+.vi-brief__note{ margin:11px 0 0; text-align:center; color:#999; font-size:10px; line-height:1.5; }
+
+@media(max-width:900px){
+  .vi-brief .wrap{ grid-template-columns:1fr; gap:40px; }
+  .vi-brief__intro p{ max-width:540px; }
+}
+@media(max-width:600px){
+  .vi-brief{ padding:64px 0; }
+  .vi-brief__intro h2{ font-size:clamp(37px,11vw,46px); }
+  .vi-brief__form{ padding:22px; border-radius:16px; }
+  .vi-brief__row{ grid-template-columns:1fr; gap:0; }
+  .vi-brief__field input,.vi-brief__field select,.vi-brief__field textarea{ font-size:16px; padding:13px; }
+  .vi-brief__options{ grid-template-columns:1fr; }
+  .vi-brief__button{ min-height:48px; }
+}
+html[lang="fa"] .vi-brief .vi-brief-outline{ -webkit-text-stroke:0; color:#fff; }
+html[lang="fa"] .vi-brief__intro h2{ font-size: clamp(27px,4.1vw,55px) !important; line-height: 1.2 !important; }

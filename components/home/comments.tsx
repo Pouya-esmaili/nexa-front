@@ -9,31 +9,26 @@ const testimonials = [
     name: "Chloe Patterson", date: "May 5, 2023",
     gradient: "linear-gradient(135deg,#f093fb,#f5576c)", initial: "C",
     text: "Great quality and attention to detail. Their designs elevated my brand significantly. The team at Nexa truly understands what founders need to succeed globally.",
-    textFa: "کیفیت عالی و توجه به جزئیات. طراحی‌های آن‌ها برند من را به‌شکل چشمگیری ارتقا داد. تیم نکسا واقعاً می‌داند بنیان‌گذاران برای موفقیت جهانی به چه چیزی نیاز دارند.",
   },
   {
     name: "Isabella Turner", date: "March 22, 2023",
     gradient: "linear-gradient(135deg,#4facfe,#00f2fe)", initial: "I",
     text: "Working with Nexa was a transformative experience. Their network opened doors I couldn't have accessed on my own. Highly recommend for any serious founder.",
-    textFa: "همکاری با نکسا تجربه‌ای دگرگون‌کننده بود. شبکه‌ی آن‌ها درهایی را به رویم گشود که به‌تنهایی هرگز به آن‌ها دسترسی نداشتم. برای هر بنیان‌گذار جدی به‌شدت توصیه می‌کنم.",
   },
   {
     name: "Ava Mitchell", date: "January 15, 2023",
     gradient: "linear-gradient(135deg,#43e97b,#38f9d7)", initial: "A",
     text: "The strategic advisory team at Nexa helped us refine our pitch and close our seed round faster than expected. Professional, responsive, and results-driven.",
-    textFa: "تیم مشاوره‌ی استراتژیک نکسا به ما کمک کرد ارائه‌مان را پالایش کنیم و دور جذب سرمایه‌ی اولیه را سریع‌تر از انتظار ببندیم. حرفه‌ای، پاسخگو و نتیجه‌محور.",
   },
   {
     name: "Benjamin Collins", date: "February 8, 2023",
     gradient: "linear-gradient(135deg,#fa709a,#fee140)", initial: "B",
     text: "From our first consultation to market entry, Nexa provided exceptional support. Their global connections made expansion into Canada remarkably smooth.",
-    textFa: "از نخستین جلسه‌ی مشاوره تا ورود به بازار، نکسا پشتیبانی بی‌نظیری ارائه داد. ارتباطات جهانی آن‌ها گسترش کار به کانادا را به‌طرز چشمگیری روان کرد.",
   },
   {
     name: "Sophia Reynolds", date: "April 3, 2023",
     gradient: "linear-gradient(135deg,#a18cd1,#fbc2eb)", initial: "S",
     text: "Nexa's investment advisory helped us navigate complex international regulations with confidence. Their expertise and dedication to our success was unmatched.",
-    textFa: "مشاوره‌ی سرمایه‌گذاری نکسا کمک کرد با اطمینان از میان مقررات پیچیده‌ی بین‌المللی عبور کنیم. تخصص و تعهد آن‌ها به موفقیت ما بی‌همتا بود.",
   },
 ];
 
@@ -92,7 +87,7 @@ export default function CommentsSection() {
         </Reveal>
 
         <Reveal variant="up" delay={80}>
-          <div className="overflow-hidden">
+          <div className="overflow-hidden" dir="ltr">
             <div
               className="flex gap-5 transition-transform duration-500 ease-in-out"
               style={{ transform: offset }}
@@ -133,7 +128,7 @@ export default function CommentsSection() {
                     </div>
 
                     {/* Text */}
-                    <p className="text-[14px] text-[#929292] leading-[1.68]">{t(item.text, item.textFa)}</p>
+                    <p className="text-[14px] text-[#929292] leading-[1.68]" dir="ltr">{item.text}</p>
                   </div>
                 );
               })}
@@ -142,7 +137,7 @@ export default function CommentsSection() {
         </Reveal>
 
         
-        <div className="flex items-center justify-center gap-2.5 mt-9">
+        <div className="flex items-center justify-center gap-2.5 mt-9" dir="ltr">
           <button
             onClick={prev}
             disabled={active === 0}

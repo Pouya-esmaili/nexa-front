@@ -30,7 +30,6 @@ export default function Work() {
             <span className="vi-label">{t("/ SELECTED WORK", "/ نمونه‌کارهای منتخب")}</span>
             <h2 className="editorial-h2">
               <span className="eh2-outline">{t("IDENTITIES", "هویت‌هایی")}</span>
-              <br />
               <span className="eh2-solid">{t("WE'VE", "که")}</span> <span className="eh2-purple">{t("BUILT.", "ساخته‌ایم.")}</span>
             </h2>
           </div>

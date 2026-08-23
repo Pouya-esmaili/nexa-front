@@ -44,7 +44,6 @@ export default function Palette() {
           <span className="vi-label">{t("/ COLOR SYSTEM", "/ سیستم رنگ")}</span>
           <h2 className="editorial-h2">
             <span className="eh2-outline">{t("A PALETTE", "هر رنگ،")}</span> <span className="eh2-solid">{t("WITH", "")}</span>
-            <br />
             <span className="eh2-purple">{t("A REASON FOR EVERY SHADE.", "دلیلی برای حضور دارد.")}</span>
           </h2>
           <p style={{ color: "var(--grey)", fontSize: 15, marginTop: 16 }}>{t("Two real projects, two color systems. Click a swatch to see why that color earned its place.", "دو پروژه واقعی، دو سیستم رنگ متفاوت. روی هر رنگ کلیک کنید تا ببینید چرا بخشی از هویت برند شده است.")}</p>

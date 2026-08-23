@@ -41,7 +41,6 @@ export default function Typography() {
           <span className="vi-label">{t("/ TYPOGRAPHY", "/ تایپوگرافی")}</span>
           <h2 className="editorial-h2">
             <span className="eh2-outline">{t("TYPE THAT", "تایپوگرافی‌ای که")}</span> <span className="eh2-solid">{t("CARRIES", "")}</span>
-            <br />
             <span className="eh2-purple">{t("ITS OWN WEIGHT.", "به‌تنهایی شخصیت دارد.")}</span>
           </h2>
         </div>

@@ -23,7 +23,6 @@ export default function Faq() {
             <span className="editorial-label">{t("/ FAQ", "/ پرسش‌های متداول")}</span>
             <h2 className="editorial-h2">
               <span className="eh2-outline">{t("STILL", "هنوز")}</span>
-              <br />
               <span className="eh2-solid">{t("DECIDING?", "تصمیم نگرفته اید؟ ")}</span>
             </h2>
             <p className="faq-sub">{t("A few things founders usually ask before starting.", "چند سؤال رایج که معمولاً قبل از شروع یک پروژه مطرح می‌شوند.")}</p>

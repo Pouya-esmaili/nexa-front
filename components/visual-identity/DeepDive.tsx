@@ -58,7 +58,6 @@ export default function DeepDive() {
             <span className="vi-label">{t("/ SYSTEM DEEPDIVE", "/ بررسی عمیق سیستم برند")}</span>
             <h2 className="editorial-h2">
               <span className="eh2-outline">{t("INSIDE", "نگاهی به")}</span> <span className="eh2-solid">{t("ONE", "یک")}</span>
-              <br />
               <span className="eh2-purple">{t("IDENTITY.", "هویت بصری کامل.")}</span>
             </h2>
           </div>

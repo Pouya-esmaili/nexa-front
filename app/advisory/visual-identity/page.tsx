@@ -12,7 +12,7 @@ import Cta from "@/components/visual-identity/Cta";
 
 export default function VisualIdentity() {
   return (
-    <div className="w-full bg-white">
+    <div className="vi-page w-full bg-white">
       <Hero />
       <Work />
       <DeepDive />

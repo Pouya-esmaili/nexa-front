@@ -5,7 +5,7 @@ import { useLang } from "@/components/global/LanguageProvider";
 
 const MARK_ICONS = [
   { name: "PreventiGene", color: "/images/visual-identity/046-img.png", white: "/images/visual-identity/047-img.png" },
-  { name: "Diaco", color: "/images/visual-identity/048-img.png", white: "/images/visual-identity/049-img.png" },
+  { name: "Diaco", color: "/images/visual-identity/048-img.png", white: "/images/visual-identity/Diaco.png" },
   { name: "Landa Craft", color: "/images/visual-identity/050-img.png", white: "/images/visual-identity/051-img.png" },
 ];
 

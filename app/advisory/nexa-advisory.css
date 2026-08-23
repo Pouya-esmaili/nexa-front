@@ -35,18 +35,20 @@ html[lang="fa"] .adv{--font:"IRANSansX",'Inter',system-ui,sans-serif;}
    descenders and diacritics. */
 html[lang="fa"] .adv .hbt-outline,
 html[lang="fa"] .adv .hbt-solid,
-html[lang="fa"] .adv .hbt-purple{line-height:1.4 !important;}
+html[lang="fa"] .adv .hbt-purple{line-height:1 !important;}
 html[lang="fa"] .adv .hbt-line + .hbt-line{margin-top:4px;}
 html[lang="fa"] .adv .editorial-h2,
 html[lang="fa"] .adv .svc-card h3,
-html[lang="fa"] .adv .hc-card h4{line-height:1.5 !important;}
+html[lang="fa"] .adv .hc-card h4{line-height:1.05 !important;}
 
 /* These marquees are infinite-loop flex tracks driven by a physical
    translateX keyframe (see teamScroll / srCredits below). Under RTL the
    flex items reorder but the keyframe math doesn't, so the loop runs out
    and jumps/stops. Force LTR so the animation always matches the layout,
    regardless of page language. */
+html[lang="fa"] .adv .team-cards,
 html[lang="fa"] .adv .team-cards__track,
+html[lang="fa"] .adv .showreel__credits,
 html[lang="fa"] .adv .showreel__credits-track{direction:ltr;}
 
 /* Transparent + text-stroke "outline" text doesn't render legibly for

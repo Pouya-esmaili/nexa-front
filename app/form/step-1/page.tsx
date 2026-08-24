@@ -754,7 +754,7 @@ const initialData: FormData = {
 };
 
 export default function MultiStepForm() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<FormData>(initialData);
   const [errors, setErrors] = useState<FieldErrors>({});
@@ -958,7 +958,7 @@ export default function MultiStepForm() {
               disabled={currentStep === 1}
               className="flex items-center gap-2 px-6 h-11 rounded-xl border border-[#8F27FF] text-[#8F27FF] text-sm font-medium hover:bg-[#8F27FF] hover:text-white transition disabled:opacity-30 disabled:cursor-not-allowed"
             >
-              <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className={lang === "fa" ? "rotate-180" : ""}>
                 <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               {t('Prev', 'قبلی')}
@@ -971,7 +971,7 @@ export default function MultiStepForm() {
                 className="flex items-center gap-2 px-6 h-11 rounded-xl bg-[#8F27FF] text-white text-sm font-medium hover:bg-[#7a1fdb] transition"
               >
                 {t('Next', 'بعدی')}
-                <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className={lang === "fa" ? "rotate-180" : ""}>
                   <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>

@@ -28,7 +28,7 @@ const COUNTRIES = [
 ];
 
 export default function InvestmentContactForm() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
@@ -269,7 +269,7 @@ export default function InvestmentContactForm() {
                     : (
                       <>
                         {t("Send Message", "ارسال پیام")}
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="white" strokeWidth="2.5">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="white" strokeWidth="2.5" className={lang === "fa" ? "rotate-180" : ""}>
                           <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
                       </>

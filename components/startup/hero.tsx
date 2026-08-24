@@ -6,7 +6,7 @@ import Row from "@/components/global/Row";
 import { useLang } from "@/components/global/LanguageProvider";
 
 export default function Hero() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [mounted, setMounted] = useState(false);
   useEffect(() => { const t = setTimeout(() => setMounted(true), 80); return () => clearTimeout(t); }, []);
   const base = "transition-[opacity,transform] duration-[650ms] ease-[ease]";
@@ -34,7 +34,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 px-[28px] py-[14px] bg-[#8F27FF] text-white font-semibold text-[14px] rounded-full transition-all duration-[250ms] hover:bg-[#7A1FE0] hover:-translate-y-px"
               style={{ boxShadow: "0 8px 22px rgba(143,39,255,.28)" }}>
               {t("Book a Free Consultation", "رزرو مشاوره‌ی رایگان")}
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className={lang === "fa" ? "rotate-180" : ""}><path d="M5 12h14M12 5l7 7-7 7" /></svg>
             </Link>
           </div>
 

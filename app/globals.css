@@ -167,6 +167,17 @@ html[lang="fa"] [dir="ltr"] {
   unicode-bidi: isolate;
 }
 
+/* On mobile, Persian text must be right-aligned. Elements without an
+   explicit text-align class already right-align via dir="rtl", but many
+   components use Tailwind's physical `text-left` utility, which fights
+   RTL. `[class~="text-left"]` matches only the exact `text-left` token
+   (not `md:text-left`), so desktop-only left-alignment is untouched. */
+@media (max-width: 767px) {
+  html[lang="fa"] [class~="text-left"] {
+    text-align: right !important;
+  }
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }

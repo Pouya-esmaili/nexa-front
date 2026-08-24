@@ -6,7 +6,7 @@ import Reveal from "@/components/global/Reveal";
 import { useLang } from "@/components/global/LanguageProvider";
 
 export default function InvestmentHero() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   return (
     <section className="relative overflow-hidden bg-white investment-hero-section" style={{ padding: "64px 0 72px" }}>
       <div className="px-6 mx-auto w-full" style={{ maxWidth: 1240 }}>
@@ -92,6 +92,7 @@ export default function InvestmentHero() {
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2.5"
+                  className={lang === "fa" ? "rotate-180" : ""}
                 >
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>

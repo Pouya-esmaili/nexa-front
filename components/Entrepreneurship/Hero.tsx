@@ -6,7 +6,7 @@ import Row from "@/components/global/Row";
 import { useLang } from "@/components/global/LanguageProvider";
 
 export default function Hero() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [ready, setReady] = useState(false);
   useEffect(() => { const t = setTimeout(() => setReady(true), 60); return () => clearTimeout(t); }, []);
 
@@ -37,7 +37,7 @@ export default function Hero() {
               style={{ boxShadow: "0 8px 22px rgba(143,39,255,.28)" }}
             >
               {t("Book a Free Consultation", "رزرو مشاوره‌ی رایگان")}
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className={lang === "fa" ? "rotate-180" : ""}>
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </Link>

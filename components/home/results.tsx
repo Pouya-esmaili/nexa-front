@@ -108,7 +108,7 @@ export default function Results() {
               {/* ── Stat cards (desktop) ── */}
               {/* Fixed-pixel layout: force LTR so RTL (Persian) page direction never
                   reflows/re-anchors the numbers outside their card boxes. */}
-              <g id="result-stat-cards" direction="ltr" style={{ unicodeBidi: "bidi-override" }}>
+              <g id="result-stat-cards" direction="ltr" style={{ unicodeBidi: "bidi-override" }} className="hidden md:block">
                 <g transform="translate(270,535)" filter="url(#cs2)">
                   <rect width="210" height="100" rx="16" fill="rgba(22,4,50,0.95)" stroke="rgba(143,39,255,0.5)" strokeWidth="1.5"/>
                   <rect width="6" height="100" rx="3" fill="#8F27FF"/>
@@ -163,6 +163,41 @@ export default function Results() {
           </div>
         </Reveal>
 
+        {/* ── Stat cards (mobile) — separate HTML markup, sized independently
+            from the SVG map (which shrinks uniformly with viewport width),
+            so the numbers stay readable on small screens. Accent bar stays
+            physically on the left to match the LTR-forced desktop cards. ── */}
+        <Reveal variant="up" delay={80}>
+          <div className="md:hidden grid grid-cols-3 gap-2.5 px-4 mt-6">
+            <div className="rounded-2xl bg-[rgba(22,4,50,0.95)] border border-[rgba(143,39,255,0.5)] border-l-4 border-l-[#8F27FF] px-2.5 py-3">
+              <div className="flex items-baseline gap-1">
+                <span className="text-white font-extrabold text-[20px] leading-none">{n(89)}</span>
+                <span className="text-[#8F27FF] font-bold text-sm leading-none">%</span>
+              </div>
+              <div className="text-white/65 text-[10.5px] font-medium mt-1.5 leading-snug">
+                {t("Successful Cases", "پرونده‌های موفق")}
+              </div>
+            </div>
+            <div className="rounded-2xl bg-[rgba(22,4,50,0.95)] border border-[rgba(143,39,255,0.5)] border-l-4 border-l-[#8F27FF] px-2.5 py-3">
+              <div className="flex items-baseline gap-1">
+                <span className="text-white font-extrabold text-[20px] leading-none">{n(400)}</span>
+                <span className="text-[#8F27FF] font-bold text-sm leading-none">+</span>
+              </div>
+              <div className="text-white/65 text-[10.5px] font-medium mt-1.5 leading-snug">
+                {t("Clients Worldwide", "مشتری در سراسر جهان")}
+              </div>
+            </div>
+            <div className="rounded-2xl bg-[rgba(22,4,50,0.95)] border border-[rgba(143,39,255,0.5)] border-l-4 border-l-[#8F27FF] px-2.5 py-3">
+              <div className="flex items-baseline gap-1">
+                <span className="text-white font-extrabold text-[20px] leading-none">{n(10)}</span>
+                <span className="text-[#8F27FF] font-bold text-sm leading-none">{t("+ Yrs", "+ سال")}</span>
+              </div>
+              <div className="text-white/65 text-[10.5px] font-medium mt-1.5 leading-snug">
+                {t("Years of Expertise", "سال تجربه")}
+              </div>
+            </div>
+          </div>
+        </Reveal>
 
     </section>
   );

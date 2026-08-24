@@ -79,7 +79,7 @@ export default function Choose() {
                     {item.icon}
                   </div>
 
-                  <h4 className="text-[15px] md:text-[16px] font-medium leading-[1.4] tracking-[-0.01em] text-left">
+                  <h4 className="text-[15px] md:text-[16px] font-medium leading-[1.4] tracking-[-0.01em] text-start">
                     {t(item.title.en, item.title.fa)}
                   </h4>
                 </div>

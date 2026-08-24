@@ -183,7 +183,7 @@ function CountryPicker({
 }
 
 export default function ContactForm() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState(COUNTRIES[0]);
@@ -343,7 +343,7 @@ export default function ContactForm() {
                     <button type="submit" disabled={sending}
                       className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-10 py-3.5 bg-[#8F27FF] text-white font-bold text-[15px] rounded-full hover:bg-[#7A1FE0] hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(143,39,255,0.35)] disabled:opacity-70 transition-all flex-shrink-0">
                       {sending ? t("Sending…", "در حال ارسال…") : (
-                        <>{t("Send Message", "ارسال پیام")} <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M5 12h14M12 5l7 7-7 7" /></svg></>
+                        <>{t("Send Message", "ارسال پیام")} <svg className={`w-4 h-4 ${lang === "fa" ? "rotate-180" : ""}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M5 12h14M12 5l7 7-7 7" /></svg></>
                       )}
                     </button>
                   </div>

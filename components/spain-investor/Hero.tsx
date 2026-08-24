@@ -37,7 +37,7 @@ export default function Hero() {
           className={`h-[240px] rounded-[32px_80px_32px_32px] mb-6 overflow-hidden ${base} duration-700 delay-75 ${mounted ? show : hideUp}`}
           style={{
             background:
-              "#1a0820 url('/images/photos/1558642452-9d2a7deb7f62-w900.jpg') center/cover",
+              "#1a0820 url('/images/startup/Spain Sturtup.jpg') center/cover",
           }}
         />
         <h1 className={`text-3xl font-bold leading-tight tracking-tight mb-4 ${base} duration-700 delay-150 ${mounted ? show : hideUp}`}>

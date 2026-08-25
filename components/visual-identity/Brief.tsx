@@ -4,16 +4,16 @@ import { useState, type FormEvent } from "react";
 import { useLang } from "@/components/global/LanguageProvider";
 
 const STAGES = [
-  { value: "Launching a new brand", labelFa: "راه‌اندازی برند جدید" },
-  { value: "Early-stage brand", labelFa: "برند در مرحله اولیه" },
+  { value: "Launching a new brand", labelFa: "در آستانه راه‌اندازی" },
+  { value: "Early-stage brand", labelFa: "برند نوپا" },
   { value: "Established brand", labelFa: "برند تثبیت‌شده" },
-  { value: "Merger or new direction", labelFa: "ادغام یا تغییر مسیر" },
+  { value: "Merger or new direction", labelFa: "ادغام یا تغییر مسیر برند" },
 ];
 
 const SCOPES = [
-  { value: "New identity", labelFa: "هویت جدید" },
-  { value: "Brand refresh", labelFa: "بازآرایی برند" },
-  { value: "Identity system", labelFa: "سیستم هویت" },
+  { value: "New identity", labelFa: "طراحی هویت بصری جدید" },
+  { value: "Brand refresh", labelFa: "بازطراحی و به‌روزرسانی هویت برند" },
+  { value: "Identity system", labelFa: "طراحی سیستم جامع هویت بصری" },
 ];
 
 const TIMELINES = [
@@ -72,13 +72,13 @@ export default function Brief() {
         <div className="vi-brief__intro">
           <span className="vi-brief__label">{t("/ Start a Project", "/ شروع یک پروژه")}</span>
           <h2>
-            <span className="vi-brief-outline">{t("Tell Us What Your Brand", "به ما بگویید برند شما")}</span>
-            <span className="vi-brief-accent">{t("Needs To Become.", "باید به چه چیزی تبدیل شود.")}</span>
+            <span className="vi-brief-outline">{t("Tell Us What Your Brand", "برندتان را")}</span>
+            <span className="vi-brief-accent">{t("Needs To Become.", "به جایگاهی که شایسته آن است برسانید")}</span>
           </h2>
           <p>
             {t(
               "Share where your brand is today and where it needs to go. We'll recommend the right identity scope and reply within one business day.",
-              "بگویید برند شما امروز کجاست و باید به کجا برسد. ما دامنه هویت مناسب را پیشنهاد می‌دهیم و ظرف یک روز کاری پاسخ می‌دهیم."
+              "از جایگاه امروز برندتان و مسیری که می‌خواهید طی کند برای ما بگویید. ما متناسب با نیازتان، بهترین دامنه خدمات هویت بصری را پیشنهاد می‌دهیم و حداکثر تا یک روز کاری با شما تماس می‌گیریم."
             )}
           </p>
         </div>
@@ -94,8 +94,8 @@ export default function Brief() {
         ) : (
           <form className="vi-brief__form" onSubmit={handleSubmit}>
             <div className="vi-brief__form-head">
-              <strong>{t("Visual identity brief", "بریف هویت بصری")}</strong>
-              <p>{t("A few focused questions help us understand the right starting point.", "چند سؤال متمرکز به ما کمک می‌کند نقطه شروع مناسب را بشناسیم.")}</p>
+              <strong>{t("Visual identity brief", "فرم طراحی هویت بصری")}</strong>
+              <p>{t("A few focused questions help us understand the right starting point.", "چند سؤال کوتاه و هدفمند به ما کمک می‌کند بهترین نقطه برای شروع پروژه را مشخص کنیم.")}</p>
             </div>
             <div className="vi-brief__row">
               <div className="vi-brief__field">
@@ -137,7 +137,7 @@ export default function Brief() {
             </div>
             <div className="vi-brief__row">
               <div className="vi-brief__field">
-                <label htmlFor="vib-timeline">{t("Ideal timeline", "زمان‌بندی ایده‌آل")}</label>
+                <label htmlFor="vib-timeline">{t("Ideal timeline", "زمان‌بندی موردنظر")}</label>
                 <select id="vib-timeline" name="timeline" defaultValue={TIMELINES[0].value}>
                   {TIMELINES.map((s) => (
                     <option key={s.value} value={s.value}>{t(s.value, s.labelFa)}</option>
@@ -145,7 +145,7 @@ export default function Brief() {
                 </select>
               </div>
               <div className="vi-brief__field">
-                <label htmlFor="vib-budget">{t("Investment range", "محدوده سرمایه‌گذاری")}</label>
+                <label htmlFor="vib-budget">{t("Investment range", "محدوده بودجه")}</label>
                 <select id="vib-budget" name="budget" defaultValue={BUDGETS[0].value}>
                   {BUDGETS.map((s) => (
                     <option key={s.value} value={s.value}>{t(s.value, s.labelFa)}</option>
@@ -154,20 +154,20 @@ export default function Brief() {
               </div>
             </div>
             <div className="vi-brief__field">
-              <label htmlFor="vib-context">{t("What should the new identity change?", "هویت جدید باید چه چیزی را تغییر دهد؟")}</label>
+              <label htmlFor="vib-context">{t("What should the new identity change?", "هویت جدید برندتان قرار است چه تغییری ایجاد کند؟")}</label>
               <textarea
                 id="vib-context"
                 name="context"
                 placeholder={t(
                   "Tell us about the business, audience, current identity, and the change you want people to feel...",
-                  "درباره کسب‌وکار، مخاطب، هویت فعلی و تغییری که می‌خواهید مردم حس کنند برای ما بنویسید..."
+                  "درباره کسب‌وکار، مخاطبان، هویت فعلی برند و تغییری که می‌خواهید در نگاه و احساس مخاطب ایجاد شود، برای ما بنویسید..."
                 )}
               ></textarea>
             </div>
             <button type="submit" disabled={sending} className="vi-brief__button">
-              {sending ? t("Sending…", "در حال ارسال…") : t("Request an Intro Call", "درخواست تماس آشنایی")}
+              {sending ? t("Sending…", "در حال ارسال…") : t("Request an Intro Call", "درخواست جلسه آشنایی")}
             </button>
-            <p className="vi-brief__note">{t("Your information stays confidential. No obligation, no pressure.", "اطلاعات شما محرمانه باقی می‌ماند. بدون تعهد و بدون فشار.")}</p>
+            <p className="vi-brief__note">{t("Your information stays confidential. No obligation, no pressure.", "اطلاعات شما کاملاً محرمانه باقی می‌ماند؛ بدون تعهد و بدون هیچ فشاری.")}</p>
           </form>
         )}
       </div>

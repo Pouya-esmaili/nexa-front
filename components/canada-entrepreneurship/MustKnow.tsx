@@ -61,7 +61,8 @@ const cards = [
 ];
 
 export default function MustKnow() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
+  const textDir = lang === "fa" ? "rtl" : "ltr";
   return (
     <section className="py-16 md:py-[110px] bg-black relative overflow-hidden">
       <div
@@ -78,6 +79,7 @@ export default function MustKnow() {
           {cards.map((c) => (
             <div
               key={c.num}
+              dir="ltr"
               className="rounded-2xl p-6 relative overflow-hidden"
               style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
             >
@@ -93,8 +95,8 @@ export default function MustKnow() {
               >
                 {c.icon}
               </div>
-              <h3 className="text-lg font-semibold text-white mb-3 relative z-10">{t(c.title, c.titleFa)}</h3>
-              <p className="text-sm leading-relaxed relative z-10" style={{ color: "rgba(255,255,255,0.7)" }}>{t(c.desc, c.descFa)}</p>
+              <h3 dir={textDir} className="text-lg font-semibold text-white mb-3 relative z-10">{t(c.title, c.titleFa)}</h3>
+              <p dir={textDir} className="text-sm leading-relaxed relative z-10" style={{ color: "rgba(255,255,255,0.7)" }}>{t(c.desc, c.descFa)}</p>
             </div>
           ))}
         </div>
@@ -110,6 +112,7 @@ export default function MustKnow() {
             {cards.map((c) => (
               <div
                 key={c.num}
+                dir="ltr"
                 className="rounded-[20px] p-9 relative overflow-hidden transition-all hover:-translate-y-1 hover:border-[#8F27FF] group"
                 style={{
                   background: "rgba(255,255,255,0.03)",
@@ -128,8 +131,8 @@ export default function MustKnow() {
                 >
                   {c.icon}
                 </div>
-                <h3 className="text-[22px] font-semibold text-white mb-3 tracking-tight relative z-10">{t(c.title, c.titleFa)}</h3>
-                <p className="text-[14.5px] leading-[1.65] relative z-10" style={{ color: "rgba(255,255,255,0.7)" }}>{t(c.desc, c.descFa)}</p>
+                <h3 dir={textDir} className="text-[22px] font-semibold text-white mb-3 tracking-tight relative z-10">{t(c.title, c.titleFa)}</h3>
+                <p dir={textDir} className="text-[14.5px] leading-[1.65] relative z-10" style={{ color: "rgba(255,255,255,0.7)" }}>{t(c.desc, c.descFa)}</p>
               </div>
             ))}
           </div>

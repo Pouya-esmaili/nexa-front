@@ -34,10 +34,10 @@ export default function Hero() {
         <p className="text-sm text-gray-600 leading-relaxed mb-6">
           {t("At Nexa, we view Canada not as a migration destination, but as a structured, transparent, capital-accessible environment where serious businesses can be launched, positioned, and expanded.", "در نکسا، کانادا را صرفاً مقصدی برای مهاجرت نمی‌بینیم؛ بلکه آن را بستری شفاف، ساختاریافته و سرمایه‌پذیر برای راه‌اندازی، توسعه و مقیاس‌پذیری کسب‌وکارهای جدی می‌دانیم؛ جایی برای ساختن آینده‌ای مطمئن و بلندمدت.")}
         </p>
-        <div className="grid grid-cols-3 gap-4 py-6 border-t border-b border-gray-200 mb-6">
+        <div className="grid grid-cols-3 gap-2 py-6 border-t border-b border-gray-200 mb-6">
           {stats.map((s) => (
             <div key={s.label}>
-              <div className="text-2xl font-extrabold tracking-tight">{t(s.num, s.numFa)}</div>
+              <div className="text-lg font-extrabold tracking-tight leading-tight">{t(s.num, s.numFa)}</div>
               <div className="text-[11px] text-gray-500 font-medium mt-1">{t(s.label, s.labelFa)}</div>
             </div>
           ))}

@@ -170,7 +170,7 @@ const team: Member[] = [
   {
     name: "Kiyana Mehrasa",
     role: "WordPress Developer",
-    dept: "Marketing",
+    dept: "Tech",
     image: "/images/ourteam/kiana.JPG",
     linkedin:
       "https://www.linkedin.com/in/kiana-mehrasa-00aa38380",

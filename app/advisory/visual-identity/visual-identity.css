@@ -38,6 +38,14 @@ html[lang="fa"] { --font: "IRANSansX", 'Inter', system-ui, sans-serif; }
    of leaving oversized gaps around them. */
 html[lang="fa"] .vi-page { zoom: 0.9; }
 
+/* RTL flips the container's scrollLeft convention (0 = start, negative =
+   scrolled forward), which breaks the prev/next scrollBy math and the
+   atStart/atEnd checks in useCarousel.ts — same fix as .team-cards below. */
+html[lang="fa"] .vi-work__grid-4col,
+html[lang="fa"] .ab-legend { direction: ltr; }
+
+html[lang="fa"] .faq-q { text-align: right; }
+
 /* Transparent + text-stroke "outline" text doesn't render legibly for
    Persian's joined letterforms (thin connecting strokes get lost/merged),
    so Persian falls back to a solid fill instead. Most of these sit on a

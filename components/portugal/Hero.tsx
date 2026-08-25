@@ -50,8 +50,8 @@ export default function Hero() {
                 { num: "~€10K", numFa: "حدود ۱۰ هزار یورو", label: "Personal Threshold", labelFa: "حداقل منابع مالی شخصی" },
                 { num: "5 yr", numFa: "۵ سال", label: "Path to Citizenship", labelFa: "مسیر تا تابعیت" },
               ].map((s) => (
-                <div key={s.label} className="text-center">
-                  <div className="text-[26px] font-bold tracking-[-0.03em] leading-none">{t(s.num, s.numFa)}</div>
+                <div key={s.label} className="text-center px-1">
+                  <div className="text-[19px] md:text-[26px] font-bold tracking-[-0.03em] leading-tight md:leading-none">{t(s.num, s.numFa)}</div>
                   <div className="text-[11px] text-[#929292] mt-1.5 font-medium uppercase tracking-[0.06em]">{t(s.label, s.labelFa)}</div>
                 </div>
               ))}

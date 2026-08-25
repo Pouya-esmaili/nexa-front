@@ -51,8 +51,11 @@ export default function Benefits() {
             {cards.map((c, i) => (
               <Reveal key={c.title} variant="up" delay={i * 80}>
                 <div
-                  className="p-8 transition-colors duration-250 hover:bg-[#F7F6F9] h-full"
-                  style={{ borderInlineEnd: i < 3 ? "1px solid #E2E2E2" : undefined }}
+                  className={`p-8 transition-colors duration-250 hover:bg-[#F7F6F9] h-full ${i < cards.length - 1 ? "border-b md:border-b-0" : ""}`}
+                  style={{
+                    borderColor: i < cards.length - 1 ? "#E2E2E2" : undefined,
+                    borderInlineEnd: i < 3 ? "1px solid #E2E2E2" : undefined,
+                  }}
                 >
                   <div className="w-12 h-12 rounded-[12px] grid place-items-center bg-[#FAF6FF] text-[#8F27FF] mb-5">
                     {c.icon}

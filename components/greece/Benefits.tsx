@@ -66,10 +66,13 @@ export default function Benefits() {
             {cards.map((c, i) => (
               <Reveal key={c.title} variant="up" delay={i * 80}>
                 <div
-                  className="p-9 transition-colors duration-200 hover:bg-[#F7F6F9] h-full"
+                  className={[
+                    "p-9 transition-colors duration-200 hover:bg-[#F7F6F9] h-full border-[#E2E2E2]",
+                    i < cards.length - 1 ? "border-b" : "border-b-0",
+                    i < 3 ? "md:border-b" : "md:border-b-0",
+                  ].join(" ")}
                   style={{
                     borderInlineEnd: (i + 1) % 3 !== 0 ? "1px solid #E2E2E2" : undefined,
-                    borderBottom: i < 3 ? "1px solid #E2E2E2" : undefined,
                   }}
                 >
                   <div className="w-12 h-12 rounded-[12px] grid place-items-center bg-[#FAF6FF] text-[#8F27FF] mb-5">

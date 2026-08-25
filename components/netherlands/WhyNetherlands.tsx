@@ -71,8 +71,9 @@ export default function WhyNetherlands() {
           {cards.map((c, i) => (
             <Reveal key={i} variant="up" delay={i * 80}>
               <div
-                className="p-8 md:p-9 h-full transition-colors duration-300 hover:bg-[#F7F6F9]"
+                className={`p-8 md:p-9 h-full transition-colors duration-300 hover:bg-[#F7F6F9] ${i < cards.length - 1 ? "border-b md:border-b-0" : ""}`}
                 style={{
+                  borderColor: i < cards.length - 1 ? "#E2E2E2" : undefined,
                   borderInlineEnd: i < cards.length - 1 ? "1px solid #E2E2E2" : undefined,
                 }}
               >

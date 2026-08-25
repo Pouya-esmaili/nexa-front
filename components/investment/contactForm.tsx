@@ -87,12 +87,12 @@ export default function InvestmentContactForm() {
                 fontSize: "clamp(26px, 3vw, 40px)",
                 fontWeight: 700,
                 letterSpacing: "-0.03em",
-                lineHeight: 1.1,
+                lineHeight: 1.6,
                 color: "#000",
               }}
             >
               {t("Ready to", "آماده")}{" "}
-              <mark style={{ display: "inline", background: "#FFE600", borderRadius: 3, padding: "0 5px 3px" }}>
+              <mark style={{ display: "inline", background: "#FFE600", borderRadius: 3, padding: "0 5px", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}>
                 {t("Invest", "جذب سرمایه")}
               </mark>{" "}
               {t("or Raise Capital?", "یا سرمایه گذاری هستید؟")}

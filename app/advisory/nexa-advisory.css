@@ -61,6 +61,7 @@ html[lang="fa"] .adv .hbt-outline{
 }
 html[lang="fa"] .adv .showreel__content .hbt-outline{color:#fff !important;}
 html[lang="fa"] .adv .contact-section .eh2-outline{color:#fff !important;}
+html[lang="fa"] .adv .faq-q{text-align:right;}
 
 @media (prefers-reduced-motion: reduce){
   .adv *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}

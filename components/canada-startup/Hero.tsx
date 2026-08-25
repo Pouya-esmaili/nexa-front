@@ -35,15 +35,15 @@ export default function StartupHero() {
               {t("The Canada Start-Up Visa grants — not a temporary visa. If your venture fails after landing, your permanent residency stands. Build in one of the world's most business-friendly economies from day one.", "برنامه ویزای استارتاپ کانادا مستقیماً به اقامت دائم منتهی می‌شود، نه یک ویزای موقت. حتی اگر پس از ورود به کانادا استارتاپ شما به نتیجه نرسد، وضعیت اقامت دائم شما از بین نمی‌رود. از همان ابتدا، کسب‌وکارتان را در یکی از اقتصادهای قدرتمند و مناسب برای فعالیت‌های تجاری در جهان توسعه دهید.")}
             </p>
 
-            <div className={`${base} ${mounted ? show : hidden} grid grid-cols-3 gap-6 py-6 mb-8`}
+            <div className={`${base} ${mounted ? show : hidden} grid grid-cols-3 gap-2 md:gap-6 py-6 mb-8`}
               style={{ borderTop: "1px solid #E2E2E2", borderBottom: "1px solid #E2E2E2", transitionDelay: "160ms" }}>
               {[
                 { num: "Direct", numFa: "مستقیم", label: "PR — Not a Visa", labelFa: "اقامت دائم — نه ویزای موقت" },
                 { num: "5", numFa: "حداکثر ۵ نفر", label: "Max Co-Founders", labelFa: "هم‌بنیان‌گذار" },
                 { num: "3 yr", numFa: "۳ سال", label: "Path to Citizenship", labelFa: "مسیر تا تابعیت" },
               ].map((s) => (
-                <div key={s.label} className="text-center">
-                  <div className="text-[26px] font-bold tracking-[-0.03em] leading-none">{t(s.num, s.numFa)}</div>
+                <div key={s.label} className="text-center px-1">
+                  <div className="text-[19px] md:text-[26px] font-bold tracking-[-0.03em] leading-tight md:leading-none whitespace-nowrap">{t(s.num, s.numFa)}</div>
                   <div className="text-[11px] text-[#929292] mt-1.5 font-medium uppercase tracking-[0.06em]">{t(s.label, s.labelFa)}</div>
                 </div>
               ))}

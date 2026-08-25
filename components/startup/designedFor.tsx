@@ -32,8 +32,11 @@ export default function StartupDesignedFor() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-[#E2E2E2] rounded-[20px] overflow-hidden">
             {items.map((item, i) => (
               <div key={i}
-                className="flex flex-col gap-4 p-[34px_30px] hover:bg-[#FAF6FF] transition-colors group"
-                style={{ borderInlineEnd: i < 3 ? "1px solid #E2E2E2" : "none" }}>
+                className={`flex flex-col gap-4 p-[34px_30px] hover:bg-[#FAF6FF] transition-colors group ${i < items.length - 1 ? "border-b sm:border-b-0" : ""}`}
+                style={{
+                  borderColor: i < items.length - 1 ? "#E2E2E2" : undefined,
+                  borderInlineEnd: i < 3 ? "1px solid #E2E2E2" : "none",
+                }}>
                 <div className="w-11 h-11 bg-[#F7F6F9] border border-[#E2E2E2] rounded-[12px] grid place-items-center flex-shrink-0 transition-all group-hover:bg-[#8F27FF] group-hover:border-[#8F27FF]">
                   <span className="text-[#8F27FF] group-hover:text-white transition-colors">{item.icon}</span>
                 </div>

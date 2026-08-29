@@ -40,8 +40,7 @@ export default function Hero() {
 
           {/* RIGHT */}
           <div className={`${base} ${right} order-1 md:order-2`} style={{ transitionDelay: "80ms" }}>
-            <div className="relative w-full h-[240px] md:h-[380px] overflow-hidden"
-              style={{ borderRadius: "140px 20px 20px 20px" }}>
+            <div className="relative w-full h-[240px] md:h-[380px] overflow-hidden rounded-[20px] md:rounded-[140px_20px_20px_20px]">
               <Image
                 src="/images/startup/Sturtup Hero.webp"
                 alt="Startup team"

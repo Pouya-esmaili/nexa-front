@@ -47,8 +47,7 @@ export default function Hero() {
           <div className={`${base} ${right} order-1 md:order-2`} style={{ transitionDelay: "80ms" }}>
             {/* Image */}
             <div
-              className="overflow-hidden relative w-full h-[240px] md:h-[380px]"
-              style={{ borderRadius: "140px 20px 20px 20px" }}
+              className="overflow-hidden relative w-full h-[240px] md:h-[380px] rounded-[20px] md:rounded-[140px_20px_20px_20px]"
             >
               <Image
                 src="/images/Entrepreneurship/hero.webp"

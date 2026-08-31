@@ -37,17 +37,23 @@ html[lang="fa"] .adv .hbt-outline,
 html[lang="fa"] .adv .hbt-solid,
 html[lang="fa"] .adv .hbt-purple{line-height:1.4 !important;}
 html[lang="fa"] .adv .hbt-line + .hbt-line{margin-top:4px;}
-html[lang="fa"] .adv .editorial-h2,
 html[lang="fa"] .adv .svc-card h3,
 html[lang="fa"] .adv .hc-card h4{line-height:1.5 !important;}
+/* .editorial-h2 stacks single short words as separate blocks (via <br>), so
+   it doesn't need paragraph-level line-height — 1.5 there turned each stack
+   into a huge gap. A small bump is still enough to stop diacritics clipping. */
+html[lang="fa"] .adv .editorial-h2{line-height:1.15 !important;}
 
 /* These marquees are infinite-loop flex tracks driven by a physical
    translateX keyframe (see teamScroll / srCredits below). Under RTL the
    flex items reorder but the keyframe math doesn't, so the loop runs out
-   and jumps/stops. Force LTR so the animation always matches the layout,
-   regardless of page language. */
-html[lang="fa"] .adv .team-cards__track,
-html[lang="fa"] .adv .showreel__credits-track{direction:ltr;}
+   and jumps/stops. Force LTR on the whole overflow:hidden wrapper (not just
+   the track) — the track is wider than its container, and an RTL ancestor
+   right-aligns that overflow, shoving almost the entire track off-screen
+   to the left. LTR on the wrapper keeps it start-aligned on the left,
+   where the animation math expects it, regardless of page language. */
+html[lang="fa"] .adv .team-cards,
+html[lang="fa"] .adv .showreel__credits{direction:ltr;}
 
 /* Transparent + text-stroke "outline" text doesn't render legibly for
    Persian's joined letterforms (thin connecting strokes get lost/merged),
@@ -78,13 +84,16 @@ html[lang="fa"] .adv .contact-section .eh2-outline{color:#fff !important;}
 .adv .btn-outline{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border:1.5px solid var(--ink);color:var(--ink);font-weight:600;border-radius:999px;font-size:14px;transition:all .25s;font-family:var(--font);text-decoration:none;background:none;}
 .adv .btn-outline:hover{border-color:var(--purple);color:var(--purple);}
 
-/* hero inline stats (reused by team) */
+/* hero inline stats (reused by team). Logical (inline-end/-start) properties
+   so the divider always sits between items — a physical border-right paired
+   with :last-child breaks under RTL, where the grid/flex order visually
+   mirrors but :first-child/:last-child still refer to DOM order. */
 .adv .hs-item{
   display:flex; flex-direction:column; gap:4px;
-  padding-right:32px; border-right:1.5px solid var(--line);
+  padding-inline-end:32px; border-inline-end:1.5px solid var(--line);
 }
-.adv .hs-item:last-child{border-right:none; padding-right:0;}
-.adv .hs-item:not(:first-child){padding-left:32px;}
+.adv .hs-item:last-child{border-inline-end:none; padding-inline-end:0;}
+.adv .hs-item:not(:first-child){padding-inline-start:32px;}
 .adv .hs-num-row{display:flex; align-items:baseline;}
 .adv .hs-num{font-size:clamp(28px,3.5vw,44px); font-weight:900; letter-spacing:-0.04em; color:var(--ink); display:inline; line-height:1;}
 .adv .hs-suf{font-size:clamp(20px,2.5vw,32px); font-weight:900; color:var(--purple); margin-left:2px; line-height:1;}
@@ -325,9 +334,9 @@ html[lang="fa"] .adv .contact-section .eh2-outline{color:#fff !important;}
   border-top:1.5px solid var(--line);
   padding-top:24px; gap:0;
 }
-.adv .team-stats .hs-item{padding-right:20px; border-right:1.5px solid var(--line);}
-.adv .team-stats .hs-item:last-child{border-right:none; padding-right:0;}
-.adv .team-stats .hs-item:not(:first-child){padding-left:20px;}
+.adv .team-stats .hs-item{padding-inline-end:20px; border-inline-end:1.5px solid var(--line);}
+.adv .team-stats .hs-item:last-child{border-inline-end:none; padding-inline-end:0;}
+.adv .team-stats .hs-item:not(:first-child){padding-inline-start:20px;}
 .adv .team-stats .hs-label{max-width:120px;}
 .adv .team-cards{
   overflow:hidden;

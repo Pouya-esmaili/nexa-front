@@ -6,6 +6,7 @@
     "dev": "next dev",
     "analyze": "ANALYZE=true next build",
     "images:optimize": "node scripts/optimize-images.js",
+    "test:forms": "NODE_NO_WARNINGS=1 node scripts/test-forms.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

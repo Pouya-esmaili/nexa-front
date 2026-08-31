@@ -16,7 +16,6 @@ export default function Process() {
         <span className="vi-label">{t("/ HOW WE WORK", "/ فرآیند همکاری ما")}</span>
         <h2 className="editorial-h2">
           <span className="eh2-outline">{t("FROM BRIEF", "از ایده اولیه")}</span>
-          <br />
           <span className="eh2-solid">{t("TO", "تا")}</span> <span className="eh2-purple">{t("FINISHED SYSTEM.", "یک سیستم کامل.")}</span>
         </h2>
         <div className="vi-proc__grid">

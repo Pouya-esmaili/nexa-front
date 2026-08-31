@@ -20,13 +20,12 @@ export default function Faq() {
       <div className="wrap">
         <div className="faq-layout">
           <div className="faq-left">
-            <span className="editorial-label">{t("/ FAQ", "/ سؤالات متداول")}</span>
+            <span className="editorial-label">{t("/ FAQ", "/ پرسش‌های متداول")}</span>
             <h2 className="editorial-h2">
               <span className="eh2-outline">{t("STILL", "هنوز")}</span>
-              <br />
-              <span className="eh2-solid">{t("DECIDING?", "در تصمیم‌گیری؟")}</span>
+              <span className="eh2-solid">{t("DECIDING?", "تصمیم نگرفته اید؟ ")}</span>
             </h2>
-            <p className="faq-sub">{t("A few things founders usually ask before starting.", "چند سؤالی که بنیان‌گذاران معمولاً پیش از شروع می‌پرسند.")}</p>
+            <p className="faq-sub">{t("A few things founders usually ask before starting.", "چند سؤال رایج که معمولاً قبل از شروع یک پروژه مطرح می‌شوند.")}</p>
           </div>
           <div className="faq-list">
             {FAQS.map((f, i) => (

@@ -80,7 +80,7 @@ export default function InvestmentStatsBand() {
               className="stats-band-item flex flex-col items-center text-center"
               style={{
                 padding: "36px 24px",
-                borderRight: i < 2 ? "1px solid rgba(255,255,255,0.07)" : "none",
+                borderInlineEnd: i < 2 ? "1px solid rgba(255,255,255,0.07)" : "none",
               }}
             >
               {/* Pill */}

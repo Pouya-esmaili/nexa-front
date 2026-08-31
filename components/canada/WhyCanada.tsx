@@ -67,7 +67,7 @@ export default function WhyCanada() {
                 <div
                   className="p-9 transition-colors duration-250 hover:bg-[#F7F6F9]"
                   style={{
-                    borderRight: (i + 1) % 3 !== 0 ? "1px solid #E2E2E2" : undefined,
+                    borderInlineEnd: (i + 1) % 3 !== 0 ? "1px solid #E2E2E2" : undefined,
                     borderBottom: i < 3 ? "1px solid #E2E2E2" : undefined,
                   }}
                 >

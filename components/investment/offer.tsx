@@ -54,7 +54,7 @@ const COUNTRIES = [
 ];
 
 export default function InvestmentCountries() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   return (
     <section style={{ padding: "90px 0", background: "#F7F6F9" }}>
       <div className="px-6 mx-auto w-full" style={{ maxWidth: 1240 }}>
@@ -148,20 +148,20 @@ export default function InvestmentCountries() {
 
                   {/* CTA Button — Tailwind-only so group-hover can override bg */}
                   <span
-                    className="
+                    className={`
                       inline-flex items-center gap-1.5 font-semibold text-white
                       text-[13px] px-4 py-2 rounded-full backdrop-blur-sm
                       bg-white/15 border border-white/30
                       transition-all duration-300
-                      group-hover:bg-[#8F27FF] group-hover:border-[#8F27FF] group-hover:translate-x-0.5
-                    "
+                      group-hover:bg-[#8F27FF] group-hover:border-[#8F27FF] ${lang === "fa" ? "group-hover:-translate-x-0.5" : "group-hover:translate-x-0.5"}
+                    `}
                   >
                     {t("Explore Program", "مشاهده برنامه")}
                     <svg
                       width="13" height="13"
                       viewBox="0 0 24 24"
                       fill="none" stroke="currentColor" strokeWidth="2.5"
-                      className="transition-transform duration-300 group-hover:translate-x-0.5"
+                      className={`transition-transform duration-300 ${lang === "fa" ? "rotate-180 group-hover:-translate-x-0.5" : "group-hover:translate-x-0.5"}`}
                     >
                       <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>

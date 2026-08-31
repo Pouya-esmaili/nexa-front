@@ -47,7 +47,7 @@ export default function Compare() {
           {/* Nexa */}
           <div className="rounded-3xl p-6 relative" style={{ background: "#8F27FF" }}>
             <span
-              className="absolute top-5 right-5 text-[11px] font-bold tracking-widest text-white px-3 py-1 rounded-full"
+              className="absolute top-5 end-5 text-[11px] font-bold tracking-widest text-white px-3 py-1 rounded-full"
               style={{ background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.25)" }}
             >
               {t("RECOMMENDED", "پیشنهاد ما")}
@@ -92,7 +92,7 @@ export default function Compare() {
             {/* Nexa column */}
             <div className="rounded-[28px] p-10 relative" style={{ background: "#8F27FF" }}>
               <span
-                className="absolute top-6 right-6 text-[11px] font-bold tracking-[0.1em] text-white px-3 py-1 rounded-full"
+                className="absolute top-6 end-6 text-[11px] font-bold tracking-[0.1em] text-white px-3 py-1 rounded-full"
                 style={{ background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.25)" }}
               >
                 {t("RECOMMENDED", "پیشنهاد ما")}

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Row from "@/components/global/Row";
 import Reveal from "@/components/global/LazyReveal";
 import { useLang } from "@/components/global/LanguageProvider";
@@ -45,6 +46,7 @@ const steps = [
 
 export default function Process() {
   const { t } = useLang();
+  const [active, setActive] = useState<number | null>(null);
   return (
     <section className="py-20 md:py-24 bg-[#F7F6F9]">
       <Row>
@@ -78,18 +80,27 @@ export default function Process() {
                 style={{ background: "linear-gradient(180deg, #8F27FF 0%, rgba(143,39,255,0.15) 100%)" }} />
 
               {steps.map((s, i) => (
-                <div key={s.num} className={`relative group ${i < steps.length - 1 ? "pb-8" : ""}`}>
+                <div
+                  key={s.num}
+                  className={`relative group cursor-pointer ${i < steps.length - 1 ? "pb-8" : ""}`}
+                  onClick={() => setActive(active === i ? null : i)}
+                >
                   {/* Circle number */}
-                  <div className="absolute -left-[52px] top-0 w-[42px] h-[42px] rounded-full flex items-center justify-center text-[13px] font-bold text-[#8F27FF] bg-white transition-all duration-300 group-hover:bg-[#8F27FF] group-hover:text-white"
+                  <div className="absolute -left-[52px] top-0 w-[42px] h-[42px] rounded-full flex items-center justify-center text-[13px] font-bold transition-all duration-300 group-hover:bg-[#8F27FF] group-hover:text-white"
                     style={{
                       border: "2px solid #8F27FF",
                       boxShadow: "0 0 0 5px #FAF6FF, 0 4px 12px rgba(143,39,255,0.12)",
+                      background: active === i ? "#8F27FF" : "white",
+                      color: active === i ? "white" : "#8F27FF",
                     }}>
                     {s.num}
                   </div>
 
                   {/* Step card */}
-                  <div className="rounded-[14px] p-[18px_22px] border border-[#E2E2E2] bg-white transition-all duration-200 group-hover:translate-x-1 group-hover:border-[rgba(143,39,255,0.18)]">
+                  <div
+                    className="rounded-[14px] p-[18px_22px] bg-white transition-all duration-200 group-hover:translate-x-1"
+                    style={{ border: active === i ? "1px solid rgba(143,39,255,0.4)" : "1px solid #E2E2E2" }}
+                  >
                     <div className="text-[11px] font-bold text-[#8F27FF] uppercase tracking-[0.08em] mb-1.5">
                       {t(s.meta, s.metaFa)}
                     </div>

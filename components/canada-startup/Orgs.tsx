@@ -65,10 +65,10 @@ export default function Orgs() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           {orgs.map((o, i) => (
-            <Reveal key={o.type} variant="up" delay={i * 80}>
-              <div className="bg-white border border-[#E2E2E2] rounded-[20px] flex flex-col gap-4 overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(0,0,0,0.07)]">
+            <Reveal key={o.type} variant="up" delay={i * 80} className="h-full">
+              <div className="h-full bg-white border border-[#E2E2E2] rounded-[20px] flex flex-col gap-4 overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(0,0,0,0.07)]">
                 <div className={`h-[3px] ${o.topBar}`} />
-                <div className="px-8 pb-8 flex flex-col gap-4">
+                <div className="px-8 pb-8 flex flex-col gap-4 flex-1">
                   <div className={`text-[11px] font-bold uppercase tracking-[0.1em] ${o.typeColor}`}>{t(o.type, o.typeFa)}</div>
                   <div className={`text-[44px] font-extrabold tracking-[-0.04em] leading-none ${o.amountColor}`}>{t(o.amount, o.amountFa)}</div>
                   <div className="text-[12px] font-semibold text-[#929292] uppercase tracking-[0.06em]">{t(o.floor, o.floorFa)}</div>

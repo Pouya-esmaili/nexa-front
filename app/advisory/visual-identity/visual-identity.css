@@ -32,6 +32,20 @@
    would otherwise override the sitewide IRANSansX swap in globals.css. */
 html[lang="fa"] { --font: "IRANSansX", 'Inter', system-ui, sans-serif; }
 
+/* IRANSansX reads noticeably larger than Inter at the same px value, so
+   Persian text on this page is scaled down a notch. zoom (not font-size)
+   so spacing/padding shrink proportionally with the smaller glyphs instead
+   of leaving oversized gaps around them. */
+html[lang="fa"] .vi-page { zoom: 0.9; }
+
+/* RTL flips the container's scrollLeft convention (0 = start, negative =
+   scrolled forward), which breaks the prev/next scrollBy math and the
+   atStart/atEnd checks in useCarousel.ts — same fix as .team-cards below. */
+html[lang="fa"] .vi-work__grid-4col,
+html[lang="fa"] .ab-legend { direction: ltr; }
+
+html[lang="fa"] .faq-q { text-align: right; }
+
 /* Transparent + text-stroke "outline" text doesn't render legibly for
    Persian's joined letterforms (thin connecting strokes get lost/merged),
    so Persian falls back to a solid fill instead. Most of these sit on a
@@ -46,17 +60,23 @@ html[lang="fa"] .eh2-outline{
 html[lang="fa"] .vi-mark .eh2-outline,
 html[lang="fa"] .vi-cta .eh2-outline{color:#fff !important;}
 
-/* Persian line-height fix (letter-spacing is reset globally in globals.css):
-   Latin-tuned tight line-heights clip IRANSansX ascenders, descenders
-   and diacritics. */
-html[lang="fa"] .vi-hero__title,
-html[lang="fa"] .editorial-h2{line-height: 1.5 !important;}
+/* A little breathing room between title lines, without the earlier
+   overlap issue: IRANSansX runs taller than Inter at the same font-size,
+   so Persian is still sized down a bit to keep lines from clipping. */
+html[lang="fa"] .vi-hero__title{font-size: clamp(30px,3.6vw,52px) !important; line-height: 1.1 !important;}
+html[lang="fa"] .editorial-h2{font-size: clamp(27px,4.1vw,55px) !important; line-height: 1.2 !important;}
+
+/* A couple of these titles have a middle word (e.g. "CARRIES") with no
+   Persian translation — the English word is folded into an earlier line
+   instead. Since each title line is display:block, an empty span would
+   otherwise still reserve a full blank line and inflate the title. */
+.editorial-h2 span:empty{display:none;}
 
 .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: var(--purple); color: #fff; font-weight: 600; border-radius: 999px; font-size: 14px; transition: all .25s; font-family: var(--font); text-decoration: none; cursor: pointer; }
 .btn-primary:hover { background: var(--purple-deep); transform: translateY(-1px); box-shadow: 0 8px 22px rgba(143,39,255,.28); }
 
 /* HERO */
-.vi-hero { padding: 120px 0 80px; background: var(--paper); overflow: hidden; }
+.vi-hero { padding: 48px 0 80px; background: var(--paper); overflow: hidden; }
 .vi-hero__grid { display: grid; grid-template-columns: .85fr 1.25fr; gap: 60px; align-items: center; }
 .vi-hero__title { font-size: clamp(40px,4.8vw,68px); font-weight: 900; letter-spacing: -0.03em; line-height: 1.06; margin: 0 0 24px; }
 .vi-hero__title .vi-o { color: transparent; -webkit-text-stroke: 2px var(--ink); }
@@ -122,7 +142,7 @@ html[lang="fa"] .editorial-h2{line-height: 1.5 !important;}
   align-items: center; justify-content: space-between; margin-top: 16px;
 }
 .vi-swipe-counter {
-  font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 700;
+  font-family: var(--font); font-size: 10.5px; font-weight: 700;
   color: var(--purple); background: var(--lav);
   padding: 5px 11px; border-radius: 999px;
 }
@@ -515,7 +535,7 @@ html[lang="fa"] .editorial-h2{line-height: 1.5 !important;}
   margin-bottom: 16px;
 }
 .vi-ca-title {
-  font-family: serif;
+  font-family: var(--font);
   font-size: 32px;
   letter-spacing: 0.15em;
   margin: 0 0 6px;
@@ -654,7 +674,7 @@ html[lang="fa"] .editorial-h2{line-height: 1.5 !important;}
 .vi-cc-item code {
   font-size: 13px;
   font-weight: 700;
-  font-family: monospace;
+  font-family: var(--font);
 }
 
 .vi-art-frame--type {
@@ -671,14 +691,14 @@ html[lang="fa"] .editorial-h2{line-height: 1.5 !important;}
   gap: 16px;
 }
 .giant-ab {
-  font-family: serif;
+  font-family: var(--font);
   font-size: 56px;
-  font-weight: 300;
+  font-weight: 400;
   color: #1B4332;
   line-height: 1;
 }
 .giant-aa {
-  font-family: sans-serif;
+  font-family: var(--font);
   font-size: 48px;
   font-weight: 700;
   color: #1B4332;
@@ -861,7 +881,7 @@ html[lang="fa"] .editorial-h2{line-height: 1.5 !important;}
   text-align: center;
 }
 .vi-thankyou-art h3 {
-  font-family: serif;
+  font-family: var(--font);
   font-size: 28px;
   letter-spacing: 0.1em;
   color: #C89D5A;
@@ -1139,7 +1159,7 @@ html[lang="fa"] .editorial-h2{line-height: 1.5 !important;}
   color: #1B4332;
 }
 .vi-p-card--cover h4 {
-  font-family: serif;
+  font-family: var(--font);
   font-size: 24px;
   margin: 8px 0 4px;
 }
@@ -1212,11 +1232,11 @@ html[lang="fa"] .editorial-h2{line-height: 1.5 !important;}
 }
 .big-sample {
   font-size: 32px;
-  font-family: serif;
+  font-family: var(--font);
   color: #1B4332;
 }
 .big-sample.sans {
-  font-family: sans-serif;
+  font-family: var(--font);
   font-weight: 700;
 }
 
@@ -1287,7 +1307,7 @@ html[lang="fa"] .editorial-h2{line-height: 1.5 !important;}
   text-align: center;
 }
 .vi-p-card--thankyou h3 {
-  font-family: serif;
+  font-family: var(--font);
   color: #C89D5A;
   margin: 0 0 4px;
 }
@@ -1365,7 +1385,7 @@ html[lang="fa"] .editorial-h2{line-height: 1.5 !important;}
 .vi-acc__sub {
   font-size: 13px;
   color: var(--grey);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .vi-acc__toggle {
@@ -1681,7 +1701,7 @@ html[lang="fa"] .editorial-h2{line-height: 1.5 !important;}
   margin-bottom: 2px;
 }
 .vi-color__meta code {
-  font-family: monospace;
+  font-family: var(--font);
   font-weight: 700;
   color: var(--purple-deep);
 }
@@ -1741,7 +1761,7 @@ html[lang="fa"] .editorial-h2{line-height: 1.5 !important;}
   line-height: 1.6;
   color: var(--grey);
   margin: 0;
-  font-family: monospace;
+  font-family: var(--font);
 }
 
 .vi-type__hierarchy-list {
@@ -1774,7 +1794,7 @@ html[lang="fa"] .editorial-h2{line-height: 1.5 !important;}
 .vi-th__specs {
   font-size: 12px;
   color: var(--grey);
-  font-family: monospace;
+  font-family: var(--font);
   text-align: right;
 }
 
@@ -2309,7 +2329,7 @@ html[lang="fa"] .editorial-h2{line-height: 1.5 !important;}
 .vi-swatch__info { color: #fff; opacity: 0; transform: translateY(10px); transition: opacity .3s ease, transform .3s ease; }
 .vi-swatch:hover .vi-swatch__info { opacity: 1; transform: translateY(0); }
 .vi-swatch__name { font-size: 13px; font-weight: 800; letter-spacing: .02em; display: block; }
-.vi-swatch__hex { font-size: 11.5px; opacity: .75; display: block; margin-top: 2px; font-family: monospace; }
+.vi-swatch__hex { font-size: 11.5px; opacity: .75; display: block; margin-top: 2px; font-family: var(--font); }
 .vi-swatch--dark .vi-swatch__info { color: #fff; }
 .vi-swatch--light .vi-swatch__info { color: var(--ink); }
 @media(max-width: 700px) { .vi-swatches { flex-wrap: wrap; height: auto; } .vi-swatch { flex: 1 1 40%; height: 130px; padding: 14px; } }
@@ -2354,7 +2374,7 @@ html[lang="fa"] .editorial-h2{line-height: 1.5 !important;}
 .vi-palette-detail__panel.is-active{ opacity:1; transform:translateY(0) scale(1); pointer-events:auto; position:relative; top:0; }
 .vi-palette-detail__swatch{ width:42px; height:42px; border-radius:12px; flex-shrink:0; box-shadow:inset 0 0 0 1.5px rgba(0,0,0,.08); margin-top:1px; }
 .vi-palette-detail__name{ font-size:14.5px; font-weight:800; color:var(--ink); }
-.vi-palette-detail__hex{ font-family:'SF Mono',Consolas,monospace; font-size:11.5px; color:var(--grey); margin-left:9px; font-weight:600; }
+.vi-palette-detail__hex{ font-family:var(--font); font-size:11.5px; color:var(--grey); margin-left:9px; font-weight:600; }
 .vi-palette-detail__reason{ font-size:13.5px; color:var(--grey); line-height:1.6; margin-top:7px; }
 
 
@@ -2384,7 +2404,7 @@ html[lang="fa"] .editorial-h2{line-height: 1.5 !important;}
 .vi-type__row.vi-visible { opacity: 1; transform: translateX(0); }
 .vi-type__row-label { flex: none; width: 70px; font-size: 11px; font-weight: 800; color: var(--purple); letter-spacing: .06em; }
 .vi-type__row-sample { flex: 1; font-weight: 800; color: var(--ink); letter-spacing: -0.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.vi-type__row-px { flex: none; font-size: 12px; color: var(--grey); font-family: monospace; }
+.vi-type__row-px { flex: none; font-size: 12px; color: var(--grey); font-family: var(--font); }
 
 /* APPLICATIONS */
 .vi-apps { background: #fff; border-top: 1.5px solid var(--line); }
@@ -2764,8 +2784,8 @@ html[lang="fa"] .ab-breakdown{font-family:"IRANSansX", "Inter", sans-serif;}
 }
 .ab-lede{ font-size:15.5px;line-height:1.6;color:var(--ab-muted); max-width:600px;margin:0; }
 .ab-stats{display:flex;gap:26px;flex-wrap:wrap;}
-.ab-stats div{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--ab-muted);text-transform:uppercase;letter-spacing:.08em;}
-.ab-stats div span{display:block;color:var(--ab-ink);font-size:14px;font-family:'Space Grotesk',sans-serif;font-weight:600;margin-top:3px;text-transform:none;letter-spacing:0;}
+.ab-stats div{font-family:var(--font);font-size:10.5px;color:var(--ab-muted);text-transform:uppercase;letter-spacing:.08em;}
+.ab-stats div span{display:block;color:var(--ab-ink);font-size:14px;font-family:var(--font);font-weight:600;margin-top:3px;text-transform:none;letter-spacing:0;}
 
 .ab-board{ display:grid; grid-template-columns: 360px 1fr; gap:44px; align-items:start; }
 .ab-specimen-col{position:sticky;top:24px;}
@@ -2777,7 +2797,7 @@ html[lang="fa"] .ab-breakdown{font-family:"IRANSansX", "Inter", sans-serif;}
 .ab-specimen img{display:block;width:100%;height:auto;}
 .ab-specimen-label{
   display:flex;justify-content:space-between;align-items:center;
-  margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;
+  margin-top:12px;font-family:var(--font);font-size:10.5px;
   color:var(--ab-muted);letter-spacing:.05em;text-transform:uppercase;
 }
 
@@ -2793,7 +2813,7 @@ html[lang="fa"] .ab-breakdown{font-family:"IRANSansX", "Inter", sans-serif;}
   border-radius:999px;
   overflow:hidden;
   white-space:nowrap;
-  font-family:'IBM Plex Mono',monospace;
+  font-family:var(--font);
   font-size:11px;
   font-weight:700;
   letter-spacing:.01em;
@@ -2847,13 +2867,13 @@ html[lang="fa"] .ab-breakdown{font-family:"IRANSansX", "Inter", sans-serif;}
 .ab-tag{
   width:26px;height:26px;border-radius:9px;flex:none;
   display:flex;align-items:center;justify-content:center;
-  font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:11px;color:var(--ab-ink);
+  font-family:var(--font);font-weight:700;font-size:11px;color:var(--ab-ink);
   background: var(--ab-line);
   transition: background .3s ease, color .3s ease;
 }
 .ab-card:hover .ab-tag{ background: var(--ab-blue); color: #fff; }
 .ab-card h3{
-  font-family:'Space Grotesk',sans-serif;
+  font-family:var(--font);
   font-size:15.5px;font-weight:700;margin:0;
   letter-spacing:-0.01em;
 }
@@ -2864,7 +2884,7 @@ html[lang="fa"] .ab-breakdown{font-family:"IRANSansX", "Inter", sans-serif;}
 .ab-footer{
   margin-top:44px;padding-top:20px;border-top:1px solid var(--ab-line);
   display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
-  font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ab-muted);
+  font-family:var(--font);font-size:11px;color:var(--ab-muted);
 }
 
 @media (max-width:900px){
@@ -2885,7 +2905,7 @@ html[lang="fa"] .ab-breakdown{font-family:"IRANSansX", "Inter", sans-serif;}
     display:flex; align-items:center; justify-content:space-between; margin-top:6px;
   }
   .ab-swipe-counter{
-    font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:700;
+    font-family:var(--font); font-size:10.5px; font-weight:700;
     color: var(--ab-blue); background: var(--ab-blue-soft);
     padding:5px 11px; border-radius:999px;
   }
@@ -2916,3 +2936,50 @@ html[lang="fa"] .ab-breakdown{font-family:"IRANSansX", "Inter", sans-serif;}
 @media (max-width:480px){
   .ab-card{ width:80%; }
 }
+
+/* ============ BRIEF (visual identity intake form) ============ */
+.vi-brief{ background:var(--near-black); color:#fff; padding:80px 0; }
+.vi-brief .wrap{ display:grid; grid-template-columns:.86fr 1.14fr; gap:64px; align-items:start; }
+.vi-brief__label{ display:flex; align-items:center; gap:9px; color:var(--yellow); font-size:12px; font-weight:800; letter-spacing:.13em; text-transform:uppercase; margin-bottom:0; }
+.vi-brief__label:before{ content:''; width:7px; height:7px; border-radius:50%; background:var(--yellow); }
+.vi-brief__intro h2{ font-size:clamp(36px,5.5vw,72px); font-weight:900; letter-spacing:-.03em; line-height:1; margin:12px 0 20px; }
+.vi-brief__intro h2 span{ display:block; }
+.vi-brief__intro .vi-brief-outline{ color:transparent; -webkit-text-stroke:2px #fff; }
+.vi-brief__intro .vi-brief-accent{ color:var(--yellow); }
+.vi-brief__intro p{ max-width:430px; margin:0; color:rgba(255,255,255,.58); font-size:15.5px; line-height:1.7; }
+
+.vi-brief__form{ background:#fff; color:var(--ink); border-radius:20px; padding:30px; box-shadow:0 28px 70px -30px #000; }
+.vi-brief__form-head{ padding-bottom:19px; margin-bottom:22px; border-bottom:1px solid var(--line); }
+.vi-brief__form-head strong{ display:block; font-size:20px; font-weight:800; letter-spacing:-.025em; }
+.vi-brief__form-head p{ margin:6px 0 0; color:var(--grey); font-size:12px; line-height:1.55; }
+.vi-brief__row{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.vi-brief__field{ margin-bottom:15px; }
+.vi-brief__field label,.vi-brief__legend{ display:block; margin-bottom:8px; font-size:10px; font-weight:800; letter-spacing:.09em; text-transform:uppercase; }
+.vi-brief__field input,.vi-brief__field select,.vi-brief__field textarea{ width:100%; border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--ink); padding:12px 13px; font:14px var(--font); transition:.2s; }
+.vi-brief__field textarea{ height:92px; resize:vertical; line-height:1.55; }
+.vi-brief__field input:focus,.vi-brief__field select:focus,.vi-brief__field textarea:focus{ outline:0; border-color:var(--purple); box-shadow:0 0 0 3px rgba(143,39,255,.1); }
+.vi-brief__options{ display:grid; grid-template-columns:repeat(3,1fr); gap:7px; margin-bottom:17px; }
+.vi-brief__option{ position:relative; }
+.vi-brief__option input{ position:absolute; opacity:0; pointer-events:none; }
+.vi-brief__option span{ display:block; padding:9px 7px; border:1px solid var(--line); border-radius:999px; text-align:center; font-size:11px; font-weight:700; color:#666; cursor:pointer; transition:.2s; }
+.vi-brief__option input:checked+span{ border-color:var(--purple); background:var(--lav); color:var(--purple-deep); }
+.vi-brief__button{ width:100%; border:0; border-radius:999px; background:var(--purple); color:#fff; padding:15px 24px; font:700 14px var(--font); cursor:pointer; transition:.25s; }
+.vi-brief__button:hover{ background:var(--purple-deep); transform:translateY(-1px); box-shadow:0 8px 22px rgba(143,39,255,.28); }
+.vi-brief__button:disabled{ opacity:.6; cursor:default; transform:none; }
+.vi-brief__note{ margin:11px 0 0; text-align:center; color:#999; font-size:10px; line-height:1.5; }
+
+@media(max-width:900px){
+  .vi-brief .wrap{ grid-template-columns:1fr; gap:40px; }
+  .vi-brief__intro p{ max-width:540px; }
+}
+@media(max-width:600px){
+  .vi-brief{ padding:64px 0; }
+  .vi-brief__intro h2{ font-size:clamp(37px,11vw,46px); }
+  .vi-brief__form{ padding:22px; border-radius:16px; }
+  .vi-brief__row{ grid-template-columns:1fr; gap:0; }
+  .vi-brief__field input,.vi-brief__field select,.vi-brief__field textarea{ font-size:16px; padding:13px; }
+  .vi-brief__options{ grid-template-columns:1fr; }
+  .vi-brief__button{ min-height:48px; }
+}
+html[lang="fa"] .vi-brief .vi-brief-outline{ -webkit-text-stroke:0; color:#fff; }
+html[lang="fa"] .vi-brief__intro h2{ font-size: clamp(27px,4.1vw,55px) !important; line-height: 1.2 !important; }

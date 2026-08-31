@@ -28,7 +28,7 @@ const COUNTRIES = [
 ];
 
 export default function InvestmentContactForm() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
@@ -87,12 +87,12 @@ export default function InvestmentContactForm() {
                 fontSize: "clamp(26px, 3vw, 40px)",
                 fontWeight: 700,
                 letterSpacing: "-0.03em",
-                lineHeight: 1.1,
+                lineHeight: 1.6,
                 color: "#000",
               }}
             >
               {t("Ready to", "آماده")}{" "}
-              <mark style={{ display: "inline", background: "#FFE600", borderRadius: 3, padding: "0 5px 3px" }}>
+              <mark style={{ display: "inline", background: "#FFE600", borderRadius: 3, padding: "0 5px", boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}>
                 {t("Invest", "جذب سرمایه")}
               </mark>{" "}
               {t("or Raise Capital?", "یا سرمایه گذاری هستید؟")}
@@ -269,7 +269,7 @@ export default function InvestmentContactForm() {
                     : (
                       <>
                         {t("Send Message", "ارسال پیام")}
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="white" strokeWidth="2.5">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="white" strokeWidth="2.5" className={lang === "fa" ? "rotate-180" : ""}>
                           <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
                       </>

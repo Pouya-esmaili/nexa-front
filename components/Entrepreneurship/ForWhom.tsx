@@ -53,7 +53,7 @@ export default function ForWhom() {
               <div
                 key={i}
                 className="flex flex-col gap-4 p-[34px_30px] transition-colors duration-[250ms] hover:bg-[#FAF6FF] group"
-                style={{ borderRight: "1px solid #E2E2E2", borderBottom: "1px solid #E2E2E2" }}
+                style={{ borderInlineEnd: "1px solid #E2E2E2", borderBottom: "1px solid #E2E2E2" }}
               >
                 <div className="w-11 h-11 bg-[#F7F6F9] border border-[#E2E2E2] rounded-[12px] grid place-items-center flex-shrink-0 transition-all duration-[250ms] group-hover:bg-[#8F27FF] group-hover:border-[#8F27FF]">
                   <span className="text-[#8F27FF] group-hover:text-white transition-colors">{item.icon}</span>

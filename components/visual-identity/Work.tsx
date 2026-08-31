@@ -18,7 +18,7 @@ const CARDS = [
 ];
 
 export default function Work() {
-  const { t, n } = useLang();
+  const { t, n, lang } = useLang();
   const gridRef = useRef<HTMLDivElement>(null);
   const { activeIdx, atStart, atEnd, scroll } = useCarousel(gridRef, CARDS.length, "vi-card--active");
 
@@ -30,7 +30,6 @@ export default function Work() {
             <span className="vi-label">{t("/ SELECTED WORK", "/ نمونه‌کارهای منتخب")}</span>
             <h2 className="editorial-h2">
               <span className="eh2-outline">{t("IDENTITIES", "هویت‌هایی")}</span>
-              <br />
               <span className="eh2-solid">{t("WE'VE", "که")}</span> <span className="eh2-purple">{t("BUILT.", "ساخته‌ایم.")}</span>
             </h2>
           </div>
@@ -53,10 +52,10 @@ export default function Work() {
           <span className="vi-swipe-counter">{n(String(activeIdx + 1).padStart(2, "0"))}/{n(CARDS.length)}</span>
           <span className="vi-nav-btns">
             <button className="vi-nav-btn" aria-label="Previous" disabled={atStart} onClick={() => scroll(-1)}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 6l-6 6 6 6" /></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d={lang === "fa" ? "M9 6l6 6-6 6" : "M15 6l-6 6 6 6"} /></svg>
             </button>
             <button className="vi-nav-btn" aria-label="Next" disabled={atEnd} onClick={() => scroll(1)}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 6l6 6-6 6" /></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d={lang === "fa" ? "M15 6l-6 6 6 6" : "M9 6l6 6-6 6"} /></svg>
             </button>
           </span>
         </p>

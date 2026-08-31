@@ -32,7 +32,7 @@ export default function Hero() {
             </p>
 
             <div
-              className="grid grid-cols-3 my-8 py-6"
+              className="grid grid-cols-3 gap-1 md:gap-0 my-8 py-6"
               style={{ borderTop: "1px solid #E2E2E2", borderBottom: "1px solid #E2E2E2" }}
             >
               {[
@@ -40,8 +40,8 @@ export default function Hero() {
                 { num: "4 yr", numFa: "۴ سال", label: "Residence Card", labelFa: "اعتبار کارت اقامت" },
                 { num: "5 yr", numFa: "۵ سال", label: "Path to PR", labelFa: "مسیر اقامت دائم" },
               ].map((s, i) => (
-                <div key={i} className="text-center">
-                  <div className="text-[26px] font-bold tracking-[-0.03em] leading-none">{t(s.num, s.numFa)}</div>
+                <div key={i} className="text-center px-1">
+                  <div className="text-[19px] md:text-[26px] font-bold tracking-[-0.03em] leading-tight md:leading-none">{t(s.num, s.numFa)}</div>
                   <div className="text-[11px] text-[#929292] mt-1.5 font-medium uppercase tracking-[0.06em]">{t(s.label, s.labelFa)}</div>
                 </div>
               ))}

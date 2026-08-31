@@ -35,25 +35,20 @@ html[lang="fa"] .adv{--font:"IRANSansX",'Inter',system-ui,sans-serif;}
    descenders and diacritics. */
 html[lang="fa"] .adv .hbt-outline,
 html[lang="fa"] .adv .hbt-solid,
-html[lang="fa"] .adv .hbt-purple{line-height:1.4 !important;}
+html[lang="fa"] .adv .hbt-purple{line-height:1 !important;}
 html[lang="fa"] .adv .hbt-line + .hbt-line{margin-top:4px;}
 html[lang="fa"] .adv .svc-card h3,
-html[lang="fa"] .adv .hc-card h4{line-height:1.5 !important;}
-/* .editorial-h2 stacks single short words as separate blocks (via <br>), so
-   it doesn't need paragraph-level line-height — 1.5 there turned each stack
-   into a huge gap. A small bump is still enough to stop diacritics clipping. */
-html[lang="fa"] .adv .editorial-h2{line-height:1.15 !important;}
+html[lang="fa"] .adv .hc-card h4{line-height:1.05 !important;}
 
 /* These marquees are infinite-loop flex tracks driven by a physical
    translateX keyframe (see teamScroll / srCredits below). Under RTL the
    flex items reorder but the keyframe math doesn't, so the loop runs out
-   and jumps/stops. Force LTR on the whole overflow:hidden wrapper (not just
-   the track) — the track is wider than its container, and an RTL ancestor
-   right-aligns that overflow, shoving almost the entire track off-screen
-   to the left. LTR on the wrapper keeps it start-aligned on the left,
-   where the animation math expects it, regardless of page language. */
+   and jumps/stops. Force LTR so the animation always matches the layout,
+   regardless of page language. */
 html[lang="fa"] .adv .team-cards,
-html[lang="fa"] .adv .showreel__credits{direction:ltr;}
+html[lang="fa"] .adv .team-cards__track,
+html[lang="fa"] .adv .showreel__credits,
+html[lang="fa"] .adv .showreel__credits-track{direction:ltr;}
 
 /* Transparent + text-stroke "outline" text doesn't render legibly for
    Persian's joined letterforms (thin connecting strokes get lost/merged),
@@ -65,6 +60,7 @@ html[lang="fa"] .adv .hbt-outline{
 }
 html[lang="fa"] .adv .showreel__content .hbt-outline{color:#fff !important;}
 html[lang="fa"] .adv .contact-section .eh2-outline{color:#fff !important;}
+html[lang="fa"] .adv .faq-q{text-align:right;}
 
 @media (prefers-reduced-motion: reduce){
   .adv *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}

@@ -50,12 +50,12 @@ const cities = [
 ];
 
 export default function Cities() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   return (
     <section className="py-16 md:py-20 bg-white">
       <Row>
         <Reveal variant="up" className="mb-10 md:mb-14">
-          <h2 className="text-[28px] md:text-[38px] font-bold tracking-tight">
+          <h2 className={`text-[28px] md:text-[38px] font-bold ${lang === "fa" ? "" : "tracking-tight"}`}>
             {t("Key Turkish Investment Cities", "شهرهای کلیدی برای سرمایه‌گذاری ملکی در ترکیه")}
           </h2>
         </Reveal>
@@ -73,7 +73,7 @@ export default function Cities() {
                   sizes="100vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                <figcaption className="absolute bottom-4 left-4 text-white">
+                <figcaption className="absolute bottom-4 start-4 text-white">
                   <div className="font-bold text-xl">{t(c.name, c.nameFa)}</div>
                   <div className="text-xs text-white/80 mt-0.5">{t(c.meta, c.metaFa)}</div>
                 </figcaption>
@@ -95,7 +95,7 @@ export default function Cities() {
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-              <figcaption className="absolute bottom-5 left-5 text-white">
+              <figcaption className="absolute bottom-5 start-5 text-white">
                 <div className="font-bold text-2xl">{t(cities[0].name, cities[0].nameFa)}</div>
                 <div className="text-sm text-white/80 mt-1">{t(cities[0].meta, cities[0].metaFa)}</div>
               </figcaption>
@@ -114,7 +114,7 @@ export default function Cities() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                <figcaption className="absolute bottom-4 left-4 text-white">
+                <figcaption className="absolute bottom-4 start-4 text-white">
                   <div className="font-bold text-xl">{t(c.name, c.nameFa)}</div>
                   <div className="text-xs text-white/80 mt-0.5">{t(c.meta, c.metaFa)}</div>
                 </figcaption>

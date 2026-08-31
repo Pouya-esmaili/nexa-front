@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useLang } from "../global/LanguageProvider";
 
 export default function Hero() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [mounted, setMounted] = useState(false);
   useEffect(() => { const t = setTimeout(() => setMounted(true), 80); return () => clearTimeout(t); }, []);
 
@@ -24,11 +24,11 @@ export default function Hero() {
 
             {/* H1 */}
             <h1
-              className={`${base} ${mounted ? shown : hidden} text-[32px] md:text-[46px] font-extrabold leading-[1.06] tracking-[-0.035em] text-black mb-5`}
+              className={`${base} ${mounted ? shown : hidden} text-[32px] md:text-[46px] font-extrabold ${lang === "fa" ? "leading-[1.5]" : "leading-[1.06]"} tracking-[-0.035em] text-black mb-5`}
               style={{ transitionDelay: "80ms" }}
             >
               {t("Your Global Launchpad", "دروازه ورود شما")}<br></br> {t("for Investment,", "به فرصت های جهانی سرمایه گذاری")}{" "}
-              <span className="inline bg-[#FFE600] rounded-[3px] pb-[3px]">
+              <span className="inline bg-[#FFE600] rounded-[3px] pb-[3px] box-decoration-clone">
                 <br></br>{t("Startups & Growth.", "نواوری و رشد.")}
               </span>
             </h1>

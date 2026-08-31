@@ -23,7 +23,7 @@ const selectStyle = {
 const labelCls = "text-[12px] font-semibold tracking-[.08em] uppercase text-[#929292]";
 
 export default function ContactForm() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [sent, setSent] = useState(false);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -203,7 +203,7 @@ export default function ContactForm() {
                     className="inline-flex items-center gap-[10px] px-10 py-[14px] bg-[#8F27FF] text-white font-semibold rounded-full text-[15px] transition-all duration-[250ms] hover:bg-[#7A1FE0] hover:-translate-y-px hover:shadow-[0_8px_22px_rgba(143,39,255,.28)]"
                   >
                     {t("Send Message", "ارسال پیام")}
-                    <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={2.5} className="w-4 h-4">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={2.5} className={`w-4 h-4 ${lang === "fa" ? "rotate-180" : ""}`}>
                       <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                   </button>

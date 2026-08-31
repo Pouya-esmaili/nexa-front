@@ -14,7 +14,7 @@ export default function Renewal() {
             <div className="grid grid-cols-1 md:grid-cols-3">
 
               {/* Col 1 — Renewal (gray) */}
-              <div className="p-[44px_36px] flex flex-col gap-4 bg-[#F7F6F9] border-b md:border-b-0 md:border-r border-[#E2E2E2]">
+              <div className="p-[44px_36px] flex flex-col gap-4 bg-[#F7F6F9] border-b md:border-b-0 md:border-e border-[#E2E2E2]">
                 <div className="text-[11px] font-bold uppercase tracking-[0.1em] text-[#929292]">{t("Every 5 Years", "هر ۵ سال")}</div>
                 <h3 className="text-[22px] font-bold tracking-[-0.02em] leading-[1.2] text-black">{t("Streamlined Renewals", "فرآیندی ساده و بدون آزمون زبان")}</h3>
                 <p className="text-[13.5px] text-[#929292] leading-[1.65]">
@@ -34,7 +34,7 @@ export default function Renewal() {
               </div>
 
               {/* Col 2 — Citizenship (purple) */}
-              <div className="p-[44px_36px] flex flex-col gap-4 bg-[#8F27FF] border-b md:border-b-0 md:border-r border-[rgba(255,255,255,0.15)]">
+              <div className="p-[44px_36px] flex flex-col gap-4 bg-[#8F27FF] border-b md:border-b-0 md:border-e border-[rgba(255,255,255,0.15)]">
                 <div className="text-[11px] font-bold uppercase tracking-[0.1em] text-[rgba(255,255,255,0.6)]">{t("Optional Pathway", "مسیر اختیاری")}</div>
                 <h3 className="text-[22px] font-bold tracking-[-0.02em] leading-[1.2] text-white">{t("Greek Citizenship", "مسیر اختیاری دریافت تابعیت یونان")}</h3>
                 <p className="text-[13.5px] text-[rgba(255,255,255,0.75)] leading-[1.65]">

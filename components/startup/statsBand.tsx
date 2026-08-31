@@ -37,7 +37,7 @@ function StatItem({ pill, pillFa, num, suf, label, labelFa, idx }: { pill: strin
   const val = useCountUp(num, inView);
   return (
     <div ref={ref} className="flex flex-col items-center py-12 px-6"
-      style={{ borderRight: idx < 2 ? "1px solid rgba(255,255,255,.08)" : undefined }}>
+      style={{ borderInlineEnd: idx < 2 ? "1px solid rgba(255,255,255,.08)" : undefined }}>
       <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold tracking-[.12em] uppercase mb-3"
         style={{ background: "rgba(255,230,0,.08)", border: "1px solid rgba(255,230,0,.2)", color: "#FFE600" }}>
         {t(pill, pillFa)}

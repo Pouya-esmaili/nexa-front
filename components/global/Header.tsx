@@ -194,14 +194,10 @@ export default function Header() {
                         {t("Advisory", "مشاوره")}
                       </Link>
                       {[
-                        ["Business Model Design", "طراحی مدل کسب‌وکار", "/advisory/business-model-design"],
-                        ["Brand Strategy", "استراتژی برند", "/advisory/brand-strategy"],
-                        ["Go-To-Market Strategy", "استراتژی ورود به بازار", "/advisory/go-to-market-strategy"],
-                        ["Marketing Strategy & Planning", "استراتژی و برنامه‌ریزی بازاریابی", "/advisory/marketing-strategy"],
-                        ["Market Analysis", "تحلیل بازار", "/advisory/market-analysis"],
                         ["Visual Identity", "هویت بصری", "/advisory/visual-identity"],
                         ["Web Design", "طراحی وب", "/advisory/web-design"],
                         ["Content Creation", "تولید محتوا", "/advisory/content-creation"],
+                        ["Business Strategy", "استراتژی کسب‌وکار", "/advisory#contact"],
                       ].map(([en, fa, href]) => (
                         <Link key={href} href={href}
                           className="block text-[13.5px] text-[#555] py-[5px] hover:text-[#8F27FF] hover:text-[15.5px] transition-all whitespace-nowrap">
@@ -374,14 +370,10 @@ export default function Header() {
               toggle={() => toggleServiceCat("advisory")}
               icon={<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10" /><path d="M12 8v4l3 3" /></svg>}
               items={[
-                ["Business Model Design", "طراحی مدل کسب‌وکار", "/advisory/business-model-design"],
-                ["Brand Strategy", "استراتژی برند", "/advisory/brand-strategy"],
-                ["Go-To-Market Strategy", "استراتژی ورود به بازار", "/advisory/go-to-market-strategy"],
-                ["Marketing Strategy & Planning", "استراتژی و برنامه‌ریزی بازاریابی", "/advisory/marketing-strategy"],
-                ["Market Analysis", "تحلیل بازار", "/advisory/market-analysis"],
                 ["Visual Identity", "هویت بصری", "/advisory/visual-identity"],
                 ["Web Design", "طراحی وب", "/advisory/web-design"],
                 ["Content Creation", "تولید محتوا", "/advisory/content-creation"],
+                ["Business Strategy", "استراتژی کسب‌وکار", "/advisory#contact"],
               ]}
             />
           </MobAccordion>

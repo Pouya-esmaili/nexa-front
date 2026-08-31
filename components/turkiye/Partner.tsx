@@ -19,7 +19,7 @@ const Check = () => (
 );
 
 export default function Partner() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   return (
     <section className="partner">
       <h2 className="section-title">{t("Our Strategic Real Estate Partner in Türkiye", "شریک استراتژیک Nexa در حوزه املاک ترکیه")}</h2>
@@ -55,7 +55,7 @@ export default function Partner() {
             </p>
             <Link className="btn-light" href="#contact">
               {t("Book a strategy call", "رزرو جلسه استراتژی ←")}
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={lang === "fa" ? "rotate-180" : ""}>
                 <path d="M5 12h14M13 6l6 6-6 6" />
               </svg>
             </Link>

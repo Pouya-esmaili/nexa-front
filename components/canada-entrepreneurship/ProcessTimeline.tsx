@@ -184,8 +184,8 @@ export default function ProcessTimeline() {
                     <p className="text-sm text-gray-700 leading-relaxed mb-3">{t(s.detail.desc, s.detail.descFa)}</p>
                     <ul className="flex flex-col gap-1.5">
                       {s.detail.items.map((item, ii) => (
-                        <li key={item} className="text-xs text-gray-700 pl-5 relative">
-                          <span className="absolute left-0 text-[#8F27FF] font-bold">✓</span>
+                        <li key={item} className="text-xs text-gray-700 ps-5 relative">
+                          <span className="absolute start-0 text-[#8F27FF] font-bold">✓</span>
                           {t(item, s.detail.itemsFa[ii])}
                         </li>
                       ))}
@@ -253,8 +253,8 @@ export default function ProcessTimeline() {
               <p className="text-[15px] text-[#474747] leading-[1.65] mb-4">{t(current.detail.desc, current.detail.descFa)}</p>
               <ul className="grid grid-cols-2 gap-2.5">
                 {current.detail.items.map((item, ii) => (
-                  <li key={item} className="text-[14px] text-[#474747] pl-6 relative">
-                    <span className="absolute left-0 text-[#8F27FF] font-bold">✓</span>
+                  <li key={item} className="text-[14px] text-[#474747] ps-6 relative">
+                    <span className="absolute start-0 text-[#8F27FF] font-bold">✓</span>
                     {t(item, current.detail.itemsFa[ii])}
                   </li>
                 ))}

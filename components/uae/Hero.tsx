@@ -52,11 +52,11 @@ export default function Hero() {
           {t("The UAE Golden Visa is a self-sponsored, premium residency framework — no local sponsor required. Deploy capital into real estate or public markets and receive a 10-year renewable residency with complete operational autonomy.", "ویزای طلایی امارات یک چارچوب اقامتی خودحمایتی و ممتاز است که به اسپانسر محلی نیازی ندارد. با سرمایه‌گذاری در املاک یا بازارهای مالی، می‌توانید اقامت ۱۰ ساله و قابل تمدید امارات را با آزادی کامل در مدیریت کسب‌وکار و سرمایه خود به دست آورید.")}
         </p>
         <div
-          className={`grid grid-cols-3 py-5 border-t border-b border-[#E2E2E2] mb-6 ${base} duration-700 delay-300 ${mounted ? show : hideUp}`}
+          className={`grid grid-cols-3 gap-1 py-5 border-t border-b border-[#E2E2E2] mb-6 ${base} duration-700 delay-300 ${mounted ? show : hideUp}`}
         >
           {stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <div className="text-xl font-extrabold tracking-tight">{t(s.num, s.numFa)}</div>
+            <div key={s.label} className="text-center px-1">
+              <div className="text-[16px] font-extrabold tracking-tight leading-tight whitespace-nowrap">{t(s.num, s.numFa)}</div>
               <div className="text-[10px] text-[#929292] font-medium mt-1 uppercase tracking-wide">
                 {t(s.label, s.labelFa)}
               </div>

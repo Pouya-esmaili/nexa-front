@@ -18,7 +18,7 @@ const track = [...logos, ...logos, ...logos];
 
 export default function Ticker() {
   return (
-    <div className="py-1 bg-[#F7F6F9] border-t border-b border-[#E2E2E2] overflow-hidden">
+    <div dir="ltr" className="py-1 bg-[#F7F6F9] border-t border-b border-[#E2E2E2] overflow-hidden">
       <div
         className="flex items-center gap-16 w-max"
         style={{ animation: "ticker 20s linear infinite" }}

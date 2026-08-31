@@ -49,7 +49,7 @@ function StatItem({ pill, pillFa, num, suf, label, labelFa, idx }: { pill: strin
       ref={ref}
       className="flex flex-col items-center text-center py-9 px-6 transition-all duration-[600ms]"
       style={{
-        borderRight: idx < 2 ? "1px solid rgba(255,255,255,.07)" : undefined,
+        borderInlineEnd: idx < 2 ? "1px solid rgba(255,255,255,.07)" : undefined,
         opacity: visible ? 1 : 0,
         transform: visible ? "none" : "translateY(12px)",
         transitionDelay: visible ? `${idx * 160 + 100}ms` : "0ms",

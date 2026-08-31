@@ -12,7 +12,7 @@ const TAGS: { en: string; fa: string }[] = [
 ];
 
 export default function InvestmentWhatIs() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   return (
     <section className="investment-whatis-section" style={{ padding: "90px 0", background: "#F7F6F9" }}>
       <div className="px-6 mx-auto w-full" style={{ maxWidth: 1240 }}>
@@ -72,7 +72,7 @@ export default function InvestmentWhatIs() {
                 fontSize: "clamp(22px, 3vw, 40px)",
                 fontWeight: 700,
                 letterSpacing: "-0.03em",
-                lineHeight: 1.1,
+                lineHeight: lang === "fa" ? 1.4 : 1.1,
                 marginBottom: 20,
                 color: "#000",
               }}
@@ -84,6 +84,8 @@ export default function InvestmentWhatIs() {
                   background: "#FFE600",
                   borderRadius: 3,
                   padding: "0 5px 3px",
+                  boxDecorationBreak: "clone",
+                  WebkitBoxDecorationBreak: "clone",
                 }}
               >
                 {t("Global Networks", "شبکه‌های جهانی")}

@@ -17,12 +17,12 @@ const ROLE_FA: Record<string, string> = {
 /* 8 unique cards (photos cycle through the 5 available images), rendered twice for the seamless loop */
 const CARDS = [
   { h: "clamp(320px, 43vw, 440px)", tone: "tc-pink", role: "Front-End Developer", img: "/images/ourteam/pouya.jpg ", name: "Mehdi Esmaeili", nameFa: "مهدی اسماعیلی" },
-  { h: "clamp(235px, 31vw, 320px)", tone: "tc-sage", role: "Marketing Specialist", img: "/images/ourteam/pooya.JPG", name: "Pouya Shafaghatiyan", nameFa: "پویا شفاقتیان" },
-  { h: "clamp(290px, 39vw, 400px)", tone: "tc-cream", role: "Content Strategist", img: "/images/ourteam/kiana.JPG", name: "Kiyana Mehrasa", nameFa: "کیانا مهرآسا" },
+  { h: "clamp(235px, 31vw, 320px)", tone: "tc-sage", role: "Marketing Specialist", img: "/images/ourteam/pooya.JPG", name: "Pouya Shafaghatiyan", nameFa: "پویا شفقتیان" },
+  { h: "clamp(290px, 39vw, 400px)", tone: "tc-cream", role: "WordPress Developer", img: "/images/ourteam/kiana.JPG", name: "Kiyana Mehrasa", nameFa: "کیانا مهرآسا" },
   { h: "clamp(220px, 29vw, 300px)", tone: "tc-yellow", role: "Back-End Developer", img: "/images/ourteam/amir.jpg", name: "Amir Esfahanizade", nameFa: "امیر اصفهانی‌زاده" },
   { h: "clamp(315px, 42vw, 430px)", tone: "tc-purple", role: "AI Engineer", img: "/images/ourteam/sajjad.jpg", name: "Sajjad Momeni", nameFa: "سجاد مؤمنی" },
-  { h: "clamp(250px, 33vw, 340px)", tone: "tc-yellow", role: "Business Advisor", img: "/images/ourteam/parastoo.jpg", name: "Parastoo Sanaifar", nameFa: "پرستو ثنایی‌فر" },
-  { h: "clamp(300px, 40vw, 410px)", tone: "tc-purple", role: "UI/UX Designer ", img: "/images/ourteam/narges.jpg", name: "Narjes Orouji", nameFa: "نرگس اروجی" },
+  { h: "clamp(250px, 33vw, 340px)", tone: "tc-yellow", role: "Business Advisor", img: "/images/ourteam/parastoo.jpg", name: "Parastoo Sanaifar", nameFa: "پرستو ثنائی‌فر" },
+  { h: "clamp(300px, 40vw, 410px)", tone: "tc-purple", role: "UI/UX Designer ", img: "/images/ourteam/narges.jpg", name: "Narjes Orouji", nameFa: "نرگس عروجی" },
   { h: "clamp(265px, 35vw, 360px)", tone: "tc-cream", role: "Business Advisor", img: "/images/ourteam/milad.jpg", name: "Milad Fatemi", nameFa: "میلاد فاطمی" },
 ];
 

@@ -5,7 +5,7 @@ import { useLang } from "@/components/global/LanguageProvider";
 
 const MARK_ICONS = [
   { name: "PreventiGene", color: "/images/visual-identity/046-img.png", white: "/images/visual-identity/047-img.png" },
-  { name: "Diaco", color: "/images/visual-identity/048-img.png", white: "/images/visual-identity/049-img.png" },
+  { name: "Diaco", color: "/images/visual-identity/048-img.png", white: "/images/visual-identity/Diaco.png" },
   { name: "Landa Craft", color: "/images/visual-identity/050-img.png", white: "/images/visual-identity/051-img.png" },
 ];
 
@@ -81,7 +81,6 @@ export default function MarkBuilder() {
             <span className="vi-label">{t("/ THE MARK", "/ لوگو")}</span>
             <h2 className="editorial-h2">
               <span className="eh2-outline" style={{ WebkitTextStrokeColor: "#fff" }}>{t("A MARK BUILT", "لوگویی که بر پایه")}</span>
-              <br />
               <span className="eh2-purple" style={{ color: "var(--yellow)" }}>{t("ON A GRID.", "یک گرید طراحی شده است.")}</span>
             </h2>
             <p>{t("Every logo we design sits on a geometric grid — proportion, clear space and a minimum size are decided before a single curve is drawn. That's why it still reads at 16px and still holds up at three stories tall.", "تمام لوگوهایی که طراحی می‌کنیم بر اساس یک گرید هندسی شکل می‌گیرند. تناسبات، فضای تنفس و حداقل اندازه لوگو، پیش از طراحی حتی یک منحنی مشخص می‌شوند. به همین دلیل، لوگو هم در اندازه ۱۶ پیکسل خوانا باقی می‌ماند و هم در ابعاد بسیار بزرگ، مانند یک سازه چندطبقه، استحکام بصری خود را حفظ می‌کند.")}</p>

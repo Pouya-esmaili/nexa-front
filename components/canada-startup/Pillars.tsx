@@ -45,10 +45,10 @@ export default function Pillars() {
               {pillars.map((p, i) => (
                 <div
                   key={p.num}
-                  className="p-9 flex flex-col gap-4 transition-colors duration-200 hover:bg-[#F7F6F9]"
+                  className={`p-9 flex flex-col gap-4 transition-colors duration-200 hover:bg-[#F7F6F9] ${i < pillars.length - 1 ? "border-b md:border-b-0" : ""}`}
                   style={{
-                    borderRight: i < 2 ? "1px solid #E2E2E2" : undefined,
-                    borderBottom: i < pillars.length ? undefined : "1px solid #E2E2E2",
+                    borderColor: i < pillars.length - 1 ? "#E2E2E2" : undefined,
+                    borderInlineEnd: i < 2 ? "1px solid #E2E2E2" : undefined,
                   }}
                 >
                   <div className="w-10 h-10 rounded-full bg-[#FAF6FF] border-[1.5px] border-[rgba(143,39,255,0.18)] flex items-center justify-center text-[14px] font-bold text-[#8F27FF] flex-shrink-0">

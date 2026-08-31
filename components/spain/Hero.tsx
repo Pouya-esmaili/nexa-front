@@ -49,8 +49,8 @@ export default function Hero() {
                 { num: "20 days", numFa: "۲۰ روز کاری", label: "Decision Window", labelFa: "بازه‌ی بررسی درخواست" },
                 { num: "5 yr", numFa: "۵ سال", label: "Path to PR", labelFa: "مسیر تا اقامت دائم" },
               ].map((s) => (
-                <div key={s.label} className="text-center">
-                  <div className="text-[26px] font-bold tracking-[-0.03em] leading-none">{t(s.num, s.numFa)}</div>
+                <div key={s.label} className="text-center px-1">
+                  <div className="text-[19px] md:text-[26px] font-bold tracking-[-0.03em] leading-tight md:leading-none">{t(s.num, s.numFa)}</div>
                   <div className="text-[11px] text-[#929292] mt-1.5 font-medium uppercase tracking-[0.06em]">{t(s.label, s.labelFa)}</div>
                 </div>
               ))}

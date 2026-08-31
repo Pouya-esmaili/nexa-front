@@ -54,7 +54,7 @@ const markets = [
 ];
 
 export default function Markets() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   return (
     <section className="py-[90px] bg-[#F7F6F9]">
       <Row>
@@ -123,7 +123,7 @@ export default function Markets() {
                   <div className="text-white font-bold text-[16px] mb-1 tracking-[-0.01em]">{t(m.name, m.nameFa)}</div>
                   <p className="text-white/65 text-[12px] leading-[1.5] mb-3">{t(m.desc, m.descFa)}</p>
                   <span
-                    className="inline-flex items-center gap-[7px] text-[13px] font-semibold text-white px-4 py-2 rounded-full backdrop-blur-[8px] border border-white/30 bg-white/15 transition-all duration-[250ms] group-hover:bg-[#8F27FF] group-hover:border-[#8F27FF] group-hover:translate-x-[3px]"
+                    className={`inline-flex items-center gap-[7px] text-[13px] font-semibold text-white px-4 py-2 rounded-full backdrop-blur-[8px] border border-white/30 bg-white/15 transition-all duration-[250ms] group-hover:bg-[#8F27FF] group-hover:border-[#8F27FF] ${lang === "fa" ? "group-hover:-translate-x-[3px]" : "group-hover:translate-x-[3px]"}`}
                   >
                     {t("Explore Program", "مشاهده برنامه")}
                     <svg
@@ -131,7 +131,7 @@ export default function Markets() {
                       fill="none"
                       stroke="currentColor"
                       strokeWidth={2.5}
-                      className="w-[13px] h-[13px] transition-transform duration-[250ms] group-hover:translate-x-[3px]"
+                      className={`w-[13px] h-[13px] transition-transform duration-[250ms] ${lang === "fa" ? "rotate-180 group-hover:-translate-x-[3px]" : "group-hover:translate-x-[3px]"}`}
                     >
                       <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>

@@ -534,7 +534,7 @@ function Step7({
       {stageOptions.map((opt) => (
         <label
           key={opt.value}
-          className={`flex items-center gap-4 rounded-xl px-5 h-14 bg-white cursor-pointer transition border ${
+          className={`flex items-center gap-4 rounded-xl px-5 py-3 min-h-14 bg-white cursor-pointer transition border ${
             data.stage === opt.value
               ? 'border-[#8F27FF] shadow-[0_0_0_1px_#8F27FF]'
               : 'border-gray-200 hover:border-gray-300'
@@ -546,11 +546,11 @@ function Step7({
             value={opt.value}
             checked={data.stage === opt.value}
             onChange={() => onChange('stage', opt.value)}
-            className="w-4 h-4 accent-[#8F27FF]"
+            className="w-4 h-4 shrink-0 accent-[#8F27FF]"
           />
-          <div>
+          <div className="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-2">
             <span className="text-sm font-medium">{t(opt.label, opt.labelFa)}</span>
-            <span className="text-xs text-gray-400 ml-2">{t(opt.desc, opt.descFa)}</span>
+            <span className="text-xs text-gray-400">{t(opt.desc, opt.descFa)}</span>
           </div>
         </label>
       ))}
@@ -754,7 +754,7 @@ const initialData: FormData = {
 };
 
 export default function MultiStepForm() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<FormData>(initialData);
   const [errors, setErrors] = useState<FieldErrors>({});
@@ -958,7 +958,7 @@ export default function MultiStepForm() {
               disabled={currentStep === 1}
               className="flex items-center gap-2 px-6 h-11 rounded-xl border border-[#8F27FF] text-[#8F27FF] text-sm font-medium hover:bg-[#8F27FF] hover:text-white transition disabled:opacity-30 disabled:cursor-not-allowed"
             >
-              <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className={lang === "fa" ? "rotate-180" : ""}>
                 <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               {t('Prev', 'قبلی')}
@@ -971,7 +971,7 @@ export default function MultiStepForm() {
                 className="flex items-center gap-2 px-6 h-11 rounded-xl bg-[#8F27FF] text-white text-sm font-medium hover:bg-[#7a1fdb] transition"
               >
                 {t('Next', 'بعدی')}
-                <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className={lang === "fa" ? "rotate-180" : ""}>
                   <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>

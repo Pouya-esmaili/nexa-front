@@ -22,6 +22,15 @@ export default function NavLoader() {
       clearTimeout(hideTimerRef.current);
       hideTimerRef.current = undefined;
     }
+
+    // global `scroll-behavior: smooth` on <html> fights Next.js's built-in
+    // scroll-to-top on route change, so on mobile the page can land mid-scroll
+    // instead of at the top. Force an instant jump, then restore smooth scroll.
+    const root = document.documentElement;
+    const prevBehavior = root.style.scrollBehavior;
+    root.style.scrollBehavior = "auto";
+    window.scrollTo(0, 0);
+    root.style.scrollBehavior = prevBehavior;
   }, [pathname]);
 
   useEffect(() => {

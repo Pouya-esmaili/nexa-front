@@ -137,8 +137,8 @@ export default function ProcessTimeline() {
               <p className="text-[15px] text-[#474747] leading-[1.65] mb-4">{t(d.body, d.bodyFa)}</p>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
                 {d.bullets.map((b, bi) => (
-                  <li key={b} className="pl-5 relative text-[14px] text-[#474747]">
-                    <span className="absolute left-0 text-[#8F27FF] font-bold">→</span>
+                  <li key={b} className="ps-5 relative text-[14px] text-[#474747]">
+                    <span className="absolute start-0 text-[#8F27FF] font-bold">→</span>
                     {t(b, d.bulletsFa[bi])}
                   </li>
                 ))}

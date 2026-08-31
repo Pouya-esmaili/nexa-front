@@ -81,7 +81,7 @@ export default function FinancialRequirements() {
               <p className="text-[14px] leading-[1.65]" style={{ color: "#B5B5BA" }}>
                 {t("Minimum personal savings for the", "حداقل میزان پس‌انداز موردنیاز برای")}{" "}
                 <strong className="font-semibold" style={{ color: "#FFE600" }}>{t("main applicant", "متقاضی اصلی")}</strong>
-                {t(", held in your personal bank account for", "که باید به مدت")}{" "}
+                {t(", held in your personal bank account for", " که باید به مدت")}{" "}
                 <strong className="font-semibold" style={{ color: "#FFE600" }}>{t("28 consecutive days", "۲۸ روز متوالی")}</strong>{" "}
                 {t("before submission.", "پیش از ارائه درخواست در حساب بانکی شخصی او نگهداری شده باشد.")}
               </p>

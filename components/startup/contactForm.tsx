@@ -22,6 +22,11 @@ export default function StartupContactForm() {
       lastName: fd.get('lastName')?.toString() || '',
       email: fd.get('email')?.toString() || '',
       phone: fd.get('phone')?.toString() || '',
+      countryOfInterest: fd.get('countryOfInterest')?.toString() || '',
+      industry: fd.get('industry')?.toString() || '',
+      stage: fd.get('stage')?.toString() || '',
+      capital: fd.get('capital')?.toString() || '',
+      howHeard: fd.get('howHeard')?.toString() || '',
       message: fd.get('message')?.toString() || '',
     };
 
@@ -93,7 +98,7 @@ export default function StartupContactForm() {
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
                   <span className="flex items-center gap-1 text-[#474747]">{t("Country of Interest", "کشور موردنظر")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
-                  <select required className={selectCls}>
+                  <select name="countryOfInterest" required className={selectCls}>
                     <option value="">{t("Select a country…", "یک کشور را انتخاب کنید…")}</option>
                     <option>{t("Finland — Startup Permit", "فنلاند — مجوز استارتاپ")}</option>
                     <option>{t("Canada — Startup Visa", "کانادا — ویزای استارتاپ")}</option>
@@ -105,7 +110,7 @@ export default function StartupContactForm() {
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
                   <span className="flex items-center gap-1 text-[#474747]">{t("Industry / Business Type", "حوزه فعالیت / نوع کسب‌وکار")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
-                  <select required className={selectCls}>
+                  <select name="industry" required className={selectCls}>
                     <option value="">{t("Select your industry…", "انتخاب حوزه فعالیت…")}</option>
                     <option>{t("Technology / SaaS", "فناوری / SaaS")}</option>
                     <option>{t("E-commerce / Retail", "تجارت الکترونیک / خرده‌فروشی")}</option>
@@ -125,7 +130,7 @@ export default function StartupContactForm() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
                   <span className="text-[#474747]">{t("Current Business Stage", "مرحله فعلی کسب‌وکار")}</span>
-                  <select className={selectCls}>
+                  <select name="stage" className={selectCls}>
                     <option value="">{t("Select stage…", "انتخاب مرحله…")}</option>
                     <option>{t("Idea / Pre-revenue", "ایده / پیش از درآمدزایی")}</option>
                     <option>{t("MVP / Early Traction", "MVP / شروع جذب مشتری")}</option>
@@ -135,7 +140,7 @@ export default function StartupContactForm() {
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
                   <span className="text-[#474747]">{t("Estimated Available Capital", "سرمایه در دسترس تقریبی")}</span>
-                  <select className={selectCls}>
+                  <select name="capital" className={selectCls}>
                     <option value="">{t("Select range…", "انتخاب بازه…")}</option>
                     <option>{t("Under $50,000", "کمتر از ۵۰,۰۰۰ دلار")}</option>
                     <option>{t("$50,000 – $100,000", "۵۰,۰۰۰ تا ۱۰۰,۰۰۰ دلار")}</option>
@@ -146,7 +151,7 @@ export default function StartupContactForm() {
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
                   <span className="text-[#474747]">{t("How Did You Hear About Us?", "چطور با ما آشنا شدید؟")}</span>
-                  <select className={selectCls}>
+                  <select name="howHeard" className={selectCls}>
                     <option value="">{t("Select…", "انتخاب کنید…")}</option>
                     <option>{t("Google", "گوگل")}</option>
                     <option>{t("Social Media", "شبکه‌های اجتماعی")}</option>

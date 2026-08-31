@@ -759,6 +759,8 @@ export default function MultiStepForm() {
   const [formData, setFormData] = useState<FormData>(initialData);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   const currentItem = allStepItems.find((s) => s.step === currentStep);
   const currentLabel = currentItem ? t(currentItem.label, currentItem.labelFa) : '';
@@ -784,13 +786,51 @@ export default function MultiStepForm() {
     setCurrentStep((s) => Math.max(s - 1, 1));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const stepErrors = validateStep(currentStep, formData);
     if (Object.keys(stepErrors).length > 0) {
       setErrors(stepErrors);
       return;
     }
-    setSubmitted(true);
+
+    setSubmitting(true);
+    setSubmitError(false);
+    try {
+      const fd = new FormData();
+      fd.append('firstName', formData.firstName);
+      fd.append('lastName', formData.lastName);
+      fd.append('phone', formData.phone);
+      fd.append('email', formData.email);
+      fd.append('companyName', formData.companyName);
+      fd.append('industry', formData.industry);
+      fd.append('website', formData.website);
+      fd.append('streetAddress', formData.streetAddress);
+      fd.append('addressLine2', formData.addressLine2);
+      fd.append('city', formData.city);
+      fd.append('state', formData.state);
+      fd.append('postalCode', formData.postalCode);
+      fd.append('country', formData.country);
+      fd.append('businessSummary', formData.businessSummary);
+      fd.append('problem', formData.problem);
+      fd.append('solution', formData.solution);
+      fd.append('stage', formData.stage);
+      fd.append('basedInCanada', formData.basedInCanada);
+      fd.append('agreedToTerms', String(formData.agreedToTerms));
+      if (formData.pitchDeck) fd.append('pitchDeck', formData.pitchDeck);
+
+      const res = await fetch('/api/funding-application', {
+        method: 'POST',
+        body: fd,
+      });
+
+      if (!res.ok) throw new Error('Request failed');
+      setSubmitted(true);
+    } catch (err) {
+      console.error('Failed to submit funding application', err);
+      setSubmitError(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -979,12 +1019,18 @@ export default function MultiStepForm() {
               <button
                 type="button"
                 onClick={handleSubmit}
-                className="flex items-center gap-2 px-8 h-11 rounded-xl bg-[#8F27FF] text-white text-sm font-semibold hover:bg-[#7a1fdb] transition shadow-md"
+                disabled={submitting}
+                className="flex items-center gap-2 px-8 h-11 rounded-xl bg-[#8F27FF] text-white text-sm font-semibold hover:bg-[#7a1fdb] transition shadow-md disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                {t('Submit Application', 'ارسال درخواست')}
+                {submitting ? t('Submitting...', 'در حال ارسال...') : t('Submit Application', 'ارسال درخواست')}
               </button>
             )}
           </div>
+          {submitError && (
+            <p className="mt-3 text-center text-sm text-red-500">
+              {t('Something went wrong. Please try again.', 'خطایی رخ داد. لطفاً دوباره تلاش کنید.')}
+            </p>
+          )}
         </div>
 
       </div>

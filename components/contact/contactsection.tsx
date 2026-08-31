@@ -71,6 +71,7 @@ export default function ContactSection() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   const set = (field: keyof FormData, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -85,9 +86,27 @@ export default function ContactSection() {
       return;
     }
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 900));
-    setLoading(false);
-    setSubmitted(true);
+    setSubmitError(false);
+    try {
+      const res = await fetch("/api/forms", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formName: "contact_page",
+          firstName: form.fullName,
+          email: form.email,
+          service: form.service,
+          message: form.message,
+        }),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Failed to submit contact form", err);
+      setSubmitError(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputBase =
@@ -262,6 +281,11 @@ export default function ContactSection() {
                       </>
                     ) : t("Submit", "ارسال")}
                   </button>
+                  {submitError && (
+                    <p className="mt-3 text-center text-[13px] text-red-500">
+                      {t("Something went wrong. Please try again.", "خطایی رخ داد. لطفاً دوباره تلاش کنید.")}
+                    </p>
+                  )}
                 </form>
               </>
             )}

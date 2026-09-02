@@ -200,6 +200,8 @@ export default function ContactForm() {
       email: fd.get('email')?.toString() || '',
       phone: fd.get('phone')?.toString() || '',
       countryCode: fd.get('countryCode')?.toString() || selectedCountry.code,
+      service: fd.get('service')?.toString() || '',
+      howHeard: fd.get('howHeard')?.toString() || '',
       message: fd.get('message')?.toString() || '',
     };
 
@@ -290,12 +292,15 @@ export default function ContactForm() {
                   {/* Service interest */}
                   <FormGroup label={t("Service of Interest", "خدمت موردنظر")}>
                     <div className="relative">
-                      <select className={selectCls}>
+                      <select name="service" className={selectCls}>
                         <option value="">{t("Select a service...", "انتخاب خدمت...")}</option>
                         <option>{t("Entrepreneurship", "خدمات کارآفرینی")}</option>
                         <option>{t("Startup Acceleration", "شتاب‌دهی استارتاپ")}</option>
                         <option>{t("Investment", "سرمایه‌گذاری")}</option>
                         <option>{t("Business Advisory", "مشاوره کسب‌وکار")}</option>
+                        <option>{t("Study Permit", "ویزای تحصیلی")}</option>
+                        <option>{t("Work Permit", "ویزای کار")}</option>
+                        <option>{t("Other", "سایر")}</option>
                       </select>
                       <span className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
                         <ChevronDown />
@@ -306,7 +311,7 @@ export default function ContactForm() {
                   {/* How did you hear */}
                   <FormGroup label={t("How Did You Hear About Us?", "چطور با ما آشنا شدید؟")}>
                     <div className="relative">
-                      <select className={selectCls}>
+                      <select name="howHeard" className={selectCls}>
                         <option value="">{t("Select...", "انتخاب کنید...")}</option>
                         <option>{t("Google", "گوگل")}</option>
                         <option>{t("Social Media", "شبکه‌های اجتماعی")}</option>

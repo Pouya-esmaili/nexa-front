@@ -10,9 +10,31 @@ export default function ContactForm() {
   const { t } = useLang();
   const [sent, setSent] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const body = {
+      formName: 'spain_investor_contact',
+      firstName: fd.get('firstName')?.toString() || '',
+      lastName: fd.get('lastName')?.toString() || '',
+      email: fd.get('email')?.toString() || '',
+      phone: fd.get('phone')?.toString() || '',
+      message: fd.get('message')?.toString() || '',
+    };
+
+    try {
+      const res = await fetch('/api/forms', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+
+      if (res.ok) setSent(true);
+      else console.error('Submit failed', await res.json());
+    } catch (err) {
+      console.error('Submit error', err);
+    }
   }
 
   return (
@@ -49,21 +71,21 @@ export default function ContactForm() {
                   <span className="flex items-center gap-1 text-[#474747]">
                     {t("First Name", "نام")} <em className="text-[#8F27FF] not-italic font-semibold">*</em>
                   </span>
-                  <input type="text" required placeholder={t("Your first name", "نام شما")}
+                  <input name="firstName" type="text" required placeholder={t("Your first name", "نام شما")}
                     className="h-11 px-3.5 rounded-[10px] border border-[#E2E2E2] bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors" />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
                   <span className="flex items-center gap-1 text-[#474747]">
                     {t("Last Name", "نام خانوادگی")} <em className="text-[#8F27FF] not-italic font-semibold">*</em>
                   </span>
-                  <input type="text" required placeholder={t("Your last name", "نام خانوادگی شما")}
+                  <input name="lastName" type="text" required placeholder={t("Your last name", "نام خانوادگی شما")}
                     className="h-11 px-3.5 rounded-[10px] border border-[#E2E2E2] bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors" />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
                   <span className="flex items-center gap-1 text-[#474747]">
                     {t("Email", "ایمیل")} <em className="text-[#8F27FF] not-italic font-semibold">*</em>
                   </span>
-                  <input type="email" required placeholder="you@example.com"
+                  <input name="email" type="email" required placeholder="you@example.com"
                     className="h-11 px-3.5 rounded-[10px] border border-[#E2E2E2] bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors" />
                 </label>
               </div>
@@ -73,7 +95,7 @@ export default function ContactForm() {
                   <span className="flex items-center gap-1 text-[#474747]">
                     {t("Phone Number", "شماره تماس")} <em className="text-[#8F27FF] not-italic font-semibold">*</em>
                   </span>
-                  <PhoneField defaultCountryCode="+34" />
+                  <PhoneField name="phone" defaultCountryCode="+34" />
                 </label>
                 <label className="flex flex-col gap-2 text-[13px] font-medium">
                   <span className="text-[#474747]">{t("Investment Route", "مسیر سرمایه‌گذاری")}</span>
@@ -99,7 +121,7 @@ export default function ContactForm() {
 
               <label className="flex flex-col gap-2 text-[13px] font-medium">
                 <span className="text-[#474747]">{t("Tell us about your investment profile & goals", "درباره وضعیت سرمایه‌گذاری و اهداف خود برای ما بنویسید")}</span>
-                <textarea rows={4}
+                <textarea name="message" rows={4}
                   placeholder={t("Describe your preferred investment route, capital capacity, family situation, and long-term Spain goals…", "مسیر سرمایه‌گذاری موردنظر، ظرفیت سرمایه، وضعیت خانوادگی و اهداف بلندمدت خود در اسپانیا را شرح دهید…")}
                   className="px-3.5 py-3 rounded-[10px] border border-[#E2E2E2] bg-white text-[14px] font-medium outline-none focus:border-[#8F27FF] transition-colors resize-y" />
               </label>

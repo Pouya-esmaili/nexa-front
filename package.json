@@ -6,6 +6,7 @@
     "dev": "next dev",
     "analyze": "ANALYZE=true next build",
     "images:optimize": "node scripts/optimize-images.js",
+    "test:forms": "NODE_NO_WARNINGS=1 node scripts/test-forms.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -21,6 +22,7 @@
     "react-hook-form": "^7.69.0",
     "react-icons": "^5.5.0",
     "react-phone-input-2": "^2.15.1",
+    "resend": "^6.25.0",
     "swiper": "^12.1.2",
     "tailwind-scrollbar-hide": "^4.0.0",
     "zustand": "^5.0.9"

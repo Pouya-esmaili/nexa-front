@@ -62,20 +62,6 @@ export default function Cta() {
             <span className="purple" style={{ color: "var(--yellow)" }}>{t("Building.", "در میان بگذارید.")}</span>
           </h2>
           <p>{t("A website or an app — tell us what you need and we'll get back to you within one business day.", "وب‌سایت یا اپلیکیشن شما چیست؟ درباره پروژه‌تان بگویید و ما حداکثر تا یک روز کاری با شما تماس می‌گیریم.")}</p>
-          <div className="cta__points">
-            <div className="cta__point">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4"><path d="M5 12l4 4 10-10" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              {t("Free 20-minute intro call", "جلسه آشنایی رایگان ۲۰ دقیقه‌ای")}
-            </div>
-            <div className="cta__point">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4"><path d="M5 12l4 4 10-10" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              {t("No obligation, no pressure", "بدون تعهد و بدون فشار")}
-            </div>
-            <div className="cta__point">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4"><path d="M5 12l4 4 10-10" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              {t("Reply within 1 business day", "پاسخ‌گویی حداکثر تا یک روز کاری")}
-            </div>
-          </div>
         </div>
 
         {sent ? (

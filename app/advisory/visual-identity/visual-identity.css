@@ -2957,7 +2957,7 @@ html[lang="fa"] .ab-breakdown{font-family:"IRANSansX", "Inter", sans-serif;}
 .vi-brief__field label,.vi-brief__legend{ display:block; margin-bottom:8px; font-size:10px; font-weight:800; letter-spacing:.09em; text-transform:uppercase; }
 .vi-brief__field input,.vi-brief__field select,.vi-brief__field textarea{ width:100%; border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--ink); padding:12px 13px; font:14px var(--font); transition:.2s; }
 .vi-brief__field textarea{ height:92px; resize:vertical; line-height:1.55; }
-.vi-brief__field input:focus,.vi-brief__field select:focus,.vi-brief__field textarea:focus{ outline:0; border-color:var(--purple); box-shadow:0 0 0 3px rgba(143,39,255,.1); }
+.vi-brief__field input:focus,.vi-brief__field select:focus,.vi-brief__field textarea:focus{ outline:0; border-color:var(--purple); box-shadow:0 0 0 3px rgba(143,39,255,.07); }
 .vi-brief__options{ display:grid; grid-template-columns:repeat(3,1fr); gap:7px; margin-bottom:17px; }
 .vi-brief__option{ position:relative; }
 .vi-brief__option input{ position:absolute; opacity:0; pointer-events:none; }

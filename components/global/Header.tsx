@@ -197,7 +197,7 @@ export default function Header() {
                         ["Visual Identity", "هویت بصری", "/advisory/visual-identity"],
                         ["Web Design", "طراحی وب", "/advisory/web-design"],
                         ["Content Creation", "تولید محتوا", "/advisory/content-creation"],
-                        ["Business Strategy", "استراتژی کسب‌وکار", "/advisory#contact"],
+                        ["Business Strategy", "استراتژی کسب‌وکار", "/advisory/business-strategy"],
                       ].map(([en, fa, href]) => (
                         <Link key={href} href={href}
                           className="block text-[13.5px] text-[#555] py-[5px] hover:text-[#8F27FF] hover:text-[15.5px] transition-all whitespace-nowrap">
@@ -373,7 +373,7 @@ export default function Header() {
                 ["Visual Identity", "هویت بصری", "/advisory/visual-identity"],
                 ["Web Design", "طراحی وب", "/advisory/web-design"],
                 ["Content Creation", "تولید محتوا", "/advisory/content-creation"],
-                ["Business Strategy", "استراتژی کسب‌وکار", "/advisory#contact"],
+                ["Business Strategy", "استراتژی کسب‌وکار", "/advisory/business-strategy"],
               ]}
             />
           </MobAccordion>

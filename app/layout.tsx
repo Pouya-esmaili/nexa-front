@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       "Nexa helps ambitious founders build, fund, and scale globally successful businesses.",
     images: [
       {
-        url: "/opengraph-image",
+        url: "/images/nexa-social-preview.png",
         width: 1200,
         height: 630,
         alt: "Nexa Venture Capital",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Nexa Venture Capital",
     description:
       "Nexa helps ambitious founders build, fund, and scale globally successful businesses.",
-    images: ["/opengraph-image"],
+    images: ["/images/nexa-social-preview.png"],
   },
 
   icons: {

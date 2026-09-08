@@ -8,6 +8,9 @@ export const size = {
 export const contentType = "image/png";
 
 export default function OpenGraphImage() {
+  const teamImage =
+    "https://www.nexavc.com/images/landing/TEAM%202%20(1).webp";
+
   return new ImageResponse(
     (
       <div
@@ -15,60 +18,107 @@ export default function OpenGraphImage() {
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          padding: "72px 80px",
-          color: "white",
-          background:
-            "radial-gradient(circle at 82% 22%, #7657ff 0%, #7657ff 9%, transparent 30%), linear-gradient(135deg, #17162d 0%, #30246e 58%, #10101f 100%)",
+          alignItems: "center",
+          padding: "54px 48px",
+          color: "#050505",
+          background: "#ffffff",
+          border: "1px solid #dddddd",
         }}
       >
         <div
           style={{
             display: "flex",
-            alignItems: "center",
-            fontSize: 42,
-            fontWeight: 700,
-            letterSpacing: "0.02em",
+            width: "52%",
+            height: "100%",
+            flexDirection: "column",
+            justifyContent: "center",
           }}
         >
-          NEXA
-        </div>
-
-        <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
               display: "flex",
-              maxWidth: 900,
-              fontSize: 74,
-              fontWeight: 700,
-              lineHeight: 1.08,
-              letterSpacing: "-0.035em",
+              flexDirection: "column",
+              fontSize: 54,
+              fontWeight: 800,
+              lineHeight: 1.02,
+              letterSpacing: "-0.04em",
             }}
           >
-            Build. Fund. Scale.
+            <span>Your Global Launchpad</span>
+            <span>for Investment,</span>
+            <span
+              style={{
+                display: "flex",
+                alignSelf: "flex-start",
+                marginTop: 7,
+                padding: "0 7px 5px",
+                background: "#ffe600",
+                borderRadius: 3,
+              }}
+            >
+              Startups &amp; Growth.
+            </span>
           </div>
+
           <div
             style={{
               display: "flex",
-              marginTop: 28,
-              fontSize: 30,
-              color: "#d8d4f5",
+              maxWidth: 570,
+              marginTop: 30,
+              fontSize: 20,
+              lineHeight: 1.55,
+              color: "#929292",
             }}
           >
-            Turning ambitious ideas into global businesses.
+            We fuel the global expansion of startups into new markets — for
+            entrepreneurs ready to scale and investors seeking high-growth
+            opportunities.
+          </div>
+
+          <div style={{ display: "flex", gap: 14, marginTop: 34 }}>
+            <div
+              style={{
+                display: "flex",
+                padding: "14px 25px",
+                color: "#ffffff",
+                background: "#8f27ff",
+                borderRadius: 999,
+                fontSize: 17,
+                fontWeight: 600,
+              }}
+            >
+              Explore Services →
+            </div>
+            <div
+              style={{
+                display: "flex",
+                padding: "13px 24px",
+                border: "1.5px solid #1a1a1a",
+                borderRadius: 999,
+                fontSize: 17,
+                fontWeight: 600,
+              }}
+            >
+              Book a Call
+            </div>
           </div>
         </div>
 
         <div
           style={{
             display: "flex",
-            fontSize: 24,
-            color: "#bdb7df",
-            letterSpacing: "0.04em",
+            width: "48%",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          www.nexavc.com
+          <img
+            src={teamImage}
+            alt="Nexa Team"
+            width="555"
+            height="309"
+            style={{ objectFit: "contain" }}
+          />
         </div>
       </div>
     ),

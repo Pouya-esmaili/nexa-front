@@ -161,7 +161,7 @@ html[lang="fa"] .bs{ --bs-f:"IRANSansX", Inter, sans-serif; --bs-m:"IRANSansX", 
 .bs .ans p{ margin:0 0 24px; color:var(--bs-g); font-size:14px; line-height:1.7; max-width:590px; }
 .bs .faqitem.open .ans{ max-height:180px; }
 .bs .faqitem.open .q span{ transform:rotate(45deg); }
-@media(max-width:900px){ .bs .faq-grid{ gap:40px; } }
+@media(max-width:900px){ .bs .faq-grid{ grid-template-columns:1fr; gap:40px; } }
 @media(max-width:600px){
   .bs .faq{ padding:68px 0; }
   .bs .faq-grid{ gap:32px; }

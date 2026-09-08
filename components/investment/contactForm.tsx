@@ -5,26 +5,26 @@ import Reveal from "@/components/global/Reveal";
 import { useLang } from "@/components/global/LanguageProvider";
 
 const COUNTRIES = [
+  { flag: "🇦🇺", name: "Australia",      dial: "+61" },
   { flag: "🇨🇦", name: "Canada",         dial: "+1" },
-  { flag: "🇮🇷", name: "Iran",           dial: "+98" },
-  { flag: "🇺🇸", name: "United States",  dial: "+1" },
-  { flag: "🇬🇧", name: "United Kingdom", dial: "+44" },
-  { flag: "🇩🇪", name: "Germany",        dial: "+49" },
+  { flag: "🇨🇳", name: "China",          dial: "+86" },
+  { flag: "🇫🇮", name: "Finland",        dial: "+358" },
   { flag: "🇫🇷", name: "France",         dial: "+33" },
-  { flag: "🇪🇸", name: "Spain",          dial: "+34" },
+  { flag: "🇩🇪", name: "Germany",        dial: "+49" },
+  { flag: "🇬🇷", name: "Greece",         dial: "+30" },
+  { flag: "🇮🇳", name: "India",          dial: "+91" },
+  { flag: "🇮🇷", name: "Iran",           dial: "+98" },
   { flag: "🇮🇹", name: "Italy",          dial: "+39" },
+  { flag: "🇯🇵", name: "Japan",          dial: "+81" },
   { flag: "🇳🇱", name: "Netherlands",    dial: "+31" },
   { flag: "🇵🇹", name: "Portugal",       dial: "+351" },
-  { flag: "🇦🇺", name: "Australia",      dial: "+61" },
-  { flag: "🇦🇪", name: "UAE",            dial: "+971" },
-  { flag: "🇹🇷", name: "Turkey",         dial: "+90" },
-  { flag: "🇬🇷", name: "Greece",         dial: "+30" },
-  { flag: "🇫🇮", name: "Finland",        dial: "+358" },
-  { flag: "🇸🇪", name: "Sweden",         dial: "+46" },
   { flag: "🇸🇦", name: "Saudi Arabia",   dial: "+966" },
-  { flag: "🇯🇵", name: "Japan",          dial: "+81" },
-  { flag: "🇨🇳", name: "China",          dial: "+86" },
-  { flag: "🇮🇳", name: "India",          dial: "+91" },
+  { flag: "🇪🇸", name: "Spain",          dial: "+34" },
+  { flag: "🇸🇪", name: "Sweden",         dial: "+46" },
+  { flag: "🇹🇷", name: "Turkey",         dial: "+90" },
+  { flag: "🇦🇪", name: "UAE",            dial: "+971" },
+  { flag: "🇬🇧", name: "United Kingdom", dial: "+44" },
+  { flag: "🇺🇸", name: "United States",  dial: "+1" },
 ];
 
 export default function InvestmentContactForm() {
@@ -359,7 +359,9 @@ function FormGroup({
 
 function PhoneField({ name }: { name?: string }) {
   const { t } = useLang();
-  const [selected, setSelected] = useState(COUNTRIES[0]);
+  const [selected, setSelected] = useState(
+    COUNTRIES.find((c) => c.name === "Canada") ?? COUNTRIES[0]
+  );
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
   const dropRef = useRef<HTMLDivElement>(null);

@@ -117,10 +117,10 @@ export default function ContactForm() {
                   <select required className={selectCls} style={selectStyle}>
                     <option value="">{t("Select a country…", "یک کشور را انتخاب کنید…")}</option>
                     <option>{t("Canada — Start-Up Visa", "کانادا — ویزای استارتاپ")}</option>
-                    <option>{t("Spain — Entrepreneur Visa", "اسپانیا — ویزای کارآفرینی")}</option>
                     <option>{t("Finland — Startup Permit", "فنلاند — اقامت استارتاپی")}</option>
-                    <option>{t("Portugal — D2 Visa", "پرتغال — ویزای D2")}</option>
                     <option>{t("Netherlands — Startup Visa", "هلند — ویزای استارتاپ")}</option>
+                    <option>{t("Portugal — D2 Visa", "پرتغال — ویزای D2")}</option>
+                    <option>{t("Spain — Entrepreneur Visa", "اسپانیا — ویزای کارآفرینی")}</option>
                     <option>{t("Not sure yet", "هنوز تصمیم نگرفته‌ام")}</option>
                   </select>
                 </div>

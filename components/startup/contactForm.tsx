@@ -100,11 +100,11 @@ export default function StartupContactForm() {
                   <span className="flex items-center gap-1 text-[#474747]">{t("Country of Interest", "کشور موردنظر")} <em className="text-[#8F27FF] not-italic font-semibold">*</em></span>
                   <select name="countryOfInterest" required className={selectCls}>
                     <option value="">{t("Select a country…", "یک کشور را انتخاب کنید…")}</option>
-                    <option>{t("Finland — Startup Permit", "فنلاند — مجوز استارتاپ")}</option>
                     <option>{t("Canada — Startup Visa", "کانادا — ویزای استارتاپ")}</option>
-                    <option>{t("United Kingdom — Innovator Founder Visa", "بریتانیا — ویزای Innovator Founder")}</option>
-                    <option>{t("Netherlands — Startup Visa", "هلند — ویزای استارتاپ")}</option>
+                    <option>{t("Finland — Startup Permit", "فنلاند — مجوز استارتاپ")}</option>
                     <option>{t("France — French Tech Visa", "فرانسه — French Tech Visa")}</option>
+                    <option>{t("Netherlands — Startup Visa", "هلند — ویزای استارتاپ")}</option>
+                    <option>{t("United Kingdom — Innovator Founder Visa", "بریتانیا — ویزای Innovator Founder")}</option>
                     <option>{t("Not sure yet", "هنوز تصمیم نگرفته‌ام")}</option>
                   </select>
                 </label>

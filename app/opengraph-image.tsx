@@ -8,8 +8,11 @@ export const size = {
 export const contentType = "image/png";
 
 export default function OpenGraphImage() {
-  const teamImage =
-    "https://www.nexavc.com/images/landing/TEAM%202%20(1).webp";
+  const imageOrigin =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000"
+      : "https://www.nexavc.com";
+  const teamImage = `${imageOrigin}/images/landing/nexa-team-og.png`;
 
   return new ImageResponse(
     (

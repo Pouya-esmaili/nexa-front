@@ -100,12 +100,14 @@ const team: Member[] = [
   },
 
   {
-    name: "Parastoo Sanaifar",
-    role: "Business Advisor",
-    dept: "Advisory",
-    image: "/images/ourteam/parastoo.jpg",
-    linkedin: "https://www.linkedin.com/in/parastoo-sanaifar",
+    name: "Narjes Orouji",
+    role: "UI/UX Designer",
+    dept: "Design",
+    image: "/images/ourteam/narges.jpg",
+    linkedin: "https://www.linkedin.com/in/narges-orouji-7ab846214",
   },
+
+
 
   {
     name: "Milad Fatemi",
@@ -141,11 +143,11 @@ const team: Member[] = [
   },
 
   {
-    name: "Narjes Orouji",
-    role: "UI/UX Designer",
-    dept: "Design",
-    image: "/images/ourteam/narges.jpg",
-    linkedin: "https://www.linkedin.com/in/narges-orouji-7ab846214",
+    name: "Parastoo Sanaifar",
+    role: "Business Advisor",
+    dept: "Advisory",
+    image: "/images/ourteam/parastoo.jpg",
+    linkedin: "https://www.linkedin.com/in/parastoo-sanaifar",
   },
 
   {
@@ -174,6 +176,15 @@ const team: Member[] = [
     image: "/images/ourteam/kiana.JPG",
     linkedin:
       "https://www.linkedin.com/in/kiana-mehrasa-00aa38380",
+  },
+
+    {
+    name: "Faezeh Ebrahimian",
+    role: "Marketing Specialist",
+    dept: "Marketing",
+    image: "/images/ourteam/faeze.JPG",
+    linkedin:
+      "https://www.linkedin.com/in/pouya-shafaghatian-a772a82b4",
   },
 ];
 

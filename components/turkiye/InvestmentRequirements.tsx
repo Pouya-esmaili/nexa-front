@@ -11,8 +11,8 @@ const cards = [
     ),
     title: "Minimum threshold",
     titleFa: "حداقل سرمایه‌گذاری",
-    desc: (<>Purchase qualifying real estate with a minimum value of <strong>USD 600,000</strong>.</>),
-    descFa: (<>خرید ملک یا مجموعه‌ای از املاک واجد شرایط با ارزش حداقل <strong>۶۰۰ هزار دلار</strong>.</>),
+    desc: (<>Purchase qualifying real estate with a minimum value of <strong>USD 400,000</strong>.</>),
+    descFa: (<>خرید ملک یا مجموعه‌ای از املاک واجد شرایط با ارزش حداقل <strong>۴۰۰ هزار دلار</strong>.</>),
   },
   {
     icon: (
@@ -67,7 +67,7 @@ export default function InvestmentRequirements() {
           <div className="reqs-hero-pill">{t("Minimum threshold", "حداقل سرمایه‌گذاری")}</div>
           <div className="reqs-hero-stat">
             <span className="prefix">{t("USD", "دلار")}</span>
-            <span className="figure">{t("600K", "۶۰۰ هزار")}</span>
+            <span className="figure">{t("400K", "۴۰۰ هزار")}</span>
           </div>
           <p className="reqs-hero-meta">
             {lang === "fa"

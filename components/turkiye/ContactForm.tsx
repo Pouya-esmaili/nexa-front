@@ -110,7 +110,7 @@ export default function ContactForm() {
           <label>
             <span className="lbl">{t("Investment size", "میزان سرمایه‌گذاری")}</span>
             <select name="investmentSize">
-              <option>{t("USD 600,000 – 1M", "۶۰۰,۰۰۰ تا ۱ میلیون دلار")}</option>
+              <option>{t("USD 400,000 – 1M", "۴۰۰,۰۰۰ تا ۱ میلیون دلار")}</option>
               <option>{t("USD 1M – 2M", "۱ تا ۲ میلیون دلار")}</option>
               <option>{t("USD 2M+", "بیش از ۲ میلیون دلار")}</option>
             </select>

@@ -6,7 +6,7 @@ import Row from "@/components/global/Row";
 import { useLang } from "@/components/global/LanguageProvider";
 
 const stats = [
-  { num: "USD 600K", numFa: "۶۰۰ هزار دلار", label: "Min. Investment", labelFa: "حداقل سرمایه‌گذاری" },
+  { num: "USD 400K", numFa: "۴۰۰ هزار دلار", label: "Min. Investment", labelFa: "حداقل سرمایه‌گذاری" },
   { num: "6–12 mo", numFa: "۶ تا ۱۲ ماه", label: "Processing", labelFa: "مدت تقریبی فرایند" },
   { num: "3 yrs", numFa: "۳ سال", label: "Hold Period", labelFa: "حداقل دوره نگهداری سرمایه‌گذاری" },
 ];

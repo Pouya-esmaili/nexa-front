@@ -14,7 +14,7 @@ import ContactForm from "@/components/turkiye/ContactForm";
 export const metadata = {
   title: "Nexa | Türkiye Residency & Citizenship by Real Estate Investment",
   description:
-    "Secure Turkish residency and citizenship through structured real estate investment. USD 600K minimum — at the crossroads of Europe, Asia and the Middle East.",
+    "Secure Turkish residency and citizenship through structured real estate investment. USD 400K minimum — at the crossroads of Europe, Asia and the Middle East.",
 };
 
 export default function TurkiyePage() {

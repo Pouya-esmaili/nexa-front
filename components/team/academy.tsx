@@ -76,7 +76,10 @@ export default function FounderSection() {
             {t("Founder & CEO", "بنیان‌گذار و مدیرعامل")}
           </div>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/hadi-hasanpour/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={t("Hadi Hasanpour on LinkedIn", "لینکدین هادی حسن‌پور")}
             className="mt-1 w-8 h-8 border border-white/[0.15] rounded-lg flex items-center justify-center text-white/45 text-[11px] font-bold no-underline transition-colors duration-200 hover:border-[#FFE600] hover:text-[#FFE600] z-10"
           >
             in
